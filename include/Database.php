@@ -86,12 +86,12 @@
             if (count($params)>0){
                 $query = $this->formatQuery($query, $params);
             }
-            // Utils::log("SQL Query: $query");
+            Utils::log("SQL Query: $query");
             $this->result = mysqli_query($this->connection, $query);
             $this->total_queries++;
             if ($this->result === FALSE){
-              //$msg = "SQL ERROR: ". $this->error();
-              //Utils::log($msg);
+              $msg = "SQL ERROR: ". $this->error();
+              Utils::log($msg);
             }
             $this->_trans_status = false;      
             $this->lastQuery = $query;
@@ -113,6 +113,41 @@
             return mysqli_connect_errno($this->connection). ': ' .  mysqli_connect_error($this->connection);
         }
 
-	}
+        function execute( $query ){
+            $this->query = $query;        
+            Utils::log("SQL execute: $query");
+            $resultSet = mysqli_query( $this->connection,$query );
+            $this->resultSet = $resultSet;
+            return $resultSet;
+        }
+
+        function update( $table, $data, $where ){        
+            $query  = "UPDATE ";
+            $query .= $table;
+            $query .= " SET ";
+            $i = 1;
+            foreach ( $data as $col => $value ){
+                if ( $i != 1 ) {
+                    $query .= ",";
+                }
+                if($value === 'null'){
+                    $query .= $col . '= NULL';
+                }else if(substr_count($value, '"') > 0){ 
+                    $query .= $col . "='" . utf8_decode($value) . "'";
+                }else if(is_int($value)){
+                    $query .= $col . '=' . utf8_decode($value);
+                }else{
+                    $query .= $col . '="' . utf8_decode($value) . '"';
+                }
+                $i++;
+            }
+
+            $query .= " WHERE ";
+            $where = $where;
+            $query .= $where;
+            return $this->execute( $query );    
+        }
+
+    }
 
 ?>

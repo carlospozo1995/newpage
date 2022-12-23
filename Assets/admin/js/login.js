@@ -70,39 +70,47 @@ $(document).ready(function(){
 
     // ---- RESET PASSWORD USER ---- //
 
-    let formReset = $("#formResetPass");
-    if (formReset) {
-        formReset.submit(function (e) {
+    let emailSend = $("#formEmailSend");
+    if (emailSend) {
+        emailSend.submit(function (e) {
 
             e.preventDefault();
 
-            let emailReset = $("#resetEmail").val();
+            let resetEmail = $("#resetEmail").val();
 
-            if(emptyValidate(emailReset)){
+            if(emptyValidate(resetEmail)){
                 msgShow(2, 'Error', 'Ingrese su correo para seguir el proceso.');
                 return false;
             }else{
-                // loading.style.display = 'flex';
-                let url_ajax = base_url + "login/ajaxReset/";
+                loading.style.display = 'flex';
+                let url_ajax = base_url + "login/ajaxEmailSend/";
 
                 $.ajax({
                     url: url_ajax,
                     dataType: 'JSON',
                     method: 'POST',
                     data: {
-                        emailReset: emailReset,
+                        resetEmail: resetEmail,
                     },
-                    success: function(data){   
-                        console.log(data);
-                        // if (data.status) {
-                        //     window.location = base_url + "dashboard";
-                        // }else{
-                        //     msgShow(3, 'Error', data.msg);
-                        //     $("#password").val("");
-                        // }
-                        // loading.style.display = 'none';
+                    success: function(data){
+                        if(data.status){
+                            Swal.fire({
+                                title:'',
+                                text:data.msg,
+                                icon:'success',
+                                confirmButtonColor: '#3085d6',
+                                confirmButtonText: 'Ok'
+                            }).then((result) => {
+                                if (result.isConfirmed){
+                                    window.location = base_url + "login";
+                                }
+                            });
+                        }else{
+                            msgShow(2, 'Error', data.msg);
+                        }
+                        loading.style.display = 'none';
 
-                        // return false;
+                        return false;
                     },
                     error: function(e){
                         // console.log(e);
@@ -119,5 +127,79 @@ $(document).ready(function(){
         });
     }
     
+
+    let resetPass = $('#formResetPass');
+    if (resetPass) {
+        resetPass.submit(function(e) {
+            
+            e.preventDefault();
+
+            let pass = $('#password').val();
+            let confirmPass = $('#passwordConfirm').val();
+
+            if (emptyValidate(pass) || emptyValidate(confirmPass)) {
+                msgShow(2, '', 'Rellene los campos requeridos.');
+                return false;
+            }else{
+                if (!testPass(pass)) {
+                    msgShow(2, '', 'La contraseña debe contener números y letras con un mínimo de 8 caracteres.');
+                    return false;
+                }
+
+                if(pass != confirmPass){
+                    msgShow(2, '', 'Las contraseñas deben ser iguales.');
+                    return false;   
+                }
+
+                loading.style.display = 'flex';
+
+                let url_ajax = base_url + "resetPassword/updatePassword/";
+                
+                $.ajax({
+                    url: url_ajax,
+                    dataType: 'JSON',
+                    method: 'POST',
+                    data: {
+                        password: pass,
+                        confirmPassword: confirmPass,
+                    },
+                    success: function(data){
+                        if(data.status){
+                            Swal.fire({
+                                title:'',
+                                text:data.msg,
+                                icon:'success',
+                                confirmButtonColor: '#3085d6',
+                                confirmButtonText: 'Iniciar Sesión',
+                                closeOnConfirm:false,
+                            }).then((result) => {
+                                if (result.isConfirmed){
+                                    window.location = base_url + "login";
+                                }else{
+                                    window.location = base_url + "login";
+                                }
+                            });
+                        }else{
+                            msgShow(2, 'Error', data.msg);
+                        }
+                        
+                        loading.style.display = 'none';
+
+                        return false;
+                    },
+                    error: function(e){
+                        console.log(e);
+                    },
+                    beforeSend: function(){
+                        // console.log("antes completar");
+                    },
+                    complete: function(){
+                        // console.log("completado");
+                    }
+                });
+            }
+
+        })
+    }
 
 });

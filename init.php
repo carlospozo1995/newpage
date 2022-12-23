@@ -1,4 +1,6 @@
 <?php
+	date_default_timezone_set(TIMEZONE);
+	
 	// FRONTEND->VIEW FILE
 	spl_autoload_register(function ($nameClass)
 	{	

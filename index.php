@@ -26,6 +26,10 @@
 				return "Login";
 			break;
 
+			case 'resetPassword':
+				return "ResetPassword";
+			break;
+
 			case 'logout':
 				return "Logout";
 			break;

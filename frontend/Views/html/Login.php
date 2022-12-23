@@ -61,7 +61,7 @@
 
                 <!-- ------------------------------- -->
 
-                <form id="formResetPass" class="forget-form">
+                <form id="formEmailSend" class="forget-form">
                     <div class="card-header text-center">
                         <a href="" class="h4"><b>REINICIAR CONTRASEÑA</b></a>
                     </div>

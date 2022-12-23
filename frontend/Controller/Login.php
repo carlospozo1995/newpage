@@ -10,58 +10,92 @@
 			}
 
 			$action = Utils::getParam("action", "");
+			$data = array();
+			$msg = "";
+			$status = true;
 
 			switch ($action) {
 				case 'ajaxLogin':
-					
+
 					$email = Utils::getParam("email", "");
 					$password = Utils::getParam("password", "");
-					
-					if (empty($email) || empty($password)) {
-						$arrResponse = array('status' => false, 'msg' => 'Verifique si los campos estan llenos.');
-					}else{
-						$userData = Models_Usuario::getUser($email, sha1($password));
-						
-						if (empty($userData)) {
-							$arrResponse = array('status' => false, 'msg' => 'El usuario o la contraseña es incorrecto.');
+
+					try {
+						if (empty($email) || empty($password)) {
+							throw new Exception("Verifique si los campos estan llenos.");
 						}else{
-							$arrUser = $userData;
+							$userData = Models_Usuario::getUser($email, sha1($password));
 
-							if ($arrUser['status'] == 1) {
-
-								$_SESSION['idUser'] = $arrUser['id'];
-								$_SESSION['login'] = true;
-								$_SESSION['timeout'] = true;
-                            	$_SESSION['inicio'] = time();
-                            	
-                            	$arrResponse = array('status' => true, 'msg' => 'OK');
+							if (empty($userData)) {
+								throw new Exception("El usuario o la contraseña es incorrecto.");
 							}else{
-								$arrResponse = array('status' => true, 'msg' => 'El usuario esta inactivo.');
+								if ($userData['status'] == 1) {
+									$_SESSION['idUser'] = $userData['id'];
+									$_SESSION['login'] = true;
+									$_SESSION['timeout'] = true;
+                            		$_SESSION['inicio'] = time();	
+
+                            		$status = true;
+                            		$msg = "OK";								
+								}
 							}
 						}
+					} catch (Exception $e) {
+						$status = false;
+						$msg = $e->getMessage();
 					}
-
-					echo json_encode($arrResponse);
+					$data = array("status"=>$status,"msg"=>$msg);
+					echo json_encode($data);
 
 				break;
 
-				case 'ajaxReset':
+				case 'ajaxEmailSend':
 
-					$emailReset = Utils::getParam("emailReset", "");
+					$resetEmail = Utils::getParam("resetEmail", "");
 
-					if (empty($emailReset)) {
-						// $arrResponse = array('status' => false, 'msg' => 'Verifique si los campos estan llenos.');
-					}else{
-						$token = Utils::tokenReset();
-						$userEmail = Models_Usuario::getUserEmail($emailReset);
-						// print_r($userEmail);
-						if (empty($userEmail)) {
-							$arrResponse = array('status' => false, 'msg' => 'El usuario ha recuperar la contraseña no existe.');
+					try {
+						if (empty($resetEmail)) {
+							throw new Exception("Verifique si los campos estan llenos.");
 						}else{
-							$idUser = $userEmail['id'];
-							$nameUser = $userEmail['nombres'].' '.$userEmail['apellidos'];
+							$userEmail = Models_Usuario::getUserEmail($resetEmail);
+							if (empty($userEmail)) {
+								throw new Exception("El usuario ha recuperar la contraseña no existe.");	
+							}else{
+								$nameUser = $userEmail['nombres'].' '.$userEmail['apellidos'];
+								$token = Utils::encriptar($userEmail['id']."|".date("Y-m-d H:i:s"));
+								
+								$url_recovery = BASE_URL.'resetPassword/'.$token;
+
+								$dataEmailUser = array( "name" => $nameUser,
+														"email" => $resetEmail,
+														"asunto" => 'Recuperación de contraseña -'.NAME_EMPRESA,
+														"url_recovery" => $url_recovery
+													); 
+
+								
+								$sendEmail = Utils::sendEmail($dataEmailUser, 'email_reset');
+
+								if ($sendEmail) {
+									$arrDataUpStatu['update_status'] = 2;
+									Models_Usuario::updateStatuPass($userEmail['id'], $arrDataUpStatu);
+
+									$status = true;
+									$msg = "Se ha enviado un mensage a su cuenta de correo para restablecer tu contraseña.";
+								}else{
+									$status = false;
+									throw new Exception("No es posible realizar el proceso intentalo mas tarde.");
+								}
+								
+							}
 						}
+					} catch (Exception $e) {
+						$status = false;
+						$msg = $e->getMessage();
 					}
+
+					$data = array("status" => $status, "msg" => $msg);
+					echo json_encode($data);
+
 				break;
 				
 				default:

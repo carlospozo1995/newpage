@@ -7,8 +7,13 @@ RewriteRule ^(login/|login|Login|LOGIN)$ %{ENV:REWRITEBASE}index.php?show=login 
 RewriteRule ^(login/|login|Login|LOGIN)/ajaxLogin/$ %{ENV:REWRITEBASE}index.php?show=Login&action=ajaxLogin [L]
 RewriteRule ^(dashboard/|dashboard|Dashboard)$ %{ENV:REWRITEBASE}index.php?show=dashboard [L]
 
-# RESET PASSWORD
-RewriteRule ^(login/|login|Login|LOGIN)/ajaxReset/$ %{ENV:REWRITEBASE}index.php?show=Login&action=ajaxReset [L]
+#RESET PASSWORD
+RewriteRule ^(login/|login|Login|LOGIN)/ajaxEmailSend/$ %{ENV:REWRITEBASE}index.php?show=Login&action=ajaxEmailSend [L]
+#RewriteRule ^(resetPassword)/ajaxSetPass$ %{ENV:REWRITEBASE}index.php?show=ResetPassword [L]
+#RewriteRule ^resetPassword$ %{ENV:REWRITEBASE}index.php?show=ResetPassword [QSA,L]
+#BASE_URL.'resetPassword?email='.$resetEmail.'&token='.$token;up;
+RewriteRule ^resetPassword/([a-zA-Z0-9]+)$ %{ENV:REWRITEBASE}index.php?show=ResetPassword&token=$1 [L]
+RewriteRule ^resetPassword/updatePassword/$ %{ENV:REWRITEBASE}index.php?show=ResetPassword&action=updatePassword [L]
 
 #LOGOUT USER
 RewriteRule ^logout$ %{ENV:REWRITEBASE}index.php?show=logout [L]
