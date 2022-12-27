@@ -1,20 +1,19 @@
 
 		<aside class="main-sidebar sidebar-dark-primary elevation-4 aside-mc">
 
-		    <a href="" class="brand-link">
-		      	
+		    <a href="<?= BASE_URL ?>dashboard" class="brand-link">
+		      	<img src="<?= MEDIA ?>admin/files/images/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3 logocg-mc" style="opacity: .8">
 		      	<span class="title-s-mc"><?= $name_empresa ?></span>
 		    </a>
 
 		    <div class="sidebar">
 		      	<div class="user-panel mt-3 pb-3 mb-3 d-flex" style="align-items:center;">
 			        <div class="image">
-			          	<img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+			          	<img src="<?= MEDIA ?>admin/files/images/user.png" class="img-circle elevation-2" alt="User Image">
 			        </div>
 			        <div class="info">
-				        
-				        <span>carlos pozo</span>
-				        <p>administrador</p>
+				        <span><?= $_SESSION['data_user']['name_user']." ".$_SESSION['data_user']['surname_user'] ?></span>
+         				<p style="margin-bottom: 0px;"><?= $_SESSION['data_user']['name_rol'] ?></p>
 			        </div>
 			    </div>
 
@@ -51,7 +50,7 @@
 
 				              	
 				              	<li class="nav-item">
-					                <a href="" class="nav-link">
+					                <a href="<?= BASE_URL ?>roles" class="nav-link">
 					                  	<i class="far fa-circle nav-icon"></i>
 					                  	<p>Roles</p>
 					                </a>

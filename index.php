@@ -37,6 +37,14 @@
 			case 'dashboard':
 				return "Dashboard";
 			break;
+
+			case 'roles':
+				return "Roles";
+			break;
+
+			case 'permissions':
+				return "Permissions";
+			break;
 			
 		}
 

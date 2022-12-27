@@ -2,18 +2,30 @@ Options -Indexes
 
 RewriteEngine On
 
+#LOGIN
 RewriteRule ^$ %{ENV:REWRITEBASE}index.php?show=Index [L]
 RewriteRule ^(login/|login|Login|LOGIN)$ %{ENV:REWRITEBASE}index.php?show=login [L]
 RewriteRule ^(login/|login|Login|LOGIN)/ajaxLogin/$ %{ENV:REWRITEBASE}index.php?show=Login&action=ajaxLogin [L]
+
+#PAGES-ADMIN
 RewriteRule ^(dashboard/|dashboard|Dashboard)$ %{ENV:REWRITEBASE}index.php?show=dashboard [L]
+RewriteRule ^(roles/|roles|Roles)$ %{ENV:REWRITEBASE}index.php?show=roles [L]
+RewriteRule ^permissions/getPermissions/$ %{ENV:REWRITEBASE}index.php?show=permissions&action=getPermissions [L]
 
 #RESET PASSWORD
 RewriteRule ^(login/|login|Login|LOGIN)/ajaxEmailSend/$ %{ENV:REWRITEBASE}index.php?show=Login&action=ajaxEmailSend [L]
-#RewriteRule ^(resetPassword)/ajaxSetPass$ %{ENV:REWRITEBASE}index.php?show=ResetPassword [L]
-#RewriteRule ^resetPassword$ %{ENV:REWRITEBASE}index.php?show=ResetPassword [QSA,L]
-#BASE_URL.'resetPassword?email='.$resetEmail.'&token='.$token;up;
 RewriteRule ^resetPassword/([a-zA-Z0-9]+)$ %{ENV:REWRITEBASE}index.php?show=ResetPassword&token=$1 [L]
 RewriteRule ^resetPassword/updatePassword/$ %{ENV:REWRITEBASE}index.php?show=ResetPassword&action=updatePassword [L]
 
 #LOGOUT USER
 RewriteRule ^logout$ %{ENV:REWRITEBASE}index.php?show=logout [L]
+
+
+
+
+
+
+#EXAMPLES
+#RewriteRule ^(resetPassword)/ajaxSetPass$ %{ENV:REWRITEBASE}index.php?show=ResetPassword [L]
+#RewriteRule ^resetPassword$ %{ENV:REWRITEBASE}index.php?show=ResetPassword [QSA,L]
+#BASE_URL.'resetPassword?email='.$resetEmail.'&token='.$token;up;

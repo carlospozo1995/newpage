@@ -1,7 +1,9 @@
-// LOGIN FLIPPED - RESET PASSWORD
+
 'use strict';
 
 $(document).ready(function(){
+
+    // ---- LOGIN FLIPPED ---- //
     $('.login-content [data-toggle="flip"]').click(function() {
         $('.login').toggleClass('flipped');
         return false;
@@ -46,7 +48,7 @@ $(document).ready(function(){
                         if (data.status) {
                             window.location = base_url + "dashboard";
                         }else{
-                            msgShow(3, 'Error', data.msg);
+                            msgShow(2, 'Error', data.msg);
                             $("#password").val("");
                         }
                         loading.style.display = 'none';

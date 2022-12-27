@@ -15,7 +15,7 @@
 	    </section>
 
 	    <section class="content">
-
+	    	<?php print_r($_SESSION['data_user']); ?>
 	    </section>
 
 	</div>

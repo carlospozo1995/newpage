@@ -6,6 +6,8 @@
 	define("RUTA_INCLUDE", URL_LOCAL."include/");
 	define('RUTA_VIEW', URL_LOCAL."frontend/Views/");
 	define('MEDIA', BASE_URL.'Assets/');
+	define('MEDIA_ADMIN', BASE_URL.'Assets/admin/');
+	define('MEDIA_STORE', BASE_URL.'Assets/store/');
 	define('TIMEZONE','America/Guayaquil');
 	define('KEY_ENCRIPTAR','carlos1995101010');
 

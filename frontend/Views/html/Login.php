@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title_page ?></title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <link rel="stylesheet" href="<?= MEDIA; ?>admin/css/plugins/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="<?= MEDIA; ?>admin/css/plugins/sweetalert2/sweetalert2.min.css">
-    <link rel="stylesheet" href="<?= MEDIA; ?>admin/css/adminlte.min.css">
-    <link rel="stylesheet" href="<?= MEDIA; ?>admin/css/style.css">
-</head>
-<body class="hold-transition login-page">
 
     <div class="login-box">
         <div class="card card-outline card-primary login-content">
@@ -96,12 +82,3 @@
             // }
         // }
     ?> -->
-    <script> const base_url = "<?= BASE_URL; ?>"; </script>
-    <script src="<?= MEDIA ?>admin/js/plugins/jquery/jquery.min.js"></script>
-    <script src="<?= MEDIA ?>admin/js/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= MEDIA ?>admin/js/plugins/sweetalert2/sweetalert2.min.js"></script>
-    <script src="<?= MEDIA ?>admin/js/adminlte.min.js"></script>
-    <script src="<?= MEDIA ?>admin/js/global.js"></script>
-    <script src="<?= MEDIA ?>admin/js/login.js"></script>
-</body>
-</html>

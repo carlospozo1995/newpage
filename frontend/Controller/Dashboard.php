@@ -8,7 +8,10 @@
 			if (empty($_SESSION['idUser'])) {
 				header('Location: '.BASE_URL.'login');
 			}
-			View::renderPage('Dashboard', "");
+
+			$variable["file_css"][] = "c_dashboard";
+            $variable["file_js"][] = "f_dashboard";
+			View::renderPage('Dashboard', $variable);
 		}
 
 	}

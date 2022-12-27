@@ -108,6 +108,21 @@
             mysqli_free_result($this->result);
             return $this->res_set;
         }
+
+        function selectAll($query, $params = array())
+        {
+            $arr_data = array();
+
+            $this->result = $this->Query($query, $params);
+            if($this->result === false){
+                return null;
+            }
+
+            while ($row = mysqli_fetch_assoc($this->result)) {
+                $arr_data[] = $row;
+            }
+            return $arr_data;
+        }
           
         function error() {
             return mysqli_connect_errno($this->connection). ': ' .  mysqli_connect_error($this->connection);

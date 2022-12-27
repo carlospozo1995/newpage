@@ -25,18 +25,22 @@
 							throw new Exception("Verifique si los campos estan llenos.");
 						}else{
 							$userData = Models_Usuario::getUser($email, sha1($password));
-
+							
 							if (empty($userData)) {
-								throw new Exception("El usuario o la contraseña es incorrecto.");
+								throw new Exception("Verifique si el correo o la contraseña son correctos.");
 							}else{
 								if ($userData['status'] == 1) {
-									$_SESSION['idUser'] = $userData['id'];
+									$_SESSION['idUser'] = $userData['id_user'];
 									$_SESSION['login'] = true;
 									$_SESSION['timeout'] = true;
                             		$_SESSION['inicio'] = time();	
+                            		
+                            		$arr_rol_user = Models_Usuario::dataSessionlogin($_SESSION['idUser']); 
 
                             		$status = true;
                             		$msg = "OK";								
+								}else{
+									throw new Exception("Lo sentimos su cuenta a sido desactivada. Solicite ayuda a " . NAME_EMPRESA);
 								}
 							}
 						}
@@ -50,7 +54,7 @@
 				break;
 
 				case 'ajaxEmailSend':
-
+				
 					$resetEmail = Utils::getParam("resetEmail", "");
 
 					try {
@@ -59,10 +63,10 @@
 						}else{
 							$userEmail = Models_Usuario::getUserEmail($resetEmail);
 							if (empty($userEmail)) {
-								throw new Exception("El usuario ha recuperar la contraseña no existe.");	
+								throw new Exception("El usuario ha recuperar la contraseña no existe o esta inactivo.");	
 							}else{
-								$nameUser = $userEmail['nombres'].' '.$userEmail['apellidos'];
-								$token = Utils::encriptar($userEmail['id']."|".date("Y-m-d H:i:s"));
+								$nameUser = $userEmail['name_user'].' '.$userEmail['surname_user'];
+								$token = Utils::encriptar($userEmail['id_user']."|".date("Y-m-d H:i:s"));
 								
 								$url_recovery = BASE_URL.'resetPassword/'.$token;
 
@@ -77,7 +81,7 @@
 
 								if ($sendEmail) {
 									$arrDataUpStatu['update_status'] = 2;
-									Models_Usuario::updateStatuPass($userEmail['id'], $arrDataUpStatu);
+									Models_Usuario::updateStatuPass($userEmail['id_user'], $arrDataUpStatu);
 
 									$status = true;
 									$msg = "Se ha enviado un mensage a su cuenta de correo para restablecer tu contraseña.";

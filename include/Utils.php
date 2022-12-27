@@ -20,6 +20,13 @@
           	fclose($fd);
         }
 
+        static public function dep($data){
+	        $format = print_r('<pre>');
+	        $format .= print_r($data);
+	        $format .= print_r('</pre>');
+        	return $format;
+    	}
+
 		static public function getParam($paramName, $default=false, $data=false)
 		{
 
@@ -38,6 +45,20 @@
 	      
 	      	return $default;
 		}
+
+		// static public function fileHeader($namePage)
+		// {	
+		// 	$fileHeaderAdmin = "";
+		// 	switch ($namePage) {
+		// 		case '':
+					
+		// 		break;
+				
+		// 		default:
+					
+		// 		break;
+		// 	}
+		// }
 
 		static public function isLogged()
 		{
@@ -142,19 +163,47 @@
 	        }
 		}
 
-		// static public function confirmUser($email_recovery, $token)
-		// {
-			// if(empty($email_recovery) || empty($token)){
-			// 	// header('Location: '.BASE_URL.'login');
-			// }else{
-			// 	// $arrResponse =  Models_Usuario::getUserResetPass($email_recovery, $token);
-			// 	// if(empty($arrResponse)){
-			// 		header('Location: '.BASE_URL.'login');	
-			// 	// }else{
+		static public function date(){
+	        $day = date("d");
+	        $month = date("m");
+	        $year = date("Y");
 
-			// 	// }
-			// }
-		// }
+	        $day_week = [
+	            "Monday"=>"Lunes",
+	            "Tuesday"=>"Martes",
+	            "Wednesday"=>"Miercoles",
+	            "Thursday"=>"Jueves",
+	            "Friday"=>"Viernes",
+	            "Saturday"=>"Sabado",
+	            "Sunday"=>"Domingo",
+	        ];
+
+	        $month_year = [
+	            "01"=>"Enero",
+	            "02"=>"Febrero",
+	            "03"=>"Marzo",
+	            "04"=>"Abril",
+	            "05"=>"Mayo",
+	            "06"=>"Junio",
+	            "07"=>"julio",
+	            "08"=>"Agosto",
+	            "09"=>"Septiembre",
+	            "10"=>"Octubre",
+	            "11"=>"Noviembre",
+	            "12"=>"Diciembre",
+	        ];
+
+	        $final_date = $day_week[date("l")]." ".$day." de ".$month_year[$month]." del ".$year."<br>".date("g:i a");
+	        return$final_date;
+	    }
+
+	    static public function loadModalFile($name_modal="", $data="")
+	    {
+	    	if (!empty($name_modal)) {
+	    		$file_modal = RUTA_VIEW . 'html/Template/Modals/' . $name_modal . '_modal.php';
+	    		file_exists($file_modal) ? require_once($file_modal) : ""; 
+	    	}
+	    }
 
 	}
 
