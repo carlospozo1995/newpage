@@ -1,10 +1,11 @@
-<?php Utils::loadModalFile("roles", $data = array("test"=>"testmodal")); ?>
-
-
+<?php 	
+	if ($_SESSION['idUser'] == 1) {
+		Utils::loadModalFile("roles", ""); 
+	}
+?>
 <div class="content-wrapper">
-    <!-- CONTAINER MODAL PERMISOS -->
-    <div id="contentModalPermisos"></div>
-    <!-- ------------------------ -->
+
+    <div id="contentModalPermissions"></div>
     
     <section class="content-header">
       	<div class="container-fluid">
@@ -12,11 +13,11 @@
          		<div class="col-sm-6 d-flex">
             		<h1><?= $section_name; ?></h1>
             		<?php 
-            		// if(!empty($_SESSION['permisosMod']['crear'])){ 
+            		if ($_SESSION['idUser'] == 1) {
             		?>
             			<button type="button" class="btn btn-primary ml-2" id="btnNewRol"><i class="fas fa-plus-circle"></i> Nuevo</button>
             		<?php 
-            		// } 
+            		} 
             		?>
             	</div>
           	</div>
@@ -55,7 +56,7 @@
 					                }
 
 					                if ($_SESSION['idUser'] == 1) {
-			                        	$btnUpdate = '<button type="button" class="btn btn-primary btn-sm" tilte="Editar"><i class="fa-solid fa-pencil"></i></button>';
+			                        	$btnUpdate = '<button type="button" class="btn btn-primary btn-sm update" data_id"'.$id_rol.'" tilte="Editar"><i class="fa-solid fa-pencil"></i></button>';
 			                      	}
 			                      	if ($_SESSION['idUser'] == 1){
 			                        	$btnDelete = '<button type="button" class="btn btn-danger btn-sm" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';

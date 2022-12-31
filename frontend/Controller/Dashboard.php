@@ -9,6 +9,8 @@
 				header('Location: '.BASE_URL.'login');
 			}
 
+			Utils::permissionsData(1);
+
 			$variable["file_css"][] = "c_dashboard";
             $variable["file_js"][] = "f_dashboard";
 			View::renderPage('Dashboard', $variable);

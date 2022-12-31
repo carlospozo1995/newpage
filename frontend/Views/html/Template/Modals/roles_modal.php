@@ -1,9 +1,7 @@
-
 <div class="modal fade" id="modalFormRol">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header headerRegister-mc">
-                <!-- <h1><?= $data['test']; ?></h1> -->
+            <div class="modal-header headerRegister">
                 <h4 class="modal-title">Nuevo Rol</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -12,29 +10,28 @@
             <div class="modal-body">
                 <div class="card card-primary">
 
-                    <form id="formNewRol" name="formNewRol">
+                    <form id="formNewRol">
                         <input type="hidden" id="idRol" name="idRol" value="">
 
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="txtNombre">Nombre</label>
-                                <input type="text" class="form-control" placeholder="Nombre del rol" id="txtNombre" name="txtNombre">
+                                <label for="name_rol">Nombre</label>
+                                <input type="text" class="form-control" placeholder="Nombre del rol" id="name_rol" name="name_rol">
                             </div>
 
                             <div class="form-group">
-                                <label for="textDescripcion">Descripción</label>
-                                <textarea class="form-control" rows="3" placeholder="Descripción del rol" id="txtDescripcion" name="txtDescripcion"></textarea>
+                                <label for="descrip_rol">Descripción</label>
+                                <textarea class="form-control" rows="3" placeholder="Descripción del rol" id="descrip_rol" name="descrip_rol"></textarea>
                             </div>
 
                             <div class="form-group">
-                                <label for="listStatus">Status Rol</label>
-                                <select class="form-control" id="listStatus" name="listStatus">
+                                <label for="rol_status">Status Rol</label>
+                                <select class="form-control" id="rol_status" name="rol_status">
                                     <option value="1">Activo</option>
                                     <option value="2">Inactivo</option>
                                 </select>
                             </div>
                         </div>
-                        <!-- /.card-body -->
 
                         <div class="card-footer">
                             <button id="btnSubmitRol" type="submit" class="btn btn-primary btnText">Guardar</button>

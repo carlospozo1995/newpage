@@ -28,7 +28,7 @@
 			            	</a>
 			          	</li>
 			          	
-			          	
+			          	<?php if(!empty($_SESSION['permissions'][2]['ver'])){ ?>
 			          	<li class="nav-item">
 				            <a href="#" class="nav-link">
 				              	<i class="nav-icon fas fa-users"></i>
@@ -46,20 +46,17 @@
 					                  	<p>Usuarios</p>
 					                </a>
 				              	</li>
-				              	
 
-				              	
 				              	<li class="nav-item">
 					                <a href="<?= BASE_URL ?>roles" class="nav-link">
 					                  	<i class="far fa-circle nav-icon"></i>
 					                  	<p>Roles</p>
 					                </a>
-				              	</li>
+				              	</li> 
 				              	
 				            </ul>
 			          	</li>
-			          	
-
+			          	<?php } ?>
 			          	
 			            <li class="nav-item">
 			              	<a href="" class="nav-link">

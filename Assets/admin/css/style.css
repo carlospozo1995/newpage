@@ -79,3 +79,15 @@
 .required{
     color: red;
 }
+
+/**/
+
+.headerRegister{
+    background: #1CA9E1;
+    color: #fff;
+}
+
+.headerUpdate{
+    background: rgb(68, 212, 116);
+    color: #fff;
+}

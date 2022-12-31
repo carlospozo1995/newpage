@@ -197,12 +197,30 @@
 	        return$final_date;
 	    }
 
-	    static public function loadModalFile($name_modal="", $data="")
+	    static public function loadModalFile($name_modal="", $data_modal="")
 	    {
 	    	if (!empty($name_modal)) {
 	    		$file_modal = RUTA_VIEW . 'html/Template/Modals/' . $name_modal . '_modal.php';
 	    		file_exists($file_modal) ? require_once($file_modal) : ""; 
 	    	}
+	    }
+
+	    static public function permissionsData(int $id_module)
+	    {
+	    	$id_rol = $_SESSION['data_user']['id_rol'];
+	    	$arr_permissions = Models_Permissions::permissionsModule($id_rol);
+	    	// Utils::dep($arr_permissions);
+
+	    	$permissions = "";
+	    	$module = "";
+
+	    	if (count($arr_permissions) > 0) {
+	            $permissions = $arr_permissions;
+	            $module = isset($arr_permissions[$id_module]) ? $arr_permissions[$id_module] : "";
+	        }
+
+	        $_SESSION['permissions'] = $permissions;
+        	$_SESSION['module'] = $module;
 	    }
 
 	}

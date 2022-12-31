@@ -12,7 +12,7 @@ $(document).ready(function(){
     // ---- LOGIN USER ---- //
 
     let formLogin = $("#formLogin");
-    if(formLogin){
+    if(formLogin.length){
         formLogin.submit(function(e){
             e.preventDefault();
 
@@ -73,7 +73,7 @@ $(document).ready(function(){
     // ---- RESET PASSWORD USER ---- //
 
     let emailSend = $("#formEmailSend");
-    if (emailSend) {
+    if (emailSend.length) {
         emailSend.submit(function (e) {
 
             e.preventDefault();
@@ -131,7 +131,7 @@ $(document).ready(function(){
     
 
     let resetPass = $('#formResetPass');
-    if (resetPass) {
+    if (resetPass.length) {
         resetPass.submit(function(e) {
             
             e.preventDefault();

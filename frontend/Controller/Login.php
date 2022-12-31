@@ -75,7 +75,6 @@
 														"asunto" => 'Recuperación de contraseña -'.NAME_EMPRESA,
 														"url_recovery" => $url_recovery
 													); 
-
 								
 								$sendEmail = Utils::sendEmail($dataEmailUser, 'email_reset');
 

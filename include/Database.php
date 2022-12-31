@@ -109,8 +109,7 @@
             return $this->res_set;
         }
 
-        function selectAll($query, $params = array())
-        {
+        function selectAll($query, $params = array()) {
             $arr_data = array();
 
             $this->result = $this->Query($query, $params);
@@ -128,7 +127,7 @@
             return mysqli_connect_errno($this->connection). ': ' .  mysqli_connect_error($this->connection);
         }
 
-        function execute( $query ){
+        function execute( $query ) {
             $this->query = $query;        
             Utils::log("SQL execute: $query");
             $resultSet = mysqli_query( $this->connection,$query );
@@ -136,12 +135,12 @@
             return $resultSet;
         }
 
-        function update( $table, $data, $where ){        
+        function update( $table, $data, $where ) {        
             $query  = "UPDATE ";
             $query .= $table;
             $query .= " SET ";
             $i = 1;
-            foreach ( $data as $col => $value ){
+            foreach ( $data as $col => $value ) {
                 if ( $i != 1 ) {
                     $query .= ",";
                 }
@@ -161,6 +160,60 @@
             $where = $where;
             $query .= $where;
             return $this->execute( $query );    
+        }
+
+        function delete( $table, $where ) {
+            $query  = 'DELETE FROM ';
+            $query .= $table;
+            $query .= ' WHERE ';
+            $where = $where;
+            $query .= $where;
+            return $this->execute( $query );
+        }
+
+        function insert_multiple($table, $data) {   
+            $valores = '';
+            $campos = '';
+            $dataarr = array();
+
+            foreach ($data as $key => $value) {
+
+                $valores .= "(";
+                $auxarr = array();
+
+                foreach ($data[$key] as $key1 => $value1) {
+                    $valor = '';
+
+                    if(!isset($data[($key - 1)])){
+                      $campos .= $key1.',';
+                    }
+
+                    if($value1 === 'null' || (!is_numeric($value1) && $value1 == "")){
+                        $valor = "NULL";
+                    }else if(is_string($value1)){
+                        $valor = "'".$value1."'";
+                    }else{
+                        $valor = $value1;
+                    }
+
+                    $valores .= $valor.",";
+                }
+
+                $valores = substr($valores,0,-1);
+                $valores .="),";
+            }
+
+            $campos = substr($campos, 0,-1);
+            $valores = substr($valores, 0,strlen($valores)-1);
+            $query  = 'INSERT INTO ';
+            $query .= $table;
+            $query .= ' (';
+            $query .= $campos;
+            $query .= ') VALUES';
+            $query .= $valores;
+            $query .= ';';
+
+            return $this->execute( $query );
         }
 
     }
