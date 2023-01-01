@@ -135,6 +135,14 @@
             return $resultSet;
         }
 
+        function execute_insert( $query ) {
+            $this->query = $query;        
+            Utils::log("SQL execute: $query");
+            $resultSet = mysqli_query( $this->connection,$query );
+            $this->resultSet = $resultSet;
+            return mysqli_insert_id($this->connection);
+        }
+
         function update( $table, $data, $where ) {        
             $query  = "UPDATE ";
             $query .= $table;
@@ -213,7 +221,7 @@
             $query .= $valores;
             $query .= ';';
 
-            return $this->execute( $query );
+            return $this->execute_insert( $query );
         }
 
     }

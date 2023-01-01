@@ -48,7 +48,6 @@
 			                  		$btnPermisos = '';
 					                $btnUpdate = '';
 					                $btnDelete = '';
-
 					                $id_rol =  Utils::encriptar($value["id_rol"]);
 
 					                if ($_SESSION['idUser'] == 1) {

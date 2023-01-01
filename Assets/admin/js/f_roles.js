@@ -1,10 +1,10 @@
 
 'use strict';
 
-var tableRoles;
-var rowTable;
-
 $(document).ready(function(){
+
+    var tableRoles;
+    var rowTable;
 
     var formNewRol = $("#formNewRol");
 
@@ -28,6 +28,62 @@ $(document).ready(function(){
     formNewRol.submit((e) => {
         e.preventDefault();
 
+        let id = $("#idRol").val();
+        let name = $("#name_rol").val();
+        let description = $("#descrip_rol").val();
+        let status = $("#status_rol").val();
+
+        if (name == "" || description == "" || status == "") {
+            msgShow(2, 'Atención', "Rellene todos los campos.");
+            return false;
+        }else{
+            // var formData = formNewRol.serializeArray();
+            let url_ajax = base_url + "roles/setRol/";
+            // let success_data;
+            $.ajax({
+                url: url_ajax,
+                dataType: 'JSON',
+                method: 'POST',
+                data: {
+                    id :id,
+                    name: name,
+                    description: description,
+                    status: status,
+                },
+                success: function(data){
+                    if (data.status) {
+                        let htmlStatus = status == 1 ? '<div class="text-center"><span class="bg-success p-1 rounded"><i class="fa-solid fa-user"></i> Activo</span></div>' : '<div class="text-center"><span class="bg-danger p-1 rounded"><i class="fa-solid fa-user-slash"></i> Inactivo</span></div>';
+
+                        if (rowTable == "") {
+
+                            let btnPermissions = "";
+                            let btnUpdate = "";
+                            let btnDelete = "";
+
+                            for (var i = Things.length - 1; i >= 0; i--) {
+                                Things[i]
+                            }
+                        }
+
+                        $('#modalFormRol').modal('hide');
+                        msgShow(1, 'Permisos de Usuario', data.msg);
+                        // success_data = data;
+                    }else{
+                        msgShow(2, 'Atención', data.msg);
+                    }
+                },
+                error: function(e){
+                    // console.log(e);
+                },
+                beforeSend: function(){
+                    // console.log("antes completar");
+                },
+                complete: function() {
+
+                }
+            });
+        }
+        
 
     });
 
@@ -106,7 +162,7 @@ function permissions(data) {
 // --- ADD PERMISSIONS ACCORDING TO ROLE --- //
 function savePermission(e) {
     e.preventDefault();
-
+    console.log($(this))
     var formData = $(this).serializeArray();
 
     let url_ajax = base_url + "permissions/setPermissions/";

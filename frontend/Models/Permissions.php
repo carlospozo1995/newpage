@@ -26,14 +26,14 @@
 		static public function deletePermission($idRol)
 		{
 			if(empty($idRol)){ return false; }
-			return $GLOBALS["db"]->delete("permissions", "rol_id=".$idRol."");
+			$result = $GLOBALS["db"]->delete("permissions", "rol_id=".$idRol."");
+			return $result;
 		}
 
 		static public function insertPermissions($data)
 		{
 			if(empty($data) || !is_array($data)){return false;}
-			$result = $GLOBALS["db"]->insert_multiple("permissions",$data);
-			return $result;
+			return $GLOBALS["db"]->insert_multiple("permissions",$data);
 		}
 
 		static public function permissionsModule($idRol)
