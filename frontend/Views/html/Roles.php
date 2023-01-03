@@ -44,21 +44,23 @@
 			                  	<?php
 
 			                  	$dataRoles = Models_Roles::getRoles();
+			                  	$id_row = 1;
 			                  	foreach ($dataRoles as $key => $value) {
-			                  		$btnPermisos = '';
+			                  		$btnPermissions = '';
 					                $btnUpdate = '';
 					                $btnDelete = '';
 					                $id_rol =  Utils::encriptar($value["id_rol"]);
 
 					                if ($_SESSION['idUser'] == 1) {
-					                	$btnPermisos = '<button type="button" class="btn btn-secondary btn-sm" onclick="permissions(\''.$id_rol.'\')" tilte="Permisos"><i class="fa-solid fa-key"></i></button>';
+					                	$btnPermissions = '<button type="button" class="btn btn-secondary btn-sm" onclick="permissions(\''.$id_rol.'\')" tilte="Permisos"><i class="fa-solid fa-key"></i></button>';
 					                }
 
 					                if ($_SESSION['idUser'] == 1) {
-			                        	$btnUpdate = '<button type="button" class="btn btn-primary btn-sm update" data_id"'.$id_rol.'" tilte="Editar"><i class="fa-solid fa-pencil"></i></button>';
+			                        	$btnUpdate = '<button type="button" class="btn btn-primary btn-sm" onclick="update(\''.$id_rol.'\')" tilte="Editar"><i class="fa-solid fa-pencil"></i></button>';
 			                      	}
+
 			                      	if ($_SESSION['idUser'] == 1){
-			                        	$btnDelete = '<button type="button" class="btn btn-danger btn-sm" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
+			                        	$btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="delete(\''.$id_rol.'\')" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
 			                      	}
 
 			                      	if ($value['status'] == 1) {
@@ -68,12 +70,14 @@
 			                      	}
 
 			                      	echo'<tr>';
-				                        echo '<td>'.$value['id_rol'].'</td>';
+			                      		echo '<td>'.$id_row.'</td>';
 				                        echo '<td>'.$value['name_rol'].'</td>';
 				                        echo '<td>'.$value['description_rol'].'</td>';
 				                        echo '<td>'.$value['status'].'</td>';
-				                        echo '<td><div class="text-center">'.$btnPermisos.' '.$btnUpdate.' '.$btnDelete.'</div></td>';
+				                        echo '<td><div class="text-center">'.$btnPermissions.' '.$btnUpdate.' '.$btnDelete.'</div></td>';
 				                    echo'</tr>';
+
+				                   	$id_row++;
 			                  	}
 
 

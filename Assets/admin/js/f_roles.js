@@ -4,7 +4,7 @@
 $(document).ready(function(){
 
     var tableRoles;
-    var rowTable;
+    var rowTable = "";
 
     var formNewRol = $("#formNewRol");
 
@@ -37,9 +37,7 @@ $(document).ready(function(){
             msgShow(2, 'Atención', "Rellene todos los campos.");
             return false;
         }else{
-            // var formData = formNewRol.serializeArray();
             let url_ajax = base_url + "roles/setRol/";
-            // let success_data;
             $.ajax({
                 url: url_ajax,
                 dataType: 'JSON',
@@ -56,18 +54,37 @@ $(document).ready(function(){
 
                         if (rowTable == "") {
 
+                            let id_request = data.data_request.id_request;
+                            let id_user = data.data_request.id_user;
+
+                            let id_row = $("#tableRoles").DataTable().rows().count() + 1;
                             let btnPermissions = "";
                             let btnUpdate = "";
                             let btnDelete = "";
 
-                            for (var i = Things.length - 1; i >= 0; i--) {
-                                Things[i]
+                            if (id_user == 1) {
+                                btnPermissions = '<button type="button" class="btn btn-secondary btn-sm" onclick="permissions('+"'"+id_request+"'"+')" tilte="Permisos"><i class="fa-solid fa-key"></i></button>'
                             }
+
+                            if (id_user == 1) {
+                                btnUpdate = '<button type="button" class="btn btn-primary btn-sm" onclick="update('+"'"+id_request+"'"+')" tilte="Editar"><i class="fa-solid fa-pencil"></i></button>';
+                            }
+
+                            if (id_user == 1){
+                                btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="delete('+"'"+id_request+"'"+')" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
+                            }
+
+                            $("#tableRoles").DataTable().row.add([
+                                id_row,    
+                                capitalLetter(name),
+                                capitalLetter(description),
+                                htmlStatus,
+                                '<div class="text-center"> '+btnPermissions+" "+btnUpdate+" "+btnDelete+'</div>'
+                            ]).draw(false);
                         }
 
                         $('#modalFormRol').modal('hide');
                         msgShow(1, 'Permisos de Usuario', data.msg);
-                        // success_data = data;
                     }else{
                         msgShow(2, 'Atención', data.msg);
                     }
@@ -104,15 +121,6 @@ $(document).ready(function(){
         "order":[[0,"asc"]],
         "iDisplayLength":10,
     });
-
-    // let btnUpdate = $(".update");
-    // btnUpdate.each((index, element) => {
-    //     let id_rol = $(element).attr('data_id');
-
-    //     $(element).click(() => {
-
-    //     });
-    // });
 });
 
 
@@ -162,9 +170,8 @@ function permissions(data) {
 // --- ADD PERMISSIONS ACCORDING TO ROLE --- //
 function savePermission(e) {
     e.preventDefault();
-    console.log($(this))
-    var formData = $(this).serializeArray();
 
+    var formData = $(this).serializeArray();
     let url_ajax = base_url + "permissions/setPermissions/";
                 
     $.ajax({
@@ -190,4 +197,47 @@ function savePermission(e) {
         }
     });
     
+}
+
+// ---  --- //
+function update(data) {
+    // if (!data) {
+    //     return false;
+    // }else{
+    //     let url_ajax = base_url + "roles/getElementsByTagName('')Rol/";
+                
+    //     // $.ajax({
+    //     //     url: url_ajax,
+    //     //     dataType: 'html',
+    //     //     method: 'POST',
+    //     //     data: {
+    //     //         data: data,
+    //     //     },
+    //     //     success: function(data){
+
+    //     //         $("#contentModalPermissions").html(data);
+
+    //     //         // SWITCH OFF/ON
+    //     //         $("input[data-bootstrap-switch]").each(function(){
+    //     //             $(this).bootstrapSwitch('state', $(this).prop('checked'));
+    //     //         });
+    //     //         // -----------------------------
+                
+    //     //         $('.modalPermisos').modal('show');
+                
+    //     //         if($("#form_permissions").length){
+    //     //             $("#form_permissions").submit(savePermission);
+    //     //         }
+    //     //     },
+    //     //     error: function(e){
+    //     //         // console.log(e);
+    //     //     },
+    //     //     beforeSend: function(){
+    //     //         // console.log("antes completar");
+    //     //     },
+    //     //     complete: function(){
+    //     //         // console.log("completado");
+    //     //     }
+    //     // });
+    // }
 }
