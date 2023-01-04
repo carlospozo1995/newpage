@@ -112,10 +112,14 @@
 		    return bin2hex($encriptado);
 		}
 
-		public static function desencriptar($texto){   
-		   $objaes = new Aes(KEY_ENCRIPTAR);    
-		   $desencriptado = hex2bin($texto);
-		   return $objaes->decrypt($desencriptado);
+		public static function desencriptar($texto){ 
+			if(ctype_xdigit($texto) && strlen($texto) == 32){
+				$objaes = new Aes(KEY_ENCRIPTAR);    
+		   		$desencriptado = hex2bin($texto);
+		   		return $objaes->decrypt($desencriptado);
+		   	}else{
+		   		return false;
+		   	}
 		}
 		
 		static public function sendEmail($data, $template)

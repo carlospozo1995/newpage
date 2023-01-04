@@ -1,10 +1,10 @@
 
 'use strict';
 
-$(document).ready(function(){
+var tableRoles;
+var rowTable;   
 
-    var tableRoles;
-    var rowTable = "";
+$(document).ready(function(){
 
     var formNewRol = $("#formNewRol");
 
@@ -14,11 +14,12 @@ $(document).ready(function(){
             formNewRol.find("#idRol").val("");
             $(".modal-header").removeClass("headerUpdate").addClass("headerRegister");
             $(".modal-title").text("Nuevo Rol");
-            $("btnSubmitRol").removeClass("bg-success").addClass("btn-primary");
+            $("#btnSubmitRol").removeClass("bg-success").addClass("btn-primary");
             $(".btnText").text("Guardar");
             formNewRol.trigger("reset");
 
             $('#modalFormRol').modal('show');
+            rowTable = "";
 
         });       
     }
@@ -27,7 +28,6 @@ $(document).ready(function(){
     // --- ADD NEW ROL --- //
     formNewRol.submit((e) => {
         e.preventDefault();
-
         let id = $("#idRol").val();
         let name = $("#name_rol").val();
         let description = $("#descrip_rol").val();
@@ -53,7 +53,6 @@ $(document).ready(function(){
                         let htmlStatus = status == 1 ? '<div class="text-center"><span class="bg-success p-1 rounded"><i class="fa-solid fa-user"></i> Activo</span></div>' : '<div class="text-center"><span class="bg-danger p-1 rounded"><i class="fa-solid fa-user-slash"></i> Inactivo</span></div>';
 
                         if (rowTable == "") {
-
                             let id_request = data.data_request.id_request;
                             let id_user = data.data_request.id_user;
 
@@ -67,11 +66,11 @@ $(document).ready(function(){
                             }
 
                             if (id_user == 1) {
-                                btnUpdate = '<button type="button" class="btn btn-primary btn-sm" onclick="update('+"'"+id_request+"'"+')" tilte="Editar"><i class="fa-solid fa-pencil"></i></button>';
+                                btnUpdate = '<button type="button" class="btn btn-primary btn-sm" onclick="edit(this, '+"'"+id_request+"'"+')" tilte="Editar"><i class="fa-solid fa-pencil"></i></button>';
                             }
 
                             if (id_user == 1){
-                                btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="delete('+"'"+id_request+"'"+')" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
+                                btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="delete(this, '+"'"+id_request+"'"+')" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
                             }
 
                             $("#tableRoles").DataTable().row.add([
@@ -81,8 +80,17 @@ $(document).ready(function(){
                                 htmlStatus,
                                 '<div class="text-center"> '+btnPermissions+" "+btnUpdate+" "+btnDelete+'</div>'
                             ]).draw(false);
+                        }else{
+                            let n_row = $(rowTable).find("td:eq(0)").html();
+                            let buttons_html = $(rowTable).find("td:eq(4)").html()
+                            $("#tableRoles").DataTable().row(rowTable).data([
+                                n_row,    
+                                capitalLetter(name),
+                                capitalLetter(description),
+                                htmlStatus,
+                                buttons_html,
+                            ]).draw(false);
                         }
-
                         $('#modalFormRol').modal('hide');
                         msgShow(1, 'Permisos de Usuario', data.msg);
                     }else{
@@ -199,45 +207,52 @@ function savePermission(e) {
     
 }
 
-// ---  --- //
-function update(data) {
-    // if (!data) {
-    //     return false;
-    // }else{
-    //     let url_ajax = base_url + "roles/getElementsByTagName('')Rol/";
-                
-    //     // $.ajax({
-    //     //     url: url_ajax,
-    //     //     dataType: 'html',
-    //     //     method: 'POST',
-    //     //     data: {
-    //     //         data: data,
-    //     //     },
-    //     //     success: function(data){
+// --- EDIT ROLE --- //
+function edit(element, data) {
+    rowTable = $(element).closest("tr")[0];
+    let ischild = $(rowTable).hasClass("child");
+    if(ischild){
+        rowTable = $(rowTable).prev()[0];
+    }
 
-    //     //         $("#contentModalPermissions").html(data);
+    $(".modal-header").removeClass("headerRegister").addClass("headerUpdate");
+    $(".modal-title").text("Actualizar rol");
+    $("#btnSubmitRol").removeClass("btn-primary").addClass("bg-success");
+    $(".btnText").text("Actualizar");
 
-    //     //         // SWITCH OFF/ON
-    //     //         $("input[data-bootstrap-switch]").each(function(){
-    //     //             $(this).bootstrapSwitch('state', $(this).prop('checked'));
-    //     //         });
-    //     //         // -----------------------------
+    if (!data) {
+        return false;
+    }else{
+        let url_ajax = base_url + "roles/getRol/";
                 
-    //     //         $('.modalPermisos').modal('show');
-                
-    //     //         if($("#form_permissions").length){
-    //     //             $("#form_permissions").submit(savePermission);
-    //     //         }
-    //     //     },
-    //     //     error: function(e){
-    //     //         // console.log(e);
-    //     //     },
-    //     //     beforeSend: function(){
-    //     //         // console.log("antes completar");
-    //     //     },
-    //     //     complete: function(){
-    //     //         // console.log("completado");
-    //     //     }
-    //     // });
-    // }
+        $.ajax({
+            url: url_ajax,
+            dataType: 'JSON',
+            method: 'POST',
+            data: {
+                data: data,
+            },
+            success: function(data){
+                if (data.status) {
+                    $("#idRol").val(data.data_request.id_rol);
+                    $("#name_rol").val(data.data_request.name_rol);
+                    $("#descrip_rol").val(data.data_request.description_rol);
+                    $("#status_rol").val(data.data_request.status);
+
+                    $('#modalFormRol').modal('show');
+                }else{
+                    msgShow(3, 'Error', data.msg);
+                }
+            },
+            error: function(e){
+                // console.log(e);
+            },
+            beforeSend: function(){
+                // console.log("antes completar");
+            },
+            complete: function(){
+                // console.log("completado");
+            }
+        });
+    }
 }

@@ -11,6 +11,7 @@ RewriteRule ^(login/|login|Login|LOGIN)/ajaxLogin/$ %{ENV:REWRITEBASE}index.php?
 RewriteRule ^(dashboard/|dashboard|Dashboard)$ %{ENV:REWRITEBASE}index.php?show=dashboard [L]
 RewriteRule ^(roles/|roles|Roles)$ %{ENV:REWRITEBASE}index.php?show=roles [L]
 RewriteRule ^(roles/|roles|Roles)/setRol/$ %{ENV:REWRITEBASE}index.php?show=roles&action=setRol [L]
+RewriteRule ^(roles/|roles|Roles)/getRol/$ %{ENV:REWRITEBASE}index.php?show=roles&action=getRol [L]
 RewriteRule ^permissions/getPermissions/$ %{ENV:REWRITEBASE}index.php?show=permissions&action=getPermissions [L]
 RewriteRule ^permissions/setPermissions/$ %{ENV:REWRITEBASE}index.php?show=permissions&action=setPermissions [L]
 

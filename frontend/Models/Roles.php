@@ -23,7 +23,7 @@
 			$sql = "SELECT * FROM roles WHERE name_rol = ?";
 			$request = $GLOBALS["db"]->auto_array($sql, array($name_test));
 			if (empty($request)) {
-				$result = $GLOBALS["db"]->insert_multiple("roles",$data);
+				$result = $GLOBALS["db"]->insert_multiple("roles", $data);
 			}else{
 				$result = "exists_data";
 			}
@@ -31,6 +31,29 @@
 			return $result;
 		}
 
+		static public function selectRol($data)
+		{
+			if(empty($data)){return false;}
+			$sql = "SELECT * FROM roles WHERE id_rol = ?";
+			return $GLOBALS["db"]->auto_array($sql, array($data));
+		}
+
+		static public function updateRol($id, $name, $description, $status)
+		{	
+			$sql = "SELECT * FROM roles WHERE name_rol = ? AND id_rol != ?";
+			$request = $GLOBALS["db"]->auto_array($sql, array($name, $id));
+
+			if (empty($request)) {
+				if (empty($id)) {return false;}
+				$arrData = array("name_rol" => ucfirst($name), "description_rol" => ucfirst($description), "status" => $status);
+				$result = $GLOBALS["db"]->update("roles", $arrData, "id_rol='".$id."'");
+				return $result;
+			}else{
+				$result = "exists_data";
+			}
+
+			return $result;
+		}
 	}
 
 ?>
