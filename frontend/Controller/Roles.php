@@ -78,7 +78,7 @@
 								$msg = "";
 								$data_request = array("id_rol" => Utils::encriptar($data_rol["id_rol"]), "name_rol" => $data_rol["name_rol"], "description_rol" => $data_rol["description_rol"], "status" => $data_rol["status"]);
 							}else{
-								throw new Exception("Ha existido un error. Intentelo mas tarde.");
+								throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
 							}
 						} catch (Exception $e) {
 							$status = false;
@@ -86,6 +86,32 @@
 							$data_request = "";
 						}
 						$data = array("status" => $status,"msg" => $msg, "data_request" => $data_request);
+						echo json_encode($data);
+					}
+				break;
+
+				case 'delRol':
+					if (empty(Utils::getParam("data", ""))) {
+						return false;
+					}else{
+						$id_rol = Utils::desencriptar(Utils::getParam("data", ""));
+						try {
+							$delRol = Models_Roles::deleteRol($id_rol);
+
+							if ($delRol == "ok") {
+								$status = true;
+								$msg = "Se ha eliminado el rol con existo.";
+							}else if ($delRol == "exists") {
+								throw new Exception("No es posible elimininar un rol asociado a un usuario.");
+							}else{
+								throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
+							}
+						} catch (Exception $e) {
+							$status = false;
+							$msg = $e->getMessage();
+						}
+
+						$data = array("status" => $status,"msg" => $msg);
 						echo json_encode($data);
 					}
 				break;

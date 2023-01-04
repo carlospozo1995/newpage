@@ -60,7 +60,7 @@
 			                      	}
 
 			                      	if ($_SESSION['idUser'] == 1){
-			                        	$btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="delete(this, \''.$id_rol.'\')" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
+			                        	$btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="deleteData(this, \''.$id_rol.'\')" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
 			                      	}
 
 			                      	if ($value['status'] == 1) {

@@ -54,6 +54,24 @@
 
 			return $result;
 		}
+
+		static public function deleteRol($data)
+		{
+			$sql = "SELECT * FROM users WHERE rolid = ?";
+			$request = $GLOBALS["db"]->auto_array($sql, array($data));
+			
+			if (empty($request)) {
+				if (empty($data)) {return false;}
+				$status['status'] = 0;
+				$request_update =  $GLOBALS["db"]->update("roles", $status, "id_rol='".$data."'");
+				
+				if($request_update) { $result = "ok"; }
+			}else{
+				$result = "exists";
+			}
+
+			return $result;
+		}
 	}
 
 ?>

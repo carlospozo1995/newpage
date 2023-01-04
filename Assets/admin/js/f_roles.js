@@ -70,7 +70,7 @@ $(document).ready(function(){
                             }
 
                             if (id_user == 1){
-                                btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="delete(this, '+"'"+id_request+"'"+')" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
+                                btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="deleteData(this, '+"'"+id_request+"'"+')" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
                             }
 
                             $("#tableRoles").DataTable().row.add([
@@ -255,4 +255,61 @@ function edit(element, data) {
             }
         });
     }
+}
+
+// --- DELETE ROLE --- //
+function deleteData(element, data) {
+    Swal.fire({
+        title: 'Eliminar Rol',
+        text: "Realmente quiere eliminar el rol!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminar!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            if (!data) {
+                return false;
+            }else{
+                let url_ajax = base_url + "roles/delRol/";
+                        
+                $.ajax({
+                    url: url_ajax,
+                    dataType: 'JSON',
+                    method: 'POST',
+                    data: {
+                        data: data,
+                    },  
+                    success: function(data){
+                        if (data.status) {
+                            let row_closest = $(element).closest("tr");
+                            if(row_closest.length){
+                                let ischild = $(row_closest).hasClass("child");
+                                if(ischild){
+                                    let prevtr = row_closest.prev();
+                                    if(prevtr.length){
+                                        $("#tableRoles").DataTable().row(prevtr[0]).remove().draw(false);
+                                    }
+                                }
+                                else{
+                                    $("#tableRoles").DataTable().row(row_closest[0]).remove().draw(false);
+                                }
+                            }
+                            // --------
+                        }
+                    },
+                    error: function(e){
+                        // console.log(e);
+                    },
+                    beforeSend: function(){
+                        // console.log("antes completar");
+                    },
+                    complete: function(){
+                        // console.log("completado");
+                    }
+                });
+            }
+        }
+    });
 }
