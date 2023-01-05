@@ -10,6 +10,7 @@
 			}
 
 			Utils::permissionsData(1);
+			Utils::dep("local");
 
 			$variable["file_css"][] = "c_dashboard";
             $variable["file_js"][] = "f_dashboard";
