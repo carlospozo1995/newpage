@@ -13,9 +13,6 @@
 		{
 			if(empty($data) || !is_array($data)){return false;}
 
-			$name_test;
-			$result;
-
 			foreach ($data as $key => $value) {
 				$name_test = $value['name_rol'];	
 			}
