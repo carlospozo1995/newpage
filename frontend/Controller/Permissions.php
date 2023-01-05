@@ -17,48 +17,50 @@
 						return false;
 					}else{
 						$id_rol = Utils::desencriptar(Utils::getParam("data", ""));
+						
+						// Required role data
+						$data_rol = Models_Permissions::getRol($id_rol);
 
-						if ($id_rol > 0) {
-							// Required role data
-							$data_rol = Models_Permissions::getRol($id_rol);
-							
-							// Module table data
-							$data_modules = Models_Permissions::getAllModules();
-							
-							//Permissions table data(empty)
-							$data_permissions_rol = Models_Permissions::getPermissionsRol($id_rol);
+						//Module table data
+						$data_modules = Models_Permissions::getAllModules();
+						
+						//Permissions table data(empty)
+						$data_permissions_rol = Models_Permissions::getPermissionsRol($id_rol);
 
-							// Var data permissions empty //
-							$arr_permissions = "";
-	                		// -------------------- //
+						// Var data permissions empty //
+						$arr_permissions = "";
+                		// -------------------- //
 
-							if (empty($data_permissions_rol)) {
-	                			$arr_permissions  =  array('ver' => 0, 'crear' => 0, 'actualizar' => 0, 'eliminar' => 0);
-			                    for ($i=0; $i < count($data_modules); $i++) {
-			                        $data_modules[$i]['permissions'] = $arr_permissions;
-			                    }
-			                }else{
-			                    for ($i=0; $i < count($data_modules); $i++) { 
-			                        $arr_permissions = array('ver' => 0, 'crear' => 0, 'actualizar' => 0, 'eliminar' => 0);
+						if (empty($data_permissions_rol)) {
+                			$arr_permissions  =  array('ver' => 0, 'crear' => 0, 'actualizar' => 0, 'eliminar' => 0);
+		                    for ($i=0; $i < count($data_modules); $i++) {
+		                        $data_modules[$i]['permissions'] = $arr_permissions;
+		                    }
+		                }else{
+		                    for ($i=0; $i < count($data_modules); $i++) { 
+		                        $arr_permissions = array('ver' => 0, 'crear' => 0, 'actualizar' => 0, 'eliminar' => 0);
 
-			                        if (isset($data_permissions_rol[$i])) {
+		                        if (isset($data_permissions_rol[$i])) {
 
-			                            $arr_permissions = array('ver' => $data_permissions_rol[$i]['ver'],
-				                                                'crear' => $data_permissions_rol[$i]['crear'],
-				                                                'actualizar' => $data_permissions_rol[$i]['actualizar'],
-				                                                'eliminar' => $data_permissions_rol[$i]['eliminar']
-				                                                );
-			                        }
+		                            $arr_permissions = array('ver' => $data_permissions_rol[$i]['ver'],
+			                                                'crear' => $data_permissions_rol[$i]['crear'],
+			                                                'actualizar' => $data_permissions_rol[$i]['actualizar'],
+			                                                'eliminar' => $data_permissions_rol[$i]['eliminar']
+			                                                );
+		                        }
 
-			                        $data_modules[$i]['permissions'] = $arr_permissions;
-			                    }
-			                }
+		                        $data_modules[$i]['permissions'] = $arr_permissions;
+		                    }
+		                }
 
-			                $arrData_Modal = array("idRol" => $id_rol);
+		                if ($data_rol == "error") {
+		                	return ;
+		                }else{
+		                	$arrData_Modal = array("idRol" => $id_rol);
 	                		$arrData_Modal['modules'] = $data_modules;
 	                		$arrData_Modal['rol'] = $data_rol;
 	                		return Utils::loadModalFile("permissions", $arrData_Modal);
-						}
+		                }
 					}
 
 				break;

@@ -147,19 +147,23 @@ function permissions(data) {
                 data: data,
             },
             success: function(data){
-
-                $("#contentModalPermissions").html(data);
-
-                // SWITCH OFF/ON
-                $("input[data-bootstrap-switch]").each(function(){
-                    $(this).bootstrapSwitch('state', $(this).prop('checked'));
-                });
-                // -----------------------------
                 
-                $('.modalPermisos').modal('show');
-                
-                if($("#form_permissions").length){
-                    $("#form_permissions").submit(savePermission);
+                if (data == "") {
+                    msgShow(3, 'Error', "Ha ocurrido un error. Intentelo mas tarde.");
+                }else{
+                    $("#contentModalPermissions").html(data);
+
+                    // SWITCH OFF/ON
+                    $("input[data-bootstrap-switch]").each(function(){
+                        $(this).bootstrapSwitch('state', $(this).prop('checked'));
+                    });
+                    // -----------------------------
+                    
+                    $('.modalPermisos').modal('show');
+                    
+                    if($("#form_permissions").length){
+                        $("#form_permissions").submit(savePermission);
+                    }
                 }
             },
             error: function(e){
@@ -297,6 +301,7 @@ function deleteData(element, data) {
                                 }
                             }
 
+                            // Reset the id column of the data table
                             let rows = $("#tableRoles").DataTable().rows().nodes();
 
                             for (let i = 0; i < rows.length; i++) {
@@ -305,6 +310,7 @@ function deleteData(element, data) {
                                 row.attr("id", "row-" + id);
                                 row.find("td:first").text(id);
                             }
+                            // -------------------------------------
                             
                             msgShow(1, 'Eliminado', data.msg);
                         }else{

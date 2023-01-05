@@ -5,7 +5,9 @@
 		static public function getRol($idRol)
 		{
 			$sql = "SELECT * FROM roles WHERE id_rol = ?";
-			$result = $GLOBALS["db"]->auto_array($sql, array($idRol));
+			$request = $GLOBALS["db"]->auto_array($sql, array($idRol));
+			
+			!empty($request) ? $result = $request : $result = "error"; 
 			return $result;
 		}
 
