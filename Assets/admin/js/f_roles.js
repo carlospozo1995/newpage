@@ -2,7 +2,7 @@
 'use strict';
 
 var tableRoles;
-var rowTable;   
+var rowTable;
 
 $(document).ready(function(){
 
@@ -296,7 +296,19 @@ function deleteData(element, data) {
                                     $("#tableRoles").DataTable().row(row_closest[0]).remove().draw(false);
                                 }
                             }
-                            // --------
+
+                            let rows = $("#tableRoles").DataTable().rows().nodes();
+
+                            for (let i = 0; i < rows.length; i++) {
+                                let row = $(rows[i]);
+                                let id = i + 1;
+                                row.attr("id", "row-" + id);
+                                row.find("td:first").text(id);
+                            }
+                            
+                            msgShow(1, 'Eliminado', data.msg);
+                        }else{
+                            msgShow(3, 'Error', data.msg);
                         }
                     },
                     error: function(e){
