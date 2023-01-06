@@ -36,6 +36,7 @@ function showPass(obj) {
     }
 }
 
+// TEST PASSWORD - EXPRESSION REGULAR
 function testPass(txtString) {
     var stringText = new RegExp(/^(?=.*\d)(?=.*[a-z]).{8,}$/);
     if (stringText.test(txtString)){
@@ -45,6 +46,19 @@ function testPass(txtString) {
     }
 }
 
+// FIRST LETTER IN CAPITAL LETTER
 function capitalLetter(text) {
     return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+// RESET THE ID COLUMN OF THE DATA TABLE
+function resetIdTable(dataTable) {
+    let rows = dataTable.DataTable().rows().nodes();
+
+    for (let i = 0; i < rows.length; i++) {
+        let row = $(rows[i]);
+        let id = i + 1;
+        row.attr("id", "row-" + id);
+        row.find("td:first").text(id);
+    }
 }

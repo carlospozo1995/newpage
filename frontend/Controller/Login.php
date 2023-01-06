@@ -8,7 +8,7 @@
 			if (Utils::isLogged()) {
 				header('Location: '.BASE_URL.'Dashboard');
 			}
-
+			// Utils::dep($_SESSION['id_user_token']);
 			$action = Utils::getParam("action", "");
 			$data = array();
 			$msg = "";
@@ -72,7 +72,7 @@
 
 								$dataEmailUser = array( "name" => $nameUser,
 														"email" => $resetEmail,
-														"asunto" => 'Recuperación de contraseña -'.NAME_EMPRESA,
+														"asunto" => 'Recuperación de contraseña - '.NAME_EMPRESA,
 														"url_recovery" => $url_recovery
 													); 
 

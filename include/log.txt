@@ -659,3 +659,394 @@
 [2023/01/05 12:03:06] SQL Query: SELECT * FROM permissions WHERE rol_id = '1'
 [2023/01/05 12:03:10] SQL execute: DELETE FROM permissions WHERE rol_id=1
 [2023/01/05 12:03:10] SQL execute: INSERT INTO permissions (rol_id,module_id,ver,crear,actualizar,eliminar) VALUES('1','1',1,1,1,1),('1','2',1,1,1,1);
+[2023/01/05 12:06:47] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 12:06:56] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 12:06:56] SQL Query: SELECT * FROM roles WHERE status != '0'
+[2023/01/05 12:07:19] SQL Query: SELECT * FROM roles WHERE id_rol = '35'
+[2023/01/05 12:07:31] SQL Query: SELECT * FROM roles WHERE id_rol = '34'
+[2023/01/05 12:07:31] SQL Query: SELECT * FROM modules WHERE status != '0'
+[2023/01/05 12:07:31] SQL Query: SELECT * FROM permissions WHERE rol_id = '34'
+[2023/01/05 12:07:44] SQL Query: SELECT * FROM roles WHERE id_rol = ''
+[2023/01/05 12:07:44] SQL Query: SELECT * FROM modules WHERE status != '0'
+[2023/01/05 12:07:44] SQL Query: SELECT * FROM permissions WHERE rol_id = ''
+[2023/01/05 12:08:20] SQL Query: SELECT * FROM users WHERE rolid = ''
+[2023/01/05 12:08:26] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 12:08:26] SQL Query: SELECT * FROM roles WHERE status != '0'
+[2023/01/05 11:49:26] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/01/05 11:49:26] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/01/05 11:49:26] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 11:49:48] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
+[2023/01/05 11:51:16] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 11:51:16] SQL Query: SELECT * FROM roles WHERE status != '0'
+[2023/01/05 12:02:50] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 12:02:50] SQL Query: SELECT * FROM roles WHERE status != '0'
+[2023/01/05 12:03:02] SQL Query: SELECT * FROM users WHERE rolid = '33'
+[2023/01/05 12:03:02] SQL execute: UPDATE roles SET status=0 WHERE id_rol='33'
+[2023/01/05 12:03:11] SQL Query: SELECT * FROM roles WHERE id_rol = '35'
+[2023/01/05 12:03:19] SQL Query: SELECT * FROM users WHERE rolid = '35'
+[2023/01/05 12:03:19] SQL execute: UPDATE roles SET status=0 WHERE id_rol='35'
+[2023/01/05 12:03:28] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 12:03:28] SQL Query: SELECT * FROM roles WHERE status != '0'
+[2023/01/05 12:04:01] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 12:04:01] SQL Query: SELECT * FROM roles WHERE status != '0'
+[2023/01/05 12:04:31] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 12:04:31] SQL Query: SELECT * FROM roles WHERE status != '0'
+[2023/01/05 12:05:10] SQL Query: SELECT * FROM roles WHERE id_rol = '34'
+[2023/01/05 12:05:13] SQL Query: SELECT * FROM roles WHERE id_rol = '34'
+[2023/01/05 12:05:17] SQL Query: SELECT * FROM users WHERE rolid = '34'
+[2023/01/05 12:05:17] SQL execute: UPDATE roles SET status=0 WHERE id_rol='34'
+[2023/01/05 12:05:57] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 12:05:57] SQL Query: SELECT * FROM roles WHERE status != '0'
+[2023/01/05 12:06:07] SQL Query: SELECT * FROM users WHERE rolid = '35'
+[2023/01/05 12:06:07] SQL execute: UPDATE roles SET status=0 WHERE id_rol='35'
+[2023/01/05 12:06:15] SQL Query: SELECT * FROM users WHERE rolid = '36'
+[2023/01/05 12:06:15] SQL execute: UPDATE roles SET status=0 WHERE id_rol='36'
+[2023/01/05 12:06:26] SQL Query: SELECT * FROM users WHERE rolid = '32'
+[2023/01/05 12:06:26] SQL execute: UPDATE roles SET status=0 WHERE id_rol='32'
+[2023/01/05 12:10:01] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 12:10:01] SQL Query: SELECT * FROM roles WHERE status != '0'
+[2023/01/05 12:10:12] SQL Query: SELECT * FROM users WHERE rolid = '33'
+[2023/01/05 12:10:12] SQL execute: UPDATE roles SET status=0 WHERE id_rol='33'
+[2023/01/05 12:10:19] SQL Query: SELECT * FROM users WHERE rolid = '6'
+[2023/01/05 12:10:19] SQL execute: UPDATE roles SET status=0 WHERE id_rol='6'
+[2023/01/05 12:12:40] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 12:12:40] SQL Query: SELECT * FROM roles WHERE status != '0'
+[2023/01/05 12:12:56] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 12:12:56] SQL Query: SELECT * FROM roles WHERE status != '0'
+[2023/01/05 12:13:07] SQL Query: SELECT * FROM users WHERE rolid = '33'
+[2023/01/05 12:13:07] SQL execute: UPDATE roles SET status=0 WHERE id_rol='33'
+[2023/01/05 12:13:25] SQL Query: SELECT * FROM users WHERE rolid = '36'
+[2023/01/05 12:13:25] SQL execute: UPDATE roles SET status=0 WHERE id_rol='36'
+[2023/01/05 12:13:35] SQL Query: SELECT * FROM users WHERE rolid = '32'
+[2023/01/05 12:13:35] SQL execute: UPDATE roles SET status=0 WHERE id_rol='32'
+[2023/01/05 12:13:44] SQL Query: SELECT * FROM users WHERE rolid = '31'
+[2023/01/05 12:13:44] SQL execute: UPDATE roles SET status=0 WHERE id_rol='31'
+[2023/01/05 12:14:00] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 12:14:00] SQL Query: SELECT * FROM roles WHERE status != '0'
+[2023/01/05 12:14:18] SQL Query: SELECT * FROM users WHERE rolid = '34'
+[2023/01/05 12:14:18] SQL execute: UPDATE roles SET status=0 WHERE id_rol='34'
+[2023/01/05 12:20:43] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 12:20:43] SQL Query: SELECT * FROM roles WHERE status != '0'
+[2023/01/05 12:21:08] SQL Query: SELECT * FROM roles WHERE id_rol = ''
+[2023/01/05 12:21:08] SQL Query: SELECT * FROM modules WHERE status != '0'
+[2023/01/05 12:21:08] SQL Query: SELECT * FROM permissions WHERE rol_id = ''
+[2023/01/05 12:21:15] SQL Query: SELECT * FROM roles WHERE id_rol = '35'
+[2023/01/05 12:21:15] SQL Query: SELECT * FROM modules WHERE status != '0'
+[2023/01/05 12:21:15] SQL Query: SELECT * FROM permissions WHERE rol_id = '35'
+[2023/01/05 12:21:19] SQL Query: SELECT * FROM roles WHERE id_rol = ''
+[2023/01/05 12:21:19] SQL Query: SELECT * FROM modules WHERE status != '0'
+[2023/01/05 12:21:19] SQL Query: SELECT * FROM permissions WHERE rol_id = ''
+[2023/01/05 12:24:32] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 12:24:32] SQL Query: SELECT * FROM roles WHERE status != '0'
+[2023/01/05 12:25:09] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 12:25:09] SQL Query: SELECT * FROM roles WHERE status != '0'
+[2023/01/05 01:39:13] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 01:39:15] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 01:39:52] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/01/05 01:39:52] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/01/05 01:39:52] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 01:39:57] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 01:41:07] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 01:41:09] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 01:42:45] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 01:42:47] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 02:24:30] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 02:24:32] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 02:34:46] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 02:34:49] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 03:04:30] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 03:05:10] SQL execute: UPDATE users SET password="5bbe8ae0595ae2af0168d6ace893831b49e65b0a",update_status=1 WHERE id_user='1'
+[2023/01/05 03:05:37] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = '5bbe8ae0595ae2af0168d6ace893831b49e65b0a'
+[2023/01/05 03:05:37] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/01/05 03:05:37] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 03:05:55] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 03:05:55] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 03:06:08] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 03:48:39] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 03:48:41] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 03:53:00] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/01/05 03:53:09] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 03:53:10] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 03:53:33] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 03:55:46] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 03:55:49] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 03:56:05] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 03:56:19] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 03:56:28] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 03:56:38] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 03:56:48] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 03:57:04] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/01/05 03:57:10] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = '5bbe8ae0595ae2af0168d6ace893831b49e65b0a'
+[2023/01/05 03:57:10] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/01/05 03:57:10] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 03:58:44] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 03:59:06] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 03:59:10] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 03:59:31] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:01:34] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:01:50] SQL execute: UPDATE users SET password="ff0edd646698f65fa2c8680d00391e368b6d4315",update_status=1 WHERE id_user='1'
+[2023/01/05 04:03:27] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/01/05 04:03:27] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/01/05 04:03:27] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 04:03:46] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 04:03:50] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 04:04:11] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:05:26] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:05:36] SQL execute: UPDATE users SET password="ff0edd646698f65fa2c8680d00391e368b6d4315",update_status=1 WHERE id_user='1'
+[2023/01/05 04:08:08] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 04:08:11] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 04:08:26] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:08:35] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:09:45] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:09:57] SQL execute: UPDATE users SET password="5bbe8ae0595ae2af0168d6ace893831b49e65b0a",update_status=1 WHERE id_user='1'
+[2023/01/05 04:24:26] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 04:24:28] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 04:24:41] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:25:09] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:25:15] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:25:20] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:25:22] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:25:25] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:25:33] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:26:18] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:26:32] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:29:19] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:29:35] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 04:29:37] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 04:29:54] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:31:39] SQL execute: UPDATE users SET password="ff0edd646698f65fa2c8680d00391e368b6d4315",update_status=1 WHERE id_user='1'
+[2023/01/05 04:34:51] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:35:39] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 04:35:40] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 04:35:53] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:36:05] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:36:41] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:37:31] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:37:41] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:41:53] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 04:41:57] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 04:42:12] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:42:25] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:42:36] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 04:43:06] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:24:03] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:25:04] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:35:10] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:36:03] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:36:32] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:37:15] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:38:08] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:39:01] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:41:53] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:42:18] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:42:50] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:44:46] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:47:45] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:48:04] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:48:42] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 05:48:44] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 05:48:57] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:49:06] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:49:53] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:50:11] SQL execute: UPDATE users SET password="5bbe8ae0595ae2af0168d6ace893831b49e65b0a",update_status=1 WHERE id_user='1'
+[2023/01/05 05:50:43] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:50:51] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:52:26] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 05:52:28] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 05:52:40] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:53:45] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:56:20] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:57:11] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 05:57:13] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 05:57:49] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:58:08] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 05:58:15] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 06:52:02] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 06:52:04] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 06:52:16] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 06:52:57] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 06:53:04] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 06:53:24] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 06:53:57] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 06:53:59] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 06:54:27] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 06:54:35] SQL execute: UPDATE users SET password="ff0edd646698f65fa2c8680d00391e368b6d4315",update_status=1 WHERE id_user='1'
+[2023/01/05 06:55:24] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 06:55:26] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 06:55:43] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 06:55:58] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 06:56:03] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 06:56:08] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 06:56:14] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 06:56:18] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 06:56:23] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 06:56:28] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 06:59:23] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 06:59:25] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 06:59:37] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 07:00:35] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 07:45:41] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/01/05 07:45:41] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/01/05 07:45:41] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 07:46:00] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 07:46:03] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 07:46:19] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 07:46:33] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 07:47:00] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 07:47:57] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 07:47:58] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 07:48:58] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 07:49:00] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 07:49:09] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 07:50:19] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 07:50:44] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 07:51:59] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 07:52:01] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 07:52:13] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 07:52:30] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 07:53:02] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 07:54:10] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 07:54:12] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 07:54:24] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 07:54:37] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 07:55:11] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 07:56:06] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 07:56:19] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 07:56:21] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 07:56:33] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 07:58:32] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 07:58:48] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 07:59:07] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 07:59:09] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 07:59:21] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 07:59:36] SQL execute: UPDATE users SET password="5bbe8ae0595ae2af0168d6ace893831b49e65b0a",update_status=1 WHERE id_user='1'
+[2023/01/05 07:59:41] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 08:00:05] SQL execute: UPDATE users SET password="ff0edd646698f65fa2c8680d00391e368b6d4315",update_status=1 WHERE id_user='1'
+[2023/01/05 08:06:02] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 08:06:03] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 08:06:16] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 08:06:31] SQL execute: UPDATE users SET password="5bbe8ae0595ae2af0168d6ace893831b49e65b0a",update_status=1 WHERE id_user='1'
+[2023/01/05 08:09:18] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 08:09:46] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 08:09:50] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 08:10:04] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 08:10:20] SQL execute: UPDATE users SET password="3eb75f1c8979e17adfcb1644e53a839308a2af4e",update_status=1 WHERE id_user='1'
+[2023/01/05 08:12:57] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 08:13:00] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 08:13:14] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 08:13:29] SQL execute: UPDATE users SET password="ff0edd646698f65fa2c8680d00391e368b6d4315",update_status=1 WHERE id_user='1'
+[2023/01/05 08:17:51] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 08:18:39] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 08:18:49] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 08:18:52] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 08:19:08] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 08:19:29] SQL execute: UPDATE users SET password="3eb75f1c8979e17adfcb1644e53a839308a2af4e",update_status=1 WHERE id_user='1'
+[2023/01/05 08:24:21] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 08:24:24] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 08:24:35] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 08:24:57] SQL execute: UPDATE users SET password="5bbe8ae0595ae2af0168d6ace893831b49e65b0a",update_status=1 WHERE id_user='1'
+[2023/01/05 08:26:09] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 08:42:20] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 08:42:22] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 08:42:40] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 08:43:03] SQL execute: UPDATE users SET password="5bbe8ae0595ae2af0168d6ace893831b49e65b0a",update_status=1 WHERE id_user='1'
+[2023/01/05 08:43:16] SQL execute: UPDATE users SET password="80792ed30c4573459fa1e41775fc0f181bdc7cc2",update_status=1 WHERE id_user='1'
+[2023/01/05 08:43:27] SQL execute: UPDATE users SET password="80792ed30c4573459fa1e41775fc0f181bdc7cc2",update_status=1 WHERE id_user='1'
+[2023/01/05 08:44:22] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 08:45:12] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 08:45:17] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 08:45:42] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 08:45:57] SQL execute: UPDATE users SET password="ff0edd646698f65fa2c8680d00391e368b6d4315",update_status=1 WHERE id_user='1'
+[2023/01/05 08:52:10] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 08:52:52] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 08:52:54] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 08:53:14] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 08:53:28] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 08:54:42] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 08:54:53] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 08:54:57] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 08:55:14] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 08:55:23] SQL execute: UPDATE users SET password="5bbe8ae0595ae2af0168d6ace893831b49e65b0a",update_status=1 WHERE id_user='1'
+[2023/01/05 08:58:53] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 08:59:42] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 08:59:44] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 09:00:02] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:00:18] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:00:25] SQL execute: UPDATE users SET password="ff0edd646698f65fa2c8680d00391e368b6d4315",update_status=1 WHERE id_user='1'
+[2023/01/05 09:01:08] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:01:45] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 09:01:49] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 09:02:07] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:02:27] SQL execute: UPDATE users SET password="2f60ad834d55ad4d7224446f8f7719041a0c83ce",update_status=1 WHERE id_user='1'
+[2023/01/05 09:02:33] SQL execute: UPDATE users SET password="3a9c6b9a745d4ef364f516957db6793e2e8decba",update_status=1 WHERE id_user='1'
+[2023/01/05 09:19:50] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:19:59] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 09:20:03] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 09:20:24] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:20:42] SQL execute: UPDATE users SET password="ff0edd646698f65fa2c8680d00391e368b6d4315",update_status=1 WHERE id_user='1'
+[2023/01/05 09:21:43] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:22:01] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 09:22:03] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 09:22:24] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:22:46] SQL execute: UPDATE users SET password="5bbe8ae0595ae2af0168d6ace893831b49e65b0a",update_status=1 WHERE id_user='1'
+[2023/01/05 09:25:16] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:25:44] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 09:25:46] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 09:26:07] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:26:31] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:26:32] SQL execute: UPDATE users SET password="ff0edd646698f65fa2c8680d00391e368b6d4315",update_status=1 WHERE id_user='1'
+[2023/01/05 09:27:18] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:27:33] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 09:27:35] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 09:27:55] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:28:14] SQL execute: UPDATE users SET password="5bbe8ae0595ae2af0168d6ace893831b49e65b0a",update_status=1 WHERE id_user='1'
+[2023/01/05 09:32:24] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:32:40] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 09:32:42] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 09:33:02] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:33:17] SQL execute: UPDATE users SET password="ff0edd646698f65fa2c8680d00391e368b6d4315",update_status=1 WHERE id_user='1'
+[2023/01/05 09:41:29] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:42:10] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 09:42:12] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 09:42:31] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:42:49] SQL execute: UPDATE users SET password="2f60ad834d55ad4d7224446f8f7719041a0c83ce",update_status=1 WHERE id_user='1'
+[2023/01/05 09:43:24] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:43:47] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 09:43:49] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 09:44:03] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:44:19] SQL execute: UPDATE users SET password="ff0edd646698f65fa2c8680d00391e368b6d4315",update_status=1 WHERE id_user='1'
+[2023/01/05 09:45:00] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:45:19] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 09:45:21] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 09:45:42] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:45:59] SQL execute: UPDATE users SET password="5bbe8ae0595ae2af0168d6ace893831b49e65b0a",update_status=1 WHERE id_user='1'
+[2023/01/05 09:47:52] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:48:31] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 09:48:33] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 09:48:46] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 09:49:21] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 10:32:10] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/05 10:32:12] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/05 10:32:36] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 10:32:49] SQL execute: UPDATE users SET password="5bbe8ae0595ae2af0168d6ace893831b49e65b0a",update_status=1 WHERE id_user='1'
+[2023/01/05 10:33:13] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = '5bbe8ae0595ae2af0168d6ace893831b49e65b0a'
+[2023/01/05 10:33:13] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/01/05 10:33:13] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 10:33:30] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/05 10:33:30] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/05 10:33:47] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/06 09:23:30] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/06 09:23:35] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/06 09:24:02] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/06 09:24:48] SQL execute: UPDATE users SET password="5bbe8ae0595ae2af0168d6ace893831b49e65b0a",update_status=1 WHERE id_user='1'
+[2023/01/06 09:25:08] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/06 09:26:35] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/06 09:26:37] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/06 09:26:53] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/06 09:27:24] SQL execute: UPDATE users SET password="5bbe8ae0595ae2af0168d6ace893831b49e65b0a",update_status=1 WHERE id_user='1'
+[2023/01/06 09:29:31] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/06 09:29:44] SQL Query: SELECT id_user, name_user, surname_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND status = 1
+[2023/01/06 09:29:47] SQL execute: UPDATE users SET update_status=2 WHERE id_user='1'
+[2023/01/06 09:29:59] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/06 09:30:10] SQL Query: SELECT update_status FROM users WHERE id_user = '1' AND status = 1
+[2023/01/06 09:30:32] SQL execute: UPDATE users SET password="ff0edd646698f65fa2c8680d00391e368b6d4315",update_status=1 WHERE id_user='1'

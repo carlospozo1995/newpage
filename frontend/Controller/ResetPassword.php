@@ -4,7 +4,6 @@
 	class Controller_ResetPassword{
 		public function buildPage()
 		{	
-			
 			session_start();
 		
 			if (Utils::isLogged()) {
@@ -15,13 +14,14 @@
 			$data = array();
 			$msg = "";
 			$status = true;
+			$time = strtotime(date("Y-m-d H:i:s"));
 
 			switch ($action) {
 				case 'updatePassword':
-		
 					try {
-						if (empty($_SESSION['id_user_token']) || empty($_SESSION['time_token'])) {
-							throw new Exception("Error de datos. Intentelo mas tarde.");
+						if ($_SESSION['add_time'] < $time || !isset($_SESSION['flag'])) {
+							throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
+							unset($_SESSION['add_time']);
 						}else{
 							$pass = Utils::getParam("password", "");
 							$confirmPass = Utils::getParam("confirmPassword", "");
@@ -45,26 +45,27 @@
 								if ($updatePass) {
 									$status = true;
 									$msg = "Contraseña actualizada correctamente";
+									unset($_SESSION['id_user_token']);
+									unset($_SESSION['flag']);
 								}else{
 									throw new Exception("No es posible realizar el proceso intentelo mas tarde.");
 								}
 							}
 
-						}	
+						}
+						
 					} catch (Exception $e) {
 						$status = false;
-						$msg = $e->getMessage();			
+						$msg = $e->getMessage();
 					}
 
 					$data = array("status"=>$status,"msg"=>$msg);
 					echo json_encode($data);					
-
 				break;
 				
 				default:
-					$tokenDecrypt = Utils::desencriptar($_GET['token']);
+					$tokenDecrypt = Utils::extensiveDecryption($_GET['token']);
 					$arr_token = explode("|", $tokenDecrypt);
-
 					if (empty($arr_token) || count($arr_token) != 2) {
 						header('Location: '.BASE_URL.'login');
 					}else{
@@ -78,9 +79,13 @@
 
 						if ($add_time < $current_time || $dataUpdateStatu['update_status'] == 1) {
 							header('Location: '.BASE_URL.'login');	
+							unset($_SESSION['id_user_token']);
+							unset($_SESSION['add_time']);
+							unset($_SESSION['flag']);
 						}else{
 							$_SESSION['id_user_token'] = $arr_token[0];
-							$_SESSION['time_token'] = $arr_token[1];
+							$_SESSION['add_time'] = $add_time;
+							$_SESSION['flag'] = true;
 							View::renderPage('ResetPassword', "");
 						}
 					}
@@ -90,3 +95,5 @@
 	}
 
 ?>
+
+

@@ -46,20 +46,6 @@
 	      	return $default;
 		}
 
-		// static public function fileHeader($namePage)
-		// {	
-		// 	$fileHeaderAdmin = "";
-		// 	switch ($namePage) {
-		// 		case '':
-					
-		// 		break;
-				
-		// 		default:
-					
-		// 		break;
-		// 	}
-		// }
-
 		static public function isLogged()
 		{
 			if(isset($_SESSION['idUser'])){
@@ -121,6 +107,14 @@
 		   		return false;
 		   	}
 		}
+
+		public static function extensiveDecryption($text)
+		{
+			$objaes = new Aes(KEY_ENCRIPTAR);    
+		   	$desencriptado = hex2bin($text);
+		   	return $objaes->decrypt($desencriptado);
+		}
+
 		
 		static public function sendEmail($data, $template)
 		{	

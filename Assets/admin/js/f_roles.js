@@ -147,7 +147,6 @@ function permissions(data) {
                 data: data,
             },
             success: function(data){
-                
                 if (data == "") {
                     msgShow(3, 'Error', "Ha ocurrido un error. Intentelo mas tarde.");
                 }else{
@@ -301,16 +300,8 @@ function deleteData(element, data) {
                                 }
                             }
 
-                            // Reset the id column of the data table
-                            let rows = $("#tableRoles").DataTable().rows().nodes();
-
-                            for (let i = 0; i < rows.length; i++) {
-                                let row = $(rows[i]);
-                                let id = i + 1;
-                                row.attr("id", "row-" + id);
-                                row.find("td:first").text(id);
-                            }
-                            // -------------------------------------
+                            // Reset the id column
+                            resetIdTable($("#tableRoles"));
                             
                             msgShow(1, 'Eliminado', data.msg);
                         }else{

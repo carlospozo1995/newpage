@@ -182,7 +182,19 @@ $(document).ready(function(){
                                 }
                             });
                         }else{
-                            msgShow(2, 'Error', data.msg);
+                             Swal.fire({
+                                title:'Error',
+                                text:data.msg,
+                                icon:'error',
+                                confirmButtonColor: '#3085d6',
+                                confirmButtonText: 'ok',
+                            }).then((result) => {
+                                if (result.isConfirmed){
+                                    window.location = base_url + "login";
+                                }else{
+                                    window.location = base_url + "login";
+                                }
+                            });
                         }
                         
                         loading.style.display = 'none';

@@ -54,7 +54,7 @@
 		                }
 
 		                if ($data_rol == "error") {
-		                	return ;
+		                	return false;
 		                }else{
 		                	$arrData_Modal = array("idRol" => $id_rol);
 	                		$arrData_Modal['modules'] = $data_modules;
