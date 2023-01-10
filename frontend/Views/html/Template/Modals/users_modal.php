@@ -84,7 +84,7 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="status">Status usuario</label>
-                                            <select class="form-control" id="status">
+                                            <select class="form-control" id="status_user">
                                                 <option value="1">Activo</option>
                                                 <option value="2">Inactivo</option>
                                             </select>
@@ -97,7 +97,7 @@
                                         <div class="form-group ">
                                             <label for="password">Contraseña</label>
                                             <div class="d-flex align-items-center">
-                                                <input type="password" class="form-control contPass" id="password">
+                                                <input type="password" class="form-control contPass valid valid_password" placeholder="ejemplo123" id="pass_user">
                                                 <span class="ml-1" role='button'><i class="fa-regular fa-eye-slash" onclick="showPass(this)"></i></span>
                                             </div>
                                         </div>

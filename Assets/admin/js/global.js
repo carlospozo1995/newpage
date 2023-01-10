@@ -112,6 +112,9 @@ function validateExpresion() {
                 case this.classList.contains('valid_email'):
                     expresion = testEmail(inputValue);
                 break;
+            case this.classList.contains('valid_password'):
+                    expresion = testPass(inputValue);
+                break;
                 default:
                     return false;
                 break;

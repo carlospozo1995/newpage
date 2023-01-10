@@ -26,6 +26,7 @@
 					try {
 						if (empty($name_rol) || empty($descrip_rol) || empty($status_rol)){
 							throw new Exception("Rellene todos los campos.");
+							return false;
 						}else{
 							if (empty($id_rol)) {
 								$option	= 1;
@@ -47,9 +48,11 @@
 									$data_request = "";
 								}
 							}else if($request == "exists_data"){
-								throw new Exception("El rol a ingresar ya existe. Intentelo de nuevo.");								
+								throw new Exception("El rol a ingresar ya existe. Intentelo de nuevo.");
+								return false;								
 							}else{
 								throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
+								return false;
 							}
 						}
 						
@@ -102,8 +105,10 @@
 								$msg = "Se ha eliminado el rol con existo.";
 							}else if ($delRol == "exists") {
 								throw new Exception("No es posible elimininar un rol asociado a un usuario.");
+								return false;
 							}else{
 								throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
+								return false;
 							}
 						} catch (Exception $e) {
 							$status = false;

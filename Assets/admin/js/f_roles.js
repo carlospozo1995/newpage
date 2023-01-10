@@ -51,10 +51,10 @@ $(document).ready(function(){
         let description = $("#descrip_rol").val();
         let status = $("#status_rol").val();
 
-        if (name == "" || description == "" || status == "") {
-            msgShow(2, 'Atención', "Rellene todos los campos.");
-            return false;
-        }else{
+        // if (name == "" || description == "" || status == "") {
+        //     msgShow(2, 'Atención', "Rellene todos los campos.");
+        //     return false;
+        // }else{
             let url_ajax = base_url + "roles/setRol/";
             $.ajax({
                 url: url_ajax,
@@ -125,7 +125,7 @@ $(document).ready(function(){
 
                 }
             });
-        }
+        // }
     });
 
 });

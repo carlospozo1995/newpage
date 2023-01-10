@@ -59,25 +59,36 @@ $(document).ready(function () {
         let email = $("#email_user").val();
         let list_rol = $("#list_rol").val();
         let status = $("#status_user").val();
+        let password = $("#pass_user").val();
 
-        if (dni == "" || name == "" || surname == "" || phone == "" || email == "" || list_rol == "" || status == "") {
+        if (dni == "" || name == "" || surname == "" || phone == "" || email == "" || list_rol == "" || status == "" || password == "") {
             msgShow(2, 'Atención', "Rellene todos los campos.");
             return false;
         }else{
+
+            let elementsValid = $(".valid");
+            for (let i = 0; i < elementsValid.length; i++) {
+                if (elementsValid[i].hasClass("is-invalid")) {
+                    msgShow(2, "Atención", "Por favor asegúrese de no tener csdaampos en rojo.");
+                    return false;
+                }
+            }
+
             let url_ajax = base_url + "users/setUser/";
             $.ajax({
                 url: url_ajax,
                 dataType: 'JSON',
                 method: 'POST',
                 data: {
-                    id_user : id,
-                    dni_user : dni, 
-                    name_user: name,
-                    surname_user: surname,
-                    phone_user : phone,
-                    email_user :  email,
+                    id : id,
+                    dni : dni, 
+                    name: name,
+                    surname: surname,
+                    phone : phone,
+                    email :  email,
                     list_rol : list_rol,
                     status: status,
+                    password : password,
                 },
                 success: function(data){
                     console.log(data);
