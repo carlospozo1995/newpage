@@ -14,7 +14,6 @@
 			$msg = "";
 			$status = true;
 			$request = "";
-			// $option = "";
 
 			switch ($action) {
 				case 'setRol':

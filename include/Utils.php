@@ -207,9 +207,8 @@
 	    {
 	    	$id_rol = $_SESSION['data_user']['id_rol'];
 	    	$arr_permissions = Models_Permissions::permissionsModule($id_rol);
-	    	// Utils::dep($arr_permissions);
-
-	    	$permissions = "";
+	    	
+			$permissions = "";
 	    	$module = "";
 
 	    	if (count($arr_permissions) > 0) {

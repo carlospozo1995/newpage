@@ -16,7 +16,7 @@
 			$ruta_page = RUTA_VIEW . 'html/' . $namePage .'.php';	
 
 
-			if ($namePage == 'Dashboard' || $namePage == 'Roles') {
+			if ($namePage == 'Dashboard' || $namePage == 'Roles' || $namePage == 'Users') {
 				require_once(RUTA_VIEW . 'html/Template/header_admin.php');
 			}
 
@@ -28,7 +28,7 @@
 				require_once $ruta_page;
 			}
 
-			if ($namePage == 'Dashboard' || $namePage == 'Roles') {
+			if ($namePage == 'Dashboard' || $namePage == 'Roles' || $namePage == 'Users') {
 				require_once(RUTA_VIEW . 'html/Template/footer_admin.php');
 			}
 

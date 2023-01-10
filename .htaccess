@@ -20,12 +20,17 @@ RewriteRule ^logout$ %{ENV:REWRITEBASE}index.php?show=logout [L]
 
 #PAGES-ADMIN
 RewriteRule ^(dashboard/|dashboard|Dashboard)$ %{ENV:REWRITEBASE}index.php?show=dashboard [L]
+
 RewriteRule ^(roles/|roles|Roles)$ %{ENV:REWRITEBASE}index.php?show=roles [L]
 RewriteRule ^(roles/|roles|Roles)/setRol/$ %{ENV:REWRITEBASE}index.php?show=roles&action=setRol [L]
 RewriteRule ^(roles/|roles|Roles)/getRol/$ %{ENV:REWRITEBASE}index.php?show=roles&action=getRol [L]
 RewriteRule ^(roles/|roles|Roles)/delRol/$ %{ENV:REWRITEBASE}index.php?show=roles&action=delRol [L]
 RewriteRule ^permissions/getPermissions/$ %{ENV:REWRITEBASE}index.php?show=permissions&action=getPermissions [L]
 RewriteRule ^permissions/setPermissions/$ %{ENV:REWRITEBASE}index.php?show=permissions&action=setPermissions [L]
+
+RewriteRule ^(users/|users|Users)$ %{ENV:REWRITEBASE}index.php?show=users [L]
+#RewriteRule ^(users/|users|Users)/getUsers/$ %{ENV:REWRITEBASE}index.php?show=Users&action=getUsers [L]
+RewriteRule ^(users/|users|Users)/setRol/$ %{ENV:REWRITEBASE}index.php?show=Users&action=setUser [L]
 
 
 

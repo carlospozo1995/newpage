@@ -45,7 +45,10 @@
 			case 'permissions':
 				return "Permissions";
 			break;
-			
+
+			case 'users':
+				return "Users";
+			break;
 		}
 
 		return ucfirst($name);

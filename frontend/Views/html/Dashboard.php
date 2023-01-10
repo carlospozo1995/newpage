@@ -15,7 +15,10 @@
 	    </section>
 
 	    <section class="content">
-	    	<?php print_r($_SESSION['data_user']); ?>
+	    	<?php 
+				Utils::dep($_SESSION['data_user']); 
+				Utils::dep($_SESSION['permissions']);
+			?>
 	    </section>
 
 	</div>
