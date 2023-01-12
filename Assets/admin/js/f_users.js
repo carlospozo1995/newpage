@@ -2,7 +2,7 @@
 'use strict';
 
 var tableUsers;
-var rowTable;
+var rowTable = "";
 
 $(document).ready(function () {
 
@@ -61,18 +61,20 @@ $(document).ready(function () {
         let status = $("#status_user").val();
         let password = $("#pass_user").val();
 
+        let rol_text =  $("#list_rol").find("option:selected").text();
+
         if (dni == "" || name == "" || surname == "" || phone == "" || email == "" || list_rol == "" || status == "" || password == "") {
             msgShow(2, 'Atención', "Rellene todos los campos.");
             return false;
         }else{
 
             let elementsValid = $(".valid");
-            for (let i = 0; i < elementsValid.length; i++) {
-                if (elementsValid[i].hasClass("is-invalid")) {
-                    msgShow(2, "Atención", "Por favor asegúrese de no tener csdaampos en rojo.");
+            elementsValid.each((index, element) => {
+                if($(element).hasClass('is-invalid')){
+                    Swal.fire("Atención", "Por favor asegúrese de no tener campos en rojo.", "error");
                     return false;
-                }
-            }
+                };
+            });
 
             let url_ajax = base_url + "users/setUser/";
             $.ajax({
@@ -92,6 +94,49 @@ $(document).ready(function () {
                 },
                 success: function(data){
                     console.log(data);
+                    if(data.status){
+                        let htmlStatus = status == 1 ? '<div class="text-center"><span class="bg-success p-1 rounded"><i class="fa-solid fa-user"></i> Activo</span></div>' : '<div class="text-center"><span class="bg-danger p-1 rounded"><i class="fa-solid fa-user-slash"></i> Inactivo</span></div>';
+                        
+                        if(rowTable == ""){
+                            let idr_decrypt = data.data_request.idr_decrypt;
+                            let idr_encrypt = data.data_request.idr_encrypt;
+                            let module_data = data.data_request.module;  
+                            let id_user = data.data_request.id_user;
+
+                            let id_row = $("#tableUsers").DataTable().rows().count() + 1;
+                            let btnWatch = "";
+                            let btnUpdate = "";
+                            let btnDelete = "";
+
+                            if (module_data.ver == 1) {
+                                btnWatch = '<button type="button" class="btn btn-secondary btn-sm" onclick="watch('+"'"+idr_encrypt+"'"+')" tilte="Ver"><i class="fa-solid fa-eye"></i></button>'
+                            }
+
+                            if (idr_decrypt != id_user && module_data.actualizar == 1) {
+                                btnUpdate = '<button type="button" class="btn btn-primary btn-sm" onclick="edit(this, '+"'"+idr_encrypt+"'"+')" tilte="Editar"><i class="fa-solid fa-pencil"></i></button>';
+                            }
+
+                            if (idr_decrypt != id_user && module_data.eliminar == 1){
+                                btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="deleteData(this, '+"'"+idr_encrypt+"'"+')" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
+                            }
+
+                            $("#tableUsers").DataTable().row.add([
+                                id_row,    
+                                capitalLetter(name),
+                                capitalLetter(surname),
+                                email,
+                                phone,
+                                rol_text,
+                                htmlStatus,
+                                '<div class="text-center"> '+btnWatch+" "+btnUpdate+" "+btnDelete+'</div>'
+                            ]).draw(false);
+                        }
+
+                        $('#modalFormUser').modal('hide');
+                        msgShow(1, 'Usuario', data.msg);
+                    }else{
+                        msgShow(2, 'Atención', data.msg);
+                    }
                 },
                 error: function(e){
                     // console.log(e);

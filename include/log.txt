@@ -1,265 +1,271 @@
-[2023/01/09 10:32:06] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:32:06] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 10:32:06] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 10:32:24] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '2' 
-[2023/01/09 10:32:24] SQL Query: SELECT * FROM roles WHERE status = '1' AND id_rol != 1 AND id_rol >= '2'
-[2023/01/09 10:32:24] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0' AND u.id_user != 1
-[2023/01/09 10:34:26] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlos.pflogger@hotmail.com' AND password = '5bbe8ae0595ae2af0168d6ace893831b49e65b0a'
-[2023/01/09 10:34:26] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '3'
-[2023/01/09 10:34:26] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '6' 
-[2023/01/09 10:34:40] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '6' 
-[2023/01/09 10:34:40] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0' AND u.id_user != 1
-[2023/01/09 10:35:01] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
-[2023/01/09 10:35:01] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
-[2023/01/09 10:35:02] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:35:17] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:35:17] SQL Query: SELECT * FROM roles WHERE status != '0'
-[2023/01/09 10:35:21] SQL Query: SELECT * FROM roles WHERE id_rol = '1'
-[2023/01/09 10:35:21] SQL Query: SELECT * FROM modules WHERE status != '0'
-[2023/01/09 10:35:21] SQL Query: SELECT * FROM permissions WHERE rol_id = '1'
-[2023/01/09 10:35:24] SQL Query: SELECT * FROM roles WHERE id_rol = '6'
-[2023/01/09 10:35:24] SQL Query: SELECT * FROM modules WHERE status != '0'
-[2023/01/09 10:35:24] SQL Query: SELECT * FROM permissions WHERE rol_id = '6'
-[2023/01/09 10:35:29] SQL execute: DELETE FROM permissions WHERE rol_id=6
-[2023/01/09 10:35:29] SQL execute: INSERT INTO permissions (rol_id,module_id,ver,crear,actualizar,eliminar) VALUES('6','1',1,0,0,0),('6','2',1,1,1,0);
-[2023/01/09 10:35:35] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '6' 
-[2023/01/09 10:35:35] SQL Query: SELECT * FROM roles WHERE status = '1' AND id_rol != 1 AND id_rol >= '6'
-[2023/01/09 10:35:35] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0' AND u.id_user != 1
-[2023/01/09 10:38:11] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '6' 
-[2023/01/09 10:38:11] SQL Query: SELECT * FROM roles WHERE status = '1' AND id_rol != 1 AND id_rol >= '6'
-[2023/01/09 10:38:11] SQL Query: SELECT * FROM roles WHERE status = '1' AND id_rol != 1 AND id_rol >= '6'
-[2023/01/09 10:38:11] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0' AND u.id_user != 1
-[2023/01/09 10:38:43] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:38:43] SQL Query: SELECT * FROM roles WHERE status != '0'
-[2023/01/09 10:38:53] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:38:53] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 10:38:53] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 10:38:53] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 10:39:23] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlos.pfloger@yahoo.com' AND password = '5bbe8ae0595ae2af0168d6ace893831b49e65b0a'
-[2023/01/09 10:39:23] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '2'
-[2023/01/09 10:39:23] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '2' 
-[2023/01/09 10:39:29] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '2' 
-[2023/01/09 10:39:29] SQL Query: SELECT * FROM roles WHERE status = '1' AND id_rol != 1 AND id_rol >= '2'
-[2023/01/09 10:39:29] SQL Query: SELECT * FROM roles WHERE status = '1' AND id_rol != 1 AND id_rol >= '2'
-[2023/01/09 10:39:29] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0' AND u.id_user != 1
-[2023/01/09 10:45:47] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '2' 
-[2023/01/09 10:45:47] SQL Query: SELECT * FROM roles WHERE status = '1' AND id_rol != 1 AND id_rol >= '2'
-[2023/01/09 10:45:47] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0' AND u.id_user != 1
-[2023/01/09 10:46:48] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '2' 
-[2023/01/09 10:46:48] SQL Query: SELECT * FROM roles WHERE status = '1' AND id_rol != 1 AND id_rol >= '2'
-[2023/01/09 10:46:48] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0' AND u.id_user != 1
-[2023/01/09 10:47:10] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:47:10] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 10:47:10] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 10:47:43] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlos.pflogger@hotmail.com' AND password = '5bbe8ae0595ae2af0168d6ace893831b49e65b0a'
-[2023/01/09 10:47:43] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '3'
-[2023/01/09 10:47:43] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '6' 
-[2023/01/09 10:47:55] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '6' 
-[2023/01/09 10:47:55] SQL Query: SELECT * FROM roles WHERE status = '1' AND id_rol != 1 AND id_rol >= '6'
-[2023/01/09 10:47:55] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0' AND u.id_user != 1
-[2023/01/09 10:49:16] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:49:16] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 10:49:16] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 10:49:26] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:49:26] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 10:49:26] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 10:50:13] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '6' 
-[2023/01/09 10:50:13] SQL Query: SELECT * FROM roles WHERE status = '1' AND id_rol != 1 AND id_rol >= '6'
-[2023/01/09 10:50:13] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0' AND u.id_user != 1
-[2023/01/09 09:47:06] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
-[2023/01/09 09:47:06] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0' AND u.id_user != 1
-[2023/01/09 09:47:06] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
-[2023/01/09 09:47:17] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
-[2023/01/09 09:47:17] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
-[2023/01/09 09:47:17] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 09:47:20] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
-[2023/01/09 09:47:20] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0' AND u.id_user != 1
-[2023/01/09 09:47:20] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
-[2023/01/09 09:47:38] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlos.pfloger@yahoo.com' AND password = '5bbe8ae0595ae2af0168d6ace893831b49e65b0a'
-[2023/01/09 09:47:38] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '2'
-[2023/01/09 09:47:38] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '2' 
-[2023/01/09 09:47:45] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '2' 
-[2023/01/09 09:47:45] SQL Query: SELECT * FROM roles WHERE status = '1' AND id_rol != 1 AND id_rol >= '2'
-[2023/01/09 09:47:45] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0' AND u.id_user != 1
-[2023/01/09 09:47:53] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 09:47:53] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 09:47:53] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 10:07:17] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '2' 
-[2023/01/09 10:07:18] SQL Query: SELECT * FROM roles WHERE status = '1' AND id_rol != 1 AND id_rol >= '2'
-[2023/01/09 10:07:18] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0' AND u.id_user != 1
-[2023/01/09 10:07:51] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:07:51] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 10:07:51] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 10:08:49] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:08:49] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 10:08:49] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 10:33:35] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:33:35] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 10:33:35] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 10:34:22] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:34:30] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:34:30] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 10:34:30] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 10:34:38] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
-[2023/01/09 10:34:38] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0' AND u.id_user != 1
-[2023/01/09 10:34:38] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
-[2023/01/09 10:37:46] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:37:46] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 10:37:46] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 10:45:49] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:45:49] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 10:45:49] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 10:46:34] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:46:34] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 10:46:34] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 10:48:33] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:48:33] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 10:48:33] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 10:49:36] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:49:36] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 10:49:36] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 10:50:53] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:50:53] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 10:50:53] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 10:56:00] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:56:00] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 10:56:00] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 10:59:16] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 10:59:16] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 10:59:16] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 11:00:18] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 11:00:18] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 11:00:18] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 11:01:22] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 11:01:22] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 11:01:22] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 11:01:37] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 11:01:37] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 11:01:37] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 11:01:45] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 11:01:45] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 11:01:45] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 11:01:54] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 11:01:54] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 11:01:54] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 11:02:03] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 11:02:03] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 11:02:03] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 11:02:13] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 11:02:13] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 11:02:13] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 11:06:42] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 11:06:42] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 11:06:42] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 11:06:55] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 11:06:55] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 11:06:55] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 11:07:15] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 11:07:15] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 11:07:15] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/09 11:29:27] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/09 11:29:27] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/09 11:29:28] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 07:02:19] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = '0105819f6c5f2875539db867b33b6a746a4d22ed'
-[2023/01/10 07:02:26] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
-[2023/01/10 07:02:26] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
-[2023/01/10 07:02:27] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 07:02:45] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlos.pfloger@yahoo.com' AND password = '5bbe8ae0595ae2af0168d6ace893831b49e65b0a'
-[2023/01/10 07:02:45] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '2'
-[2023/01/10 07:02:45] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '2' 
-[2023/01/10 07:03:05] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
-[2023/01/10 07:03:05] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 07:03:05] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 07:03:06] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 07:03:09] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '2' 
-[2023/01/10 07:03:09] SQL Query: SELECT * FROM roles WHERE status = '1' AND id_rol != 1 AND id_rol >= '2'
-[2023/01/10 07:03:09] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0' AND u.id_user != 1
-[2023/01/10 07:06:18] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 07:06:18] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 07:06:18] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 07:07:35] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 07:07:35] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 07:07:35] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 07:18:37] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 07:18:37] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 07:18:37] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 07:18:39] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 07:18:39] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 07:18:39] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 07:24:30] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '2' 
-[2023/01/10 07:24:30] SQL Query: SELECT * FROM roles WHERE status = '1' AND id_rol != 1 AND id_rol >= '2'
-[2023/01/10 07:24:30] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0' AND u.id_user != 1
-[2023/01/10 07:26:39] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 07:26:39] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 07:26:39] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 07:56:42] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 07:56:42] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 07:56:42] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 07:57:23] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 07:57:23] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 07:57:23] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 07:57:40] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 07:57:40] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 07:57:40] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 07:58:52] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 07:58:52] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 07:58:52] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 08:13:10] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 08:13:10] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 08:13:10] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 08:13:15] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 08:13:15] SQL Query: SELECT * FROM roles WHERE status != '0'
-[2023/01/10 08:13:33] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 08:13:33] SQL Query: SELECT * FROM roles WHERE status != '0'
-[2023/01/10 08:13:50] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 08:13:50] SQL Query: SELECT * FROM roles WHERE status != '0'
-[2023/01/10 08:14:43] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 08:14:43] SQL Query: SELECT * FROM roles WHERE status != '0'
-[2023/01/10 08:15:25] SQL Query: SELECT * FROM roles WHERE name_rol = 'Test eleven'
-[2023/01/10 08:15:25] SQL execute: INSERT INTO roles (name_rol,description_rol,status) VALUES('Test eleven','Test description eleven','1');
-[2023/01/10 08:50:53] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 08:50:53] SQL Query: SELECT * FROM roles WHERE status != '0'
-[2023/01/10 08:51:11] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 08:51:11] SQL Query: SELECT * FROM roles WHERE status != '0'
-[2023/01/10 08:52:32] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
-[2023/01/10 08:52:32] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
-[2023/01/10 08:52:32] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 08:52:41] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 08:52:41] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 08:52:41] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 09:16:45] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 09:16:45] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 09:16:45] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 09:31:04] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 09:31:04] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 09:31:04] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 09:31:38] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 09:31:38] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 09:31:38] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 09:36:11] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 09:36:11] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 09:36:11] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 09:37:39] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 09:37:39] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 09:37:39] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 09:38:17] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 09:38:17] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 09:38:17] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 09:38:53] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 09:38:53] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 09:38:53] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 09:39:31] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 09:39:31] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 09:39:31] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 09:40:14] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 09:40:14] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 09:40:14] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 09:40:58] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 09:40:58] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 09:40:58] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 09:46:46] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 09:46:46] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 09:46:46] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2023/01/10 09:46:52] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2023/01/10 09:46:52] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2023/01/10 09:46:52] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 07:35:25] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
+[2023/01/11 07:35:25] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0' AND u.id_user != 1
+[2023/01/11 07:35:25] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
+[2023/01/11 07:35:35] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/01/11 07:35:35] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/01/11 07:35:35] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 07:35:46] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 07:35:46] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 07:35:46] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 07:36:17] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 07:36:17] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 07:36:17] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 07:38:01] SQL Query: SELECT * FROM users WHERE dni = '0123456789' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 07:38:27] SQL Query: SELECT * FROM users WHERE dni = '0123456789' OR email = 'one@one.com'
+[2023/01/11 07:38:27] SQL execute: INSERT INTO users (dni,name_user,surname_user,phone,email,password,rolid,status) VALUES('0123456789','Test one','Test one','1234567','one@one.com','ff0edd646698f65fa2c8680d00391e368b6d4315','1','1');
+[2023/01/11 07:39:01] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 07:39:01] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 07:39:01] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 07:40:03] SQL Query: SELECT * FROM users WHERE dni = '9874561230' OR email = 'two@two.com'
+[2023/01/11 07:40:03] SQL execute: INSERT INTO users (dni,name_user,surname_user,phone,email,password,rolid,status) VALUES('9874561230','Test two','Test two','0994603678','two@two.com','ff0edd646698f65fa2c8680d00391e368b6d4315','6','1');
+[2023/01/11 07:42:03] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 07:42:03] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 07:42:03] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 07:42:59] SQL Query: SELECT * FROM users WHERE dni = '9874563210' OR email = 'two@two.com'
+[2023/01/11 07:42:59] SQL execute: INSERT INTO users (dni,name_user,surname_user,phone,email,password,rolid,status) VALUES('9874563210','Test two','Test two','0994603678','two@two.com','ff0edd646698f65fa2c8680d00391e368b6d4315','6','1');
+[2023/01/11 07:43:16] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 07:43:16] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 07:43:16] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 09:35:00] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 09:35:35] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 09:35:54] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
+[2023/01/11 09:35:54] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
+[2023/01/11 09:36:05] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/01/11 09:36:05] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/01/11 09:36:05] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 09:36:09] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 09:36:36] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 09:37:05] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 09:37:05] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 09:37:05] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 09:37:29] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 09:37:29] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 09:37:29] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 09:37:52] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 09:38:07] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 09:38:07] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 09:38:07] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 09:38:20] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 09:38:20] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 09:38:20] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 09:38:28] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 09:38:28] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 09:38:28] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 09:39:34] SQL Query: SELECT * FROM users WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 09:39:34] SQL Query: SELECT * FROM users WHERE dni = ? OR email = ?
+[2023/01/11 09:39:34] SQL ERROR: 0: 
+[2023/01/11 09:44:07] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 09:44:07] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 09:44:07] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 09:44:51] SQL Query: SELECT * FROM users WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 09:44:51] SQL Query: SELECT * FROM users WHERE dni = ? OR email = ?
+[2023/01/11 09:44:51] SQL ERROR: 0: 
+[2023/01/11 09:45:46] SQL Query: SELECT * FROM users WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 09:45:46] SQL Query: SELECT * FROM users WHERE dni = ? OR email = ?
+[2023/01/11 09:45:46] SQL ERROR: 0: 
+[2023/01/11 09:46:32] SQL Query: SELECT * FROM users WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 09:46:32] SQL Query: SELECT * FROM users WHERE dni = ? OR email = ?
+[2023/01/11 09:46:32] SQL ERROR: 0: 
+[2023/01/11 09:48:40] SQL Query: SELECT * FROM users WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 09:48:40] SQL Query: SELECT * FROM users WHERE dni = ? OR email = ?
+[2023/01/11 09:48:40] SQL ERROR: 0: 
+[2023/01/11 09:49:37] SQL Query: SELECT * FROM users WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 09:49:37] SQL Query: SELECT  IF(con.joinDni LIKE '%0706715653%',1,0) AS dnis,
+                                            IF(con.joinEmail LIKE '%carlospozo95@gmail.com%',1,0) AS emails
+                                            FROM (SELECT GROUP_CONCAT(dni) AS joinDni, 
+                                                            GROUP_CONCAT(email) AS joinEmail FROM users 
+                                                            WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com') AS con
+[2023/01/11 09:49:55] SQL Query: SELECT * FROM users WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 09:49:55] SQL Query: SELECT  IF(con.joinDni LIKE '%0706715653%',1,0) AS dnis,
+                                            IF(con.joinEmail LIKE '%carlospozo95@gmail.com%',1,0) AS emails
+                                            FROM (SELECT GROUP_CONCAT(dni) AS joinDni, 
+                                                            GROUP_CONCAT(email) AS joinEmail FROM users 
+                                                            WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com') AS con
+[2023/01/11 09:50:42] SQL Query: SELECT * FROM users WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 09:50:42] SQL Query: SELECT  IF(con.joinDni LIKE '%0706715653%',1,0) AS dnis,
+                                            IF(con.joinEmail LIKE '%carlospozo95@gmail.com%',1,0) AS emails
+                                            FROM (SELECT GROUP_CONCAT(dni) AS joinDni, 
+                                                            GROUP_CONCAT(email) AS joinEmail FROM users 
+                                                            WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com') AS con
+[2023/01/11 09:52:27] SQL Query: SELECT * FROM users WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 09:52:27] SQL Query: SELECT  IF(con.joinDni LIKE '%0706715653%',1,0) AS dnis,
+                                            IF(con.joinEmail LIKE '%carlospozo95@gmail.com%',1,0) AS emails
+                                            FROM (SELECT GROUP_CONCAT(dni) AS joinDni, 
+                                                            GROUP_CONCAT(email) AS joinEmail FROM users 
+                                                            WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com') AS con
+[2023/01/11 09:52:52] SQL Query: SELECT * FROM users WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 09:52:52] SQL Query: SELECT  IF(con.joinDni LIKE '%0706715653%',1,0) AS dnis,
+                                            IF(con.joinEmail LIKE '%carlospozo95@gmail.com%',1,0) AS emails
+                                            FROM (SELECT GROUP_CONCAT(dni) AS joinDni, 
+                                                            GROUP_CONCAT(email) AS joinEmail FROM users 
+                                                            WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com') AS con
+[2023/01/11 09:53:37] SQL Query: SELECT * FROM users WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 09:53:37] SQL Query: SELECT  IF(con.joinDni LIKE '%0706715653%',1,0) AS dnis,
+                                            IF(con.joinEmail LIKE '%carlospozo95@gmail.com%',1,0) AS emails
+                                            FROM (SELECT GROUP_CONCAT(dni) AS joinDni, 
+                                                            GROUP_CONCAT(email) AS joinEmail FROM users 
+                                                            WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com') AS con
+[2023/01/11 09:53:45] SQL Query: SELECT * FROM users WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.comd'
+[2023/01/11 09:53:45] SQL Query: SELECT  IF(con.joinDni LIKE '%0706715653%',1,0) AS dnis,
+                                            IF(con.joinEmail LIKE '%carlospozo95@gmail.comd%',1,0) AS emails
+                                            FROM (SELECT GROUP_CONCAT(dni) AS joinDni, 
+                                                            GROUP_CONCAT(email) AS joinEmail FROM users 
+                                                            WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.comd') AS con
+[2023/01/11 09:53:56] SQL Query: SELECT * FROM users WHERE dni = '0706715653d' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 09:53:56] SQL Query: SELECT  IF(con.joinDni LIKE '%0706715653d%',1,0) AS dnis,
+                                            IF(con.joinEmail LIKE '%carlospozo95@gmail.com%',1,0) AS emails
+                                            FROM (SELECT GROUP_CONCAT(dni) AS joinDni, 
+                                                            GROUP_CONCAT(email) AS joinEmail FROM users 
+                                                            WHERE dni = '0706715653d' OR email = 'carlospozo95@gmail.com') AS con
+[2023/01/11 09:54:05] SQL Query: SELECT * FROM users WHERE dni = '0706715653d' OR email = 'carlospozo95@gmail.comd'
+[2023/01/11 09:54:05] SQL execute: INSERT INTO users (dni,name_user,surname_user,phone,email,password,rolid,status) VALUES('0706715653d','Test three','Test three','64553464','carlospozo95@gmail.comd','ff0edd646698f65fa2c8680d00391e368b6d4315','29','1');
+[2023/01/11 09:55:08] SQL Query: SELECT * FROM users WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 09:55:08] SQL Query: SELECT  IF(con.joinDni LIKE '%0706715653%',1,0) AS dnis,
+                                            IF(con.joinEmail LIKE '%carlospozo95@gmail.com%',1,0) AS emails
+                                            FROM (SELECT GROUP_CONCAT(dni) AS joinDni, 
+                                                            GROUP_CONCAT(email) AS joinEmail FROM users 
+                                                            WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com') AS con
+[2023/01/11 09:55:35] SQL Query: SELECT * FROM users WHERE dni = '0706715653d' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 09:55:35] SQL Query: SELECT  IF(con.joinDni LIKE '%0706715653d%',1,0) AS dnis,
+                                            IF(con.joinEmail LIKE '%carlospozo95@gmail.com%',1,0) AS emails
+                                            FROM (SELECT GROUP_CONCAT(dni) AS joinDni, 
+                                                            GROUP_CONCAT(email) AS joinEmail FROM users 
+                                                            WHERE dni = '0706715653d' OR email = 'carlospozo95@gmail.com') AS con
+[2023/01/11 09:55:48] SQL Query: SELECT * FROM users WHERE dni = '0706715653dadsd' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 09:55:48] SQL Query: SELECT  IF(con.joinDni LIKE '%0706715653dadsd%',1,0) AS dnis,
+                                            IF(con.joinEmail LIKE '%carlospozo95@gmail.com%',1,0) AS emails
+                                            FROM (SELECT GROUP_CONCAT(dni) AS joinDni, 
+                                                            GROUP_CONCAT(email) AS joinEmail FROM users 
+                                                            WHERE dni = '0706715653dadsd' OR email = 'carlospozo95@gmail.com') AS con
+[2023/01/11 09:56:27] SQL Query: SELECT * FROM users WHERE dni = '0706715653dadsd' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 09:56:27] SQL Query: SELECT  IF(con.joinDni LIKE '%0706715653dadsd%',1,0) AS dnis,
+                                            IF(con.joinEmail LIKE '%carlospozo95@gmail.com%',1,0) AS emails
+                                            FROM (SELECT GROUP_CONCAT(dni) AS joinDni, 
+                                                            GROUP_CONCAT(email) AS joinEmail FROM users 
+                                                            WHERE dni = '0706715653dadsd' OR email = 'carlospozo95@gmail.com') AS con
+[2023/01/11 09:56:36] SQL Query: SELECT * FROM users WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 09:56:36] SQL Query: SELECT  IF(con.joinDni LIKE '%0706715653%',1,0) AS dnis,
+                                            IF(con.joinEmail LIKE '%carlospozo95@gmail.com%',1,0) AS emails
+                                            FROM (SELECT GROUP_CONCAT(dni) AS joinDni, 
+                                                            GROUP_CONCAT(email) AS joinEmail FROM users 
+                                                            WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com') AS con
+[2023/01/11 09:56:42] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 09:56:42] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 09:56:42] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 09:57:33] SQL Query: SELECT * FROM users WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 09:57:33] SQL Query: SELECT  IF(con.joinDni LIKE '%0706715653%',1,0) AS dnis,
+                                            IF(con.joinEmail LIKE '%carlospozo95@gmail.com%',1,0) AS emails
+                                            FROM (SELECT GROUP_CONCAT(dni) AS joinDni, 
+                                                            GROUP_CONCAT(email) AS joinEmail FROM users 
+                                                            WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com') AS con
+[2023/01/11 09:57:50] SQL Query: SELECT * FROM users WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 09:57:50] SQL Query: SELECT  IF(con.joinDni LIKE '%0706715653%',1,0) AS dnis,
+                                            IF(con.joinEmail LIKE '%carlospozo95@gmail.com%',1,0) AS emails
+                                            FROM (SELECT GROUP_CONCAT(dni) AS joinDni, 
+                                                            GROUP_CONCAT(email) AS joinEmail FROM users 
+                                                            WHERE dni = '0706715653' OR email = 'carlospozo95@gmail.com') AS con
+[2023/01/11 09:57:59] SQL Query: SELECT * FROM users WHERE dni = '0706715653das' OR email = 'carlospozo95@gmail.com'
+[2023/01/11 09:57:59] SQL Query: SELECT  IF(con.joinDni LIKE '%0706715653das%',1,0) AS dnis,
+                                            IF(con.joinEmail LIKE '%carlospozo95@gmail.com%',1,0) AS emails
+                                            FROM (SELECT GROUP_CONCAT(dni) AS joinDni, 
+                                                            GROUP_CONCAT(email) AS joinEmail FROM users 
+                                                            WHERE dni = '0706715653das' OR email = 'carlospozo95@gmail.com') AS con
+[2023/01/11 09:58:11] SQL Query: SELECT * FROM users WHERE dni = '0706715653das' OR email = 'carlospozo95@gmail.coma'
+[2023/01/11 09:58:11] SQL execute: INSERT INTO users (dni,name_user,surname_user,phone,email,password,rolid,status) VALUES('0706715653das','Test four','Test four','15431341','carlospozo95@gmail.coma','ff0edd646698f65fa2c8680d00391e368b6d4315','31','1');
+[2023/01/11 09:59:01] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 09:59:01] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 09:59:01] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 09:59:21] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 09:59:21] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 09:59:21] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 10:42:49] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 10:42:49] SQL Query: SELECT * FROM roles WHERE status != '0'
+[2023/01/11 10:45:27] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 10:45:27] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 10:45:27] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 09:11:51] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/01/11 09:11:51] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/01/11 09:11:52] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 09:11:52] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/01/11 09:11:52] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/01/11 09:12:05] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 09:12:05] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 09:12:05] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 09:35:42] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 09:35:43] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 09:35:43] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 09:36:44] SQL Query: SELECT * FROM users WHERE dni = '12451584174' OR email = 'three@three.com'
+[2023/01/11 09:36:44] SQL execute: INSERT INTO users (dni,name_user,surname_user,phone,email,password,rolid,status) VALUES('12451584174','Test three','Test three','124548521','three@three.com','ff0edd646698f65fa2c8680d00391e368b6d4315','31','1');
+[2023/01/11 09:52:16] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 09:52:16] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 09:52:16] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 09:52:20] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 09:59:57] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 10:00:04] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 10:00:04] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 10:00:04] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 10:00:12] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 10:00:12] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 10:00:12] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 10:02:58] SQL Query: SELECT * FROM users WHERE dni = '09451542465' OR email = 'four@four.com'
+[2023/01/11 10:02:58] SQL execute: INSERT INTO users (dni,name_user,surname_user,phone,email,password,rolid,status) VALUES('09451542465','Test four','Test four','4106541','four@four.com','ff0edd646698f65fa2c8680d00391e368b6d4315','6','2');
+[2023/01/11 10:04:10] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 10:04:10] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 10:04:10] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 10:11:13] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 10:11:13] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 10:11:13] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 10:12:18] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 10:12:18] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 10:12:18] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 10:13:26] SQL Query: SELECT * FROM users WHERE dni = '09654545' OR email = 'one@one.com'
+[2023/01/11 10:13:26] SQL execute: INSERT INTO users (dni,name_user,surname_user,phone,email,password,rolid,status) VALUES('09654545','Test one','Test one','6541451','one@one.com','ff0edd646698f65fa2c8680d00391e368b6d4315','6','1');
+[2023/01/11 11:07:53] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 11:07:53] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 11:07:53] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 11:08:05] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 11:08:05] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 11:08:05] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 11:08:47] SQL Query: SELECT * FROM users WHERE dni = '5465154612' OR email = 'two@two.com'
+[2023/01/11 11:08:47] SQL execute: INSERT INTO users (dni,name_user,surname_user,phone,email,password,rolid,status) VALUES('5465154612','Test two','Test two','1234567','two@two.com','ff0edd646698f65fa2c8680d00391e368b6d4315','29','1');
+[2023/01/11 11:11:13] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 11:11:26] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/01/11 11:11:26] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/01/11 11:11:26] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 11:11:34] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 11:11:34] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 11:11:34] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 11:11:47] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 11:11:47] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 11:11:47] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 11:12:52] SQL Query: SELECT * FROM users WHERE dni = '316546132215' OR email = 'three@three.com'
+[2023/01/11 11:12:52] SQL execute: INSERT INTO users (dni,name_user,surname_user,phone,email,password,rolid,status) VALUES('316546132215','Test three','Test Three','6523154','three@three.com','ff0edd646698f65fa2c8680d00391e368b6d4315','6','2');
+[2023/01/11 11:16:27] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 11:16:27] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 11:16:27] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 11:24:43] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 11:24:43] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 11:24:43] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 11:24:43] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/11 11:24:43] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/11 11:24:43] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/11 11:26:24] SQL Query: SELECT * FROM users WHERE dni = '0706715653' OR email = 'four@four.com'
+[2023/01/11 11:26:24] SQL Query: SELECT  IF(con.joinDni LIKE '%0706715653%',1,0) AS dnis,
+                                            IF(con.joinEmail LIKE '%four@four.com%',1,0) AS emails
+                                            FROM (SELECT GROUP_CONCAT(dni) AS joinDni, 
+                                                            GROUP_CONCAT(email) AS joinEmail FROM users 
+                                                            WHERE dni = '0706715653' OR email = 'four@four.com') AS con
+[2023/01/11 11:26:39] SQL Query: SELECT * FROM users WHERE dni = '0706715653' OR email = 'one@one.com'
+[2023/01/11 11:26:39] SQL Query: SELECT  IF(con.joinDni LIKE '%0706715653%',1,0) AS dnis,
+                                            IF(con.joinEmail LIKE '%one@one.com%',1,0) AS emails
+                                            FROM (SELECT GROUP_CONCAT(dni) AS joinDni, 
+                                                            GROUP_CONCAT(email) AS joinEmail FROM users 
+                                                            WHERE dni = '0706715653' OR email = 'one@one.com') AS con
+[2023/01/11 11:26:47] SQL Query: SELECT * FROM users WHERE dni = '07067156535 ' OR email = 'one@one.com'
+[2023/01/11 11:26:47] SQL Query: SELECT  IF(con.joinDni LIKE '%07067156535 %',1,0) AS dnis,
+                                            IF(con.joinEmail LIKE '%one@one.com%',1,0) AS emails
+                                            FROM (SELECT GROUP_CONCAT(dni) AS joinDni, 
+                                                            GROUP_CONCAT(email) AS joinEmail FROM users 
+                                                            WHERE dni = '07067156535 ' OR email = 'one@one.com') AS con
+[2023/01/11 11:27:09] SQL Query: SELECT * FROM users WHERE dni = '07067156535 ' OR email = 'four@four.com'
+[2023/01/11 11:27:09] SQL execute: INSERT INTO users (dni,name_user,surname_user,phone,email,password,rolid,status) VALUES('07067156535 ','Test four','Test four','6546464','four@four.com','ff0edd646698f65fa2c8680d00391e368b6d4315','1','1');

@@ -30,9 +30,9 @@
 				                  	<tr>
 				                    	<th>ID</th>
 				                    	<th>Nombre</th>
-				                    	<!-- <th>Apellidos</th> -->
+				                    	<th>Apellidos</th>
 				                    	<th>Email</th>
-				                    	<!-- <th>Telélefono</th> -->
+				                    	<th>Telélefono</th>
                                         <th>Rol</th>
                                         <th>Status</th>
                                         <th>Acciones</th>
@@ -44,13 +44,13 @@
                                     $id_row = 1;
 
                                     foreach ($dataUsers as $key => $value) {    
-                                        $btnPermissions = '';
+                                        $btnWatch = '';
                                         $btnUpdate = '';
                                         $btnDelete = '';
                                         $id_user =  Utils::encriptar($value["id_user"]);
   
                                         if (!empty($_SESSION['module']['ver'])) {
-                                            $btnPermissions = '<button type="button" class="btn btn-secondary btn-sm" onclick="watch(\''.$id_user.'\')" tilte="Permisos"><i class="fa-solid fa-eye"></i></button>';
+                                            $btnWatch = '<button type="button" class="btn btn-secondary btn-sm" onclick="watch(\''.$id_user.'\')" tilte="Ver"><i class="fa-solid fa-eye"></i></button>';
                                         }
   
                                         if ($value['id_user'] != $_SESSION['idUser'] && !empty($_SESSION['module']['actualizar'])) {
@@ -70,12 +70,12 @@
                                         echo'<tr>';
                                             echo '<td>'.$id_row.'</td>';
                                             echo '<td>'.$value['name_user'].'</td>';
-                                            // echo '<td>'.$value['surname_user'].'</td>';
+                                            echo '<td>'.$value['surname_user'].'</td>';
                                             echo '<td>'.$value['email'].'</td>';
-                                            // echo '<td>'.$value['phone'].'</td>';
+                                            echo '<td>'.$value['phone'].'</td>';
                                             echo '<td>'.$value['name_rol'].'</td>';
                                             echo '<td>'.$value['status'].'</td>';
-                                            echo '<td><div class="text-center">'.$btnPermissions.' '.$btnUpdate.' '.$btnDelete.'</div></td>';
+                                            echo '<td><div class="text-center">'.$btnWatch.' '.$btnUpdate.' '.$btnDelete.'</div></td>';
                                         echo'</tr>';
   
                                         $id_row++;

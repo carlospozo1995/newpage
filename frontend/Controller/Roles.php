@@ -26,7 +26,7 @@
 					try {
 						if (empty($name_rol) || empty($descrip_rol) || empty($status_rol)){
 							throw new Exception("Rellene todos los campos.");
-							return false;
+							die();
 						}else{
 							if (empty($id_rol)) {
 								$option	= 1;
@@ -49,10 +49,10 @@
 								}
 							}else if($request == "exists_data"){
 								throw new Exception("El rol a ingresar ya existe. Intentelo de nuevo.");
-								return false;								
+								die();								
 							}else{
 								throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
-								return false;
+								die();
 							}
 						}
 						
@@ -69,7 +69,7 @@
 
 				case 'getRol':
 					if (empty(Utils::getParam("data", ""))) {
-						return false;
+						die();
 					}else{
 						$id_rol = Utils::desencriptar(Utils::getParam("data", ""));
 
@@ -81,6 +81,7 @@
 								$data_request = array("id_rol" => Utils::encriptar($data_rol["id_rol"]), "name_rol" => $data_rol["name_rol"], "description_rol" => $data_rol["description_rol"], "status" => $data_rol["status"]);
 							}else{
 								throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
+								die();
 							}
 						} catch (Exception $e) {
 							$status = false;
@@ -94,7 +95,7 @@
 
 				case 'delRol':
 					if (empty(Utils::getParam("data", ""))) {
-						return false;
+						die();
 					}else{
 						$id_rol = Utils::desencriptar(Utils::getParam("data", ""));
 						try {
@@ -105,10 +106,10 @@
 								$msg = "Se ha eliminado el rol con existo.";
 							}else if ($delRol == "exists") {
 								throw new Exception("No es posible elimininar un rol asociado a un usuario.");
-								return false;
+								die();
 							}else{
 								throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
-								return false;
+								die();
 							}
 						} catch (Exception $e) {
 							$status = false;

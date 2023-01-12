@@ -23,11 +23,13 @@
 					try {
 						if (empty($email) || empty($password)) {
 							throw new Exception("Verifique si los campos estan llenos.");
+							die();
 						}else{
 							$userData = Models_Usuario::getUser($email, sha1($password));
 							
 							if (empty($userData)) {
 								throw new Exception("Verifique si el correo o la contraseña son correctos.");
+								die();
 							}else{
 								if ($userData['status'] == 1) {
 									$_SESSION['idUser'] = $userData['id_user'];
@@ -41,6 +43,7 @@
                             		$msg = "OK";								
 								}else{
 									throw new Exception("Lo sentimos su cuenta a sido desactivada. Solicite ayuda a " . NAME_EMPRESA);
+									die();
 								}
 							}
 						}
@@ -60,10 +63,12 @@
 					try {
 						if (empty($resetEmail)) {
 							throw new Exception("Verifique si los campos estan llenos.");
+							die();
 						}else{
 							$userEmail = Models_Usuario::getUserEmail($resetEmail);
 							if (empty($userEmail)) {
 								throw new Exception("El usuario ha recuperar la contraseña no existe o esta inactivo.");	
+								die();
 							}else{
 								$nameUser = $userEmail['name_user'].' '.$userEmail['surname_user'];
 								$token = Utils::encriptar($userEmail['id_user']."|".date("Y-m-d H:i:s"));
@@ -86,8 +91,8 @@
 									$status = true;
 									$msg = "Se ha enviado un mensage a su cuenta de correo para restablecer tu contraseña.";
 								}else{
-									$status = false;
 									throw new Exception("No es posible realizar el proceso intentalo mas tarde.");
+									die();
 								}
 								
 							}
