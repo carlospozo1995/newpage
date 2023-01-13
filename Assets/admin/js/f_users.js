@@ -2,7 +2,7 @@
 'use strict';
 
 var tableUsers;
-var rowTable = "";
+var rowTable;
 
 $(document).ready(function () {
 
@@ -63,7 +63,7 @@ $(document).ready(function () {
 
         let rol_text =  $("#list_rol").find("option:selected").text();
 
-        if (dni == "" || name == "" || surname == "" || phone == "" || email == "" || list_rol == "" || status == "" || password == "") {
+        if (dni == "" || name == "" || surname == "" || phone == "" || email == "" || list_rol == "" || status == "") {
             msgShow(2, 'Atención', "Rellene todos los campos.");
             return false;
         }else{
@@ -93,7 +93,6 @@ $(document).ready(function () {
                     password : password,
                 },
                 success: function(data){
-                    console.log(data);
                     if(data.status){
                         let htmlStatus = status == 1 ? '<div class="text-center"><span class="bg-success p-1 rounded"><i class="fa-solid fa-user"></i> Activo</span></div>' : '<div class="text-center"><span class="bg-danger p-1 rounded"><i class="fa-solid fa-user-slash"></i> Inactivo</span></div>';
                         
@@ -152,3 +151,61 @@ $(document).ready(function () {
     });
 
 });
+
+// --- EDIT USER --- //
+function edit(element, data) {
+    rowTable = $(element).closest("tr")[0];
+    let ischild = $(rowTable).hasClass("child");
+    if(ischild){
+        rowTable = $(rowTable).prev()[0];
+    }
+
+    $(".modal-header").removeClass("headerRegister").addClass("headerUpdate");
+    $(".modal-title").text("Actualizar Usuario");
+    $("#btnSubmitUser").removeClass("btn-primary").addClass("bg-success");
+    $(".btnText").text("Actualizar");
+    $("#pass_user").val("");
+    
+    validFocus();
+
+    if (!data) {
+        return false;
+    }else{
+        let url_ajax = base_url + "users/getUser/";
+                
+        $.ajax({
+            url: url_ajax,
+            dataType: 'JSON',
+            method: 'POST',
+            data: {
+                data: data,
+            },
+            success: function(data){
+                if (data.status) {
+                    $("#id_user").val(data.data_request.id_user);
+                    $("#dni_user").val(data.data_request.dni);
+                    $("#name_user").val(data.data_request.name_user);
+                    $("#surname_user").val(data.data_request.surname_user);
+                    $("#phone_user").val(data.data_request.phone);
+                    $("#email_user").val(data.data_request.email);
+                    $("#list_rol").val(data.data_request.rolid);
+                    $("#status_user").val(data.data_request.status);
+
+                    $("#list_rol").select2();   
+                    $('#modalFormUser').modal('show');
+                }else{
+                    msgShow(3, 'Error', data.msg);
+                }
+            },
+            error: function(e){
+                // console.log(e);
+            },
+            beforeSend: function(){
+                // console.log("antes completar");
+            },
+            complete: function(){
+                // console.log("completado");
+            }
+        });
+    }
+}

@@ -28,7 +28,7 @@
 					$password = Utils::getParam("password", "");
 
 					try {
-						if (empty($dni) || empty($name) || empty($surname) || empty($phone) || empty($email) || empty($list_rol) || empty($status) || empty($password)) {
+						if (empty($dni) || empty($name) || empty($surname) || empty($phone) || empty($email) || empty($list_rol) || empty($status)) {
 							throw new Exception("Rellene todos los campos.");
 							die();
 						}else{
@@ -37,14 +37,35 @@
 							$test_number = "/^([0-9]{7,10})$/";
 							$test_text = "/^([a-zA-ZÑñÁáÉéÍíÓóÚú\s])*$/";
 
-							if (preg_match($test_text, $name) == 0 || preg_match($test_text, $surname) == 0 || preg_match($test_number, $phone) == 0 || preg_match($test_email, $email) == 0 || preg_match($test_pass, $password) == 0) {
+							if (preg_match($test_text, $name) == 0 || preg_match($test_text, $surname) == 0 || preg_match($test_number, $phone) == 0 || preg_match($test_email, $email) == 0) {
 								die();
 							}
 
 							if(empty($id)){
 								$option = 1;
+
+								if (empty($password)) {
+									throw new Exception("Rellene todos los campos.");
+									die();
+								}else{
+									preg_match($test_pass, $password) == 0 ? die() : $password = $password;
+								}
+
 								if (!empty($_SESSION['module']['crear'])) {
 									$request = Models_Users::insertUser($dni, $name, $surname, $phone, $email, sha1($password), Utils::desencriptar($list_rol), $status);
+								}
+							}else{
+								$option = 2;
+
+								if (empty($password)) {
+									$password = $password;
+								}else{
+									preg_match($test_pass, $password) == 0 ? die() : $password = sha1($password);
+								}
+
+								if (!empty($_SESSION['module']['actualizar'])) {
+									$requesat = Models_Users::updateUser(Utils::desencriptar($id), $dni, $name, $surname, $phone, $email, $password, Utils::desencriptar($list_rol), $status);
+									Utils::dep($requesat);
 								}
 							}
 
@@ -78,6 +99,34 @@
 					echo json_encode($data);
 				break;
 				
+				case 'getUser':
+
+					if (empty(Utils::getParam("data", ""))) {
+						die();
+					}else{
+						$id_user = Utils::desencriptar(Utils::getParam("data", ""));
+						
+						try {
+							$data_user = Models_Users::selectUser($id_user);
+							if (!empty($data_user)) {
+								$status = true;
+								$msg = "";
+								$data_request = array("id_user" => Utils::encriptar($data_user["id_user"]), "dni" => $data_user["dni"], "name_user" => $data_user["name_user"], "surname_user" => $data_user["surname_user"], "phone" => $data_user["phone"], "email" => $data_user["email"], "rolid" => Utils::encriptar($data_user["rolid"]), "status" => $data_user["status"]);
+							}else{
+								throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
+								die();
+							}
+						} catch (Exception $e) {
+							$status = false;
+							$msg = $e->getMessage();
+							$data_request = "";
+						}
+						$data = array("status" => $status,"msg" => $msg, "data_request" => $data_request);
+						echo json_encode($data);
+					}
+
+				break;
+
 				default:
 					Utils::permissionsData(MUSUARIOS);
 

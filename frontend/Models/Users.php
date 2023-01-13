@@ -1,6 +1,7 @@
 <?php
 
     class Models_Users{
+
         static public function getUsers()
         {
             $not_admin = ""; 
@@ -55,8 +56,47 @@
             }
 
             return $result;
-
         }
+
+        static public function selectUser($data)
+        {
+            if(empty($data)){return false;}
+            $sql = "SELECT * FROM users WHERE id_user = ?";
+            return $GLOBALS["db"]->auto_array($sql, array($data));
+        }
+
+        static public function updateUser($id, $dni, $name, $surname, $phone, $email, $password, $list_rol, $status)
+        {
+            if (empty($id)) {return false;}
+
+            // $result;
+
+            $sql ="SELECT * FROM users WHERE (dni = ? AND id_user != ?) OR (email = ? AND id_user != ?)";
+            $request = $GLOBALS["db"]->selectAll($sql, array($dni, $id, $email, $id));
+            
+            if (empty($request)) {
+                if(empty($password)){
+                    $arrData = array("dni" => $dni, "name_user" => ucfirst($name), "surname_user" => ucfirst($surname), "phone" => $phone, "email" => $email, "rolid" => $list_rol, "status" => $status);
+                    $result = $GLOBALS["db"]->update("users", $arrData, "id_user='".$id."'");
+                    return $result;
+                }else{
+                    $arrData = array("dni" => $dni, "name_user" => ucfirst($name), "surname_user" => ucfirst($surname), "phone" => $phone, "email" => $email, "password" => $password, "rolid" => $list_rol, "status" => $status);
+                    $result = $GLOBALS["db"]->update("users", $arrData, "id_user='".$id."'");
+                }
+            }else{
+                $dniVal = false;
+                $emailVal = false;
+
+                array_filter($request,function ($data)
+                {
+                   $resultdata = $data; 
+                });
+
+                $result = $resultdata;
+            }
+            return $result;
+        }
+
     }
 
 ?>

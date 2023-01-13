@@ -44,7 +44,6 @@
 				if (empty($id)) {return false;}
 				$arrData = array("name_rol" => ucfirst($name), "description_rol" => ucfirst($description), "status" => $status);
 				$result = $GLOBALS["db"]->update("roles", $arrData, "id_rol='".$id."'");
-				return $result;
 			}else{
 				$result = "exists_data";
 			}

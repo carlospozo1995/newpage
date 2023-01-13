@@ -30,6 +30,7 @@ RewriteRule ^permissions/setPermissions/$ %{ENV:REWRITEBASE}index.php?show=permi
 
 RewriteRule ^(users/|users|Users)$ %{ENV:REWRITEBASE}index.php?show=users [L]
 RewriteRule ^(users/|users|Users)/setUser/$ %{ENV:REWRITEBASE}index.php?show=Users&action=setUser [L]
+RewriteRule ^(users/|users|Users)/getUser/$ %{ENV:REWRITEBASE}index.php?show=Users&action=getUser [L]
 
 
 
