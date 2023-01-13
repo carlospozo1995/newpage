@@ -104,7 +104,7 @@
 							if ($delRol == "ok") {
 								$status = true;
 								$msg = "Se ha eliminado el rol con existo.";
-							}else if ($delRol == "exists") {
+							}else if ($delRol == "Error") {
 								throw new Exception("No es posible elimininar un rol asociado a un usuario.");
 								die();
 							}else{

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 12-01-2023 a las 04:31:35
+-- Tiempo de generación: 13-01-2023 a las 17:45:52
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 7.4.19
 
@@ -95,9 +95,9 @@ INSERT INTO `roles` (`id_rol`, `name_rol`, `description_rol`, `status`) VALUES
 (30, 'Test three', 'Test description three', 1),
 (31, 'Test four', 'Test description four', 1),
 (32, 'Test five', 'Test description five', 1),
-(33, 'Test six', 'Test description six', 1),
+(33, 'Test one', 'Test description six', 1),
 (34, 'Test seven', 'Test description seven', 1),
-(35, 'Test eight', 'Test descripion eight', 2),
+(35, 'Test eight', 'Test descripion eight', 1),
 (36, 'Test nine', 'Test description nine', 1),
 (37, 'Test ten', 'Test description ten', 1),
 (38, 'Test eleven', 'Test description eleven', 1);
@@ -129,11 +129,12 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id_user`, `dni`, `name_user`, `surname_user`, `phone`, `email`, `password`, `update_status`, `rolid`, `datecreate`, `status`) VALUES
 (1, '0706715653', 'Carlos', 'Pozo', '0994603678', 'carlospozo95@gmail.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 1, '2023-01-04 02:16:48', 1),
 (2, '1234567891', 'Andres', 'Ramirez', '994603678', 'carlos.pfloger@yahoo.com', '5bbe8ae0595ae2af0168d6ace893831b49e65b0a', 1, 2, '2022-12-04 21:37:17', 1),
-(3, '44154321654', 'Carlos', 'Ramirez', '42746942', 'carlos.pflogger@hotmail.com', '5bbe8ae0595ae2af0168d6ace893831b49e65b0a', 1, 6, '2022-12-17 02:36:16', 1),
-(9, '09654545', 'Test one', 'Test one', '6541451', 'one@one.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 6, '2023-01-11 22:13:26', 1),
-(10, '5465154612', 'Test two', 'Test two', '1234567', 'two@two.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 29, '2023-01-11 23:08:47', 1),
-(11, '316546132215', 'Test three', 'Test Three', '6523154', 'three@three.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 6, '2023-01-11 23:12:52', 2),
-(12, '07067156535 ', 'Test four', 'Test four', '6546464', 'four@four.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 1, '2023-01-11 23:27:09', 1);
+(3, '12345', 'Carlos', 'Ramirez', '42746942', 'carlos.pflogger@hotmail.com', '5bbe8ae0595ae2af0168d6ace893831b49e65b0a', 1, 6, '2022-12-17 02:36:16', 2),
+(13, '0123456789', 'Test One', 'Test One', '41241564', 'one@one.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 29, '2023-01-12 11:03:18', 2),
+(14, '5454564', 'Test two', 'Test two', '47454566', 'two@two.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 29, '2023-01-12 11:21:36', 0),
+(15, '4122545622154', 'Test three', 'Test three', '1245255', 'three@three.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 6, '2023-01-12 15:35:26', 1),
+(16, '896983274', 'Test four', 'Test four', '54156551', 'four123@four.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 30, '2023-01-12 15:55:09', 0),
+(17, '123456987', 'Test five', 'Test five', '1235855258', 'five@five.com', '5bbe8ae0595ae2af0168d6ace893831b49e65b0a', 1, 6, '2023-01-12 17:59:08', 2);
 
 --
 -- Índices para tablas volcadas
@@ -192,7 +193,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_user` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Restricciones para tablas volcadas

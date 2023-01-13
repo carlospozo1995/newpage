@@ -222,3 +222,114 @@ function edit(element, data) {
         });
     }
 }
+
+// --- VIEW USER --- //
+function watch(data){
+    $(".modal-header").removeClass("headerUpdate").addClass("headerRegister");
+    $(".modal-title").text("Datos del usuario");
+    if (!data) {
+        return false;
+    }else{
+        let url_ajax = base_url + "users/getUser/";
+                
+        $.ajax({
+            url: url_ajax,
+            dataType: 'JSON',
+            method: 'POST',
+            data: {
+                data: data,
+            },
+            success: function(data){
+                let obj_request =  data.data_request; 
+                if (data.status) {
+                    let status_user = obj_request.status == 1 ? '<span class="bg-success p-1 rounded"><i class="fas fa-user"></i> Activo</span>' : '<span class="bg-danger p-1 rounded"><i class="fas fa-user-slash"></i> Inactivo</span>';
+                    
+                    $("#celDni").text(obj_request.dni);
+                    $("#celName").text(obj_request.name_user);
+                    $("#celSurname").text(obj_request.surname_user);
+                    $("#celPhone").text(obj_request.phone);
+                    $("#celEmail").text(obj_request.email);
+                    $("#celName_rol").text(obj_request.name_rol);
+                    $("#celStatus").html(status_user);
+                    $("#celDate_create").text(obj_request.date_create);
+
+                    $('#modalViewUser').modal('show');
+                }else{
+                     msgShow(3, 'Error', data.msg);
+                }
+            },
+            error: function(e){
+                // console.log(e);
+            },
+            beforeSend: function(){
+                // console.log("antes completar");
+            },
+            complete: function(){
+                // console.log("completado");
+            }
+        });
+    }
+}
+
+// --- DELETE ROLE --- //
+function deleteData(element, data) {
+    Swal.fire({
+        title: 'Eliminar Usuario',
+        text: "Realmente quiere eliminar el usuario!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminar!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            if (!data) {
+                return false;
+            }else{
+                let url_ajax = base_url + "users/delUser/";
+                        
+                $.ajax({
+                    url: url_ajax,
+                    dataType: 'JSON',
+                    method: 'POST',
+                    data: {
+                        data: data,
+                    },  
+                    success: function(data){
+                        if (data.status) {
+                            let row_closest = $(element).closest("tr");
+                            if(row_closest.length){
+                                let ischild = $(row_closest).hasClass("child");
+                                if(ischild){
+                                    let prevtr = row_closest.prev();
+                                    if(prevtr.length){
+                                        $("#tableUsers").DataTable().row(prevtr[0]).remove().draw(false);
+                                    }
+                                }
+                                else{
+                                    $("#tableUsers").DataTable().row(row_closest[0]).remove().draw(false);
+                                }
+                            }
+
+                            // Reset the id column
+                            resetIdTable($("#tableUsers"));
+                            
+                            msgShow(1, 'Eliminado', data.msg);
+                        }else{
+                            msgShow(3, 'Error', data.msg);
+                        }
+                    },
+                    error: function(e){
+                        // console.log(e);
+                    },
+                    beforeSend: function(){
+                        // console.log("antes completar");
+                    },
+                    complete: function(){
+                        // console.log("completado");
+                    }
+                });
+            }
+        }
+    });
+}

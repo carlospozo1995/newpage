@@ -118,3 +118,62 @@
         </div>
     </div>
 <?php } ?>
+
+<?php if (!empty($_SESSION['module']['ver'])) { ?>
+    <div class="modal fade" id="modalViewUser">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header headerRegister">
+                    <h4 class="modal-title">Datos del usuario</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card card-primary">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td>Identificación:</td>
+                                    <td id="celDni"></td>
+                                </tr>
+                                <tr>
+                                    <td>Nombres:</td>
+                                    <td id="celName"></td>
+                                </tr>
+                                <tr>
+                                    <td>Apellidos:</td>
+                                    <td id="celSurname"></td>
+                                </tr>
+                                <tr>
+                                    <td>Teléfono:</td>
+                                    <td id="celPhone"></td>
+                                </tr>
+                                <tr>
+                                    <td>Email(Usuario):</td>
+                                    <td id="celEmail"></td>
+                                </tr>
+                                <tr>
+                                    <td>Tipo Usuario:</td>
+                                    <td id="celName_rol"></td>
+                                </tr>
+                                <tr>
+                                    <td>Estado:</td>
+                                    <td id="celStatus"></td>
+                                </tr>
+                                <tr>
+                                    <td>Fecha registro:</td>
+                                    <td id="celDate_create"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+<?php } ?>

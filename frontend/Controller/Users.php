@@ -114,7 +114,7 @@
 							if (!empty($data_user)) {
 								$status = true;
 								$msg = "";
-								$data_request = array("id_user" => Utils::encriptar($data_user["id_user"]), "dni" => $data_user["dni"], "name_user" => $data_user["name_user"], "surname_user" => $data_user["surname_user"], "phone" => $data_user["phone"], "email" => $data_user["email"], "rolid" => Utils::encriptar($data_user["rolid"]), "status" => $data_user["status"]);
+								$data_request = array("id_user" => Utils::encriptar($data_user["id_user"]), "dni" => $data_user["dni"], "name_user" => $data_user["name_user"], "surname_user" => $data_user["surname_user"], "phone" => $data_user["phone"], "email" => $data_user["email"], "rolid" => Utils::encriptar($data_user["rolid"]), "date_create" => $data_user["date_create"], "name_rol" => $data_user["name_rol"], "status" => $data_user["status"]);
 							}else{
 								throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
 								die();
@@ -130,6 +130,31 @@
 
 				break;
 
+				case 'delUser':
+					if (empty(Utils::getParam("data", ""))) {
+						die();
+					}else{
+						$id_user = Utils::desencriptar(Utils::getParam("data", ""));
+						try {
+							$delUser = Models_Users::deleteUser($id_user);
+
+							if ($delUser == "ok") {
+								$status = true;
+								$msg = "Se ha eliminado el usuario con existo.";
+							}else{
+								throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
+								die();
+							}
+						} catch (Exception $e) {
+							$status = false;
+							$msg = $e->getMessage();
+						}
+
+						$data = array("status" => $status,"msg" => $msg);
+						echo json_encode($data);
+					}
+				break;
+
 				default:
 					Utils::permissionsData(MUSUARIOS);
 
@@ -142,8 +167,6 @@
 					View::renderPage('Users', $variable);
 				break;
 			}
-
-			
 		}
 
 	}

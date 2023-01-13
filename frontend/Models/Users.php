@@ -61,7 +61,9 @@
         static public function selectUser($data)
         {
             if(empty($data)){return false;}
-            $sql = "SELECT * FROM users WHERE id_user = ?";
+            // $sql = "SELECT * FROM users WHERE id_user = ?";
+
+            $sql = "SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.rolid, DATE_FORMAT(u.datecreate, '%d-%m-%Y') AS date_create, r.id_rol, r.name_rol, u.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = ?";
             return $GLOBALS["db"]->auto_array($sql, array($data));
         }
 
@@ -104,6 +106,18 @@
                     $result = "";
                 }                
             }
+            return $result;
+        }
+
+        static public function deleteUser($data)
+        {
+            if (empty($data)) {return false;}
+
+            $status['status'] = 0;
+            $request =  $GLOBALS["db"]->update("users", $status, "id_user='".$data."'");
+            
+            if($request) {$result = "ok";}
+
             return $result;
         }
 
