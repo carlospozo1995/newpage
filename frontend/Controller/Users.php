@@ -64,8 +64,7 @@
 								}
 
 								if (!empty($_SESSION['module']['actualizar'])) {
-									$requesat = Models_Users::updateUser(Utils::desencriptar($id), $dni, $name, $surname, $phone, $email, $password, Utils::desencriptar($list_rol), $status);
-									Utils::dep($requesat);
+									$request = Models_Users::updateUser(Utils::desencriptar($id), $dni, $name, $surname, $phone, $email, $password, Utils::desencriptar($list_rol), $status);
 								}
 							}
 
@@ -74,6 +73,10 @@
 									$status = true;
 									$msg = "Datos ingresados correctamente.";
 									$data_request = array("idr_decrypt" => strval($request), "idr_encrypt" => Utils::encriptar(strval($request)), "id_user" => $_SESSION['idUser'], "module" => $_SESSION['module']);
+								}else{
+									$status = true;
+									$msg = "Datos actualizados correctamente";
+									$data_request = "";
 								}
 							}else if($request == "both_exist"){
 								throw new Exception("La identificación y el correo ingresados ya existen. Inténtelo de nuevo.");

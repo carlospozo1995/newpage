@@ -129,6 +129,19 @@ $(document).ready(function () {
                                 htmlStatus,
                                 '<div class="text-center"> '+btnWatch+" "+btnUpdate+" "+btnDelete+'</div>'
                             ]).draw(false);
+                        }else{
+                            let n_row = $(rowTable).find("td:eq(0)").html();
+                            let buttons_html = $(rowTable).find("td:eq(7)").html()
+                            $("#tableUsers").DataTable().row(rowTable).data([
+                                n_row,    
+                                capitalLetter(name),
+                                capitalLetter(surname),
+                                email,
+                                phone,
+                                rol_text,
+                                htmlStatus,
+                                buttons_html,
+                            ]).draw(false);
                         }
 
                         $('#modalFormUser').modal('hide');

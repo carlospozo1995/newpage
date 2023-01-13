@@ -69,8 +69,6 @@
         {
             if (empty($id)) {return false;}
 
-            // $result;
-
             $sql ="SELECT * FROM users WHERE (dni = ? AND id_user != ?) OR (email = ? AND id_user != ?)";
             $request = $GLOBALS["db"]->selectAll($sql, array($dni, $id, $email, $id));
             
@@ -78,7 +76,6 @@
                 if(empty($password)){
                     $arrData = array("dni" => $dni, "name_user" => ucfirst($name), "surname_user" => ucfirst($surname), "phone" => $phone, "email" => $email, "rolid" => $list_rol, "status" => $status);
                     $result = $GLOBALS["db"]->update("users", $arrData, "id_user='".$id."'");
-                    return $result;
                 }else{
                     $arrData = array("dni" => $dni, "name_user" => ucfirst($name), "surname_user" => ucfirst($surname), "phone" => $phone, "email" => $email, "password" => $password, "rolid" => $list_rol, "status" => $status);
                     $result = $GLOBALS["db"]->update("users", $arrData, "id_user='".$id."'");
@@ -87,12 +84,25 @@
                 $dniVal = false;
                 $emailVal = false;
 
-                array_filter($request,function ($data)
-                {
-                   $resultdata = $data; 
-                });
+                foreach ($request as $key => $value) {
+                    if ($value['dni'] == $dni) {
+                        $dniVal = true;
+                    }
+                    
+                    if ($value['email'] == $email) {
+                        $emailVal = true;
+                    }
+                }
 
-                $result = $resultdata;
+                if ($dniVal && $emailVal) {
+                    $result = "both_exist"; 
+                }else if($dniVal){
+                    $result = "dni_exist";
+                }else if($emailVal){
+                    $result = "email_exist";
+                }else{
+                    $result = "";
+                }                
             }
             return $result;
         }
