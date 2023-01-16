@@ -29,11 +29,14 @@ RewriteRule ^permissions/getPermissions/$ %{ENV:REWRITEBASE}index.php?show=permi
 RewriteRule ^permissions/setPermissions/$ %{ENV:REWRITEBASE}index.php?show=permissions&action=setPermissions [L]
 
 RewriteRule ^(users/|users|Users)$ %{ENV:REWRITEBASE}index.php?show=users [L]
-RewriteRule ^(users/|users|Users)/setUser/$ %{ENV:REWRITEBASE}index.php?show=Users&action=setUser [L]
-RewriteRule ^(users/|users|Users)/getUser/$ %{ENV:REWRITEBASE}index.php?show=Users&action=getUser [L]
-RewriteRule ^(users/|users|Users)/delUser/$ %{ENV:REWRITEBASE}index.php?show=Users&action=delUser [L]
+RewriteRule ^(users/|users|Users)/setUser/$ %{ENV:REWRITEBASE}index.php?show=users&action=setUser [L]
+RewriteRule ^(users/|users|Users)/getUser/$ %{ENV:REWRITEBASE}index.php?show=users&action=getUser [L]
+RewriteRule ^(users/|users|Users)/delUser/$ %{ENV:REWRITEBASE}index.php?show=users&action=delUser [L]
 
+RewriteRule ^(categories/|categories|Categories)$ %{ENV:REWRITEBASE}index.php?show=categories [L]
+RewriteRule ^(categories/|categories|Categories)/setCategory/$ %{ENV:REWRITEBASE}index.php?show=categories&action=setCategory [L]
 
+RewriteRule ^(products/|products|Products)$ %{ENV:REWRITEBASE}index.php?show=products [L]
 
 
 

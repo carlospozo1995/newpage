@@ -1,5 +1,9 @@
 'use strict';
 
+if($("#loading").length){
+    var loading = $("#loading");
+}
+
 // VALIDATE EMPRY INPUT
 function emptyValidate(value){
     return value == undefined || value == false || value == null || value == "" ? true: false;

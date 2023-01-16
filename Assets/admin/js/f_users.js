@@ -25,14 +25,13 @@ $(document).ready(function () {
     });
 
 	var formNewUser = $("#formNewUser");
-
+    
     if ($("#list_rol").length) {
         $("#list_rol").select2();
     }
 
 	if ($("#btnNewUser").length) {
         $("#btnNewUser").click(function () {
-            
             formNewUser.find("#id_user").val("");            
             $(".modal-header").removeClass("headerUpdate").addClass("headerRegister");
             $(".modal-title").text("Nuevo Usuario");
@@ -76,6 +75,7 @@ $(document).ready(function () {
                 };
             });
 
+            loading.css("display","flex");
             let url_ajax = base_url + "users/setUser/";
             $.ajax({
                 url: url_ajax,
@@ -149,6 +149,7 @@ $(document).ready(function () {
                     }else{
                         msgShow(2, 'Atención', data.msg);
                     }
+                    loading.css("display","none");
                 },
                 error: function(e){
                     // console.log(e);
@@ -225,6 +226,7 @@ function edit(element, data) {
 
 // --- VIEW USER --- //
 function watch(data){
+    console.log(loadingtest)
     $(".modal-header").removeClass("headerUpdate").addClass("headerRegister");
     $(".modal-title").text("Datos del usuario");
     if (!data) {
@@ -286,6 +288,7 @@ function deleteData(element, data) {
             if (!data) {
                 return false;
             }else{
+                loading.css("display","flex");
                 let url_ajax = base_url + "users/delUser/";
                         
                 $.ajax({
@@ -318,6 +321,7 @@ function deleteData(element, data) {
                         }else{
                             msgShow(3, 'Error', data.msg);
                         }
+                        loading.css("display","none");
                     },
                     error: function(e){
                         // console.log(e);

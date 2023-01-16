@@ -49,6 +49,14 @@
 			case 'users':
 				return "Users";
 			break;
+
+			case 'categories':
+				return "Categories";
+			break;
+
+			case 'products':
+				return "Products";
+			break;
 		}
 
 		return ucfirst($name);

@@ -34,6 +34,13 @@
 		?>
 </head>
 <body class="hold-transition sidebar-mini">
+
+		<div id="loading" class="loading-gif">
+			<div>
+				<img src="<?= MEDIA; ?>admin/files/images/loading.gif" alt="">
+			</div>
+		</div>
+		
 		<div class="wrapper">
 
 				<nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -57,7 +64,7 @@
 
 						        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 						          
-						          	<li class="user-header bg-primary">
+						          	<li class="user-header bg-primary h-100">
 								            <p><?= $_SESSION['data_user']['name_rol'] ?></p>
 								            <p>
 								              	<small><?= Utils::date(); ?></small>

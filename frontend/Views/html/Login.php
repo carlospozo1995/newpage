@@ -3,7 +3,7 @@
         <div class="card card-outline card-primary login-content">
             <div class="card-body login">
 
-                <div id="loading" class="loading-login-mc">
+                <div id="loading" class="loading-gif">
                     <div>
                         <img src="<?= MEDIA; ?>admin/files/images/loading.gif" alt="">
                     </div>

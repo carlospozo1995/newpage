@@ -31,5 +31,7 @@
     // MODULES PERMISSIONS
     define("MDASHBOARD", 1);
     define("MUSUARIOS", 2);
+    define("MCATEGORIAS", 3);
+    define("MPRODUCTOS", 4);
 
 ?>

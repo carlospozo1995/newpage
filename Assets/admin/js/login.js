@@ -32,8 +32,7 @@ $(document).ready(function(){
                 return false;
                 
             }else{
-                loading.style.display = 'flex';
-
+                loading.css("display","flex");
                 let url_ajax = base_url + "login/ajaxLogin/";
                 
                 $.ajax({
@@ -51,8 +50,7 @@ $(document).ready(function(){
                             msgShow(2, 'Error', data.msg);
                             $("#password").val("");
                         }
-                        loading.style.display = 'none';
-
+                        loading.css("display","none");
                         return false;
                     },
                     error: function(e){
@@ -84,7 +82,7 @@ $(document).ready(function(){
                 msgShow(2, 'Error', 'Ingrese su correo para seguir el proceso.');
                 return false;
             }else{
-                loading.style.display = 'flex';
+                loading.css("display","flex");
                 let url_ajax = base_url + "login/ajaxEmailSend/";
 
                 $.ajax({
@@ -110,7 +108,7 @@ $(document).ready(function(){
                         }else{
                             msgShow(2, 'Error', data.msg);
                         }
-                        loading.style.display = 'none';
+                        loading.css("display","none");
 
                         return false;
                     },
@@ -153,7 +151,7 @@ $(document).ready(function(){
                     return false;   
                 }
 
-                loading.style.display = 'flex';
+                loading.css("display","flex");
 
                 let url_ajax = base_url + "resetPassword/updatePassword/";
                 
@@ -197,7 +195,7 @@ $(document).ready(function(){
                             });
                         }
                         
-                        loading.style.display = 'none';
+                        loading.css("display","none");
 
                         return false;
                     },

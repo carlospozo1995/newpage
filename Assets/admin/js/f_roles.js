@@ -55,6 +55,7 @@ $(document).ready(function(){
             msgShow(2, 'Atención', "Rellene todos los campos.");
             return false;
         }else{
+            loading.css("display","flex");
             let url_ajax = base_url + "roles/setRol/";
             $.ajax({
                 url: url_ajax,
@@ -114,6 +115,7 @@ $(document).ready(function(){
                     }else{
                         msgShow(2, 'Atención', data.msg);
                     }
+                    loading.css("display","none");
                 },
                 error: function(e){
                     // console.log(e);
@@ -181,6 +183,7 @@ function permissions(data) {
 function savePermission(e) {
     e.preventDefault();
 
+    loading.css("display","flex");
     var formData = $(this).serializeArray();
     let url_ajax = base_url + "permissions/setPermissions/";
                 
@@ -195,6 +198,7 @@ function savePermission(e) {
             }else{
                 msgShow(3, 'Error', data.msg);
             }
+            loading.css("display","none");
         },
         error: function(e){
             // console.log(e);
@@ -274,6 +278,7 @@ function deleteData(element, data) {
             if (!data) {
                 return false;
             }else{
+                loading.css("display","flex");
                 let url_ajax = base_url + "roles/delRol/";
                         
                 $.ajax({
@@ -306,6 +311,7 @@ function deleteData(element, data) {
                         }else{
                             msgShow(3, 'Error', data.msg);
                         }
+                        loading.css("display","none");
                     },
                     error: function(e){
                         // console.log(e);

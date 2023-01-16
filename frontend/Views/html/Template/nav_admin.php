@@ -58,15 +58,14 @@
 			          	</li>
 			          	<?php } ?>
 			          	
-			            <li class="nav-item">
+			            <!-- <li class="nav-item">
 			              	<a href="" class="nav-link">
 			                	<i class="nav-icon fas fa-user"></i>
 			                	<p>Clientes</p>
 			              	</a>
-			            </li>
+			            </li> -->
 			          	
-
-			          	
+						<?php if(!empty($_SESSION['permissions'][MCATEGORIAS]['ver']) || !empty($_SESSION['permissions'][MPRODUCTOS]['ver'])){ ?>
 			          	<li class="nav-item">
 				            <a href="#" class="nav-link">
 				              	<i class="nav-icon fas fa-store"></i>
@@ -75,26 +74,28 @@
 				                	<i class="fas fa-angle-left right"></i>
 				              	</p>
 				            </a>
+
 				            <ul class="nav nav-treeview">
-				              	
+								<?php if (!empty($_SESSION['permissions'][MCATEGORIAS]['ver'])) { ?>
 				              	<li class="nav-item">
-					                <a href="" class="nav-link">
+					                <a href="<?= BASE_URL ?>categories" class="nav-link">
 					                  	<i class="far fa-circle nav-icon"></i>
 					                  	<p>Categorias</p>
 					                </a>
 				              	</li>
+								<?php } ?>
 				              	
-
-				              	
+								<?php if (!empty($_SESSION['permissions'][MPRODUCTOS]['ver'])) { ?>
 				              	<li class="nav-item">
-					                <a href="" class="nav-link">
+					                <a href="<?= BASE_URL ?>products" class="nav-link">
 					                  	<i class="far fa-circle nav-icon"></i>
 					                  	<p>Productos</p>
 					                </a>
 				              	</li>
-				              	
+				              	<?php } ?>
 				            </ul>
 			          	</li>
+						<?php } ?>
 
 			        </ul>
 			    </nav>

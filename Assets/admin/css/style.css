@@ -1,5 +1,4 @@
 /* LOGIN FLIPPED */
-
 .login{
     position: relative;
     transition: all 0.5s ease-in-out;
@@ -54,15 +53,10 @@
     -moz-transform: rotateY(0deg);
     -ms-transform: rotateY(0deg);
     -o-transform: rotateY(0deg);
-}
+}   
 
-.user-header{
-    height: max-content !important;
-}
-
-/* LOADING LOGIN */
-
-.loading-login-mc{
+/* LOADING */
+.loading-gif{
     position: fixed;
     top: 0;
     height: 100%;
@@ -76,11 +70,7 @@
     display: none;
 }
 
-.required{
-    color: red;
-}
-
-/**/
+/*MODAL CLASS*/
 
 .headerRegister{
     background: #1CA9E1;
@@ -91,3 +81,96 @@
     background: rgb(68, 212, 116);
     color: #fff;
 }
+
+.m-hgt-txarea{
+    max-height: 80px;
+    min-height: 80px;
+}
+
+/* MODAL CLASS IMG UPLOAD */
+
+.prevImgUpload {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #CCC;
+    position: relative;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin: auto;
+}
+
+.prevImgUpload label{
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.prevImgUpload img{
+    width: 100%;
+    height: 100%;
+}
+
+.upimg, .notBlock{
+    display: none !important;
+}
+
+.errorArchive{
+    font-size: 16px;
+    font-family: arial;
+    color: #cc0000;
+    text-align: center;
+    font-weight: bold; 
+    margin-top: 10px;
+}
+
+.delImgUpload{
+    color: #FFF;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background: red;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    z-index: 10;
+}
+
+.prevIcon{
+    width: 64px;
+    height: 64px;
+    background: url(../../admin/files/images/icon.png);
+}
+
+.prevPhoto {
+    width: 150px;
+    height: 150px;
+    background: url(../../admin/files/images/undefine-ctg.png);
+}
+
+.prevSliderMbl {
+    width: 140px;
+    height: 90px;
+    background: url(../../admin/files/images/slider-mobile.png);
+}
+
+.prevSliderDst {
+    width: 200px;
+    height: 100px;
+    background: url(../../admin/files/images/slider-desktop.png);
+}
+/* .required{
+    color: red;
+} */
