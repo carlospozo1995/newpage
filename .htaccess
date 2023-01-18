@@ -34,7 +34,7 @@ RewriteRule ^(users/|users|Users)/getUser/$ %{ENV:REWRITEBASE}index.php?show=use
 RewriteRule ^(users/|users|Users)/delUser/$ %{ENV:REWRITEBASE}index.php?show=users&action=delUser [L]
 
 RewriteRule ^(categories/|categories|Categories)$ %{ENV:REWRITEBASE}index.php?show=categories [L]
-RewriteRule ^(categories/|categories|Categories)/setCategory/$ %{ENV:REWRITEBASE}index.php?show=categories&action=setCategory [L]
+RewriteRule ^(categories/|categories|Categories)/listCategories/$ %{ENV:REWRITEBASE}index.php?show=categories&action=listCategories [L]
 
 RewriteRule ^(products/|products|Products)$ %{ENV:REWRITEBASE}index.php?show=products [L]
 

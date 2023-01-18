@@ -25,7 +25,7 @@
 
                                         <div class="form-group">
                                             <label for="listCategories">Pertenece a:</label>
-                                            <select class="form-control" id="listCategories"></select>
+                                            <select class="form-control" style="width: 100%;" id="listCategories"></select>
                                         </div>
 
                                         <div class="form-group">
@@ -34,7 +34,7 @@
                                                 <input type="hidden" class="image_remove" id="icon_remove" value="0">
 
                                                 <label>Icono (64x64)</label>
-                                                <p class="errorArchive errorIcon"></p>
+                                                <p class="text-info text-center errorImage"></p>
 
                                                 <div class="contImage">
                                                     <div class="prevImgUpload prevIcon">
@@ -45,7 +45,7 @@
                                                     <div class="upimg">
                                                         <input type="file" id="icon" class="imagen">
                                                     </div>
-                                                    <div class="alertImgUpload"></div>
+                                                    <div class="alertImgUpload alertErrorImg"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -56,7 +56,7 @@
                                                 <input type="hidden" class="image_remove" id="photo_remove" value="0">
 
                                                 <label>Imagen categoria (150x150)</label>
-                                                <p class="errorArchive errorPhoto"></p>
+                                                <p class="text-info text-center errorImage"></p>
 
                                                 <div class="contImage">
                                                     <div class="prevImgUpload prevPhoto">
@@ -67,7 +67,7 @@
                                                     <div class="upimg">
                                                         <input type="file" id="photo" class="imagen">
                                                     </div>
-                                                    <div class="alertImgUpload"></div>
+                                                    <div class="alertImgUpload alertErrorImg"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -81,7 +81,7 @@
 
                                                 <label>Slider Mobile (800x500)</label>
 
-                                                <div class="contImage">
+                                                <div class="contSlider">
                                                     <div class="prevImgUpload prevSliderMbl">
                                                         <span class="delImgUpload notBlock delSliderMbl">X</span>
                                                         <label for="sliderMbl"></label>
@@ -102,7 +102,7 @@
 
                                                 <label>Slider Desktop (1920x850)</label>
 
-                                                <div class="contImage">
+                                                <div class="contSlider">
                                                     <div class="prevImgUpload prevSliderDst">
                                                         <span class="delImgUpload notBlock delSliderDst">X</span>
                                                         <label for="sliderDst"></label>
@@ -139,7 +139,7 @@
                             </div>
 
                             <div class="card-footer">
-                                <button id="btnSubmitUser" type="submit" class="btn btn-primary btnText">Guardar</button>
+                                <button id="btnSubmitCategory" type="submit" class="btn btn-primary btnText">Guardar</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                             </div>
 

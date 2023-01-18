@@ -220,6 +220,31 @@
         	$_SESSION['module'] = $module;
 	    }
 
+	    static public function optionsCategories($arrData)
+	    {
+	    	$html_options = "";
+	    	$option_static = '<option value="0">-- CATEGORIA SUPERIOR --</option>';
+	    	foreach ($arrData as $key => $value) {
+	    		if ($value["fatherCategory"] == "") {
+	    			$html_options.= '<option value="'.Utils::encriptar($value['id_category']).'">'.$value['name_category'].'</option>';
+	    			$html_options.= self::optionsChildrens($value['id_category'], 1, $arrData);
+	    		}
+	    	}
+	    	echo json_encode($option_static.$html_options);
+	    }
+
+	    static public function optionsChildrens($father_id, $level, $arrCtg)
+	    {
+	    	$result = "";
+	    	foreach ($arrCtg as $key => $value) {
+	    		if ($value["fatherCategory"] == $father_id) {
+	    			$result.= '<option value="'.Utils::encriptar($value['id_category']).'">'.str_repeat('- ', $level).$value['name_category'].'</option>';
+                	$result.= self::optionsChildrens($value['id_category'], $level + 1,$arrCtg);
+	    		}
+	    	}
+	    	return $result;
+	    }
+
 	}
 
 ?>

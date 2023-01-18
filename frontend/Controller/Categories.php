@@ -16,9 +16,11 @@
 			$request = "";
 
 			switch ($action) {
-				case ' ':
-                    return false;
-                break;
+				case 'listCategories':
+					$id_category = Utils::getParam("id_category", "");
+					$arr_options = Models_Categories::arrCategories($id_category);
+					Utils::optionsCategories($arr_options);
+				break;
 
 				default:
 					Utils::permissionsData(MCATEGORIAS);
