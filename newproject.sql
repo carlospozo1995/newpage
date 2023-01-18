@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 13-01-2023 a las 17:45:52
+-- Tiempo de generación: 18-01-2023 a las 23:32:21
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 7.4.19
 
@@ -24,6 +24,39 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `categories`
+--
+
+CREATE TABLE `categories` (
+  `id_category` bigint(20) NOT NULL,
+  `name_category` varchar(100) NOT NULL,
+  `photo` varchar(100) DEFAULT NULL,
+  `icon` varchar(100) DEFAULT NULL,
+  `sliderDst` varchar(100) DEFAULT NULL,
+  `sliderMbl` varchar(100) DEFAULT NULL,
+  `sliderDesOne` varchar(120) DEFAULT NULL,
+  `sliderDesTwo` varchar(120) DEFAULT NULL,
+  `datecreate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `fatherCategory` bigint(20) DEFAULT NULL,
+  `status` int(11) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `categories`
+--
+
+INSERT INTO `categories` (`id_category`, `name_category`, `photo`, `icon`, `sliderDst`, `sliderMbl`, `sliderDesOne`, `sliderDesTwo`, `datecreate`, `fatherCategory`, `status`) VALUES
+(1, 'FATHERCATEGORYONE', 'undefine_ctg.png', 'icon_FATHERCATEGORY_test123.jpg', 'testDesktop.jpg', 'testMobile.jpg', NULL, NULL, '2023-01-16 16:47:53', NULL, 1),
+(2, 'Categoryone', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-16 16:49:31', 1, 1),
+(3, 'Subone1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-16 16:50:36', 2, 1),
+(4, 'Subone2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-16 16:50:36', 2, 1),
+(5, 'Categorytwo', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-16 16:51:16', 1, 1),
+(6, 'Subtwo1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-16 16:52:05', 5, 1),
+(7, 'Subtwo2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-16 16:52:05', 5, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `modules`
 --
 
@@ -40,7 +73,9 @@ CREATE TABLE `modules` (
 
 INSERT INTO `modules` (`id_module`, `name_module`, `description_module`, `status`) VALUES
 (1, 'Dashboard', 'Page-Dashboard', 1),
-(2, 'Usuarios', 'Page-Usuarios', 1);
+(2, 'Usuarios', 'Page-Usuarios', 1),
+(3, 'Categorias', 'Page-Categorias', 1),
+(4, 'Productos', 'Page-Productos', 1);
 
 -- --------------------------------------------------------
 
@@ -63,12 +98,26 @@ CREATE TABLE `permissions` (
 --
 
 INSERT INTO `permissions` (`id_permissions`, `rol_id`, `module_id`, `ver`, `crear`, `actualizar`, `eliminar`) VALUES
-(88, 1, 1, 1, 1, 1, 1),
-(89, 1, 2, 1, 1, 1, 1),
-(114, 2, 1, 1, 0, 0, 0),
-(115, 2, 2, 1, 1, 1, 0),
-(116, 6, 1, 1, 0, 0, 0),
-(117, 6, 2, 1, 1, 1, 0);
+(132, 6, 1, 1, 0, 0, 0),
+(133, 6, 2, 0, 0, 0, 0),
+(134, 6, 3, 0, 0, 0, 0),
+(135, 6, 4, 0, 0, 0, 0),
+(140, 1, 1, 1, 1, 1, 1),
+(141, 1, 2, 1, 1, 1, 1),
+(142, 1, 3, 1, 1, 1, 1),
+(143, 1, 4, 1, 1, 1, 1),
+(148, 30, 1, 0, 0, 0, 0),
+(149, 30, 2, 0, 0, 0, 0),
+(150, 30, 3, 0, 0, 0, 0),
+(151, 30, 4, 0, 0, 0, 0),
+(156, 32, 1, 0, 0, 0, 0),
+(157, 32, 2, 0, 0, 0, 0),
+(158, 32, 3, 0, 0, 0, 0),
+(159, 32, 4, 0, 0, 0, 0),
+(160, 2, 1, 1, 0, 0, 0),
+(161, 2, 2, 1, 1, 0, 0),
+(162, 2, 3, 1, 1, 1, 0),
+(163, 2, 4, 1, 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -100,7 +149,8 @@ INSERT INTO `roles` (`id_rol`, `name_rol`, `description_rol`, `status`) VALUES
 (35, 'Test eight', 'Test descripion eight', 1),
 (36, 'Test nine', 'Test description nine', 1),
 (37, 'Test ten', 'Test description ten', 1),
-(38, 'Test eleven', 'Test description eleven', 1);
+(38, 'Test eleven', 'Test description eleven', 1),
+(39, 'Test twelve', 'Test description twelve', 0);
 
 -- --------------------------------------------------------
 
@@ -134,11 +184,20 @@ INSERT INTO `users` (`id_user`, `dni`, `name_user`, `surname_user`, `phone`, `em
 (14, '5454564', 'Test two', 'Test two', '47454566', 'two@two.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 29, '2023-01-12 11:21:36', 0),
 (15, '4122545622154', 'Test three', 'Test three', '1245255', 'three@three.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 6, '2023-01-12 15:35:26', 1),
 (16, '896983274', 'Test four', 'Test four', '54156551', 'four123@four.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 30, '2023-01-12 15:55:09', 0),
-(17, '123456987', 'Test five', 'Test five', '1235855258', 'five@five.com', '5bbe8ae0595ae2af0168d6ace893831b49e65b0a', 1, 6, '2023-01-12 17:59:08', 2);
+(17, '123456987', 'Test five', 'Test five', '1235855258', 'five@five.com', '5bbe8ae0595ae2af0168d6ace893831b49e65b0a', 1, 6, '2023-01-12 17:59:08', 2),
+(18, '93647479574', 'Test six', 'Text six', '839378448', 'six@six.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 6, '2023-01-13 12:53:21', 2),
+(19, '64314641', 'Test eight', 'Test height', '65464654', 'eight@height.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 29, '2023-01-14 22:01:11', 0);
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id_category`),
+  ADD KEY `fatherCategory` (`fatherCategory`);
 
 --
 -- Indices de la tabla `modules`
@@ -172,32 +231,44 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id_category` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT de la tabla `modules`
 --
 ALTER TABLE `modules`
-  MODIFY `id_module` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_module` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id_permissions` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+  MODIFY `id_permissions` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id_rol` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_rol` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_user` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `categories`
+--
+ALTER TABLE `categories`
+  ADD CONSTRAINT `categories_ibfk_1` FOREIGN KEY (`fatherCategory`) REFERENCES `categories` (`id_category`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `permissions`

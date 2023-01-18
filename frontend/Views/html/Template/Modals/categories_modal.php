@@ -20,18 +20,18 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="name_category">Nombre</label>
-                                            <input type="text" class="form-control" placeholder="Nombre" id="name_category">
+                                            <input type="text" class="form-control" placeholder="Nombre" name="name_category" id="name_category">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="listCategories">Pertenece a:</label>
-                                            <select class="form-control" style="width: 100%;" id="listCategories"></select>
+                                            <select class="form-control" style="width: 100%;" name="listCategories" id="listCategories"></select>
                                         </div>
 
                                         <div class="form-group">
                                             <div class="contImgUpload">
-                                                <input type="hidden" class="image_actual" id="icon_actual" value="">
-                                                <input type="hidden" class="image_remove" id="icon_remove" value="0">
+                                                <input type="hidden" class="image_actual" name="icon_actual" id="icon_actual" value="">
+                                                <input type="hidden" class="image_remove" name="icon_remove" id="icon_remove" value="0">
 
                                                 <label>Icono (64x64)</label>
                                                 <p class="text-info text-center errorImage"></p>
@@ -43,7 +43,7 @@
                                                         <div></div>
                                                     </div>
                                                     <div class="upimg">
-                                                        <input type="file" id="icon" class="imagen">
+                                                        <input type="file" name="icon" id="icon" class="imagen">
                                                     </div>
                                                     <div class="alertImgUpload alertErrorImg"></div>
                                                 </div>
@@ -52,8 +52,8 @@
 
                                         <div class="form-group">
                                             <div class="contImgUpload">
-                                                <input type="hidden" class="image_actual" id="photo_actual" value="">
-                                                <input type="hidden" class="image_remove" id="photo_remove" value="0">
+                                                <input type="hidden" class="image_actual" name="photo_actual" id="photo_actual" value="">
+                                                <input type="hidden" class="image_remove" name="photo_remove" id="photo_remove" value="0">
 
                                                 <label>Imagen categoria (150x150)</label>
                                                 <p class="text-info text-center errorImage"></p>
@@ -65,7 +65,7 @@
                                                         <div></div>
                                                     </div>
                                                     <div class="upimg">
-                                                        <input type="file" id="photo" class="imagen">
+                                                        <input type="file" name="photo" id="photo" class="imagen">
                                                     </div>
                                                     <div class="alertImgUpload alertErrorImg"></div>
                                                 </div>
@@ -76,8 +76,8 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <div class="contImgUpload">
-                                                <input type="hidden" class="image_actual" id="sliderMbl_actual" value="">
-                                                <input type="hidden" class="image_remove" id="sliderMbl_remove" value="0">
+                                                <input type="hidden" class="image_actual" name="sliderMbl_actual" id="sliderMbl_actual" value="">
+                                                <input type="hidden" class="image_remove" name="sliderMbl_remove" id="sliderMbl_remove" value="0">
 
                                                 <label>Slider Mobile (800x500)</label>
 
@@ -88,7 +88,7 @@
                                                         <div></div>
                                                     </div>
                                                     <div class="upimg">
-                                                        <input type="file" id="sliderMbl" class="imagen">
+                                                        <input type="file" name="sliderMbl" id="sliderMbl" class="imagen">
                                                     </div>
                                                     <div class="alertImgUpload"></div>
                                                 </div>
@@ -97,8 +97,8 @@
 
                                         <div class="form-group">
                                             <div class="contImgUpload">
-                                                <input type="hidden" class="image_actual" id="sliderDst_actual" value="">
-                                                <input type="hidden" class="image_remove" id="sliderDst_remove" value="0">
+                                                <input type="hidden" class="image_actual" name="" id="sliderDst_actual" value="">
+                                                <input type="hidden" class="image_remove" name="" id="sliderDst_remove" value="0">
 
                                                 <label>Slider Desktop (1920x850)</label>
 
@@ -109,7 +109,7 @@
                                                         <div></div>
                                                     </div>
                                                     <div class="upimg">
-                                                        <input type="file" id="sliderDst" class="imagen">
+                                                        <input type="file" name="sliderDst" id="sliderDst" class="imagen">
                                                     </div>
                                                     <div class="alertImgUpload"></div>
                                                 </div>
@@ -118,17 +118,17 @@
 
                                         <div class="form-group">
                                             <label>Slider Descripción 1</label>
-                                            <textarea class="form-control m-hgt-txarea" type="text" id="sliderDscOne"></textarea>
+                                            <textarea class="form-control m-hgt-txarea" type="text" name="sliderDscOne" id="sliderDscOne"></textarea>
                                         </div>
 
                                         <div class="form-group">
                                             <label>Slider Descripción 2</label>
-                                            <textarea class="form-control m-hgt-txarea" id="sliderDscTwo"></textarea>
+                                            <textarea class="form-control m-hgt-txarea" name="sliderDscTwo" id="sliderDscTwo"></textarea>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="listStatus">Status Categoria</label>
-                                            <select class="form-control" id="listStatus">
+                                            <select class="form-control" name="listStatus" id="listStatus">
                                                 <option value="1">Activo</option>
                                                 <option value="2">Inactivo</option>
                                             </select>

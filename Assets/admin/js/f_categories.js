@@ -5,6 +5,23 @@ var tableCategories;
 var rowtable;
 
 $(document).ready(function(){
+    // --- PRINT DATA TABLE USERS --- //
+    tableCategories = $("#tableCategories").DataTable({
+        "aProcessing": true,
+        "aServerSide":true,
+        "language":{
+            "url":"//cdn.datatables.net/plug-ins/1.12.1/i18n/es-ES.json"
+        },
+        "responsive": true,
+        "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "Todos"] ],
+        "dom": 'lBfrtip',
+        "buttons": [
+            "copy", "csv", "excel", "pdf", "print", "colvis"
+        ],
+        "bDestroy":true,
+        "order":[[0,"asc"]],
+        "iDisplayLength":10,
+    });
 
     var formNewCategory = $("#formNewCategory");
 
@@ -35,7 +52,6 @@ $(document).ready(function(){
     }
 
     if (formNewCategory.length) {
-        
         $(".contImgUpload").each((index, item)=>{
 
             // ADD AND VALIDATE IMAGE
@@ -112,6 +128,68 @@ $(document).ready(function(){
         });
     }
 
+    // ADD NEW CATEGORY
+    formNewCategory.submit((e)=>{
+        e.preventDefault();
+        let id = $("#id_category").val();
+        let listCtg = $("#listCategories").val();
+        let iconAc = $("#icon_actual").val();
+        let iconRe = $("#icon_remove").val();
+        let icon = $("#icon").val();
+        let photoAc = $("#photo_actual").val();
+        let photoRe = $("#photo_remove").val();
+        let photo = $("#photo").val();
+        let sliderMblAc = $("#sliderMbl_actual").val();
+        let sliderMblRe = $("#sliderMbl_remove").val();
+        let sliderMbl = $("#sliderMbl").val();
+        let sliderDstAc = $("#sliderDst_actual").val();
+        let sliderDstRe = $("#sliderDst_remove").val();
+        let sliderDst = $("#sliderDst").val();
+        let descSliderOne = $("#sliderDscOne").val();
+        let descSliderTwo = $("#sliderDscTwo").val();
+        let status = $("#listStatus").val();
+
+        // loading.css("display","flex");
+        let url_ajax = base_url + "categories/setCategory/";
+                
+        $.ajax({
+            url: url_ajax,
+            dataType: 'JSON',
+            method: 'POST',
+            data: {
+                id : id,
+                listCtg : listCtg,
+                iconAc : iconAc,
+                iconRe : iconRe,
+                icon : icon,
+                photoAc : photoAc,
+                photoRe : photoRe,
+                photo : photo,
+                sliderMblAc : sliderMblAc,
+                sliderMblRe : sliderMblRe,
+                sliderMbl : sliderMbl,
+                sliderDstAc : sliderDstAc,
+                sliderDstRe : sliderDstRe,
+                sliderDst : sliderDst,
+                descSliderOne : descSliderOne,
+                descSliderTwo : descSliderTwo,
+                status : status
+            },
+            success: function(data){
+                
+            },
+            error: function(e){
+                // console.log(e);
+            },
+            beforeSend: function(){
+                // console.log("antes completar");
+            },
+            complete: function(){
+                // console.log("completado");
+            }
+        });
+
+    });
 });
 
 // SELECT OPTION - CATEGORIES LIST

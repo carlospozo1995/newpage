@@ -24,7 +24,7 @@
           		<div class="col-12">
             		<div class="card">
               			<div class="card-body">
-                            <table id="tableUsers" class="table_order table table-bordered table-striped">
+                            <table id="tableCategories" class="table_order table table-bordered table-striped">
 			                  	<thead>
 				                  	<tr>
 				                    	<th>ID</th>
