@@ -9,22 +9,23 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <p>Los campos que contienen un (<span class="text-danger">*</span>) son obligatorios. Los demas dependeran de su decisión.</p>
                     <div class="card card-primary">
 
                         <form id="formNewCategory">
-                            <input type="hidden" id="id_category" value="">
+                            <input type="hidden" name="id_category" id="id_category" value="">
 
                             <div class="card-body">
                                 <div class="row">
 
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="name_category">Nombre</label>
+                                            <label for="name_category">Nombre<span class="text-danger"> *</span></label>
                                             <input type="text" class="form-control" placeholder="Nombre" name="name_category" id="name_category">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="listCategories">Pertenece a:</label>
+                                            <label for="listCategories">Pertenece a:<span class="text-danger"> *</span></label>
                                             <select class="form-control" style="width: 100%;" name="listCategories" id="listCategories"></select>
                                         </div>
 
@@ -97,8 +98,8 @@
 
                                         <div class="form-group">
                                             <div class="contImgUpload">
-                                                <input type="hidden" class="image_actual" name="" id="sliderDst_actual" value="">
-                                                <input type="hidden" class="image_remove" name="" id="sliderDst_remove" value="0">
+                                                <input type="hidden" class="image_actual" name="sliderDst_actual" id="sliderDst_actual" value="">
+                                                <input type="hidden" class="image_remove" name="sliderDst_remove" id="sliderDst_remove" value="0">
 
                                                 <label>Slider Desktop (1920x850)</label>
 
@@ -127,7 +128,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="listStatus">Status Categoria</label>
+                                            <label for="listStatus">Status Categoria<span class="text-danger"> *</span></label>
                                             <select class="form-control" name="listStatus" id="listStatus">
                                                 <option value="1">Activo</option>
                                                 <option value="2">Inactivo</option>

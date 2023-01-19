@@ -131,52 +131,27 @@ $(document).ready(function(){
     // ADD NEW CATEGORY
     formNewCategory.submit((e)=>{
         e.preventDefault();
-        let id = $("#id_category").val();
-        let listCtg = $("#listCategories").val();
-        let iconAc = $("#icon_actual").val();
-        let iconRe = $("#icon_remove").val();
-        let icon = $("#icon").val();
-        let photoAc = $("#photo_actual").val();
-        let photoRe = $("#photo_remove").val();
-        let photo = $("#photo").val();
-        let sliderMblAc = $("#sliderMbl_actual").val();
-        let sliderMblRe = $("#sliderMbl_remove").val();
-        let sliderMbl = $("#sliderMbl").val();
-        let sliderDstAc = $("#sliderDst_actual").val();
-        let sliderDstRe = $("#sliderDst_remove").val();
-        let sliderDst = $("#sliderDst").val();
-        let descSliderOne = $("#sliderDscOne").val();
-        let descSliderTwo = $("#sliderDscTwo").val();
-        let status = $("#listStatus").val();
 
+        if($("#name_category").val() == "" || $("#listCategories").val() == "" || $("#listStatus").val() == ""){
+            Swal.fire("Atención", "Por favor asegúrese de llenar los campos requeridos.", "error");
+            return false;
+        }else{
+            console.log("lleno")
+        }
         // loading.css("display","flex");
+        var formData = new FormData(e.target);
+        console.log(formData);
         let url_ajax = base_url + "categories/setCategory/";
-                
+
         $.ajax({
             url: url_ajax,
             dataType: 'JSON',
             method: 'POST',
-            data: {
-                id : id,
-                listCtg : listCtg,
-                iconAc : iconAc,
-                iconRe : iconRe,
-                icon : icon,
-                photoAc : photoAc,
-                photoRe : photoRe,
-                photo : photo,
-                sliderMblAc : sliderMblAc,
-                sliderMblRe : sliderMblRe,
-                sliderMbl : sliderMbl,
-                sliderDstAc : sliderDstAc,
-                sliderDstRe : sliderDstRe,
-                sliderDst : sliderDst,
-                descSliderOne : descSliderOne,
-                descSliderTwo : descSliderTwo,
-                status : status
-            },
+            data: formData,
+            contentType: false,
+            processData: false,
             success: function(data){
-                
+                console.log(data)
             },
             error: function(e){
                 // console.log(e);
@@ -220,3 +195,5 @@ function removeImage(item) {
         $(item).find(".imgUpload").remove();
     }
 }
+
+

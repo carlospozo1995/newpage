@@ -22,6 +22,12 @@
 					Utils::optionsCategories($arr_options);
 				break;
 
+				case 'setCategory':
+					if (isset($_POST)) {
+						
+					}
+				break;
+
 				default:
 					Utils::permissionsData(MCATEGORIAS);
 
