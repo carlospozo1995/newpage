@@ -29,7 +29,7 @@ $(document).ready(function(){
         $("#btnNewCategory").click(function () {
             $('#modalFormCategory').modal('show');
             $(".modal-header").removeClass("headerUpdate").addClass("headerRegister");
-            $(".modal-title").text("Nuevo Categodria");
+            $(".modal-title").text("Nueva Categoria");
             $("#btnSubmitCategory").removeClass("bg-success").addClass("btn-primary");
             $(".btnText").text("Guardar");
             formNewCategory.trigger("reset");
@@ -136,34 +136,36 @@ $(document).ready(function(){
             Swal.fire("Atención", "Por favor asegúrese de llenar los campos requeridos.", "error");
             return false;
         }else{
-            console.log("lleno")
-        }
         // loading.css("display","flex");
-        var formData = new FormData(e.target);
-        console.log(formData);
-        let url_ajax = base_url + "categories/setCategory/";
+            var formData = new FormData(e.target);
+            let url_ajax = base_url + "categories/setCategory/";
 
-        $.ajax({
-            url: url_ajax,
-            dataType: 'JSON',
-            method: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function(data){
-                console.log(data)
-            },
-            error: function(e){
-                // console.log(e);
-            },
-            beforeSend: function(){
-                // console.log("antes completar");
-            },
-            complete: function(){
-                // console.log("completado");
-            }
-        });
-
+            $.ajax({
+                url: url_ajax,
+                dataType: 'JSON',
+                method: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false, 
+                success: function(data){
+                    if (data.status) {
+                        $('#modalFormCategory').modal('hide');
+                        msgShow(1, 'Categorias', data.msg);
+                    }else{
+                        msgShow(2, 'Atención', data.msg);
+                    }
+                },
+                error: function(e){
+                    // console.log(e);
+                },
+                beforeSend: function(){
+                    // console.log("antes completar");
+                },
+                complete: function(){
+                    // console.log("completado");
+                }
+            });
+        }
     });
 });
 

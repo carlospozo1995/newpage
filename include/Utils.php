@@ -245,6 +245,11 @@
 	    	return $result;
 	    }
 
+	    static public function uploadImg($data)
+	    {
+	    	
+	    }
+
 	}
 
 ?>

@@ -19,6 +19,20 @@
             return $result;
         }
 
+        static public function insertCategory($name, $photo, $icon, $sliderDst, $sliderMbl, $sliderDscOne, $sliderDscTwo, $option_list, $status)
+        {
+            $sql = "SELECT * FROM categories WHERE name_category = ? AND fatherCategory is null";
+            $request = $GLOBALS["db"]->auto_array($sql, array($name));
+
+            if (empty($request)) {
+                $arrData[] = array("name_category" => $name, "photo" => $photo, "icon" => $icon, "sliderDst" => $sliderDst, "sliderMbl" => $sliderMbl, "sliderDesOne" => $sliderDscOne, "sliderDesTwo" => $sliderDscTwo, "fatherCategory" => $option_list, "status" => $status); 
+                $result = $GLOBALS["db"]->insert_multiple("categories", $arrData);
+            }else{
+                $result = "exist";
+            }
+            return $result;
+        }
+
     }
 
 ?>

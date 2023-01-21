@@ -9,7 +9,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Los campos que contienen un (<span class="text-danger">*</span>) son obligatorios. Los demas dependeran de su decisión.</p>
+                    <p>Los campos que contienen un (<span class="text-danger">*</span>) son obligatorios. Los demás dependerán de su decisión.</p>
                     <div class="card card-primary">
 
                         <form id="formNewCategory">
