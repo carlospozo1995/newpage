@@ -35,17 +35,10 @@
 								$status = $_POST['listStatus'];
 
 								$icon = $_FILES['icon'];
-								$undef_icon = "";
-
-								$photo = $_FILES['photo'];
-								$undef_photo = "";	
-
+								$photo = $_FILES['photo'];	
 								$sliderMbl = $_FILES['sliderMbl'];
-								$undef_sliderMbl = "";
-
-								$sliderDst = $_FILES['sliderDst'];
-								$undef_sliderDst = "";							
-
+								$sliderDst = $_FILES['sliderDst'];		
+												
 								$sliderDscOne = empty($_POST['sliderDscOne']) ? null : $_POST['sliderDscOne'];
 								$sliderDscTwo = empty($_POST['sliderDscTwo']) ? null : $_POST['sliderDscTwo'];
 
@@ -55,8 +48,8 @@
 									$option = 1;
 									if ($option_list != null){
 										$undef_icon = null;
-										$icon["name_upload"] = null;
 										$undef_photo = null;
+										$icon["name_upload"] = null;
 										$photo["name_upload"] = null;
 									}else{
 										if (empty($icon['name']) || empty($photo['name'])) {
@@ -64,8 +57,8 @@
 											die();
 										}else{
 											$undef_icon = "icon_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-											$icon["name_upload"] = "icon_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 											$undef_photo = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+											$icon["name_upload"] = "icon_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 											$photo["name_upload"] = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 										}
 									}
@@ -77,13 +70,13 @@
 
 									if (!empty($sliderDst['name']) && !empty($sliderMbl['name'])) {
 										$undef_sliderDst = "sliderDst_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-										$sliderDst["name_upload"] = "sliderDst_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 										$undef_sliderMbl = "sliderMbl_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$sliderDst["name_upload"] = "sliderDst_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 										$sliderMbl["name_upload"] = "sliderMbl_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 									}else{
 										$undef_sliderDst = null;
-										$sliderDst["name_upload"] = null;
 										$undef_sliderMbl = null;
+										$sliderDst["name_upload"] = null;
 										$sliderMbl["name_upload"] = null;
 									}
 									
@@ -94,7 +87,7 @@
 									if($option == 1){
 										$status = true;
 										$msg = "Datos ingresados correctamente.";
-										// Utils::uploadImage(array($icon, $photo, $sliderDst, $sliderMbl));
+										Utils::uploadImage(array($icon, $photo, $sliderDst, $sliderMbl));
 									}
 								}else if($request == "exist"){
 									throw new Exception("Al parecer el nombre insertado pertenece a una categoria superior. Intentelo de nuevo.");

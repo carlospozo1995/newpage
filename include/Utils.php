@@ -246,12 +246,12 @@
 	    }
 
 	    static public function uploadImage($data)
-	    {
+	    {	
 	    	foreach ($data as $key => $value) {
 	    		$url_temp = $value['tmp_name'];
-	    		$name_img = $value["name_upload"];
-	    		$destination = 'Assets/admin/file/images/uploads/'.$name_img;
-	    		return move_uploaded_file($url_temp, $destination);
+	    		$name_img = $value['name_upload'];
+	    		$destination = 'Assets/admin/files/images/uploads/'.$name_img;
+	    		move_uploaded_file($url_temp, $destination);
 	    	}
 	    }
 
