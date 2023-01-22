@@ -24,3 +24,213 @@
 [2023/01/21 04:51:40] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
 [2023/01/21 04:51:40] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
 [2023/01/21 04:51:44] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 05:26:24] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:26:24] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:26:30] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 05:26:45] SQL Query: SELECT * FROM categories WHERE name_category = 'CARTEGORY ONE' AND fatherCategory is null
+[2023/01/21 05:26:45] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('CARTEGORY ONE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1');
+[2023/01/21 05:27:24] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:27:24] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:27:30] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 05:28:10] SQL Query: SELECT * FROM categories WHERE name_category = 'CATEGORY ONE' AND fatherCategory is null
+[2023/01/21 05:28:10] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('CATEGORY ONE','photo_CATEGORY-ONE_b96a869fbe023a6c6098ae36c9152155.jpg','icon_CATEGORY-ONE_b96a869fbe023a6c6098ae36c9152155.jpg',NULL,NULL,NULL,NULL,NULL,'1');
+[2023/01/21 05:28:18] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:28:18] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:28:41] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 05:29:03] SQL Query: SELECT * FROM categories WHERE name_category = 'category one' AND fatherCategory is null
+[2023/01/21 05:29:10] SQL Query: SELECT * FROM categories WHERE name_category = 'category one' AND fatherCategory is null
+[2023/01/21 05:29:40] SQL Query: SELECT * FROM categories WHERE name_category = 'category sub one' AND fatherCategory is null
+[2023/01/21 05:29:40] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('category sub one',NULL,NULL,NULL,NULL,NULL,NULL,'24','1');
+[2023/01/21 05:29:43] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:29:43] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:30:00] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 05:31:24] SQL Query: SELECT * FROM categories WHERE name_category = 'category 1.1.1' AND fatherCategory is null
+[2023/01/21 05:31:24] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('category 1.1.1',NULL,NULL,'sliderDst_category-1.1.1_51c89b75393c718ec95d6e5748f99ba3.jpg','sliderMbl_category-1.1.1_51c89b75393c718ec95d6e5748f99ba3.jpg','descripcion',NULL,'25','1');
+[2023/01/21 05:32:20] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:32:20] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:32:40] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 05:33:31] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 05:34:06] SQL Query: SELECT * FROM categories WHERE name_category = 'CATEGORY 1' AND fatherCategory is null
+[2023/01/21 05:34:35] SQL Query: SELECT * FROM categories WHERE name_category = 'CATEGORY 2' AND fatherCategory is null
+[2023/01/21 05:34:35] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('CATEGORY 2','photo_CATEGORY-2_97caced3494e379ffb2e3a329faf23ba.jpg','icon_CATEGORY-2_97caced3494e379ffb2e3a329faf23ba.jpg',NULL,NULL,NULL,NULL,NULL,'1');
+[2023/01/21 05:35:01] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:35:01] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:35:20] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:35:20] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:36:09] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:36:09] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:36:16] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 05:36:40] SQL Query: SELECT * FROM categories WHERE name_category = 'CATEGORY 1' AND fatherCategory is null
+[2023/01/21 05:36:40] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('CATEGORY 1','photo_CATEGORY-1_c9972d1aba5f34bdf9ef7873b0bb94ac.jpg','icon_CATEGORY-1_c9972d1aba5f34bdf9ef7873b0bb94ac.jpg',NULL,NULL,NULL,NULL,NULL,'1');
+[2023/01/21 05:36:44] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:36:44] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:36:51] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 05:37:09] SQL Query: SELECT * FROM categories WHERE name_category = 'Category 1.1' AND fatherCategory is null
+[2023/01/21 05:37:09] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('Category 1.1',NULL,NULL,NULL,NULL,NULL,NULL,'28','1');
+[2023/01/21 05:37:12] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:37:12] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:37:22] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 05:37:42] SQL Query: SELECT * FROM categories WHERE name_category = 'Category 1.1.1' AND fatherCategory is null
+[2023/01/21 05:37:42] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('Category 1.1.1',NULL,NULL,NULL,NULL,NULL,NULL,'29','1');
+[2023/01/21 05:37:45] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:37:45] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:38:12] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:38:12] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/21 05:38:12] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/21 05:39:36] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:39:36] SQL Query: SELECT * FROM roles WHERE status != '0'
+[2023/01/21 05:40:05] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:40:05] SQL Query: SELECT * FROM roles WHERE status != '0'
+[2023/01/21 05:40:28] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:40:28] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/21 05:40:28] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/21 05:41:12] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:41:12] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/21 05:41:12] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/21 05:41:40] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:41:40] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:43:14] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:43:14] SQL Query: SELECT * FROM roles WHERE status = '1'
+[2023/01/21 05:43:14] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2023/01/21 05:43:28] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:43:28] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:44:06] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:44:06] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:44:14] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 05:44:19] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 05:45:50] SQL Query: SELECT * FROM categories WHERE name_category = 'CATEGORY 1' AND fatherCategory is null
+[2023/01/21 05:45:50] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('CATEGORY 1','photo_CATEGORY-1_6285f849a42308f3f13f443281ef7085.jpg','icon_CATEGORY-1_6285f849a42308f3f13f443281ef7085.jpg',NULL,NULL,NULL,NULL,NULL,'1');
+[2023/01/21 05:45:54] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:45:54] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:46:04] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 05:46:17] SQL Query: SELECT * FROM categories WHERE name_category = 'Category 1.1' AND fatherCategory is null
+[2023/01/21 05:46:17] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('Category 1.1',NULL,NULL,NULL,NULL,NULL,NULL,'31','1');
+[2023/01/21 05:46:20] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:46:20] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:46:31] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 05:46:48] SQL Query: SELECT * FROM categories WHERE name_category = 'Categoria 1.1.1' AND fatherCategory is null
+[2023/01/21 05:46:48] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('Categoria 1.1.1',NULL,NULL,NULL,NULL,NULL,NULL,'32','1');
+[2023/01/21 05:46:50] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:46:50] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:47:24] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 05:47:30] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 05:47:55] SQL Query: SELECT * FROM categories WHERE name_category = 'CATEGORIA 2' AND fatherCategory is null
+[2023/01/21 05:47:55] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('CATEGORIA 2','photo_CATEGORIA-2_5c3077f265e3c367f1f090db168a17a6.jpg','icon_CATEGORIA-2_5c3077f265e3c367f1f090db168a17a6.jpg',NULL,NULL,NULL,NULL,NULL,'1');
+[2023/01/21 05:47:58] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:47:58] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:48:15] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 05:48:49] SQL Query: SELECT * FROM categories WHERE name_category = 'Categoria 2.1' AND fatherCategory is null
+[2023/01/21 05:48:49] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('Categoria 2.1',NULL,NULL,'sliderDst_Categoria-2.1_c14ea7e4a2d011ebc194f76998edcf54.jpg','sliderMbl_Categoria-2.1_c14ea7e4a2d011ebc194f76998edcf54.jpg',NULL,NULL,'34','1');
+[2023/01/21 05:48:53] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:48:53] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:49:06] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 05:49:25] SQL Query: SELECT * FROM categories WHERE name_category = 'Categoria 2' AND fatherCategory is null
+[2023/01/21 05:49:33] SQL Query: SELECT * FROM categories WHERE name_category = 'Categoria 2.1' AND fatherCategory is null
+[2023/01/21 05:49:33] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('Categoria 2.1',NULL,NULL,NULL,NULL,NULL,NULL,'32','1');
+[2023/01/21 05:49:37] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:49:37] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:50:46] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:50:46] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 05:59:56] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 05:59:56] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 06:00:05] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 06:00:45] SQL Query: SELECT * FROM categories WHERE name_category = 'CATEGORY 2.1.1' AND fatherCategory is null
+[2023/01/21 06:00:45] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('CATEGORY 2.1.1',NULL,NULL,NULL,NULL,NULL,NULL,'35','1');
+[2023/01/21 06:01:24] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 06:01:24] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 06:01:36] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 06:02:08] SQL Query: SELECT * FROM categories WHERE name_category = 'CATEGORY 3' AND fatherCategory is null
+[2023/01/21 06:02:08] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('CATEGORY 3','photo_CATEGORY-3_8dc66455123fd982f5abcac59ebcaf14.jpg','icon_CATEGORY-3_8dc66455123fd982f5abcac59ebcaf14.jpg',NULL,NULL,NULL,NULL,NULL,'1');
+[2023/01/21 06:28:21] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 06:28:21] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 06:28:41] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/21 06:29:24] SQL Query: SELECT * FROM categories WHERE name_category = 'Category 3.1' AND fatherCategory is null
+[2023/01/21 06:29:24] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('Category 3.1',NULL,NULL,'sliderDst_Category-3.1_00588b1a66991ab2c932f7a1e80df232.jpg','sliderMbl_Category-3.1_00588b1a66991ab2c932f7a1e80df232.jpg',NULL,NULL,'38','1');
+[2023/01/21 07:22:32] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/01/21 07:22:32] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/01/21 07:22:32] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 07:22:44] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 07:22:44] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/21 07:45:50] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 07:46:03] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 07:46:44] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/21 07:46:57] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 07:56:28] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
+[2023/01/22 07:56:45] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/01/22 07:56:45] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/01/22 07:56:45] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 07:57:06] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 07:57:22] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 07:57:29] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 07:57:35] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 07:57:51] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 07:57:58] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 08:13:39] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 08:13:48] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 08:14:40] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 08:17:26] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 08:17:35] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 08:21:38] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 08:30:35] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 08:30:35] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/22 08:30:41] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/22 08:31:18] SQL Query: SELECT * FROM categories WHERE name_category = '3.1.1' AND fatherCategory is null
+[2023/01/22 08:31:18] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('3.1.1',NULL,NULL,'sliderDst_3.1.1_d42f93e752b129e90c231897de1ec33f.jpg','sliderMbl_3.1.1_d42f93e752b129e90c231897de1ec33f.jpg',NULL,NULL,'39','1');
+[2023/01/22 08:32:22] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 08:32:22] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/22 08:32:41] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 08:32:41] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/22 08:34:03] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 08:34:03] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/22 08:34:09] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/22 08:34:38] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 08:34:38] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/22 08:34:45] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/22 08:35:28] SQL Query: SELECT * FROM categories WHERE name_category = 'Category 4' AND fatherCategory is null
+[2023/01/22 08:35:28] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('Category 4','photo_Category-4_a9e81e1c413bc87f2f8bde15a9c3edf1.jpg',NULL,NULL,NULL,NULL,NULL,NULL,'1');
+[2023/01/22 08:37:26] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 08:37:26] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/22 08:37:40] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/22 08:38:00] SQL Query: SELECT * FROM categories WHERE name_category = 'Category 4.1' AND fatherCategory is null
+[2023/01/22 08:38:00] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('Category 4.1',NULL,NULL,NULL,NULL,NULL,NULL,'41','1');
+[2023/01/22 08:39:10] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 08:39:10] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/22 08:39:22] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/22 08:40:05] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 08:40:05] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/22 08:40:13] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/22 08:40:39] SQL Query: SELECT * FROM categories WHERE name_category = 'Category 4.1.1' AND fatherCategory is null
+[2023/01/22 08:40:39] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('Category 4.1.1',NULL,NULL,'sliderDst_Category-4.1.1_18802389822124f40198171416a80b5f.jpg','sliderMbl_Category-4.1.1_18802389822124f40198171416a80b5f.jpg',NULL,NULL,'42','1');
+[2023/01/22 08:48:20] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 08:48:20] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/22 08:48:41] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/22 08:49:54] SQL Query: SELECT * FROM categories WHERE name_category = 'ELECTRODOMESTICOS' AND fatherCategory is null
+[2023/01/22 08:49:54] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('ELECTRODOMESTICOS','photo_ELECTRODOMESTICOS_063e96ed20b4355546c4c5aafe60c96e.jpg',NULL,'sliderDst_ELECTRODOMESTICOS_063e96ed20b4355546c4c5aafe60c96e.jpg','sliderMbl_ELECTRODOMESTICOS_063e96ed20b4355546c4c5aafe60c96e.jpg',NULL,NULL,NULL,'1');
+[2023/01/22 10:40:05] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
+[2023/01/22 10:40:05] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/22 10:40:05] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
+[2023/01/22 10:43:04] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/01/22 10:43:04] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/01/22 10:43:04] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 10:43:10] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 10:43:10] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/22 10:43:22] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/22 10:43:59] SQL Query: SELECT * FROM categories WHERE name_category = 'ELECTRODOMESTICOS' AND fatherCategory is null
+[2023/01/22 10:43:59] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('ELECTRODOMESTICOS','photo_ELECTRODOMESTICOS_70e20d3a75de32291bad9a5a73cef8e7.jpg',NULL,NULL,NULL,NULL,NULL,NULL,'1');
+[2023/01/22 10:45:40] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 10:45:40] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/22 10:45:53] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/22 10:48:32] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 10:48:32] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/22 10:48:40] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/22 10:50:12] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 10:50:12] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/22 10:50:22] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/22 10:52:28] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 10:52:28] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/22 10:52:48] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/22 10:56:09] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/01/22 10:56:09] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/01/22 10:56:15] SQL Query: SELECT * FROM categories WHERE status = '1'
+[2023/01/22 10:56:40] SQL Query: SELECT * FROM categories WHERE name_category = 'ELECTRODOMESTICOS' AND fatherCategory is null
+[2023/01/22 10:56:40] SQL execute: INSERT INTO categories (name_category,photo,icon,sliderDst,sliderMbl,sliderDesOne,sliderDesTwo,fatherCategory,status) VALUES('ELECTRODOMESTICOS','photo_ELECTRODOMESTICOS_ff46affca776e89eb893ac4079648942.jpg','icon_ELECTRODOMESTICOS_ff46affca776e89eb893ac4079648942.jpg',NULL,NULL,NULL,NULL,NULL,'1');

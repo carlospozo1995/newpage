@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 18-01-2023 a las 23:32:21
+-- Tiempo de generación: 22-01-2023 a las 15:58:23
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 7.4.19
 
@@ -46,13 +46,20 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id_category`, `name_category`, `photo`, `icon`, `sliderDst`, `sliderMbl`, `sliderDesOne`, `sliderDesTwo`, `datecreate`, `fatherCategory`, `status`) VALUES
-(1, 'FATHERCATEGORYONE', 'undefine_ctg.png', 'icon_FATHERCATEGORY_test123.jpg', 'testDesktop.jpg', 'testMobile.jpg', NULL, NULL, '2023-01-16 16:47:53', NULL, 1),
-(2, 'Categoryone', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-16 16:49:31', 1, 1),
-(3, 'Subone1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-16 16:50:36', 2, 1),
-(4, 'Subone2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-16 16:50:36', 2, 1),
-(5, 'Categorytwo', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-16 16:51:16', 1, 1),
-(6, 'Subtwo1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-16 16:52:05', 5, 1),
-(7, 'Subtwo2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-16 16:52:05', 5, 1);
+(31, 'CATEGORY 1', 'photo_CATEGORY-1_6285f849a42308f3f13f443281ef7085.jpg', 'icon_CATEGORY-1_6285f849a42308f3f13f443281ef7085.jpg', NULL, NULL, NULL, NULL, '2023-01-21 17:45:50', NULL, 1),
+(32, 'Category 1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-21 17:46:17', 31, 1),
+(33, 'Categoria 1.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-21 17:46:48', 32, 1),
+(34, 'CATEGORIA 2', 'photo_CATEGORIA-2_5c3077f265e3c367f1f090db168a17a6.jpg', 'icon_CATEGORIA-2_5c3077f265e3c367f1f090db168a17a6.jpg', NULL, NULL, NULL, NULL, '2023-01-21 17:47:55', NULL, 1),
+(35, 'Categoria 2.1', NULL, NULL, 'sliderDst_Categoria-2.1_c14ea7e4a2d011ebc194f76998edcf54.jpg', 'sliderMbl_Categoria-2.1_c14ea7e4a2d011ebc194f76998edcf54.jpg', NULL, NULL, '2023-01-21 17:48:49', 34, 1),
+(36, 'Categoria 1.1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-21 17:49:33', 32, 1),
+(37, 'CATEGORY 2.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-21 18:00:45', 35, 1),
+(38, 'CATEGORY 3', 'photo_CATEGORY-3_8dc66455123fd982f5abcac59ebcaf14.jpg', 'icon_CATEGORY-3_8dc66455123fd982f5abcac59ebcaf14.jpg', NULL, NULL, NULL, NULL, '2023-01-21 18:02:08', NULL, 1),
+(39, 'Category 3.1', NULL, NULL, 'sliderDst_Category-3.1_00588b1a66991ab2c932f7a1e80df232.jpg', 'sliderMbl_Category-3.1_00588b1a66991ab2c932f7a1e80df232.jpg', NULL, NULL, '2023-01-21 18:29:24', 38, 1),
+(40, 'Category 3.1.1', NULL, NULL, 'sliderDst_3.1.1_d42f93e752b129e90c231897de1ec33f.jpg', 'sliderMbl_3.1.1_d42f93e752b129e90c231897de1ec33f.jpg', NULL, NULL, '2023-01-22 08:31:18', 39, 1),
+(41, 'Category 4', 'photo_Category-4_a9e81e1c413bc87f2f8bde15a9c3edf1.jpg', NULL, NULL, NULL, NULL, NULL, '2023-01-22 08:35:28', NULL, 1),
+(42, 'Category 4.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-22 08:38:00', 41, 1),
+(43, 'Category 4.1.1', NULL, NULL, 'sliderDst_Category-4.1.1_18802389822124f40198171416a80b5f.jpg', 'sliderMbl_Category-4.1.1_18802389822124f40198171416a80b5f.jpg', NULL, NULL, '2023-01-22 08:40:39', 42, 1),
+(46, 'ELECTRODOMESTICOS', 'photo_ELECTRODOMESTICOS_ff46affca776e89eb893ac4079648942.jpg', 'icon_ELECTRODOMESTICOS_ff46affca776e89eb893ac4079648942.jpg', NULL, NULL, NULL, NULL, '2023-01-22 10:56:40', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -150,7 +157,7 @@ INSERT INTO `roles` (`id_rol`, `name_rol`, `description_rol`, `status`) VALUES
 (36, 'Test nine', 'Test description nine', 1),
 (37, 'Test ten', 'Test description ten', 1),
 (38, 'Test eleven', 'Test description eleven', 1),
-(39, 'Test twelve', 'Test description twelve', 0);
+(39, 'Test twelve', 'Test description twelve', 1);
 
 -- --------------------------------------------------------
 
@@ -181,12 +188,12 @@ INSERT INTO `users` (`id_user`, `dni`, `name_user`, `surname_user`, `phone`, `em
 (2, '1234567891', 'Andres', 'Ramirez', '994603678', 'carlos.pfloger@yahoo.com', '5bbe8ae0595ae2af0168d6ace893831b49e65b0a', 1, 2, '2022-12-04 21:37:17', 1),
 (3, '12345', 'Carlos', 'Ramirez', '42746942', 'carlos.pflogger@hotmail.com', '5bbe8ae0595ae2af0168d6ace893831b49e65b0a', 1, 6, '2022-12-17 02:36:16', 2),
 (13, '0123456789', 'Test One', 'Test One', '41241564', 'one@one.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 29, '2023-01-12 11:03:18', 2),
-(14, '5454564', 'Test two', 'Test two', '47454566', 'two@two.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 29, '2023-01-12 11:21:36', 0),
+(14, '5454564', 'Test two', 'Test two', '47454566', 'two@two.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 29, '2023-01-12 11:21:36', 1),
 (15, '4122545622154', 'Test three', 'Test three', '1245255', 'three@three.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 6, '2023-01-12 15:35:26', 1),
-(16, '896983274', 'Test four', 'Test four', '54156551', 'four123@four.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 30, '2023-01-12 15:55:09', 0),
+(16, '896983274', 'Test four', 'Test four', '54156551', 'four123@four.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 30, '2023-01-12 15:55:09', 1),
 (17, '123456987', 'Test five', 'Test five', '1235855258', 'five@five.com', '5bbe8ae0595ae2af0168d6ace893831b49e65b0a', 1, 6, '2023-01-12 17:59:08', 2),
 (18, '93647479574', 'Test six', 'Text six', '839378448', 'six@six.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 6, '2023-01-13 12:53:21', 2),
-(19, '64314641', 'Test eight', 'Test height', '65464654', 'eight@height.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 29, '2023-01-14 22:01:11', 0);
+(19, '64314641', 'Test eight', 'Test height', '65464654', 'eight@height.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 29, '2023-01-14 22:01:11', 1);
 
 --
 -- Índices para tablas volcadas
@@ -234,7 +241,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id_category` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_category` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT de la tabla `modules`

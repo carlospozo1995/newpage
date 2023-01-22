@@ -35,20 +35,16 @@
 								$status = $_POST['listStatus'];
 
 								$icon = $_FILES['icon'];
-								$name_icon = $icon['name'];
 								$undef_icon = "";
 
 								$photo = $_FILES['photo'];
-								$name_photo = $photo['name'];
 								$undef_photo = "";	
 
 								$sliderMbl = $_FILES['sliderMbl'];
-								$name_sliderMbl = $sliderMbl['name'];
 								$undef_sliderMbl = "";
 
 								$sliderDst = $_FILES['sliderDst'];
-								$name_sliderDst = $sliderDst['name'];
-								$undef_sliderDst = "";
+								$undef_sliderDst = "";							
 
 								$sliderDscOne = empty($_POST['sliderDscOne']) ? null : $_POST['sliderDscOne'];
 								$sliderDscTwo = empty($_POST['sliderDscTwo']) ? null : $_POST['sliderDscTwo'];
@@ -59,28 +55,36 @@
 									$option = 1;
 									if ($option_list != null){
 										$undef_icon = null;
+										$icon["name_upload"] = null;
 										$undef_photo = null;
+										$photo["name_upload"] = null;
 									}else{
-										if (empty($name_icon) || empty($name_photo)) {
+										if (empty($icon['name']) || empty($photo['name'])) {
 											throw new Exception("Las categorias superiores deben tener icono y foto referencial.");
 											die();
 										}else{
 											$undef_icon = "icon_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+											$icon["name_upload"] = "icon_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 											$undef_photo = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+											$photo["name_upload"] = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 										}
 									}
 
-									if ((empty($name_sliderDst) && !empty($name_sliderMbl)) || !empty($name_sliderDst) && empty($name_sliderMbl)) {
+									if ((empty($sliderDst['name']) && !empty($sliderMbl['name'])) || !empty($sliderDst['name']) && empty($sliderMbl['name'])) {
 										throw new Exception("Si va agregar slider deben ser ambos.");
 										die();
 									}
 
-									if (!empty($name_sliderDst) && !empty($name_sliderMbl)) {
+									if (!empty($sliderDst['name']) && !empty($sliderMbl['name'])) {
 										$undef_sliderDst = "sliderDst_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$sliderDst["name_upload"] = "sliderDst_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 										$undef_sliderMbl = "sliderMbl_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$sliderMbl["name_upload"] = "sliderMbl_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 									}else{
 										$undef_sliderDst = null;
+										$sliderDst["name_upload"] = null;
 										$undef_sliderMbl = null;
+										$sliderMbl["name_upload"] = null;
 									}
 									
 									$request = Models_Categories::insertCategory($name, $undef_photo, $undef_icon, $undef_sliderDst, $undef_sliderMbl, $sliderDscOne, $sliderDscTwo, $option_list, $status);
@@ -90,7 +94,7 @@
 									if($option == 1){
 										$status = true;
 										$msg = "Datos ingresados correctamente.";
-
+										// Utils::uploadImage(array($icon, $photo, $sliderDst, $sliderMbl));
 									}
 								}else if($request == "exist"){
 									throw new Exception("Al parecer el nombre insertado pertenece a una categoria superior. Intentelo de nuevo.");
@@ -99,6 +103,7 @@
 									throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
 									die();
 								}
+
 							}
 						} catch (Exception $e) {
 							$status = false;

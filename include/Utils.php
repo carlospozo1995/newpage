@@ -245,9 +245,14 @@
 	    	return $result;
 	    }
 
-	    static public function uploadImg($data)
+	    static public function uploadImage($data)
 	    {
-	    	
+	    	foreach ($data as $key => $value) {
+	    		$url_temp = $value['tmp_name'];
+	    		$name_img = $value["name_upload"];
+	    		$destination = 'Assets/admin/file/images/uploads/'.$name_img;
+	    		return move_uploaded_file($url_temp, $destination);
+	    	}
 	    }
 
 	}
