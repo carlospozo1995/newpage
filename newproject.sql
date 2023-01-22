@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:3306
--- Tiempo de generación: 22-01-2023 a las 15:58:23
--- Versión del servidor: 5.7.33
--- Versión de PHP: 7.4.19
+-- Servidor: localhost
+-- Tiempo de generación: 22-01-2023 a las 22:56:23
+-- Versión del servidor: 5.7.24
+-- Versión de PHP: 7.2.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,20 +46,12 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id_category`, `name_category`, `photo`, `icon`, `sliderDst`, `sliderMbl`, `sliderDesOne`, `sliderDesTwo`, `datecreate`, `fatherCategory`, `status`) VALUES
-(31, 'CATEGORY 1', 'photo_CATEGORY-1_6285f849a42308f3f13f443281ef7085.jpg', 'icon_CATEGORY-1_6285f849a42308f3f13f443281ef7085.jpg', NULL, NULL, NULL, NULL, '2023-01-21 17:45:50', NULL, 1),
-(32, 'Category 1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-21 17:46:17', 31, 1),
-(33, 'Categoria 1.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-21 17:46:48', 32, 1),
-(34, 'CATEGORIA 2', 'photo_CATEGORIA-2_5c3077f265e3c367f1f090db168a17a6.jpg', 'icon_CATEGORIA-2_5c3077f265e3c367f1f090db168a17a6.jpg', NULL, NULL, NULL, NULL, '2023-01-21 17:47:55', NULL, 1),
-(35, 'Categoria 2.1', NULL, NULL, 'sliderDst_Categoria-2.1_c14ea7e4a2d011ebc194f76998edcf54.jpg', 'sliderMbl_Categoria-2.1_c14ea7e4a2d011ebc194f76998edcf54.jpg', NULL, NULL, '2023-01-21 17:48:49', 34, 1),
-(36, 'Categoria 1.1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-21 17:49:33', 32, 1),
-(37, 'CATEGORY 2.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-21 18:00:45', 35, 1),
-(38, 'CATEGORY 3', 'photo_CATEGORY-3_8dc66455123fd982f5abcac59ebcaf14.jpg', 'icon_CATEGORY-3_8dc66455123fd982f5abcac59ebcaf14.jpg', NULL, NULL, NULL, NULL, '2023-01-21 18:02:08', NULL, 1),
-(39, 'Category 3.1', NULL, NULL, 'sliderDst_Category-3.1_00588b1a66991ab2c932f7a1e80df232.jpg', 'sliderMbl_Category-3.1_00588b1a66991ab2c932f7a1e80df232.jpg', NULL, NULL, '2023-01-21 18:29:24', 38, 1),
-(40, 'Category 3.1.1', NULL, NULL, 'sliderDst_3.1.1_d42f93e752b129e90c231897de1ec33f.jpg', 'sliderMbl_3.1.1_d42f93e752b129e90c231897de1ec33f.jpg', NULL, NULL, '2023-01-22 08:31:18', 39, 1),
-(41, 'Category 4', 'photo_Category-4_a9e81e1c413bc87f2f8bde15a9c3edf1.jpg', NULL, NULL, NULL, NULL, NULL, '2023-01-22 08:35:28', NULL, 1),
-(42, 'Category 4.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-22 08:38:00', 41, 1),
-(43, 'Category 4.1.1', NULL, NULL, 'sliderDst_Category-4.1.1_18802389822124f40198171416a80b5f.jpg', 'sliderMbl_Category-4.1.1_18802389822124f40198171416a80b5f.jpg', NULL, NULL, '2023-01-22 08:40:39', 42, 1),
-(46, 'ELECTRODOMESTICOS', 'photo_ELECTRODOMESTICOS_ff46affca776e89eb893ac4079648942.jpg', 'icon_ELECTRODOMESTICOS_ff46affca776e89eb893ac4079648942.jpg', NULL, NULL, NULL, NULL, '2023-01-22 10:56:40', NULL, 1);
+(76, 'Category 1', 'photo_Category-1_6d7627af760bbd31936dc96347eb88aa.jpg', 'icon_Category-1_6d7627af760bbd31936dc96347eb88aa.jpg', NULL, NULL, NULL, NULL, '2023-01-22 15:46:20', NULL, 1),
+(77, 'Category 1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-22 15:47:11', 76, 1),
+(78, 'category 1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-22 15:48:00', 76, 1),
+(79, 'Category 1.2.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-22 17:42:14', 77, 1),
+(80, 'Category 2', 'photo_Category-2_d7f953eb2c6c05535135437aa6ee58d1.jpg', 'icon_Category-2_d7f953eb2c6c05535135437aa6ee58d1.jpg', NULL, NULL, NULL, NULL, '2023-01-22 17:42:59', NULL, 1),
+(81, 'Categoria 2.1', NULL, NULL, 'sliderDst_Categoria-2.1_5c1c22356b2f268054d71ffad8f8d3e1.jpg', 'sliderMbl_Categoria-2.1_5c1c22356b2f268054d71ffad8f8d3e1.jpg', NULL, NULL, '2023-01-22 17:44:46', 80, 1);
 
 -- --------------------------------------------------------
 
@@ -241,7 +233,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id_category` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id_category` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT de la tabla `modules`

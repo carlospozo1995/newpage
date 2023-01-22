@@ -214,6 +214,63 @@ $(document).ready(function(){
     });
 });
 
+// --- EDIT CATEGORY --- //
+function edit(element, data){
+    rowtable = $(element).closest("tr")[0];
+    let ischild = $(rowtable).hasClass("child");
+    if(ischild){
+        rowtable = $(rowtable).prev()[0];
+    }
+        // $("#id_category").val(data);
+    $(".modal-header").removeClass("headerRegister").addClass("headerUpdate");
+    $(".modal-title").text("Actualizar Categoria");
+    $("#btnSubmitUser").removeClass("btn-primary").addClass("bg-success");
+    $(".btnText").text("Actualizar");
+    
+    if (!data) {
+        return false;
+    }else{
+        let url_ajax = base_url + "categories/getCategory/";
+        $.ajax({
+            url: url_ajax,
+            dataType: 'JSON',
+            method: 'POST',
+            data: {
+                data: data,
+            },
+            success: function(data){
+                console.log(data);
+                // if (data.status) {
+                    // $("#id_user").val(data.data_request.id_user);
+                    // $("#dni_user").val(data.data_request.dni);
+                    // $("#name_user").val(data.data_request.name_user);
+                    // $("#surname_user").val(data.data_request.surname_user);
+                    // $("#phone_user").val(data.data_request.phone);
+                    // $("#email_user").val(data.data_request.email);
+                    // $("#list_rol").val(data.data_request.rolid);
+                    // $("#status_user").val(data.data_request.status);
+
+                    // $("#list_rol").select2();   
+                    // $('#modalFormUser').modal('show');
+                // }else{
+                    // msgShow(3, 'Error', data.msg);
+            //     }
+            },
+            error: function(e){
+                // console.log(e);
+            },
+            beforeSend: function(){
+                // console.log("antes completar");
+            },
+            complete: function(){
+                // console.log("completado");
+            }
+        });
+    }
+
+    // $('#modalFormCategory').modal('show');
+}
+
 // SELECT OPTION - CATEGORIES LIST
 function ctgListOptions(idCtg, listCtgVal) {
     let url_ajax = base_url + "categories/listCategories/";

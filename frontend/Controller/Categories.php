@@ -113,6 +113,43 @@
 					}
 				break;
 
+				case 'getCategory':
+
+					if (empty(Utils::getParam("data", ""))) {
+						die();
+					}else{
+						$id_category = Utils::desencriptar(Utils::getParam("data", ""));
+						$arrCategories = Models_Categories::arrCategories("");
+						// ********************
+
+						try {
+						 	$data_category = Models_Categories::selectCategory($id_category);
+						 	if (empty($data_category)) {
+						 		throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
+						 		die();
+						 	}else{
+						 		if (!empty($data_category['photo']) && !empty($data_category['icon'])) {
+		                            $data_category['url_photo'] = MEDIA_ADMIN.'files/images/uploads/'.$data_category['photo'];
+		                            $data_category['url_icon'] = MEDIA_ADMIN.'files/images/uploads/'.$data_category['icon']; 
+		                        }
+
+		                        if (!empty($data_category['sliderDts']) && !empty($data_category['sliderMbl'])) {
+		                            $data_category['url_sliderDts'] = MEDIA_ADMIN.'files/images/uploads/'.$data_category['sliderDst'];
+		                            $data_category['url_sliderMbl'] = MEDIA_ADMIN.'files/images/uploads/'.$data_category['sliderMbl'];
+		                        }
+
+		                        Utils::dep($data_category);
+						 	}
+
+
+
+						 } catch (Exception $e) {
+						 	
+						 } 
+					}
+
+				break;
+
 				default:
 					Utils::permissionsData(MCATEGORIAS);
 

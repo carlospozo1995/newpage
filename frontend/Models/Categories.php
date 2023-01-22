@@ -33,6 +33,12 @@
             return $result;
         }
 
+        static public function selectCategory($data)
+        {
+            $sql = "SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.id_category = ?";
+            return $GLOBALS["db"]->auto_array($sql, array($data));
+        }
+
     }
 
 ?>
