@@ -84,9 +84,14 @@
 								}
 
 								if ($request > 0) {
+
+									$undef_sliderDst != null ? $data_dst = MEDIA_ADMIN.'files/images/uploads/'.$undef_sliderDst : $data_dst = "";
+									$undef_sliderMbl != null ? $data_mbl = MEDIA_ADMIN.'files/images/uploads/'.$undef_sliderMbl : $data_mbl = "";
+
 									if($option == 1){
 										$status = true;
 										$msg = "Datos ingresados correctamente.";
+										$data_request = array("id_encrypt" => Utils::encriptar(strval($request)), "sliderDst" => $data_dst, "sliderMbl" => $data_mbl, "module" => $_SESSION['module'], "id_user" => $_SESSION['idUser']);
 										Utils::uploadImage(array($icon, $photo, $sliderDst, $sliderMbl));
 									}
 								}else if($request == "exist"){
@@ -101,8 +106,9 @@
 						} catch (Exception $e) {
 							$status = false;
 							$msg = $e->getMessage();
+							$data_request = "";
 						}
-						$data = array("status" => $status, "msg" => $msg);
+						$data = array("status" => $status, "msg" => $msg, "data_request" => $data_request);
 						echo json_encode($data);
 					}
 				break;

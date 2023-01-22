@@ -20,7 +20,7 @@ $(document).ready(function(){
         ],
         "bDestroy":true,
         "order":[[0,"asc"]],
-        "iDisplayLength":10,
+        "iDisplayLength":25,
     });
 
     var formNewCategory = $("#formNewCategory");
@@ -131,12 +131,15 @@ $(document).ready(function(){
     // ADD NEW CATEGORY
     formNewCategory.submit((e)=>{
         e.preventDefault();
-
+        let text_ctg = "";
+        $("#listCategories").val() == 0 ? text_ctg = "" : text_ctg = $("#listCategories").find("option:selected").text();
+        text_ctg = text_ctg.replace(/-/g, "");
+        
         if($("#name_category").val() == "" || $("#listCategories").val() == "" || $("#listStatus").val() == ""){
             Swal.fire("Atención", "Por favor asegúrese de llenar los campos requeridos.", "error");
             return false;
         }else{
-        // loading.css("display","flex");
+            loading.css("display","flex");
             var formData = new FormData(e.target);
             let url_ajax = base_url + "categories/setCategory/";
 
@@ -148,12 +151,54 @@ $(document).ready(function(){
                 contentType: false,
                 processData: false, 
                 success: function(data){
+                    console.log(data)
                     if (data.status) {
+                        let htmlStatus = $("#listStatus").val() == 1 ? '<div class="text-center"><span class="bg-success p-1 rounded"><i class="fa-solid fa-user"></i> Activo</span></div>' : '<div class="text-center"><span class="bg-danger p-1 rounded"><i class="fa-solid fa-user-slash"></i> Inactivo</span></div>';
+                            
+                        let sliderDst = "";
+                        let sliderMbl = "";
+                        data.data_request.sliderDst != "" ? sliderDst = '<img class="text-center" style="display:flex; margin:auto; width:70px" src="'+data.data_request.sliderDst+'">' : sliderDst = "";
+                        data.data_request.sliderMbl != "" ? sliderMbl = '<img class="text-center" style="display:flex; margin:auto; width:50px" src="'+data.data_request.sliderMbl+'">' : sliderMbl = "";
+
+                        if(rowtable == ""){
+                            let id_row = $("#tableCategories").DataTable().rows().count() + 1;
+                            let btnWatch = "";
+                            let btnUpdate = "";
+                            let btnDelete = "";
+
+                            let id_category = data.data_request.id_encrypt;
+                            let module_data = data.data_request.module;
+                            let id_user = data.data_request.id_user;
+
+                            if (module_data.ver == 1) {
+                                btnWatch = '<button type="button" class="btn btn-secondary btn-sm" onclick="watch('+"'"+id_category+"'"+')" tilte="Ver"><i class="fa-solid fa-eye"></i></button>'
+                            }
+
+                            if (module_data.actualizar == 1) {
+                                btnUpdate = '<button type="button" class="btn btn-primary btn-sm" onclick="edit(this, '+"'"+id_category+"'"+')" tilte="Editar"><i class="fa-solid fa-pencil"></i></button>';
+                            }
+
+                            if (id_user == 1 && module_data.eliminar == 1){
+                                btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="deleteData(this, '+"'"+id_category+"'"+')" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
+                            }
+
+                            $("#tableCategories").DataTable().row.add([
+                                id_row, 
+                                $("#name_category").val(),
+                                text_ctg,
+                                sliderDst,
+                                sliderMbl,
+                                htmlStatus,
+                                '<div class="text-center"> '+btnWatch+" "+btnUpdate+" "+btnDelete+'</div>'
+                            ]).draw(false);
+                        }
+
                         $('#modalFormCategory').modal('hide');
                         msgShow(1, 'Categorias', data.msg);
                     }else{
                         msgShow(2, 'Atención', data.msg);
                     }
+                    loading.css("display","none");
                 },
                 error: function(e){
                     // console.log(e);
