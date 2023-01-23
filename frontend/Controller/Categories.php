@@ -128,24 +128,29 @@
 						 		throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
 						 		die();
 						 	}else{
+
 						 		if (!empty($data_category['photo']) && !empty($data_category['icon'])) {
 		                            $data_category['url_photo'] = MEDIA_ADMIN.'files/images/uploads/'.$data_category['photo'];
 		                            $data_category['url_icon'] = MEDIA_ADMIN.'files/images/uploads/'.$data_category['icon']; 
 		                        }
 
-		                        if (!empty($data_category['sliderDts']) && !empty($data_category['sliderMbl'])) {
-		                            $data_category['url_sliderDts'] = MEDIA_ADMIN.'files/images/uploads/'.$data_category['sliderDst'];
+		                        if (!empty($data_category['sliderDst']) && !empty($data_category['sliderMbl'])) {
+		                            $data_category['url_sliderDst'] = MEDIA_ADMIN.'files/images/uploads/'.$data_category['sliderDst'];
 		                            $data_category['url_sliderMbl'] = MEDIA_ADMIN.'files/images/uploads/'.$data_category['sliderMbl'];
 		                        }
 
-		                        Utils::dep($data_category);
+		                        $status = true;
+		                        $msg = "";
+		                        $data_request = array("data_category" => $data_category);
 						 	}
+						} catch (Exception $e) {
+						 	$status = false;
+						 	$msg = $e->getMessage();
+						 	$data_request = "";
+						}
 
-
-
-						 } catch (Exception $e) {
-						 	
-						 } 
+						$data = array("status" => $status, "msg" => $msg, "data_request" => $data_request);
+						echo json_encode($data);
 					}
 
 				break;

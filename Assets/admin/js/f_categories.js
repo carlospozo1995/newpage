@@ -239,22 +239,34 @@ function edit(element, data){
                 data: data,
             },
             success: function(data){
-                console.log(data);
-                // if (data.status) {
-                    // $("#id_user").val(data.data_request.id_user);
-                    // $("#dni_user").val(data.data_request.dni);
-                    // $("#name_user").val(data.data_request.name_user);
-                    // $("#surname_user").val(data.data_request.surname_user);
-                    // $("#phone_user").val(data.data_request.phone);
-                    // $("#email_user").val(data.data_request.email);
-                    // $("#list_rol").val(data.data_request.rolid);
-                    // $("#status_user").val(data.data_request.status);
+                if (data.status) {
+                    $('#modalFormCategory').modal('show');
+                    let data_category = data.data_request.data_category;
 
-                    // $("#list_rol").select2();   
-                    // $('#modalFormUser').modal('show');
-                // }else{
-                    // msgShow(3, 'Error', data.msg);
-            //     }
+                    $("#icon_actual").val(data_category.icon);
+                    $("#photo_actual").val(data_category.photo);
+                    $("#sliderMbl_actual").val(data_category.sliderMbl);
+                    $("#sliderDst_actual").val(data_category.sliderDst);
+
+                    $(".contImgUpload").each((index, item)=>{
+                        $(item).find(".image_remove").val(0);
+                        $(item).find(".imagen").val("");
+                    });
+
+                    if (data_category.sliderDst != null && data_category.sliderMbl != null) {
+                        // $(item).find(".prevImgUpload div").html('<img class="imgUpload" src="'+obj_url+'">');
+                        $(".prevSliderMbl div").html('<img class="imgUpload" src="'+data_category.url_sliderMbl+'">')
+                        $(".prevSliderDst div").html('<img class="imgUpload" src="'+data_category.url_sliderDst+'">')
+                        // $("#.delSlidermbl") 
+                    }else{
+                        $(".prevSliderMbl div").html('');
+                        $(".prevSliderDst div").html('');
+                    }
+
+
+                }else{
+                    msgShow(3, 'Error', data.msg);
+                }
             },
             error: function(e){
                 // console.log(e);
@@ -267,8 +279,6 @@ function edit(element, data){
             }
         });
     }
-
-    // $('#modalFormCategory').modal('show');
 }
 
 // SELECT OPTION - CATEGORIES LIST
