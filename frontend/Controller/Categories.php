@@ -83,6 +83,18 @@
 									}
 									
 									$request = Models_Categories::insertCategory($name, $undef_photo, $undef_icon, $undef_sliderDst, $undef_sliderMbl, $sliderDscOne, $sliderDscTwo, $option_list, $status);
+								}else{
+									$option = 2;
+									Utils::dep($_POST);
+									Utils::dep($_FILES);
+									if ($option_list != null){
+										$undef_icon = null;
+										$undef_photo = null;
+										$icon["name_upload"] = null;
+										$photo["name_upload"] = null;
+									}else{
+
+									}
 								}
 
 								if ($request > 0) {

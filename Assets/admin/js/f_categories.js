@@ -46,7 +46,6 @@ $(document).ready(function(){
                 $(item).find(".image_remove").val(0);
                 removeImage(item);
             });
-
             rowtable = "";
         });
     }
@@ -139,7 +138,7 @@ $(document).ready(function(){
             Swal.fire("Atención", "Por favor asegúrese de llenar los campos requeridos.", "error");
             return false;
         }else{
-            loading.css("display","flex");
+            // loading.css("display","flex");
             var formData = new FormData(e.target);
             let url_ajax = base_url + "categories/setCategory/";
 
@@ -197,17 +196,8 @@ $(document).ready(function(){
                     }else{
                         msgShow(2, 'Atención', data.msg);
                     }
-                    loading.css("display","none");
+                    // loading.css("display","none");
                 },
-                error: function(e){
-                    // console.log(e);
-                },
-                beforeSend: function(){
-                    // console.log("antes completar");
-                },
-                complete: function(){
-                    // console.log("completado");
-                }
             });
         }
     });
@@ -255,6 +245,7 @@ function edit(element, data_request){
                     $(".contImgUpload").each((index, item)=>{
                         $(item).find(".image_remove").val(0);
                         $(item).find(".imagen").val("");
+                        $(item).find(".alertImgUpload").html("");
                     });
 
                     if (data_category.sliderDst != null && data_category.sliderMbl != null) {
@@ -294,15 +285,6 @@ function edit(element, data_request){
                     msgShow(3, 'Error', data.msg);
                 }
             },
-            error: function(e){
-                // console.log(e);
-            },
-            beforeSend: function(){
-                // console.log("antes completar");
-            },
-            complete: function(){
-                // console.log("completado");
-            }
         });
     }
 }
