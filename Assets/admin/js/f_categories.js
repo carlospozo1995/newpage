@@ -151,7 +151,6 @@ $(document).ready(function(){
                 contentType: false,
                 processData: false, 
                 success: function(data){
-                    console.log(data)
                     if (data.status) {
                         let htmlStatus = $("#listStatus").val() == 1 ? '<div class="text-center"><span class="bg-success p-1 rounded"><i class="fa-solid fa-user"></i> Activo</span></div>' : '<div class="text-center"><span class="bg-danger p-1 rounded"><i class="fa-solid fa-user-slash"></i> Inactivo</span></div>';
                             
@@ -215,19 +214,19 @@ $(document).ready(function(){
 });
 
 // --- EDIT CATEGORY --- //
-function edit(element, data){
+function edit(element, data_request){
     rowtable = $(element).closest("tr")[0];
     let ischild = $(rowtable).hasClass("child");
     if(ischild){
         rowtable = $(rowtable).prev()[0];
     }
-        // $("#id_category").val(data);
+        
     $(".modal-header").removeClass("headerRegister").addClass("headerUpdate");
     $(".modal-title").text("Actualizar Categoria");
     $("#btnSubmitUser").removeClass("btn-primary").addClass("bg-success");
     $(".btnText").text("Actualizar");
     
-    if (!data) {
+    if (!data_request) {
         return false;
     }else{
         let url_ajax = base_url + "categories/getCategory/";
@@ -236,13 +235,18 @@ function edit(element, data){
             dataType: 'JSON',
             method: 'POST',
             data: {
-                data: data,
+                data: data_request,
             },
             success: function(data){
                 if (data.status) {
                     $('#modalFormCategory').modal('show');
                     let data_category = data.data_request.data_category;
 
+                    $("#id_category").val(data_request);
+                    $("#name_category").val(data_category.name_category);
+                    $("#sliderDscOne").val(data_category.sliderDesOne);
+                    $("#sliderDscTwo").val(data_category.sliderDesTwo);
+                    $("#listStatus").val(data_category.status);
                     $("#icon_actual").val(data_category.icon);
                     $("#photo_actual").val(data_category.photo);
                     $("#sliderMbl_actual").val(data_category.sliderMbl);
@@ -254,15 +258,37 @@ function edit(element, data){
                     });
 
                     if (data_category.sliderDst != null && data_category.sliderMbl != null) {
-                        // $(item).find(".prevImgUpload div").html('<img class="imgUpload" src="'+obj_url+'">');
-                        $(".prevSliderMbl div").html('<img class="imgUpload" src="'+data_category.url_sliderMbl+'">')
-                        $(".prevSliderDst div").html('<img class="imgUpload" src="'+data_category.url_sliderDst+'">')
-                        // $("#.delSlidermbl") 
+                        $(".prevSliderMbl div").html('<img class="imgUpload" src="'+data_category.url_sliderMbl+'">');
+                        $(".prevSliderDst div").html('<img class="imgUpload" src="'+data_category.url_sliderDst+'">');
+                        $(".delSliderMbl, .delSliderDst").removeClass("notBlock");
                     }else{
                         $(".prevSliderMbl div").html('');
                         $(".prevSliderDst div").html('');
+                        $(".delSliderMbl, .delSliderDst").addClass("notBlock");
                     }
 
+                    if (data_category.fatherCategory == null) {
+                        ctgListOptions(data_request, 0);
+
+                        $(".prevPhoto div").html('<img class="imgUpload" src="'+data_category.url_photo+'">');
+                        $(".prevIcon div").html('<img class="imgUpload" src="'+data_category.url_icon+'">');
+                        $(".delPhoto, .delIcon").removeClass("notBlock");
+
+                        $(".contImgUpload").each((index, item)=>{
+                            $(item).find(".contImage").removeClass("notBlock");
+                            $(item).find(".errorImage").html('');
+                        });
+                    }else{
+                        ctgListOptions(data_request, data_category.option_encrypt);
+
+                        $(".prevPhoto div, .prevIcon div").html('');
+                        $(".delPhoto, .delIcon").addClass("notBlock");
+
+                        $(".contImgUpload").each((index, item)=>{
+                            $(item).find(".contImage").addClass("notBlock");
+                            $(item).find(".errorImage").html('<span><i class="fa-solid fa-circle-info"></i> Las categorias superiores solo pueden contener una imagen.</span>');
+                        });
+                    }
 
                 }else{
                     msgShow(3, 'Error', data.msg);

@@ -18,7 +18,9 @@
 			switch ($action) {
 				case 'listCategories':
 					$id_category = Utils::getParam("id_category", "");
-					$arr_options = Models_Categories::arrCategories($id_category);
+
+					$id_category == "" ? $data = "" : $data = Utils::desencriptar($id_category);
+					$arr_options = Models_Categories::arrCategories($data);
 					Utils::optionsCategories($arr_options);
 				break;
 
@@ -128,7 +130,8 @@
 						 		throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
 						 		die();
 						 	}else{
-
+						 		$data_category['option_encrypt'] = Utils::encriptar($data_category['fatherCategory']);
+						 		
 						 		if (!empty($data_category['photo']) && !empty($data_category['icon'])) {
 		                            $data_category['url_photo'] = MEDIA_ADMIN.'files/images/uploads/'.$data_category['photo'];
 		                            $data_category['url_icon'] = MEDIA_ADMIN.'files/images/uploads/'.$data_category['icon']; 

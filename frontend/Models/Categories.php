@@ -13,7 +13,9 @@
         {
             $data_id = "";
 
-            if(!empty($data)){$data_id = " AND id_category != $data";}
+            if(!empty($data)){
+                $data_id = " AND id_category != $data";
+            }
             $sql = "SELECT * FROM categories WHERE status = ?".$data_id;
             $result = $GLOBALS["db"]->selectAll($sql, array(1));
             return $result;
