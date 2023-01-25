@@ -85,16 +85,55 @@
 									$request = Models_Categories::insertCategory($name, $undef_photo, $undef_icon, $undef_sliderDst, $undef_sliderMbl, $sliderDscOne, $sliderDscTwo, $option_list, $status);
 								}else{
 									$option = 2;
-									Utils::dep($_POST);
-									Utils::dep($_FILES);
+									// Utils::dep($_POST);
+									// Utils::dep($_FILES);
 									if ($option_list != null){
 										$undef_icon = null;
 										$undef_photo = null;
 										$icon["name_upload"] = null;
 										$photo["name_upload"] = null;
 									}else{
+										// if(empty($icon['name']) && !empty($_POST['icon_actual']) && $_POST['icon_remove'] == 0){
+										// 	$undef_icon = $_POST['icon_actual'];											
+										// }
 
+										// if (!empty($icon['name']) && !empty($_POST['icon_actual']) && $_POST['icon_remove'] == 1) {
+										// 	$undef_icon = "icon_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										// }
+
+										// if (!empty($icon['name']) && !empty($_POST['icon_actual']) && $_POST['icon_remove'] == 0) {
+										// 	$undef_icon = "icon_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										// }
+
+										// if (empty($icon['name']) && !empty($_POST['icon_actual']) && $_POST['icon_remove'] == 1) {
+										// 	$undef_icon = "debe tener un icono";
+										// }
+
+										if (empty($icon['name'])) {
+											if($_POST['icon_remove'] >= 1){
+												throw new Exception("Las categorias superiores deben tener icono.");
+												die();
+											}else{
+												$undef_icon = $_POST['icon_actual'];
+											} 
+										}else{
+											$undef_icon = "icon_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										}
+
+										if (empty($photo['name'])) {
+											if($_POST['photo_remove'] >= 1){
+												throw new Exception("Las categorias superiores deben tener una foto referencial.");
+												die();	
+											}else{
+												$undef_photo = $_POST['photo_actual'];	
+											} 
+										}else{
+											$undef_photo = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										}
 									}
+
+									Utils::dep($undef_icon);
+									Utils::dep($undef_photo);
 								}
 
 								if ($request > 0) {
