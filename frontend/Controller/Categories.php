@@ -85,29 +85,19 @@
 									$request = Models_Categories::insertCategory($name, $undef_photo, $undef_icon, $undef_sliderDst, $undef_sliderMbl, $sliderDscOne, $sliderDscTwo, $option_list, $status);
 								}else{
 									$option = 2;
-									// Utils::dep($_POST);
-									// Utils::dep($_FILES);
+
 									if ($option_list != null){
 										$undef_icon = null;
 										$undef_photo = null;
 										$icon["name_upload"] = null;
 										$photo["name_upload"] = null;
 									}else{
-										// if(empty($icon['name']) && !empty($_POST['icon_actual']) && $_POST['icon_remove'] == 0){
-										// 	$undef_icon = $_POST['icon_actual'];											
-										// }
+										$data_images = Models_Categories::selectImages("icon", "photo", $_POST['icon_actual'], $_POST['photo_actual']);
 
-										// if (!empty($icon['name']) && !empty($_POST['icon_actual']) && $_POST['icon_remove'] == 1) {
-										// 	$undef_icon = "icon_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-										// }
-
-										// if (!empty($icon['name']) && !empty($_POST['icon_actual']) && $_POST['icon_remove'] == 0) {
-										// 	$undef_icon = "icon_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-										// }
-
-										// if (empty($icon['name']) && !empty($_POST['icon_actual']) && $_POST['icon_remove'] == 1) {
-										// 	$undef_icon = "debe tener un icono";
-										// }
+										if(empty($data_images)){
+											throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
+											die();
+										}
 
 										if (empty($icon['name'])) {
 											if($_POST['icon_remove'] >= 1){
@@ -118,6 +108,7 @@
 											} 
 										}else{
 											$undef_icon = "icon_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+											$icon["name_upload"] = "icon_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 										}
 
 										if (empty($photo['name'])) {
@@ -129,11 +120,25 @@
 											} 
 										}else{
 											$undef_photo = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+											$photo["name_upload"] = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 										}
 									}
 
-									Utils::dep($undef_icon);
-									Utils::dep($undef_photo);
+									// Utils::dep($undef_icon);
+									// Utils::dep($undef_photo);
+									if (!empty($_POST['sliderDst_actual']) && !empty($_POST['sliderMbl_actual'])) {
+										$data_sliders = Models_Categories::selectImages("sliderDst", "sliderMbl", $_POST['sliderDst_actual'], $_POST['sliderMbl_actual']);
+										if (empty($data_sliders)) {
+											throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
+											die();	
+										}
+									}
+
+									// !empty($sliderDst['name']) && !empty($sliderMbl['name'])
+									if(!empty($sliderDst['name']) && empty($sliderMbl['name'])){
+										
+									}
+									
 								}
 
 								if ($request > 0) {
