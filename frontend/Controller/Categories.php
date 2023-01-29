@@ -20,8 +20,22 @@
 					$id_category = Utils::getParam("id_category", "");
 
 					$id_category == "" ? $data = "" : $data = Utils::desencriptar($id_category);
-					$arr_options = Models_Categories::arrCategories($data);
-					Utils::optionsCategories($arr_options);
+					$arrCategories = Models_Categories::arrCategories($data);
+					$categories = Utils::getCategories($arrCategories);
+
+					$html_options = '<option value="0">-- CATEGORIA SUPERIOR --</option>';
+					function getCategoriesOptions($arrCtg, $level = 0) {
+						$html = "";
+					    foreach ($arrCtg as $category) {
+					        $html .= '<option value="'.Utils::encriptar($category['id_category']).'">' . str_repeat('-', $level) . $category['name_category'] . '</option>';
+					        if (isset($category['sons'])) {
+					            $html .= getCategoriesOptions($category['sons'], $level + 1);
+					        }
+					    }
+					    return $html;
+					}
+					$html_options .= getCategoriesOptions($categories);
+					echo json_encode($html_options);
 				break;
 
 				case 'setCategory':
@@ -41,8 +55,8 @@
 								$sliderMbl = $_FILES['sliderMbl'];
 								$sliderDst = $_FILES['sliderDst'];		
 												
-								$sliderDscOne = empty($_POST['sliderDscOne']) ? null : $_POST['sliderDscOne'];
-								$sliderDscTwo = empty($_POST['sliderDscTwo']) ? null : $_POST['sliderDscTwo'];
+								$sliderDesOne = empty($_POST['sliderDesOne']) ? null : $_POST['sliderDesOne'];
+								$sliderDesTwo = empty($_POST['sliderDesTwo']) ? null : $_POST['sliderDesTwo'];
 
 								$nameNotSpace = str_replace(' ', '-', $name);
 							
@@ -65,7 +79,7 @@
 										}
 									}
 
-									if ((empty($sliderDst['name']) && !empty($sliderMbl['name'])) || !empty($sliderDst['name']) && empty($sliderMbl['name'])) {
+									if ((empty($sliderDst['name']) && !empty($sliderMbl['name'])) || (!empty($sliderDst['name']) && empty($sliderMbl['name']))) {
 										throw new Exception("Si va agregar slider deben ser ambos.");
 										die();
 									}
@@ -82,7 +96,7 @@
 										$sliderMbl["name_upload"] = null;
 									}
 									
-									$request = Models_Categories::insertCategory($name, $undef_photo, $undef_icon, $undef_sliderDst, $undef_sliderMbl, $sliderDscOne, $sliderDscTwo, $option_list, $status);
+									$request = Models_Categories::insertCategory($name, $undef_photo, $undef_icon, $undef_sliderDst, $undef_sliderMbl, $sliderDesOne, $sliderDesTwo, $option_list, $status);
 								}else{
 									$option = 2;
 
@@ -95,12 +109,12 @@
 										$data_images = Models_Categories::selectImages("icon", "photo", $_POST['icon_actual'], $_POST['photo_actual']);
 
 										if(empty($data_images)){
-											throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
+											throw new Exception("Error de imagenes. Intentelo mas tarde.");
 											die();
 										}
 
 										if (empty($icon['name'])) {
-											if($_POST['icon_remove'] >= 1){
+											if($_POST['icon_remove'] >= 1 || empty($_POST['icon_actual']) && $_POST['icon_remove'] <= 0){
 												throw new Exception("Las categorias superiores deben tener icono.");
 												die();
 											}else{
@@ -112,45 +126,36 @@
 										}
 
 										if (empty($photo['name'])) {
-											if($_POST['photo_remove'] >= 1){
+											if($_POST['photo_remove'] >= 1 || empty($_POST['photo_actual']) && $_POST['photo_remove'] <= 0){
 												throw new Exception("Las categorias superiores deben tener una foto referencial.");
 												die();	
 											}else{
-												$undef_photo = $_POST['photo_actual'];	
+												$undef_photo = $_POST['photo_actual'];
 											} 
 										}else{
 											$undef_photo = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 											$photo["name_upload"] = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-										}
+										} 
 									}
 
-									// Utils::dep($undef_icon);
-									// Utils::dep($undef_photo);
-									if (!empty($_POST['sliderDst_actual']) && !empty($_POST['sliderMbl_actual'])) {
-										$data_sliders = Models_Categories::selectImages("sliderDst", "sliderMbl", $_POST['sliderDst_actual'], $_POST['sliderMbl_actual']);
-										if (empty($data_sliders)) {
-											throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
-											die();	
-										}
-									}
-
-									// !empty($sliderDst['name']) && !empty($sliderMbl['name'])
-									if(!empty($sliderDst['name']) && empty($sliderMbl['name'])){
-										
-									}
-									
+									$request = Models_Categories::updateCategory(Utils::desencriptar($id), $name, $undef_photo, $undef_icon, $sliderDesOne, $sliderDesTwo, $option_list, $status);	
 								}
 
 								if ($request > 0) {
 
-									$undef_sliderDst != null ? $data_dst = MEDIA_ADMIN.'files/images/uploads/'.$undef_sliderDst : $data_dst = "";
-									$undef_sliderMbl != null ? $data_mbl = MEDIA_ADMIN.'files/images/uploads/'.$undef_sliderMbl : $data_mbl = "";
+									// $undef_sliderDst != null ? $data_dst = MEDIA_ADMIN.'files/images/uploads/'.$undef_sliderDst : $data_dst = "";
+									// $undef_sliderMbl != null ? $data_mbl = MEDIA_ADMIN.'files/images/uploads/'.$undef_sliderMbl : $data_mbl = "";
 
 									if($option == 1){
 										$status = true;
 										$msg = "Datos ingresados correctamente.";
 										$data_request = array("id_encrypt" => Utils::encriptar(strval($request)), "sliderDst" => $data_dst, "sliderMbl" => $data_mbl, "module" => $_SESSION['module'], "id_user" => $_SESSION['idUser']);
 										Utils::uploadImage(array($icon, $photo, $sliderDst, $sliderMbl));
+									}else{
+										$status = true;
+										$msg = "Datos actualizados correctamente.";
+										$data_request = "";
+										Utils::uploadImage(array($icon, $photo));
 									}
 								}else if($request == "exist"){
 									throw new Exception("Al parecer el nombre insertado pertenece a una categoria superior. Intentelo de nuevo.");

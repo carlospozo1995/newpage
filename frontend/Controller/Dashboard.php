@@ -8,6 +8,8 @@
 			if (empty($_SESSION['idUser'])) {
 				header('Location: '.BASE_URL.'login');
 			}
+			$arrCategories = Models_Categories::arrCategories("");
+			Utils::dep(Utils::getCategories($arrCategories));
 
 			Utils::permissionsData(MDASHBOARD);
 

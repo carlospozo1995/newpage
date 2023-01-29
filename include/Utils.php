@@ -220,40 +220,32 @@
         	$_SESSION['module'] = $module;
 	    }
 
-	    static public function optionsCategories($arrData)
-	    {
-	    	$html_options = "";
-	    	$option_static = '<option value="0">-- CATEGORIA SUPERIOR --</option>';
-	    	foreach ($arrData as $key => $value) {
-	    		if ($value["fatherCategory"] == "") {
-	    			$html_options.= '<option value="'.Utils::encriptar($value['id_category']).'">'.$value['name_category'].'</option>';
-	    			$html_options.= self::optionsChildrens($value['id_category'], 1, $arrData);
-	    		}
-	    	}
-	    	echo json_encode($option_static.$html_options);
-	    }
-
-	    static public function optionsChildrens($father_id, $level, $arrCtg)
-	    {
-	    	$result = "";
-	    	foreach ($arrCtg as $key => $value) {
-	    		if ($value["fatherCategory"] == $father_id) {
-	    			$result.= '<option value="'.Utils::encriptar($value['id_category']).'">'.str_repeat('- ', $level).$value['name_category'].'</option>';
-                	$result.= self::optionsChildrens($value['id_category'], $level + 1,$arrCtg);
-	    		}
-	    	}
-	    	return $result;
-	    }
+	    static public function getCategories($arrdata, $parentId = null) {
+		    $result = array();
+		    foreach ($arrdata as $key => $value) {
+		        if ($value['fatherCategory'] == $parentId) {
+		            $children = self::getCategories($arrdata, $value['id_category']);
+		            if ($children) {
+		                $value['sons'] = $children;
+		            }
+		            $result[] = $value;
+		        }
+		    }
+		    return $result;
+		}
 
 	    static public function uploadImage($data)
 	    {	
 	    	foreach ($data as $key => $value) {
-	    		$url_temp = $value['tmp_name'];
-	    		$name_img = $value['name_upload'];
-	    		$destination = 'Assets/admin/files/images/uploads/'.$name_img;
-	    		move_uploaded_file($url_temp, $destination);
+	    		if (!empty($value['tmp_name']) && isset($value['name_upload'])) {
+	    			$url_temp = $value['tmp_name'];
+	    			$name_img = $value['name_upload'];
+	    			$destination = 'Assets/admin/files/images/uploads/'.$name_img;
+	    			move_uploaded_file($url_temp, $destination);
+	    		}
 	    	}
 	    }
+
 
 	}
 

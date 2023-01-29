@@ -234,8 +234,8 @@ function edit(element, data_request){
 
                     $("#id_category").val(data_request);
                     $("#name_category").val(data_category.name_category);
-                    $("#sliderDscOne").val(data_category.sliderDesOne);
-                    $("#sliderDscTwo").val(data_category.sliderDesTwo);
+                    $("#sliderDesOne").val(data_category.sliderDesOne);
+                    $("#sliderDesTwo").val(data_category.sliderDesTwo);
                     $("#listStatus").val(data_category.status);
                     $("#icon_actual").val(data_category.icon);
                     $("#photo_actual").val(data_category.photo);

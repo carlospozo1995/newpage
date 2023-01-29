@@ -152,7 +152,7 @@
                 if ( $i != 1 ) {
                     $query .= ",";
                 }
-                if($value === 'null'){
+                if($value === null){
                     $query .= $col . '= NULL';
                 }else if(substr_count($value, '"') > 0){ 
                     $query .= $col . "='" . utf8_decode($value) . "'";

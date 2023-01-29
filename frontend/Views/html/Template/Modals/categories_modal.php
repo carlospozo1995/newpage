@@ -119,12 +119,12 @@
 
                                         <div class="form-group">
                                             <label>Slider Descripción 1</label>
-                                            <textarea class="form-control m-hgt-txarea" type="text" name="sliderDscOne" id="sliderDscOne"></textarea>
+                                            <textarea class="form-control m-hgt-txarea" type="text" name="sliderDesOne" id="sliderDesOne"></textarea>
                                         </div>
 
                                         <div class="form-group">
                                             <label>Slider Descripción 2</label>
-                                            <textarea class="form-control m-hgt-txarea" name="sliderDscTwo" id="sliderDscTwo"></textarea>
+                                            <textarea class="form-control m-hgt-txarea" name="sliderDesTwo" id="sliderDesTwo"></textarea>
                                         </div>
 
                                         <div class="form-group">
