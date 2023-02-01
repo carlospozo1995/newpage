@@ -18,8 +18,7 @@
             }
             
             $sql = "SELECT * FROM categories WHERE $params";
-            $result = $GLOBALS["db"]->selectAll($sql, array());
-            return $result;
+            return $GLOBALS["db"]->selectAll($sql, array());
         }
 
         static public function insertCategory($name, $photo, $icon, $sliderDst, $sliderMbl, $sliderDesOne, $sliderDesTwo, $option_list, $status)
@@ -29,11 +28,10 @@
 
             if (empty($request)) {
                 $arrData[] = array("name_category" => $name, "photo" => $photo, "icon" => $icon, "sliderDst" => $sliderDst, "sliderMbl" => $sliderMbl, "sliderDesOne" => $sliderDesOne, "sliderDesTwo" => $sliderDesTwo, "fatherCategory" => $option_list, "status" => $status); 
-                $result = $GLOBALS["db"]->insert_multiple("categories", $arrData);
+                return $GLOBALS["db"]->insert_multiple("categories", $arrData);
             }else{
-                $result = "exist";
+                return "exist";
             }
-            return $result;
         }
 
         static public function selectCategory($data)
@@ -48,7 +46,6 @@
             return $GLOBALS["db"]->auto_array($sql, array($data_1, $data_2)); 
         }
 
-
         static public function updateCategory($id, $name, $photo, $icon, $sliderDesOne, $sliderDesTwo, $option_list, $status)
         {
             $sql = "SELECT * FROM categories WHERE name_category = ? AND id_category != ? AND fatherCategory is null";
@@ -59,29 +56,46 @@
                 $result = $GLOBALS["db"]->update("categories", $arrData, "id_category='".$id."'");
 
                 if($result > 0){
-                    $sons_id = array();
-                    $recursive = self::recursiveData($id, $sons_id);
-                    $implode_data = implode(",", $recursive);
-                    $GLOBALS["db"]->update("categories", array("status" => $status), "id_category in(".$implode_data.")");                    
+                    $id_categories = "";
+                    foreach (self::dataSons($id) as $item) {
+                        $id_categories .= Utils::desencriptar($item['id_son']) . ',';
+                    }
+                    $id_categories = rtrim($id_categories, ',');
+                    $GLOBALS["db"]->update("categories", array("status" => $status), "id_category in(".$id_categories.")");                    
                 }
             }else{
                 $result = "exist";
             }
-
             return $result;
         }
 
-        static public function recursiveData($father, &$arr_ids)
-        {
-            $sql = "SELECT id_category FROM categories WHERE fatherCategory = ?";
-            $request = $GLOBALS["db"]->selectAll($sql, array($father));
-            foreach ($request as $key => $value) {
-                $id_data = $value['id_category'];
-                $arr_ids[] = $id_data; 
-                self::recursiveData($id_data, $arr_ids);
+        static public function dataSons($father) {
+            $arr_data = array();
+            $sql = "SELECT id_category, fatherCategory, name_category, status FROM categories";
+            $all_categories = $GLOBALS["db"]->selectAll($sql, array());
+            $categories = [];
+            foreach ($all_categories as $category) {
+                $categories[$category['id_category']] = $category;
             }
-            return $arr_ids;
+            $queue = [$father];
+            while (!empty($queue)) {
+                $current_father = array_shift($queue);
+                $current_father_name = $categories[$current_father]['name_category'];
+                foreach ($categories as $category) {
+                    if ($category['fatherCategory'] == $current_father) {
+                        $data = [
+                            'id_son' => Utils::encriptar($category['id_category']),
+                            'father_name' => $current_father_name,
+                            'status_son' => $category['status']
+                        ];
+                        array_push($arr_data, $data);
+                        array_push($queue, $category['id_category']);
+                    }
+                }
+            }
+            return $arr_data;
         }
+      
     }
 
 ?>

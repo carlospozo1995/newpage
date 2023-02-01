@@ -23,6 +23,8 @@
 					$arrCategories = Models_Categories::arrCategories($data);
 					$categories = Utils::getCategories($arrCategories);
 
+					// Utils::dep($categories);
+					// die();
 					$html_options = '<option value="0">-- CATEGORIA SUPERIOR --</option>';
 					function getCategoriesOptions($arrCtg, $level = 0) {
 						$html = "";
@@ -154,7 +156,7 @@
 									}else{
 										$status = true;
 										$msg = "Datos actualizados correctamente.";
-										$data_request = "";
+										$data_request = array("data_sons" => Models_Categories::dataSons(Utils::desencriptar($id)));
 										Utils::uploadImage(array($icon, $photo));
 									}
 								}else if($request == "exist"){
@@ -183,7 +185,7 @@
 					}else{
 						$id_category = Utils::desencriptar(Utils::getParam("data", ""));
 						$arrCategories = Models_Categories::arrCategories("");
-						// ********************
+						// $sonsUpdate = Models_Categories::updateSons($id_category);
 
 						try {
 						 	$data_category = Models_Categories::selectCategory($id_category);
@@ -205,7 +207,8 @@
 
 		                        $status = true;
 		                        $msg = "";
-		                        $data_request = array("data_category" => $data_category);
+		                        // $data_request = array("data_category" => $data_category, "sons" => $sonsUpdate);
+						 		$data_request = array("data_category" => $data_category);
 						 	}
 						} catch (Exception $e) {
 						 	$status = false;

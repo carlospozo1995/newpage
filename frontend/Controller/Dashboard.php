@@ -8,9 +8,8 @@
 			if (empty($_SESSION['idUser'])) {
 				header('Location: '.BASE_URL.'login');
 			}
-			$arrCategories = Models_Categories::arrCategories("");
-			Utils::dep(Utils::getCategories($arrCategories));
-
+			// $arrCategories = Models_Categories::arrCategories("");
+			// Utils::dep(Utils::getCategories($arrCategories));
 			Utils::permissionsData(MDASHBOARD);
 
 			$variable["file_css"][] = "c_dashboard";

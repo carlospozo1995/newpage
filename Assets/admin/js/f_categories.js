@@ -3,6 +3,7 @@
 
 var tableCategories;
 var rowtable;
+var sonsCtg;
 
 $(document).ready(function(){
     // --- PRINT DATA TABLE USERS --- //
@@ -150,7 +151,10 @@ $(document).ready(function(){
                 contentType: false,
                 processData: false, 
                 success: function(data){
+                    
                     if (data.status) {
+                        sonsCtg = data.data_request.data_sons;
+
                         let htmlStatus = $("#listStatus").val() == 1 ? '<div class="text-center"><span class="bg-success p-1 rounded"><i class="fa-solid fa-user"></i> Activo</span></div>' : '<div class="text-center"><span class="bg-danger p-1 rounded"><i class="fa-solid fa-user-slash"></i> Inactivo</span></div>';
                             
                         let sliderDst = "";
@@ -179,8 +183,8 @@ $(document).ready(function(){
                             if (id_user == 1 && module_data.eliminar == 1){
                                 btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="deleteData(this, '+"'"+id_category+"'"+')" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
                             }
-
-                            $("#tableCategories").DataTable().row.add([
+                            
+                            var newRow = $("#tableCategories").DataTable().row.add([
                                 id_row, 
                                 $("#name_category").val(),
                                 text_ctg,
@@ -188,7 +192,38 @@ $(document).ready(function(){
                                 sliderMbl,
                                 htmlStatus,
                                 '<div class="text-center"> '+btnWatch+" "+btnUpdate+" "+btnDelete+'</div>'
+                            ]).draw(false).node();
+                            $(newRow).attr("id", id_category);
+
+                        }else{
+                            let n_row = $(rowtable).find("td:eq(0)").html();
+                            let buttons_html = $(rowtable).find("td:eq(6)").html();
+                            $("#tableCategories").DataTable().row(rowtable).data([
+                                n_row,
+                                $("#name_category").val(),
+                                text_ctg,
+                                "slider desktop",
+                                "slider mobile",
+                                htmlStatus,
+                                buttons_html,
                             ]).draw(false);
+
+                            for (let i = 0; i < sonsCtg.length; i++) {
+                                let currentId = sonsCtg[i].id_son;
+                                let currentFatherName = sonsCtg[i].father_name;
+
+                                let row = $("#tableCategories").DataTable().rows().every(function() {
+                                    let rowNode = this.node();
+                                    let rowData = this.data();
+                                    let rowId = rowNode.id;
+                                    if (rowId === currentId) {
+                                        $("#tableCategories").DataTable().cell(this, 2).data(currentFatherName).draw();
+                                        $("#tableCategories").DataTable().cell(this, 5).data(htmlStatus).draw();
+                                        return false;
+                                    }
+                                    return true;
+                                });
+                            }
                         }
 
                         $('#modalFormCategory').modal('hide');
@@ -231,7 +266,7 @@ function edit(element, data_request){
                 if (data.status) {
                     $('#modalFormCategory').modal('show');
                     let data_category = data.data_request.data_category;
-
+                    sonsCtg = data_category.sons;
                     $("#id_category").val(data_request);
                     $("#name_category").val(data_category.name_category);
                     $("#sliderDesOne").val(data_category.sliderDesOne);

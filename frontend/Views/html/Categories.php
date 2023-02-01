@@ -65,7 +65,7 @@
                                             $value['status'] = '<div class="text-center"><span class="bg-danger p-1 rounded"><i class="fa-solid fa-user-slash"></i> Inactivo</span></div>';
                                         }
   
-                                        echo'<tr>';
+                                        echo'<tr id="'.$id_category.'">';
                                             echo '<td>'.$id_row.'</td>';
                                             echo '<td>'.$value['name_category'].'</td>';
                                             echo '<td>'.$value['nameFather'].'</td>';
