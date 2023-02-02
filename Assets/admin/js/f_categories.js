@@ -139,7 +139,7 @@ $(document).ready(function(){
             Swal.fire("Atención", "Por favor asegúrese de llenar los campos requeridos.", "error");
             return false;
         }else{
-            // loading.css("display","flex");
+            loading.css("display","flex");
             var formData = new FormData(e.target);
             let url_ajax = base_url + "categories/setCategory/";
 
@@ -231,7 +231,7 @@ $(document).ready(function(){
                     }else{
                         msgShow(2, 'Atención', data.msg);
                     }
-                    // loading.css("display","none");
+                    loading.css("display","none");
                 },
             });
         }

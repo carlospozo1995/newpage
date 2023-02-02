@@ -22,9 +22,7 @@
 					$id_category == "" ? $data = "" : $data = Utils::desencriptar($id_category);
 					$arrCategories = Models_Categories::arrCategories($data);
 					$categories = Utils::getCategories($arrCategories);
-
-					// Utils::dep($categories);
-					// die();
+					
 					$html_options = '<option value="0">-- CATEGORIA SUPERIOR --</option>';
 					function getCategoriesOptions($arrCtg, $level = 0) {
 						$html = "";
