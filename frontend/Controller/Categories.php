@@ -67,8 +67,6 @@
 									if ($option_list != null){
 										$undef_icon = null;
 										$undef_photo = null;
-										$icon["name_upload"] = null;
-										$photo["name_upload"] = null;
 									}else{
 										if (empty($icon['name']) || empty($photo['name'])) {
 											throw new Exception("Las categorias superiores deben tener icono y foto referencial.");
@@ -82,7 +80,7 @@
 									}
 
 									if ((empty($sliderDst['name']) && !empty($sliderMbl['name'])) || (!empty($sliderDst['name']) && empty($sliderMbl['name']))) {
-										throw new Exception("Si va agregar slider deben ser ambos.");
+										throw new Exception("Si desea agregar sliders, debe agregar ambos.");
 										die();
 									}
 
@@ -94,19 +92,16 @@
 									}else{
 										$undef_sliderDst = null;
 										$undef_sliderMbl = null;
-										$sliderDst["name_upload"] = null;
-										$sliderMbl["name_upload"] = null;
 									}
 									
 									$request = Models_Categories::insertCategory($name, $undef_photo, $undef_icon, $undef_sliderDst, $undef_sliderMbl, $sliderDesOne, $sliderDesTwo, $option_list, $status);
 								}else{
 									$option = 2;
 
+									// UPDATE PHOTO- ICON
 									if ($option_list != null){
 										$undef_icon = null;
 										$undef_photo = null;
-										$icon["name_upload"] = null;
-										$photo["name_upload"] = null;
 									}else{
 										$data_images = Models_Categories::selectImages("icon", "photo", $_POST['icon_actual'], $_POST['photo_actual']);
 
@@ -140,13 +135,49 @@
 										} 
 									}
 
-									$request = Models_Categories::updateCategory(Utils::desencriptar($id), $name, $undef_photo, $undef_icon, $sliderDesOne, $sliderDesTwo, $option_list, $status);	
+									// UPDATE SLIDERS (MOBILE - DESKTOP)
+									if(!empty($_POST['sliderMbl_actual']) && !empty($_POST['sliderDst_actual'])){
+										$data_sliders = Models_Categories::selectImages("sliderDst", "sliderMbl", $_POST['sliderDst_actual'] , $_POST['sliderMbl_actual']);
+										if (empty($data_sliders)) {
+											throw new Exception("Error de imagenes. Intentelo mas tarde.");
+											die();	
+										}
+									}
+
+									if (empty($sliderMbl['name'])) {
+										if(!empty($_POST['sliderMbl_actual'])){
+											$_POST['sliderMbl_remove'] <= 0 ? $undef_sliderMbl = $_POST['sliderMbl_actual'] : $undef_sliderMbl = null;
+										}else{
+											$undef_sliderMbl = null;
+										}
+									}else{
+										$undef_sliderMbl = "sliderMbl_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$sliderMbl["name_upload"] = "sliderMbl_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";										
+									}
+
+									if (empty($sliderDst['name'])) {
+										if (!empty($_POST['sliderDst_actual'])) {
+											$_POST['sliderDst_remove'] <= 0 ? $undef_sliderDst = $_POST['sliderDst_actual'] : $undef_sliderDst = null;
+										}else{
+											$undef_sliderDst = null;
+										}
+									}else{
+										$undef_sliderDst = "sliderDst_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$sliderDst["name_upload"] = "sliderDst_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+									}
+
+									if(($undef_sliderMbl == null && !empty($undef_sliderDst)) || ($undef_sliderDst == null && !empty($undef_sliderMbl))){
+										throw new Exception("Si desea agregar sliders, debe agregar ambos.");
+										die();
+									}
+									
+									$request = Models_Categories::updateCategory(Utils::desencriptar($id), $name, $undef_photo, $undef_icon, $undef_sliderDst, $undef_sliderMbl, $sliderDesOne, $sliderDesTwo, $option_list, $status);	
 								}
 
 								if ($request > 0) {
 
-									// $undef_sliderDst != null ? $data_dst = MEDIA_ADMIN.'files/images/uploads/'.$undef_sliderDst : $data_dst = "";
-									// $undef_sliderMbl != null ? $data_mbl = MEDIA_ADMIN.'files/images/uploads/'.$undef_sliderMbl : $data_mbl = "";
+									$undef_sliderDst != null ? $data_dst = MEDIA_ADMIN.'files/images/uploads/'.$undef_sliderDst : $data_dst = "";
+									$undef_sliderMbl != null ? $data_mbl = MEDIA_ADMIN.'files/images/uploads/'.$undef_sliderMbl : $data_mbl = "";
 
 									if($option == 1){
 										$status = true;
@@ -156,8 +187,8 @@
 									}else{
 										$status = true;
 										$msg = "Datos actualizados correctamente.";
-										$data_request = array("data_sons" => Models_Categories::dataSons(Utils::desencriptar($id)));
-										Utils::uploadImage(array($icon, $photo));
+										$data_request = array("data_sons" => Models_Categories::dataSons(Utils::desencriptar($id)), "sliderDst" => $data_dst, "sliderMbl" => $data_mbl,);
+										Utils::uploadImage(array($icon, $photo,  $sliderDst, $sliderMbl));
 									}
 								}else if($request == "exist"){
 									throw new Exception("Al parecer el nombre insertado pertenece a una categoria superior. Intentelo de nuevo.");
@@ -185,7 +216,6 @@
 					}else{
 						$id_category = Utils::desencriptar(Utils::getParam("data", ""));
 						$arrCategories = Models_Categories::arrCategories("");
-						// $sonsUpdate = Models_Categories::updateSons($id_category);
 
 						try {
 						 	$data_category = Models_Categories::selectCategory($id_category);
@@ -207,7 +237,6 @@
 
 		                        $status = true;
 		                        $msg = "";
-		                        // $data_request = array("data_category" => $data_category, "sons" => $sonsUpdate);
 						 		$data_request = array("data_category" => $data_category);
 						 	}
 						} catch (Exception $e) {

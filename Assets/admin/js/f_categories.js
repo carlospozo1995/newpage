@@ -202,8 +202,8 @@ $(document).ready(function(){
                                 n_row,
                                 $("#name_category").val(),
                                 text_ctg,
-                                "slider desktop",
-                                "slider mobile",
+                                sliderDst,
+                                sliderMbl,
                                 htmlStatus,
                                 buttons_html,
                             ]).draw(false);

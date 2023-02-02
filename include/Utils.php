@@ -234,7 +234,6 @@
 		    return $result;
 		}
 
-
 	    static public function uploadImage($data)
 	    {	
 	    	foreach ($data as $key => $value) {

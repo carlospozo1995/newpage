@@ -46,13 +46,13 @@
             return $GLOBALS["db"]->auto_array($sql, array($data_1, $data_2)); 
         }
 
-        static public function updateCategory($id, $name, $photo, $icon, $sliderDesOne, $sliderDesTwo, $option_list, $status)
+        static public function updateCategory($id, $name, $photo, $icon, $sliderDst, $sliderMbl, $sliderDesOne, $sliderDesTwo, $option_list, $status)
         {
             $sql = "SELECT * FROM categories WHERE name_category = ? AND id_category != ? AND fatherCategory is null";
             $request = $GLOBALS["db"]->auto_array($sql, array($name, $id));
             
             if(empty($request)){
-                $arrData = array("name_category" => $name, "photo" => $photo, "icon" => $icon, "sliderDesOne" => $sliderDesOne, "sliderDesTwo" => $sliderDesTwo, "fatherCategory" => $option_list, "status" => $status);
+                $arrData = array("name_category" => $name, "photo" => $photo, "icon" => $icon, "sliderDst" => $sliderDst, "sliderMbl" => $sliderMbl, "sliderDesOne" => $sliderDesOne, "sliderDesTwo" => $sliderDesTwo, "fatherCategory" => $option_list, "status" => $status);
                 $result = $GLOBALS["db"]->update("categories", $arrData, "id_category='".$id."'");
 
                 if($result > 0){
