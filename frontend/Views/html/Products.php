@@ -1,6 +1,6 @@
     
 <?php   
-    // Utils::loadModalFile("products", ""); 
+    Utils::loadModalFile("products", ""); 
 ?>
 
 <div class="content-wrapper">
@@ -11,7 +11,7 @@
          		<div class="col-sm-6 d-flex">
             		<h1><?= $section_name; ?></h1>
                     <?php if (!empty($_SESSION['module']['crear'])) { ?>
-                        <button type="button" class="btn btn-primary ml-2" id="btnNewUser"><i class="fas fa-plus-circle"></i> Nuevo</button>
+                        <button type="button" class="btn btn-primary ml-2" id="btnNewProduct"><i class="fas fa-plus-circle"></i> Nuevo</button>
                     <?php } ?>
                 </div>
           	</div>
@@ -24,15 +24,16 @@
           		<div class="col-12">
             		<div class="card">
               			<div class="card-body">
-                            <table id="tableUsers" class="table_order table table-bordered table-striped">
+                            <table id="tableProducts" class="table_order table table-bordered table-striped">
 			                  	<thead>
 				                  	<tr>
 				                    	<th>ID</th>
+                                        <th>Código</th>
 				                    	<th>Nombre</th>
-				                    	<th>Apellidos</th>
-				                    	<th>Email</th>
-				                    	<th>Telélefono</th>
-                                        <th>Rol</th>
+				                    	<th>Precio</th>
+				                    	<th>Stock</th>
+				                    	<th>Slider desktop</th>
+                                        <th>Slider Mobile</th>
                                         <th>Status</th>
                                         <th>Acciones</th>
 				                  	</tr>
