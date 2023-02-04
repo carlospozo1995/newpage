@@ -39,6 +39,7 @@ RewriteRule ^(categories/|categories|Categories)/setCategory/$ %{ENV:REWRITEBASE
 RewriteRule ^(categories/|categories|Categories)/getCategory/$ %{ENV:REWRITEBASE}index.php?show=categories&action=getCategory [L]
 
 RewriteRule ^(products/|products|Products)$ %{ENV:REWRITEBASE}index.php?show=products [L]
+RewriteRule ^(products/|products|Products)/setProduct/$ %{ENV:REWRITEBASE}index.php?show=products&action=setProduct [L]
 
 
 

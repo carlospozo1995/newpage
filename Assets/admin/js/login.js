@@ -141,7 +141,7 @@ $(document).ready(function(){
                 msgShow(2, '', 'Rellene los campos requeridos.');
                 return false;
             }else{
-                if (!testPass(pass)) {
+                if (!testExpression(pass, /^(?=.*\d)(?=.*[a-z]).{8,}$/)) {
                     msgShow(2, '', 'La contraseña debe contener números y letras con un mínimo de 8 caracteres.');
                     return false;
                 }

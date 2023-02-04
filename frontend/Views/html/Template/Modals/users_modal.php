@@ -46,7 +46,7 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="phone_user">Teléfono</label>
-                                            <input type="text" class="form-control valid valid_number" placeholder="Telefono o celular" id="phone_user">
+                                            <input type="text" class="form-control valid valid_phone" placeholder="Telefono o celular" id="phone_user">
                                         </div>
                                     </div>
 
@@ -64,18 +64,16 @@
                                             <label for="name_rol">Rol del usuario</label>
                                             <select style="width:100%" class="form-control" id="list_rol">
                                             <?php 
-                                                // if (!empty($_SESSION['module']['ver'])){
-                                                    $html_options = "";
-                                                    $arr_roles = Models_Users::selectRoles();
-                                                    
-                                                    if (count($arr_roles) > 0) {
-                                                        for ($i=0; $i < count($arr_roles); $i++) { 
-                                                            $html_options .= '<option value="'.Utils::encriptar($arr_roles[$i]['id_rol']).'">'.$arr_roles[$i]['name_rol'].'</option>' ;
-                                                        }
-                                                    }    
+                                                $html_options = "";
+                                                $arr_roles = Models_Users::selectRoles();
+                                                
+                                                if (count($arr_roles) > 0) {
+                                                    for ($i=0; $i < count($arr_roles); $i++) { 
+                                                        $html_options .= '<option value="'.Utils::encriptar($arr_roles[$i]['id_rol']).'">'.$arr_roles[$i]['name_rol'].'</option>' ;
+                                                    }
+                                                }    
 
-                                                    echo $html_options;
-                                                // }
+                                                echo $html_options;
                                             ?>
                                             </select>
                                         </div>
@@ -97,7 +95,7 @@
                                         <div class="form-group ">
                                             <label for="password">Contraseña</label>
                                             <div class="d-flex align-items-center">
-                                                <input type="password" class="form-control contPass " placeholder="ejemplo123" id="pass_user">
+                                                <input type="password" class="form-control contPass valid valid_password" placeholder="ejemplo123" id="pass_user">
                                                 <span class="ml-1" role='button'><i class="fa-regular fa-eye-slash" onclick="showPass(this)"></i></span>
                                             </div>
                                         </div>

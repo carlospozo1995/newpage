@@ -1,5 +1,5 @@
 <?php if(!empty($_SESSION['module']['crear'])) { ?>
-	<div class="modal fade" id="modalFormProduct">
+	<div class="modal fade" id="modalFormProduct" tabindex="1">
 	    <div class="modal-dialog modal-xl">
 	        <div class="modal-content">
 	        	<div class="modal-header headerRegister">
@@ -84,42 +84,42 @@
                                         </div>
 
                                         <div class="form-group">
-	                                        <label>Marca<span class="text-danger"> *</span></label>
-	                                        <input type="text" class="form-control" id="brand" name="brand">
-	                                    </div>
-
-	                                    <div class="form-group">
-	                                        <label>Código<span class="text-danger"> *</span></label>
-	                                        <input type="text" class="form-control" id="code" name="code">
-	                                    </div>
-
-	                                    <div class="row">
-	                                        <div class="col-sm-6">
-	                                            <div class="form-group">
-	                                                <label>Precio<span class="text-danger"> *</span></label>
-	                                                <input type="text" class="form-control" id="price" name="price">
-	                                            </div>
-	                                        </div>
-	                                        <div class="col-sm-6">
-	                                            <div class="form-group">
-	                                                <label>Stock<span class="text-danger"> *</span></label>
-	                                                <input type="text" class="form-control" id="stock" name="stock">
-	                                            </div>
-	                                        </div>
-	                                    </div>
-
-	                                    <div class="form-group">
                                             <label>Pertenece a:<span class="text-danger"> *</span></label>
                                             <select class="form-control" style="width: 100%;" name="listCategories" id="listCategories">
                                             	<?php
                                             	 	$categories_arr = Models_Products::getCategories();
                                             		foreach ($categories_arr as $category) {
                                             			!empty($category['fatherName']) ? $father_name = ' ('.$category['fatherName'].')' : $father_name = "";
-                                            			echo '<option value="'.$category['id_category'].'">'.$category['name_category'].$father_name.' </option>';
+                                            			echo '<option value="'.Utils::encriptar($category['id_category']).'">'.$category['name_category'].$father_name.' </option>';
                                             		}
                                             	?>
                                             </select>
                                         </div>
+
+                                        <div class="form-group">
+	                                        <label>Marca<span class="text-danger"> *</span></label>
+	                                        <input type="text" class="form-control" id="brand" name="brand">
+	                                    </div>
+
+	                                    <div class="form-group">
+	                                        <label>Código<span class="text-danger"> *</span></label>
+	                                        <input type="text" class="form-control valid valid_number" id="code" name="code">
+	                                    </div>
+
+	                                    <div class="row">
+	                                        <div class="col-sm-6">
+	                                            <div class="form-group">
+	                                                <label>Precio<span class="text-danger"> *</span></label>
+	                                                <input type="text" class="form-control valid valid_price" id="price" name="price">
+	                                            </div>
+	                                        </div>
+	                                        <div class="col-sm-6">
+	                                            <div class="form-group">
+	                                                <label>Stock<span class="text-danger"> *</span></label>
+	                                                <input type="text" class="form-control valid valid_number" id="stock" name="stock">
+	                                            </div>
+	                                        </div>
+	                                    </div>
 
 										<div class="form-group">
                                             <label for="listStatus">Status Producto<span class="text-danger"> *</span></label>

@@ -7,6 +7,8 @@
 		
 			if (Utils::isLogged()) {
 				header('Location: '.BASE_URL.'Dashboard');
+				// $arrDataUpStatus['update_status'] = 1;
+				// Models_Usuario::updateStatuPass($_SESSION['idUser'], $arrDataUpStatus);
 			}
 			// Utils::dep($_SESSION['id_user_token']);
 			$action = Utils::getParam("action", "");
@@ -38,6 +40,7 @@
                             		$_SESSION['inicio'] = time();	
                             		
                             		$arr_rol_user = Models_Usuario::dataSessionlogin($_SESSION['idUser']); 
+									// Models_Usuario::updateStatuPass($_SESSION['idUser'], array('update_status' => 1));
 
                             		$status = true;
                             		$msg = "OK";								

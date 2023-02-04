@@ -56,48 +56,16 @@ function resetIdTable(dataTable) {
     }
 }
 
-// TEST PASSWORD - EXPRESSION REGULAR
-function testPass(txtString) {
-    var stringText = new RegExp(/^(?=.*\d)(?=.*[a-z]).{8,}$/);
-    if (stringText.test(txtString)){
+// TEST - EXPRESSION REGULAR
+function testExpression(value, regex) {
+    if (regex.test(value)){
         return true;
     }else{
         return false;
     }
 }
 
-// TEST TEXT - EXPRESSION REGULAR
-function testText(txtString) {
-    var stringText = new RegExp(/^([a-zA-ZÑñÁáÉéÍíÓóÚú\s])*$/);
-    if (stringText.test(txtString)){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-// TEST NUMBER - EXPRESSION REGULAR
-function testNumber(intCant) {
-    // var intCantidad = new RegExp(/^([0-9])*$/);
-    var intCantidad = new RegExp(/^([0-9]{7,10})$/);
-    if (intCantidad.test(intCant)){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-// TEST EMAIL - EXPRESSION REGULAR
-function testEmail(email) {
-    var stringEmail = new RegExp(/^(([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9])+\.)+([a-zA-Z0-9]{2,4}))*$/);
-    if (stringEmail.test(email) == false){
-        return false;
-    }else{
-        return true;
-    }
-}
-
-// FUNCTION GENERAL - VALIDATE INPUT(EXPRESION REGULAR)
+//FUNCTION GENERAL - VALIDATE INPUT(EXPRESION REGULAR)
 function validateExpresion() {
     let validElements = document.querySelectorAll(".valid");
     let expresion = "";
@@ -108,16 +76,22 @@ function validateExpresion() {
         
             switch(true){
                 case this.classList.contains('valid_text'):
-                    expresion = testText(inputValue);
+                    expresion = testExpression(inputValue, /^([a-zA-ZÑñÁáÉéÍíÓóÚú\s])*$/);
+                break;
+                case this.classList.contains('valid_phone'):
+                    expresion = testExpression(inputValue, /^([0-9]{7,10})$/);
                 break;
                 case this.classList.contains('valid_number'):
-                    expresion = testNumber(inputValue);
+                    expresion = testExpression(inputValue, /^\d+$/);
+                break;
+                case this.classList.contains('valid_price'):
+                    expresion = testExpression(inputValue, /^\d{1,}[.,]\d{2}$/);
                 break;
                 case this.classList.contains('valid_email'):
-                    expresion = testEmail(inputValue);
+                    expresion = testExpression(inputValue, /^(([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9])+\.)+([a-zA-Z0-9]{2,4}))*$/);
                 break;
-            case this.classList.contains('valid_password'):
-                    expresion = testPass(inputValue);
+                case this.classList.contains('valid_password'):
+                    expresion = testExpression(inputValue, /^(?=.*\d)(?=.*[a-z]).{8,}$/);
                 break;
                 default:
                     return false;
@@ -150,3 +124,72 @@ function validFocus() {
 window.addEventListener('load', function () {
     validateExpresion();
 }, false);
+
+
+// ----- LOADING OF DIFFERENT IMAGES ACCORDING TO THE SECTION ----- //
+if ($("#formNewCategory").length || $("#formNewProduct").length) {
+    $(".contImgUpload").each((index, item)=>{
+
+        // ADD AND VALIDATE IMAGE
+        var imagen = $(item).find(".imagen");
+        imagen.change((e)=>{
+            var uploadImagen = imagen.val();
+            var fileImagen = imagen.prop("files")[0];
+            var nav = window.URL || window.webkitURL;
+            var alertImagen = $(item).find(".alertImgUpload");
+
+            if (uploadImagen != "") {
+                var typeImagen = fileImagen.type;
+                var nameImagen = fileImagen.name;
+
+                if (typeImagen != 'image/jpeg' && typeImagen != "image/png" && typeImagen != "image/jpg") {
+                    alertImagen.html('<p class="text-danger text-center">El archivo selecionado no es válido. Intentelo de nuevo.</p>');
+
+                    if($(item).find(".imgUpload")){
+                        $(item).find(".imgUpload").remove();
+                    }
+
+                    $(item).find(".delImgUpload").addClass("notBlock");
+                    imagen.val("");
+                    return false;
+                }else{
+                    alertImagen.html("");
+
+                    if($(item).find(".imgUpload")){
+                        $(item).find(".imgUpload").remove();
+                    }
+
+                    $(item).find(".delImgUpload").removeClass("notBlock");
+                    var obj_url = nav.createObjectURL(fileImagen);
+                    $(item).find(".prevImgUpload div").html('<img class="imgUpload" src="'+obj_url+'">');
+                }
+            }else{
+                alert("No ha seleccionado una imagen.")
+                if($(item).find(".imgUpload")){
+                    $(item).find(".imgUpload").remove();
+                }
+            }
+
+        });
+        
+        // BTN DELETE IMAGE
+        if($(item).find(".delImgUpload")){
+            var delImagen = $(item).find(".delImgUpload");
+            delImagen.click(()=>{
+                $(item).find(".image_remove").val(1);
+                removeImage(item);
+            });
+        }
+    });
+}
+
+// FUNCTION DELETE IMAGE BTN
+function removeImage(item) {
+    $(item).find(".imagen").val("");
+    $(item).find(".delImgUpload").addClass("notBlock");
+
+    if($(item).find(".imgUpload")){
+        $(item).find(".imgUpload").remove();
+    }
+}
+// ------------------------- END -------------------------- //
