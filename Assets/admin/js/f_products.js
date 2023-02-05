@@ -34,6 +34,7 @@ $(document).ready(function () {
 			formNewProduct.trigger("reset");
 			$("#id_product").val("");
 			$("#listCategories").select2();
+			validFocus();
 
 			$(".contImgUpload").each((index, item)=>{
                 $(item).find(".alertImgUpload").html("");
@@ -99,8 +100,13 @@ $(document).ready(function () {
                 contentType: false,
                 processData: false, 
                 success: function(data){
-                	console.log(data);
-     				// loading.css("display","none");
+                	if (data.status) {
+                		$('#modalFormProduct').modal('hide');
+                        msgShow(1, 'Productos', data.msg);
+                	}else{
+                		msgShow(2, 'Atención', data.msg);
+                	}
+                	// loading.css("display","none");
                 },
             });
 		}

@@ -37,7 +37,7 @@
 							$test_number = "/^([0-9]{7,10})$/";
 							$test_text = "/^([a-zA-ZÑñÁáÉéÍíÓóÚú\s])*$/";
 
-							if (preg_match($test_text, $name) == 0 || preg_match($test_text, $surname) == 0 || preg_match($test_number, $phone) == 0 || preg_match($test_email, $email) == 0) {
+							if (!preg_match($test_text, $name) || !preg_match($test_text, $surname) || !preg_match($test_number, $phone) || !preg_match($test_email, $email)) {
 								die();
 							}
 
@@ -48,7 +48,7 @@
 									throw new Exception("Rellene todos los campos.");
 									die();
 								}else{
-									preg_match($test_pass, $password) == 0 ? die() : $password = $password;
+									!preg_match($test_pass, $password) ? die() : $password = $password;
 								}
 
 								if (!empty($_SESSION['module']['crear'])) {
@@ -60,7 +60,7 @@
 								if (empty($password)) {
 									$password = $password;
 								}else{
-									preg_match($test_pass, $password) == 0 ? die() : $password = sha1($password);
+									!preg_match($test_pass, $password) ? die() : $password = sha1($password);
 								}
 
 								if (!empty($_SESSION['module']['actualizar'])) {
