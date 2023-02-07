@@ -56,17 +56,17 @@
 										die();
 									}
 
-										if (!empty($sliderDst['name']) && !empty($sliderMbl['name'])) {
-											$undef_sliderDst = "sliderDst_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-											$undef_sliderMbl = "sliderMbl_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-											$sliderDst["name_upload"] = "sliderDst_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-											$sliderMbl["name_upload"] = "sliderMbl_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-										}else{
-											$undef_sliderDst = null;
-											$undef_sliderMbl = null;
-										}
-										
-										$request = Models_Products::insertProduct($name, $desMain, $desGeneral, $undef_sliderDst, $undef_sliderMbl, $sliderDes, $option_list, $brand, $code, $price, $stock, $status);
+									if (!empty($sliderDst['name']) && !empty($sliderMbl['name'])) {
+										$undef_sliderDst = "sliderDst_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$undef_sliderMbl = "sliderMbl_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$sliderDst["name_upload"] = "sliderDst_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$sliderMbl["name_upload"] = "sliderMbl_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+									}else{
+										$undef_sliderDst = null;
+										$undef_sliderMbl = null;
+									}
+									
+									$request = Models_Products::insertProduct($name, $desMain, $desGeneral, $undef_sliderDst, $undef_sliderMbl, $sliderDes, $option_list, $brand, $code, $price, $stock, $status);
 								}
 
 								if ($request > 0) {
@@ -86,7 +86,7 @@
 										// Utils::uploadImage(array($icon, $photo,  $sliderDst, $sliderMbl));
 									}
 								}else if($request == "exist"){	
-									throw new Exception("Al parecer el nombre insertado pertenece a una categoria superior. Intentelo de nuevo.");
+									throw new Exception("El código del producto ingresado ya existe. Inténtelo de nuevo.");
 									die();								
 								}else{
 									throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
@@ -103,6 +103,66 @@
 					}
                     
                 break;
+
+                case 'getProduct':
+
+					if (empty(Utils::getParam("data", ""))) {
+						die();
+					}else{
+						$id_product = Utils::desencriptar(Utils::getParam("data", ""));
+
+						try {
+						 	$data_product = Models_Products::selectProduct($id_product);
+						 	if (empty($data_product)) {
+						 		throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
+						 		die();
+						 	}else{
+						 		$data_product['option_encrypt'] = Utils::encriptar($data_product['category_id']);
+
+		                        if (!empty($data_product['sliderDst']) && !empty($data_product['sliderMbl'])) {
+		                            $data_product['url_sliderDst'] = MEDIA_ADMIN.'files/images/uploads/'.$data_product['sliderDst'];
+		                            $data_product['url_sliderMbl'] = MEDIA_ADMIN.'files/images/uploads/'.$data_product['sliderMbl'];
+		                        }
+
+		                        $status = true;
+		                        $msg = "";
+						 		$data_request = array("data_product" => $data_product);
+						 	}
+						} catch (Exception $e) {
+						 	$status = false;
+						 	$msg = $e->getMessage();
+						 	$data_request = "";
+						}
+
+						$data = array("status" => $status, "msg" => $msg, "data_request" => $data_request);
+						echo json_encode($data);
+					
+}
+				break;
+
+				case 'setImage':
+					if (isset($_POST)) {
+						try {
+							if(empty($_POST['id'])){
+								throw new Exception("Error de cargar.");
+								die();
+							}else{
+								$id_product = Utils::desencriptar($_POST['id']);
+								$file_product = $_FILES['file'];
+								$imgName = "imgRef_".$id_product.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+								$request = Models_Products::insertImage($id_product, $imgName); 
+							}
+						} catch (Exception $e) {
+							$status = false;
+						 	$msg = $e->getMessage();
+						}
+
+						$data = array("status" => $status, "msg" => $msg);
+						echo json_encode($data);
+					}
+					// echo json_encode($_FILES['file']);
+
+				break;
 
 				default:
 					Utils::permissionsData(MPRODUCTOS);

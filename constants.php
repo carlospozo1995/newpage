@@ -34,4 +34,10 @@
     define("MCATEGORIAS", 3);
     define("MPRODUCTOS", 4);
 
+    // DECIMAL AND THOUSAND DELIMITERS
+    define("SPD", ",");
+    define("SPM", ".");
+
+    // CURRENCY SYMBOL
+    define("SMONEY", "$");
 ?>

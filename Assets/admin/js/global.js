@@ -193,3 +193,7 @@ function removeImage(item) {
     }
 }
 // ------------------------- END -------------------------- //
+
+function numberFormat(number, decimals = 2, decPoint = ',', thousandsSep = '.') {
+    return number.toFixed(decimals).replace('.', decPoint).replace(/\B(?=(\d{3})+(?!\d))/g, thousandsSep);
+}

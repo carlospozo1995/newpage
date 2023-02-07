@@ -75,9 +75,31 @@ $(document).ready(function () {
 	    branding: false,
 	});
 
+	// CONTAINER IMAGES PRODUCT
+	if($('.btnAddImage').length){
+        $('.btnAddImage').click(() => {
+
+            let key = Date.now();
+			let newElement = $("<div>", {
+			    id: "div" + key,
+			    html: `
+			        <div class="prevImage"></div>
+			        <input type="file" name="foto" id="img${key}" class="inputUploadfile">
+			        <label for="img${key}" class="btnUploadfile"><i class="fas fa-upload"></i></label>
+			        <button class="btnDeleteImage" type="button" onclick="ftnDelItem('#div${key}')"><i class="fas fa-trash"></i></button>`
+			});
+			$("#containerImages").append(newElement);
+			$('#div' + key + ' .btnUploadfile').click();
+
+            fntInputFile();
+        });
+    }
+    fntInputFile();
+
+    //DATA JSON INSERT AND UPDATE PRODUCT
 	formNewProduct.submit((e) =>{
 		e.preventDefault();
-		if($('#name_product').val() == "" || $('#desmainProd').val() == "" || $('#listCategories').val() == "" || $('#brand').val() == "" || $('#code').val() == "" || $('#price').val() == "" || $('#stock').val() == "" || $('#listStatus').val() == ""){
+		if($('#name_product').val() == "" || $('#desMainProd').val() == "" || $('#listCategories').val() == "" || $('#brand').val() == "" || $('#code').val() == "" || $('#price').val() == "" || $('#stock').val() == "" || $('#listStatus').val() == ""){
 			Swal.fire("Atención", "Por favor asegúrese de llenar los campos requeridos.", "error");
             return false;
 		}else{
@@ -101,6 +123,48 @@ $(document).ready(function () {
                 processData: false, 
                 success: function(data){
                 	if (data.status) {
+                		let htmlStatus = $("#listStatus").val() == 1 ? '<div class="text-center"><span class="bg-success p-1 rounded"><i class="fa-solid fa-user"></i> Activo</span></div>' : '<div class="text-center"><span class="bg-danger p-1 rounded"><i class="fa-solid fa-user-slash"></i> Inactivo</span></div>';
+                            
+                        let sliderDst = "";
+                        let sliderMbl = "";
+                        data.data_request.sliderDst != "" ? sliderDst = '<img class="text-center" style="display:flex; margin:auto; width:70px" src="'+data.data_request.sliderDst+'">' : sliderDst = "";
+                        data.data_request.sliderMbl != "" ? sliderMbl = '<img class="text-center" style="display:flex; margin:auto; width:50px" src="'+data.data_request.sliderMbl+'">' : sliderMbl = "";
+
+                        if(rowtable == ""){
+                        	let id_row = $("#tableProducts").DataTable().rows().count() + 1;
+                            let btnWatch = "";
+                            let btnUpdate = "";
+                            let btnDelete = "";
+
+                            let id_product = data.data_request.id_encrypt;
+                            let module_data = data.data_request.module;
+                            let id_user = data.data_request.id_user;
+
+                            if (module_data.ver == 1) {
+                                btnWatch = '<button type="button" class="btn btn-secondary btn-sm" onclick="watch('+"'"+id_product+"'"+')" tilte="Ver"><i class="fa-solid fa-eye"></i></button>'
+                            }
+
+                            if (module_data.actualizar == 1) {
+                                btnUpdate = '<button type="button" class="btn btn-primary btn-sm" onclick="edit(this, '+"'"+id_product+"'"+')" tilte="Editar"><i class="fa-solid fa-pencil"></i></button>';
+                            }
+
+                            if (id_user == 1 && module_data.eliminar == 1){
+                                btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="deleteData(this, '+"'"+id_product+"'"+')" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
+                            }
+
+                            $("#tableProducts").DataTable().row.add([
+                                id_row, 
+                                $('#code').val(),
+                                $("#name_product").val(),
+                            	"$ " + numberFormat(parseFloat($('#price').val())),
+                                $('#stock').val(),
+                                sliderDst,
+                                sliderMbl,
+                                htmlStatus,
+                                '<div class="text-center"> '+btnWatch+" "+btnUpdate+" "+btnDelete+'</div>'
+                            ]).draw(false);
+                        }
+
                 		$('#modalFormProduct').modal('hide');
                         msgShow(1, 'Productos', data.msg);
                 	}else{
@@ -113,3 +177,142 @@ $(document).ready(function () {
 	});
 
 });
+
+// EDIT PRODUCT
+function edit(element, data_request){
+    rowtable = $(element).closest("tr")[0];
+    let ischild = $(rowtable).hasClass("child");
+    if(ischild){
+        rowtable = $(rowtable).prev()[0];
+    }
+        
+    $(".modal-header").removeClass("headerRegister").addClass("headerUpdate");
+    $(".modal-title").text("Actualizar Categoria");
+    $("#btnSubmitUser").removeClass("btn-primary").addClass("bg-success");
+    $(".btnText").text("Actualizar");
+    
+    if (!data_request) {
+        return false;
+    }else{
+    	let url_ajax = base_url + "products/getProduct/";
+        $.ajax({
+            url: url_ajax,
+            dataType: 'JSON',
+            method: 'POST',
+            data: {
+                data: data_request,
+            },
+            success: function(data){
+            	console.log(data)
+
+   				if (data.status) {
+   					$('#modalFormProduct').modal('show');
+   					$(".card-footer").css("display", "block");
+   					let data_product = data.data_request.data_product;
+   				
+   					$("#id_product").val(data_request);
+   					$("#name_product").val(data_product.name_product);
+   					$('#desMainProd').val(data_product.desMain);
+   					data_product.desGeneral != null ? tinymce.activeEditor.setContent(data_product.desGeneral) : tinymce.activeEditor.setContent("");
+   					$("#sliderMbl_actual").val(data_product.sliderMbl);
+                    $("#sliderDst_actual").val(data_product.sliderDst);
+
+                    $(".contImgUpload").each((index, item)=>{
+                        $(item).find(".image_remove").val(0);
+                        $(item).find(".imagen").val("");
+                        $(item).find(".alertImgUpload").html("");
+                    });
+
+                    if (data_product.sliderDst != null && data_product.sliderMbl != null) {
+                        $(".prevSliderMbl div").html('<img class="imgUpload" src="'+data_product.url_sliderMbl+'">');
+                        $(".prevSliderDst div").html('<img class="imgUpload" src="'+data_product.url_sliderDst+'">');
+                        $(".delSliderMbl, .delSliderDst").removeClass("notBlock");
+                    }else{
+                        $(".prevSliderMbl div").html('');
+                        $(".prevSliderDst div").html('');
+                        $(".delSliderMbl, .delSliderDst").addClass("notBlock");
+                    }
+
+                    $("#sliderDes").val(data_product.sliderDes);
+                    $("#listCategories").val(data_product.option_encrypt);
+            		$("#listCategories").select2();
+            		$('#brand').val(data_product.brand);
+					$('#code').val(data_product.code);
+					$('#price').val(data_product.price);
+					$('#stock').val(data_product.stock);
+					$('#listStatus').val(data_product.status);
+   				}
+            }
+        });
+   	}
+}
+
+// LOAD IMAGES PRODUCT EXISTS
+function fntInputFile() {
+    $(".inputUploadfile").each((index, item) => {
+        $(item).on("change", () => {
+            let id_product = $("#id_product").val();
+			let parentId = $(item).parent().attr("id");
+			let idFile = $(item).attr("id");
+			let uploadFoto = $("#" + idFile).val();
+			let fileImg = $("#" + idFile).get(0).files;
+			let prevImg = $("#" + parentId + " .prevImage");
+			let nav = window.URL || window.webkitURL;
+
+            if(uploadFoto != ""){
+                let type = fileImg[0].type;
+				let name = fileImg[0].name;
+				if (type != 'image/jpeg' && type != 'image/jpg' && type != 'image/png') {
+				  prevImg.html('<span class="text-center">Archivo no válido.</span>');
+				  $("#" + idFile).val("");
+				  return false;
+				} else {
+                    let objeto_url = nav.createObjectURL($(item).prop("files")[0]);
+					prevImg.html('<img class="loading" src="' + base_url + 'Assets/admin/files/images/loading.gif">');
+
+                    var formData = new FormData();
+                    formData.append("id", id_product);
+                    formData.append("file", $(item).prop("files")[0]);
+                    
+					let url_ajax = base_url + "products/setImage/";
+		            $.ajax({
+		                url: url_ajax,
+		                dataType: 'JSON',
+		                method: 'POST',
+		                data: formData,
+                        contentType: false,
+                        processData: false, 
+		                success: function(data){
+		    				console.log(data)
+		    			},
+		            });
+
+					
+
+                    // let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+                    // let ajaxUrl = base_url + 'Productos/setImage';
+                    // let formData = new FormData;
+                    // formData.append('idProducto', idProducto);
+                    // formData.append('foto', this.files[0]);
+                    // request.open("POST",ajaxUrl,true);
+                    // request.send(formData);
+                    // request.onreadystatechange = function(){
+                    //     if (request.readyState != 4) return;
+                    //     if (request.status == 200) {
+                    //         let objData = JSON.parse(request.responseText);
+                    //         if(objData.status){
+                    //             prevImg.innerHTML = `<img src="${objeto_url}">`;
+                    //             document.querySelector("#"+parentId+" .btnDeleteImage").setAttribute("imgname", objData.imgname);
+                    //             document.querySelector("#"+parentId+" .btnUploadfile").classList.add('notBlock');
+                    //             document.querySelector("#"+parentId+" .btnDeleteImage").classList.remove('notBlock')	;
+                    //             Swal.fire("Productos", objData.msg, "success");
+                    //         }else{
+                    //             Swal.fire("Error", objData.msg, "error");
+                    //         }
+                    //     }
+                    // }
+                }
+            }
+        });
+    });
+}

@@ -154,7 +154,7 @@
 	                                        <div class="containerGallery">
 	                                            <span><b>Agregar fotos</b> (440 x 545)</span>
 	                                            <button class="btnAddImage btn btn-info btn-sm" type="button">
-	                                                <i class="fas fa-plus-circle"></i>
+	                                                <i class="fa-solid fa-plus"></i> 
 	                                            </button>
 
 	                                        </div>

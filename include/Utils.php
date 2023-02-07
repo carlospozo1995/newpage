@@ -246,6 +246,10 @@
 	    	}
 	    }
 
+	    static public function formatMoney($cant)
+	    {
+	    	return number_format($cant, 2, SPD, SPM);
+	    }
 
 	}
 

@@ -8,6 +8,12 @@
             return $GLOBALS["db"]->selectAll($sql, array(0));
         }
 
+        static public function getProducts()
+        {
+            $sql = "SELECT * FROM products WHERE status != ?";
+            return $GLOBALS["db"]->selectAll($sql, array(0));
+        }
+
         static public function insertProduct($name, $desMain, $desGeneral, $sliderDst, $sliderMbl, $sliderDes, $option_list, $brand, $code, $price, $stock, $status)
         {
             $sql = "SELECT * FROM products WHERE code = ?";
@@ -19,6 +25,12 @@
             }else{
                 return "exist";
             }
+        }
+
+        static public function selectProduct($data)
+        {
+            $sql = "SELECT  table_p.*, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category where table_p.id_product = ?";
+            return $GLOBALS["db"]->auto_array($sql, array($data));
         }
 
     }
