@@ -75,12 +75,12 @@
                                             echo '<td>'.$value['stock'].'</td>';
                                             echo '<td class="text-center">';
                                             if (!empty($value['sliderDst'])) {
-                                                echo '<img style="width:70px" src="'.MEDIA_ADMIN.'files/images/uploads/'.$value['sliderDst'].'">';
+                                                echo '<img style="width:70px" src="'.MEDIA_ADMIN.'files/images/upload_products/'.$value['sliderDst'].'">';
                                             }
                                             echo '</td>';
                                             echo '<td class="text-center">';
                                             if (!empty($value['sliderMbl'])) {
-                                                echo '<img style="width:50px" src="'.MEDIA_ADMIN.'files/images/uploads/'.$value['sliderMbl'].'">';
+                                                echo '<img style="width:50px" src="'.MEDIA_ADMIN.'files/images/upload_products/'.$value['sliderMbl'].'">';
                                             }
                                             echo '</td>';
                                             echo '<td>'.$value['status'].'</td>';

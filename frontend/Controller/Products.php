@@ -61,6 +61,8 @@
 										$undef_sliderMbl = "sliderMbl_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 										$sliderDst["name_upload"] = "sliderDst_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 										$sliderMbl["name_upload"] = "sliderMbl_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$sliderDst["file_product"] = "";
+										$sliderMbl["file_product"] = "";
 									}else{
 										$undef_sliderDst = null;
 										$undef_sliderMbl = null;
@@ -71,8 +73,8 @@
 
 								if ($request > 0) {
 
-									$undef_sliderDst != null ? $data_dst = MEDIA_ADMIN.'files/images/uploads/'.$undef_sliderDst : $data_dst = "";
-									$undef_sliderMbl != null ? $data_mbl = MEDIA_ADMIN.'files/images/uploads/'.$undef_sliderMbl : $data_mbl = "";
+									$undef_sliderDst != null ? $data_dst = MEDIA_ADMIN.'files/images/upload_products/'.$undef_sliderDst : $data_dst = "";
+									$undef_sliderMbl != null ? $data_mbl = MEDIA_ADMIN.'files/images/upload_products/'.$undef_sliderMbl : $data_mbl = "";
 
 									if($option == 1){
 										$status = true;
@@ -120,9 +122,18 @@
 						 		$data_product['option_encrypt'] = Utils::encriptar($data_product['category_id']);
 
 		                        if (!empty($data_product['sliderDst']) && !empty($data_product['sliderMbl'])) {
-		                            $data_product['url_sliderDst'] = MEDIA_ADMIN.'files/images/uploads/'.$data_product['sliderDst'];
-		                            $data_product['url_sliderMbl'] = MEDIA_ADMIN.'files/images/uploads/'.$data_product['sliderMbl'];
+		                            $data_product['url_sliderDst'] = MEDIA_ADMIN.'files/images/upload_products/'.$data_product['sliderDst'];
+		                            $data_product['url_sliderMbl'] = MEDIA_ADMIN.'files/images/upload_products/'.$data_product['sliderMbl'];
 		                        }
+
+		                        $img_product = Models_Products::selectImages($id_product);
+		                        if (!empty($img_product)) {
+		                        	foreach ($img_product as $key => $value) {
+		                        		$img_product[$key]['url_image'] = MEDIA_ADMIN.'files/images/upload_products/'.$value['image'];
+		                        	}
+		                        }
+
+		                        $data_product["images_product"] = $img_product;
 
 		                        $status = true;
 		                        $msg = "";
@@ -137,7 +148,7 @@
 						$data = array("status" => $status, "msg" => $msg, "data_request" => $data_request);
 						echo json_encode($data);
 					
-}
+					}
 				break;
 
 				case 'setImage':
@@ -149,18 +160,33 @@
 							}else{
 								$id_product = Utils::desencriptar($_POST['id']);
 								$file_product = $_FILES['file'];
+
 								$imgName = "imgRef_".$id_product.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-								$request = Models_Products::insertImage($id_product, $imgName); 
+								$file_product["name_upload"] = "imgRef_".$id_product.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+								$file_product["file_product"] = "";
+
+								$arrData[] = array("product_id" => $id_product, "image" => $imgName);
+								$request = Models_Products::insertImage($arrData); 
+
+								if($request > 0){
+									$status = true;
+			                        $msg = "Imagen cargada.";
+							 		$data_request = array("data_img" => $imgName);
+							 		Utils::uploadImage(array($file_product));
+								}else{
+									throw new Exception("Error de cargar.");
+									die();
+								}
 							}
 						} catch (Exception $e) {
 							$status = false;
 						 	$msg = $e->getMessage();
+						 	$data_request = "";
 						}
 
-						$data = array("status" => $status, "msg" => $msg);
+						$data = array("status" => $status, "msg" => $msg, "data_request" => $data_request);
 						echo json_encode($data);
 					}
-					// echo json_encode($_FILES['file']);
 
 				break;
 

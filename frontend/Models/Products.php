@@ -29,8 +29,20 @@
 
         static public function selectProduct($data)
         {
-            $sql = "SELECT  table_p.*, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category where table_p.id_product = ?";
+            $sql = "SELECT  table_p.*, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = ?";
             return $GLOBALS["db"]->auto_array($sql, array($data));
+        }
+
+        static public function insertImage($arrData)
+        {
+            if(empty($arrData) || !is_array($arrData)){return false;}
+            return $GLOBALS["db"]->insert_multiple("img_product", $arrData);
+        }
+
+        static public function selectImages($data)
+        {
+            $sql = "SELECT * FROM img_product WHERE product_id = ?";
+            return $GLOBALS["db"]->selectAll($sql, array($data));
         }
 
     }

@@ -82,6 +82,7 @@ $(document).ready(function () {
             let key = Date.now();
 			let newElement = $("<div>", {
 			    id: "div" + key,
+
 			    html: `
 			        <div class="prevImage"></div>
 			        <input type="file" name="foto" id="img${key}" class="inputUploadfile">
@@ -190,6 +191,7 @@ function edit(element, data_request){
     $(".modal-title").text("Actualizar Categoria");
     $("#btnSubmitUser").removeClass("btn-primary").addClass("bg-success");
     $(".btnText").text("Actualizar");
+    validFocus();
     
     if (!data_request) {
         return false;
@@ -203,13 +205,14 @@ function edit(element, data_request){
                 data: data_request,
             },
             success: function(data){
-            	console.log(data)
+            	// console.log(data)
 
    				if (data.status) {
    					$('#modalFormProduct').modal('show');
    					$(".card-footer").css("display", "block");
    					let data_product = data.data_request.data_product;
-   				
+                    let htmlImage = "";
+
    					$("#id_product").val(data_request);
    					$("#name_product").val(data_product.name_product);
    					$('#desMainProd').val(data_product.desMain);
@@ -241,6 +244,21 @@ function edit(element, data_request){
 					$('#price').val(data_product.price);
 					$('#stock').val(data_product.stock);
 					$('#listStatus').val(data_product.status);
+
+                    if (data_product.images_product.length > 0) {
+                        for (var i = 0; i < data_product.images_product.length; i++) {
+                            let key = Date.now() + i;
+                            htmlImage += `
+                                <div id="div${key}">
+                                    <div class="prevImage">
+                                        <img src="${data_product.images_product[i].url_image}">
+                                    </div>
+                                    <button type="button" class="btnDeleteImage" onclick="ftnDelItem('#div${key}')" imgname= "${data_product.images_product[i].image}"><i class="fas fa-trash"></i></button>
+                                </div>
+                            `;
+                        }
+                    }
+                    $("#containerImages").html(htmlImage);
    				}
             }
         });
@@ -283,36 +301,24 @@ function fntInputFile() {
                         contentType: false,
                         processData: false, 
 		                success: function(data){
-		    				console.log(data)
+		    				if(data.status){
+                                prevImg.html(`<img src="${objeto_url}">`);
+                                $("#" + parentId + " .btnDeleteImage").attr("imgName", data.data_request.data_img);
+                                $("#" + parentId + " .btnUploadfile").addClass('notBlock');
+                                $("#" + parentId + " .btnDeleteImage").removeClass('notBlock');
+                                msgShow(1, 'Productos', data.msg);
+                            }else{
+                                msgShow(2, 'Atención', data.msg);
+                            }
 		    			},
 		            });
-
-					
-
-                    // let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-                    // let ajaxUrl = base_url + 'Productos/setImage';
-                    // let formData = new FormData;
-                    // formData.append('idProducto', idProducto);
-                    // formData.append('foto', this.files[0]);
-                    // request.open("POST",ajaxUrl,true);
-                    // request.send(formData);
-                    // request.onreadystatechange = function(){
-                    //     if (request.readyState != 4) return;
-                    //     if (request.status == 200) {
-                    //         let objData = JSON.parse(request.responseText);
-                    //         if(objData.status){
-                    //             prevImg.innerHTML = `<img src="${objeto_url}">`;
-                    //             document.querySelector("#"+parentId+" .btnDeleteImage").setAttribute("imgname", objData.imgname);
-                    //             document.querySelector("#"+parentId+" .btnUploadfile").classList.add('notBlock');
-                    //             document.querySelector("#"+parentId+" .btnDeleteImage").classList.remove('notBlock')	;
-                    //             Swal.fire("Productos", objData.msg, "success");
-                    //         }else{
-                    //             Swal.fire("Error", objData.msg, "error");
-                    //         }
-                    //     }
-                    // }
                 }
             }
         });
     });
+}
+
+function ftnDelItem(element) {
+    let name_img = $(element + ' .btnDeleteImage').attr('imgName');
+    let id_product = $("#id_product").val();
 }

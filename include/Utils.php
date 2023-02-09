@@ -240,7 +240,9 @@
 	    		if (!empty($value['tmp_name']) && isset($value['name_upload'])) {
 	    			$url_temp = $value['tmp_name'];
 	    			$name_img = $value['name_upload'];
-	    			$destination = 'Assets/admin/files/images/uploads/'.$name_img;
+	    			
+	    			isset($value['file_product']) ? $destination = 'Assets/admin/files/images/upload_products/'.$name_img : $destination = 'Assets/admin/files/images/uploads/'.$name_img;
+
 	    			move_uploaded_file($url_temp, $destination);
 	    		}
 	    	}
