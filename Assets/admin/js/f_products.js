@@ -112,7 +112,7 @@ $(document).ready(function () {
                 };
             });
 
-            // loading.css("display","flex");
+            loading.css("display","flex");
             var formData = new FormData(e.target);
             let url_ajax = base_url + "products/setProduct/";
             $.ajax({
@@ -164,6 +164,20 @@ $(document).ready(function () {
                                 htmlStatus,
                                 '<div class="text-center"> '+btnWatch+" "+btnUpdate+" "+btnDelete+'</div>'
                             ]).draw(false);
+                        }else{
+                            let n_row = $(rowtable).find("td:eq(0)").html();
+                            let buttons_html = $(rowtable).find("td:eq(8)").html();
+                            $("#tableProducts").DataTable().row(rowtable).data([
+                                n_row,
+                                $("#code").val(),
+                                $("#name_product").val(),
+                                "$ " + numberFormat(parseFloat($('#price').val())),
+                                $('#stock').val(),
+                                sliderDst,
+                                sliderMbl,
+                                htmlStatus,
+                                buttons_html,
+                            ]).draw(false);
                         }
 
                 		$('#modalFormProduct').modal('hide');
@@ -171,7 +185,7 @@ $(document).ready(function () {
                 	}else{
                 		msgShow(2, 'Atención', data.msg);
                 	}
-                	// loading.css("display","none");
+                	loading.css("display","none");
                 },
             });
 		}
@@ -205,7 +219,6 @@ function edit(element, data_request){
                 data: data_request,
             },
             success: function(data){
-            	// console.log(data)
 
    				if (data.status) {
    					$('#modalFormProduct').modal('show');
@@ -321,4 +334,26 @@ function fntInputFile() {
 function ftnDelItem(element) {
     let name_img = $(element + ' .btnDeleteImage').attr('imgName');
     let id_product = $("#id_product").val();
+
+    var formData = new FormData();
+    formData.append("id", id_product);
+    formData.append("file_name", name_img);
+    
+    let url_ajax = base_url + "products/delFile/";
+    $.ajax({
+        url: url_ajax,
+        dataType: 'JSON',
+        method: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false, 
+        success: function(data){
+            if(data.status){
+                $(element).remove();
+                msgShow(1, 'Productos', data.msg);
+            }else{
+                msgShow(2, 'Atención', data.msg);
+            }
+        },
+    });
 }

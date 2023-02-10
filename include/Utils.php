@@ -253,6 +253,10 @@
 	    	return number_format($cant, 2, SPD, SPM);
 	    }
 
+	    static  function deleteFile($name){
+        	unlink('Assets/admin/files/images/upload_products/'.$name);
+    	}
+
 	}
 
 ?>

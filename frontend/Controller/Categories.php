@@ -101,7 +101,7 @@
 										$undef_icon = null;
 										$undef_photo = null;
 									}else{
-										$data_images = Models_Categories::selectImages("icon", "photo", $_POST['icon_actual'], $_POST['photo_actual']);
+										$data_images = Models_Categories::selectImages("categories", "icon", "photo", $_POST['icon_actual'], $_POST['photo_actual']);
 
 										if(empty($data_images)){
 											throw new Exception("Error de imagenes. Intentelo mas tarde.");
@@ -135,7 +135,7 @@
 
 									// UPDATE SLIDERS (MOBILE - DESKTOP)
 									if(!empty($_POST['sliderMbl_actual']) && !empty($_POST['sliderDst_actual'])){
-										$data_sliders = Models_Categories::selectImages("sliderDst", "sliderMbl", $_POST['sliderDst_actual'] , $_POST['sliderMbl_actual']);
+										$data_sliders = Models_Categories::selectImages("categories", "sliderDst", "sliderMbl", $_POST['sliderDst_actual'] , $_POST['sliderMbl_actual']);
 										if (empty($data_sliders)) {
 											throw new Exception("Error de imagenes. Intentelo mas tarde.");
 											die();	

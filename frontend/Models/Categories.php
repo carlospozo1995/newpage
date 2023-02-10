@@ -40,9 +40,9 @@
             return $GLOBALS["db"]->auto_array($sql, array($data));
         }
 
-        static public function selectImages($colum_1, $colum_2, $data_1, $data_2)
+        static public function selectImages($table, $colum_1, $colum_2, $data_1, $data_2)
         {
-            $sql = "SELECT $colum_1, $colum_2 FROM categories WHERE $colum_1 = ? AND $colum_2 = ?";
+            $sql = "SELECT $colum_1, $colum_2 FROM $table WHERE $colum_1 = ? AND $colum_2 = ?";
             return $GLOBALS["db"]->auto_array($sql, array($data_1, $data_2)); 
         }
 

@@ -69,6 +69,47 @@
 									}
 									
 									$request = Models_Products::insertProduct($name, $desMain, $desGeneral, $undef_sliderDst, $undef_sliderMbl, $sliderDes, $option_list, $brand, $code, $price, $stock, $status);
+								}else{
+									$option = 2;
+									// UPDATE SLIDERS (MOBILE - DESKTOP)
+									if(!empty($_POST['sliderMbl_actual']) && !empty($_POST['sliderDst_actual'])){
+										$data_sliders = Models_Categories::selectImages("products", "sliderDst", "sliderMbl", $_POST['sliderDst_actual'] , $_POST['sliderMbl_actual']);
+										if (empty($data_sliders)) {
+											throw new Exception("Error de imagenes. Intentelo mas tarde.");
+											die();	
+										}
+									}
+
+									if (empty($sliderMbl['name'])) {
+										if(!empty($_POST['sliderMbl_actual'])){
+											$_POST['sliderMbl_remove'] <= 0 ? $undef_sliderMbl = $_POST['sliderMbl_actual'] : $undef_sliderMbl = null;
+										}else{
+											$undef_sliderMbl = null;
+										}
+									}else{
+										$undef_sliderMbl = "sliderMbl_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$sliderMbl["name_upload"] = "sliderMbl_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$sliderMbl["file_product"] = "";									
+									}
+
+									if (empty($sliderDst['name'])) {
+										if (!empty($_POST['sliderDst_actual'])) {
+											$_POST['sliderDst_remove'] <= 0 ? $undef_sliderDst = $_POST['sliderDst_actual'] : $undef_sliderDst = null;
+										}else{
+											$undef_sliderDst = null;
+										}
+									}else{
+										$undef_sliderDst = "sliderDst_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$sliderDst["name_upload"] = "sliderDst_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$sliderDst["file_product"] = "";
+									}
+
+									if(($undef_sliderMbl == null && !empty($undef_sliderDst)) || ($undef_sliderDst == null && !empty($undef_sliderMbl))){
+										throw new Exception("Si desea agregar sliders, debe agregar ambos.");
+										die();
+									}
+									
+									$request = Models_Products::updateProduct(Utils::desencriptar($id), $name, $desMain, $desGeneral, $undef_sliderDst, $undef_sliderMbl, $sliderDes, $option_list, $brand, $code, $price, $stock, $status);	
 								}
 
 								if ($request > 0) {
@@ -82,10 +123,10 @@
 										$data_request = array("id_encrypt" => Utils::encriptar(strval($request)), "sliderDst" => $data_dst, "sliderMbl" => $data_mbl, "module" => $_SESSION['module'], "id_user" => $_SESSION['idUser']);
 										Utils::uploadImage(array($sliderDst, $sliderMbl));
 									}else{
-										// $status = true;
-										// $msg = "Datos actualizados correctamente.";
-										// $data_request = array("data_sons" => Models_Categories::dataSons(Utils::desencriptar($id)), "sliderDst" => $data_dst, "sliderMbl" => $data_mbl,);
-										// Utils::uploadImage(array($icon, $photo,  $sliderDst, $sliderMbl));
+										$status = true;
+										$msg = "Datos actualizados correctamente.";
+										$data_request = array("sliderDst" => $data_dst, "sliderMbl" => $data_mbl,);
+										Utils::uploadImage(array($sliderDst, $sliderMbl));
 									}
 								}else if($request == "exist"){	
 									throw new Exception("El código del producto ingresado ya existe. Inténtelo de nuevo.");
@@ -187,7 +228,37 @@
 						$data = array("status" => $status, "msg" => $msg, "data_request" => $data_request);
 						echo json_encode($data);
 					}
+				break;
 
+				case 'delFile':
+					if (isset($_POST)) {
+						try {
+							if (empty($_POST['id']) || empty($_POST['file_name'])) {
+	                    		throw new Exception("Ha ocurrido un error. Inténtelo mas tarde.");
+	                    		die();
+			                }else{
+			                    $id_product = Utils::desencriptar($_POST['id']);
+			                    $imgName = $_POST['file_name'];
+
+			                    $request = Models_Products::deleteImage($id_product, $imgName);
+			                    
+			                    if ($request > 0) {
+			                        Utils::deleteFile($imgName);
+			                        $status = true;
+				                   	$msg = "Imagen eliminada.";
+			                    }else{
+			                        throw new Exception("Ha ocurrido un error. Inténtelo mas tarde.");
+		                    		die();
+			                    }
+			                }
+						} catch (Exception $e) {
+							$status = false;
+						 	$msg = $e->getMessage();
+						}
+
+						$data = array("status" => $status, "msg" => $msg);
+						echo json_encode($data);
+					}
 				break;
 
 				default:
