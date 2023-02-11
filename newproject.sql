@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 22-01-2023 a las 22:56:23
--- Versión del servidor: 5.7.24
--- Versión de PHP: 7.2.19
+-- Servidor: localhost:3306
+-- Tiempo de generación: 11-02-2023 a las 20:39:54
+-- Versión del servidor: 5.7.33
+-- Versión de PHP: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -49,9 +49,34 @@ INSERT INTO `categories` (`id_category`, `name_category`, `photo`, `icon`, `slid
 (76, 'Category 1', 'photo_Category-1_6d7627af760bbd31936dc96347eb88aa.jpg', 'icon_Category-1_6d7627af760bbd31936dc96347eb88aa.jpg', NULL, NULL, NULL, NULL, '2023-01-22 15:46:20', NULL, 1),
 (77, 'Category 1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-22 15:47:11', 76, 1),
 (78, 'category 1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-22 15:48:00', 76, 1),
-(79, 'Category 1.2.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-22 17:42:14', 77, 1),
+(79, 'Category 1.2.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-22 17:42:14', 78, 1),
 (80, 'Category 2', 'photo_Category-2_d7f953eb2c6c05535135437aa6ee58d1.jpg', 'icon_Category-2_d7f953eb2c6c05535135437aa6ee58d1.jpg', NULL, NULL, NULL, NULL, '2023-01-22 17:42:59', NULL, 1),
-(81, 'Categoria 2.1', NULL, NULL, 'sliderDst_Categoria-2.1_5c1c22356b2f268054d71ffad8f8d3e1.jpg', 'sliderMbl_Categoria-2.1_5c1c22356b2f268054d71ffad8f8d3e1.jpg', NULL, NULL, '2023-01-22 17:44:46', 80, 1);
+(81, 'Categoria 2.1', NULL, NULL, 'sliderDst_Categoria-2.1_5c1c22356b2f268054d71ffad8f8d3e1.jpg', 'sliderMbl_Categoria-2.1_5c1c22356b2f268054d71ffad8f8d3e1.jpg', 'description one slider category 2.1', 'description two slider category 2.1', '2023-01-22 17:44:46', 80, 1),
+(82, 'Category 3', 'photo_Category-3_68cb7af09b774e950b915c6a1ca59c3d.jpg', 'icon_Category-3_68cb7af09b774e950b915c6a1ca59c3d.jpg', 'sliderDst_Category-3_68cb7af09b774e950b915c6a1ca59c3d.jpg', 'sliderMbl_Category-3_68cb7af09b774e950b915c6a1ca59c3d.jpg', NULL, NULL, '2023-01-23 08:13:35', NULL, 1),
+(83, 'Category 3.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-23 23:29:10', 82, 1),
+(84, 'Category 3.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-23 23:29:27', 83, 1),
+(85, 'Category 3.1.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-23 23:29:44', 84, 1),
+(86, 'Category 4', 'photo_Category-4_02ed766fa76d1cc81eb5c1917ef58215.jpg', 'icon_Category-4_02ed766fa76d1cc81eb5c1917ef58215.jpg', 'sliderDst_Category-4_02ed766fa76d1cc81eb5c1917ef58215.jpg', 'sliderMbl_Category-4_02ed766fa76d1cc81eb5c1917ef58215.jpg', 'category 4 description one', 'category 4 description two', '2023-01-24 07:54:25', NULL, 1),
+(87, 'Categoria 4.1', NULL, NULL, NULL, NULL, 'not description one', 'not description two', '2023-01-27 16:11:09', 86, 1),
+(88, 'categoria 4.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-27 16:45:14', 87, 1),
+(89, 'Category 5', 'photo_Category-five_42e9ee988153180583ae67444de32839.jpg', 'icon_Category-five_42e9ee988153180583ae67444de32839.jpg', NULL, NULL, NULL, NULL, '2023-01-28 07:05:26', NULL, 1),
+(98, 'Category 5.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-31 18:03:16', 89, 1),
+(99, 'Category 5.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-31 21:23:09', 98, 1),
+(100, 'Category 5.2', NULL, NULL, 'sliderDst_Category-5.2_3defdc9fcd6fd02bb39972a4b2f51f14.jpg', 'sliderMbl_Category-5.2_c379c573ed9c8321c67f84d22bb422e4.jpg', NULL, NULL, '2023-02-02 18:17:14', 89, 1),
+(101, 'Category 5.2.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-02 18:17:50', 100, 1),
+(102, 'Category 6', 'photo_Category-6_06bddeaa3482571e482191872db0ba1e.jpg', 'icon_Category-6_06bddeaa3482571e482191872db0ba1e.jpg', NULL, NULL, NULL, NULL, '2023-02-03 21:19:43', NULL, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `img_product`
+--
+
+CREATE TABLE `img_product` (
+  `id_img` bigint(20) NOT NULL,
+  `product_id` bigint(20) NOT NULL,
+  `image` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -117,6 +142,39 @@ INSERT INTO `permissions` (`id_permissions`, `rol_id`, `module_id`, `ver`, `crea
 (161, 2, 2, 1, 1, 0, 0),
 (162, 2, 3, 1, 1, 1, 0),
 (163, 2, 4, 1, 1, 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `products`
+--
+
+CREATE TABLE `products` (
+  `id_product` bigint(20) NOT NULL,
+  `category_id` bigint(20) NOT NULL,
+  `code` bigint(20) NOT NULL,
+  `name_product` varchar(100) NOT NULL,
+  `desMain` text NOT NULL,
+  `desGeneral` text,
+  `sliderDst` varchar(150) DEFAULT NULL,
+  `sliderMbl` varchar(150) DEFAULT NULL,
+  `sliderDes` varchar(150) DEFAULT NULL,
+  `brand` varchar(50) NOT NULL,
+  `price` decimal(11,2) NOT NULL,
+  `stock` int(11) NOT NULL,
+  `datacreate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` int(11) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `products`
+--
+
+INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `desMain`, `desGeneral`, `sliderDst`, `sliderMbl`, `sliderDes`, `brand`, `price`, `stock`, `datacreate`, `status`) VALUES
+(1, 102, 564546, 'Producto 1', 'Nuevo Producto 1', '<p>capacidad</p>\r\n<ul>\r\n<li>desc 1</li>\r\n<li>desc 2</li>\r\n</ul>', 'sliderDst_Producto-1_e895ef9579ff171f128b0e5882858f0c.jpg', 'sliderMbl_Producto-1_e895ef9579ff171f128b0e5882858f0c.jpg', 'nueva refri', 'nuevo1', '1564455.32', 65, '2023-02-05 00:15:55', 1),
+(2, 101, 455456, 'Producto 2', 'NUevo producto 2', NULL, NULL, NULL, NULL, 'Nuevo 2', '54.36', 78, '2023-02-05 12:15:58', 1),
+(10, 79, 31331, 'Producto 3', 'Nuevo p 3', NULL, NULL, NULL, 'desc slider new p3', 'Nuevo 3', '54.36', 54, '2023-02-05 14:29:45', 1),
+(12, 85, 7456464, 'Producto 4', 'Nuevo p 4', '<p>ram</p>\r\n<p>1gb</p>\r\n<p>2gbg</p>', 'sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg', 'sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg', NULL, 'Nuevo 4', '123.37', 754, '2023-02-06 06:36:08', 2);
 
 -- --------------------------------------------------------
 
@@ -199,6 +257,13 @@ ALTER TABLE `categories`
   ADD KEY `fatherCategory` (`fatherCategory`);
 
 --
+-- Indices de la tabla `img_product`
+--
+ALTER TABLE `img_product`
+  ADD PRIMARY KEY (`id_img`),
+  ADD KEY `product_id` (`product_id`);
+
+--
 -- Indices de la tabla `modules`
 --
 ALTER TABLE `modules`
@@ -211,6 +276,13 @@ ALTER TABLE `permissions`
   ADD PRIMARY KEY (`id_permissions`),
   ADD KEY `rol_id` (`rol_id`),
   ADD KEY `module_id` (`module_id`);
+
+--
+-- Indices de la tabla `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id_product`),
+  ADD KEY `category_id` (`category_id`);
 
 --
 -- Indices de la tabla `roles`
@@ -233,7 +305,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id_category` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `id_category` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+
+--
+-- AUTO_INCREMENT de la tabla `img_product`
+--
+ALTER TABLE `img_product`
+  MODIFY `id_img` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `modules`
@@ -246,6 +324,12 @@ ALTER TABLE `modules`
 --
 ALTER TABLE `permissions`
   MODIFY `id_permissions` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
+
+--
+-- AUTO_INCREMENT de la tabla `products`
+--
+ALTER TABLE `products`
+  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -270,11 +354,23 @@ ALTER TABLE `categories`
   ADD CONSTRAINT `categories_ibfk_1` FOREIGN KEY (`fatherCategory`) REFERENCES `categories` (`id_category`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Filtros para la tabla `img_product`
+--
+ALTER TABLE `img_product`
+  ADD CONSTRAINT `img_product_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id_product`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Filtros para la tabla `permissions`
 --
 ALTER TABLE `permissions`
   ADD CONSTRAINT `permissions_ibfk_1` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`id_rol`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `permissions_ibfk_2` FOREIGN KEY (`module_id`) REFERENCES `modules` (`id_module`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `products`
+--
+ALTER TABLE `products`
+  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id_category`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `users`
