@@ -170,43 +170,43 @@
                             <tbody>
                                 <tr>
                                     <td>Nombre:</td>
-                                    <td id="celName"></td>
+                                    <td class="text-center" id="celName"></td>
                                 </tr>
                                 <tr>
                                     <td>Imagen:</td>
-                                    <td id="celImage"></td>
+                                    <td class="text-center" id="celImage"></td>
                                 </tr>
                                 <tr>
                                     <td>Icono:</td>
-                                    <td id="celIcon"></td>
+                                    <td class="text-center" id="celIcon"></td>
                                 </tr>
                                 <tr>
                                     <td>Slider desktop:</td>
-                                    <td id="celSlrDesktop"></td>
+                                    <td class="text-center" id="celSlrDesktop"></td>
                                 </tr>
                                 <tr>
                                     <td>Slider Mobile:</td>
-                                    <td id="celSlrMobile"></td>
+                                    <td class="text-center" id="celSlrMobile"></td>
                                 </tr>
                                 <tr>
                                     <td>Descripción slider 1:</td>
-                                    <td id="celDesSlrOne"></td>
+                                    <td class="text-center" id="celDesSlrOne"></td>
                                 </tr>
                                 <tr>
                                     <td>Descripción slider 2:</td>
-                                    <td id="celDesSlrTwo"></td>
+                                    <td class="text-center" id="celDesSlrTwo"></td>
                                 </tr>
                                 <tr>
                                     <td>Fecha registro:</td>
-                                    <td id="celDate_create"></td>
+                                    <td class="text-center" id="celDate_create"></td>
                                 </tr>
                                 <tr>
                                     <td>Pertenece a:</td>
-                                    <td id="celCtgFather"></td>
+                                    <td class="text-center" id="celCtgFather"></td>
                                 </tr>
                                 <tr>
                                     <td>Estado:</td>
-                                    <td id="celStatus"></td>
+                                    <td class="text-center" id="celStatus"></td>
                                 </tr>
                             </tbody>
                         </table>

@@ -286,34 +286,26 @@ function watch(data){
                 data: data,
             },
             success: function(data){
-                console.log(data)
-                // let obj_request =  data.data_request; 
-                // console.log(obj_request);
-                // if (data.status) {
-                //     let status = obj_request.status == 1 ? '<span class="bg-success p-1 rounded"><i class="fas fa-user"></i> Activo</span>' : '<span class="bg-danger p-1 rounded"><i class="fas fa-user-slash"></i> Inactivo</span>';
+                let obj_request =  data.data_request.data_category; 
+                console.log(obj_request);
+                if (data.status) {
+                    let status = obj_request.status == 1 ? '<span class="bg-success p-1 rounded"><i class="fas fa-user"></i> Activo</span>' : '<span class="bg-danger p-1 rounded"><i class="fas fa-user-slash"></i> Inactivo</span>';
                     
-                    // $("#").text(obj_request.);
-                    // $("#").text(obj_request.);
-                    // $("#").text(obj_request.);
-                    // $("#").text(obj_request.);
-                    // $("#").text(obj_request.);
-                    // $("#").text(obj_request.);
-                    // $("#").html(status);
-                    // $("#").text(obj_request.);
+                    $("#celName").text(obj_request.name_category);
+                    obj_request.url_photo != null ? $("#celImage").html('<img style="width:100px"; src="'+ obj_request.url_photo +'" alt="">') : $("#celImage").html("");
+                    obj_request.url_icon != null ? $("#celIcon").html('<img src="'+ obj_request.url_icon +'" alt="">') : $("#celIcon").html("");
+                    obj_request.url_sliderDst != null ? $("#celSlrDesktop").html('<img class="w-25" src="'+ obj_request.url_sliderDst +'" alt="">') : $("#celSlrDesktop").html("");
+                    obj_request.url_sliderMbl != null ? $("#celSlrMobile").html('<img class="w-25" src="'+ obj_request.url_sliderMbl +'" alt="">') : $("#celSlrMobile").html("");
+                    $("#celDesSlrOne").text(obj_request.sliderDesOne);
+                    $("#celDesSlrTwo").text(obj_request.sliderDesTwo);
+                    $("#celDate_create").text(obj_request.date_create);
+                    $("#celCtgFather").text(obj_request.nameFather);
+                    $("#celStatus").html(status);
 
-                //     $('#modalViewCategory').modal('show');
-                // }else{
-                //     msgShow(3, 'Error', data.msg);
-                // }
-            },
-            error: function(e){
-                // console.log(e);
-            },
-            beforeSend: function(){
-                // console.log("antes completar");
-            },
-            complete: function(){
-                // console.log("completado");
+                    $('#modalViewCategory').modal('show');
+                }else{
+                    msgShow(3, 'Error', data.msg);
+                }
             }
         });
     }
