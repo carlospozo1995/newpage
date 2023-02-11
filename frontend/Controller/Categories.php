@@ -12,7 +12,7 @@
 			$action = Utils::getParam("action", "");
 			$data = array();
 			$msg = "";
-			$status = true;
+			$status = "";
 			$request = "";
 
 			switch ($action) {

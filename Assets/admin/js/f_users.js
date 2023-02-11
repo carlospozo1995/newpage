@@ -226,7 +226,6 @@ function edit(element, data) {
 
 // --- VIEW USER --- //
 function watch(data){
-    console.log(loadingtest)
     $(".modal-header").removeClass("headerUpdate").addClass("headerRegister");
     $(".modal-title").text("Datos del usuario");
     if (!data) {

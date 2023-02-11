@@ -47,6 +47,7 @@ RewriteRule ^(products/|products|Products)/delFile/$ %{ENV:REWRITEBASE}index.php
 
 
 
+
 #EXAMPLES
 #RewriteRule ^(resetPassword)/ajaxSetPass$ %{ENV:REWRITEBASE}index.php?show=ResetPassword [L]
 #RewriteRule ^resetPassword$ %{ENV:REWRITEBASE}index.php?show=ResetPassword [QSA,L]

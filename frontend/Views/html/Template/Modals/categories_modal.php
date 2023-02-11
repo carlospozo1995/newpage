@@ -154,12 +154,12 @@
     </div>
 <?php } ?>
 
-<!-- <?php //if (!empty($_SESSION['module']['ver'])) { ?> -->
-    <!-- <div class="modal fade" id="modalViewUser">
-        <div class="modal-dialog">
+<?php if (!empty($_SESSION['module']['ver'])) { ?>
+    <div class="modal fade" id="modalViewCategory">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header headerRegister">
-                    <h4 class="modal-title">Datos del usuario</h4>
+                    <h4 class="modal-title">Datos de categoria</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
@@ -169,36 +169,44 @@
                         <table class="table table-bordered">
                             <tbody>
                                 <tr>
-                                    <td>Identificación:</td>
-                                    <td id="celDni"></td>
-                                </tr>
-                                <tr>
-                                    <td>Nombres:</td>
+                                    <td>Nombre:</td>
                                     <td id="celName"></td>
                                 </tr>
                                 <tr>
-                                    <td>Apellidos:</td>
-                                    <td id="celSurname"></td>
+                                    <td>Imagen:</td>
+                                    <td id="celImage"></td>
                                 </tr>
                                 <tr>
-                                    <td>Teléfono:</td>
-                                    <td id="celPhone"></td>
+                                    <td>Icono:</td>
+                                    <td id="celIcon"></td>
                                 </tr>
                                 <tr>
-                                    <td>Email(Usuario):</td>
-                                    <td id="celEmail"></td>
+                                    <td>Slider desktop:</td>
+                                    <td id="celSlrDesktop"></td>
                                 </tr>
                                 <tr>
-                                    <td>Tipo Usuario:</td>
-                                    <td id="celName_rol"></td>
+                                    <td>Slider Mobile:</td>
+                                    <td id="celSlrMobile"></td>
                                 </tr>
                                 <tr>
-                                    <td>Estado:</td>
-                                    <td id="celStatus"></td>
+                                    <td>Descripción slider 1:</td>
+                                    <td id="celDesSlrOne"></td>
+                                </tr>
+                                <tr>
+                                    <td>Descripción slider 2:</td>
+                                    <td id="celDesSlrTwo"></td>
                                 </tr>
                                 <tr>
                                     <td>Fecha registro:</td>
                                     <td id="celDate_create"></td>
+                                </tr>
+                                <tr>
+                                    <td>Pertenece a:</td>
+                                    <td id="celCtgFather"></td>
+                                </tr>
+                                <tr>
+                                    <td>Estado:</td>
+                                    <td id="celStatus"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -209,6 +217,6 @@
                     </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
-<!-- <?php //} ?> -->
+<?php } ?>
