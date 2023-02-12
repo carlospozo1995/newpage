@@ -357,3 +357,53 @@ function ftnDelItem(element) {
         },
     });
 }
+
+// VIEW PRODUCT
+function watch(data) {
+    $(".modal-header").removeClass("headerUpdate").addClass("headerRegister");
+    $(".modal-title").text("Datos del producto");
+    if (!data) {
+        return false;
+    }else{
+         let url_ajax = base_url + "products/getProduct/";
+                
+        $.ajax({
+            url: url_ajax,
+            dataType: 'JSON',
+            method: 'POST',
+            data: {
+                data: data,
+            },
+            success: function(data){
+                let obj_request =  data.data_request.data_product;
+                let htmlPhoto = "";
+                
+                if (data.status) {
+                    let status = obj_request.status == 1 ? '<span class="bg-success p-1 rounded"><i class="fas fa-user"></i> Activo</span>' : '<span class="bg-danger p-1 rounded"><i class="fas fa-user-slash"></i> Inactivo</span>';
+                    
+                    $("#celCode").text(obj_request.code);
+                    $("#celName").text(obj_request.name_product);
+                    $("#celBrand").text(obj_request.brand);
+                    $("#celCategory").text(obj_request.category);
+                    $("#celPrice").text("$ " + numberFormat(parseFloat(obj_request.price)));
+                    $("#celStock").text(obj_request.stock);
+                    obj_request.url_sliderDst != null ? $("#celSlrDesktop").html('<img class="w-25" src="'+ obj_request.url_sliderDst +'" alt="">') : $("#celSlrDesktop").html("");
+                    obj_request.url_sliderMbl != null ? $("#celSlrMobile").html('<img class="w-25" src="'+ obj_request.url_sliderMbl +'" alt="">') : $("#celSlrMobile").html("");
+                    $("#celDesMain").text(obj_request.desMain);
+                    $("#celDesGeneral").html(obj_request.desGeneral);
+
+                    for (let i = 0; i < obj_request.images_product.length; i++) {
+                        htmlPhoto += `<img class="w-25 px-1 py-1" src="${obj_request.images_product[i].url_image}">`;
+                    }
+                    $("#celPhoto").html(htmlPhoto);
+
+                    $("#celDate_create").text(obj_request.date_create);
+                    $("#celStatus").html(status);
+                    $('#modalViewProduct').modal('show');
+                }else{
+                    msgShow(3, 'Error', data.msg);
+                }
+            }
+        });
+    }
+}

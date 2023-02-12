@@ -29,7 +29,7 @@
 
         static public function selectProduct($data)
         {
-            $sql = "SELECT  table_p.*, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = ?";
+            $sql = "SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = ?";
             return $GLOBALS["db"]->auto_array($sql, array($data));
         }
 

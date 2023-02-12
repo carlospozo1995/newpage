@@ -197,12 +197,12 @@
                                     <td class="text-center" id="celDesSlrTwo"></td>
                                 </tr>
                                 <tr>
-                                    <td>Fecha registro:</td>
-                                    <td class="text-center" id="celDate_create"></td>
-                                </tr>
-                                <tr>
                                     <td>Pertenece a:</td>
                                     <td class="text-center" id="celCtgFather"></td>
+                                </tr>
+                                <tr>
+                                    <td>Fecha registro:</td>
+                                    <td class="text-center" id="celDate_create"></td>
                                 </tr>
                                 <tr>
                                     <td>Estado:</td>

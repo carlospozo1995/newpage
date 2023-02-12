@@ -174,3 +174,82 @@
 	    </div>
 	</div>
 <?php } ?>
+
+<?php if (!empty($_SESSION['module']['ver'])) { ?>
+    <div class="modal fade" id="modalViewProduct">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header headerRegister">
+                    <h4 class="modal-title">Datos del producto</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card card-primary">
+                        <table class="table table-bordered">
+                            <tbody>
+								<tr>
+                                	<td>Código:</td>
+                                    <td class="text-center" id="celCode"></td>
+                                </tr>
+                                <tr>
+                                    <td>Nombre:</td>
+                                    <td class="text-center" id="celName"></td>
+                                </tr>
+								<tr>
+                                    <td>Marca:</td>
+                                    <td class="text-center" id="celBrand"></td>
+                                </tr>
+								<tr>
+                                    <td>Categoria:</td>
+                                    <td class="text-center" id="celCategory"></td>
+                                </tr>
+								<tr>
+                                    <td>Price:</td>
+                                    <td class="text-center" id="celPrice"></td>
+                                </tr>
+								<tr>
+                                    <td>Stock:</td>
+                                    <td class="text-center" id="celStock"></td>
+                                </tr>
+								<tr>
+                                    <td>Slider desktop:</td>
+                                    <td class="text-center" id="celSlrDesktop"></td>
+                                </tr>
+                                <tr>
+                                    <td>Slider Mobile:</td>
+                                    <td class="text-center" id="celSlrMobile"></td>
+                                </tr>
+								<tr>
+                                    <td>Descripción principal:</td>
+                                    <td class="text-center" id="celDesMain"></td>
+                                </tr>
+                                <tr>
+                                    <td>Descripción general:</td>
+                                    <td id="celDesGeneral"></td>
+                                </tr>
+								<tr>
+                                    <td>Fotos del producto:</td>
+                                    <td class="text-center" id="celPhoto"></td>
+                                </tr>
+                                <tr>
+                                    <td>Fecha registro:</td>
+                                    <td class="text-center" id="celDate_create"></td>
+                                </tr>
+                                <tr>
+                                    <td>Estado:</td>
+                                    <td class="text-center" id="celStatus"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+<?php } ?>

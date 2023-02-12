@@ -270,7 +270,6 @@ function edit(element, data_request){
 
 // --- VIEW CATEGORY --- //
 function watch(data){
-
     $(".modal-header").removeClass("headerUpdate").addClass("headerRegister");
     $(".modal-title").text("Datos de categoria");
     if (!data) {
@@ -286,8 +285,8 @@ function watch(data){
                 data: data,
             },
             success: function(data){
-                let obj_request =  data.data_request.data_category; 
-                console.log(obj_request);
+                let obj_request =  data.data_request.data_category;
+                
                 if (data.status) {
                     let status = obj_request.status == 1 ? '<span class="bg-success p-1 rounded"><i class="fas fa-user"></i> Activo</span>' : '<span class="bg-danger p-1 rounded"><i class="fas fa-user-slash"></i> Inactivo</span>';
                     
