@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:3306
--- Tiempo de generación: 11-02-2023 a las 20:39:54
--- Versión del servidor: 5.7.33
--- Versión de PHP: 7.4.19
+-- Servidor: localhost
+-- Tiempo de generación: 12-02-2023 a las 02:03:08
+-- Versión del servidor: 5.7.24
+-- Versión de PHP: 7.2.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -77,6 +77,17 @@ CREATE TABLE `img_product` (
   `product_id` bigint(20) NOT NULL,
   `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `img_product`
+--
+
+INSERT INTO `img_product` (`id_img`, `product_id`, `image`) VALUES
+(1, 12, 'imgRef_12_f367939d82209fdad4de79516d2985d1.jpg'),
+(2, 12, 'imgRef_12_31ebf1fdd48e0200ce39c0577ff6de1b.jpg'),
+(3, 12, 'imgRef_12_7de55d502ec86688a33892ba2d3e1cd8.jpg'),
+(4, 12, 'imgRef_12_5513ea496824661e0d3a67ac7d359196.jpg'),
+(5, 12, 'imgRef_12_aead3d8e1a695eb13aabb4256f63cc8e.jpg');
 
 -- --------------------------------------------------------
 
@@ -174,7 +185,7 @@ INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `de
 (1, 102, 564546, 'Producto 1', 'Nuevo Producto 1', '<p>capacidad</p>\r\n<ul>\r\n<li>desc 1</li>\r\n<li>desc 2</li>\r\n</ul>', 'sliderDst_Producto-1_e895ef9579ff171f128b0e5882858f0c.jpg', 'sliderMbl_Producto-1_e895ef9579ff171f128b0e5882858f0c.jpg', 'nueva refri', 'nuevo1', '1564455.32', 65, '2023-02-05 00:15:55', 1),
 (2, 101, 455456, 'Producto 2', 'NUevo producto 2', NULL, NULL, NULL, NULL, 'Nuevo 2', '54.36', 78, '2023-02-05 12:15:58', 1),
 (10, 79, 31331, 'Producto 3', 'Nuevo p 3', NULL, NULL, NULL, 'desc slider new p3', 'Nuevo 3', '54.36', 54, '2023-02-05 14:29:45', 1),
-(12, 85, 7456464, 'Producto 4', 'Nuevo p 4', '<p>ram</p>\r\n<p>1gb</p>\r\n<p>2gbg</p>', 'sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg', 'sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg', NULL, 'Nuevo 4', '123.37', 754, '2023-02-06 06:36:08', 2);
+(12, 85, 7456464, 'Producto 4', 'Nuevo p 4', '<p>ram</p>\r\n<ul>\r\n<li><span style=\"background-color: #fbeeb8;\">1gb</span></li>\r\n<li><span style=\"background-color: #fbeeb8;\">2gbg</span></li>\r\n</ul>', 'sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg', 'sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg', NULL, 'Nuevo 4', '123.37', 754, '2023-02-06 06:36:08', 2);
 
 -- --------------------------------------------------------
 
@@ -311,7 +322,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT de la tabla `img_product`
 --
 ALTER TABLE `img_product`
-  MODIFY `id_img` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_img` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `modules`
