@@ -2,6 +2,10 @@ Options -Indexes
 
 RewriteEngine On
 
+#REDIRECT http to https
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+
 #TEMPORARILY SAVE SESSION VARIABLES - SERVER
 #php_flag output_buffering on
 
