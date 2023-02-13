@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 12-02-2023 a las 02:03:08
+-- Tiempo de generación: 13-02-2023 a las 00:52:16
 -- Versión del servidor: 5.7.24
 -- Versión de PHP: 7.2.19
 
@@ -64,7 +64,7 @@ INSERT INTO `categories` (`id_category`, `name_category`, `photo`, `icon`, `slid
 (99, 'Category 5.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-31 21:23:09', 98, 1),
 (100, 'Category 5.2', NULL, NULL, 'sliderDst_Category-5.2_3defdc9fcd6fd02bb39972a4b2f51f14.jpg', 'sliderMbl_Category-5.2_c379c573ed9c8321c67f84d22bb422e4.jpg', NULL, NULL, '2023-02-02 18:17:14', 89, 1),
 (101, 'Category 5.2.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-02 18:17:50', 100, 1),
-(102, 'Category 6', 'photo_Category-6_06bddeaa3482571e482191872db0ba1e.jpg', 'icon_Category-6_06bddeaa3482571e482191872db0ba1e.jpg', NULL, NULL, NULL, NULL, '2023-02-03 21:19:43', NULL, 2);
+(102, 'Category 6', 'photo_Category-6_06bddeaa3482571e482191872db0ba1e.jpg', 'icon_Category-6_06bddeaa3482571e482191872db0ba1e.jpg', NULL, NULL, NULL, NULL, '2023-02-03 21:19:43', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -185,7 +185,7 @@ INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `de
 (1, 102, 564546, 'Producto 1', 'Nuevo Producto 1', '<p>capacidad</p>\r\n<ul>\r\n<li>desc 1</li>\r\n<li>desc 2</li>\r\n</ul>', 'sliderDst_Producto-1_e895ef9579ff171f128b0e5882858f0c.jpg', 'sliderMbl_Producto-1_e895ef9579ff171f128b0e5882858f0c.jpg', 'nueva refri', 'nuevo1', '1564455.32', 65, '2023-02-05 00:15:55', 1),
 (2, 101, 455456, 'Producto 2', 'NUevo producto 2', NULL, NULL, NULL, NULL, 'Nuevo 2', '54.36', 78, '2023-02-05 12:15:58', 1),
 (10, 79, 31331, 'Producto 3', 'Nuevo p 3', NULL, NULL, NULL, 'desc slider new p3', 'Nuevo 3', '54.36', 54, '2023-02-05 14:29:45', 1),
-(12, 85, 7456464, 'Producto 4', 'Nuevo p 4', '<p>ram</p>\r\n<ul>\r\n<li><span style=\"background-color: #fbeeb8;\">1gb</span></li>\r\n<li><span style=\"background-color: #fbeeb8;\">2gbg</span></li>\r\n</ul>', 'sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg', 'sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg', NULL, 'Nuevo 4', '123.37', 754, '2023-02-06 06:36:08', 2);
+(12, 85, 7456464, 'Producto 4', 'Nuevo p 4', '<p>ram</p>\r\n<ul>\r\n<li><span style=\"background-color: #fbeeb8;\">1gb</span></li>\r\n<li><span style=\"background-color: #fbeeb8;\">2gbg</span></li>\r\n</ul>', 'sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg', 'sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg', NULL, 'Nuevo 4', '123.37', 754, '2023-02-06 06:36:08', 1);
 
 -- --------------------------------------------------------
 
