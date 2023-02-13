@@ -95,6 +95,18 @@
             }
             return $arr_data;
         }
+
+        static public function deleteCategory($data)
+        {
+            if (empty($data)) {return false;}
+
+            $status['status'] = 0;
+            $request =  $GLOBALS["db"]->update("categories", $status, "id_category='".$data."'");
+            
+            if($request) {$result = "ok";}
+
+            return $result;
+        }
       
     }
 

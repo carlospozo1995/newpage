@@ -37,12 +37,14 @@ RewriteRule ^(categories/|categories|Categories)$ %{ENV:REWRITEBASE}index.php?sh
 RewriteRule ^(categories/|categories|Categories)/listCategories/$ %{ENV:REWRITEBASE}index.php?show=categories&action=listCategories [L]
 RewriteRule ^(categories/|categories|Categories)/setCategory/$ %{ENV:REWRITEBASE}index.php?show=categories&action=setCategory [L]
 RewriteRule ^(categories/|categories|Categories)/getCategory/$ %{ENV:REWRITEBASE}index.php?show=categories&action=getCategory [L]
+RewriteRule ^(categories/|categories|Categories)/delCategory/$ %{ENV:REWRITEBASE}index.php?show=categories&action=delCategory [L]
 
 RewriteRule ^(products/|products|Products)$ %{ENV:REWRITEBASE}index.php?show=products [L]
 RewriteRule ^(products/|products|Products)/setProduct/$ %{ENV:REWRITEBASE}index.php?show=products&action=setProduct [L]
 RewriteRule ^(products/|products|Products)/getProduct/$ %{ENV:REWRITEBASE}index.php?show=products&action=getProduct [L]
 RewriteRule ^(products/|products|Products)/setImage/$ %{ENV:REWRITEBASE}index.php?show=products&action=setImage [L]
 RewriteRule ^(products/|products|Products)/delFile/$ %{ENV:REWRITEBASE}index.php?show=products&action=delFile [L]
+RewriteRule ^(products/|products|Products)/delProduct/$ %{ENV:REWRITEBASE}index.php?show=products&action=delProduct [L]
 
 
 

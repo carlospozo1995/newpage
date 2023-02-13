@@ -63,6 +63,19 @@
             }  
             return $result;     
         }
+
+        static public function deleteProduct($data)
+        {
+            if (empty($data)) {return false;}
+
+            $status['status'] = 0;
+            $request =  $GLOBALS["db"]->update("Products", $status, "id_product='".$data."'");
+            
+            if($request) {$result = "ok";}
+
+            return $result;
+        }
+
     }
 
 ?>

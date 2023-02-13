@@ -310,6 +310,62 @@ function watch(data){
     }
 }
 
+// --- DELETE CATEGORY --- //
+function deleteData(element, data) {
+    Swal.fire({
+        title: 'Eliminar Categoria',
+        text: "Realmente quiere eliminar la categoria!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminar!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            if (!data) {
+                return false;
+            }else{
+                loading.css("display","flex");
+                let url_ajax = base_url + "categories/delCategory/";
+                        
+                $.ajax({
+                    url: url_ajax,
+                    dataType: 'JSON',
+                    method: 'POST',
+                    data: {
+                        data: data,
+                    },  
+                    success: function(data){
+                        if (data.status) {
+                            let row_closest = $(element).closest("tr");
+                            if(row_closest.length){
+                                let ischild = $(row_closest).hasClass("child");
+                                if(ischild){
+                                    let prevtr = row_closest.prev();
+                                    if(prevtr.length){
+                                        $("#tableCategories").DataTable().row(prevtr[0]).remove().draw(false);
+                                    }
+                                }
+                                else{
+                                    $("#tableCategories").DataTable().row(row_closest[0]).remove().draw(false);
+                                }
+                            }
+
+                            // Reset the id column
+                            resetIdTable($("#tableCategories"));
+                            
+                            msgShow(1, 'Eliminado', data.msg);
+                        }else{
+                            msgShow(3, 'Error', data.msg);
+                        }
+                        loading.css("display","none");
+                    },
+                });
+            }
+        }
+    });
+}
+
 // SELECT OPTION - CATEGORIES LIST
 function ctgListOptions(idCtg, listCtgVal) {
     let url_ajax = base_url + "categories/listCategories/";

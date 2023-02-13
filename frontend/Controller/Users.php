@@ -140,7 +140,7 @@
 
 							if ($delUser == "ok") {
 								$status = true;
-								$msg = "Se ha eliminado el usuario con existo.";
+								$msg = "Se ha eliminado el usuario con exito.";
 							}else{
 								throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
 								die();

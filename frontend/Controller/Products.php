@@ -261,6 +261,31 @@
 					}
 				break;
 
+				case 'delProduct':
+					if (empty(Utils::getParam("data", ""))) {
+						die();
+					}else{
+						$id_product = Utils::desencriptar(Utils::getParam("data", ""));
+						try {
+							$delProduct = Models_Products::deleteProduct($id_product);
+
+							if ($delProduct == "ok") {
+								$status = true;
+								$msg = "Se ha eliminado el producto con exito.";
+							}else{
+								throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
+								die();
+							}
+						} catch (Exception $e) {
+							$status = false;
+							$msg = $e->getMessage();
+						}
+
+						$data = array("status" => $status,"msg" => $msg);
+						echo json_encode($data);
+					}
+				break;
+
 				default:
 					Utils::permissionsData(MPRODUCTOS);
 
