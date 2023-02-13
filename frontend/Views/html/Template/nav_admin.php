@@ -3,7 +3,7 @@
 
 		    <a href="<?= BASE_URL ?>dashboard" class="brand-link">
 		      	<img src="<?= MEDIA ?>admin/files/images/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3 logocg-mc" style="opacity: .8">
-		      	<span class="title-s-mc"><?= $name_empresa ?></span>
+		      	<span class="title-s-mc"><?= NAME_EMPRESA ?></span>
 		    </a>
 
 		    <div class="sidebar">

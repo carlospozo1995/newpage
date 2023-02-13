@@ -11,7 +11,7 @@
 
                 <form id="formResetPass">
                     <div class="card-header text-center">
-                        <span class="h3"><b><?= $name_empresa; ?></b></span>
+                        <span class="h3"><b><?= NAME_EMPRESA; ?></b></span>
                     </div>
 
                     <div class="text-center m-2"><i onclick="showPass(this)" class="fa-regular fa-eye-slash" role="button"></i></div>

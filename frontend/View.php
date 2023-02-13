@@ -8,8 +8,8 @@
 			}
 
 			// ---------- PAGE VARIABLES ----------//
-			$name_empresa  = "EMPRESA";
-			$title_page = "EMPRESA - " . $namePage;
+			$title_store  = NAME_EMPRESA. " - Lorem ipsum local.";
+			$title_page = NAME_EMPRESA. " - " . $namePage;
 			$section_name = $namePage;
 			// ---------------------------------- //
 

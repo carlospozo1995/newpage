@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	  <meta charset="utf-8">
-	  <meta name="description" content="">
-	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <meta name="author" content="">
-	  <title><?= $title_page ?></title>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="">
+	<title><?= $title_page ?></title>
 
-	  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-	  <!-- Font Awesome -->
-	  <link rel="stylesheet" href="<?= MEDIA_ADMIN; ?>css/plugins/fontawesome/css/all.min.css">
-	  <!-- SweetAlert2 -->
-	  <link rel="stylesheet" href="<?= MEDIA_ADMIN; ?>css/plugins/sweetalert2/sweetalert2.min.css">
-	  <!-- Toastr -->
-	  <link rel="stylesheet" href="<?= MEDIA_ADMIN; ?>css/plugins/toastr/toastr.min.css">
-	  <!-- DataTables -->
-	  <link rel="stylesheet" href="<?= MEDIA_ADMIN; ?>css/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-	  <link rel="stylesheet" href="<?= MEDIA_ADMIN; ?>css/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-	  <link rel="stylesheet" href="<?= MEDIA_ADMIN; ?>css/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-	  <!-- Select2 -->
-	  <link rel="stylesheet" href="<?= MEDIA_ADMIN; ?>css/plugins/select2/select2.min.css">
-	  <!-- Theme style -->
-	  <link rel="stylesheet" href="<?= MEDIA_ADMIN; ?>css/adminlte.min.css">
-	  <!-- My style -->
-	  <link rel="stylesheet" href="<?= MEDIA_ADMIN; ?>css/style.css">
-	  <?php
-		    if(isset($file_css) && is_array($file_css) && !empty($file_css)){
-	    		foreach ($file_css as $keycss => $valuecss) {
-	            	echo '<link rel="stylesheet" href="'.MEDIA_ADMIN.'css/'.$valuecss.'.css">';
-		        }
-		    }
-		?>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="<?= MEDIA_ADMIN; ?>css/plugins/fontawesome/css/all.min.css">
+	<!-- SweetAlert2 -->
+	<link rel="stylesheet" href="<?= MEDIA_ADMIN; ?>css/plugins/sweetalert2/sweetalert2.min.css">
+	<!-- Toastr -->
+	<link rel="stylesheet" href="<?= MEDIA_ADMIN; ?>css/plugins/toastr/toastr.min.css">
+	<!-- DataTables -->
+	<link rel="stylesheet" href="<?= MEDIA_ADMIN; ?>css/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet" href="<?= MEDIA_ADMIN; ?>css/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+	<link rel="stylesheet" href="<?= MEDIA_ADMIN; ?>css/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+	<!-- Select2 -->
+	<link rel="stylesheet" href="<?= MEDIA_ADMIN; ?>css/plugins/select2/select2.min.css">
+	<!-- Theme style -->
+	<link rel="stylesheet" href="<?= MEDIA_ADMIN; ?>css/adminlte.min.css">
+	<!-- My style -->
+	<link rel="stylesheet" href="<?= MEDIA_ADMIN; ?>css/style.css">
+	<?php
+		if(isset($file_css) && is_array($file_css) && !empty($file_css)){
+			foreach ($file_css as $keycss => $valuecss) {
+				echo '<link rel="stylesheet" href="'.MEDIA_ADMIN.'css/'.$valuecss.'.css">';
+			}
+		}
+	?>
 </head>
 <body class="hold-transition sidebar-mini">
 
