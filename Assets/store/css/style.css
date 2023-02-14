@@ -18014,7 +18014,7 @@ Pages - Contact
 
 .header-top-contact-hover-color--aqua a:hover,
 .header-top-user-link-hover-color--aqua a:hover {
-    color: #66cec4;
+    color: #4431DE;
 }
 
 .header-bottom {
@@ -18336,10 +18336,12 @@ Pages - Contact
     background: rgba(255, 255, 255, 0.2);
 }
 .action-hover-color--aqua.header-action-link li a:hover {
-    color: #66cec4;
+    color: #4431DE;
+    /* Change color: #66cec4; */
 }
 .action-hover-color--aqua.header-action-link li a span {
-    background: #66cec4;
+    background: #4431DE;
+    /* Change background: #66cec4; */
 }
 .action-hover-color--aqua .offside-about:hover {
     background: rgba(255, 255, 255, 0.2);

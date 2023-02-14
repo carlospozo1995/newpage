@@ -71,7 +71,7 @@
 
         static public function dataSons($father) {
             $arr_data = array();
-            $sql = "SELECT id_category, fatherCategory, name_category, status FROM categories";
+            $sql = "SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0";
             $all_categories = $GLOBALS["db"]->selectAll($sql, array());
             $categories = [];
             foreach ($all_categories as $category) {
@@ -99,13 +99,8 @@
         static public function deleteCategory($data)
         {
             if (empty($data)) {return false;}
-
-            $status['status'] = 0;
-            $request =  $GLOBALS["db"]->update("categories", $status, "id_category='".$data."'");
             
-            if($request) {$result = "ok";}
-
-            return $result;
+            
         }
       
     }

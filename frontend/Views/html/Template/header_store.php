@@ -74,11 +74,6 @@
                                         <i class="icon-magnifier"></i>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#offcanvas-about" class="offacnvas offside-about offcanvas-toggle">
-                                        <i class="icon-menu"></i>
-                                    </a>
-                                </li>
                             </ul>
                             
                         </div>
@@ -112,24 +107,24 @@
                         <ul class="header-action-link action-color--black action-hover-color--aqua">
                             <li>
                                 <a href="#search">
-                                    <i class="icon-magnifier icon-data"></i>
+                                    <i class="icon-magnifier"></i>
                                 </a>
                             </li>
                             <li>
                                 <a href="#offcanvas-wishlish" class="offcanvas-toggle">
-                                    <i class="icon-heart icon-data"></i>
+                                    <i class="icon-heart"></i>
                                     <span class="item-count">3</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#offcanvas-add-cart" class="offcanvas-toggle">
-                                    <i class="icon-bag icon-data"></i>
+                                    <i class="icon-bag"></i>
                                     <span class="item-count">3</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#mobile-menu-offcanvas" class="offcanvas-toggle offside-menu">
-                                    <i class="icon-menu icon-data"></i>
+                                    <i class="icon-menu"></i>
                                 </a>
                             </li>
                         </ul>
