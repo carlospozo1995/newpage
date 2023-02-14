@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="<?= MEDIA_STORE; ?>css/plugins/aos.min.css">
 
     <link rel="stylesheet" href="<?= MEDIA_STORE; ?>css/style.css">
+    <link rel="stylesheet" href="<?= MEDIA_STORE; ?>css/store-style.css">
     <?php
 		if(isset($file_css) && is_array($file_css) && !empty($file_css)){
 			foreach ($file_css as $keycss => $valuecss) {
@@ -111,24 +112,24 @@
                         <ul class="header-action-link action-color--black action-hover-color--aqua">
                             <li>
                                 <a href="#search">
-                                    <i class="icon-magnifier"></i>
+                                    <i class="icon-magnifier icon-data"></i>
                                 </a>
                             </li>
                             <li>
                                 <a href="#offcanvas-wishlish" class="offcanvas-toggle">
-                                    <i class="icon-heart"></i>
+                                    <i class="icon-heart icon-data"></i>
                                     <span class="item-count">3</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#offcanvas-add-cart" class="offcanvas-toggle">
-                                    <i class="icon-bag"></i>
+                                    <i class="icon-bag icon-data"></i>
                                     <span class="item-count">3</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#mobile-menu-offcanvas" class="offcanvas-toggle offside-menu">
-                                    <i class="icon-menu"></i>
+                                    <i class="icon-menu icon-data"></i>
                                 </a>
                             </li>
                         </ul>

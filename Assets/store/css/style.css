@@ -18241,8 +18241,10 @@ Pages - Contact
     color: #66cec4;
 }
 
-/* .header-logo .logo {
+/* Change 
+.header-logo .logo {
     width: 100px;
+
 } */
 .header-logo .logo img {
     width: 100%;
@@ -18391,7 +18393,9 @@ Pages - Contact
 }
 
 .mobile-menu-logo .logo {
+    /* Change */
     width: 300px;
+    /* ----- */
     overflow: hidden;
 }
 
