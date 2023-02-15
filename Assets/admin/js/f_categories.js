@@ -325,7 +325,7 @@ function deleteData(element, data) {
             if (!data) {
                 return false;
             }else{
-                // loading.css("display","flex");
+                loading.css("display","flex");
                 let url_ajax = base_url + "categories/delCategory/";
                         
                 $.ajax({
@@ -358,7 +358,7 @@ function deleteData(element, data) {
                         }else{
                             msgShow(3, 'Error', data.msg);
                         }
-                        // loading.css("display","none");
+                        loading.css("display","none");
                     },
                 });
             }

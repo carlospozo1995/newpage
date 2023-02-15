@@ -10,7 +10,7 @@
 
         static public function getProducts()
         {
-            $sql = "SELECT * FROM products WHERE status != ?";
+            $sql = "SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != ?";
             return $GLOBALS["db"]->selectAll($sql, array(0));
         }
 

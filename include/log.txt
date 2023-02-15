@@ -335,3 +335,282 @@
 [2023/02/14 05:35:08] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
 [2023/02/14 05:35:13] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
 [2023/02/14 05:35:13] SQL Query: SELECT * FROM products WHERE category_id = '103' AND status != 0
+[2023/02/14 06:52:00] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/02/14 06:52:00] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/02/14 06:52:01] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 06:54:19] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 06:54:19] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 07:10:16] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 07:10:16] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 07:11:06] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 07:11:07] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 07:12:20] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 07:12:20] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 07:12:50] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 07:12:50] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 07:13:03] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 07:13:07] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 07:13:42] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 07:21:34] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 07:21:34] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 08:03:50] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:04:16] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:04:16] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 08:04:25] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:04:54] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:05:43] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:05:43] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 08:05:55] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:06:13] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:07:21] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:07:21] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 08:07:34] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:08:01] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:24:15] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:24:15] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 08:24:33] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:24:33] SQL Query: SELECT * FROM products WHERE category_id = '103' AND status != '0'
+[2023/02/14 08:24:39] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:24:57] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:24:57] SQL Query: SELECT * FROM products WHERE category_id = '101' AND status != '0'
+[2023/02/14 08:25:05] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:25:05] SQL Query: SELECT * FROM products WHERE category_id = '101' AND status != '0'
+[2023/02/14 08:25:14] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:25:14] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 08:25:14] SQL Query: SELECT * FROM products WHERE status != '0'
+[2023/02/14 08:25:19] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '12'
+[2023/02/14 08:25:19] SQL Query: SELECT * FROM img_product WHERE product_id = '12'
+[2023/02/14 08:25:22] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '10'
+[2023/02/14 08:25:22] SQL Query: SELECT * FROM img_product WHERE product_id = '10'
+[2023/02/14 08:25:24] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/02/14 08:25:24] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/02/14 08:25:27] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '1'
+[2023/02/14 08:25:27] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/02/14 08:25:36] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:25:36] SQL Query: SELECT * FROM products WHERE category_id = '99' AND status != '0'
+[2023/02/14 08:25:36] SQL execute: UPDATE categories SET status=0 WHERE id_category='99'
+[2023/02/14 08:26:06] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:26:06] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 08:32:19] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:32:19] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 08:32:25] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:32:25] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 08:35:26] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:35:26] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 08:38:12] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:38:12] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 08:38:58] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:38:58] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 08:39:15] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:39:15] SQL Query: SELECT * FROM products WHERE category_id = '103' AND status != '0'
+[2023/02/14 08:39:42] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:39:54] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:39:57] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:39:57] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 08:40:12] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:40:12] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 08:40:25] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:40:25] SQL Query: SELECT * FROM products WHERE category_id = '103' AND status != '0'
+[2023/02/14 08:40:30] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:41:16] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:41:16] SQL Query: SELECT * FROM products WHERE category_id = '99' AND status != '0'
+[2023/02/14 08:41:16] SQL execute: UPDATE categories SET status=0 WHERE id_category='99'
+[2023/02/14 08:41:22] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:41:22] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 08:43:00] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:43:00] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 08:43:10] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:43:10] SQL Query: SELECT * FROM products WHERE category_id = '103' AND status != '0'
+[2023/02/14 08:43:18] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:43:28] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:43:28] SQL Query: SELECT * FROM products WHERE category_id = '101' AND status != '0'
+[2023/02/14 08:44:20] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/02/14 08:44:20] SQL Query: SELECT * FROM products WHERE category_id = '99' AND status != '0'
+[2023/02/14 08:44:20] SQL execute: UPDATE categories SET status=0 WHERE id_category='99'
+[2023/02/14 08:44:44] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:44:44] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 08:45:25] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:45:25] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 08:45:25] SQL Query: SELECT * FROM products WHERE status != '0'
+[2023/02/14 08:45:33] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '12'
+[2023/02/14 08:45:33] SQL Query: SELECT * FROM img_product WHERE product_id = '12'
+[2023/02/14 08:45:43] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '10'
+[2023/02/14 08:45:43] SQL Query: SELECT * FROM img_product WHERE product_id = '10'
+[2023/02/14 08:45:47] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:45:47] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0
+[2023/02/14 08:45:54] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:45:54] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 08:45:54] SQL Query: SELECT * FROM products WHERE status != '0'
+[2023/02/14 08:55:24] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
+[2023/02/14 08:55:24] SQL Query: SELECT * FROM table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2 = id_category WHERE table1.status != '0'
+[2023/02/14 08:55:24] SQL ERROR: 0: 
+[2023/02/14 08:55:24] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
+[2023/02/14 08:55:31] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/02/14 08:55:31] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/02/14 08:55:31] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:55:36] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:55:36] SQL Query: SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != '0'
+[2023/02/14 08:55:40] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:55:40] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 08:55:40] SQL Query: SELECT * FROM table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2 = id_category WHERE table1.status != '0'
+[2023/02/14 08:55:40] SQL ERROR: 0: 
+[2023/02/14 08:56:11] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:56:11] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 08:56:11] SQL Query: SELECT * FROM table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2 = id_category WHERE table1.status != '0'
+[2023/02/14 08:56:11] SQL ERROR: 0: 
+[2023/02/14 08:56:58] SQL Query: SELECT * FROM table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2 = id_category WHERE table1.status != '0'
+[2023/02/14 08:56:58] SQL ERROR: 0: 
+[2023/02/14 08:56:58] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 08:57:30] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2 = id_category WHERE table1.status != '0'
+[2023/02/14 08:57:30] SQL ERROR: 0: 
+[2023/02/14 08:57:30] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 09:01:58] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 09:02:03] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 09:02:03] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 09:02:03] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/02/14 09:02:30] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 09:02:30] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 09:02:30] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/02/14 09:02:46] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '1'
+[2023/02/14 09:02:46] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/02/14 09:02:53] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_Producto-1_e895ef9579ff171f128b0e5882858f0c.jpg' AND sliderMbl = 'sliderMbl_Producto-1_e895ef9579ff171f128b0e5882858f0c.jpg'
+[2023/02/14 09:02:53] SQL Query: SELECT * FROM products WHERE code = '564546' AND id_product != 1
+[2023/02/14 09:02:53] SQL execute: UPDATE products SET category_id="103",code="564546",name_product="Producto 1",desMain="Nuevo Producto 1",desGeneral="<p>capacidad</p>
+<ul>
+<li>desc 1</li>
+<li>desc 2</li>
+</ul>",sliderMbl="sliderMbl_Producto-1_e895ef9579ff171f128b0e5882858f0c.jpg",sliderDst="sliderDst_Producto-1_e895ef9579ff171f128b0e5882858f0c.jpg",sliderDes="nueva refri",brand="nuevo1",price="1564455.32",stock="65",status="1" WHERE id_product='1'
+[2023/02/14 09:03:02] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 09:03:02] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 09:03:02] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/02/14 09:03:21] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 09:03:21] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 09:03:21] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/02/14 09:03:55] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 09:03:55] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 09:03:55] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/02/14 09:04:09] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '1'
+[2023/02/14 09:04:09] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/02/14 09:08:27] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 09:08:27] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 09:08:27] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/02/14 09:08:49] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 09:08:49] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 09:08:49] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/02/14 09:08:57] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '12'
+[2023/02/14 09:08:57] SQL Query: SELECT * FROM img_product WHERE product_id = '12'
+[2023/02/14 09:09:00] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg' AND sliderMbl = 'sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg'
+[2023/02/14 09:09:00] SQL Query: SELECT * FROM products WHERE code = '7456464' AND id_product != 12
+[2023/02/14 09:09:00] SQL execute: UPDATE products SET category_id="103",code="7456464",name_product="Producto 4",desMain="Nuevo p 4",desGeneral='<p>ram</p>
+<ul>
+<li><span style="background-color: #fbeeb8;">1gb</span></li>
+<li><span style="background-color: #fbeeb8;">2gbg</span></li>
+</ul>',sliderMbl="sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg",sliderDst="sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg",sliderDes= NULL,brand="Nuevo 4",price="123.37",stock="754",status="1" WHERE id_product='12'
+[2023/02/14 09:10:21] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 09:10:21] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 09:10:21] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/02/14 09:10:31] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '12'
+[2023/02/14 09:10:31] SQL Query: SELECT * FROM img_product WHERE product_id = '12'
+[2023/02/14 09:10:33] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg' AND sliderMbl = 'sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg'
+[2023/02/14 09:10:33] SQL Query: SELECT * FROM products WHERE code = '7456464' AND id_product != 12
+[2023/02/14 09:10:33] SQL execute: UPDATE products SET category_id="103",code="7456464",name_product="Producto 4",desMain="Nuevo p 4",desGeneral='<p>ram</p>
+<ul>
+<li><span style="background-color: #fbeeb8;">1gb</span></li>
+<li><span style="background-color: #fbeeb8;">2gbg</span></li>
+</ul>',sliderMbl="sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg",sliderDst="sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg",sliderDes= NULL,brand="Nuevo 4",price="123.37",stock="754",status="1" WHERE id_product='12'
+[2023/02/14 09:12:51] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 09:12:51] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 09:12:51] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/02/14 09:12:59] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '12'
+[2023/02/14 09:12:59] SQL Query: SELECT * FROM img_product WHERE product_id = '12'
+[2023/02/14 09:13:00] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg' AND sliderMbl = 'sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg'
+[2023/02/14 09:13:00] SQL Query: SELECT * FROM products WHERE code = '7456464' AND id_product != 12
+[2023/02/14 09:13:00] SQL execute: UPDATE products SET category_id="103",code="7456464",name_product="Producto 4",desMain="Nuevo p 4",desGeneral='<p>ram</p>
+<ul>
+<li><span style="background-color: #fbeeb8;">1gb</span></li>
+<li><span style="background-color: #fbeeb8;">2gbg</span></li>
+</ul>',sliderMbl="sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg",sliderDst="sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg",sliderDes= NULL,brand="Nuevo 4",price="123.37",stock="754",status="1" WHERE id_product='12'
+[2023/02/14 09:13:07] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 09:13:07] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 09:13:07] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/02/14 09:21:09] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 09:21:09] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 09:21:09] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/02/14 09:21:23] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '12'
+[2023/02/14 09:21:23] SQL Query: SELECT * FROM img_product WHERE product_id = '12'
+[2023/02/14 09:21:25] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg' AND sliderMbl = 'sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg'
+[2023/02/14 09:21:25] SQL Query: SELECT * FROM products WHERE code = '7456464' AND id_product != 12
+[2023/02/14 09:21:25] SQL execute: UPDATE products SET category_id="103",code="7456464",name_product="Producto 4",desMain="Nuevo p 4",desGeneral='<p>ram</p>
+<ul>
+<li><span style="background-color: #fbeeb8;">1gb</span></li>
+<li><span style="background-color: #fbeeb8;">2gbg</span></li>
+</ul>',sliderMbl="sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg",sliderDst="sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg",sliderDes= NULL,brand="Nuevo 4",price="123.37",stock="754",status="1" WHERE id_product='12'
+[2023/02/14 09:22:08] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 09:22:08] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 09:22:08] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/02/14 09:22:19] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '12'
+[2023/02/14 09:22:19] SQL Query: SELECT * FROM img_product WHERE product_id = '12'
+[2023/02/14 09:22:21] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg' AND sliderMbl = 'sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg'
+[2023/02/14 09:22:21] SQL Query: SELECT * FROM products WHERE code = '7456464' AND id_product != 12
+[2023/02/14 09:22:21] SQL execute: UPDATE products SET category_id="103",code="7456464",name_product="Producto 4",desMain="Nuevo p 4",desGeneral='<p>ram</p>
+<ul>
+<li><span style="background-color: #fbeeb8;">1gb</span></li>
+<li><span style="background-color: #fbeeb8;">2gbg</span></li>
+</ul>',sliderMbl="sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg",sliderDst="sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg",sliderDes= NULL,brand="Nuevo 4",price="123.37",stock="754",status="1" WHERE id_product='12'
+[2023/02/14 09:22:23] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 09:22:23] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 09:22:23] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/02/14 09:22:30] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '12'
+[2023/02/14 09:22:30] SQL Query: SELECT * FROM img_product WHERE product_id = '12'
+[2023/02/14 09:22:33] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg' AND sliderMbl = 'sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg'
+[2023/02/14 09:22:33] SQL Query: SELECT * FROM products WHERE code = '7456464' AND id_product != 12
+[2023/02/14 09:22:33] SQL execute: UPDATE products SET category_id="103",code="7456464",name_product="Producto 4",desMain="Nuevo p 4",desGeneral='<p>ram</p>
+<ul>
+<li><span style="background-color: #fbeeb8;">1gb</span></li>
+<li><span style="background-color: #fbeeb8;">2gbg</span></li>
+</ul>',sliderMbl="sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg",sliderDst="sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg",sliderDes= NULL,brand="Nuevo 4",price="123.37",stock="754",status="1" WHERE id_product='12'
+[2023/02/14 09:23:26] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/02/14 09:23:26] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/02/14 09:23:28] SQL Query: SELECT * FROM products WHERE code = '455456' AND id_product != 2
+[2023/02/14 09:23:28] SQL execute: UPDATE products SET category_id="101",code="455456",name_product="Producto 2",desMain="NUevo producto 2",desGeneral= NULL,sliderMbl= NULL,sliderDst= NULL,sliderDes= NULL,brand="Nuevo 2",price="54.36",stock="78",status="1" WHERE id_product='2'
+[2023/02/14 09:23:34] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '10'
+[2023/02/14 09:23:34] SQL Query: SELECT * FROM img_product WHERE product_id = '10'
+[2023/02/14 09:23:36] SQL Query: SELECT * FROM products WHERE code = '31331' AND id_product != 10
+[2023/02/14 09:23:36] SQL execute: UPDATE products SET category_id="79",code="31331",name_product="Producto 3",desMain="Nuevo p 3",desGeneral= NULL,sliderMbl= NULL,sliderDst= NULL,sliderDes="desc slider new p3",brand="Nuevo 3",price="54.36",stock="54",status="1" WHERE id_product='10'
+[2023/02/14 09:24:09] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '1'
+[2023/02/14 09:24:09] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/02/14 09:24:18] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 09:24:18] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 09:24:18] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/02/14 09:24:30] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '12'
+[2023/02/14 09:24:30] SQL Query: SELECT * FROM img_product WHERE product_id = '12'
+[2023/02/14 09:24:31] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg' AND sliderMbl = 'sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg'
+[2023/02/14 09:24:31] SQL Query: SELECT * FROM products WHERE code = '7456464' AND id_product != 12
+[2023/02/14 09:24:31] SQL execute: UPDATE products SET category_id="103",code="7456464",name_product="Producto 4",desMain="Nuevo p 4",desGeneral='<p>ram</p>
+<ul>
+<li><span style="background-color: #fbeeb8;">1gb</span></li>
+<li><span style="background-color: #fbeeb8;">2gbg</span></li>
+</ul>',sliderMbl="sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg",sliderDst="sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg",sliderDes= NULL,brand="Nuevo 4",price="123.37",stock="754",status="1" WHERE id_product='12'
+[2023/02/14 09:24:46] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 09:24:46] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 09:24:46] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/02/14 09:24:49] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/02/14 09:24:49] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/02/14 09:24:49] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/02/14 09:24:57] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '12'
+[2023/02/14 09:24:57] SQL Query: SELECT * FROM img_product WHERE product_id = '12'
+[2023/02/14 09:24:58] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg' AND sliderMbl = 'sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg'
+[2023/02/14 09:24:58] SQL Query: SELECT * FROM products WHERE code = '7456464' AND id_product != 12
+[2023/02/14 09:24:58] SQL execute: UPDATE products SET category_id="103",code="7456464",name_product="Producto 4",desMain="Nuevo p 4",desGeneral='<p>ram</p>
+<ul>
+<li><span style="background-color: #fbeeb8;">1gb</span></li>
+<li><span style="background-color: #fbeeb8;">2gbg</span></li>
+</ul>',sliderMbl="sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg",sliderDst="sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg",sliderDes= NULL,brand="Nuevo 4",price="123.37",stock="754",status="1" WHERE id_product='12'
+[2023/02/14 09:25:05] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '1'
+[2023/02/14 09:25:05] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/02/14 09:26:37] SQL Query: SELECT * FROM products WHERE code = '45646'
+[2023/02/14 09:26:37] SQL execute: INSERT INTO products (category_id,code,name_product,desMain,desGeneral,sliderMbl,sliderDst,sliderDes,brand,price,stock,status) VALUES('85','45646','Producto 5','Nuevo Producto 1','<p>tama&ntilde;o</p>
+<ol>
+<li>grande</li>
+<li>peque&ntilde;o</li>
+</ol>',NULL,NULL,NULL,'Nuevo 5','786.36','456','1');

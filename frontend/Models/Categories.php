@@ -4,7 +4,7 @@
 
         static public function getCategories()
         {
-            $sql = "SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != 0";
+            $sql = "SELECT table1.*, table2.name_category AS nameFather FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category WHERE table1.status != ?";
             $result = $GLOBALS["db"]->selectAll($sql, array(0));
             return $result;  
         }
@@ -100,7 +100,24 @@
         {
             if (empty($data)) {return false;}
             
+            $sonsCategory = self::dataSons($data);
+
+            if(!empty($sonsCategory)){
+                $result = "exist_ctg";
+            }else{
+                $sql = "SELECT * FROM products WHERE category_id = ? AND status != ?";
+                $request_prod = $GLOBALS["db"]->selectAll($sql, array($data, 0));
             
+                if (!empty($request_prod)) {
+                    $result = "exist_prod";
+                }else{
+                    $status['status'] = 0;
+                    $GLOBALS["db"]->update("categories", $status, "id_category='".$data."'");
+                    $result = "ok";
+                }
+            }
+
+            return $result;
         }
       
     }

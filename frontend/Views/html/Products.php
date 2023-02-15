@@ -30,6 +30,7 @@
 				                    	<th>ID</th>
                                         <th>Código</th>
 				                    	<th>Nombre</th>
+                                        <th>Pertenece a:</th>
 				                    	<th>Precio</th>
 				                    	<th>Stock</th>
 				                    	<th>Slider desktop</th>
@@ -71,6 +72,7 @@
                                             echo '<td>'.$id_row.'</td>';
                                             echo '<td>'.$value['code'].'</td>';
                                             echo '<td>'.$value['name_product'].'</td>';
+                                            echo '<td>'.$value['nameCategory'].'</td>';
                                             echo '<td>'.SMONEY." ".Utils::formatMoney($value['price']).'</td>';
                                             echo '<td>'.$value['stock'].'</td>';
                                             echo '<td class="text-center">';

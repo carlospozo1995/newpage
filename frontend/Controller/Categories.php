@@ -253,16 +253,28 @@
 						die();
 					}else{
 						$id_category = Utils::desencriptar(Utils::getParam("data", ""));
-						$sonsCategory = Models_Categories::deleteCategory($id_category);
+						$result = Models_Categories::deleteCategory($id_category);
 						try {
-							
+							if ($result == "ok") {
+								$status = true;
+								$msg = "Se ha eliminado la categoria con exito.";
+							}else if($result == "exist_ctg"){
+								throw new Exception("No puede eliminar una cartegoria que contiene subcategorias.");
+								die();
+							}else if($result  == "exist_prod"){
+								throw new Exception("Verifique si la categoria a eliminar no contenga productos.");
+								die();
+							}else{
+								throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
+								die();
+							}
 						} catch (Exception $e) {
 							$status = false;
 							$msg = $e->getMessage();
 						}
 
-						// $data = array("status" => $status,"msg" => $msg);
-						// echo json_encode($data);
+						$data = array("status" => $status,"msg" => $msg);
+						echo json_encode($data);
 					}
 					
 				break;

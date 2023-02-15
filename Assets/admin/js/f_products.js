@@ -125,7 +125,8 @@ $(document).ready(function () {
                 success: function(data){
                 	if (data.status) {
                 		let htmlStatus = $("#listStatus").val() == 1 ? '<div class="text-center"><span class="bg-success p-1 rounded"><i class="fa-solid fa-user"></i> Activo</span></div>' : '<div class="text-center"><span class="bg-danger p-1 rounded"><i class="fa-solid fa-user-slash"></i> Inactivo</span></div>';
-                            
+                        
+                        let textCategory = $("#listCategories").find("option:selected").text().replace(/\s*\([^)]*\)\s*/g, "");
                         let sliderDst = "";
                         let sliderMbl = "";
                         data.data_request.sliderDst != "" ? sliderDst = '<img class="text-center" style="display:flex; margin:auto; width:70px" src="'+data.data_request.sliderDst+'">' : sliderDst = "";
@@ -157,6 +158,7 @@ $(document).ready(function () {
                                 id_row, 
                                 $('#code').val(),
                                 $("#name_product").val(),
+                                textCategory,
                             	"$ " + numberFormat(parseFloat($('#price').val())),
                                 $('#stock').val(),
                                 sliderDst,
@@ -166,11 +168,12 @@ $(document).ready(function () {
                             ]).draw(false);
                         }else{
                             let n_row = $(rowtable).find("td:eq(0)").html();
-                            let buttons_html = $(rowtable).find("td:eq(8)").html();
+                            let buttons_html = $(rowtable).find("td:eq(9)").html();
                             $("#tableProducts").DataTable().row(rowtable).data([
                                 n_row,
                                 $("#code").val(),
                                 $("#name_product").val(),
+                                textCategory,
                                 "$ " + numberFormat(parseFloat($('#price').val())),
                                 $('#stock').val(),
                                 sliderDst,
