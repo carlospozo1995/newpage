@@ -3,6 +3,50 @@
 * Template style changes
 *****************************/
 
+.main-menu nav > ul > li > a {
+    text-align: center;
+    overflow: hidden;
+/*    z-index: 2;*/
+    position: relative;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+.main-menu nav > ul > li:hover > a{
+    color: #fbbb01;
+}
+
+.main-menu nav > ul > li > a::after{
+    content: '';
+    width: 210%;
+    position: absolute;
+/*    z-index: 1;*/
+    top: 0;
+    left: calc(-100% - 250px);
+    border-bottom: 118px solid rgba(107, 107, 107, 0.1);
+    border-right: 100px solid transparent;
+    transition: .5s ease all;
+    -webkit-transition: .5s ease all;
+    -moz-transition: .5s ease all;
+    -ms-transition: .5s ease all;
+    -o-transition: .5s ease all;
+}
+
+.main-menu nav > ul > li:hover > a::after{
+    left: 0;
+}
+
+.sub-menu .item-sub-menu{
+    padding: 0px 10px;
+}
+.sub-menu-item-title{
+    font-weight: 700 !important;
+    font-size: 16px;
+/*    text-transform: uppercase !important;*/
+}
+
 @media (max-width: 550px) {
     .mobile-menu-logo .logo {
         width: 220px;

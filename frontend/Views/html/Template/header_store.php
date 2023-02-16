@@ -80,6 +80,134 @@
                     </div>
                 </div>
             </div>
+
+            <div class="header-bottom section-fluid">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 d-flex align-items-center justify-content-center">
+                            <div class="main-menu main-menu-style-4 menu-color--white menu-hover-color--aqua">
+                                <nav>
+                                <?php
+                                    // $arrCategories = Models_Categories::arrCategories("");
+
+                                    // $categoriesFather = [];
+                                    // foreach ($arrCategories as $category) {
+                                    //     $father = $category['fatherCategory'];
+                                    //     $categoriesFather[$father][] = $category;
+                                    // }
+
+                                    // if (!empty($categoriesFather[""])) {
+                                    //     echo '<ul class="item-menu">';
+                                    //         foreach ($categoriesFather[""] as $category) {
+                                    //             echo '<li class="has-dropdown has-megaitem">';
+                                    //                 echo '<a href=""> <div><img src="'.MEDIA_ADMIN.'files/images/uploads/'.$category['icon'].'" alt=""></div> <span>'.$category["name_category"].'</span></a>';
+                                    //                 if(!empty($categoriesFather[$category['id_category']])){
+                                    //                     echo '<div class="mega-menu">';  
+                                    //                         echo '<ul class="mega-menu-inner">';
+                                    //                         foreach ($categoriesFather[$category['id_category']] as $subcategory) {
+                                    //                             echo '<li class="mega-menu-item">';
+                                    //                                 echo '<a class="mega-menu-item-title" href="">'.$subcategory['name_category'].'</a>';
+                                    //                                 if (!empty($categoriesFather[$subcategory['id_category']])) {
+                                    //                                     echo '<ul class="mega-menu-sub">';
+                                    //                                     foreach ($categoriesFather[$subcategory['id_category']] as $key => $son) {
+                                    //                                         echo '<li>';
+                                    //                                             echo '<a href="">'.$son['name_category'].'</a>';
+                                    //                                         echo '</li>';
+                                    //                                     }
+                                    //                                     echo '</ul>';
+                                    //                                 }
+                                    //                             echo '</li>';
+                                    //                         }
+                                    //                         echo '</ul>';
+                                    //                     echo '</div>';
+                                    //                 }
+                                    //             echo '</li>';
+                                    //         }
+                                    //     echo '</ul>';
+                                    // }
+
+                                    $arrCategories = Models_Categories::arrCategories("");
+
+                                    $categoriesFather = [];
+                                    foreach ($arrCategories as $category) {
+                                        $father = $category['fatherCategory'];
+                                        $categoriesFather[$father][] = $category;
+                                    }
+
+                                    if (!empty($categoriesFather[""])) {
+                                        echo '<ul>';
+                                            foreach ($categoriesFather[""] as $category) {
+                                                echo '<li class="has-dropdown">';
+                                                    echo '<a href=""> <div><img src="'.MEDIA_ADMIN.'files/images/uploads/'.$category['icon'].'" alt=""></div> <span>'.$category["name_category"].'</span></a>';
+                                                    if(!empty($categoriesFather[$category['id_category']])){ 
+                                                        echo '<ul class="sub-menu d-flex">';
+                                                        foreach ($categoriesFather[$category['id_category']] as $subcategory) {
+                                                            echo '<li class="item-sub-menu">';
+                                                                echo '<a href="" class="sub-menu-item-title">'.$subcategory['name_category'].'</a>';
+                                                                if (!empty($categoriesFather[$subcategory['id_category']])) {
+                                                                    echo '<ul>';
+                                                                    foreach ($categoriesFather[$subcategory['id_category']] as $key => $son) {
+                                                                        echo '<li>';
+                                                                            echo '<a style="line-height:35px" href="">'.$son['name_category'].'</a>';
+                                                                        echo '</li>';
+                                                                    }
+                                                                    echo '</ul>';
+                                                                }
+                                                            echo '</li>';
+                                                        }
+                                                        echo '</ul>';
+                                                    }
+                                                echo '</li>';
+                                            }
+                                        echo '</ul>';
+                                    }
+                                ?>
+                                 </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            <!-- <div class="header-bottom header-bottom-color--black section-fluid">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 d-flex align-items-center justify-content-center">
+
+                            <div class="main-menu main-menu-style-4 menu-color--white menu-hover-color--aqua">
+                                <nav>
+                                    <ul>
+                                        <li class="has-dropdown">
+                                            <a class="active main-menu-link" href="index.html">Home <i
+                                                    class="fa fa-angle-down"></i></a>
+                                        </li>
+                                        <li class="has-dropdown has-megaitem">
+                                            <a href="product-details-default.html">Shop <i
+                                                    class="fa fa-angle-down"></i></a>
+                                        </li>
+                                        <li class="has-dropdown">
+                                            <a href="blog-single-sidebar-left.html">Blog <i
+                                                    class="fa fa-angle-down"></i></a>
+                                            
+                                        </li>
+                                        <li class="has-dropdown">
+                                            <a href="#">Pages <i class="fa fa-angle-down"></i></a>
+                                            
+                                        </li>
+                                        <li>
+                                            <a href="about-us.html">About Us</a>
+                                        </li>
+                                        <li>
+                                            <a href="contact-us.html">Contact Us</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
         </div>
     </header>
 

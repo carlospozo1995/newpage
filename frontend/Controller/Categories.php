@@ -46,7 +46,7 @@
 								die();
 							}else{
 								$id = $_POST['id_category'];
-								$name = $_POST['name_category'];
+								$name = utf8_encode($_POST['name_category']);
 								$option_list = $_POST['listCategories'] == 0 && is_numeric($_POST['listCategories']) ? null : Utils::desencriptar($_POST['listCategories']);
 								$status = $_POST['listStatus'];
 

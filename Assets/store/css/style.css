@@ -18107,7 +18107,7 @@ Pages - Contact
 
 .sub-menu {
     position: absolute;
-    min-width: 230px;
+/* Change   min-width: 230px;*/
     padding: 25px 20px;
     background: #FFF;
     box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.1);
@@ -18121,6 +18121,8 @@ Pages - Contact
     z-index: 99;
     top: 100%;
     text-align: left;
+
+    width: max-content;
 }
 
 .mega-menu {
@@ -18143,7 +18145,7 @@ Pages - Contact
 
 .mega-menu-inner {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between;-
 }
 
 .mega-menu-item-title {
@@ -18189,7 +18191,8 @@ Pages - Contact
     color: #24262b;
 }
 .menu-color--white nav > ul > li > a {
-    color: #FFF;
+/* CHANGE   color: #FFF;*/
+    color: #4431DE;
 }
 .menu-color--white .sub-menu > li > a,
 .menu-color--white .mega-menu-sub > li > a {
@@ -18231,11 +18234,12 @@ Pages - Contact
     color: #ff365d;
 }
 .menu-hover-color--aqua nav > ul > li > a:hover {
-    color: #66cec4;
+ Change   color: #66cec4;
 }
 .menu-hover-color--aqua .sub-menu > li > a:hover,
 .menu-hover-color--aqua .mega-menu-sub > li > a:hover {
     color: #66cec4;
+/*    color: ;*/
 }
 .menu-hover-color--aqua .mega-menu-item-title:hover {
     color: #66cec4;
