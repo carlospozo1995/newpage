@@ -79,7 +79,7 @@
 
                     				<div class="col-sm-6">
                     					<div class="form-group">
-                                            <label>Slider Descripción</label>
+                                            <label>Título slider</label>
                                             <textarea class="form-control m-hgt-txarea" name="sliderDes" id="sliderDes"></textarea>
                                         </div>
 
@@ -152,7 +152,7 @@
 	                                <div class="col-sm-12">
 	                                    <div class="form-group">
 	                                        <div class="containerGallery">
-	                                            <span><b>Agregar fotos</b> (440 x 545)</span>
+	                                            <span><b>Agregar fotos</b> (600 x 690)</span>
 	                                            <button class="btnAddImage btn btn-info btn-sm" type="button">
 	                                                <i class="fa-solid fa-plus"></i> 
 	                                            </button>

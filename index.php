@@ -57,6 +57,11 @@
 			case 'products':
 				return "Products";
 			break;
+
+			// PAGES-STORE
+			case 'test':
+				return "Test";
+			break;
 		}
 
 		return ucfirst($name);

@@ -12,7 +12,7 @@
      *****************************/
     $(window).on('scroll', function() {
         var scroll = $(window).scrollTop();
-        if (scroll < 100) {
+        if (scroll < 150) {
             $(".sticky-header").removeClass("sticky");
         } else {
             $(".sticky-header").addClass("sticky");
@@ -21,7 +21,7 @@
 
     $(window).on('scroll', function() {
         var scroll = $(window).scrollTop();
-        if (scroll < 100) {
+        if (scroll < 150) {
             $(".seperate-sticky-bar").removeClass("sticky");
         } else {
             $(".seperate-sticky-bar").addClass("sticky");
@@ -33,12 +33,14 @@
      ***********************************************/
     $('a[href="#search"]').on('click', function(event) {
         event.preventDefault();
+        $('body').css('overflow', 'hidden');
         $('#search').addClass('open');
         $('#search > form > input[type="search"]').focus();
     });
 
     $('#search, #search button.close').on('click', function(event) {
         if ( event.target.className == 'close' ) {
+            $('body').css('overflow', 'auto');
             $(this).removeClass('open');
         }
     });
@@ -53,6 +55,7 @@
             $mobileMenuToggle = $('.mobile-menu-toggle');
         $offCanvasToggle.on('click', function(e) {
             e.preventDefault();
+            $('body').css('overflow', 'hidden');
             var $this = $(this),
                 $target = $this.attr('href');
             $body.addClass('offcanvas-open');
@@ -64,6 +67,7 @@
         });
         $('.offcanvas-close, .offcanvas-overlay').on('click', function(e) {
             e.preventDefault();
+            $('body').css('overflow', 'auto');
             $body.removeClass('offcanvas-open');
             $offCanvas.removeClass('offcanvas-open');
             $offCanvasOverlay.fadeOut();
@@ -75,32 +79,71 @@
     /**************************
      * Offcanvas: Menu Content
      **************************/
+    
+    // Change function //
+    // function mobileOffCanvasMenu() {
+    //     var $offCanvasNav = $('.offcanvas-menu'),
+    //         $offCanvasNavSubMenu = $offCanvasNav.find('.mobile-sub-menu');
+
+    //     /*Add Toggle Button With Off Canvas Sub Menu*/
+    //     $offCanvasNavSubMenu.parent().prepend('<div class="offcanvas-menu-expand"></div>');
+
+    //     /*Category Sub Menu Toggle*/
+    //     $offCanvasNav.on('click', 'li a, .offcanvas-menu-expand', function(e) {
+    //         var $this = $(this);
+
+    //         if ($this.attr('href') === '#' || $this.hasClass('offcanvas-menu-expand')) {
+    //             e.preventDefault();
+    //             if ($this.siblings('ul:visible').length) {
+    //                 $this.parent('li').removeClass('active');
+    //                 $this.siblings('ul').slideUp();
+    //                 $this.parent('li').find('li').removeClass('active');
+    //                 $this.parent('li').find('ul:visible').slideUp();
+    //             } else {
+    //                 $this.parent('li').addClass('active');
+    //                 $this.closest('li').siblings('li').removeClass('active').find('li').removeClass('active');
+    //                 $this.closest('li').siblings('li').find('ul:visible').slideUp();
+    //                 $this.siblings('ul').slideDown();
+    //             }
+    //         }
+    //     });
+    // }
+
+
     function mobileOffCanvasMenu() {
         var $offCanvasNav = $('.offcanvas-menu'),
-            $offCanvasNavSubMenu = $offCanvasNav.find('.mobile-sub-menu');
+        $offCanvasNavSubMenu = $offCanvasNav.find('.mobile-sub-menu');
 
         /*Add Toggle Button With Off Canvas Sub Menu*/
-        $offCanvasNavSubMenu.parent().prepend('<div class="offcanvas-menu-expand"></div>');
+        $offCanvasNavSubMenu.parent().each(function() {
+            var $this = $(this),
+            $subMenu = $this.find('> ul');
+            if ($subMenu.length) {
+                $this.children('.cont-link').append('<span class="offcanvas-menu-expand-icon d-flex align-items-center"><i class="fa fa-angle-right"></i></span>');
+            }
+        });
 
         /*Category Sub Menu Toggle*/
-        $offCanvasNav.on('click', 'li a, .offcanvas-menu-expand', function(e) {
+        $offCanvasNav.on('click', 'li a, .offcanvas-menu-expand-icon', function(e) {
             var $this = $(this);
-            if ($this.attr('href') === '#' || $this.hasClass('offcanvas-menu-expand')) {
+            if ($this.attr('href') === '#' || $this.hasClass('offcanvas-menu-expand-icon')) {
                 e.preventDefault();
-                if ($this.siblings('ul:visible').length) {
-                    $this.parent('li').removeClass('active');
-                    $this.siblings('ul').slideUp();
-                    $this.parent('li').find('li').removeClass('active');
-                    $this.parent('li').find('ul:visible').slideUp();
+                var $ul = $this.closest('li').find('> ul');
+                if ($ul.filter(':visible').length) {
+                    $this.closest('li').removeClass('active');
+                    $ul.slideUp();
+                    $this.closest('li').find('li').removeClass('active');
+                    $this.closest('li').find('ul:visible').slideUp();
                 } else {
-                    $this.parent('li').addClass('active');
+                    $this.closest('li').addClass('active');
                     $this.closest('li').siblings('li').removeClass('active').find('li').removeClass('active');
                     $this.closest('li').siblings('li').find('ul:visible').slideUp();
-                    $this.siblings('ul').slideDown();
+                    $ul.slideDown();
                 }
             }
         });
     }
+
     mobileOffCanvasMenu();
 
     /************************************************

@@ -118,12 +118,12 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Slider Descripción 1</label>
+                                            <label>Título slider</label>
                                             <textarea class="form-control m-hgt-txarea" type="text" name="sliderDesOne" id="sliderDesOne"></textarea>
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Slider Descripción 2</label>
+                                            <label>Subtítulo slider</label>
                                             <textarea class="form-control m-hgt-txarea" name="sliderDesTwo" id="sliderDesTwo"></textarea>
                                         </div>
 
@@ -189,11 +189,11 @@
                                     <td class="text-center" id="celSlrMobile"></td>
                                 </tr>
                                 <tr>
-                                    <td>Descripción slider 1:</td>
+                                    <td>Título slider:</td>
                                     <td class="text-center" id="celDesSlrOne"></td>
                                 </tr>
                                 <tr>
-                                    <td>Descripción slider 2:</td>
+                                    <td>Subtítulo slider:</td>
                                     <td class="text-center" id="celDesSlrTwo"></td>
                                 </tr>
                                 <tr>

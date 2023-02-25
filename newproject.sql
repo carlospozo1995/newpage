@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 14-02-2023 a las 23:21:54
--- Versión del servidor: 5.7.24
--- Versión de PHP: 7.2.19
+-- Servidor: localhost:3306
+-- Tiempo de generación: 25-02-2023 a las 18:57:35
+-- Versión del servidor: 5.7.33
+-- Versión de PHP: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,26 +46,75 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id_category`, `name_category`, `photo`, `icon`, `sliderDst`, `sliderMbl`, `sliderDesOne`, `sliderDesTwo`, `datecreate`, `fatherCategory`, `status`) VALUES
-(76, 'Category 1', 'photo_Category-1_6d7627af760bbd31936dc96347eb88aa.jpg', 'icon_Category-1_6d7627af760bbd31936dc96347eb88aa.jpg', NULL, NULL, NULL, NULL, '2023-01-22 15:46:20', NULL, 1),
-(77, 'Category 1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-22 15:47:11', 76, 1),
-(78, 'category 1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-22 15:48:00', 76, 1),
-(79, 'Category 1.2.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-22 17:42:14', 78, 1),
-(80, 'Category 2', 'photo_Category-2_d7f953eb2c6c05535135437aa6ee58d1.jpg', 'icon_Category-2_d7f953eb2c6c05535135437aa6ee58d1.jpg', NULL, NULL, NULL, NULL, '2023-01-22 17:42:59', NULL, 1),
-(81, 'Categoria 2.1', NULL, NULL, 'sliderDst_Categoria-2.1_5c1c22356b2f268054d71ffad8f8d3e1.jpg', 'sliderMbl_Categoria-2.1_5c1c22356b2f268054d71ffad8f8d3e1.jpg', 'description one slider category 2.1', 'description two slider category 2.1', '2023-01-22 17:44:46', 80, 1),
-(82, 'Category 3', 'photo_Category-3_68cb7af09b774e950b915c6a1ca59c3d.jpg', 'icon_Category-3_68cb7af09b774e950b915c6a1ca59c3d.jpg', 'sliderDst_Category-3_68cb7af09b774e950b915c6a1ca59c3d.jpg', 'sliderMbl_Category-3_68cb7af09b774e950b915c6a1ca59c3d.jpg', NULL, NULL, '2023-01-23 08:13:35', NULL, 1),
-(83, 'Category 3.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-23 23:29:10', 82, 1),
-(84, 'Category 3.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-23 23:29:27', 83, 1),
-(85, 'Category 3.1.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-23 23:29:44', 84, 1),
-(86, 'Category 4', 'photo_Category-4_02ed766fa76d1cc81eb5c1917ef58215.jpg', 'icon_Category-4_02ed766fa76d1cc81eb5c1917ef58215.jpg', 'sliderDst_Category-4_02ed766fa76d1cc81eb5c1917ef58215.jpg', 'sliderMbl_Category-4_02ed766fa76d1cc81eb5c1917ef58215.jpg', 'category 4 description one', 'category 4 description two', '2023-01-24 07:54:25', NULL, 1),
-(87, 'Categoria 4.1', NULL, NULL, NULL, NULL, 'not description one', 'not description two', '2023-01-27 16:11:09', 86, 1),
-(88, 'categoria 4.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-27 16:45:14', 87, 1),
-(89, 'Category 5', 'photo_Category-five_42e9ee988153180583ae67444de32839.jpg', 'icon_Category-five_42e9ee988153180583ae67444de32839.jpg', NULL, NULL, NULL, NULL, '2023-01-28 07:05:26', NULL, 1),
-(98, 'Category 5.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-31 18:03:16', 89, 1),
-(99, 'Category 5.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-31 21:23:09', 98, 1),
-(100, 'Category 5.2', NULL, NULL, 'sliderDst_Category-5.2_3defdc9fcd6fd02bb39972a4b2f51f14.jpg', 'sliderMbl_Category-5.2_c379c573ed9c8321c67f84d22bb422e4.jpg', NULL, NULL, '2023-02-02 18:17:14', 89, 1),
-(101, 'Category 5.2.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-02 18:17:50', 100, 1),
-(102, 'Category 6', 'photo_Category-6_06bddeaa3482571e482191872db0ba1e.jpg', 'icon_Category-6_06bddeaa3482571e482191872db0ba1e.jpg', NULL, NULL, NULL, NULL, '2023-02-03 21:19:43', NULL, 1),
-(103, 'Category 6.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-14 17:03:12', 102, 1);
+(104, 'CATEGORY 1', 'photo_CATEGORY-1_064bf93d85efa2ee7aa99419015c9161.jpg', 'icon_CATEGORY-1_064bf93d85efa2ee7aa99419015c9161.jpg', 'sliderDst_CATEGORY-1_e3c4160f3d899e61271687f8e56cb4a8.jpg', 'sliderMbl_CATEGORY-1_e3c4160f3d899e61271687f8e56cb4a8.jpg', 'Sld des<br> categoria  dst', 'Sld des categoria 2 mbl', '2023-02-15 15:30:51', NULL, 1),
+(105, 'Categoria 1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:32:51', 104, 1),
+(106, 'Categoria 1.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:33:08', 105, 1),
+(107, 'Categoria 1.1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:33:22', 105, 1),
+(108, 'Categoria 1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:33:33', 104, 1),
+(109, 'Categoria 1.2.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:33:48', 108, 1),
+(110, 'Categoria 1.2.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:34:14', 108, 1),
+(111, 'Categoria 1.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:35:59', 104, 1),
+(112, 'Categoria 1.3.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:37:28', 111, 1),
+(113, 'Categoria 1.3.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:37:40', 111, 1),
+(114, 'Categoria 1.3.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:37:53', 111, 1),
+(115, 'Categoria 1.4', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:38:29', 104, 1),
+(116, 'Categoria 1.4.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:38:45', 115, 1),
+(117, 'Categoria 1.4.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:39:01', 115, 1),
+(118, 'CATEGORY 2', 'photo_CATEGORY-2_a534a9244d3c59eb8d8ba3ea43f18230.jpg', 'icon_CATEGORY-2_a534a9244d3c59eb8d8ba3ea43f18230.jpg', NULL, NULL, NULL, NULL, '2023-02-15 15:40:21', NULL, 1),
+(119, 'Categoria 2.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:40:45', 118, 1),
+(120, 'Categoria 2.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:41:27', 119, 1),
+(121, 'Categoria 2.1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:42:27', 119, 1),
+(122, 'Categoria 2.1.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:42:49', 119, 1),
+(123, 'Categoria 2.1.4', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:43:12', 119, 1),
+(124, 'Categoria 2.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:43:38', 118, 1),
+(125, 'Categoria 2.2.1', NULL, NULL, 'sliderDst_Categoria-2.2.1_0a57e7be4e8a7fd00ea126f685324d2d.jpg', 'sliderMbl_Categoria-2.2.1_0a57e7be4e8a7fd00ea126f685324d2d.jpg', NULL, 'Sld des categoria 2.2.1 mbl', '2023-02-15 15:44:12', 124, 1),
+(126, 'Categoria 2.2.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:45:21', 124, 1),
+(127, 'Categoria 2.2.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:45:38', 124, 1),
+(128, 'CATEGORY 3', 'photo_CATEGORY-3_f7d3a7ced482f6fc26957c141974b4c6.jpg', 'icon_CATEGORY-3_f7d3a7ced482f6fc26957c141974b4c6.jpg', NULL, NULL, NULL, NULL, '2023-02-15 15:55:43', NULL, 1),
+(129, 'Categoria 3.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:56:08', 128, 1),
+(130, 'Categoria 3.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:56:22', 129, 1),
+(131, 'Categoria 3.1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:56:43', 129, 1),
+(132, 'Categoria 3.1.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:57:25', 129, 1),
+(133, 'Categoria 3.2', NULL, NULL, 'sliderDst_Categoria-3.2_c09525fe213cd5ee4084cfd48779020c.jpg', 'sliderMbl_Categoria-3.2_c09525fe213cd5ee4084cfd48779020c.jpg', 'Sld des <br>categoria 3.2 dst', NULL, '2023-02-15 15:57:49', 128, 1),
+(134, 'Categoria 3.2.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:58:22', 133, 1),
+(135, 'Categoria 3.2.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:58:45', 133, 1),
+(136, 'Categoria 3.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:59:03', 128, 1),
+(137, 'CATEGORY 4', 'photo_CATEGORY-4_f07cac553251d3d5fe20877214158b1a.jpg', 'icon_CATEGORY-4_f07cac553251d3d5fe20877214158b1a.jpg', NULL, NULL, NULL, NULL, '2023-02-15 16:00:52', NULL, 1),
+(138, 'Categoria 4.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:01:09', 137, 1),
+(139, 'Categoria 4.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:01:24', 138, 1),
+(140, 'Categoria 4.1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:01:53', 138, 1),
+(141, 'Categoria 4.1.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:02:48', 138, 1),
+(142, 'Categoria 4.1.4', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:03:00', 138, 1),
+(143, 'Categoria 4.1.5', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:03:13', 138, 1),
+(144, 'Categoria 4.1.6', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:03:26', 138, 1),
+(145, 'CATEGORY 5', 'photo_CATEGORY-5_256ef423c55b20300398a7372703c767.jpg', 'icon_CATEGORY-5_256ef423c55b20300398a7372703c767.jpg', NULL, NULL, NULL, NULL, '2023-02-15 16:04:35', NULL, 1),
+(146, 'Categoria 5.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:04:49', 145, 1),
+(147, 'Categoria 5.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:05:09', 146, 1),
+(148, 'Categoria 5.1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:05:18', 146, 1),
+(149, 'Categoria 5.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:05:38', 145, 1),
+(150, 'Categoria 5.2.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:05:56', 149, 1),
+(151, 'Categoria 5.2.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:06:09', 149, 1),
+(152, 'Categoria 5.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:06:50', 145, 1),
+(153, 'Categoria 5.3.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:07:09', 152, 1),
+(154, 'Categoria 5.3.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:07:20', 152, 1),
+(155, 'Categoria 5.3.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:07:30', 152, 1),
+(156, 'Categoria 5.4', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:07:53', 145, 1),
+(157, 'Categoria 5.4.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:08:05', 156, 1),
+(158, 'Categoria 5.4.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:08:16', 156, 1),
+(159, 'CATEGORY 6', 'photo_CATEGORY-6_d8ea0dc2d78cf6d09d1ff8f678bff11c.jpg', 'icon_CATEGORY-6_d8ea0dc2d78cf6d09d1ff8f678bff11c.jpg', NULL, NULL, NULL, NULL, '2023-02-15 16:09:13', NULL, 1),
+(160, 'Categoria 6.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:09:36', 159, 1),
+(161, 'Categoria 6.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:10:42', 160, 1),
+(162, 'Categoria 6.1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:11:01', 160, 1),
+(163, 'Categoria 6.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:11:20', 159, 1),
+(164, 'Categoria 6.2.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:12:07', 163, 1),
+(165, 'Categoria 6.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:12:48', 159, 1),
+(166, 'Categoria 6.3.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:13:16', 165, 1),
+(167, 'Categoria 6.3.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:13:36', 165, 1),
+(168, 'CATEGORY 7', 'photo_Categoria-7_63a318e0cb7632d2a20d845d4e5724b7.jpg', 'icon_Categoria-7_63a318e0cb7632d2a20d845d4e5724b7.jpg', NULL, NULL, NULL, NULL, '2023-02-15 16:14:09', NULL, 1),
+(169, 'Categoria 7.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:14:42', 168, 1),
+(170, 'Categoria 7.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:15:00', 169, 1),
+(171, 'Categoria 7.1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:15:10', 169, 1),
+(172, 'Categoria 7.1.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:15:22', 169, 1);
 
 -- --------------------------------------------------------
 
@@ -78,17 +127,6 @@ CREATE TABLE `img_product` (
   `product_id` bigint(20) NOT NULL,
   `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `img_product`
---
-
-INSERT INTO `img_product` (`id_img`, `product_id`, `image`) VALUES
-(1, 12, 'imgRef_12_f367939d82209fdad4de79516d2985d1.jpg'),
-(2, 12, 'imgRef_12_31ebf1fdd48e0200ce39c0577ff6de1b.jpg'),
-(3, 12, 'imgRef_12_7de55d502ec86688a33892ba2d3e1cd8.jpg'),
-(4, 12, 'imgRef_12_5513ea496824661e0d3a67ac7d359196.jpg'),
-(5, 12, 'imgRef_12_aead3d8e1a695eb13aabb4256f63cc8e.jpg');
 
 -- --------------------------------------------------------
 
@@ -138,10 +176,6 @@ INSERT INTO `permissions` (`id_permissions`, `rol_id`, `module_id`, `ver`, `crea
 (133, 6, 2, 0, 0, 0, 0),
 (134, 6, 3, 0, 0, 0, 0),
 (135, 6, 4, 0, 0, 0, 0),
-(140, 1, 1, 1, 1, 1, 1),
-(141, 1, 2, 1, 1, 1, 1),
-(142, 1, 3, 1, 1, 1, 1),
-(143, 1, 4, 1, 1, 1, 1),
 (148, 30, 1, 0, 0, 0, 0),
 (149, 30, 2, 0, 0, 0, 0),
 (150, 30, 3, 0, 0, 0, 0),
@@ -153,7 +187,11 @@ INSERT INTO `permissions` (`id_permissions`, `rol_id`, `module_id`, `ver`, `crea
 (160, 2, 1, 1, 0, 0, 0),
 (161, 2, 2, 1, 1, 0, 0),
 (162, 2, 3, 1, 1, 1, 0),
-(163, 2, 4, 1, 1, 1, 0);
+(163, 2, 4, 1, 1, 1, 0),
+(169, 1, 1, 1, 1, 1, 1),
+(170, 1, 2, 1, 1, 1, 1),
+(171, 1, 3, 1, 1, 1, 1),
+(172, 1, 4, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -183,10 +221,10 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `desMain`, `desGeneral`, `sliderDst`, `sliderMbl`, `sliderDes`, `brand`, `price`, `stock`, `datacreate`, `status`) VALUES
-(1, 102, 564546, 'Producto 1', 'Nuevo Producto 1', '<p>capacidad</p>\r\n<ul>\r\n<li>desc 1</li>\r\n<li>desc 2</li>\r\n</ul>', 'sliderDst_Producto-1_e895ef9579ff171f128b0e5882858f0c.jpg', 'sliderMbl_Producto-1_e895ef9579ff171f128b0e5882858f0c.jpg', 'nueva refri', 'nuevo1', '1564455.32', 65, '2023-02-05 00:15:55', 1),
-(2, 101, 455456, 'Producto 2', 'NUevo producto 2', NULL, NULL, NULL, NULL, 'Nuevo 2', '54.36', 78, '2023-02-05 12:15:58', 1),
-(10, 79, 31331, 'Producto 3', 'Nuevo p 3', NULL, NULL, NULL, 'desc slider new p3', 'Nuevo 3', '54.36', 54, '2023-02-05 14:29:45', 1),
-(12, 103, 7456464, 'Producto 4', 'Nuevo p 4', '<p>ram</p>\r\n<ul>\r\n<li><span style=\"background-color: #fbeeb8;\">1gb</span></li>\r\n<li><span style=\"background-color: #fbeeb8;\">2gbg</span></li>\r\n</ul>', 'sliderDst_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg', 'sliderMbl_Producto-4_65530bf72ae060e63663f090e08ba6a7.jpg', NULL, 'Nuevo 4', '123.37', 754, '2023-02-06 06:36:08', 1);
+(1, 106, 123456, 'Producto 1', 'Descripcion principal producto uno', NULL, 'sliderDst_Producto-1_d94878f943bee08da79cc00f0b7088d4.jpg', 'sliderMbl_Producto-1_d94878f943bee08da79cc00f0b7088d4.jpg', NULL, 'Nuevo producto 1', '123.12', 12, '2023-02-18 22:18:43', 1),
+(2, 126, 789456, 'Producto 2', 'Descripcion principal producto dos', NULL, 'sliderDst_Producto-2_e9553ef1ee311602e4da6698919f57b1.jpg', 'sliderMbl_Producto-2_e9553ef1ee311602e4da6698919f57b1.jpg', NULL, 'Nuevo producto 2', '456.45', 84, '2023-02-18 22:20:49', 1),
+(3, 132, 987123, 'Producto 3', 'Descripcion principal producto tres', NULL, 'sliderDst_Producto-3_864cd10ccb821d7c292f11ba77124670.jpg', 'sliderMbl_Producto-3_864cd10ccb821d7c292f11ba77124670.jpg', NULL, 'Nuevo producto tres', '789.78', 98, '2023-02-18 22:22:31', 1),
+(4, 153, 741258, 'Producto 4', 'Descripcion principal producto uno', NULL, 'sliderDst_Producto-4_d5a06b69b5d3a742a4c21722daed8c31.jpg', 'sliderMbl_Producto-4_d5a06b69b5d3a742a4c21722daed8c31.jpg', 'sld product 4 des', 'Nuevo producto 4', '45.45', 451, '2023-02-22 21:27:00', 1);
 
 -- --------------------------------------------------------
 
@@ -317,13 +355,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id_category` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `id_category` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
 
 --
 -- AUTO_INCREMENT de la tabla `img_product`
 --
 ALTER TABLE `img_product`
-  MODIFY `id_img` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_img` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `modules`
@@ -335,13 +373,13 @@ ALTER TABLE `modules`
 -- AUTO_INCREMENT de la tabla `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id_permissions` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
+  MODIFY `id_permissions` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`

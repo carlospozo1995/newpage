@@ -24,7 +24,7 @@
 				require_once(RUTA_VIEW . 'html/Template/header_unique.php');
 			}
 
-			if($namePage == 'Index'){
+			if($namePage == 'Index' || $namePage == 'Test'){
 				require_once(RUTA_VIEW . 'html/Template/header_store.php');
 			}
 
@@ -39,7 +39,7 @@
 			if ($namePage == 'Login' || $namePage == 'ResetPassword') {
 				require_once(RUTA_VIEW . 'html/Template/footer_unique.php');
 			}
-			if($namePage == 'Index'){
+			if($namePage == 'Index' || $namePage == 'Test'){
 				require_once(RUTA_VIEW . 'html/Template/footer_store.php');
 			}
 

@@ -40,4 +40,8 @@
 
     // CURRENCY SYMBOL
     define("SMONEY", "$");
+
+    // ADD SLIDERS STORE VIEW
+    define("CATEGORIES_SLIDERS", "'Categoria 3.2', 'CATEGORY 1', 'Categoria 2.2.1'");
+    define("PRODUCTS_SLIDERS", "'Producto 1', 'Producto 3', 'Producto 4'");
 ?>

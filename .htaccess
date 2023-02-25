@@ -9,8 +9,9 @@ RewriteEngine On
 #TEMPORARILY SAVE SESSION VARIABLES - SERVER
 #php_flag output_buffering on
 
-#LOGIN
 RewriteRule ^$ %{ENV:REWRITEBASE}index.php?show=Index [L]
+
+#LOGIN
 RewriteRule ^(login/|login|Login|LOGIN)$ %{ENV:REWRITEBASE}index.php?show=login [L]
 RewriteRule ^(login/|login|Login|LOGIN)/ajaxLogin/$ %{ENV:REWRITEBASE}index.php?show=Login&action=ajaxLogin [L]
 
@@ -50,8 +51,8 @@ RewriteRule ^(products/|products|Products)/setImage/$ %{ENV:REWRITEBASE}index.ph
 RewriteRule ^(products/|products|Products)/delFile/$ %{ENV:REWRITEBASE}index.php?show=products&action=delFile [L]
 RewriteRule ^(products/|products|Products)/delProduct/$ %{ENV:REWRITEBASE}index.php?show=products&action=delProduct [L]
 
-
-
+#PAGE-STORE
+RewriteRule ^(test/|test|Test|TEST)$ %{ENV:REWRITEBASE}index.php?show=test [L]
 
 
 #EXAMPLES
