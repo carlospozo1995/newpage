@@ -51,8 +51,9 @@ RewriteRule ^(products/|products|Products)/setImage/$ %{ENV:REWRITEBASE}index.ph
 RewriteRule ^(products/|products|Products)/delFile/$ %{ENV:REWRITEBASE}index.php?show=products&action=delFile [L]
 RewriteRule ^(products/|products|Products)/delProduct/$ %{ENV:REWRITEBASE}index.php?show=products&action=delProduct [L]
 
-#PAGE-STORE
+#PAGES-STORE
 RewriteRule ^(test/|test|Test|TEST)$ %{ENV:REWRITEBASE}index.php?show=test [L]
+RewriteRule ^(categoria/|categoria|Categoria|)$ %{ENV:REWRITEBASE}index.php?show=categoria [L]
 
 
 #EXAMPLES

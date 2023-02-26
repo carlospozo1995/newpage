@@ -62,6 +62,10 @@
 			case 'test':
 				return "Test";
 			break;
+
+			case 'categoria':
+				return "Categoria";
+			break;
 		}
 
 		return ucfirst($name);

@@ -1,6 +1,6 @@
     
     <!-- material-scrolltop button -->
-    <button class="material-scrolltop" type="button"><i class="fa-solid fa-chevron-up"></i></button>
+    <button class="material-scrolltop" type="button"><i class="fa fa-chevron-up text-light"></i></button>
     
     <script src="<?= MEDIA_STORE; ?>js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/vendor/jquery-3.5.1.min.js"></script>
