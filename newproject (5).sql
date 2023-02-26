@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 25-02-2023 a las 18:57:35
+-- Tiempo de generación: 26-02-2023 a las 03:01:26
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 7.4.19
 
@@ -223,8 +223,8 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `desMain`, `desGeneral`, `sliderDst`, `sliderMbl`, `sliderDes`, `brand`, `price`, `stock`, `datacreate`, `status`) VALUES
 (1, 106, 123456, 'Producto 1', 'Descripcion principal producto uno', NULL, 'sliderDst_Producto-1_d94878f943bee08da79cc00f0b7088d4.jpg', 'sliderMbl_Producto-1_d94878f943bee08da79cc00f0b7088d4.jpg', NULL, 'Nuevo producto 1', '123.12', 12, '2023-02-18 22:18:43', 1),
 (2, 126, 789456, 'Producto 2', 'Descripcion principal producto dos', NULL, 'sliderDst_Producto-2_e9553ef1ee311602e4da6698919f57b1.jpg', 'sliderMbl_Producto-2_e9553ef1ee311602e4da6698919f57b1.jpg', NULL, 'Nuevo producto 2', '456.45', 84, '2023-02-18 22:20:49', 1),
-(3, 132, 987123, 'Producto 3', 'Descripcion principal producto tres', NULL, 'sliderDst_Producto-3_864cd10ccb821d7c292f11ba77124670.jpg', 'sliderMbl_Producto-3_864cd10ccb821d7c292f11ba77124670.jpg', NULL, 'Nuevo producto tres', '789.78', 98, '2023-02-18 22:22:31', 1),
-(4, 153, 741258, 'Producto 4', 'Descripcion principal producto uno', NULL, 'sliderDst_Producto-4_d5a06b69b5d3a742a4c21722daed8c31.jpg', 'sliderMbl_Producto-4_d5a06b69b5d3a742a4c21722daed8c31.jpg', 'sld product 4 des', 'Nuevo producto 4', '45.45', 451, '2023-02-22 21:27:00', 1);
+(3, 132, 987123, 'Producto 3', 'Descripcion principal producto tres', NULL, 'sliderDst_Producto-3_864cd10ccb821d7c292f11ba77124670.jpg', 'sliderMbl_Producto-3_864cd10ccb821d7c292f11ba77124670.jpg', 'slider producto 3', 'Nuevo producto tres', '789.78', 98, '2023-02-18 22:22:31', 1),
+(5, 136, 65768684, 'Producto 4', 'NUevo producto  4 descripcion ', NULL, NULL, NULL, NULL, 'Nuevo 4', '45.45', 4, '2023-02-25 19:44:27', 1);
 
 -- --------------------------------------------------------
 
@@ -379,7 +379,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`

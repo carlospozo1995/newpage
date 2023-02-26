@@ -51,7 +51,7 @@
                         <div class="z-20 header-top-left">
                             <div class="header-logo">
                                 <div class="logo">
-                                    <a href="<?= BASE_URL ?>test"><img src="<?= MEDIA_STORE ?>images/logo/logo_text.png" alt=""></a>
+                                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/logo_text.png" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -100,17 +100,17 @@
                                         echo '<ul>';
                                             foreach ($categoriesFather[""] as $category) {
                                                 echo '<li class="has-dropdown item-menu">';
-                                                    echo '<a href="" class="show-effect"> <div><img src="'.MEDIA_ADMIN.'files/images/uploads/'.$category['icon'].'" alt=""></div> <span>'.$category["name_category"].'</span></a>';
+                                                    echo '<a href="'.BASE_URL.'test" class="show-effect"> <div><img src="'.MEDIA_ADMIN.'files/images/uploads/'.$category['icon'].'" alt=""></div> <span>'.$category["name_category"].'</span></a>';
                                                     if(!empty($categoriesFather[$category['id_category']])){ 
                                                         echo '<ul class="sub-menu d-flex">';
                                                         foreach ($categoriesFather[$category['id_category']] as $subcategory) {
                                                             echo '<li class="item-sub-menu">';
-                                                                echo '<a href="" class="time-trans-txt">'.$subcategory['name_category'].'</a>';
+                                                                echo '<a href="'.BASE_URL.'test" class="time-trans-txt">'.$subcategory['name_category'].'</a>';
                                                                 if (!empty($categoriesFather[$subcategory['id_category']])) {
                                                                     echo '<ul class="son-sub-menu">';
                                                                     foreach ($categoriesFather[$subcategory['id_category']] as $key => $son) {
                                                                         echo '<li class="item-son-sub-menu">';
-                                                                            echo '<a href="" class="time-trans-txt">'.$son['name_category'].'</a>';
+                                                                            echo '<a href="'.BASE_URL.'test" class="time-trans-txt">'.$son['name_category'].'</a>';
                                                                         echo '</li>';
                                                                     }
                                                                     echo '</ul>';
@@ -124,7 +124,7 @@
                                         echo '</ul>';
                                     }
                                 ?>
-                                 </nav>
+                                </nav>
                             </div>
                         </div>
                     </div>
@@ -150,17 +150,17 @@
                                         echo '<ul>';
                                             foreach ($categoriesFather[""] as $category) {
                                                 echo '<li class="has-dropdown item-menu">';
-                                                    echo '<a href="" class="show-effect"> <div><img src="'.MEDIA_ADMIN.'files/images/uploads/'.$category['icon'].'" alt=""></div> <span>'.$category["name_category"].'</span></a>';
+                                                    echo '<a href="'.BASE_URL.'test" class="show-effect"> <div><img src="'.MEDIA_ADMIN.'files/images/uploads/'.$category['icon'].'" alt=""></div> <span>'.$category["name_category"].'</span></a>';
                                                     if(!empty($categoriesFather[$category['id_category']])){ 
                                                         echo '<ul class="sub-menu d-flex">';
                                                         foreach ($categoriesFather[$category['id_category']] as $subcategory) {
                                                             echo '<li class="item-sub-menu">';
-                                                                echo '<a href="" class="time-trans-txt">'.$subcategory['name_category'].'</a>';
+                                                                echo '<a href="'.BASE_URL.'test" class="time-trans-txt">'.$subcategory['name_category'].'</a>';
                                                                 if (!empty($categoriesFather[$subcategory['id_category']])) {
                                                                     echo '<ul class="son-sub-menu">';
                                                                     foreach ($categoriesFather[$subcategory['id_category']] as $key => $son) {
                                                                         echo '<li class="item-son-sub-menu">';
-                                                                            echo '<a href="" class="time-trans-txt">'.$son['name_category'].'</a>';
+                                                                            echo '<a href="'.BASE_URL.'test" class="time-trans-txt">'.$son['name_category'].'</a>';
                                                                         echo '</li>';
                                                                     }
                                                                     echo '</ul>';
@@ -350,14 +350,14 @@
                                 foreach ($categoriesFather[""] as $category) {
                                     echo '<li>';
                                         echo '<div class="cont-link">';
-                                            echo '<a href="#"><img class="icon-menu-mobile" src="'.MEDIA_ADMIN.'files/images/uploads/'.$category['icon'].'" alt=""><span>'.$category['name_category'].'</span></a>';
+                                            echo '<a href="'.BASE_URL.'test"><img class="icon-menu-mobile" src="'.MEDIA_ADMIN.'files/images/uploads/'.$category['icon'].'" alt=""><span>'.$category['name_category'].'</span></a>';
                                         echo '</div>';
                                         if(!empty($categoriesFather[$category['id_category']])){ 
                                             echo '<ul class="mobile-sub-menu">';
                                             foreach ($categoriesFather[$category['id_category']] as $subcategory) {
                                                 echo '<li>';
                                                     echo '<div class="cont-link">';
-                                                        echo '<a class="offset-2" href="">'.$subcategory['name_category'].'</a>';
+                                                        echo '<a class="offset-2" href="'.BASE_URL.'test">'.$subcategory['name_category'].'</a>';
                                                     echo '</div>';
                                                     
                                                     if (!empty($categoriesFather[$subcategory['id_category']])) {
@@ -365,7 +365,7 @@
                                                         foreach ($categoriesFather[$subcategory['id_category']] as $key => $son) {
                                                             echo '<li>';
                                                                 echo '<div class="cont-link">';
-                                                                     echo '<a class="offset-3" href="">'.$son['name_category'].'</a>';
+                                                                     echo '<a class="offset-3" href="'.BASE_URL.'test">'.$son['name_category'].'</a>';
                                                                 echo '</div>';
                                                                
                                                             echo '</li>';
@@ -387,7 +387,7 @@
             <!-- Start Mobile contact Info -->
             <div class="mobile-contact-info">
                 <div class="logo">
-                    <a href="index.html"><img src="<?= MEDIA_STORE ?>images/logo/logo.png" alt=""></a>
+                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/logo.png" alt=""></a>
                 </div>
 
                 <address class="address">
