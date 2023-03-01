@@ -19331,7 +19331,7 @@ Pages - Contact
 }
 
 .material-scrolltop, .material-scrolltop::before {
-    background-image: url(../images/icons/top-arrow.svg);
+    /*background-image: url(../images/icons/top-arrow.svg);*/
     background-position: center 50%;
     background-repeat: no-repeat;
 }

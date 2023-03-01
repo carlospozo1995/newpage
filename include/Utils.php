@@ -257,6 +257,15 @@
         	unlink('Assets/admin/files/images/upload_products/'.$name);
     	}
 
+    	static public function replaceVowel($name)
+    	{
+    		$table = array(
+			    'á' => 'a', 'é' => 'e', 'í' => 'i', 'ó' => 'o', 'ú' => 'u', 'ü' => 'u', 'Á' => 'A', 'É' => 'E', 'Í' => 'I', 'Ó' => 'O', 'Ú' => 'U',
+			);
+			$name = strtr($name, $table);
+			return $name;
+    	}
+
 	}
 
 ?>

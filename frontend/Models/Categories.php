@@ -23,11 +23,12 @@
 
         static public function insertCategory($name, $photo, $icon, $sliderDst, $sliderMbl, $sliderDesOne, $sliderDesTwo, $option_list, $status)
         {
+            $urlVowel = Utils::replaceVowel(utf8_decode($name));
             $sql = "SELECT * FROM categories WHERE name_category = ? AND fatherCategory is null";
             $request = $GLOBALS["db"]->auto_array($sql, array($name));
 
             if (empty($request)) {
-                $arrData[] = array("name_category" => $name, "photo" => $photo, "icon" => $icon, "sliderDst" => $sliderDst, "sliderMbl" => $sliderMbl, "sliderDesOne" => $sliderDesOne, "sliderDesTwo" => $sliderDesTwo, "fatherCategory" => $option_list, "status" => $status); 
+                $arrData[] = array("name_category" => $name, "photo" => $photo, "icon" => $icon, "sliderDst" => $sliderDst, "sliderMbl" => $sliderMbl, "sliderDesOne" => $sliderDesOne, "sliderDesTwo" => $sliderDesTwo, "fatherCategory" => $option_list, "url" => strtolower(str_replace(" ", "-", $urlVowel)), "status" => $status); 
                 return $GLOBALS["db"]->insert_multiple("categories", $arrData);
             }else{
                 return "exist";
@@ -52,7 +53,8 @@
             $request = $GLOBALS["db"]->auto_array($sql, array($name, $id));
             
             if(empty($request)){
-                $arrData = array("name_category" => $name, "photo" => $photo, "icon" => $icon, "sliderDst" => $sliderDst, "sliderMbl" => $sliderMbl, "sliderDesOne" => $sliderDesOne, "sliderDesTwo" => $sliderDesTwo, "fatherCategory" => $option_list, "status" => $status);
+                $urlVowel = Utils::replaceVowel(utf8_decode($name));
+                $arrData = array("name_category" => $name, "photo" => $photo, "icon" => $icon, "sliderDst" => $sliderDst, "sliderMbl" => $sliderMbl, "sliderDesOne" => $sliderDesOne, "sliderDesTwo" => $sliderDesTwo, "fatherCategory" => $option_list, "url" => strtolower(str_replace(" ", "-", $urlVowel)), "status" => $status);
                 $result = $GLOBALS["db"]->update("categories", $arrData, "id_category='".$id."'");
 
                 if($result > 0){
