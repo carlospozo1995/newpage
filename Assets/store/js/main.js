@@ -505,4 +505,17 @@
     $('body').materialScrollTop();
 
 
+    /************************************************
+     * Acorddion Menu - Page Category
+     ***********************************************/
+    $('.accordion-item-header i').click(function() {
+        var toggle = $(this).data('toggle');
+        if (toggle == 'ul') {
+            $(this).toggleClass('rotate-90');
+            $(this).parent().next('ul').slideToggle();
+        } else if (toggle == 'none') {
+
+        }
+    });
+
 })(jQuery);

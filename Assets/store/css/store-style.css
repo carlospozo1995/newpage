@@ -7,15 +7,19 @@
 }
 
 /* ----- COLOURS ----- */
-.intense-gold{
+.c-intense-gold{
     color: #fbbb01;
 }
-.bright-blue{
+.c-bright-blue{
     color: #007bff;
 }
-.baby-blue{
+.c-baby-blue{
     color: #7ebcff;
 }
+.bg-mist-white{
+    background: #f6f6f6 !important;
+}
+
 
 /* ----- Z-INDEX ------ */
 .z-1{
@@ -88,7 +92,8 @@
     -o-border-radius: 8px;
 }
 .main-menu nav > ul > li:hover > .show-effect{
-    color: #fbbb01;
+/*    color: #fbbb01;*/
+    color: #ab7f00;
 }
 
 .main-menu nav > ul > li > .show-effect::after{
@@ -151,13 +156,32 @@
     transition-duration: 100ms ;
 }
 
-/*SLIDERS*/
+/* ----- SLIDERS ----- */
 .hero-single-slider-item.swiper-slide-active .hero-slider-content .title-time-one,
 .hero-single-slider-item.swiper-slide-active .hero-slider-content .a-time-one {
     animation: fadeInUp 1s ease 0.3s 1 backwards !important;
 }
 .hero-single-slider-item.swiper-slide-active .hero-slider-content .a-time-two {
     animation: fadeInUp 1s ease 1s 1 backwards !important;
+}
+
+/* ----- CATEGORY - PRODUCT (PAGE) ----- */
+.sort-tab-btn .nav-link.active {
+    background-color: #ab7f00 !important;
+}
+.accordion-item-header{
+    justify-content: space-between;
+    display: flex;
+}
+.accordion-item-header i{
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.sidebar-menu .accordion-category-list {
+    display: none;
+}
+.rotate-90 {
+  transform: rotate(90deg);
 }
 
 @media (min-width: 1225px){
@@ -184,23 +208,11 @@
 
 /*Menu Mobile*/
 
-/*.offcanvas-mobile-menu-section-page{
-    background: #FFF;
-}
-.offcanvas-mobile-menu-section-page .offcanvas-close{
-    color: #000;
-}
-*/
 .offcanvas-mobile-menu-section{
-    background-color: #484b52 !important;
+    background: linear-gradient(to right, #2984d1, #6548e2) !important;
 }
-/*.offcanvas-menu  ul  li:hover{
-    box-shadow: 0px 0px 15px -3px #007bff;
-    border-radius: 3px;
-}*/
 
 .offcanvas-menu li a {
-/*    font-weight: bold;*/
     display: flex;
     align-items: center;
     width: 100%;
@@ -209,9 +221,6 @@
 .offcanvas-menu li a:hover {
   color: #7ebcff;
 }
-.mobile-sub-menu a{
-/*    font-weight: inherit !important;*/
-} 
 .icon-menu-mobile{
     width: 10%;
     margin-right: 10px;
@@ -229,6 +238,7 @@
     color: #1000c3;
 }
 
+/**/
 @media (max-width: 550px) {
     .mobile-menu-logo .logo {
         width: 220px;
@@ -263,3 +273,4 @@
         line-height: 40px;
     }
 }
+

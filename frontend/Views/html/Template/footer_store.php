@@ -2,6 +2,7 @@
     <!-- material-scrolltop button -->
     <button class="material-scrolltop" type="button"><i class="fa fa-chevron-up text-light"></i></button>
     
+    <script> const base_url = "<?= BASE_URL; ?>"; </script>
     <script src="<?= MEDIA_STORE; ?>js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/vendor/jquery-3.5.1.min.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/vendor/jquery-migrate-3.3.0.min.js"></script>
@@ -21,6 +22,7 @@
     <script src="<?= MEDIA_STORE; ?>js/plugins/ajax-mail.js"></script>
 
     <script src="<?= MEDIA_STORE; ?>js/main.js"></script>
+    <script src="<?= MEDIA_STORE; ?>js/store-functions.js"></script>
 
     <?php
     if(isset($file_js) && is_array($file_js) && !empty($file_js)){

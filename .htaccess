@@ -55,9 +55,19 @@ RewriteRule ^(products/|products|Products)/delProduct/$ %{ENV:REWRITEBASE}index.
 RewriteRule ^(test/|test|Test|TEST)$ %{ENV:REWRITEBASE}index.php?show=test [L]
 RewriteRule ^(categoria/|categoria)$ %{ENV:REWRITEBASE}index.php?show=categoria [L]
 RewriteRule ^categoria/(.+)$ %{ENV:REWRITEBASE}index.php?show=categoria&urlCategories=$1 [L,QSA]
+#RewriteRule ^(categoria/|categoria)/loadProducts/$ %{ENV:REWRITEBASE}index.php?show=categoria&action=loadProducts [L]
+
+
 
 
 #EXAMPLES
 #RewriteRule ^(resetPassword)/ajaxSetPass$ %{ENV:REWRITEBASE}index.php?show=ResetPassword [L]
 #RewriteRule ^resetPassword$ %{ENV:REWRITEBASE}index.php?show=ResetPassword [QSA,L]
 #BASE_URL.'resetPassword?email='.$resetEmail.'&token='.$token;up;
+
+#RewriteRule ^categoria/(.+)$ %{ENV:REWRITEBASE}index.php?show=categoria&urlCategories=$1 [L,QSA]
+
+
+#RewriteRule ^categoria/([^/]+)/?$ %{ENV:REWRITEBASE}index.php?show=categoria&category1=$1 [L]
+#RewriteRule ^categoria/([^/]+)/([^/]+)/?$ %{ENV:REWRITEBASE}index.php?show=categoria&category1=$1&category2=$2 [L]
+#RewriteRule ^categoria/([^/]+)/([^/]+)/([^/]+)/?$ %{ENV:REWRITEBASE}index.php?show=categoria&category1=$1&category2=$2&category3=$3 [L]

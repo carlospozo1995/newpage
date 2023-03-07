@@ -1,5 +1,5 @@
-<?php					
-	if (!empty($url_categories)) {
+<?php                   
+    if (!empty($url_categories)) {
 
         $data_url = "";
         foreach ($url_categories as $url) {
@@ -47,25 +47,18 @@
             $id_sons = !empty($id_sons) ? $id_sons : end($id_end);
             $products = Models_Store::getProducts("$id_sons");
 ?>
-            <!-- ...:::: Start Breadcrumb Section:::... -->
             <div class="breadcrumb-section">
-                <div class="breadcrumb-wrapper">
+                <div class="pt-4 pb-4 mb-4 bg-mist-white">
                     <div class="container">
                         <div class="row">
                             <div class="col-12">
-                                <h3 class="breadcrumb-title">Shop - Grid Left Sidebar</h3>
                                 <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
                                     <nav aria-label="breadcrumb">
                                         <ul>
                                             <?php 
-                                                echo '<li><a href="'.BASE_URL.'">HOME</a></li>'; 
-                                                foreach ($data_categories as $category) {
-                                                    echo '<li><a href="'.BASE_URL.'categoria/'.$category['url'].'">'.$category['name_category'].'</a></li>';
-                                                }
+                                                echo '<li><a href="'.BASE_URL.'">HOME</a></li>';
+                                                echo '<li class="active" aria-current="page">'.strtoupper(str_replace("-", " ", end($url_categories))).'</li>';
                                             ?>
-                                            <!-- <li><a href="index.html">Home</a></li>
-                                            <li><a href="shop-grid-sidebar-left.html">Shop</a></li>
-                                            <li class="active" aria-current="page">Shop Grid Left Sidebar</li> -->
                                         </ul>
                                     </nav>
                                 </div>
@@ -73,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- ...:::: End Breadcrumb Section:::... -->
+            </div>
 
             <!-- ...:::: Start Shop Section:::... -->
             <div class="shop-section">
@@ -83,44 +76,57 @@
                             <!-- Start Sidebar Area -->
                             <div class="siderbar-section" data-aos="fade-up" data-aos-delay="0">
 
-                                <!-- Start Single Sidebar Widget -->
                                 <div class="sidebar-single-widget">
-                                    <h6 class="sidebar-title">CATEGORIES</h6>
+                                    <h6 class="sidebar-title">CATEGORIAS</h6>
+
                                     <div class="sidebar-content">
-                                        <ul class="sidebar-menu">
-                                            <li>
-                                                <ul class="sidebar-menu-collapse">
-                                                    <!-- Start Single Menu Collapse List -->
-                                                    <li class="sidebar-menu-collapse-list">
-                                                        <div class="accordion">
-                                                            <a href="#" class="accordion-title collapsed"
-                                                                data-bs-toggle="collapse" data-bs-target="#men-fashion"
-                                                                aria-expanded="false">Men <i
-                                                                    class="ion-ios-arrow-right"></i></a>
-                                                            <div id="men-fashion" class="collapse">
-                                                                <ul class="accordion-category-list">
-                                                                    <li><a href="#">Dresses</a></li>
-                                                                    <li><a href="#">Jackets &amp; Coats</a></li>
-                                                                    <li><a href="#">Sweaters</a></li>
-                                                                    <li><a href="#">Jeans</a></li>
-                                                                    <li><a href="#">Blouses &amp; Shirts</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li> <!-- End Single Menu Collapse List -->
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Football</a></li>
-                                            <li><a href="#"> Men's</a></li>
-                                            <li><a href="#"> Portable Audio</a></li>
-                                            <li><a href="#"> Smart Watches</a></li>
-                                            <li><a href="#">Tennis</a></li>
-                                            <li><a href="#"> Uncategorized</a></li>
-                                            <li><a href="#"> Video Games</a></li>
-                                            <li><a href="#">Women's</a></li>
-                                        </ul>
+                                        <?php
+                                            $arrCategories = Models_Categories::arrCategories("");
+
+                                            $categoriesFather = [];
+                                            foreach ($arrCategories as $category) {
+                                                $father = $category['fatherCategory'];
+                                                $categoriesFather[$father][] = $category;
+                                            }
+
+                                            if (!empty($categoriesFather[""])) {
+                                                echo '<ul class="sidebar-menu">';
+                                                    foreach ($categoriesFather[""] as $category) {
+                                                        echo '<li class="accordion-item">';
+                                                            echo '<div class="accordion-item-header">';
+                                                                echo '<a href="'.BASE_URL.'categoria/'.$category['url'].'" class="category-url" data-category="'.$category['url'].'">'.$category["name_category"].'</a>';
+                                                                echo '<i class="ion-ios-arrow-right" data-toggle="ul"></i>';
+                                                            echo '</div>';
+                                                            if(!empty($categoriesFather[$category['id_category']])){ 
+                                                                echo '<ul class="accordion-category-list">';
+                                                                foreach ($categoriesFather[$category['id_category']] as $subcategory) {
+                                                                    echo '<li class="accordion-item">';
+                                                                        echo '<div class="accordion-item-header pr-3">';
+                                                                            echo '<a href="'.BASE_URL.'categoria/'.$category['url']."/".$subcategory['url'].'" class="category-url" data-category="'.$subcategory['url'].'">'.$subcategory['name_category'].'</a>';
+                                                                            if (!empty($categoriesFather[$subcategory['id_category']])) {
+                                                                                echo '<i class="ion-ios-arrow-right" data-toggle="ul"></i>';
+                                                                            }
+                                                                        echo '</div>';
+                                                                        if (!empty($categoriesFather[$subcategory['id_category']])) {
+                                                                            echo '<ul class="accordion-category-list">';
+                                                                            foreach ($categoriesFather[$subcategory['id_category']] as $key => $son) {
+                                                                                echo '<li class="accordion-item">';
+                                                                                    echo '<a class="font-weight-normal category-url" href="'.BASE_URL.'categoria/'.$category['url']."/".$subcategory['url']."/".$son['url'].'" data-category="'.$son['url'].'">'.$son['name_category'].'</a>';
+                                                                                echo '</li>';
+                                                                            }
+                                                                            echo '</ul>';
+                                                                        }
+                                                                    echo '</li>';
+                                                                }
+                                                                echo '</ul>';
+                                                            }
+                                                        echo '</li>';
+                                                    }
+                                                echo '</ul>';
+                                            }
+                                        ?>
                                     </div>
-                                </div> <!-- End Single Sidebar Widget -->
+                                </div>
 
                                 <!-- Start Single Sidebar Widget -->
                                 <div class="sidebar-single-widget">
@@ -301,7 +307,7 @@
                                             <div class="tab-content tab-animate-zoom">
                                                 <!-- Start Grid View Product -->
                                                 <div class="tab-pane active show sort-layout-single" id="layout-3-grid">
-                                                    <div class="row">
+                                                    <div class="row container-products">
                                                         <?php 
 
                                                         foreach ($products as $product) {

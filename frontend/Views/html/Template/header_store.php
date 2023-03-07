@@ -45,7 +45,7 @@
                 </div>
             </div>
 
-            <div class="header-top header-top-bg--white section-fluid">
+            <?php if($section_name == "Index"){echo '<div class="header-top header-top-bg--white section-fluid">';}else{echo '<div class="header-top header-top-bg--white section-fluid" style="background: linear-gradient(to right, #bae1e1, #f5e7e3)">';} ?>
                 <div class="container-fluid">
                     <div class="col-12 d-flex align-items-center justify-content-between">
                         <div class="z-20 header-top-left">
@@ -81,7 +81,7 @@
                 </div>
             </div>
 
-            <div class="z-20 header-bottom section-fluid">
+            <?php if($section_name == "Index") { echo '<div class="z-20 header-bottom section-fluid">';}else{ echo '<div class="z-20 header-bottom section-fluid" style="background: linear-gradient(to right, #bae1e1, #f5e7e3)">';} ?>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12 d-flex align-items-center justify-content-center">
@@ -174,7 +174,7 @@
                                         echo '</ul>';
                                     }
                                 ?>
-                                 </nav>
+                                </nav>
                             </div>
                         </div>
                     </div>
@@ -274,7 +274,8 @@
     </header>
 
     <!-- Start Mobile Header -->
-    <div class="mobile-header  mobile-header-bg-color--white section-fluid d-lg-block d-xl-none">
+    <?php if($section_name == "Index"){echo '<div class="mobile-header  mobile-header-bg-color--white section-fluid d-lg-block d-xl-none bg-mist-white">';}else{ echo '<div class="mobile-header  mobile-header-bg-color--white section-fluid d-lg-block d-xl-none" style="background: linear-gradient(to right, #bae1e1, #f5e7e3)">';} ?>
+    
         <div class="container">
             <div class="row">
                 <div class="col-12 d-flex align-items-center justify-content-between">
