@@ -53,9 +53,22 @@ RewriteRule ^(products/|products|Products)/delProduct/$ %{ENV:REWRITEBASE}index.
 
 #PAGES-STORE
 RewriteRule ^(test/|test|Test|TEST)$ %{ENV:REWRITEBASE}index.php?show=test [L]
-RewriteRule ^(categoria/|categoria)$ %{ENV:REWRITEBASE}index.php?show=categoria [L]
-RewriteRule ^categoria/(.+)$ %{ENV:REWRITEBASE}index.php?show=categoria&urlCategories=$1 [L,QSA]
-#RewriteRule ^(categoria/|categoria)/loadProducts/$ %{ENV:REWRITEBASE}index.php?show=categoria&action=loadProducts [L]
+
+#RewriteRule ^(categoria/|categoria)$ %{ENV:REWRITEBASE}index.php?show=categoria [L]
+RewriteRule ^categoria/loadProducts/$ %{ENV:REWRITEBASE}index.php?show=categoria&action=loadProducts [L]
+RewriteRule ^categoria/(.+)$ %{ENV:REWRITEBASE}index.php?show=categoria&urlData=$1 [L]
+
+
+
+
+
+
+
+
+
+
+#RewriteRule ^categoria/([^/]+)/?([^/]+)?/?([^/]+)?$ %{ENV:REWRITEBASE}index.php?show=categoria&action=$1 [L]
+#RewriteRule ^(categoria/|categoria)$ %{ENV:REWRITEBASE}index.php?show=categoria [L]
 
 
 
