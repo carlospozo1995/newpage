@@ -1,3 +1,4 @@
+
 <?php                   
         $url_data = explode("/", $_GET['urlData']);
         $data_url = "";
@@ -56,7 +57,7 @@
                                         <ul>
                                             <?php 
                                                 echo '<li><a href="'.BASE_URL.'">HOME</a></li>';
-                                                echo '<li class="active" aria-current="page">'.strtoupper(str_replace("-", " ", end($url_data))).'</li>';
+                                                echo '<li class="active page-active" aria-current="page">'.strtoupper(str_replace("-", " ", end($url_data))).'</li>';
                                             ?>
                                         </ul>
                                     </nav>
@@ -68,6 +69,7 @@
             </div>
 
             <!-- ...:::: Start Shop Section:::... -->
+
             <div class="shop-section">
                 <div class="container">
                     <div class="row flex-column-reverse flex-lg-row">
@@ -302,11 +304,12 @@
                             <div class="sort-product-tab-wrapper">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-12">
+                                        <div class="col-12" style="position: relative;">
+                                            <div class="content-loading"><span class="loader-store"></span></div>
                                             <div class="tab-content tab-animate-zoom">
                                                 <!-- Start Grid View Product -->
                                                 <div class="tab-pane active show sort-layout-single" id="layout-3-grid">
-                                                    <div class="row container-products">
+                                                    <div class="row" id="container-products">
                                                         <?php 
 
                                                         foreach ($products as $product) {
