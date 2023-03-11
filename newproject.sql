@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 09-03-2023 a las 15:48:11
+-- Tiempo de generación: 11-03-2023 a las 22:34:54
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 7.4.19
 
@@ -223,6 +223,10 @@ CREATE TABLE `products` (
   `brand` varchar(50) NOT NULL,
   `price` decimal(11,2) NOT NULL,
   `stock` int(11) NOT NULL,
+  `prevPrice` decimal(11,2) DEFAULT NULL,
+  `discount` int(11) DEFAULT NULL,
+  `cantDues` int(20) DEFAULT NULL,
+  `priceDues` decimal(11,2) DEFAULT NULL,
   `datacreate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -231,12 +235,13 @@ CREATE TABLE `products` (
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `desMain`, `desGeneral`, `sliderDst`, `sliderMbl`, `sliderDes`, `brand`, `price`, `stock`, `datacreate`, `status`) VALUES
-(1, 131, 123456, 'Producto 1', 'Descripcion principal producto uno', NULL, 'sliderDst_Producto-1_d94878f943bee08da79cc00f0b7088d4.jpg', 'sliderMbl_Producto-1_d94878f943bee08da79cc00f0b7088d4.jpg', NULL, 'Nuevo producto 1', '123.12', 12, '2023-02-18 22:18:43', 1),
-(2, 126, 789456, 'Producto 2', 'Descripcion principal producto dos', NULL, 'sliderDst_Producto-2_e9553ef1ee311602e4da6698919f57b1.jpg', 'sliderMbl_Producto-2_e9553ef1ee311602e4da6698919f57b1.jpg', NULL, 'Nuevo producto 2', '456.45', 84, '2023-02-18 22:20:49', 1),
-(3, 132, 987123, 'Producto 3', 'Descripcion principal producto tres', NULL, 'sliderDst_Producto-3_864cd10ccb821d7c292f11ba77124670.jpg', 'sliderMbl_Producto-3_864cd10ccb821d7c292f11ba77124670.jpg', 'slider producto 3', 'Nuevo producto tres', '789.78', 98, '2023-02-18 22:22:31', 1),
-(5, 136, 65768684, 'Producto 4', 'NUevo producto  4 descripcion ', NULL, NULL, NULL, NULL, 'Nuevo 4', '45.45', 4, '2023-02-25 19:44:27', 1),
-(6, 136, 547215645, 'Producto 5', 'Descripcion principal producto cinco', NULL, NULL, NULL, NULL, 'Nuevo 5', '78.00', 7, '2023-02-28 16:08:39', 1);
+INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `desMain`, `desGeneral`, `sliderDst`, `sliderMbl`, `sliderDes`, `brand`, `price`, `stock`, `prevPrice`, `discount`, `cantDues`, `priceDues`, `datacreate`, `status`) VALUES
+(1, 131, 133887000, 'Tostador de pan 600w InduramaTpi-2cr', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, 'sliderDst_Producto-1_d94878f943bee08da79cc00f0b7088d4.jpg', 'sliderMbl_Producto-1_d94878f943bee08da79cc00f0b7088d4.jpg', NULL, 'Indurama', '35.00', 12, '49.00', 5, 10, '4.50', '2023-02-18 22:18:43', 1),
+(2, 126, 789456, 'Producto 2', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ', NULL, 'sliderDst_Producto-2_e9553ef1ee311602e4da6698919f57b1.jpg', 'sliderMbl_Producto-2_e9553ef1ee311602e4da6698919f57b1.jpg', NULL, 'Nuevo producto 2', '456.45', 84, NULL, NULL, NULL, NULL, '2023-02-18 22:20:49', 1),
+(3, 132, 987123000, 'Audifonos Gt5 Negro Xiaomi Haylou', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ', NULL, 'sliderDst_Producto-3_864cd10ccb821d7c292f11ba77124670.jpg', 'sliderMbl_Producto-3_864cd10ccb821d7c292f11ba77124670.jpg', 'slider producto 3', 'Xiaomi', '34.90', 3, NULL, NULL, 10, '4.00', '2023-02-18 22:22:31', 1),
+(5, 136, 657686800, 'Microondas Grill 42 L Indurama Mwgi-42 Cr ', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, NULL, NULL, NULL, 'Indurama', '189.00', 1, '259.00', NULL, NULL, NULL, '2023-02-25 19:44:27', 1),
+(6, 136, 547215645, 'Cafetera C/molino 1.5 L Indurama Mci-cr', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, NULL, NULL, NULL, 'Indurama', '50.00', 7, NULL, NULL, NULL, NULL, '2023-02-28 16:08:39', 1),
+(7, 144, 32562116, 'Producto 6', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, NULL, NULL, NULL, 'Nuevo producto 6', '21.36', 45, '456.36', 45, NULL, NULL, '2023-03-09 11:13:06', 1);
 
 -- --------------------------------------------------------
 
@@ -391,7 +396,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
