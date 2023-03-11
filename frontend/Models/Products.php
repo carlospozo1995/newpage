@@ -14,13 +14,13 @@
             return $GLOBALS["db"]->selectAll($sql, array(0));
         }
 
-        static public function insertProduct($name, $desMain, $desGeneral, $sliderDst, $sliderMbl, $sliderDes, $option_list, $brand, $code, $price, $stock, $status)
+        static public function insertProduct($name, $desMain, $desGeneral, $sliderDst, $sliderMbl, $sliderDes, $option_list, $brand, $code, $price, $stock, $prevPrice, $discount, $cantDues, $priceDues, $status)
         {
             $sql = "SELECT * FROM products WHERE code = ?";
             $request = $GLOBALS["db"]->auto_array($sql, array($code));
 
             if (empty($request)) {
-                $arrData[] = array("category_id" => $option_list, "code" => $code, "name_product" => $name, "desMain" => $desMain, "desGeneral" => $desGeneral, "sliderMbl" => $sliderMbl, "sliderDst" => $sliderDst, "sliderDes" => $sliderDes, "brand" => $brand, "price" => $price , "stock" => $stock, "status" => $status); 
+                $arrData[] = array("category_id" => $option_list, "code" => $code, "name_product" => $name, "desMain" => $desMain, "desGeneral" => $desGeneral, "sliderMbl" => $sliderMbl, "sliderDst" => $sliderDst, "sliderDes" => $sliderDes, "brand" => $brand, "price" => $price , "stock" => $stock, "prevPrice" => $prevPrice, "discount" => $discount, "cantDues" => $cantDues, "priceDues" => $priceDues, "status" => $status); 
                 return $GLOBALS["db"]->insert_multiple("products", $arrData);
             }else{
                 return "exist";
@@ -50,13 +50,13 @@
             return $GLOBALS["db"]->delete("img_product", "product_id = '$id' AND image = '$img_name'");
         }
 
-        static public function updateProduct($id, $name, $desMain, $desGeneral, $sliderDst, $sliderMbl, $sliderDes, $option_list, $brand, $code, $price, $stock, $status)
+        static public function updateProduct($id, $name, $desMain, $desGeneral, $sliderDst, $sliderMbl, $sliderDes, $option_list, $brand, $code, $price, $stock, $prevPrice, $discount, $cantDues, $priceDues, $status)
         {
             $sql = "SELECT * FROM products WHERE code = ? AND id_product != $id";
             $request = $GLOBALS["db"]->auto_array($sql, array($code, $id));     
 
             if (empty($request)) {
-                $arrData = array("category_id" => $option_list, "code" => $code, "name_product" => $name, "desMain" => $desMain, "desGeneral" => $desGeneral, "sliderMbl" => $sliderMbl, "sliderDst" => $sliderDst, "sliderDes" => $sliderDes, "brand" => $brand, "price" => $price , "stock" => $stock, "status" => $status); 
+                $arrData = array("category_id" => $option_list, "code" => $code, "name_product" => $name, "desMain" => $desMain, "desGeneral" => $desGeneral, "sliderMbl" => $sliderMbl, "sliderDst" => $sliderDst, "sliderDes" => $sliderDes, "brand" => $brand, "price" => $price , "stock" => $stock, "prevPrice" => $prevPrice, "discount" => $discount, "cantDues" => $cantDues, "priceDues" => $priceDues, "status" => $status); 
                 $result = $GLOBALS["db"]->update("products", $arrData, "id_product='".$id."'");
             }else{
                 $result = "exist";

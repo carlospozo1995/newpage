@@ -109,7 +109,7 @@
 	                                    <div class="row">
 	                                        <div class="col-sm-6">
 	                                            <div class="form-group">
-	                                                <label>Precio<span class="text-danger"> *</span></label>
+	                                                <label>Precio actual<span class="text-danger"> *</span></label>
 	                                                <input type="text" class="form-control valid valid_price" id="price" name="price">
 	                                            </div>
 	                                        </div>
@@ -120,6 +120,35 @@
 	                                            </div>
 	                                        </div>
 	                                    </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Precio anterior</label>
+                                                    <input type="text" class="form-control valid valid_price" id="prev_price" name="prev_price">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Descuento</label>
+                                                    <input type="text" class="form-control valid valid_number" id="discount" name="discount">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h5 class="text-center font-weight-bold">Cuotas <span style="font-size: 15px;" class="font-weight-normal">(Llenar ambos campos)</span></h5>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Cantidad de cuotas</label>
+                                                    <input type="text" class="form-control valid valid_number" id="cantDues" name="cantDues">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Precio de cuotas</label>
+                                                    <input type="text" class="form-control valid valid_price" id="priceDues" name="priceDues">
+                                                </div>
+                                            </div>
+                                        </div>
 
 										<div class="form-group">
                                             <label for="listStatus">Status Producto<span class="text-danger"> *</span></label>
@@ -206,7 +235,7 @@
                                     <td class="text-center" id="celCategory"></td>
                                 </tr>
 								<tr>
-                                    <td>Price:</td>
+                                    <td>Price actual:</td>
                                     <td class="text-center" id="celPrice"></td>
                                 </tr>
 								<tr>
@@ -228,6 +257,14 @@
                                 <tr>
                                     <td>Descripción general:</td>
                                     <td id="celDesGeneral"></td>
+                                </tr>
+                                <tr>
+                                    <td>Cantidad de cuotas:</td>
+                                    <td class="text-center" id="celCantDues"></td>
+                                </tr>
+                                <tr>
+                                    <td>Precio de la cuota:</td>
+                                    <td class="text-center" id="celPriceDues"></td>
                                 </tr>
 								<tr>
                                     <td>Fotos del producto:</td>

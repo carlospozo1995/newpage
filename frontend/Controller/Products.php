@@ -40,6 +40,10 @@
 								$code = $_POST['code'];
 								$price = $_POST['price'];
 								$stock = $_POST['stock'];
+								$cantDues = null;
+								$priceDues = null;
+								$prevPrice = !empty($_POST['prev_price']) ? (preg_match($test_price, $_POST['prev_price']) ? $_POST['prev_price'] : die()) : null;
+								$discount = !empty($_POST['discount']) ? (preg_match($test_number, $_POST['discount']) ? $_POST['discount'] : die()) : null;
 								$status = $_POST['listStatus'];
 
 								$sliderMbl = $_FILES['sliderMbl'];
@@ -48,6 +52,21 @@
 								$sliderDes = empty($_POST['sliderDes']) ? null : $_POST['sliderDes'];
 
 								$nameNotSpace = str_replace(' ', '-', $name);
+
+								if((!empty($_POST['cantDues']) && empty($_POST['priceDues'])) || (empty($_POST['cantDues']) && !empty($_POST['priceDues']))){
+									throw new Exception("Si va agregar cuotas asegúrese de llenar los campos requeridos.");
+									die();
+								}else{
+									if (!empty($_POST['cantDues']) && !empty($_POST['cantDues'])) {
+										if (!preg_match($test_number, $_POST['cantDues']) || !preg_match($test_price, $_POST['priceDues'])) {
+											die();
+										}else{
+											$cantDues = $_POST['cantDues'];
+											$priceDues = $_POST['priceDues'];	
+										}
+									}
+								}
+
 								if (empty($id)) {
 									$option = 1;
 
@@ -68,7 +87,7 @@
 										$undef_sliderMbl = null;
 									}
 									
-									$request = Models_Products::insertProduct($name, $desMain, $desGeneral, $undef_sliderDst, $undef_sliderMbl, $sliderDes, $option_list, $brand, $code, $price, $stock, $status);
+									$request = Models_Products::insertProduct($name, $desMain, $desGeneral, $undef_sliderDst, $undef_sliderMbl, $sliderDes, $option_list, $brand, $code, $price, $stock, $prevPrice, $discount, $cantDues, $priceDues, $status);
 								}else{
 									$option = 2;
 									// UPDATE SLIDERS (MOBILE - DESKTOP)
@@ -109,7 +128,7 @@
 										die();
 									}
 									
-									$request = Models_Products::updateProduct(Utils::desencriptar($id), $name, $desMain, $desGeneral, $undef_sliderDst, $undef_sliderMbl, $sliderDes, $option_list, $brand, $code, $price, $stock, $status);	
+									$request = Models_Products::updateProduct(Utils::desencriptar($id), $name, $desMain, $desGeneral, $undef_sliderDst, $undef_sliderMbl, $sliderDes, $option_list, $brand, $code, $price, $stock, $prevPrice, $discount, $cantDues, $priceDues, $status);	
 								}
 
 								if ($request > 0) {

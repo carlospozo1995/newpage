@@ -105,12 +105,18 @@ $(document).ready(function () {
             return false;
 		}else{
 			let elementsValid = $(".valid");
+            let isValid = true;
             elementsValid.each((index, element) => {
                 if($(element).hasClass('is-invalid')){
                     Swal.fire("Atención", "Por favor asegúrese de no tener campos en rojo.", "error");
+                    isValid = false;
                     return false;
                 };
             });
+
+            if (!isValid) {
+                return false;
+            }
 
             loading.css("display","flex");
             var formData = new FormData(e.target);
@@ -259,6 +265,10 @@ function edit(element, data_request){
 					$('#code').val(data_product.code);
 					$('#price').val(data_product.price);
 					$('#stock').val(data_product.stock);
+                    $('#prev_price').val(data_product.prevPrice);
+                    $('#discount').val(data_product.discount);
+                    $('#cantDues').val(data_product.cantDues);
+                    $('#priceDues').val(data_product.priceDues);
 					$('#listStatus').val(data_product.status);
 
                     if (data_product.images_product.length > 0) {
@@ -394,6 +404,8 @@ function watch(data) {
                     obj_request.url_sliderMbl != null ? $("#celSlrMobile").html('<img class="w-25" src="'+ obj_request.url_sliderMbl +'" alt="">') : $("#celSlrMobile").html("");
                     $("#celDesMain").text(obj_request.desMain);
                     $("#celDesGeneral").html(obj_request.desGeneral);
+                    $("#celCantDues").text(obj_request.cantDues);
+                    $("#celPriceDues").text("$ " + numberFormat(parseFloat(obj_request.priceDues)));
 
                     for (let i = 0; i < obj_request.images_product.length; i++) {
                         htmlPhoto += `<img class="w-25 px-1 py-1" src="${obj_request.images_product[i].url_image}">`;

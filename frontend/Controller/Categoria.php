@@ -21,10 +21,10 @@
 			            $id_sons = rtrim($id_sons, ",");
 			            $id_sons = !empty($id_sons) ? $id_sons : end($id_end);
 			            $products = Models_Store::getProducts("$id_sons");
-			            sleep(1);
 			            foreach ($products as $product) {
 ?>
-							<div class="col-xl-4 col-sm-6 col-12">
+							 <div class="col-xl-3 col-sm-6 col-sm-4 col-12">
+                                <!-- Start Product Default Single Item -->
                                 <div class="product-default-single-item product-color--golden"
                                     data-aos="fade-up" data-aos-delay="0">
                                     <div class="image-box">
@@ -59,28 +59,24 @@
                                         </div>
                                     </div>
                                     <div class="content">
-                                        <div class="content-left">
-                                            <h6 class="title"><a
-                                                    href="product-details-default.html"><?= $product['name_product']; ?></a></h6>
-                                            <ul class="review-star">
-                                                <li class="fill"><i class="ion-android-star"></i>
-                                                </li>
-                                                <li class="fill"><i class="ion-android-star"></i>
-                                                </li>
-                                                <li class="fill"><i class="ion-android-star"></i>
-                                                </li>
-                                                <li class="fill"><i class="ion-android-star"></i>
-                                                </li>
-                                                <li class="empty"><i class="ion-android-star"></i>
-                                                </li>
-                                            </ul>
+                                        <div class="text-center">
+                                            <h6><a class="title-product" href="#"><?= $product['name_product']; ?></a></h6>
+                                            <p><?= $product['brand']; ?></p>
+                                            
+                                        <?php if (!empty($product['cantDues'])){
+                                            echo '<div class="content-data-product no-empty">'; echo '<div class="price-product no-empty">';
+                                        }else{ echo '<div class="content-data-product empty">'; echo '<div class="price-product empty">'; }?>
+                                                <?php if(!empty($product['prevPrice'])){ echo '<del>'.SMONEY ." ". Utils::formatMoney($product['prevPrice']).'</del>'; }?>
+                                                    <span class=""><?= SMONEY ." ". Utils::formatMoney($product['price']) ;?></span>
+                                                </div>
+                                                <?php if (!empty($product['cantDues'])){ ?>
+                                                    <span class="ml-2"><?= $product['cantDues']; ?> cuotas <?= SMONEY ." ". Utils::formatMoney($product['priceDues']);?></span>
+                                                <?php } ?>
+                                            </div>
                                         </div>
-                                        <div class="content-right">
-                                            <span class="price"><?= SMONEY." ".Utils::formatMoney($product['price']); ?></span>
-                                        </div>
-
                                     </div>
                                 </div>
+                                <!-- End Product Default Single Item -->
                             </div>
 <?php
 						}

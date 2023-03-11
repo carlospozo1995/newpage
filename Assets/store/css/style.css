@@ -659,17 +659,19 @@ progress {
 }
 @media (min-width: 992px) {
     .container-lg, .container-md, .container-sm, .container {
-        max-width: 960px;
+        max-width: 92%;
     }
 }
 @media (min-width: 1225px) {
     .container-xl, .container-lg, .container-md, .container-sm, .container {
-        max-width: 1200px;
+/*   change     max-width: 1200px;*/
+        max-width: 95%;
     }
 }
 @media (min-width: 1600px) {
     .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-        max-width: 1440px;
+/*   change     max-width: 1440px;*/
+        max-width: 95%;
     }
 }
 .row {
@@ -1006,11 +1008,6 @@ progress {
     .col-sm-3 {
         flex: 0 0 auto;
         width: 25%;
-    }
-
-    .col-sm-4 {
-        flex: 0 0 auto;
-        width: 33.3333333333%;
     }
 
     .col-sm-5 {
@@ -1531,7 +1528,7 @@ progress {
 
     .col-lg-3 {
         flex: 0 0 auto;
-        width: 25%;
+        width: 18%;
     }
 
     .col-lg-4 {
@@ -1561,7 +1558,7 @@ progress {
 
     .col-lg-9 {
         flex: 0 0 auto;
-        width: 75%;
+        width: 82%;
     }
 
     .col-lg-10 {
@@ -1790,11 +1787,6 @@ progress {
     .col-xl-2 {
         flex: 0 0 auto;
         width: 16.6666666667%;
-    }
-
-    .col-xl-3 {
-        flex: 0 0 auto;
-        width: 25%;
     }
 
     .col-xl-4 {
@@ -16281,7 +16273,9 @@ input {
     height: 3px;
     left: 0;
     bottom: -1.5px;
-    background: #b19361;
+/*  change  background: #b19361;*/
+/*    background: linear-gradient(to bottom, #4431DE, #ff6666);*/
+    background: #8E8E8E;
 }
 
 .sidebar-banner {
@@ -16300,7 +16294,7 @@ input {
     color: #24262b;
 }
 .sidebar-menu li a:hover {
-    color: #b19361;
+/* change  color: #b19361;*/
 }
 
 .accordion-title {
@@ -16490,9 +16484,13 @@ a.ui-button:active,
 
 .breadcrumb-nav-color--black li a {
     color: #000;
+    transition: background-image 0.5s ease;
 }
 .breadcrumb-nav-color--black li a:hover {
-    color: #b19361;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to bottom, #1000c3, red);
 }
 
 .breadcrumb-nav-hover-color--black li a:hover {
@@ -19296,12 +19294,11 @@ Pages - Contact
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
     cursor: hand;
     border-radius: 50%;
-    background: #b19361;
+    background: #777;    
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     transition: all 0.3s cubic-bezier(0.25, 0.25, 0, 1);
 }
 .material-scrolltop:hover {
-    background-color: #b19361;
     text-decoration: none;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5), 0 3px 15px rgba(0, 0, 0, 0.5);
 }
@@ -19313,7 +19310,7 @@ Pages - Contact
     content: "";
     width: 0;
     border-radius: 100%;
-    background: #bda379;
+    background: linear-gradient(to bottom, #1000c3, #ff6666);
 }
 .material-scrolltop:active::before {
     width: 120%;
