@@ -51,7 +51,7 @@
                         <div class="z-20 header-top-left">
                             <div class="header-logo">
                                 <div class="logo">
-                                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/no-test/logo_text.png" alt=""></a>
+                                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/logo_text.png" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -285,7 +285,7 @@
                             <li>
                                 <a href="<?= BASE_URL; ?>">
                                     <div class="logo">
-                                        <img src="<?= MEDIA_STORE ?>images/logo/no-test/logo_text.png" alt="">
+                                        <img src="<?= MEDIA_STORE ?>images/logo/logo_text.png" alt="">
                                     </div>
                                 </a>
                             </li>
@@ -388,7 +388,7 @@
             <!-- Start Mobile contact Info -->
             <div class="mobile-contact-info">
                 <div class="logo">
-                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/no-test/logo.png" alt=""></a>
+                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/logo.png" alt=""></a>
                 </div>
 
                 <address class="address">

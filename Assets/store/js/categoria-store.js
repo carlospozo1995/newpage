@@ -14,17 +14,18 @@ $(document).ready(function() {
         $('.page-active').text(category.replace('-', ' ').toUpperCase());
         window.history.replaceState({}, '', $(this).attr('href'));
         
-        $('.content-loading').css("display","flex");
+        // $('.content-loading').css("display","flex");
         $.ajax({
             url: url_ajax,
-            dataType: 'html',
+            dataType: 'JSON',
             method: 'POST',
             data: {
                 category: category,
             },
             success: function(data){
-                $('#container-products').html(data);
-                $('.content-loading').css("display","none");
+                console.log(data.content_grid)
+                $('#container-products-grid').html(data.content_grid);
+                // $('.content-loading').css("display","none");
             }
         });     
         

@@ -312,7 +312,7 @@
                                             <div class="tab-content tab-animate-zoom">
                                                 <!-- Start Grid View Product -->
                                                 <div class="tab-pane active show sort-layout-single" id="layout-3-grid">
-                                                    <div class="row" id="container-products">
+                                                    <div class="row" id="container-products-grid">
                                                         <?php 
 
                                                         foreach ($products as $product) {
@@ -322,7 +322,7 @@
                                                                 <div class="product-default-single-item product-color--golden"
                                                                     data-aos="fade-up" data-aos-delay="0">
                                                                     <div class="image-box">
-                                                                        <a href="product-details-default.html" class="image-link">
+                                                                        <a href="product-details-default.html" class="image-link<?php if(!empty($product['discount'])){echo ' content-off" data-discount="'.$product['discount'].'% off"';}else{echo '"';} ?>>
                                                                             <?php
                                                                             $img_product = Models_Products::selectImages($product['id_product']);
                                                                             if (!empty($img_product)) {

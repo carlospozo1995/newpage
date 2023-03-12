@@ -60,19 +60,6 @@ RewriteRule ^categoria/(.+)$ %{ENV:REWRITEBASE}index.php?show=categoria&urlData=
 
 
 
-
-
-
-
-
-
-
-#RewriteRule ^categoria/([^/]+)/?([^/]+)?/?([^/]+)?$ %{ENV:REWRITEBASE}index.php?show=categoria&action=$1 [L]
-#RewriteRule ^(categoria/|categoria)$ %{ENV:REWRITEBASE}index.php?show=categoria [L]
-
-
-
-
 #EXAMPLES
 #RewriteRule ^(resetPassword)/ajaxSetPass$ %{ENV:REWRITEBASE}index.php?show=ResetPassword [L]
 #RewriteRule ^resetPassword$ %{ENV:REWRITEBASE}index.php?show=ResetPassword [QSA,L]

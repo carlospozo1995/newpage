@@ -4,7 +4,7 @@
 		
 		public function buildPage()
 		{	
-
+			$data = array();
 			$action = Utils::getParam("action", "");
 			switch ($action) {
 				case 'loadProducts':
@@ -14,6 +14,8 @@
 						$id_end = Models_Store::getCategory($category);
 						$sons = Models_Categories::dataSons(end($id_end));
 			            $id_sons = "";
+			            $content_grid = "";
+			            $content_single = "";
 
 			            foreach ($sons as $data) {
 			                $id_sons .= Utils::desencriptar($data["id_son"]) . ",";
@@ -22,65 +24,57 @@
 			            $id_sons = !empty($id_sons) ? $id_sons : end($id_end);
 			            $products = Models_Store::getProducts("$id_sons");
 			            foreach ($products as $product) {
-?>
-							 <div class="col-xl-3 col-sm-6 col-sm-4 col-12">
-                                <!-- Start Product Default Single Item -->
-                                <div class="product-default-single-item product-color--golden"
-                                    data-aos="fade-up" data-aos-delay="0">
-                                    <div class="image-box">
-                                        <a href="product-details-default.html" class="image-link">
-                                            <?php
-                                            $img_product = Models_Products::selectImages($product['id_product']);
-                                            if (!empty($img_product)) {
-                                                $r_indexes = array_rand($img_product, 2);
-                                                foreach ($r_indexes as $index) {
-                                                    $r_element = $img_product[$index];
-                                                    echo '<img src="'.MEDIA_ADMIN.'files/images/upload_products/'.$r_element['image'].'" alt="">';
-                                                }
-                                            }else{
-                                                echo '<img src="'.MEDIA_ADMIN.'files/images/upload_products/empty_img.png" alt="">';
-                                            }  
-                                            ?>
-                                        </a>
-                                        <div class="action-link">
-                                            <div class="action-link-left">
-                                                <a href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#modalAddcart">Add to Cart</a>
-                                            </div>
-                                            <div class="action-link-right">
-                                                <a href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#modalQuickview"><i
-                                                        class="icon-magnifier"></i></a>
-                                                <a href="wishlist.html"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="compare.html"><i
-                                                        class="icon-shuffle"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="content">
-                                        <div class="text-center">
-                                            <h6><a class="title-product" href="#"><?= $product['name_product']; ?></a></h6>
-                                            <p><?= $product['brand']; ?></p>
-                                            
-                                        <?php if (!empty($product['cantDues'])){
-                                            echo '<div class="content-data-product no-empty">'; echo '<div class="price-product no-empty">';
-                                        }else{ echo '<div class="content-data-product empty">'; echo '<div class="price-product empty">'; }?>
-                                                <?php if(!empty($product['prevPrice'])){ echo '<del>'.SMONEY ." ". Utils::formatMoney($product['prevPrice']).'</del>'; }?>
-                                                    <span class=""><?= SMONEY ." ". Utils::formatMoney($product['price']) ;?></span>
-                                                </div>
-                                                <?php if (!empty($product['cantDues'])){ ?>
-                                                    <span class="ml-2"><?= $product['cantDues']; ?> cuotas <?= SMONEY ." ". Utils::formatMoney($product['priceDues']);?></span>
-                                                <?php } ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Product Default Single Item -->
-                            </div>
-<?php
+			            	$content_grid .= '
+			            		<div class="col-xl-3 col-sm-6 col-sm-4 col-12">
+									<div class="product-default-single-item product-color--golden" data-aos="fade-up" data-aos-delay="0">
+										<div class="image-box">
+											<a href="product-details-default.html" class="image-link';if(!empty($product['discount'])){$content_grid .= ' content-off" data-discount="'.$product['discount'].'% off"';}else{$content_grid .= '"';};$content_grid.='>';
+												$img_product = Models_Products::selectImages($product['id_product']);
+	                                            if (!empty($img_product)) {
+	                                                $r_indexes = array_rand($img_product, 2);
+	                                                foreach ($r_indexes as $index) {
+	                                                    $r_element = $img_product[$index];
+	                                                    $content_grid .= '<img src="'.MEDIA_ADMIN.'files/images/upload_products/'.$r_element['image'].'" alt="">';
+	                                                }
+	                                            }else{
+	                                                $content_grid .= '<img src="'.MEDIA_ADMIN.'files/images/upload_products/empty_img.png" alt="">';
+	                                            }  
+											$content_grid.= '</a>
+											<div class="action-link">
+	                                            <div class="action-link-left">
+	                                                <a href="#" data-bs-toggle="modal"
+	                                                    data-bs-target="#modalAddcart">Add to Cart</a>
+	                                            </div>
+	                                            <div class="action-link-right">
+	                                                <a href="#" data-bs-toggle="modal"
+	                                                    data-bs-target="#modalQuickview"><i
+	                                                        class="icon-magnifier"></i></a>
+	                                                <a href="wishlist.html"><i
+	                                                        class="icon-heart"></i></a>
+	                                                <a href="compare.html"><i
+	                                                        class="icon-shuffle"></i></a>
+	                                            </div>
+	                                        </div>
+										</div>
+										<div class="content">
+	                                        <div class="text-center">';
+	                                        	$content_grid.= '<h6><a class="title-product" href="#">'.$product['name_product'].'</a></h6>';
+                                            	$content_grid.= '<p>'.$product['brand'].'</p>';
+if(!empty($product['cantDues'])){$content_grid.= '<div class="content-data-product no-empty"> <div class="price-product no-empty">';}else{$content_grid.= '<div class="content-data-product empty"> <div class="price-product empty">';}
+             if (!empty($product['prevPrice'])) {$content_grid.= '<del>'.SMONEY ." ". Utils::formatMoney($product['prevPrice']).'</del>';}
+                                            	$content_grid .= '<span>'.SMONEY ." ". Utils::formatMoney($product['price']).'</span>';
+										$content_grid.= '</div>';
+	if (!empty($product['cantDues'])) {$content_grid.= '<span class="ml-2">'.$product['cantDues'].' cuotas '.SMONEY." ".Utils::formatMoney($product['priceDues']).'</span>';}
+								$content_grid.= '</div>
+											</div>
+	                                    </div>
+									</div>
+								</div>
+			            	';
 						}
 					}
+					$data = array("content_grid" => $content_grid, "content_single" => $content_single);
+					echo json_encode($data);
 				break;
 					
 				default:
