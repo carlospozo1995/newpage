@@ -100,7 +100,7 @@ $(document).ready(function () {
     //DATA JSON INSERT AND UPDATE PRODUCT
 	formNewProduct.submit((e) =>{
 		e.preventDefault();
-		if($('#name_product').val() == "" || $('#desMainProd').val() == "" || $('#listCategories').val() == "" || $('#brand').val() == "" || $('#code').val() == "" || $('#price').val() == "" || $('#stock').val() == "" || $('#listStatus').val() == ""){
+		if($('#name_product').val() == "" || $('#desMainProd').val() == "" || $('#listCategories').val() == "" || $('#brand').val() == "" || $('#code').val() == "" || $('#price').val() == "" || $('#listStatus').val() == ""){
 			Swal.fire("Atención", "Por favor asegúrese de llenar los campos requeridos.", "error");
             return false;
 		}else{

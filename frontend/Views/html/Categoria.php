@@ -357,11 +357,11 @@
                                                                             <h6><a class="title-product" href="#"><?= $product['name_product']; ?></a></h6>
                                                                             <p><?= $product['brand']; ?></p>
                                                                             
-                                                                        <?php if (!empty($product['cantDues'])){
+                                                                    <?php if (!empty($product['cantDues'])){
                                                                             echo '<div class="content-data-product no-empty">'; echo '<div class="price-product no-empty">';
                                                                         }else{ echo '<div class="content-data-product empty">'; echo '<div class="price-product empty">'; }?>
                                                                                 <?php if(!empty($product['prevPrice'])){ echo '<del>'.SMONEY ." ". Utils::formatMoney($product['prevPrice']).'</del>'; }?>
-                                                                                    <span class=""><?= SMONEY ." ". Utils::formatMoney($product['price']) ;?></span>
+                                                                                    <span class="span-list-grid"><?= SMONEY ." ". Utils::formatMoney($product['price']) ;?></span>
                                                                                 </div>
                                                                                 <?php if (!empty($product['cantDues'])){ ?>
                                                                                     <span class="ml-2"><?= $product['cantDues']; ?> cuotas <?= SMONEY ." ". Utils::formatMoney($product['priceDues']);?></span>
@@ -380,12 +380,12 @@
                                                 </div> <!-- End Grid View Product -->
                                                 <!-- Start List View Product -->
                                                 <div class="tab-pane sort-layout-single" id="layout-list">
-                                                    <div class="row">
+                                                    <div class="row" id="container-products-single">
                                                         <?php foreach ($products as $product) { ?>
                                                             <div class="col-12">
                                                                 <!-- Start Product Defautlt Single -->
                                                                 <div class="product-list-single product-color--golden">
-                                                                    <a href="product-details-default.html" class="product-list-img-link">
+                                                                    <a href="product-details-default.html" class="product-list-img-link<?php if(!empty($product['discount'])){echo ' content-off" data-discount="'.$product['discount'].'% off"';}else{echo '"';} ?>>
                                                                         <?php
                                                                         $img_product = Models_Products::selectImages($product['id_product']);
                                                                         if (!empty($img_product)) {
@@ -403,15 +403,21 @@
                                                                         <h5 class="product-list-link">
                                                                             <a href="product-details-default.html"><?=  $product['name_product']; ?></a>
                                                                         </h5>
-                                                                        <ul class="review-star">
-                                                                            <li class="fill"><i class="ion-android-star"></i></li>
-                                                                            <li class="fill"><i class="ion-android-star"></i></li>
-                                                                            <li class="fill"><i class="ion-android-star"></i></li>
-                                                                            <li class="fill"><i class="ion-android-star"></i></li>
-                                                                            <li class="empty"><i class="ion-android-star"></i></li>
-                                                                        </ul>
-                                                                        <span class="product-list-price"><del>$30.12</del><?= SMONEY." ".Utils::formatMoney($product['price']); ?></span>
-                                                                        <p><?=  $product['desMain']; ?></p>
+                                                                        <p><?= $product['brand']; ?></p>
+                                                                    <?php if (!empty($product['cantDues'])){
+                                                                        echo '<div class="content-data-product no-empty single-list">'; echo '<div class="price-product no-empty">';
+                                                                    }else{ echo '<div class="content-data-product empty">'; echo '<div class="price-product empty">'; }?>
+                                                                            <?php if(!empty($product['prevPrice'])){ echo '<del>'.SMONEY ." ". Utils::formatMoney($product['prevPrice']).'</del>'; }?>
+                                                                                <span><?= SMONEY ." ". Utils::formatMoney($product['price']) ;?></span>
+                                                                            </div>
+                                                                            <?php if (!empty($product['cantDues'])){ ?>
+                                                                                <span class="ml-2"><?= $product['cantDues']; ?> cuotas <?= SMONEY ." ". Utils::formatMoney($product['priceDues']);?></span>
+                                                                            <?php } ?>
+                                                                        </div>
+
+                                                                        <p class="mt-3"><?=  $product['desMain']; ?></p>
+
+                                                                        <?php if(empty($product['stock'])){echo '<p class="n-stock">No disponible</p>';} ?>
                                                                         <div class="product-action-icon-link-list">
                                                                             <a href="#" data-bs-toggle="modal"
                                                                                 data-bs-target="#modalAddcart"

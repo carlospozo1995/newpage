@@ -14,7 +14,7 @@ $(document).ready(function() {
         $('.page-active').text(category.replace('-', ' ').toUpperCase());
         window.history.replaceState({}, '', $(this).attr('href'));
         
-        // $('.content-loading').css("display","flex");
+        $('.content-loading').css("display","flex");
         $.ajax({
             url: url_ajax,
             dataType: 'JSON',
@@ -23,9 +23,9 @@ $(document).ready(function() {
                 category: category,
             },
             success: function(data){
-                console.log(data.content_grid)
                 $('#container-products-grid').html(data.content_grid);
-                // $('.content-loading').css("display","none");
+                $('#container-products-single').html(data.content_single);
+                $('.content-loading').css("display","none");
             }
         });     
         

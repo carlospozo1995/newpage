@@ -19,7 +19,7 @@
 				case 'setProduct':
 					if(isset($_POST)){
 						try {
-							if (empty($_POST['name_product']) || empty($_POST['desMainProd']) || empty($_POST['listCategories']) || empty($_POST['brand']) || empty($_POST['code']) || empty($_POST['price']) || empty($_POST['stock']) || empty($_POST['listStatus'])){
+							if (empty($_POST['name_product']) || empty($_POST['desMainProd']) || empty($_POST['listCategories']) || empty($_POST['brand']) || empty($_POST['code']) || empty($_POST['price']) || empty($_POST['listStatus'])){
 								throw new Exception("Por favor asegúrese de llenar los campos requeridos.");
 								die();
 							}else{
@@ -27,7 +27,7 @@
 								$test_number = "/^\d+$/";
 								$test_price = "/^\d{1,}[.,]\d{2}$/";
 
-								if (!preg_match($test_number, $_POST['code']) || !preg_match($test_price, $_POST['price']) || !preg_match($test_number, $_POST['stock'])) {
+								if (!preg_match($test_number, $_POST['code']) || !preg_match($test_price, $_POST['price'])) {
 									die();
 								}
 
@@ -36,10 +36,10 @@
 								$desMain = $_POST['desMainProd'];
 								$desGeneral = empty($_POST['desGeneralProd']) ? null : $_POST['desGeneralProd'];
 								$option_list = Utils::desencriptar($_POST['listCategories']);
-								$brand = $_POST['brand'];
+								$brand = strtoupper($_POST['brand']);
 								$code = $_POST['code'];
 								$price = $_POST['price'];
-								$stock = $_POST['stock'];
+								$stock = !empty($_POST['stock']) ? (preg_match($test_number, $_POST['stock']) ? $_POST['stock'] : die()) : null;
 								$cantDues = null;
 								$priceDues = null;
 								$prevPrice = !empty($_POST['prev_price']) ? (preg_match($test_price, $_POST['prev_price']) ? $_POST['prev_price'] : die()) : null;

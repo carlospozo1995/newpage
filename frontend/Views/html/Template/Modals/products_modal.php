@@ -115,7 +115,7 @@
 	                                        </div>
 	                                        <div class="col-sm-6">
 	                                            <div class="form-group">
-	                                                <label>Stock<span class="text-danger"> *</span></label>
+	                                                <label>Stock</label>
 	                                                <input type="text" class="form-control valid valid_number" id="stock" name="stock">
 	                                            </div>
 	                                        </div>
