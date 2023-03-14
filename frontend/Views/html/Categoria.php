@@ -445,16 +445,18 @@
                                     </div>
                                 </div>
                             </div> <!-- End Tab Wrapper -->
-
+                            <div>
+                                <button id="load-more">VER MAS</button>
+                            </div>
                             <!-- Start Pagination -->
-                            <div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
+                            <!-- <div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
                                 <ul>
                                     <li><a class="active" href="#">1</a></li>
                                     <li><a href="#">2</a></li>
                                     <li><a href="#">3</a></li>
                                     <li><a href="#"><i class="ion-ios-skipforward"></i></a></li>
                                 </ul>
-                            </div> <!-- End Pagination -->
+                            </div> --> <!-- End Pagination -->
                         </div>
                     </div>
                 </div>

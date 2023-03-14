@@ -177,3 +177,18 @@
 
 		<br><br><br><br><br><br><br><br><br>
 	</div>
+
+	
+	<?php
+	echo '<div id="cont-general">';
+	$products = Models_Store::produc();
+	foreach (array_slice($products, 0, 3) as $product) {
+		echo '<div style="border:1px solid red;width: max-content">';
+		echo	'<p>'.$product['name_product'].'</p>';
+		echo	'<p>'.$product['price'].'</p>';
+		echo '</div>';	
+	}
+	echo '</div>';
+
+	?>
+	<button style="border: 2px solid blue; padding: 10px; background: black; color: wheat; width: max-content;" id="load-more">ver mas</button>

@@ -20,6 +20,16 @@
             return $GLOBALS["db"]->selectAll($sql, array());
         }
 
+        static public function produc()
+        {
+            $sql = "SELECT * FROM products WHERE status = 1";
+            return $GLOBALS["db"]->selectAll($sql, array());
+        }
+        static public function getProductsLimit($start, $perload)
+        {
+             $sql = "SELECT * FROM products LIMIT $start, $perload";;
+            return $GLOBALS["db"]->selectAll($sql, array());
+        }
     }
 
 
