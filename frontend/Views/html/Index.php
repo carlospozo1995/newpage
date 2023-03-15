@@ -180,15 +180,22 @@
 
 	
 	<?php
+
 	echo '<div id="cont-general">';
-	$products = Models_Store::produc();
-	foreach (array_slice($products, 0, 3) as $product) {
-		echo '<div style="border:1px solid red;width: max-content">';
-		echo	'<p>'.$product['name_product'].'</p>';
-		echo	'<p>'.$product['price'].'</p>';
-		echo '</div>';	
+		$products = Models_Store::getProductsLimit(0, 3);
+		$totalProducts = Models_Store::countProducts();
+
+	foreach ($products as $product) {
+	    echo '<div style="border:1px solid red;width: max-content">';
+	    echo '<p>'.$product['name_product'].'</p>';
+	    echo '<p>'.$product['price'].'</p>';
+	    echo '</div>';    
 	}
+
 	echo '</div>';
 
+	if (count($totalProducts) < 3) {
+	    echo '<button style="border: 2px solid blue; padding: 10px; background: black; color: wheat; width: max-content;" id="load-morep">ver mas</button>';
+	}
 	?>
-	<button style="border: 2px solid blue; padding: 10px; background: black; color: wheat; width: max-content;" id="load-more">ver mas</button>
+	

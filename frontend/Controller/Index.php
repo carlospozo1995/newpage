@@ -4,11 +4,13 @@
 		public function buildPage()
 		{	
 			$action = Utils::getParam("action", "");
+			$data = array();
 			switch ($action) {
 				case 'loadMore':
 					// Recuperar los siguientes tres productos
 					$products = Models_Store::getProductsLimit($_POST['start'], $_POST['perLoad']);
-
+					$totalProducts = Models_Store::countProducts();
+					$total_register = end($totalProducts) - ($_POST['start'] + $_POST['perLoad']);
 					// Cargar la plantilla HTML
 					$output = "";
 					foreach ($products as $product) {
@@ -18,7 +20,8 @@
 						$output .=	'<p>'.$product['price'].'</p>';
 						$output .= '</div>';	
 					}
-					echo $output;
+					$data = array("contentP" => $output, "countP" => $total_register);
+					echo json_encode($data);
 
 				break;
 				

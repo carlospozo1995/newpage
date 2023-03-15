@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 11-03-2023 a las 22:34:54
+-- Tiempo de generación: 15-03-2023 a las 03:50:14
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 7.4.19
 
@@ -222,7 +222,7 @@ CREATE TABLE `products` (
   `sliderDes` varchar(150) DEFAULT NULL,
   `brand` varchar(50) NOT NULL,
   `price` decimal(11,2) NOT NULL,
-  `stock` int(11) NOT NULL,
+  `stock` int(11) DEFAULT NULL,
   `prevPrice` decimal(11,2) DEFAULT NULL,
   `discount` int(11) DEFAULT NULL,
   `cantDues` int(20) DEFAULT NULL,
@@ -236,12 +236,21 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `desMain`, `desGeneral`, `sliderDst`, `sliderMbl`, `sliderDes`, `brand`, `price`, `stock`, `prevPrice`, `discount`, `cantDues`, `priceDues`, `datacreate`, `status`) VALUES
-(1, 131, 133887000, 'Tostador de pan 600w InduramaTpi-2cr', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, 'sliderDst_Producto-1_d94878f943bee08da79cc00f0b7088d4.jpg', 'sliderMbl_Producto-1_d94878f943bee08da79cc00f0b7088d4.jpg', NULL, 'Indurama', '35.00', 12, '49.00', 5, 10, '4.50', '2023-02-18 22:18:43', 1),
-(2, 126, 789456, 'Producto 2', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ', NULL, 'sliderDst_Producto-2_e9553ef1ee311602e4da6698919f57b1.jpg', 'sliderMbl_Producto-2_e9553ef1ee311602e4da6698919f57b1.jpg', NULL, 'Nuevo producto 2', '456.45', 84, NULL, NULL, NULL, NULL, '2023-02-18 22:20:49', 1),
-(3, 132, 987123000, 'Audifonos Gt5 Negro Xiaomi Haylou', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ', NULL, 'sliderDst_Producto-3_864cd10ccb821d7c292f11ba77124670.jpg', 'sliderMbl_Producto-3_864cd10ccb821d7c292f11ba77124670.jpg', 'slider producto 3', 'Xiaomi', '34.90', 3, NULL, NULL, 10, '4.00', '2023-02-18 22:22:31', 1),
-(5, 136, 657686800, 'Microondas Grill 42 L Indurama Mwgi-42 Cr ', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, NULL, NULL, NULL, 'Indurama', '189.00', 1, '259.00', NULL, NULL, NULL, '2023-02-25 19:44:27', 1),
-(6, 136, 547215645, 'Cafetera C/molino 1.5 L Indurama Mci-cr', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, NULL, NULL, NULL, 'Indurama', '50.00', 7, NULL, NULL, NULL, NULL, '2023-02-28 16:08:39', 1),
-(7, 144, 32562116, 'Producto 6', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, NULL, NULL, NULL, 'Nuevo producto 6', '21.36', 45, '456.36', 45, NULL, NULL, '2023-03-09 11:13:06', 1);
+(1, 131, 133887000, 'Tostador de pan 600w InduramaTpi-2cr', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', NULL, 'sliderDst_Producto-1_d94878f943bee08da79cc00f0b7088d4.jpg', 'sliderMbl_Producto-1_d94878f943bee08da79cc00f0b7088d4.jpg', NULL, 'INDURAMA', '35.00', 12, '49.00', 5, 10, '4.50', '2023-02-18 22:18:43', 1),
+(2, 136, 78945600, 'Combo Hidrolavadora K2 Mx Karcher Mas Aspiradora Wd1', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ', NULL, 'sliderDst_Producto-2_e9553ef1ee311602e4da6698919f57b1.jpg', 'sliderMbl_Producto-2_e9553ef1ee311602e4da6698919f57b1.jpg', NULL, 'KARCHER', '200.00', NULL, '300.00', 5, NULL, NULL, '2023-02-18 22:20:49', 1),
+(3, 132, 987123000, 'Audifonos Gt5 Negro Xiaomi Haylou', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ', NULL, 'sliderDst_Producto-3_864cd10ccb821d7c292f11ba77124670.jpg', 'sliderMbl_Producto-3_864cd10ccb821d7c292f11ba77124670.jpg', 'slider producto 3', 'XIAOMI', '34.90', NULL, NULL, NULL, 10, '4.00', '2023-02-18 22:22:31', 1),
+(5, 136, 657686800, 'Microondas Grill 42 L Indurama Mwgi-42 Cr ', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, NULL, NULL, NULL, 'INDURAMA', '189.00', 1, '259.00', NULL, NULL, NULL, '2023-02-25 19:44:27', 1),
+(6, 136, 547215645, 'Cafetera C/molino 1.5 L Indurama Mci-cr', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, NULL, NULL, NULL, 'INDURAMA', '50.00', 45, NULL, 10, NULL, NULL, '2023-02-28 16:08:39', 1),
+(7, 131, 32562116000, 'Aire Acondicionado Zitro 10200 BTU', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut l', NULL, NULL, NULL, NULL, 'ZITRO', '269.00', 8, '329.00', 45, 10, '35.00', '2023-03-09 11:13:06', 1),
+(8, 131, 152008100, 'Watch MNP13LZ/A Series 8 gps 45mm |Midnight', 'lorem ipsumn iushdkjuio jkhasjkdh kohiaskdnjk ,ihskjdn kjhsdm mdasn ', NULL, NULL, NULL, NULL, 'APPLE', '373.00', 8, '50.00', NULL, NULL, NULL, '2023-03-13 16:47:44', 1),
+(9, 130, 97520004500, 'Celular X6 Gris | 64 gb', 'lorem ipsum kjbsjkd klashnjkd kjahsjkd jhsdjk nkjhaskbn.', NULL, NULL, NULL, NULL, 'HONOR', '350.00', NULL, '500.00', NULL, 12, '35.00', '2023-03-13 16:49:28', 1),
+(10, 130, 17451400, 'Tablet Pad 2022 6+128Gb', 'lorejkn ksjdhfjkn sdifjsd sdlifjlsnf skdjfsnf kisfn', NULL, NULL, NULL, NULL, 'LENOVO', '123.37', NULL, '329.00', 5, NULL, NULL, '2023-03-13 16:56:10', 1),
+(11, 142, 632450000, 'Laptop AMD Ryzen 5  8GB RAM/512GB ROM HP', 'lorem fdunsduinsdknfdnisdik fisdids isdfnsoifn lsdfklklkd sdlf .', NULL, NULL, NULL, NULL, 'HP', '699.00', NULL, '729.00', 15, 12, '50.00', '2023-03-14 18:23:11', 1),
+(12, 144, 42525000, 'Impresora Multifuncion L5290 Epson Ecotank', 'faxcvsg  vgsvcvb fdx sedfxvcx sefghnsfddb fgsdvx aefeassssssssssssssssssssssssssssssacvvcvb sfgxvb dfgvfdg', NULL, NULL, NULL, NULL, 'EPSON', '459.00', NULL, '500.00', NULL, 5, '100.00', '2023-03-14 18:24:31', 1),
+(13, 143, 123258000, 'Moto Electrica 500w 3 V Rojo Ecomove Eb', ' ndfgcvbsd sdfgsdf szfsg sdfgdfgdf sdfsf sdfsdf', NULL, NULL, NULL, NULL, 'ECOMOVE', '500.00', 8, '600.00', NULL, 12, '70.00', '2023-03-14 18:26:35', 1),
+(14, 140, 87413698800, 'Casco Integral De Moto t g Gris Armor 501 Sp Expo Techno', 'fsxdfsdf sdfgs cv  vs sfsgsdfbdfd s gvsdgs afsdfsd', NULL, NULL, NULL, NULL, 'ARMOR', '40.00', NULL, '50.00', 8, NULL, NULL, '2023-03-14 18:27:46', 1),
+(15, 140, 7896320000452, 'Aire Acondicionado 18000 Btu Longtime', 'xvsxv xfdvxcv dfgvsdfs dfbvxc xbcvbbbbbbbbbbbbbbbbbbbbbbbb cxvbcvbcbcvbvc cv cbcvbc cbvcbcvbcb cvcbcvb cvbcbc   cv cv cv cc c c cv c c cvc', NULL, NULL, NULL, NULL, ' LONGTIME', '519.00', NULL, '800.00', NULL, NULL, NULL, '2023-03-14 18:30:13', 1),
+(16, 140, 852000147963, 'Aire acondicionado Premier Split blanco 18000 Btu', 'ikshdfkjnf fsoidfonsfsjf sfisf sf sfsfd sdfs frsf sf sfslkjhsodjfosj fskhdfklsjofjhos oishdolkfosijd oifshdfonsdf osidf n', NULL, NULL, NULL, NULL, 'START SONIC', '300.00', 5, NULL, NULL, NULL, NULL, '2023-03-14 18:31:32', 1);
 
 -- --------------------------------------------------------
 
@@ -396,7 +405,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`

@@ -115,6 +115,18 @@
 		   	return $objaes->decrypt($desencriptado);
 		}
 
+		public static function encryptStore($text)
+		{
+			$objaes = new Aes(KEY_ENCRIPTAR);
+			$encrypted = bin2hex($objaes->encrypt($text));
+			return $encrypted;
+		}
+		public static function descryptStore($text)
+		{
+			$objaes = new Aes(KEY_ENCRIPTAR);
+			$decrypted = $objaes->decrypt(hex2bin($text));
+			return $decrypted;
+		}
 		
 		static public function sendEmail($data, $template)
 		{	

@@ -323,6 +323,19 @@
     font-weight: 500;
 }
 
+/*LOAD MORE PRODRUCTS*/
+.page-pagination .load-more{
+    color: #FFF;
+    font-weight: bold;
+    background: red;
+    padding: 5px 12px;
+    border-radius: 3px;
+    transform: scale(1.0);
+}
+.page-pagination .load-more:hover{
+    transform: scale(1.1, 1.1);
+}
+
 /*LOADING CONTENT BOX PAGE*/
 .content-loading{
     position: absolute;
