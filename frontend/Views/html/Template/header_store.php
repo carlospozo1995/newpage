@@ -278,7 +278,7 @@
     
         <div class="container">
             <div class="row">
-                <div class="col-12 d-flex align-items-center justify-content-between">
+                <div class="col-12 d-flex align-items-center justify-content-between f-dir-colum-res">
                     
                     <div class="mobile-header-left">
                         <ul class="mobile-menu-logo">
