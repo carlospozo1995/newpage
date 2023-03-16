@@ -317,8 +317,8 @@
                                                         <?php 
 
                                                         foreach ($products as $product) {
-                                                        ?>
-                                                            <div class="col-xl-3 col-sm-6 col-sm-4 col-12">
+                                                        ?>  
+                                                            <div class="col-xl-3 col-sm-6 col-sm-4 col-adaptive">
                                                                 <!-- Start Product Default Single Item -->
                                                                 <div class="product-default-single-item product-color--golden"
                                                                     data-aos="fade-up" data-aos-delay="0">
@@ -361,11 +361,11 @@
                                                                     <?php if (!empty($product['cantDues'])){
                                                                             echo '<div class="content-data-product no-empty">'; echo '<div class="price-product no-empty">';
                                                                         }else{ echo '<div class="content-data-product empty">'; echo '<div class="price-product empty">'; }?>
-                                                                                <?php if(!empty($product['prevPrice'])){ echo '<del>'.SMONEY ." ". Utils::formatMoney($product['prevPrice']).'</del>'; }?>
-                                                                                    <span class="span-list-grid"><?= SMONEY ." ". Utils::formatMoney($product['price']) ;?></span>
+                                                                                <?php if(!empty($product['prevPrice'])){ echo '<del>'.SMONEY. Utils::formatMoney($product['prevPrice']).'</del>'; }?>
+                                                                                    <span><?= SMONEY. Utils::formatMoney($product['price']) ;?></span>
                                                                                 </div>
                                                                                 <?php if (!empty($product['cantDues'])){ ?>
-                                                                                    <span class="ml-2"><?= $product['cantDues']; ?> cuotas <?= SMONEY ." ". Utils::formatMoney($product['priceDues']);?></span>
+                                                                                    <span class="ml-2 text-left"><?= $product['cantDues']; ?> cuotas <?= SMONEY. Utils::formatMoney($product['priceDues']);?></span>
                                                                                 <?php } ?>
                                                                             </div>
                                                                         </div>
@@ -416,7 +416,7 @@
                                                                             <?php } ?>
                                                                         </div>
 
-                                                                        <p class="mt-3"><?=  $product['desMain']; ?></p>
+                                                                        <p class="mt-3 text-justify"><?=  $product['desMain']; ?></p>
 
                                                                         <?php if(empty($product['stock'])){echo '<p class="n-stock">No disponible</p>';} ?>
                                                                         <div class="product-action-icon-link-list">
@@ -452,7 +452,7 @@
                                 echo '<div class="container-pagination-btn">';
                                 if (count($total_products) > 4 && !empty($total_products)) {
                                     echo '<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
-                                            <button id="load-more" onclick="loadMoreProd('."'".Utils::encryptStore($id_sons)."'".')" class="load-more time-trans-txt">VER MÁS</button>
+                                            <button id="load-more" onclick="loadMoreProd('."'".Utils::encryptStore($id_sons)."'".')" class="load-more time-trans-txt  position-relative">VER MÁS <div class="cont-load-more"><span class="loader-more-data"></span></div></button>
                                          </div>';
                                 }
                                 echo '</div>';

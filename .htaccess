@@ -10,7 +10,7 @@ RewriteEngine On
 #php_flag output_buffering on
 
 RewriteRule ^$ %{ENV:REWRITEBASE}index.php?show=Index [L]
-RewriteRule ^index/loadMore/$ %{ENV:REWRITEBASE}index.php?show=Index&action=loadMore [L]
+#RewriteRule ^index/loadMore/$ %{ENV:REWRITEBASE}index.php?show=Index&action=loadMore [L]
 
 #LOGIN
 RewriteRule ^(login/|login|Login|LOGIN)$ %{ENV:REWRITEBASE}index.php?show=login [L]

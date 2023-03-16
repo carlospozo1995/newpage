@@ -65,6 +65,10 @@
 .container-slider{
     margin-top: -210px;
 }
+
+.text-justify{
+    text-align: justify !important;
+}
 /* ----- MENU GENERAL---- */
 
 /*Menu Desktop*/
@@ -83,7 +87,6 @@
 .main-menu nav > ul > li > .show-effect {
     text-align: center;
     overflow: hidden;
-/*    z-index: 2;*/
     position: relative;
     border-radius: 8px;
     -webkit-border-radius: 8px;
@@ -103,7 +106,6 @@
     content: '';
     width: 210%;
     position: absolute;
-/*    z-index: 1;*/
     top: 0;
     left: calc(-100% - 250px);
     border-bottom: 118px solid rgba(107, 107, 107, 0.1);
@@ -219,12 +221,25 @@
 .rotate-90 {
   transform: rotate(90deg);
 }
-
-@media (min-width: 1000px){
-    .col-sm-4 {
-        flex: 0 0 auto;
-        width: 33.3333333333%;
-    }
+.col-adaptive{
+    margin-top: 50px;
+    padding: 0px;
+    transition: all .25s ease;
+}
+.col-adaptive:hover{
+    transform: scale(1.03);
+}
+.col-adaptive .product-default-single-item{
+    margin-right: 8px;
+    margin-left: 8px;
+    box-shadow: 0 1px 3px rgba(68,49,222,0.5);
+    border: none;
+    border-radius: 15px;
+    height: 100%;
+    padding: 10px;
+}
+.col-adaptive .product-default-single-item:hover{
+    box-shadow: 0 8px 20px rgba(68, 49, 222, 0.5);
 }
 
 @media (min-width: 1225px){
@@ -243,7 +258,19 @@
     }
 }
 
-@media (min-width: 1250px){
+@media (max-width: 750px){
+    .col-sm-6 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}
+@media (min-width: 750px){
+    .col-sm-4 {
+        flex: 0 0 auto;
+        width: 33.3333333333%;
+    }
+}
+@media (min-width: 1100px){
     .col-xl-3 {
         flex: 0 0 auto;
         width: 25%;
@@ -258,7 +285,6 @@
 
 .title-product{
     color: #24262b;
-    font-size: 16px;
     font-weight: bold !important;
 }
 .title-product:hover{
@@ -292,16 +318,7 @@
     color: #1000c3;
     font-weight: bold;
 }
-@media (max-width: 1290px) {
-    .content-data-product .price-product .span-list-grid{
-        font-size: 15px;
-    }
-}
-@media (max-width: 996px) {
-    .content-data-product .price-product .span-list-grid{
-        font-size: 17px;
-    }
-}
+
 .n-stock{
     background: red;
     width: max-content;
@@ -313,14 +330,16 @@
 .content-off::after{
     position: absolute; 
     content: attr(data-discount);
-    color: black;
+    color: #FFF;
+    font-size: 16px;
     bottom: 0;
     right: 0;
     top: 0;
-    background: #ff6666;
+    background: linear-gradient(to right, #F15555, #ff6666) !important;
     height: max-content;
-    padding: 5px;
-    font-weight: 500;
+    padding: 3px 15px;
+    font-weight: 600;
+    border-radius: 3px;
 }
 
 /*LOAD MORE PRODRUCTS*/
@@ -379,36 +398,69 @@
     }
 } 
 
+.cont-load-more{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(162, 162, 163, 0.65);
+    display: none;
+}
+.cont-load-more .loader-more-data {
+    width: 30px;
+    height: 30px;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
 
 /**/
+@media (max-width: 768px) {
+    .product-list-img-link {
+        width: initial;
+        margin: auto;
+    }
+    .product-list-content{
+        text-align: center;
+    }
+    .content-data-product.single-list {
+        justify-content: center;
+    }
+    .n-stock{
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
 @media (max-width: 550px) {
     .mobile-menu-logo .logo {
         width: 220px;
     }
 }
-
 @media (max-width: 450px) {
     .mobile-menu-logo .logo {
         width: 150px;
     }
 }
-
 @media (max-width: 380px) {
     .mobile-menu-logo .logo {
         width: 100px;
     }
-
     .header-action-link li a i{
         font-size: 15px;
     }
-
     .header-action-link li a span {
         font-size: 8px;
         width: 15px;
         height: 15px;
         line-height: 15px;
     }
-
     .offside-menu {
         width: 40px;
         height: 40px;

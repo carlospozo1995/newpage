@@ -32,7 +32,7 @@ $(document).ready(function() {
                 start = 4;
                 if(data.total_products.length > 4 && data.total_products.length > 0){
                     $('.container-pagination-btn').html(`<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
-                                            <button id="load-more" onclick="loadMoreProd('${data.sons_url}')" class="load-more time-trans-txt">VER MÁS</button>
+                                            <button id="load-more" onclick="loadMoreProd('${data.sons_url}')" class="load-more time-trans-txt">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
                                          </div>`);
                 }else{
                     $('.container-pagination-btn').html("");
@@ -57,6 +57,7 @@ function loadMoreProd(dataSon) {
     }
 
     loading = true;
+    $('.cont-load-more').css("display", "flex");
     $.ajax({
         url: base_url + "categoria/loadMoreData/",
         dataType: 'JSON',
@@ -75,6 +76,7 @@ function loadMoreProd(dataSon) {
                 $(".page-pagination").remove();
             }
             loading = false;
+            $('.cont-load-more').css("display", "none");
         }
     });
 };

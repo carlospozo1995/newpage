@@ -26,7 +26,7 @@
 			            $total_products = Models_Store::getProducts("$id_sons");
 			            foreach ($products as $product) {
 			            	$content_grid .= '
-			            		<div class="col-xl-3 col-sm-6 col-sm-4 col-12">
+			            		<div class="col-xl-3 col-sm-6 col-sm-4 col-adaptive">
 									<div class="product-default-single-item product-color--golden" data-aos="fade-up" data-aos-delay="0">
 										<div class="image-box">
 											<a href="product-details-default.html" class="image-link';if(!empty($product['discount'])){$content_grid .= ' content-off" data-discount="'.$product['discount'].'% off"';}else{$content_grid .= '"';};$content_grid.='>';
@@ -62,10 +62,10 @@
 	                                        	$content_grid.= '<h6><a class="title-product" href="#">'.$product['name_product'].'</a></h6>';
                                             	$content_grid.= '<p>'.$product['brand'].'</p>';
 if(!empty($product['cantDues'])){$content_grid.= '<div class="content-data-product no-empty"> <div class="price-product no-empty">';}else{$content_grid.= '<div class="content-data-product empty"> <div class="price-product empty">';}
-             if (!empty($product['prevPrice'])) {$content_grid.= '<del>'.SMONEY ." ". Utils::formatMoney($product['prevPrice']).'</del>';}
-                                            	$content_grid .= '<span class="span-list-grid">'.SMONEY ." ". Utils::formatMoney($product['price']).'</span>';
+             if (!empty($product['prevPrice'])) {$content_grid.= '<del>'.SMONEY. Utils::formatMoney($product['prevPrice']).'</del>';}
+                                            	$content_grid .= '<span>'.SMONEY. Utils::formatMoney($product['price']).'</span>';
 										$content_grid.= '</div>';
-	if (!empty($product['cantDues'])) {$content_grid.= '<span class="ml-2">'.$product['cantDues'].' cuotas '.SMONEY." ".Utils::formatMoney($product['priceDues']).'</span>';}
+	if (!empty($product['cantDues'])) {$content_grid.= '<span class="ml-2 text-left">'.$product['cantDues'].' cuotas '.SMONEY.Utils::formatMoney($product['priceDues']).'</span>';}
 								$content_grid.= '</div>
 											</div>
 	                                    </div>
@@ -94,13 +94,13 @@ if(!empty($product['cantDues'])){$content_grid.= '<div class="content-data-produ
                                             </h5>
                                             <p>'.$product['brand'].'</p>';
 							                if(!empty($product['cantDues'])) {$content_single.= '<div class="content-data-product no-empty single-list"> <div class="price-product no-empty">';}else{$content_single.= '<div class="content-data-product empty"> <div class="price-product empty">';}
-							                	if(!empty($product['prevPrice'])){ $content_single .= '<del>'.SMONEY ." ". Utils::formatMoney($product['prevPrice']).'</del>'; }
+							                	if(!empty($product['prevPrice'])){ $content_single .= '<del>'.SMONEY." ". Utils::formatMoney($product['prevPrice']).'</del>'; }
 							                	$content_single .='<span>'.SMONEY." ". Utils::formatMoney($product['price']).'</span>';
 											$content_single .= '</div>';
-											if (!empty($product['cantDues'])){$content_single .= '<span class="ml-2">'.$product['cantDues'].' cuotas '.SMONEY ." ". Utils::formatMoney($product['priceDues']).'</span>';
+											if (!empty($product['cantDues'])){$content_single .= '<span class="ml-2">'.$product['cantDues'].' cuotas '.SMONEY." ". Utils::formatMoney($product['priceDues']).'</span>';
 }
 											$content_single .= '</div>';
-											$content_single .= '<p class="mt-3">'.$product['desMain'].'</p>'; 
+											$content_single .= '<p class="mt-3 text-justify">'.$product['desMain'].'</p>'; 
 											if(empty($product['stock'])){$content_single.= '<p class="n-stock">No disponible</p>';}
 											$content_single.='
 																<div class="product-action-icon-link-list">
@@ -144,7 +144,7 @@ if(!empty($product['cantDues'])){$content_grid.= '<div class="content-data-produ
 						
 						foreach ($products as $product) {
 			            	$content_grid .= '
-			            		<div class="col-xl-3 col-sm-6 col-sm-4 col-12">
+			            		<div class="col-xl-3 col-sm-6 col-sm-4 col-adaptive">
 									<div class="product-default-single-item product-color--golden" data-aos="fade-up" data-aos-delay="0">
 										<div class="image-box">
 											<a href="product-details-default.html" class="image-link';if(!empty($product['discount'])){$content_grid .= ' content-off" data-discount="'.$product['discount'].'% off"';}else{$content_grid .= '"';};$content_grid.='>';
@@ -180,10 +180,10 @@ if(!empty($product['cantDues'])){$content_grid.= '<div class="content-data-produ
 	                                        	$content_grid.= '<h6><a class="title-product" href="#">'.$product['name_product'].'</a></h6>';
                                             	$content_grid.= '<p>'.$product['brand'].'</p>';
 if(!empty($product['cantDues'])){$content_grid.= '<div class="content-data-product no-empty"> <div class="price-product no-empty">';}else{$content_grid.= '<div class="content-data-product empty"> <div class="price-product empty">';}
-             if (!empty($product['prevPrice'])) {$content_grid.= '<del>'.SMONEY ." ". Utils::formatMoney($product['prevPrice']).'</del>';}
-                                            	$content_grid .= '<span class="span-list-grid">'.SMONEY ." ". Utils::formatMoney($product['price']).'</span>';
+             if (!empty($product['prevPrice'])) {$content_grid.= '<del>'.SMONEY. Utils::formatMoney($product['prevPrice']).'</del>';}
+                                            	$content_grid .= '<span>'.SMONEY. Utils::formatMoney($product['price']).'</span>';
 										$content_grid.= '</div>';
-	if (!empty($product['cantDues'])) {$content_grid.= '<span class="ml-2">'.$product['cantDues'].' cuotas '.SMONEY." ".Utils::formatMoney($product['priceDues']).'</span>';}
+	if (!empty($product['cantDues'])) {$content_grid.= '<span class="ml-2 text-left">'.$product['cantDues'].' cuotas '.SMONEY.Utils::formatMoney($product['priceDues']).'</span>';}
 								$content_grid.= '</div>
 											</div>
 	                                    </div>
@@ -212,13 +212,13 @@ if(!empty($product['cantDues'])){$content_grid.= '<div class="content-data-produ
                                             </h5>
                                             <p>'.$product['brand'].'</p>';
 							                if(!empty($product['cantDues'])) {$content_single.= '<div class="content-data-product no-empty single-list"> <div class="price-product no-empty">';}else{$content_single.= '<div class="content-data-product empty"> <div class="price-product empty">';}
-							                	if(!empty($product['prevPrice'])){ $content_single .= '<del>'.SMONEY ." ". Utils::formatMoney($product['prevPrice']).'</del>'; }
+							                	if(!empty($product['prevPrice'])){ $content_single .= '<del>'.SMONEY." ". Utils::formatMoney($product['prevPrice']).'</del>'; }
 							                	$content_single .='<span>'.SMONEY." ". Utils::formatMoney($product['price']).'</span>';
 											$content_single .= '</div>';
-											if (!empty($product['cantDues'])){$content_single .= '<span class="ml-2">'.$product['cantDues'].' cuotas '.SMONEY ." ". Utils::formatMoney($product['priceDues']).'</span>';
+											if (!empty($product['cantDues'])){$content_single .= '<span class="ml-2">'.$product['cantDues'].' cuotas '.SMONEY." ". Utils::formatMoney($product['priceDues']).'</span>';
 }
 											$content_single .= '</div>';
-											$content_single .= '<p class="mt-3">'.$product['desMain'].'</p>'; 
+											$content_single .= '<p class="mt-3 text-justify">'.$product['desMain'].'</p>'; 
 											if(empty($product['stock'])){$content_single.= '<p class="n-stock">No disponible</p>';}
 											$content_single.='
 																<div class="product-action-icon-link-list">

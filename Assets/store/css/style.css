@@ -652,22 +652,22 @@ progress {
         max-width: 100%;
     }
 }
-@media (min-width: 768px) {
+/* change @media (min-width: 768px) {
     .container-md, .container-sm, .container {
         max-width: 720px;
     }
-}
-@media (min-width: 992px) {
+}*/
+/*@media (min-width: 992px) {
     .container-lg, .container-md, .container-sm, .container {
-        max-width: 92%;
+        max-width: 100%;
     }
-}
-@media (min-width: 1225px) {
-    .container-xl, .container-lg, .container-md, .container-sm, .container {
+}*/
+/*@media (min-width: 1225px) {
+    .container-xl, .container-lg, .container-md, .container-sm, .container {*/
 /*   change     max-width: 1200px;*/
-        max-width: 95%;
+ /*       max-width: 95%;
     }
-}
+}*/
 @media (min-width: 1600px) {
     .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
 /*   change     max-width: 1440px;*/
@@ -1013,11 +1013,6 @@ progress {
     .col-sm-5 {
         flex: 0 0 auto;
         width: 41.6666666667%;
-    }
-
-    .col-sm-6 {
-        flex: 0 0 auto;
-        width: 50%;
     }
 
     .col-sm-7 {
@@ -15469,7 +15464,8 @@ input {
 .product-default-single-item .content {
     padding-top: 25px;
     display: flex;
-    justify-content: space-between;
+/* change   justify-content: space-between;*/
+    justify-content: center ;
     align-items: flex-end;
 }
 .product-default-single-item .content-left .title {
@@ -15557,18 +15553,20 @@ input {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(68,49,222,0.5);
+    transition: all .25s ease;
+    border-radius: 15px;
+}
+.product-list-single:hover{
+        box-shadow: 0 8px 20px rgba(68,49,222,0.5);
+        transform: scale(1.03);
 }
 @media (min-width: 768px) {
     .product-list-single {
         flex-direction: row;
         /*change*/
         align-items: center;
-        border: 3px solid transparent;
-        padding: 10px;
-    }
-    .product-list-single:hover{
-        border: 3px solid rgba(68, 49, 222, 0.3);
-        border-radius: 10px;
     }
 }
 .product-list-single:hover > .product-list-img-link > img:nth-child(2) {
