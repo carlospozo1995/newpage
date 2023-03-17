@@ -7,7 +7,6 @@
         }
         $data_url = rtrim($data_url, ",");
         $data_categories = Models_Store::getCategories($data_url);
-
         if (count($url_data) != count($data_categories)) {
 ?>
             <div class="error-section">
@@ -45,7 +44,7 @@
             }
             $id_sons = rtrim($id_sons, ",");
             $id_sons = !empty($id_sons) ? $id_sons : end($id_end);
-            $products = Models_Store::getProducts("$id_sons", 0, 4);
+            $products = Models_Store::getProducts("$id_sons", 0, 12);
             $total_products = Models_Store::getProducts("$id_sons");
 ?>
             <div class="breadcrumb-section">
@@ -279,16 +278,14 @@
 
                                             <!-- Start Sort Select Option -->
                                             <div class="sort-select-list d-flex align-items-center">
-                                                <label class="mr-2">Sort By:</label>
+                                                <label class="mr-2">Ordenar por:</label>
                                                 <form action="#">
                                                     <fieldset>
-                                                        <select name="speed" id="speed">
-                                                            <option>Sort by average rating</option>
-                                                            <option>Sort by popularity</option>
-                                                            <option selected="selected">Sort by newness</option>
-                                                            <option>Sort by price: low to high</option>
-                                                            <option>Sort by price: high to low</option>
-                                                            <option>Product Name: Z</option>
+                                                        <select data-son="<?= Utils::encryptStore($id_sons); ?>" name="sort-data" id="sort-data">
+                                                            <option value="discount">Descuentos</option>
+                                                            <option value="recent">Recien agregados</option>
+                                                            <option value="price_asc">Precio: menor a mayor</option>
+                                                            <option value="price_desc">Precio: mayor a menor</option>
                                                         </select>
                                                     </fieldset>
                                                 </form>
@@ -315,65 +312,66 @@
                                                 <div class="tab-pane active show sort-layout-single" id="layout-3-grid">
                                                     <div class="row" id="container-products-grid">
                                                         <?php 
-
-                                                        foreach ($products as $product) {
+                                                        if(!empty($products)){
+                                                            foreach ($products as $product) {
                                                         ?>  
-                                                            <div class="col-xl-3 col-sm-6 col-sm-4 col-adaptive">
-                                                                <!-- Start Product Default Single Item -->
-                                                                <div class="product-default-single-item product-color--golden"
-                                                                    data-aos="fade-up" data-aos-delay="0">
-                                                                    <div class="image-box">
-                                                                        <a href="product-details-default.html" class="image-link<?php if(!empty($product['discount'])){echo ' content-off" data-discount="'.$product['discount'].'% off"';}else{echo '"';} ?>>
-                                                                            <?php
-                                                                            $img_product = Models_Products::selectImages($product['id_product']);
-                                                                            if (!empty($img_product)) {
-                                                                                $r_indexes = array_rand($img_product, 2);
-                                                                                foreach ($r_indexes as $index) {
-                                                                                    $r_element = $img_product[$index];
-                                                                                    echo '<img src="'.MEDIA_ADMIN.'files/images/upload_products/'.$r_element['image'].'" alt="">';
-                                                                                }
-                                                                            }else{
-                                                                                echo '<img src="'.MEDIA_ADMIN.'files/images/upload_products/empty_img.png" alt="">';
-                                                                            }  
-                                                                            ?>
-                                                                        </a>
-                                                                        <div class="action-link">
-                                                                            <div class="action-link-left">
-                                                                                <a href="#" data-bs-toggle="modal"
-                                                                                    data-bs-target="#modalAddcart">Add to Cart</a>
-                                                                            </div>
-                                                                            <div class="action-link-right">
-                                                                                <a href="#" data-bs-toggle="modal"
-                                                                                    data-bs-target="#modalQuickview"><i
-                                                                                        class="icon-magnifier"></i></a>
-                                                                                <a href="wishlist.html"><i
-                                                                                        class="icon-heart"></i></a>
-                                                                                <a href="compare.html"><i
-                                                                                        class="icon-shuffle"></i></a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="content">
-                                                                        <div class="text-center">
-                                                                            <h6><a class="title-product" href="#"><?= $product['name_product']; ?></a></h6>
-                                                                            <p><?= $product['brand']; ?></p>
-                                                                            
-                                                                    <?php if (!empty($product['cantDues'])){
-                                                                            echo '<div class="content-data-product no-empty">'; echo '<div class="price-product no-empty">';
-                                                                        }else{ echo '<div class="content-data-product empty">'; echo '<div class="price-product empty">'; }?>
-                                                                                <?php if(!empty($product['prevPrice'])){ echo '<del>'.SMONEY. Utils::formatMoney($product['prevPrice']).'</del>'; }?>
-                                                                                    <span><?= SMONEY. Utils::formatMoney($product['price']) ;?></span>
+                                                                <div class="col-xl-3 col-sm-6 col-sm-4 col-adaptive">
+                                                                    <!-- Start Product Default Single Item -->
+                                                                    <div class="product-default-single-item product-color--golden"
+                                                                        data-aos="fade-up" data-aos-delay="0">
+                                                                        <div class="image-box">
+                                                                            <a href="product-details-default.html" class="image-link<?php if(!empty($product['discount'])){echo ' content-off" data-discount="'.$product['discount'].'% off"';}else{echo '"';} ?>>
+                                                                                <?php
+                                                                                $img_product = Models_Products::selectImages($product['id_product']);
+                                                                                if (!empty($img_product)) {
+                                                                                    $r_indexes = array_rand($img_product, 2);
+                                                                                    foreach ($r_indexes as $index) {
+                                                                                        $r_element = $img_product[$index];
+                                                                                        echo '<img src="'.MEDIA_ADMIN.'files/images/upload_products/'.$r_element['image'].'" alt="">';
+                                                                                    }
+                                                                                }else{
+                                                                                    echo '<img src="'.MEDIA_ADMIN.'files/images/upload_products/empty_img.png" alt="">';
+                                                                                }  
+                                                                                ?>
+                                                                            </a>
+                                                                            <div class="action-link">
+                                                                                <div class="action-link-left">
+                                                                                    <a href="#" data-bs-toggle="modal"
+                                                                                        data-bs-target="#modalAddcart">Add to Cart</a>
                                                                                 </div>
-                                                                                <?php if (!empty($product['cantDues'])){ ?>
-                                                                                    <span class="ml-2 text-left"><?= $product['cantDues']; ?> cuotas <?= SMONEY. Utils::formatMoney($product['priceDues']);?></span>
-                                                                                <?php } ?>
+                                                                                <div class="action-link-right">
+                                                                                    <a href="#" data-bs-toggle="modal"
+                                                                                        data-bs-target="#modalQuickview"><i
+                                                                                            class="icon-magnifier"></i></a>
+                                                                                    <a href="wishlist.html"><i
+                                                                                            class="icon-heart"></i></a>
+                                                                                    <a href="compare.html"><i
+                                                                                            class="icon-shuffle"></i></a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="content">
+                                                                            <div class="text-center">
+                                                                                <h6><a class="title-product" href="#"><?= $product['name_product']; ?></a></h6>
+                                                                                <p><?= $product['brand']; ?></p>
+                                                                                
+                                                                        <?php if (!empty($product['cantDues'])){
+                                                                                echo '<div class="content-data-product no-empty">'; echo '<div class="price-product no-empty">';
+                                                                            }else{ echo '<div class="content-data-product empty">'; echo '<div class="price-product empty">'; }?>
+                                                                                    <?php if(!empty($product['prevPrice'])){ echo '<del>'.SMONEY. Utils::formatMoney($product['prevPrice']).'</del>'; }?>
+                                                                                        <span><?= SMONEY. Utils::formatMoney($product['price']) ;?></span>
+                                                                                    </div>
+                                                                                    <?php if (!empty($product['cantDues'])){ ?>
+                                                                                        <span class="ml-2 text-left"><?= $product['cantDues']; ?> cuotas <?= SMONEY. Utils::formatMoney($product['priceDues']);?></span>
+                                                                                    <?php } ?>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                                                                    <!-- End Product Default Single Item -->
                                                                 </div>
-                                                                <!-- End Product Default Single Item -->
-                                                            </div>
                                                         <?php
+                                                            }
                                                         }
                                                         ?>
                                                         

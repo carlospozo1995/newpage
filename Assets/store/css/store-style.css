@@ -284,6 +284,7 @@
 }
 
 .title-product{
+    font-size: 15px;
     color: #24262b;
     font-weight: bold !important;
 }
@@ -460,6 +461,9 @@
         width: 43px;
         height: 43px;
         line-height: 43px;
+    }
+    .title-product{
+        font-size: inherit;
     }
     .product-default-single-item .content{
         font-size: 10px;
