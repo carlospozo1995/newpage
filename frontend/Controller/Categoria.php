@@ -14,15 +14,13 @@
 						$id_end = Models_Store::getCategory($category);
 						$sons = Models_Categories::dataSons(end($id_end));
 			            $id_sons = "";
-			            // $content_grid = "";
-			            // $content_single = "";
 
 			            foreach ($sons as $data) {
 			                $id_sons .= Utils::desencriptar($data["id_son"]) . ",";
 			            }
 			            $id_sons = rtrim($id_sons, ",");
 			            $id_sons = !empty($id_sons) ? $id_sons : end($id_end);
-			            $products = Models_Store::getProducts("$id_sons", 0, 12);
+			            $products = Models_Store::getProducts("$id_sons", 0, 10);
 			            $total_products = Models_Store::getProducts("$id_sons");
 
 			            $content = self::printContentProducts($products);
@@ -34,14 +32,46 @@
 					echo json_encode($data);
 				break;
 
+				case 'orderBy':
+					if (isset($_POST)) {
+						$dataSon = Utils::descryptStore($_POST['dataSon']);
+						$valElement = $_POST['elementVal'];
+						$data_sql = "";
+						$content_grid = "";
+						$content_single = "";
+						switch ($valElement) {
+							case 'discount':
+								$data_sql = " ORDER BY CASE WHEN discount IS NOT NULL THEN 0 ELSE 1 END";
+							break;	
+							
+							case 'recent':
+								$data_sql = " ORDER BY datacreate DESC";
+							break;	
+
+							case 'price_asc':
+								$data_sql = " ORDER BY price ASC";
+							break;
+
+							case 'price_desc':
+								$data_sql = " ORDER BY price DESC";
+							break;
+							
+						}
+						$products = Models_Store::orderProducts($dataSon, $data_sql ,0, 10);
+						$content = self::printContentProducts($products);
+					    $content_grid = $content['grid'];
+					    $content_single = $content['single'];
+						$data = array("content_grid" => $content_grid, "content_single" => $content_single);
+						echo json_encode($data);
+					}
+				break;
+					
 				case 'loadMoreData':
 					if (isset($_POST)) {
 						$start = $_POST['start'];
 						$perload = $_POST['perLoad'];
 						$dataSon = Utils::descryptStore($_POST['dataSon']);
 
-						// $content_grid = "";
-						// $content_single = "";
 						$products = Models_Store::getProducts($dataSon, $start, $perload);
 						$totalProducts = Models_Store::getProducts($dataSon);
 						$remaining = count($totalProducts) - ($start + $perload);
@@ -54,12 +84,6 @@
 					echo json_encode($data);
 				break;
 
-				case 'orderBy':
-					if (isset($_POST)) {
-						echo json_encode("...");
-					}
-				break;
-					
 				default:
 					$data["file_js"][] = "categoria-store";
 					if (!empty($_GET['urlData'])) {

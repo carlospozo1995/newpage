@@ -23,6 +23,15 @@
             return $GLOBALS["db"]->selectAll($sql, array());
         }
 
+        static public function orderProducts($data, $data_sql, $start = null, $perload = null)
+        {
+            $sql = "SELECT * FROM products WHERE category_id IN ($data) AND status = 1 $data_sql";
+            if ($start !== null && $perload !== null) {
+                $sql .= " LIMIT $start, $perload";
+            }
+            return $GLOBALS["db"]->selectAll($sql, array());
+        }
+
     }
 
 

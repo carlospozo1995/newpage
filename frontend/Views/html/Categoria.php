@@ -44,7 +44,7 @@
             }
             $id_sons = rtrim($id_sons, ",");
             $id_sons = !empty($id_sons) ? $id_sons : end($id_end);
-            $products = Models_Store::getProducts("$id_sons", 0, 12);
+            $products = Models_Store::getProducts("$id_sons", 0, 10);
             $total_products = Models_Store::getProducts("$id_sons");
 ?>
             <div class="breadcrumb-section">
@@ -282,6 +282,7 @@
                                                 <form action="#">
                                                     <fieldset>
                                                         <select data-son="<?= Utils::encryptStore($id_sons); ?>" name="sort-data" id="sort-data">
+                                                            <option value="default">Por defecto</option>
                                                             <option value="discount">Descuentos</option>
                                                             <option value="recent">Recien agregados</option>
                                                             <option value="price_asc">Precio: menor a mayor</option>
@@ -447,13 +448,13 @@
                             
                             <!-- Start Pagination -->
                             <?php
-                                echo '<div class="container-pagination-btn">';
-                                if (count($total_products) > 4 && !empty($total_products)) {
-                                    echo '<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
-                                            <button id="load-more" onclick="loadMoreProd('."'".Utils::encryptStore($id_sons)."'".')" class="load-more time-trans-txt  position-relative">VER MÁS <div class="cont-load-more"><span class="loader-more-data"></span></div></button>
-                                         </div>';
-                                }
-                                echo '</div>';
+                                // echo '<div class="container-pagination-btn">';
+                                // if (count($total_products) > 10 && !empty($total_products)) {
+                                //     echo '<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
+                                //             <button id="load-more" onclick="loadMoreProd('."'".Utils::encryptStore($id_sons)."'".')" class="load-more time-trans-txt  position-relative">VER MÁS <div class="cont-load-more"><span class="loader-more-data"></span></div></button>
+                                //          </div>';
+                                // }
+                                // echo '</div>';
                             ?>
                             <!-- End Pagination -->
                         </div>
@@ -463,3 +464,4 @@
 <?php
         }
 ?>
+<button onclick="testdatalocal()">click</button>
