@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 15-03-2023 a las 23:41:04
+-- Tiempo de generación: 18-03-2023 a las 04:06:50
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 7.4.19
 
@@ -250,7 +250,16 @@ INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `de
 (13, 143, 123258000, 'Moto Electrica 500w 3 V Rojo Ecomove Eb', ' ndfgcvbsd sdfgsdf szfsg sdfgdfgdf sdfsf sdfsdf', NULL, NULL, NULL, NULL, 'ECOMOVE', '500.00', 8, '600.00', NULL, 12, '70.00', '2023-03-14 18:26:35', 1),
 (14, 140, 87413698800, 'Casco Integral De Moto t g Gris Armor 501 Sp Expo Techno', 'fsxdfsdf sdfgs cv  vs sfsgsdfbdfd s gvsdgs afsdfsd', NULL, NULL, NULL, NULL, 'ARMOR', '40.00', NULL, '50.00', 8, NULL, NULL, '2023-03-14 18:27:46', 1),
 (15, 140, 7896320000452, 'Aire Acondicionado 18000 Btu Longtime', 'xvsxv xfdvxcv dfgvsdfs dfbvxc xbcvbbbbbbbbbbbbbbbbbbbbbbbb cxvbcvbcbcvbvc cv cbcvbc cbvcbcvbcb cvcbcvb cvbcbc   cv cv cv cc c c cv c c cvc', NULL, NULL, NULL, NULL, ' LONGTIME', '519.00', NULL, '800.00', NULL, NULL, NULL, '2023-03-14 18:30:13', 1),
-(16, 140, 852000147963, 'Aire acondicionado Premier Split blanco 18000 Btu', 'ikshdfkjnf fsoidfonsfsjf sfisf sf sfsfd sdfs frsf sf sfslkjhsodjfosj fskhdfklsjofjhos oishdolkfosijd oifshdfonsdf osidf n', NULL, NULL, NULL, NULL, 'START SONIC', '300.00', 5, NULL, NULL, NULL, NULL, '2023-03-14 18:31:32', 1);
+(16, 157, 852000147963, 'Aire acondicionado Premier Split blanco 18000 Btu', 'ikshdfkjnf fsoidfonsfsjf sfisf sf sfsfd sdfs frsf sf sfslkjhsodjfosj fskhdfklsjofjhos oishdolkfosijd oifshdfonsdf osidf n', NULL, NULL, NULL, NULL, 'START SONIC', '300.00', 5, NULL, NULL, NULL, NULL, '2023-03-14 18:31:32', 1),
+(17, 135, 4320212000, 'Freidora De Vapor A Presion Ninja', 'fgddfg dsfgdbfgh dserftwef erfgdfgdf sdrfdfgbfdg sdfgdfg dfgdgbfd rgfdgdfg fdgdfgdfg dfgfghdf dfgsdgffd bvnmvbnvb bvcb ', NULL, NULL, NULL, NULL, 'NINJA', '279.00', NULL, '300.00', 9, NULL, NULL, '2023-03-16 17:01:56', 1),
+(18, 135, 5464510546200, 'Exprimidor Clasico 1.2 L Negro Umco', 'ghbs dkahndk cnbmxzcm m,bnzxc, jhasjk kasjhd kjsd jchadn kasjhd, jashkj kjhsdjhdfns ksjdhfh kjsdfkh', NULL, NULL, NULL, NULL, 'UMCO', '24.90', NULL, NULL, 100, 3, '10.00', '2023-03-16 17:04:25', 1),
+(19, 134, 452398085598922, 'Cafetera Minime Nescafe Dolce Gusto', 'djfghs jksdhf sdkjfhks xcnmvjs sidnf sdjfn xjjs dfojlksjdf lsc xzm sdknjf  xcvi fsn skdlnalj kjhndf', NULL, NULL, NULL, NULL, 'NESCAFE', '129.00', NULL, '89.00', NULL, NULL, NULL, '2023-03-16 17:05:30', 1),
+(20, 136, 7870005120560, 'Horno Freidora De Aire 1800w Ninja Ref Dt200', 'hbdjk dfnsdkjf dsfjiosdf dsfhsodf khdskf khdsk kdhfs, fkshfs fsdf sfs fs dfsf sfnsfs fsfsfsf sf sfsf sf sf sd', NULL, NULL, NULL, NULL, 'NINJA', '339.00', 5, '350.00', 20, 12, '25.00', '2023-03-16 17:07:35', 1),
+(21, 135, 15615894005151, 'Licuadora 1.25 L 3 V 700w Oster', 'gdfisa ajdhasid adkansd kahsdkjn askjdhjask sakjdkjas  khnkmas kjhaskjd jkhdskjf jkj dsfkjds fkfsdjfsdn j n nnjk jn jn', NULL, NULL, NULL, NULL, 'OSTER', '89.00', NULL, '100.00', 9, NULL, NULL, '2023-03-16 17:09:37', 1),
+(22, 132, 45265035626, 'Licuadora Profesional con Procesador 1200W Ninja Auto-IQ', 'sdfsd  ghi hihi h ikjn kijkniuhiujn ijuhi niuhiunjmohu uonhiouhn uhkjn kjhjn jikhiunbhiuhiu nhiuhi nkh ikjn ', NULL, NULL, NULL, NULL, 'NINJA', '239.00', 8, '300.00', 20, NULL, NULL, '2023-03-16 17:11:42', 1),
+(23, 130, 185111818100, 'Lavadora Carga Superior 18 Kg Negro Electrolux Impeller', 'jhbsad aksdnbad asknakjnd kjnasdkjhasd kjhndkahjd kjhnsadkhjad dkandkanjd  askandkjnad aksdkjand adanb kj iuhnkn kjnkn ', NULL, NULL, NULL, NULL, 'ELECTROLUX ', '499.00', NULL, '550.00', 3, NULL, NULL, '2023-03-17 22:01:29', 1),
+(24, 134, 5120041501275, 'Lavadora Dos Tinas 7 Kg Blanca Electrolux', 'dhgasd djhabd akdha akdhna akdnad ksnad kasdjlka akdnalkjasdkjndlkajs dknjasjdla dakjndanda dkad adalkda daldkna dadjad ', NULL, NULL, NULL, NULL, 'ELECTROLUX', '219.00', 4, '350.00', NULL, 10, '20.00', '2023-03-17 22:03:08', 1),
+(25, 106, 4420450420400, 'Parrilla Freidora De Aire Ninja', 'ajsgdbuda aihsdia aiudha aiusd adiuad adiuad adiuad adi', NULL, NULL, NULL, NULL, 'NINJA', '319.00', NULL, '400.00', NULL, NULL, NULL, '2023-03-17 22:04:31', 1);
 
 -- --------------------------------------------------------
 
@@ -405,7 +414,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
