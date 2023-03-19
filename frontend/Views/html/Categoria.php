@@ -44,8 +44,8 @@
             }
             $id_sons = rtrim($id_sons, ",");
             $id_sons = !empty($id_sons) ? $id_sons : end($id_end);
-            $products = Models_Store::getProducts("$id_sons", 0, 10);
-            $total_products = Models_Store::getProducts("$id_sons");
+            $products = Models_Store::getProducts("$id_sons", "", 0, 10);
+            $total_products = Models_Store::getProducts("$id_sons", "");
 ?>
             <div class="breadcrumb-section">
                 <div class="pt-4 pb-4 mb-4 bg-mist-white">
@@ -448,13 +448,13 @@
                             
                             <!-- Start Pagination -->
                             <?php
-                                // echo '<div class="container-pagination-btn">';
-                                // if (count($total_products) > 10 && !empty($total_products)) {
-                                //     echo '<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
-                                //             <button id="load-more" onclick="loadMoreProd('."'".Utils::encryptStore($id_sons)."'".')" class="load-more time-trans-txt  position-relative">VER MÁS <div class="cont-load-more"><span class="loader-more-data"></span></div></button>
-                                //          </div>';
-                                // }
-                                // echo '</div>';
+                                echo '<div class="container-pagination-btn">';
+                                if (count($total_products) > 10 && !empty($total_products)) {
+                                    echo '<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
+                                            <button id="load-more" onclick="loadMoreProd('."'".Utils::encryptStore($id_sons)."'".')" class="load-more time-trans-txt  position-relative">VER MÁS <div class="cont-load-more"><span class="loader-more-data"></span></div></button>
+                                         </div>';
+                                }
+                                echo '</div>';
                             ?>
                             <!-- End Pagination -->
                         </div>

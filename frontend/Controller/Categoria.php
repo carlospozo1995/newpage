@@ -20,8 +20,8 @@
 			            }
 			            $id_sons = rtrim($id_sons, ",");
 			            $id_sons = !empty($id_sons) ? $id_sons : end($id_end);
-			            $products = Models_Store::getProducts("$id_sons", 0, 10);
-			            $total_products = Models_Store::getProducts("$id_sons");
+			            $products = Models_Store::getProducts("$id_sons", "", 0, 10);
+			            $total_products = Models_Store::getProducts("$id_sons", "");
 
 			            $content = self::printContentProducts($products);
 			            $content_grid = $content['grid'];
@@ -57,11 +57,12 @@
 							break;
 							
 						}
-						$products = Models_Store::orderProducts($dataSon, $data_sql ,0, 10);
+						$products = Models_Store::getProducts($dataSon, $data_sql ,0, 10);
+						$total_products = Models_Store::getProducts($dataSon, $data_sql);
 						$content = self::printContentProducts($products);
 					    $content_grid = $content['grid'];
 					    $content_single = $content['single'];
-						$data = array("content_grid" => $content_grid, "content_single" => $content_single);
+						$data = array("content_grid" => $content_grid, "content_single" => $content_single, "total_products" =>  $total_products);
 						echo json_encode($data);
 					}
 				break;
@@ -71,9 +72,29 @@
 						$start = $_POST['start'];
 						$perload = $_POST['perLoad'];
 						$dataSon = Utils::descryptStore($_POST['dataSon']);
+						$sortData = $_POST['sortData'];
+						$data_sql = "";
+						switch ($sortData) {
+							case 'discount':
+								$data_sql = " ORDER BY CASE WHEN discount IS NOT NULL THEN 0 ELSE 1 END";
+							break;	
+							
+							case 'recent':
+								$data_sql = " ORDER BY datacreate DESC";
+							break;	
 
-						$products = Models_Store::getProducts($dataSon, $start, $perload);
-						$totalProducts = Models_Store::getProducts($dataSon);
+							case 'price_asc':
+								$data_sql = " ORDER BY price ASC";
+							break;
+
+							case 'price_desc':
+								$data_sql = " ORDER BY price DESC";
+							break;
+							
+						}		
+
+						$products = Models_Store::getProducts($dataSon, $data_sql, $start, $perload);
+						$totalProducts = Models_Store::getProducts($dataSon, $data_sql);
 						$remaining = count($totalProducts) - ($start + $perload);
 
 						$content = self::printContentProducts($products);

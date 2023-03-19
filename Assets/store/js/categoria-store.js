@@ -33,14 +33,14 @@ $(document).ready(function() {
                 $("#sort-data").val('default');
                 $("#sort-data").niceSelect('update');
 
-                // start = 10;
-                // if(data.total_products.length > 10 && data.total_products.length > 0){
-                //     $('.container-pagination-btn').html(`<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
-                //                             <button id="load-more" onclick="loadMoreProd('${data.sons_url}')" class="load-more time-trans-txt">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
-                //                          </div>`);
-                // }else{
-                //     $('.container-pagination-btn').html("");
-                // }
+                start = 10;
+                if(data.total_products.length > 10 && data.total_products.length > 0){
+                    $('.container-pagination-btn').html(`<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
+                                            <button id="load-more" onclick="loadMoreProd('${data.sons_url}')" class="load-more time-trans-txt">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
+                                         </div>`);
+                }else{
+                    $('.container-pagination-btn').html("");
+                }
 
                 $('.content-loading').css("display","none");
 
@@ -52,7 +52,6 @@ $(document).ready(function() {
         let dataSon = $(this).attr('data-son');
         let elementVal = $(this).val();
         let url_ajax = base_url + "categoria/orderBy/";
-
         $('.content-loading').css("display","flex");
         $.ajax({
             url: url_ajax,
@@ -65,14 +64,15 @@ $(document).ready(function() {
             success: function(data){
                 $('#container-products-grid').html(data.content_grid);
                 $('#container-products-single').html(data.content_single);
-                // start = 10;
-                // if(data.total_products.length > 10 && data.total_products.length > 0){
-                //     $('.container-pagination-btn').html(`<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
-                //                             <button id="load-more" onclick="loadMoreProd('${data.sons_url}')" class="load-more time-trans-txt">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
-                //                          </div>`);
-                // }else{
-                //     $('.container-pagination-btn').html("");
-                // }
+                start = 10;
+                if(data.total_products.length > 10 && data.total_products.length > 0){
+                    $('.container-pagination-btn').html(`<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
+                                            <button id="load-more" onclick="loadMoreProd('${dataSon}')" class="load-more time-trans-txt">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
+                                         </div>`);
+                }else{
+                    $('.container-pagination-btn').html("");
+                }
+
                 $('.content-loading').css("display","none");
             }
         }); 
@@ -85,23 +85,24 @@ let loading = false;
 
 // LOAD MORE PRODUCTS LOADER
 function loadMoreProd(dataSon) {
-
+    var sortData = $("#sort-data").val();
     if(loading){
         return;
     }
 
     loading = true;
-    $('.cont-load-more').css("display", "flex");
+    // $('.cont-load-more').css("display", "flex");
     $.ajax({
         url: base_url + "categoria/loadMoreData/",
         dataType: 'JSON',
         method: 'POST',
         data: {
+            sortData: sortData,
             dataSon: dataSon,
             start: start,
             perLoad: perLoad
         },
-        success: function(data) {   
+        success: function(data) { 
             $('#container-products-grid').append(data.content_grid);
             $('#container-products-single').append(data.content_single);
             start += perLoad;
@@ -110,7 +111,7 @@ function loadMoreProd(dataSon) {
                 $(".page-pagination").remove();
             }
             loading = false;
-            $('.cont-load-more').css("display", "none");
+            // $('.cont-load-more').css("display", "none");
         }
     });
 };
