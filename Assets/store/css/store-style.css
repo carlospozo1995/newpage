@@ -356,6 +356,11 @@
     transform: scale(1.1, 1.1);
 }
 
+.content-check-brand.brand-total{
+    max-height: 175px;
+    overflow: auto;
+}
+
 /*LOADING CONTENT BOX PAGE*/
 .content-loading{
     position: absolute;

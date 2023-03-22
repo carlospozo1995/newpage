@@ -18,18 +18,19 @@
 			            foreach ($sons as $data) {
 			                $id_sons .= Utils::desencriptar($data["id_son"]) . ",";
 			            }
+
 			            $id_sons = rtrim($id_sons, ",");
 			            $id_sons = !empty($id_sons) ? $id_sons : end($id_end);
-			            $products = Models_Store::getProducts("$id_sons", "", 0, 10);
-			            $total_products = Models_Store::getProducts("$id_sons", "");
+			            $products = Models_Store::getProducts("$id_sons", "", false, 0, 10);
+			            $total_products = Models_Store::getProducts("$id_sons", "", false);
 
 			            $content = self::printContentProducts($products);
 			            $content_grid = $content['grid'];
 						$content_single = $content['single'];
+
+						$data = array("content_grid" => $content_grid, "content_single" => $content_single, "sons_url" => Utils::encryptStore($id_sons), "total_products" =>  $total_products);
+						echo json_encode($data);
 					}
-					
-					$data = array("content_grid" => $content_grid, "content_single" => $content_single, "sons_url" => Utils::encryptStore($id_sons), "total_products" =>  $total_products);
-					echo json_encode($data);
 				break;
 
 				case 'orderBy':
@@ -39,6 +40,7 @@
 						$data_sql = "";
 						$content_grid = "";
 						$content_single = "";
+
 						switch ($valElement) {
 							case 'discount':
 								$data_sql = " ORDER BY CASE WHEN discount IS NOT NULL THEN 0 ELSE 1 END";
@@ -57,11 +59,43 @@
 							break;
 							
 						}
-						$products = Models_Store::getProducts($dataSon, $data_sql ,0, 10);
-						$total_products = Models_Store::getProducts($dataSon, $data_sql);
+
+						$products = Models_Store::getProducts($dataSon, $data_sql, false, 0, 10);
+						$total_products = Models_Store::getProducts($dataSon, $data_sql, false);
 						$content = self::printContentProducts($products);
 					    $content_grid = $content['grid'];
 					    $content_single = $content['single'];
+
+						$data = array("content_grid" => $content_grid, "content_single" => $content_single, "total_products" =>  $total_products);
+						echo json_encode($data);
+					}
+				break;
+
+				case 'checkedBrand':
+					if (isset($_POST)) {
+						$flag = false;
+						$data_sql = "";
+						$total_products = "";
+						$dataSon = Utils::descryptStore($_POST['dataSon']);
+
+						if (!empty($_POST['checkedId'])) {
+							$flag = true;
+							$new_array = array_map(function ($value)
+							{
+								return '"' . strtoupper($value) . '"';
+							}, $_POST['checkedId']);
+							$dataChecked = implode(", ", $new_array);
+							$data_sql = " AND brand IN ($dataChecked)";
+							$total_products = Models_Store::getProducts($dataSon, $data_sql, $flag);
+						}else{
+							$total_products = Models_Store::getProducts($dataSon, $data_sql, $flag);
+						}
+
+						$products = Models_Store::getProducts($dataSon, $data_sql, $flag, 0, 10);
+						$content = self::printContentProducts($products);
+					    $content_grid = $content['grid'];
+					    $content_single = $content['single'];
+
 						$data = array("content_grid" => $content_grid, "content_single" => $content_single, "total_products" =>  $total_products);
 						echo json_encode($data);
 					}
@@ -74,6 +108,17 @@
 						$dataSon = Utils::descryptStore($_POST['dataSon']);
 						$sortData = $_POST['sortData'];
 						$data_sql = "";
+						$flag =  false;
+
+						if (!empty($_POST['checkedId'])) {
+							$flag = true;
+							$new_array = array_map(function ($value)
+							{
+								return '"' . strtoupper($value) . '"';
+							}, $_POST['checkedId']);
+							$dataChecked = implode(", ", $new_array);
+						}
+
 						switch ($sortData) {
 							case 'discount':
 								$data_sql = " ORDER BY CASE WHEN discount IS NOT NULL THEN 0 ELSE 1 END";
@@ -90,19 +135,24 @@
 							case 'price_desc':
 								$data_sql = " ORDER BY price DESC";
 							break;
-							
 						}		
 
-						$products = Models_Store::getProducts($dataSon, $data_sql, $start, $perload);
-						$totalProducts = Models_Store::getProducts($dataSon, $data_sql);
+						if (!empty($dataChecked)) {
+							$data_sql = " AND brand IN ($dataChecked)"; 
+							$flag =  true;
+						}
+
+						$products = Models_Store::getProducts($dataSon, $data_sql, $flag, $start, $perload);
+						$totalProducts = Models_Store::getProducts($dataSon, $data_sql, $flag);
 						$remaining = count($totalProducts) - ($start + $perload);
 
 						$content = self::printContentProducts($products);
 						$content_grid = $content['grid'];
 						$content_single = $content['single'];
+
+						$data = array("content_grid" => $content_grid, "content_single" => $content_single, "remaining" => $remaining);
+						echo json_encode($data);
 					}
-					$data = array("content_grid" => $content_grid, "content_single" => $content_single, "remaining" => $remaining);
-					echo json_encode($data);
 				break;
 
 				default:

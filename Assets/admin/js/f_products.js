@@ -399,6 +399,8 @@ function watch(data) {
                     $("#celBrand").text(obj_request.brand);
                     $("#celCategory").text(obj_request.category);
                     $("#celPrice").text("$ " + numberFormat(parseFloat(obj_request.price)));
+                    $("#celPricePrev").text("$ " + numberFormat(parseFloat(obj_request.prevPrice)));
+                    $("#celDiscount").text(obj_request.discount);
                     $("#celStock").text(obj_request.stock);
                     obj_request.url_sliderDst != null ? $("#celSlrDesktop").html('<img class="w-25" src="'+ obj_request.url_sliderDst +'" alt="">') : $("#celSlrDesktop").html("");
                     obj_request.url_sliderMbl != null ? $("#celSlrMobile").html('<img class="w-25" src="'+ obj_request.url_sliderMbl +'" alt="">') : $("#celSlrMobile").html("");

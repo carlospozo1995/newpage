@@ -44,8 +44,8 @@
             }
             $id_sons = rtrim($id_sons, ",");
             $id_sons = !empty($id_sons) ? $id_sons : end($id_end);
-            $products = Models_Store::getProducts("$id_sons", "", 0, 10);
-            $total_products = Models_Store::getProducts("$id_sons", "");
+            $products = Models_Store::getProducts("$id_sons", "", false, 0, 10);
+            $total_products = Models_Store::getProducts("$id_sons", "", false);
 ?>
             <div class="breadcrumb-section">
                 <div class="pt-4 pb-4 mb-4 bg-mist-white">
@@ -143,100 +143,34 @@
 
                                 <!-- Start Single Sidebar Widget -->
                                 <div class="sidebar-single-widget">
-                                    <h6 class="sidebar-title">MANUFACTURER</h6>
+                                    <h6 class="sidebar-title">Marca</h6>
                                     <div class="sidebar-content">
                                         <div class="filter-type-select">
-                                            <ul>
-                                                <li>
-                                                    <label class="checkbox-default" for="brakeParts">
-                                                        <input type="checkbox" id="brakeParts">
-                                                        <span>Brake Parts(6)</span>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label class="checkbox-default" for="accessories">
-                                                        <input type="checkbox" id="accessories">
-                                                        <span>Accessories (10)</span>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label class="checkbox-default" for="EngineParts">
-                                                        <input type="checkbox" id="EngineParts">
-                                                        <span>Engine Parts (4)</span>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label class="checkbox-default" for="hermes">
-                                                        <input type="checkbox" id="hermes">
-                                                        <span>hermes (10)</span>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label class="checkbox-default" for="tommyHilfiger">
-                                                        <input type="checkbox" id="tommyHilfiger">
-                                                        <span>Tommy Hilfiger(7)</span>
-                                                    </label>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div> <!-- End Single Sidebar Widget -->
-
-                                <!-- Start Single Sidebar Widget -->
-                                <div class="sidebar-single-widget">
-                                    <h6 class="sidebar-title">SELECT BY COLOR</h6>
-                                    <div class="sidebar-content">
-                                        <div class="filter-type-select">
-                                            <ul>
-                                                <li>
-                                                    <label class="checkbox-default" for="black">
-                                                        <input type="checkbox" id="black">
-                                                        <span>Black (6)</span>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label class="checkbox-default" for="blue">
-                                                        <input type="checkbox" id="blue">
-                                                        <span>Blue (8)</span>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label class="checkbox-default" for="brown">
-                                                        <input type="checkbox" id="brown">
-                                                        <span>Brown (10)</span>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label class="checkbox-default" for="Green">
-                                                        <input type="checkbox" id="Green">
-                                                        <span>Green (6)</span>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label class="checkbox-default" for="pink">
-                                                        <input type="checkbox" id="pink">
-                                                        <span>Pink (4)</span>
-                                                    </label>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div> <!-- End Single Sidebar Widget -->
-
-                                <!-- Start Single Sidebar Widget -->
-                                <div class="sidebar-single-widget">
-                                    <h6 class="sidebar-title">Tag products</h6>
-                                    <div class="sidebar-content">
-                                        <div class="tag-link">
-                                            <a href="#">asian</a>
-                                            <a href="#">brown</a>
-                                            <a href="#">euro</a>
-                                            <a href="#">fashion</a>
-                                            <a href="#">hat</a>
-                                            <a href="#">t-shirt</a>
-                                            <a href="#">teen</a>
-                                            <a href="#">travel</a>
-                                            <a href="#">white</a>
+                                            
+                                            <?php
+                                                if(!empty($total_products)){
+                                                    echo '<ul class="content-check-brand';if(count($total_products) > 5){echo ' brand-total';}echo '" data-son="'.Utils::encryptStore($id_sons).'">';
+                                                        $countBrand = array();
+                                                        foreach ($total_products as $product) {
+                                                            if(isset($countBrand[$product['brand']])){
+                                                                $countBrand[$product['brand']]++;
+                                                            }else{
+                                                                $countBrand[$product['brand']] = 1;
+                                                            }
+                                                        }
+                                                        foreach ($countBrand as $brand => $amount) {
+                                                ?>
+                                                            <li>
+                                                                <label class="checkbox-default" for="<?= strtolower($brand); ?>">
+                                                                    <input type="checkbox" id="<?= strtolower($brand);?>">
+                                                                    <span><?= $brand." "."(".($amount).")"; ?></span>
+                                                                </label>
+                                                            </li>
+                                                <?php   
+                                                        }
+                                                    echo '</ul>';
+                                                }
+                                            ?>
                                         </div>
                                     </div>
                                 </div> <!-- End Single Sidebar Widget -->
@@ -245,7 +179,7 @@
                                 <div class="sidebar-single-widget">
                                     <div class="sidebar-content">
                                         <a href="product-details-default.html" class="sidebar-banner img-hover-zoom">
-                                            <img class="img-fluid" src="assets/images/banner/side-banner.jpg" alt="">
+                                            <img class="img-fluid" src="" alt="">
                                         </a>
                                     </div>
                                 </div> <!-- End Single Sidebar Widget -->
@@ -463,5 +397,4 @@
             </div> <!-- ...:::: End Shop Section:::... -->
 <?php
         }
-?>
-<button onclick="testdatalocal()">click</button>
+?>  

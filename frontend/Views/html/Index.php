@@ -178,45 +178,13 @@
 		<br><br><br><br><br><br><br><br><br>
 	</div>
 
-	
-<?php
-$productos = array(
-    array("nombre" => "Producto 1", "precio" => 10, "descuento" => 0.1),
-    array("nombre" => "Producto 2", "precio" => 20, "descuento" => 0.2),
-    array("nombre" => "Producto 3", "precio" => 30, "descuento" => null),
-    array("nombre" => "Producto 4", "precio" => 40, "descuento" => 0.3),
-    array("nombre" => "Producto 5", "precio" => 50, "descuento" => null),
-    array("nombre" => "Producto 6", "precio" => 60, "descuento" => 0.4),
-    array("nombre" => "Producto 7", "precio" => 70, "descuento" => null),
-    array("nombre" => "Producto 8", "precio" => 80, "descuento" => 0.5),
-    array("nombre" => "Producto 9", "precio" => 90, "descuento" => null),
-    array("nombre" => "Producto 10", "precio" => 100, "descuento" => 0.6)
-);
 
-// Función de comparación
-function comparar($producto1, $producto2) {
-    // Si ambos productos tienen descuento
-    if ($producto1['descuento'] !== null && $producto2['descuento'] !== null) {
-        // Ordenar en función del descuento
-        return $producto2['descuento'] - $producto1['descuento'];
-    }
-    // Si solo el primer producto tiene descuento
-    else if ($producto1['descuento'] !== null && $producto2['descuento'] === null) {
-        return -1; // El primer producto va primero en el orden
-    }
-    // Si solo el segundo producto tiene descuento
-    else if ($producto1['descuento'] === null && $producto2['descuento'] !== null) {
-        return 1; // El segundo producto va primero en el orden
-    }
-    // Si ninguno de los productos tiene descuento, ordenar en función del precio
-    else {
-        return $producto1['precio'] - $producto2['precio'];
-    }
-}
 
-// Ordenar el array de productos
-usort($productos, 'comparar');
+	<div class="contenedorBtn">
+		<button class="btnTest">click 1</button>
+		<button class="btnTest">click 2</button>
+		<button class="btnTest">click 3</button>
+	</div>
 
-// Mostrar el array de productos ordenado
-print_r($productos);
-?>
+	<br><br>
+	<button class="addbtn">agregar btn</button>

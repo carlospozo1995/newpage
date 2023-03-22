@@ -16219,10 +16219,13 @@ input {
 .checkbox-default input:checked::after {
     position: absolute;
     content: "";
-    background: #b19361;
-    border-color: #b19361;
+    /*change background: #b19361;
+    border-color: #b19361;*/
+    font-weight: bold;
+    border: 2px solid;
+    border-image: linear-gradient(to right, #2984d1, #6548e2) 1;
     font-family: "Ionicons";
-    color: #FFF;
+    color: #6548e2;
 }
 .checkbox-default input span {
     font-size: 14px;

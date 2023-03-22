@@ -235,8 +235,16 @@
                                     <td class="text-center" id="celCategory"></td>
                                 </tr>
 								<tr>
-                                    <td>Price actual:</td>
+                                    <td>Precio actual:</td>
                                     <td class="text-center" id="celPrice"></td>
+                                </tr>
+                                <tr>
+                                    <td>Precio anterior:</td>
+                                    <td class="text-center" id="celPricePrev"></td>
+                                </tr>
+                                <tr>
+                                    <td>Descuento:</td>
+                                    <td class="text-center" id="celDiscount"></td>
                                 </tr>
 								<tr>
                                     <td>Stock:</td>

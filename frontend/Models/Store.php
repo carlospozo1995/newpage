@@ -14,14 +14,18 @@
             return $GLOBALS["db"]->auto_array($sql, array($data));
         }
 
-        static public function getProducts($data, $data_sql, $start = null, $perload = null)
-        {
-            $limit = "";
-            if ($start !== null && $perload !== null) {
-                $limit = " LIMIT $start, $perload";
+        static public function getProducts($data, $data_sql, $flag, $start = null, $perload = null)
+        {   
+            if ($flag === true) {
+                $sql = "SELECT * FROM products WHERE category_id IN ($data) $data_sql";
+            }else{
+                $sql = "SELECT * FROM products WHERE category_id IN ($data) AND status = 1 $data_sql";
             }
-            $sql = "SELECT * FROM products WHERE category_id IN ($data) AND status = 1 $data_sql $limit";
-            
+
+            if ($start !== null && $perload !== null) {
+                $sql .= " LIMIT $start, $perload";
+            }   
+
             return $GLOBALS["db"]->selectAll($sql, array());
         }
 
