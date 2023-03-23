@@ -9,6 +9,8 @@ RewriteEngine On
 #TEMPORARILY SAVE SESSION VARIABLES - SERVER
 #php_flag output_buffering on
 
+ErrorDocument 404 "Lo siento, la página que estás buscando no existe."
+
 RewriteRule ^$ %{ENV:REWRITEBASE}index.php?show=Index [L]
 #RewriteRule ^index/loadMore/$ %{ENV:REWRITEBASE}index.php?show=Index&action=loadMore [L]
 
@@ -60,8 +62,7 @@ RewriteRule ^categoria/loadProducts/$ %{ENV:REWRITEBASE}index.php?show=categoria
 RewriteRule ^categoria/orderBy/$ %{ENV:REWRITEBASE}index.php?show=categoria&action=orderBy [L]
 RewriteRule ^categoria/checkedBrand/$ %{ENV:REWRITEBASE}index.php?show=categoria&action=checkedBrand [L]
 RewriteRule ^categoria/loadMoreData/$ %{ENV:REWRITEBASE}index.php?show=categoria&action=loadMoreData [L]
-RewriteRule ^categoria/(.+)$ %{ENV:REWRITEBASE}index.php?show=categoria&urlData=$1 [L]
-
+RewriteRule ^categoria/(.+)$ %{ENV:REWRITEBASE}index.php?show=categoria&cat_path=$1 [L]
 
 
 #EXAMPLES
