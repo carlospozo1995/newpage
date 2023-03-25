@@ -63,6 +63,12 @@
 					}	
 				break;
 
+				case 'orderProducts':
+					if (isset($_POST)) {
+						$
+					}
+				break;
+
 				default:
 					$data["file_js"][] = "categoria-store";
 					if (!empty($_GET['cat_path'])) {

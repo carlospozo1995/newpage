@@ -102,6 +102,7 @@ $(document).ready(function () {
                         contentList += li.prop('outerHTML');
                     }
                     $(".content-check-brand").html(contentList);
+                    $(".content-check-brand").attr('data-sons', data.sons);
 
                 }else{
                     $('.content-section-page').html(data.content);
@@ -119,13 +120,89 @@ $(document).ready(function () {
     // ORDER BY PRODUCTS
     $("#products-order").change(function () {
         let sons_category = $(this).attr('data-sons');
-        let 
-        let elementVal = $(this).val();
-        let url_ajax = base_url + "categoria/orderBy/";
+        let this_val = $(this).val();
+
+        // Data brand checked
+        let brand_check = $('.content-check-brand input[type="checkbox"]:checked');
+        let ids_check = [];
+        for (var i = 0; i < brand_check.length; i++) {
+            ids_check.push(brand_check[i].id);
+        }
+
+        // console.log(this_val);
+        // console.log(ids_check);
+        // console.log(sons_category);
+
+        let url_ajax = base_url + "categoria/orderProducts/";
+
+        $.ajax({
+            url: url_ajax,
+            dataType: 'JSON',
+            method: 'POST',
+            data: {
+                selectVal : this_val,
+                checkedVal : ids_check,
+                sons: sons_category,
+            },
+            beforeSend: function() {
+                $('.content-loading').css("display","flex");
+            },
+            success: function(data){
+                console.log(data);
+            },
+            error: function(xhr, status, error) {
+                
+            },
+            complete: function() {
+                $('.content-loading').css("display","none");
+            }
+        });
+
     });
 
     // SHOW PRODUCTS BY BRAND
+    $('.content-section-page').on('change', ".content-check-brand input[type='checkbox']", function () {
+        // Data brand checked
+        let sons_category = $('.content-check-brand').attr('data-sons');
+        let brand_check = $('.content-check-brand input[type="checkbox"]:checked');
+        let ids_check = [];
+        for (var i = 0; i < brand_check.length; i++) {
+            ids_check.push(brand_check[i].id);
+        }
 
+        // Value order by
+        let order_value = $("#products-order").val();
+
+        // console.log(ids_check);
+        // console.log(order_value);
+        // console.log(sons_category);
+
+        let url_ajax = base_url + "categoria/orderProducts/";
+
+        $.ajax({
+            url: url_ajax,
+            dataType: 'JSON',
+            method: 'POST',
+            data: {
+                selectVal : order_value,
+                checkedVal : ids_check,
+                sons: sons_category,
+            },
+            beforeSend: function() {
+                $('.content-loading').css("display","flex");
+            },
+            success: function(data){  
+                console.log(data);
+            },
+            error: function(xhr, status, error) {
+                
+            },
+            complete: function() {
+                $('.content-loading').css("display","none");
+            }
+        });
+
+    });
 
     // LOAD MORE PRODUCTS (BUTTON)
     $('.content-section-page .container-pagination-btn').on('click', '#load-more', function () {

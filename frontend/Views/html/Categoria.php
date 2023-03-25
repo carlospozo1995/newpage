@@ -160,7 +160,7 @@
                                     <div class="sidebar-content">
                                         <div class="filter-type-select">
                                         <?php
-                                        echo '<ul class="content-check-brand brand-total" data-son="'.Utils::encryptStore($id_sons).'">';
+                                        echo '<ul class="content-check-brand brand-total" data-sons="'.Utils::encryptStore($id_sons).'">';
                                             $countBrand = array();
                                             foreach ($total_products as $product) {
                                                 if(isset($countBrand[$product['brand']])){
