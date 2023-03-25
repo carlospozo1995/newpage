@@ -606,7 +606,7 @@ progress {
 
 .img-fluid {
     max-width: 100%;
-    height: auto;
+    height: auto !important;
 }
 
 .img-thumbnail {
@@ -1524,6 +1524,8 @@ progress {
     .col-lg-3 {
         flex: 0 0 auto;
         width: 18%;
+        padding-bottom: 50px;
+        padding-top: 20px;
     }
 
     .col-lg-4 {
@@ -7764,6 +7766,10 @@ progress {
 
 .pb-10 {
     padding-bottom: 50px !important;
+}
+
+.pb-16{
+    padding-bottom: 80px !important;
 }
 
 .pl-0 {
@@ -15605,6 +15611,7 @@ input {
         margin-top: 0;
         margin-left: 30px;
 /* change       width: auto;*/
+        padding: 10px 0px;
     }
 }
 
@@ -16241,16 +16248,16 @@ input {
 * Components - Sidebar Widget
 *****************************/
 .siderbar-section {
-    margin-top: 60px;
+/*    margin-top: 60px;*/
 }
 @media (min-width: 768px) {
     .siderbar-section {
-        margin-top: 80px;
+/*        margin-top: 80px;*/
     }
 }
 @media (min-width: 992px) {
     .siderbar-section {
-        margin-top: 0;
+/*        margin-top: 0;*/
     }
 }
 
@@ -16493,7 +16500,8 @@ a.ui-button:active,
 }
 
 .breadcrumb-nav-color--black li a {
-    color: #000;
+    font-weight: 600;
+    color: #3E414A;
     transition: background-image 0.5s ease;
 }
 .breadcrumb-nav-color--black li a:hover {

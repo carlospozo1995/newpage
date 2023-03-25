@@ -578,4 +578,7 @@
 
     <!-- Offcanvas Overlay -->
     <div class="offcanvas-overlay"></div>
+
+    <!-- START SECTION PAGE -->
+    <div class="content-section-page">
    

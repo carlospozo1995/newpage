@@ -30,7 +30,7 @@
             if ($start !== null && $perload !== null) {
                 $sql .= " LIMIT $start, $perload";
             }
-
+            
             return $GLOBALS["db"]->selectAll($sql, array());
         }
 
