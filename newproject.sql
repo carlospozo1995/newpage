@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 22-03-2023 a las 04:31:12
+-- Tiempo de generación: 25-03-2023 a las 00:35:31
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 7.4.19
 
@@ -137,7 +137,11 @@ INSERT INTO `img_product` (`id_img`, `product_id`, `image`) VALUES
 (1, 1, 'imgRef_1_52fb6bac67b406f70436e98c9c65eead.jpg'),
 (2, 1, 'imgRef_1_e3dca321e58188193ef053d0a9a6f377.jpg'),
 (3, 1, 'imgRef_1_06f2fab2f8896ac3ccecdf76eb9d4eb0.jpg'),
-(4, 1, 'imgRef_1_342203a2311255fa62f784d4d99ca07f.jpg');
+(4, 1, 'imgRef_1_342203a2311255fa62f784d4d99ca07f.jpg'),
+(5, 9, 'imgRef_9_4915bfed6917470a8be9b30d9540ea3b.jpg'),
+(6, 9, 'imgRef_9_bdd4825e652bd104a3807208cfe90c91.jpg'),
+(7, 9, 'imgRef_9_a87e07ac955307bafbfd4d5c10cb629f.jpg'),
+(8, 9, 'imgRef_9_ba962b56491c384d3f445506de8d5ae4.jpg');
 
 -- --------------------------------------------------------
 
@@ -250,7 +254,7 @@ INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `de
 (13, 143, 123258000, 'Moto Electrica 500w 3 V Rojo Ecomove Eb', ' ndfgcvbsd sdfgsdf szfsg sdfgdfgdf sdfsf sdfsdf', NULL, NULL, NULL, NULL, 'ECOMOVE', '500.00', 8, '600.00', NULL, 12, '70.00', '2023-03-14 18:26:35', 1),
 (14, 140, 87413698800, 'Casco Integral De Moto t g Gris Armor 501 Sp Expo Techno', 'fsxdfsdf sdfgs cv  vs sfsgsdfbdfd s gvsdgs afsdfsd', NULL, NULL, NULL, NULL, 'ARMOR', '40.00', NULL, '50.00', 8, NULL, NULL, '2023-03-14 18:27:46', 1),
 (15, 140, 7896320000452, 'Aire Acondicionado 18000 Btu Longtime', 'xvsxv xfdvxcv dfgvsdfs dfbvxc xbcvbbbbbbbbbbbbbbbbbbbbbbbb cxvbcvbcbcvbvc cv cbcvbc cbvcbcvbcb cvcbcvb cvbcbc   cv cv cv cc c c cv c c cvc', NULL, NULL, NULL, NULL, ' LONGTIME', '519.00', NULL, '800.00', NULL, NULL, NULL, '2023-03-14 18:30:13', 1),
-(16, 157, 852000147963, 'Aire acondicionado Premier Split blanco 18000 Btu', 'ikshdfkjnf fsoidfonsfsjf sfisf sf sfsfd sdfs frsf sf sfslkjhsodjfosj fskhdfklsjofjhos oishdolkfosijd oifshdfonsdf osidf n', NULL, NULL, NULL, NULL, 'START SONIC', '300.00', 5, NULL, NULL, NULL, NULL, '2023-03-14 18:31:32', 1),
+(16, 144, 852000147963, 'Aire acondicionado Premier Split blanco 18000 Btu', 'ikshdfkjnf fsoidfonsfsjf sfisf sf sfsfd sdfs frsf sf sfslkjhsodjfosj fskhdfklsjofjhos oishdolkfosijd oifshdfonsdf osidf n', NULL, NULL, NULL, NULL, 'START SONIC', '300.00', 5, NULL, NULL, NULL, NULL, '2023-03-14 18:31:32', 1),
 (17, 135, 4320212000, 'Freidora De Vapor A Presion Ninja', 'fgddfg dsfgdbfgh dserftwef erfgdfgdf sdrfdfgbfdg sdfgdfg dfgdgbfd rgfdgdfg fdgdfgdfg dfgfghdf dfgsdgffd bvnmvbnvb bvcb ', NULL, NULL, NULL, NULL, 'NINJA', '279.00', NULL, '300.00', 9, NULL, NULL, '2023-03-16 17:01:56', 1),
 (18, 135, 5464510546200, 'Exprimidor Clasico 1.2 L Negro Umco', 'ghbs dkahndk cnbmxzcm m,bnzxc, jhasjk kasjhd kjsd jchadn kasjhd, jashkj kjhsdjhdfns ksjdhfh kjsdfkh', NULL, NULL, NULL, NULL, 'UMCO', '24.90', NULL, NULL, 100, 3, '10.00', '2023-03-16 17:04:25', 1),
 (19, 134, 452398085598922, 'Cafetera Minime Nescafe Dolce Gusto', 'djfghs jksdhf sdkjfhks xcnmvjs sidnf sdjfn xjjs dfojlksjdf lsc xzm sdknjf  xcvi fsn skdlnalj kjhndf', NULL, NULL, NULL, NULL, 'NESCAFE', '129.00', NULL, '89.00', NULL, NULL, NULL, '2023-03-16 17:05:30', 1),
@@ -263,7 +267,13 @@ INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `de
 (26, 134, 1600251601, 'Celular Poco M3 64gb/4gb Ram Negro Xiaomi', 'kajshda daja as das dasd ad ada da ds asdadada ad adsasdasd asdasdkjahdkja asjdbabda ajsdba djadsa djashda djads as', NULL, NULL, NULL, NULL, 'XIAOMI', '209.00', 8, '239.00', NULL, 10, '25.00', '2023-03-19 08:55:50', 1),
 (27, 136, 485600051252, 'Celular C21y 64gb/4gb Ram Azul Realme', 'ajd dahsd ih coi asdasd ao  adkasd doias daikda sdaidna dakjsd adikad adia dain', NULL, NULL, NULL, NULL, 'INDURAMA', '159.00', NULL, '179.00', 9, NULL, NULL, '2023-03-19 08:56:42', 1),
 (28, 132, 3120210259100, 'Pizarra Digital Lcd 13.5\' Xiaomi', 'daskjda aisd adaiod aisda dikcdksda asklndlakjsdo asndojaiodj adoajoidj dkiansndjka danda dad adn', NULL, NULL, NULL, NULL, 'XIAOMI', '34.00', NULL, NULL, NULL, 5, '7.00', '2023-03-19 08:58:19', 1),
-(29, 132, 4152085205, 'Mouse Gamer Logitech G203', 'hasbd daisdias asidaishd iasd absjdbas dasd asda sdasda das das dasikjdnaksda dad a daksdkasda ajsdba dasdkadk askdajdisak', NULL, NULL, NULL, NULL, 'INDURAMA', '24.00', 10, NULL, 2, NULL, NULL, '2023-03-19 08:59:37', 1);
+(29, 132, 4152085205, 'Mouse Gamer Logitech G203', 'hasbd daisdias asidaishd iasd absjdbas dasd asda sdasda das das dasikjdnaksda dad a daksdkasda ajsdba dasdkadk askdajdisak', NULL, NULL, NULL, NULL, 'INDURAMA', '24.00', 10, NULL, 2, NULL, NULL, '2023-03-19 08:59:37', 1),
+(30, 144, 541021456102, 'Cocina a Gas 6 Quemadores C/grill Mabe', 'dkifhsfds ksdjfs fsfjsdf sdofsfs fsodflsmkfs fsldfmmcxvmx sdflkdjmslf s flsdkfsdmfsdf sdfksmflsjflsd fsdlfksdf ', NULL, NULL, NULL, NULL, 'MABE', '419.00', 8, '500.00', 10, NULL, NULL, '2023-03-23 17:30:51', 1),
+(31, 150, 1204512410, 'Cocineta A Gas C/tapa 4 Hornillas Encendido Electrico Kombo', 'dfsdf sds s kjh jj kmnjojmn oljioi lkmjoi jlkmlkjdjfl osdjfsd loidjfjsdfj fosdijfjsdf sjdfsd', NULL, NULL, NULL, NULL, 'KOMBO', '99.00', NULL, NULL, NULL, 5, '24.00', '2023-03-23 17:33:28', 1),
+(32, 141, 1210789687560, 'Cocina A Gas 4 Quemadores Mabe', 'ddasdasd fsd fs df sd sdfnbijsbnfkjsd sfhskdnfksjkfsd skdfhnksdnfsnjdf sdhfsndfjsidof fsidhfsnd', NULL, NULL, NULL, NULL, 'MABE', '159.00', 2, '200.00', 70, 10, '18.00', '2023-03-23 17:35:17', 1),
+(33, 139, 12005400545, 'Parlante Gamer P/computadora Negro Onikuma L6', 'zskdjnijd asdlkasdoiajsd adljasldakjas daoldjadmapokd adjadasdpokapodka asdasdñakda dadkmms', NULL, NULL, NULL, NULL, 'ONIKUMA', '29.90', 8, NULL, NULL, NULL, NULL, '2023-03-23 17:41:35', 1),
+(34, 141, 20110014550, 'Teclado C/mouse Negro Maxell', 'sdffvkh iu iiuhj  jujoijo ojioojm kp,polkopbdpf gojgdfgmdjgod ldfgdmgdf godifgdfgdg fdfgpodkgd ñ', NULL, NULL, NULL, NULL, 'MAXELL', '12.00', NULL, '20.00', NULL, NULL, NULL, '2023-03-23 17:42:57', 1),
+(35, 142, 120451241085, 'Balanza Digital Inteligente Omron Hbf226', 'asdadasdasdacx x jhgu bhbnbbibndksf fsdflfdlsoijfs fsjdflisjfsj fsfjsnf sfnsfjkfsmfsf', NULL, NULL, NULL, NULL, 'OMRON', '89.00', NULL, NULL, NULL, NULL, NULL, '2023-03-23 17:43:58', 1);
 
 -- --------------------------------------------------------
 
@@ -400,7 +410,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT de la tabla `img_product`
 --
 ALTER TABLE `img_product`
-  MODIFY `id_img` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_img` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `modules`
@@ -418,7 +428,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
