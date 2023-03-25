@@ -31,8 +31,8 @@
         $id_sons = rtrim($id_sons, ",");
 
         $id_sons = !empty($id_sons) ? $id_sons : end($end_path_id);
-        $products = Models_Store::getProducts($id_sons, 0, 10);
-        $total_products = Models_Store::getProducts($id_sons);
+        $products = Models_Store::getProducts($id_sons, "", "", 0, 10);
+        $total_products = Models_Store::getProducts($id_sons, "", "");
         
         if (!empty($products)) {
 

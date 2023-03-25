@@ -124,14 +124,10 @@ $(document).ready(function () {
 
         // Data brand checked
         let brand_check = $('.content-check-brand input[type="checkbox"]:checked');
-        let ids_check = [];
+        var ids_check = [];
         for (var i = 0; i < brand_check.length; i++) {
             ids_check.push(brand_check[i].id);
         }
-
-        // console.log(this_val);
-        // console.log(ids_check);
-        // console.log(sons_category);
 
         let url_ajax = base_url + "categoria/orderProducts/";
 
@@ -172,10 +168,6 @@ $(document).ready(function () {
 
         // Value order by
         let order_value = $("#products-order").val();
-
-        // console.log(ids_check);
-        // console.log(order_value);
-        // console.log(sons_category);
 
         let url_ajax = base_url + "categoria/orderProducts/";
 
@@ -247,7 +239,5 @@ $(document).ready(function () {
         });
 
     });
-
-
 
 });

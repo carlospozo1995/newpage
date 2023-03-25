@@ -23,9 +23,10 @@
             return $GLOBALS["db"]->auto_array($sql, array($data));
         }
 
-        static public function getProducts($data, $start = null, $perload = null)
-        {   
-            $sql = "SELECT * FROM products WHERE category_id IN ($data) AND status = 1";
+        static public function getProducts($data, $brandCheck, $order, $start = null, $perload = null)
+        { 
+
+            $sql = "SELECT * FROM products WHERE category_id IN ($data) $brandCheck AND status = 1 $order";
 
             if ($start !== null && $perload !== null) {
                 $sql .= " LIMIT $start, $perload";
@@ -36,5 +37,5 @@
 
     }
 
-
+    // SELECT * FROM products WHERE category_id IN (129,133,136,130,131,132,134,135) AND brand IN("XIAOMI", "ELECTROLUX") AND status = 1 ORDER BY price DESC LIMIT 0, 10;
 ?>
