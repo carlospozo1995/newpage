@@ -36,6 +36,11 @@
         
         if (!empty($products)) {
 
+            // PRICE MIN AND PRICE MAX COLUMN
+            $price_column = array_column($total_products, 'price');
+            $price_min = min($price_column);
+            $price_max = max($price_column);
+
             // STORAGE OF PRODUCT IMAGES
             $product_images = array();
             foreach ($products as $product) {
@@ -147,7 +152,7 @@
                                 <div class="sidebar-single-widget">
                                     <h6 class="sidebar-title">FILTER BY PRICE</h6>
                                     <div class="sidebar-content">
-                                        <div id="slider-range"></div>
+                                        <div id="slider-range" data-min="<?= $price_min; ?>" data-max="<?= $price_max; ?>"></div>
                                         <div class="filter-type-price">
                                             <label for="amount">Price range:</label>
                                             <input type="text" id="amount">

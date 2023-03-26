@@ -469,11 +469,14 @@
     /************************************************
      * Price Slider
      ***********************************************/
+    var priceMin = parseInt($("#slider-range").data("min"));
+    var priceMax = parseInt($("#slider-range").data("max"));
+
     $("#slider-range").slider({
         range: true,
-        min: 0,
-        max: 3000,
-        values: [75, 3000],
+        min: priceMin,
+        max: priceMax,
+        values: [priceMin, priceMax],
         slide: function(event, ui) {
             $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
         }

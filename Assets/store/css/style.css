@@ -16364,7 +16364,8 @@ input {
 }
 
 .ui-widget-header {
-    background: #b19361;
+/*  change  background: #b19361;*/
+    background: linear-gradient(to right, #1000c3, #ff6666);
 }
 
 .ui-slider-horizontal .ui-slider-handle {
