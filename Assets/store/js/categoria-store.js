@@ -53,6 +53,7 @@ $(document).ready(function () {
             },
             beforeSend: function() {
                 $('.content-loading').css("display","flex");
+                $('.sidebar-content .cont-load-more').css("display", "flex");
             },
             success: function(data){               
                 window.history.replaceState({}, '', element.attr('href'));
@@ -113,6 +114,7 @@ $(document).ready(function () {
             },
             complete: function() {
                 $('.content-loading').css("display","none");
+                $('.sidebar-content .cont-load-more').css("display", "none");
             }
         });
     });
@@ -144,7 +146,20 @@ $(document).ready(function () {
                 $('.content-loading').css("display","flex");
             },
             success: function(data){
-                console.log(data);
+                // Reset total products displayed
+                $('.page-amount').html(data.total_products.length+' Productos');
+
+                $('#container-products-grid').html(data.content.grid);
+                $('#container-products-single').html(data.content.single);
+
+                if (data.total_products.length > 10) {
+                        start = 10;
+                        $('.container-pagination-btn').html(`<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
+                                            <button id="load-more" class="load-more time-trans-txt" data-sons="${sons_category}">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
+                                         </div>`);
+                }else{
+                    $('.container-pagination-btn').html("");
+                }
             },
             error: function(xhr, status, error) {
                 
@@ -184,7 +199,20 @@ $(document).ready(function () {
                 $('.content-loading').css("display","flex");
             },
             success: function(data){  
-                console.log(data);
+                // Reset total products displayed
+                $('.page-amount').html(data.total_products.length+' Productos');
+
+                $('#container-products-grid').html(data.content.grid);
+                $('#container-products-single').html(data.content.single);
+
+                 if (data.total_products.length > 10) {
+                        start = 10;
+                        $('.container-pagination-btn').html(`<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
+                                            <button id="load-more" class="load-more time-trans-txt" data-sons="${sons_category}">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
+                                         </div>`);
+                }else{
+                    $('.container-pagination-btn').html("");
+                }
             },
             error: function(xhr, status, error) {
                 
@@ -198,6 +226,15 @@ $(document).ready(function () {
 
     // LOAD MORE PRODUCTS (BUTTON)
     $('.content-section-page .container-pagination-btn').on('click', '#load-more', function () {
+        // Data brand checked
+        let brand_check = $('.content-check-brand input[type="checkbox"]:checked');
+        let ids_check = [];
+        for (var i = 0; i < brand_check.length; i++) {
+            ids_check.push(brand_check[i].id);
+        }
+
+        // Value order by
+        let order_value = $("#products-order").val();
 
         let sons_category = $(this).data('sons');
 
@@ -212,12 +249,14 @@ $(document).ready(function () {
             dataType: 'JSON',
             method: 'POST',
             data: {
+                selectVal : order_value,
+                checkedVal : ids_check,
                 sons: sons_category,
                 start: start,
                 perLoad: perLoad
             },
             beforeSend: function() {
-                $('.cont-load-more').css("display", "flex");
+                $('.load-more .cont-load-more').css("display", "flex");
             },
             success: function(data){   
                 // Print remaining products - different container
@@ -234,7 +273,7 @@ $(document).ready(function () {
                 
             },
             complete: function() {
-                $('.cont-load-more').css("display", "none");
+                $('.load-more .cont-load-more').css("display", "none");
             }
         });
 

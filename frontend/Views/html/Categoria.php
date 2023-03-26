@@ -157,10 +157,11 @@
 
                                 <div class="sidebar-single-widget">
                                     <h6 class="sidebar-title">Marca</h6>
-                                    <div class="sidebar-content">
+                                    <div class="sidebar-content position-relative">
+                                        <div class="cont-load-more"><span class="loader-more-data"></span></div>
                                         <div class="filter-type-select">
                                         <?php
-                                        echo '<ul class="content-check-brand brand-total" data-sons="'.Utils::encryptStore($id_sons).'">';
+                                        echo '<ul class="content-check-brand" data-sons="'.Utils::encryptStore($id_sons).'">';
                                             $countBrand = array();
                                             foreach ($total_products as $product) {
                                                 if(isset($countBrand[$product['brand']])){

@@ -40,6 +40,7 @@
 							                </div>
 							            </div>';
         				}
+        				
         				$data = array("content" => $content, "sons" => Utils::encryptStore($id_sons), "total_products" =>  $total_products);
 						echo json_encode($data);
 					}
@@ -50,14 +51,47 @@
 						$sons = Utils::descryptStore($_POST['sons']);
 						$start = $_POST['start'];
 						$perload = $_POST['perLoad'];
+
+						$order_val = $_POST['selectVal'];
+						$brand_val = !empty($_POST['checkedVal']) ? $_POST['checkedVal'] : '';
+						$sons = Utils::descryptStore($_POST['sons']);
+						$sql_order = "";
+						$sql_checked = "";
+
+						switch ($order_val) {
+							case 'discount':
+								$sql_order = " ORDER BY CASE WHEN discount IS NOT NULL THEN 0 ELSE 1 END";
+							break;
+
+							case 'recent':
+								$sql_order = " ORDER BY datacreate DESC";
+							break;
+
+							case 'price_asc':
+								$sql_order = " ORDER BY price ASC";
+							break;
+
+							case 'price_desc':
+								$sql_order = " ORDER BY price DESC";
+							break;
+						}
+
+						if (!empty($brand_val)) {
+							$new_array = array_map(function ($value)
+							{
+								return '"' . strtoupper($value) . '"';
+							}, $brand_val);
+							$dataChecked = implode(", ", $new_array);
+							$sql_checked = " AND brand IN ($dataChecked)";
+						}
 						
-						$products = Models_Store::getProducts($sons, $start, $perload);
-						$total_products = Models_Store::getProducts($sons);
+						$products = Models_Store::getProducts($sons, $sql_checked, $sql_order, $start, $perload);
+						$total_products = Models_Store::getProducts($sons, $sql_checked, $sql_order);
 						$remaining = count($total_products) - ($start + $perload);
 
 						$product_images = self::productImages($products);
         				$content = self::printContentProducts($products, $product_images);
-
+        				
         				$data = array("content" => $content, "remaining" => $remaining);
 						echo json_encode($data);
 					}	
@@ -89,9 +123,7 @@
 							break;
 						}
 
-						if (empty($brand_val)) {
-							$sql_checked = "";
-						}else{
+						if (!empty($brand_val)) {
 							$new_array = array_map(function ($value)
 							{
 								return '"' . strtoupper($value) . '"';
@@ -101,10 +133,12 @@
 						}
 
 						$products = Models_Store::getProducts($sons, $sql_checked, $sql_order, 0, 10);
-        				$total_products = Models_Store::getProducts($sons, "", "");
-						Utils::dep($products);
-						// $data = array("content" => $content, "total_products" =>  $total_products);
-						// echo json_encode($data);
+        				$total_products = Models_Store::getProducts($sons, $sql_checked, $sql_order);
+        				$product_images = self::productImages($products);
+        				$content = self::printContentProducts($products, $product_images);
+
+						$data = array("content" => $content, "total_products" =>  $total_products);
+						echo json_encode($data);
 					}
 				break;
 
