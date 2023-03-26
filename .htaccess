@@ -76,6 +76,3 @@ RewriteRule ^categoria/(.+)$ %{ENV:REWRITEBASE}index.php?show=categoria&cat_path
 #RewriteRule ^categoria/([^/]+)/?$ %{ENV:REWRITEBASE}index.php?show=categoria&category1=$1 [L]
 #RewriteRule ^categoria/([^/]+)/([^/]+)/?$ %{ENV:REWRITEBASE}index.php?show=categoria&category1=$1&category2=$2 [L]
 #RewriteRule ^categoria/([^/]+)/([^/]+)/([^/]+)/?$ %{ENV:REWRITEBASE}index.php?show=categoria&category1=$1&category2=$2&category3=$3 [L]
-
-#RewriteRule ^categoria/orderBy/$ %{ENV:REWRITEBASE}index.php?show=categoria&action=orderBy [L]
-#RewriteRule ^categoria/checkedBrand/$ %{ENV:REWRITEBASE}index.php?show=categoria&action=checkedBrand [L]c
