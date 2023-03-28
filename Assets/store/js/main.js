@@ -467,26 +467,6 @@
 
 
     /************************************************
-     * Price Slider
-     ***********************************************/
-    var priceMin = parseInt($("#slider-range").data("min"));
-    var priceMax = parseInt($("#slider-range").data("max"));
-
-    $("#slider-range").slider({
-        range: true,
-        min: priceMin,
-        max: priceMax,
-        values: [priceMin, priceMax],
-        slide: function(event, ui) {
-            $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
-        }
-    });
-    $("#amount").val("$" + $("#slider-range").slider("values", 0) +
-        " - $" + $("#slider-range").slider("values", 1));
-
-
-
-    /************************************************
      * Animate on Scroll
      ***********************************************/
     AOS.init({

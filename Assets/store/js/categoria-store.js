@@ -60,7 +60,6 @@ $(document).ready(function () {
                 if(data.total_products.length > 0){
                     // Reset navigation page
                     $('.navigation-page').html(html_nav);
-
                     // Reset total products displayed
                     $('.page-amount').html(data.total_products.length+' Productos');
 
@@ -82,6 +81,19 @@ $(document).ready(function () {
                     }else{
                         $('.container-pagination-btn').html("");
                     }
+
+                    // Price filter products range
+                        let price_column = data.total_products.map(function(product) {
+                            return product.price;
+                        });
+                        let price_min = parseInt(Math.min.apply(null, price_column));
+                        let price_max = parseInt(Math.max.apply(null, price_column));
+
+                        $('#slider-range').attr('data-min', price_min);
+                        $('#slider-range').attr('data-max', price_max);
+
+
+                        priceRange(price_min, price_max);
 
                     // Add marks products
                     const countBrand = {};
@@ -280,3 +292,37 @@ $(document).ready(function () {
     });
 
 });
+
+/************************************************
+* Price Slider
+***********************************************/
+let price_min = parseInt($('#slider-range').attr('data-min'));
+let price_max = parseInt($('#slider-range').attr('data-max'));
+
+function priceRange(price_min, price_max) {
+    let points_range =  $('#slider-range span');
+    let progress_line = $('#slider-range .ui-widget-header');
+
+    $("#slider-range").slider({
+        range: true,
+        min: price_min,
+        max: price_max,
+        values: [price_min, price_max],
+        slide: function(event, ui) {
+            $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+        }
+    });
+
+    $("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
+
+    points_range.eq(0).css('left', '0%');
+    if (price_min === price_max) {
+        progress_line.css('background', '#efefef');
+        points_range.eq(1).css('left', '0%');
+    }else{
+        progress_line.css('background', 'linear-gradient(to right, #1000c3, #ff6666)');
+        points_range.eq(1).css('left', '100%');
+    }
+}
+
+priceRange(price_min, price_max);

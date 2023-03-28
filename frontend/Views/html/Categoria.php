@@ -38,8 +38,8 @@
 
             // PRICE MIN AND PRICE MAX COLUMN
             $price_column = array_column($total_products, 'price');
-            $price_min = min($price_column);
-            $price_max = max($price_column);
+            $price_min = intval(min($price_column));
+            $price_max = intval(max($price_column));
 
             // STORAGE OF PRODUCT IMAGES
             $product_images = array();
