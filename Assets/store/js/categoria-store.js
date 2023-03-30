@@ -83,17 +83,15 @@ $(document).ready(function () {
                     }
 
                     // Price filter products range
-                        let price_column = data.total_products.map(function(product) {
-                            return product.price;
-                        });
-                        let price_min = parseInt(Math.min.apply(null, price_column));
-                        let price_max = parseInt(Math.max.apply(null, price_column));
+                    let price_column = data.total_products.map(function(product) {
+                        return product.price;
+                    });
+                    let price_min = parseInt(Math.min.apply(null, price_column));
+                    let price_max = parseInt(Math.max.apply(null, price_column));
 
-                        $('#slider-range').attr('data-min', price_min);
-                        $('#slider-range').attr('data-max', price_max);
-
-
-                        priceRange(price_min, price_max);
+                    $('#slider-range').attr('data-min', price_min);
+                    $('#slider-range').attr('data-max', price_max);
+                    priceRange(price_min, price_max);
 
                     // Add marks products
                     const countBrand = {};
@@ -117,6 +115,8 @@ $(document).ready(function () {
                     $(".content-check-brand").html(contentList);
                     $(".content-check-brand").attr('data-sons', data.sons);
 
+                    // Reset sons range products
+                    $('#slider-range').attr('data-sons', data.sons)
                 }else{
                     $('.content-section-page').html(data.content);
                 }
@@ -143,6 +143,10 @@ $(document).ready(function () {
             ids_check.push(brand_check[i].id);
         }
 
+        // Data range price
+        let price_min = $('#slider-range').attr('data-min');
+        let price_max = $('#slider-range').attr('data-max');
+
         let url_ajax = base_url + "categoria/orderProducts/";
 
         $.ajax({
@@ -152,6 +156,8 @@ $(document).ready(function () {
             data: {
                 selectVal : this_val,
                 checkedVal : ids_check,
+                price_min: price_min,
+                price_max: price_max,
                 sons: sons_category,
             },
             beforeSend: function() {
@@ -172,6 +178,7 @@ $(document).ready(function () {
                 }else{
                     $('.container-pagination-btn').html("");
                 }
+
             },
             error: function(xhr, status, error) {
                 
@@ -217,7 +224,7 @@ $(document).ready(function () {
                 $('#container-products-grid').html(data.content.grid);
                 $('#container-products-single').html(data.content.single);
 
-                 if (data.total_products.length > 10) {
+                if (data.total_products.length > 10) {
                         start = 10;
                         $('.container-pagination-btn').html(`<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
                                             <button id="load-more" class="load-more time-trans-txt" data-sons="${sons_category}">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
@@ -225,6 +232,18 @@ $(document).ready(function () {
                 }else{
                     $('.container-pagination-btn').html("");
                 }
+
+                // Price filter products range
+                let price_column = data.total_products.map(function(product) {
+                    return product.price;
+                });
+                let price_min = parseInt(Math.min.apply(null, price_column));
+                let price_max = parseInt(Math.max.apply(null, price_column));
+
+                $('#slider-range').attr('data-min', price_min);
+                $('#slider-range').attr('data-max', price_max);
+                priceRange(price_min, price_max);
+
             },
             error: function(xhr, status, error) {
                 
@@ -238,6 +257,8 @@ $(document).ready(function () {
 
     // LOAD MORE PRODUCTS (BUTTON)
     $('.content-section-page .container-pagination-btn').on('click', '#load-more', function () {
+        let sons_category = $(this).data('sons');
+
         // Data brand checked
         let brand_check = $('.content-check-brand input[type="checkbox"]:checked');
         let ids_check = [];
@@ -248,7 +269,9 @@ $(document).ready(function () {
         // Value order by
         let order_value = $("#products-order").val();
 
-        let sons_category = $(this).data('sons');
+        // Data range price
+        let price_min = $('#slider-range').attr('data-min');
+        let price_max = $('#slider-range').attr('data-max');
 
         if(loading){
             return;
@@ -264,6 +287,8 @@ $(document).ready(function () {
                 selectVal : order_value,
                 checkedVal : ids_check,
                 sons: sons_category,
+                price_min: price_min,
+                price_max: price_max,
                 start: start,
                 perLoad: perLoad
             },
@@ -291,38 +316,96 @@ $(document).ready(function () {
 
     });
 
+    /************************************************
+    * Price Slider
+    ***********************************************/
+    let price_min = parseInt($('#slider-range').attr('data-min'));
+    let price_max = parseInt($('#slider-range').attr('data-max'));
+
+    function priceRange(price_min, price_max) {
+        let points_range =  $('#slider-range span');
+        let progress_line = $('#slider-range .ui-widget-header');
+
+        $("#slider-range").slider({
+            range: true,
+            min: price_min,
+            max: price_max,
+            values: [price_min, price_max],
+            slide: function(event, ui) {
+                $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+            },
+            stop: function(event, ui) {
+                $('#slider-range').attr('data-min', ui.values[0])
+                $('#slider-range').attr('data-max', ui.values[1])
+
+                let sons_category = $('#slider-range').attr('data-sons');
+
+                // Data brand checked
+                let brand_check = $('.content-check-brand input[type="checkbox"]:checked');
+                let ids_check = [];
+                for (var i = 0; i < brand_check.length; i++) {
+                    ids_check.push(brand_check[i].id);
+                }
+
+                // Value order by
+                let order_value = $("#products-order").val();
+
+                $.ajax({
+                    url: base_url + "categoria/rangePriceProducts/",
+                    dataType: 'JSON',
+                    method: 'POST',
+                    data: {
+                        selectVal : order_value,
+                        checkedVal : ids_check,
+                        sons: sons_category,
+                        price_min: ui.values[0],
+                        price_max: ui.values[1],
+                    },
+                    beforeSend: function() {
+                        $('.content-loading').css("display","flex");
+                    },
+                    success: function(data){
+                        $('.page-amount').html(data.total_products.length+' Productos');
+
+                        $('#container-products-grid').html(data.content.grid);
+                        $('#container-products-single').html(data.content.single);
+
+                        if (data.total_products.length > 10) {
+                            start = 10;
+                            $('.container-pagination-btn').html(`<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
+                                                <button id="load-more" class="load-more time-trans-txt" data-sons="${sons_category}">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
+                                             </div>`);
+                        }else{
+                            $('.container-pagination-btn').html("");
+                        }
+
+                        // if (data.total_products.length == 0) {
+                        //     $('.col-lg-9').html('no hay produstos para mostrar');
+                        // }
+                    },
+                    error: function(xhr, status, error) {
+                        
+                    },
+                    complete: function() {
+                        $('.content-loading').css("display","none");
+                    }
+                });
+            }
+        });
+
+        $("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
+
+        points_range.eq(0).css('left', '0%');
+        if (price_min === price_max) {
+            progress_line.css('background', '#efefef');
+            points_range.eq(1).css('left', '0%');
+        }else{
+            progress_line.css('background', 'linear-gradient(to right, #1000c3, #ff6666)');
+            points_range.eq(1).css('left', '100%');
+        }
+    }
+
+    priceRange(price_min, price_max);
+
 });
 
-/************************************************
-* Price Slider
-***********************************************/
-let price_min = parseInt($('#slider-range').attr('data-min'));
-let price_max = parseInt($('#slider-range').attr('data-max'));
-
-function priceRange(price_min, price_max) {
-    let points_range =  $('#slider-range span');
-    let progress_line = $('#slider-range .ui-widget-header');
-
-    $("#slider-range").slider({
-        range: true,
-        min: price_min,
-        max: price_max,
-        values: [price_min, price_max],
-        slide: function(event, ui) {
-            $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
-        }
-    });
-
-    $("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
-
-    points_range.eq(0).css('left', '0%');
-    if (price_min === price_max) {
-        progress_line.css('background', '#efefef');
-        points_range.eq(1).css('left', '0%');
-    }else{
-        progress_line.css('background', 'linear-gradient(to right, #1000c3, #ff6666)');
-        points_range.eq(1).css('left', '100%');
-    }
-}
-
-priceRange(price_min, price_max);

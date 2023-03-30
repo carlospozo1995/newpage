@@ -31,8 +31,8 @@
         $id_sons = rtrim($id_sons, ",");
 
         $id_sons = !empty($id_sons) ? $id_sons : end($end_path_id);
-        $products = Models_Store::getProducts($id_sons, "", "", 0, 10);
-        $total_products = Models_Store::getProducts($id_sons, "", "");
+        $products = Models_Store::getProducts($id_sons, "", "", "", 0, 10);
+        $total_products = Models_Store::getProducts($id_sons, "", "", "");
         
         if (!empty($products)) {
 
@@ -151,8 +151,9 @@
 
                                 <div class="sidebar-single-widget">
                                     <h6 class="sidebar-title">FILTER BY PRICE</h6>
-                                    <div class="sidebar-content">
-                                        <div id="slider-range" data-min="<?= $price_min; ?>" data-max="<?= $price_max; ?>"></div>
+                                    <div class="sidebar-content position-relative">
+                                        <div class="cont-load-more"><span class="loader-more-data"></span></div>
+                                        <div id="slider-range" data-sons="<?= Utils::encryptStore($id_sons) ?>" data-min="<?= $price_min; ?>" data-max="<?= $price_max; ?>"></div>
                                         <div class="filter-type-price">
                                             <label for="amount">Price range:</label>
                                             <input type="text" id="amount">

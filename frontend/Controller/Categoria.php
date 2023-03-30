@@ -20,8 +20,8 @@
 				        $id_sons = rtrim($id_sons, ",");
 				        $id_sons = !empty($id_sons) ? $id_sons : end($id_category);
 
-				        $products = Models_Store::getProducts($id_sons, "", "", 0, 10);
-        				$total_products = Models_Store::getProducts($id_sons, "", "");
+				        $products = Models_Store::getProducts($id_sons, "", "", "", 0, 10);
+        				$total_products = Models_Store::getProducts($id_sons, "", "", "");
 
         				$content = "";
         				if(!empty($products)){
@@ -52,11 +52,15 @@
 						$start = $_POST['start'];
 						$perload = $_POST['perLoad'];
 
+						$price_min = $_POST['price_min'];
+						$price_max = $_POST['price_max'];
 						$order_val = $_POST['selectVal'];
 						$brand_val = !empty($_POST['checkedVal']) ? $_POST['checkedVal'] : '';
 						$sons = Utils::descryptStore($_POST['sons']);
+						
 						$sql_order = "";
 						$sql_checked = "";
+						$sql_range = " AND price BETWEEN $price_min AND $price_max";
 
 						switch ($order_val) {
 							case 'discount':
@@ -85,8 +89,8 @@
 							$sql_checked = " AND brand IN ($dataChecked)";
 						}
 						
-						$products = Models_Store::getProducts($sons, $sql_checked, $sql_order, $start, $perload);
-						$total_products = Models_Store::getProducts($sons, $sql_checked, $sql_order);
+						$products = Models_Store::getProducts($sons, $sql_checked, $sql_order, $sql_range, $start, $perload);
+						$total_products = Models_Store::getProducts($sons, $sql_checked, $sql_order, $sql_range);
 						$remaining = count($total_products) - ($start + $perload);
 
 						$product_images = self::productImages($products);
@@ -102,8 +106,17 @@
 						$order_val = $_POST['selectVal'];
 						$brand_val = !empty($_POST['checkedVal']) ? $_POST['checkedVal'] : '';
 						$sons = Utils::descryptStore($_POST['sons']);
+						
+						$price_min = isset($_POST['price_min']) ? $_POST['price_min'] : "";
+						$price_max = isset($_POST['price_max']) ? $_POST['price_max'] : "";
+
+						$sql_range = "";
 						$sql_order = "";
 						$sql_checked = "";
+
+						if (!empty($price_min) && !empty($price_max)) {
+							$sql_range = " AND price BETWEEN $price_min AND $price_max";
+						}
 
 						switch ($order_val) {
 							case 'discount':
@@ -132,8 +145,57 @@
 							$sql_checked = " AND brand IN ($dataChecked)";
 						}
 
-						$products = Models_Store::getProducts($sons, $sql_checked, $sql_order, 0, 10);
-        				$total_products = Models_Store::getProducts($sons, $sql_checked, $sql_order);
+						$products = Models_Store::getProducts($sons, $sql_checked, $sql_order, $sql_range, 0, 10);
+        				$total_products = Models_Store::getProducts($sons, $sql_checked, $sql_order, $sql_range);
+        				$product_images = self::productImages($products);
+        				$content = self::printContentProducts($products, $product_images);
+
+						$data = array("content" => $content, "total_products" =>  $total_products);
+						echo json_encode($data);
+					}
+				break;
+
+				case 'rangePriceProducts':
+					if (isset($_POST)) {
+						$order_val = $_POST['selectVal'];
+						$brand_val = !empty($_POST['checkedVal']) ? $_POST['checkedVal'] : '';
+						$price_min = $_POST['price_min'];
+						$price_max = $_POST['price_max'];
+						$sons = Utils::descryptStore($_POST['sons']);
+
+						$sql_order = "";
+						$sql_checked = "";
+						$sql_range = " AND price BETWEEN $price_min AND $price_max";
+
+						switch ($order_val) {
+							case 'discount':
+								$sql_order = " ORDER BY CASE WHEN discount IS NOT NULL THEN 0 ELSE 1 END";
+							break;
+
+							case 'recent':
+								$sql_order = " ORDER BY datacreate DESC";
+							break;
+
+							case 'price_asc':
+								$sql_order = " ORDER BY price ASC";
+							break;
+
+							case 'price_desc':
+								$sql_order = " ORDER BY price DESC";
+							break;
+						}
+
+						if (!empty($brand_val)) {
+							$new_array = array_map(function ($value)
+							{
+								return '"' . strtoupper($value) . '"';
+							}, $brand_val);
+							$dataChecked = implode(", ", $new_array);
+							$sql_checked = " AND brand IN ($dataChecked)";
+						}
+
+						$products = Models_Store::getProducts($sons, $sql_checked, $sql_order, $sql_range, 0, 10);
+        				$total_products = Models_Store::getProducts($sons, $sql_checked, $sql_order, $sql_range);
         				$product_images = self::productImages($products);
         				$content = self::printContentProducts($products, $product_images);
 
@@ -224,43 +286,43 @@
 			    $content_single .= '
 			        <div class="col-12">
 			            <div class="product-list-single">
-			                <a href="" class="product-list-img-link' . (!empty($product['discount']) ? ' content-off" data-discount="'.$product['discount'].'% off"' : '"') . '>';
+			            	<a href="" class="product-list-img-link' . (!empty($product['discount']) ? ' content-off" data-discount="'.$product['discount'].'% off"' : '"') . '>';
 			                    // PRINT IMAGES OF PRODUCTS
 			                    $content_single .= implode('', $product_images[$product['id_product']]);
 			                $content_single .= '</a>';
 
 			                $content_single .= '<div class="product-list-content">
-			                    <h5 class="product-list-link">
+			                	<h5 class="product-list-link">
 			                        <a href="product-details-default.html">'. $product['name_product'] .'</a>
 			                    </h5>
 			                    <p>'. $product['brand'] .'</p>';
+
+			                    if (!empty($product['cantDues'])) {
+				                    $content_single .= '<div class="content-data-product no-empty single-list">'; 
+				                    $content_single .= '<div class="price-product no-empty">';
+				                } else {
+				                    $content_single .= '<div class="content-data-product empty">'; 
+				                    $content_single .= '<div class="price-product empty">';
+				                }
 			                
-			                if (!empty($product['cantDues'])) {
-			                    $content_single .= '<div class="content-data-product no-empty single-list">'; 
-			                    $content_single .= '<div class="price-product no-empty">';
-			                } else {
-			                    $content_single .= '<div class="content-data-product empty">'; 
-			                    $content_single .= '<div class="price-product empty">';
-			                }
-			                
-			                $content_single .= (!empty($product['prevPrice'])) ? '<del>'.SMONEY. Utils::formatMoney($product['prevPrice']).'</del>' : '';
-			                $content_single .= '<span>'.SMONEY.Utils::formatMoney($product['price']).'</span>';
-			                $content_single .= '</div>';
+				                $content_single .= (!empty($product['prevPrice'])) ? '<del>'.SMONEY. Utils::formatMoney($product['prevPrice']).'</del>' : '';
+				                $content_single .= '<span>'.SMONEY.Utils::formatMoney($product['price']).'</span>';
+				                $content_single .= '</div>';
 
-			                $content_single .= (!empty($product['cantDues'])) ? '<span class="ml-2 text-left">'.$product['cantDues'].' cuotas '.SMONEY. Utils::formatMoney($product['priceDues']).'</span>' : '';
-			                $content_single .= '</div>';
+				                $content_single .= (!empty($product['cantDues'])) ? '<span class="ml-2 text-left">'.$product['cantDues'].' cuotas '.SMONEY. Utils::formatMoney($product['priceDues']).'</span>' : '';
+				                $content_single .= '</div>';
+				                $content_single .= '<p class="mt-3 text-justify">'. $product['desMain'] .'</p>';
+				                $content_single .= (empty($product['stock'])) ? '<p class="n-stock">No disponible</p>' : '';
 
-			                $content_single .= '<p class="mt-3 text-justify">'. $product['desMain'] .'</p>';
+				                $content_single .= '<div class="product-action-icon-link-list">
+				                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="btn btn-lg btn-black-default-hover">Add to cart</a>
+				                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalQuickview" class="btn btn-lg btn-black-default-hover"><i class="icon-magnifier"></i></a>
+				                    <a href="wishlist.html" class="btn btn-lg btn-black-default-hover"><i class="icon-heart"></i></a>
+				                    <a href="compare.html" class="btn btn-lg btn-black-default-hover"><i class="icon-shuffle"></i></a>
+				                </div>';
 
-			                $content_single .= (empty($product['stock'])) ? '<p class="n-stock">No disponible</p>' : '';
-
-			                $content_single .= '<div class="product-action-icon-link-list">
-			                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="btn btn-lg btn-black-default-hover">Add to cart</a>
-			                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalQuickview" class="btn btn-lg btn-black-default-hover"><i class="icon-magnifier"></i></a>
-			                    <a href="wishlist.html" class="btn btn-lg btn-black-default-hover"><i class="icon-heart"></i></a>
-			                    <a href="compare.html" class="btn btn-lg btn-black-default-hover"><i class="icon-shuffle"></i></a>
-			                </div>
-			            </div>
+			                $content_single .= '</div>
+			        	</div>    
 			        </div>';
 			}
 			return array("grid" => $content_grid, "single" => $content_single);
@@ -269,3 +331,4 @@
 	}
 
 ?>
+
