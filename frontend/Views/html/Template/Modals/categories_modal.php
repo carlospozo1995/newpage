@@ -140,7 +140,7 @@
                             </div>
 
                             <div class="card-footer">
-                                <button id="btnSubmitCategory" type="submit" class="btn btn-primary">Guardar</button>
+                                <button id="btnSubmitCategory" type="submit" class="btn btnText btn-primary">Guardar</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                             </div>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 26-03-2023 a las 05:53:33
+-- Tiempo de generación: 01-04-2023 a las 03:05:48
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 7.4.19
 
@@ -48,7 +48,7 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`id_category`, `name_category`, `photo`, `icon`, `sliderDst`, `sliderMbl`, `sliderDesOne`, `sliderDesTwo`, `datecreate`, `fatherCategory`, `url`, `status`) VALUES
 (104, 'CATÉGORY 1', 'photo_CATEGORY-1_064bf93d85efa2ee7aa99419015c9161.jpg', 'icon_CATEGORY-1_064bf93d85efa2ee7aa99419015c9161.jpg', 'sliderDst_CATEGORY-1_e3c4160f3d899e61271687f8e56cb4a8.jpg', 'sliderMbl_CATEGORY-1_e3c4160f3d899e61271687f8e56cb4a8.jpg', 'Sld des<br> categoria  dst', 'Sld des categoria 2 mbl', '2023-02-15 15:30:51', NULL, 'category-1', 1),
-(105, 'Categoria 1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:32:51', 104, 'categoria-1.1', 1),
+(105, 'Categoría 1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:32:51', 104, 'categoria-1.1', 1),
 (106, 'Categoria 1.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:33:08', 105, 'categoria-1.1.1', 1),
 (107, 'Categoria 1.1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:33:22', 105, 'categoria-1.1.2', 1),
 (108, 'Categoria 1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:33:33', 104, 'categoria-1.2', 1),
@@ -115,7 +115,8 @@ INSERT INTO `categories` (`id_category`, `name_category`, `photo`, `icon`, `slid
 (169, 'Categoria 7.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:14:42', 168, 'categoria-7.1', 1),
 (170, 'Categoria 7.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:15:00', 169, 'categoria-7.1.1', 1),
 (171, 'Categoria 7.1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:15:10', 169, 'categoria-7.1.2', 1),
-(172, 'Categoria 7.1.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:15:22', 169, 'categoria-7.1.3', 1);
+(172, 'Categoria 7.1.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:15:22', 169, 'categoria-7.1.3', 1),
+(179, 'Categoriá 7.1.4', NULL, NULL, NULL, NULL, NULL, NULL, '2023-03-30 21:59:00', 169, 'categoria-7.1.4', 1);
 
 -- --------------------------------------------------------
 
@@ -232,6 +233,7 @@ CREATE TABLE `products` (
   `cantDues` int(20) DEFAULT NULL,
   `priceDues` decimal(11,2) DEFAULT NULL,
   `datacreate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `url` varchar(150) DEFAULT NULL,
   `status` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -239,41 +241,41 @@ CREATE TABLE `products` (
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `desMain`, `desGeneral`, `sliderDst`, `sliderMbl`, `sliderDes`, `brand`, `price`, `stock`, `prevPrice`, `discount`, `cantDues`, `priceDues`, `datacreate`, `status`) VALUES
-(1, 131, 133887000, 'Tostador de pan 600w InduramaTpi-2cr', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', NULL, 'sliderDst_Producto-1_d94878f943bee08da79cc00f0b7088d4.jpg', 'sliderMbl_Producto-1_d94878f943bee08da79cc00f0b7088d4.jpg', NULL, 'INDURAMA', '1000.00', 12, '900.00', 10, 10, '100.00', '2023-02-18 22:18:43', 1),
-(2, 136, 78945600, 'Combo Hidrolavadora K2 Mx Karcher Mas Aspiradora Wd1', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ', NULL, 'sliderDst_Producto-2_e9553ef1ee311602e4da6698919f57b1.jpg', 'sliderMbl_Producto-2_e9553ef1ee311602e4da6698919f57b1.jpg', NULL, 'INDURAMA', '900.00', NULL, '1000.00', 5, 10, '100.00', '2023-02-18 22:20:49', 1),
-(3, 132, 987123000, 'Audifonos Gt5 Negro Xiaomi Haylou', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ', NULL, 'sliderDst_Producto-3_864cd10ccb821d7c292f11ba77124670.jpg', 'sliderMbl_Producto-3_864cd10ccb821d7c292f11ba77124670.jpg', 'slider producto 3', 'INDURAMA', '34.90', NULL, NULL, NULL, 10, '4.00', '2023-02-18 22:22:31', 1),
-(5, 136, 657686800, 'Microondas Grill 42 L Indurama Mwgi-42 Cr ', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, NULL, NULL, NULL, 'INDURAMA', '189.00', 1, '259.00', NULL, NULL, NULL, '2023-02-25 19:44:27', 1),
-(6, 136, 547215645, 'Cafetera C/molino 1.5 L Indurama Mci-cr', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, NULL, NULL, NULL, 'INDURAMA', '50.00', 45, NULL, 10, NULL, NULL, '2023-02-28 16:08:39', 1),
-(7, 131, 32562116000, 'Aire Acondicionado Zitro 10200 BTU', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut l', NULL, NULL, NULL, NULL, 'INDURAMA', '269.00', 8, '329.00', 45, 10, '35.00', '2023-03-09 11:13:06', 1),
-(8, 131, 152008100, 'Watch MNP13LZ/A Series 8 gps 45mm |Midnight', 'lorem ipsumn iushdkjuio jkhasjkdh kohiaskdnjk ,ihskjdn kjhsdm mdasn ', NULL, NULL, NULL, NULL, 'INDURAMA', '373.00', 8, '50.00', NULL, NULL, NULL, '2023-03-13 16:47:44', 1),
-(9, 130, 97520004500, 'Celular X6 Gris | 64 gb', 'lorem ipsum kjbsjkd klashnjkd kjahsjkd jhsdjk nkjhaskbn.', NULL, NULL, NULL, NULL, 'INDURAMA', '350.00', NULL, '500.00', NULL, 12, '35.00', '2023-03-13 16:49:28', 1),
-(10, 130, 17451400, 'Tablet Pad 2022 6+128Gb', 'lorejkn ksjdhfjkn sdifjsd sdlifjlsnf skdjfsnf kisfn', NULL, NULL, NULL, NULL, 'LENOVO', '123.37', NULL, '329.00', 5, NULL, NULL, '2023-03-13 16:56:10', 1),
-(11, 142, 632450000, 'Laptop AMD Ryzen 5  8GB RAM/512GB ROM HP', 'lorem fdunsduinsdknfdnisdik fisdids isdfnsoifn lsdfklklkd sdlf .', NULL, NULL, NULL, NULL, 'HP', '699.00', NULL, '729.00', 15, 12, '50.00', '2023-03-14 18:23:11', 1),
-(12, 144, 42525000, 'Impresora Multifuncion L5290 Epson Ecotank', 'faxcvsg  vgsvcvb fdx sedfxvcx sefghnsfddb fgsdvx kjands klads lkjmasljd lkjlaksjdkj lkjsadkj sssssssacvvcvb sfgxvb dfgvfdg', NULL, NULL, NULL, NULL, 'EPSON', '459.00', NULL, '500.00', NULL, 5, '100.00', '2023-03-14 18:24:31', 1),
-(13, 143, 123258000, 'Moto Electrica 500w 3 V Rojo Ecomove Eb', ' ndfgcvbsd sdfgsdf szfsg sdfgdfgdf sdfsf sdfsdf', NULL, NULL, NULL, NULL, 'ECOMOVE', '500.00', 8, '600.00', NULL, 12, '70.00', '2023-03-14 18:26:35', 1),
-(14, 140, 87413698800, 'Casco Integral De Moto t g Gris Armor 501 Sp Expo Techno', 'fsxdfsdf sdfgs cv  vs sfsgsdfbdfd s gvsdgs afsdfsd', NULL, NULL, NULL, NULL, 'ARMOR', '40.00', NULL, '50.00', 8, NULL, NULL, '2023-03-14 18:27:46', 1),
-(15, 140, 7896320000452, 'Aire Acondicionado 18000 Btu Longtime', 'xvsxv xfdvxcv dfgvsdfs dfbvxc xbcvbbbbbbbbbbbbbbbbbbbbbbbb cxvbcvbcbcvbvc cv cbcvbc cbvcbcvbcb cvcbcvb cvbcbc   cv cv cv cc c c cv c c cvc', NULL, NULL, NULL, NULL, ' LONGTIME', '519.00', NULL, '800.00', NULL, NULL, NULL, '2023-03-14 18:30:13', 1),
-(16, 144, 852000147963, 'Aire acondicionado Premier Split blanco 18000 Btu', 'ikshdfkjnf fsoidfonsfsjf sfisf sf sfsfd sdfs frsf sf sfslkjhsodjfosj fskhdfklsjofjhos oishdolkfosijd oifshdfonsdf osidf n', NULL, NULL, NULL, NULL, 'START SONIC', '300.00', 5, NULL, NULL, NULL, NULL, '2023-03-14 18:31:32', 1),
-(17, 135, 4320212000, 'Freidora De Vapor A Presion Ninja', 'fgddfg dsfgdbfgh dserftwef erfgdfgdf sdrfdfgbfdg sdfgdfg dfgdgbfd rgfdgdfg fdgdfgdfg dfgfghdf dfgsdgffd bvnmvbnvb bvcb ', NULL, NULL, NULL, NULL, 'NINJA', '279.00', NULL, '300.00', 9, NULL, NULL, '2023-03-16 17:01:56', 1),
-(18, 135, 5464510546200, 'Exprimidor Clasico 1.2 L Negro Umco', 'ghbs dkahndk cnbmxzcm m,bnzxc, jhasjk kasjhd kjsd jchadn kasjhd, jashkj kjhsdjhdfns ksjdhfh kjsdfkh', NULL, NULL, NULL, NULL, 'UMCO', '24.90', NULL, NULL, 100, 3, '10.00', '2023-03-16 17:04:25', 1),
-(19, 134, 452398085598922, 'Cafetera Minime Nescafe Dolce Gusto', 'djfghs jksdhf sdkjfhks xcnmvjs sidnf sdjfn xjjs dfojlksjdf lsc xzm sdknjf  xcvi fsn skdlnalj kjhndf', NULL, NULL, NULL, NULL, 'NESCAFE', '129.00', NULL, '89.00', NULL, NULL, NULL, '2023-03-16 17:05:30', 1),
-(20, 136, 7870005120560, 'Horno Freidora De Aire 1800w Ninja Ref Dt200', 'hbdjk dfnsdkjf dsfjiosdf dsfhsodf khdskf khdsk kdhfs, fkshfs fsdf sfs fs dfsf sfnsfs fsfsfsf sf sfsf sf sf sd', NULL, NULL, NULL, NULL, 'NINJA', '339.00', 5, '350.00', 20, 12, '25.00', '2023-03-16 17:07:35', 1),
-(21, 135, 15615894005151, 'Licuadora 1.25 L 3 V 700w Oster', 'gdfisa ajdhasid adkansd kahsdkjn askjdhjask sakjdkjas  khnkmas kjhaskjd jkhdskjf jkj dsfkjds fkfsdjfsdn j n nnjk jn jn', NULL, NULL, NULL, NULL, 'OSTER', '89.00', NULL, '100.00', 9, NULL, NULL, '2023-03-16 17:09:37', 1),
-(22, 132, 45265035626, 'Licuadora Profesional con Procesador 1200W Ninja Auto-IQ', 'sdfsd  ghi hihi h ikjn kijkniuhiujn ijuhi niuhiunjmohu uonhiouhn uhkjn kjhjn jikhiunbhiuhiu nhiuhi nkh ikjn ', NULL, NULL, NULL, NULL, 'INDURAMA', '239.00', 8, '300.00', 20, NULL, NULL, '2023-03-16 17:11:42', 1),
-(23, 130, 185111818100, 'Lavadora Carga Superior 18 Kg Negro Electrolux Impeller', 'jhbsad aksdnbad asknakjnd kjnasdkjhasd kjhndkahjd kjhnsadkhjad dkandkanjd  askandkjnad aksdkjand adanb kj iuhnkn kjnkn ', NULL, NULL, NULL, NULL, 'ELECTROLUX', '499.00', NULL, '550.00', 3, NULL, NULL, '2023-03-17 22:01:29', 1),
-(24, 134, 5120041501275, 'Lavadora Dos Tinas 7 Kg Blanca Electrolux', 'dhgasd djhabd akdha akdhna akdnad ksnad kasdjlka akdnalkjasdkjndlkajs dknjasjdla dakjndanda dkad adalkda daldkna dadjad ', NULL, NULL, NULL, NULL, 'ELECTROLUX', '219.00', 4, '350.00', NULL, 10, '20.00', '2023-03-17 22:03:08', 1),
-(25, 106, 4420450420400, 'Parrilla Freidora De Aire Ninja', 'ajsgdbuda aihsdia aiudha aiusd adiuad adiuad adiuad adi', NULL, NULL, NULL, NULL, 'NINJA', '319.00', NULL, '400.00', NULL, NULL, NULL, '2023-03-17 22:04:31', 1),
-(26, 134, 1600251601, 'Celular Poco M3 64gb/4gb Ram Negro Xiaomi', 'kajshda daja as das dasd ad ada da ds asdadada ad adsasdasd asdasdkjahdkja asjdbabda ajsdba djadsa djashda djads as', NULL, NULL, NULL, NULL, 'XIAOMI', '209.00', 8, '239.00', NULL, 10, '25.00', '2023-03-19 08:55:50', 1),
-(27, 136, 485600051252, 'Celular C21y 64gb/4gb Ram Azul Realme', 'ajd dahsd ih coi asdasd ao  adkasd doias daikda sdaidna dakjsd adikad adia dain', NULL, NULL, NULL, NULL, 'INDURAMA', '159.00', NULL, '179.00', 9, NULL, NULL, '2023-03-19 08:56:42', 1),
-(28, 132, 3120210259100, 'Pizarra Digital Lcd 13.5\' Xiaomi', 'daskjda aisd adaiod aisda dikcdksda asklndlakjsdo asndojaiodj adoajoidj dkiansndjka danda dad adn', NULL, NULL, NULL, NULL, 'XIAOMI', '34.00', NULL, NULL, NULL, 5, '7.00', '2023-03-19 08:58:19', 1),
-(29, 132, 4152085205, 'Mouse Gamer Logitech G203', 'hasbd daisdias asidaishd iasd absjdbas dasd asda sdasda das das dasikjdnaksda dad a daksdkasda ajsdba dasdkadk askdajdisak', NULL, NULL, NULL, NULL, 'INDURAMA', '24.00', 10, NULL, 2, NULL, NULL, '2023-03-19 08:59:37', 1),
-(30, 144, 541021456102, 'Cocina a Gas 6 Quemadores C/grill Mabe', 'dkifhsfds ksdjfs fsfjsdf sdofsfs fsodflsmkfs fsldfmmcxvmx sdflkdjmslf s flsdkfsdmfsdf sdfksmflsjflsd fsdlfksdf ', NULL, NULL, NULL, NULL, 'MABE', '419.00', 8, '500.00', 10, NULL, NULL, '2023-03-23 17:30:51', 1),
-(31, 150, 1204512410, 'Cocineta A Gas C/tapa 4 Hornillas Encendido Electrico Kombo', 'dfsdf sds s kjh jj kmnjojmn oljioi lkmjoi jlkmlkjdjfl osdjfsd loidjfjsdfj fosdijfjsdf sjdfsd', NULL, NULL, NULL, NULL, 'KOMBO', '99.00', NULL, NULL, NULL, 5, '24.00', '2023-03-23 17:33:28', 1),
-(32, 141, 1210789687560, 'Cocina A Gas 4 Quemadores Mabe', 'ddasdasd fsd fs df sd sdfnbijsbnfkjsd sfhskdnfksjkfsd skdfhnksdnfsnjdf sdhfsndfjsidof fsidhfsnd', NULL, NULL, NULL, NULL, 'MABE', '159.00', 2, '200.00', 70, 10, '18.00', '2023-03-23 17:35:17', 1),
-(33, 139, 12005400545, 'Parlante Gamer P/computadora Negro Onikuma L6', 'zskdjnijd asdlkasdoiajsd adljasldakjas daoldjadmapokd adjadasdpokapodka asdasdñakda dadkmms', NULL, NULL, NULL, NULL, 'ONIKUMA', '29.90', 8, NULL, NULL, NULL, NULL, '2023-03-23 17:41:35', 1),
-(34, 141, 20110014550, 'Teclado C/mouse Negro Maxell', 'sdffvkh iu iiuhj  jujoijo ojioojm kp,polkopbdpf gojgdfgmdjgod ldfgdmgdf godifgdfgdg fdfgpodkgd ñ', NULL, NULL, NULL, NULL, 'MAXELL', '12.00', NULL, '20.00', NULL, NULL, NULL, '2023-03-23 17:42:57', 1),
-(35, 142, 120451241085, 'Balanza Digital Inteligente Omron Hbf226', 'asdadasdasdacx x jhgu bhbnbbibndksf fsdflfdlsoijfs fsjdflisjfsj fsfjsnf sfnsfjkfsmfsf', NULL, NULL, NULL, NULL, 'OMRON', '89.00', NULL, NULL, NULL, NULL, NULL, '2023-03-23 17:43:58', 1);
+INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `desMain`, `desGeneral`, `sliderDst`, `sliderMbl`, `sliderDes`, `brand`, `price`, `stock`, `prevPrice`, `discount`, `cantDues`, `priceDues`, `datacreate`, `url`, `status`) VALUES
+(1, 131, 133887000, 'Tostador de pan 600w InduramaTpi-2cr', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', NULL, 'sliderDst_Producto-1_d94878f943bee08da79cc00f0b7088d4.jpg', 'sliderMbl_Producto-1_d94878f943bee08da79cc00f0b7088d4.jpg', NULL, 'INDURAMA', '1000.00', 12, '900.00', 10, 10, '100.00', '2023-02-18 22:18:43', 'tostador-de-pan-600w-induramatpi-2cr', 1),
+(2, 136, 78945600, 'Combo Hidrolavadora K2 Mx Karcher Mas Aspiradora Wd1', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ', NULL, 'sliderDst_Producto-2_e9553ef1ee311602e4da6698919f57b1.jpg', 'sliderMbl_Producto-2_e9553ef1ee311602e4da6698919f57b1.jpg', NULL, 'INDURAMA', '900.00', NULL, '1000.00', 5, 10, '100.00', '2023-02-18 22:20:49', 'combo-hidrolavadora-k2-mx-karcher-mas-aspiradora-wd1', 1),
+(3, 132, 987123000, 'Audifonos Gt5 Negro Xiaomi Haylou', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ', NULL, 'sliderDst_Producto-3_864cd10ccb821d7c292f11ba77124670.jpg', 'sliderMbl_Producto-3_864cd10ccb821d7c292f11ba77124670.jpg', 'slider producto 3', 'INDURAMA', '34.90', NULL, NULL, NULL, 10, '4.00', '2023-02-18 22:22:31', 'audifonos-gt5-negro-xiaomi-haylou', 1),
+(5, 136, 657686800, 'Microondas Grill 42 L Indurama Mwgi-42 Cr ', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, NULL, NULL, NULL, 'INDURAMA', '189.00', 1, '259.00', NULL, NULL, NULL, '2023-02-25 19:44:27', 'microondas-grill-42-l-indurama-mwgi-42-cr-', 1),
+(6, 136, 547215645, 'Cafetera C/molino 1.5 L Indurama Mci-cr', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, NULL, NULL, NULL, 'INDURAMA', '50.00', 45, NULL, 10, NULL, NULL, '2023-02-28 16:08:39', 'cafetera-c/molino-1.5-l-indurama-mci-cr', 1),
+(7, 131, 32562116000, 'Aire Acondicionado Zitro 10200 BTU', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut l', NULL, NULL, NULL, NULL, 'INDURAMA', '269.00', 8, '329.00', 45, 10, '35.00', '2023-03-09 11:13:06', 'aire-acondicionado-zitro-10200-btu', 1),
+(8, 131, 152008100, 'Watch MNP13LZ/A Series 8 gps 45mm |Midnight', 'lorem ipsumn iushdkjuio jkhasjkdh kohiaskdnjk ,ihskjdn kjhsdm mdasn ', NULL, NULL, NULL, NULL, 'INDURAMA', '373.00', 8, '50.00', NULL, NULL, NULL, '2023-03-13 16:47:44', 'watch-mnp13lz/a-series-8-gps-45mm-|midnight', 1),
+(9, 130, 97520004500, 'Celular X6 Gris | 64 gb', 'lorem ipsum kjbsjkd klashnjkd kjahsjkd jhsdjk nkjhaskbn.', NULL, NULL, NULL, NULL, 'INDURAMA', '350.00', NULL, '500.00', NULL, 12, '35.00', '2023-03-13 16:49:28', 'celular-x6-gris-|-64-gb', 1),
+(10, 130, 17451400, 'Tablet Pad 2022 6+128Gb', 'lorejkn ksjdhfjkn sdifjsd sdlifjlsnf skdjfsnf kisfn', NULL, NULL, NULL, NULL, 'LENOVO', '123.37', NULL, '329.00', 5, NULL, NULL, '2023-03-13 16:56:10', 'tablet-pad-2022-6+128gb', 1),
+(11, 142, 632450000, 'Laptop AMD Ryzen 5  8GB RAM/512GB ROM HP', 'lorem fdunsduinsdknfdnisdik fisdids isdfnsoifn lsdfklklkd sdlf .', NULL, NULL, NULL, NULL, 'HP', '699.00', NULL, '729.00', 15, 12, '50.00', '2023-03-14 18:23:11', 'laptop-amd-ryzen-5--8gb-ram/512gb-rom-hp', 1),
+(12, 144, 42525000, 'Impresora Multifuncion L5290 Epson Ecotank', 'faxcvsg  vgsvcvb fdx sedfxvcx sefghnsfddb fgsdvx kjands klads lkjmasljd lkjlaksjdkj lkjsadkj sssssssacvvcvb sfgxvb dfgvfdg', NULL, NULL, NULL, NULL, 'EPSON', '459.00', NULL, '500.00', NULL, 5, '100.00', '2023-03-14 18:24:31', 'impresora-multifuncion-l5290-epson-ecotank', 1),
+(13, 143, 123258000, 'Moto Electrica 500w 3 V Rojo Ecomove Eb', ' ndfgcvbsd sdfgsdf szfsg sdfgdfgdf sdfsf sdfsdf', NULL, NULL, NULL, NULL, 'ECOMOVE', '500.00', 8, '600.00', NULL, 12, '70.00', '2023-03-14 18:26:35', 'moto-electrica-500w-3-v-rojo-ecomove-eb', 1),
+(14, 140, 87413698800, 'Casco Integral De Moto t g Gris Armor 501 Sp Expo Techno', 'fsxdfsdf sdfgs cv  vs sfsgsdfbdfd s gvsdgs afsdfsd', NULL, NULL, NULL, NULL, 'ARMOR', '40.00', NULL, '50.00', 8, NULL, NULL, '2023-03-14 18:27:46', 'casco-integral-de-moto-t-g-gris-armor-501-sp-expo-techno', 1),
+(15, 140, 7896320000452, 'Aire Acondicionado 18000 Btu Longtime', 'xvsxv xfdvxcv dfgvsdfs dfbvxc xbcvbbbbbbbbbbbbbbbbbbbbbbbb cxvbcvbcbcvbvc cv cbcvbc cbvcbcvbcb cvcbcvb cvbcbc   cv cv cv cc c c cv c c cvc', NULL, NULL, NULL, NULL, ' LONGTIME', '40.00', NULL, '800.00', NULL, NULL, NULL, '2023-03-14 18:30:13', 'aire-acondicionado-18000-btu-longtime', 1),
+(16, 144, 852000147963, 'Aire acondicionado Premier Split blanco 18000 Btu', 'ikshdfkjnf fsoidfonsfsjf sfisf sf sfsfd sdfs frsf sf sfslkjhsodjfosj fskhdfklsjofjhos oishdolkfosijd oifshdfonsdf osidf n', NULL, NULL, NULL, NULL, 'START SONIC', '300.00', 5, NULL, NULL, NULL, NULL, '2023-03-14 18:31:32', 'aire-acondicionado-premier-split-blanco-18000-btu', 1),
+(17, 135, 4320212000, 'Freidora De Vapor A Presion Ninja', 'fgddfg dsfgdbfgh dserftwef erfgdfgdf sdrfdfgbfdg sdfgdfg dfgdgbfd rgfdgdfg fdgdfgdfg dfgfghdf dfgsdgffd bvnmvbnvb bvcb ', NULL, NULL, NULL, NULL, 'NINJA', '279.00', NULL, '300.00', 9, NULL, NULL, '2023-03-16 17:01:56', 'freidora-de-vapor-a-presion-ninja', 1),
+(18, 135, 5464510546200, 'Exprimidor Clasico 1.2 L Negro Umco', 'ghbs dkahndk cnbmxzcm m,bnzxc, jhasjk kasjhd kjsd jchadn kasjhd, jashkj kjhsdjhdfns ksjdhfh kjsdfkh', NULL, NULL, NULL, NULL, 'UMCO', '24.90', NULL, NULL, 100, 3, '10.00', '2023-03-16 17:04:25', 'exprimidor-clasico-1.2-l-negro-umco', 1),
+(19, 134, 452398085598922, 'Cafetera Minime Nescafe Dolce Gusto', 'djfghs jksdhf sdkjfhks xcnmvjs sidnf sdjfn xjjs dfojlksjdf lsc xzm sdknjf  xcvi fsn skdlnalj kjhndf', NULL, NULL, NULL, NULL, 'NESCAFE', '129.00', NULL, '89.00', NULL, NULL, NULL, '2023-03-16 17:05:30', 'cafetera-minime-nescafe-dolce-gusto', 1),
+(20, 136, 7870005120560, 'Horno Freidora De Aire 1800w Ninja Ref Dt200', 'hbdjk dfnsdkjf dsfjiosdf dsfhsodf khdskf khdsk kdhfs, fkshfs fsdf sfs fs dfsf sfnsfs fsfsfsf sf sfsf sf sf sd', NULL, NULL, NULL, NULL, 'NINJA', '339.00', 5, '350.00', 20, 12, '25.00', '2023-03-16 17:07:35', 'horno-freidora-de-aire-1800w-ninja-ref-dt200', 1),
+(21, 135, 15615894005151, 'Licuadora 1.25 L 3 V 700w Oster', 'gdfisa ajdhasid adkansd kahsdkjn askjdhjask sakjdkjas  khnkmas kjhaskjd jkhdskjf jkj dsfkjds fkfsdjfsdn j n nnjk jn jn', NULL, NULL, NULL, NULL, 'OSTER', '89.00', NULL, '100.00', 9, NULL, NULL, '2023-03-16 17:09:37', 'licuadora-1.25-l-3-v-700w-oster', 1),
+(22, 132, 45265035626, 'Licuadora Profesional con Procesador 1200W Ninja Auto-IQ', 'sdfsd  ghi hihi h ikjn kijkniuhiujn ijuhi niuhiunjmohu uonhiouhn uhkjn kjhjn jikhiunbhiuhiu nhiuhi nkh ikjn ', NULL, NULL, NULL, NULL, 'INDURAMA', '239.00', 8, '300.00', 20, NULL, NULL, '2023-03-16 17:11:42', 'licuadora-profesional-con-procesador-1200w-ninja-auto-iq', 1),
+(23, 130, 185111818100, 'Lavadora Carga Superior 18 Kg Negro Electrolux Impeller', 'jhbsad aksdnbad asknakjnd kjnasdkjhasd kjhndkahjd kjhnsadkhjad dkandkanjd  askandkjnad aksdkjand adanb kj iuhnkn kjnkn ', NULL, NULL, NULL, NULL, 'ELECTROLUX', '499.00', NULL, '550.00', 3, NULL, NULL, '2023-03-17 22:01:29', 'lavadora-carga-superior-18-kg-negro-electrolux-impeller', 1),
+(24, 134, 5120041501275, 'Lavadora Dos Tinas 7 Kg Blanca Electrolux', 'dhgasd djhabd akdha akdhna akdnad ksnad kasdjlka akdnalkjasdkjndlkajs dknjasjdla dakjndanda dkad adalkda daldkna dadjad ', NULL, NULL, NULL, NULL, 'ELECTROLUX', '219.00', 4, '350.00', NULL, 10, '20.00', '2023-03-17 22:03:08', 'lavadora-dos-tinas-7-kg-blanca-electrolux', 1),
+(25, 106, 4420450420400, 'Parrilla Freidora De Aire Ninja', 'ajsgdbuda aihsdia aiudha aiusd adiuad adiuad adiuad adi', NULL, NULL, NULL, NULL, 'NINJA', '319.00', NULL, '400.00', NULL, NULL, NULL, '2023-03-17 22:04:31', 'parrilla-freidora-de-aire-ninja', 1),
+(26, 134, 1600251601, 'Celular Poco M3 64gb/4gb Ram Negro Xiaomi', 'kajshda daja as das dasd ad ada da ds asdadada ad adsasdasd asdasdkjahdkja asjdbabda ajsdba djadsa djashda djads as', NULL, NULL, NULL, NULL, 'XIAOMI', '209.00', 8, '239.00', NULL, 10, '25.00', '2023-03-19 08:55:50', 'celular-poco-m3-64gb/4gb-ram-negro-xiaomi', 1),
+(27, 136, 485600051252, 'Celular C21y 64gb/4gb Ram Azul Realme', 'ajd dahsd ih coi asdasd ao  adkasd doias daikda sdaidna dakjsd adikad adia dain', NULL, NULL, NULL, NULL, 'INDURAMA', '159.00', NULL, '179.00', 9, NULL, NULL, '2023-03-19 08:56:42', 'celular-c21y-64gb/4gb-ram-azul-realme', 1),
+(28, 132, 3120210259100, 'Pizarra Digital Lcd 13.5\' Xiaomi', 'daskjda aisd adaiod aisda dikcdksda asklndlakjsdo asndojaiodj adoajoidj dkiansndjka danda dad adn', NULL, NULL, NULL, NULL, 'XIAOMI', '34.00', NULL, NULL, NULL, 5, '7.00', '2023-03-19 08:58:19', 'pizarra-digital-lcd-13.5\'-xiaomi', 1),
+(29, 132, 4152085205, 'Mouse Gamer Logitech G203', 'hasbd daisdias asidaishd iasd absjdbas dasd asda sdasda das das dasikjdnaksda dad a daksdkasda ajsdba dasdkadk askdajdisak', NULL, NULL, NULL, NULL, 'INDURAMA', '24.00', 10, NULL, 2, NULL, NULL, '2023-03-19 08:59:37', 'mouse-gamer-logitech-g203', 1),
+(30, 144, 541021456102, 'Cocina a Gas 6 Quemadores C/grill Mabe', 'dkifhsfds ksdjfs fsfjsdf sdofsfs fsodflsmkfs fsldfmmcxvmx sdflkdjmslf s flsdkfsdmfsdf sdfksmflsjflsd fsdlfksdf ', NULL, NULL, NULL, NULL, 'MABE', '419.00', 8, '500.00', 10, NULL, NULL, '2023-03-23 17:30:51', 'cocina-a-gas-6-quemadores-c/grill-mabe', 1),
+(31, 150, 1204512410, 'Cocineta A Gas C/tapa 4 Hornillas Encendido Eléctrico Kombo', 'dfsdf sds s kjh jj kmnjojmn oljioi lkmjoi jlkmlkjdjfl osdjfsd loidjfjsdfj fosdijfjsdf sjdfsd', NULL, NULL, NULL, NULL, 'KOMBO', '99.00', NULL, NULL, NULL, 5, '24.00', '2023-03-23 17:33:28', 'cocineta-a-gas-c/tapa-4-hornillas-encendido-electrico-kombo', 1),
+(32, 141, 1210789687560, 'Cocina A Gas 4 Quemadores Mabe', 'ddasdasd fsd fs df sd sdfnbijsbnfkjsd sfhskdnfksjkfsd skdfhnksdnfsnjdf sdhfsndfjsidof fsidhfsnd', NULL, NULL, NULL, NULL, 'MABE', '159.00', 2, '200.00', 70, 10, '18.00', '2023-03-23 17:35:17', 'cocina-a-gas-4-quemadores-mabe', 1),
+(35, 142, 120451241085, 'Balanza Digital Inteligente Omron Hbf226', 'asdadasdasdacx x jhgu bhbnbbibndksf fsdflfdlsoijfs fsjdflisjfsj fsfjsnf sfnsfjkfsmfsf', NULL, NULL, NULL, NULL, 'OMRON', '89.00', NULL, NULL, NULL, NULL, NULL, '2023-03-23 17:43:58', 'balanza-digital-inteligente-omron-hbf226', 1),
+(47, 141, 12011422222, 'Teclado C/mouse Negro Maxell', 'fdsacjdjdhya sdahs dadaudh iahdiahdadiuhaidhuaidhi audaiusd adhiadiadahdiaidhuaidh', NULL, NULL, NULL, NULL, 'MAXELL', '456.00', NULL, NULL, NULL, NULL, NULL, '2023-03-31 21:47:11', 'teclado-c/mouse-negro-maxell', 1),
+(48, 139, 1211054645464, 'Parlante Gamer P/computadora Negro Onikuma L6', 'vvdsgosdg dgdgkgpokdpgk dfpgpkd gpkg pdkgpdfgk dpfgpdfgp dgpofg pdkgpfodpg kdpgfpfdokgpd fgk', NULL, NULL, NULL, NULL, 'ONIKUMA', '45.22', 8, NULL, NULL, NULL, NULL, '2023-03-31 21:49:03', 'parlante-gamer-p/computadora-negro-onikuma-l6', 1);
 
 -- --------------------------------------------------------
 
@@ -404,7 +406,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id_category` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
+  MODIFY `id_category` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=182;
 
 --
 -- AUTO_INCREMENT de la tabla `img_product`
@@ -428,7 +430,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`

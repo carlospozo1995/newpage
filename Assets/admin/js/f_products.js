@@ -212,7 +212,7 @@ function edit(element, data_request){
         
     $(".modal-header").removeClass("headerRegister").addClass("headerUpdate");
     $(".modal-title").text("Actualizar Categoria");
-    $("#btnSubmitUser").removeClass("btn-primary").addClass("bg-success");
+    $("#btnSubmitProduct").removeClass("btn-primary").addClass("bg-success");
     $(".btnText").text("Actualizar");
     validFocus();
     

@@ -162,7 +162,7 @@
                                         <div class="row">
 	                                        <div class="col-sm-6">
 	                                            <div class="form-group">
-	                                                <button id="btnSubmitProduct" type="submit" class="btn btn-primary btn-block">Agregar</button>
+	                                                <button id="btnSubmitProduct" type="submit" class="btn btn-primary btnText btn-block">Agregar</button>
 	                                            </div>
 	                                        </div>
 	                                        <div class="col-sm-6">
