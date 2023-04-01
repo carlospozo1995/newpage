@@ -28,7 +28,7 @@
             $request = $GLOBALS["db"]->auto_array($sql, array($name));
 
             if (empty($request)) {
-                $arrData[] = array("name_category" => $name, "photo" => $photo, "icon" => $icon, "sliderDst" => $sliderDst, "sliderMbl" => $sliderMbl, "sliderDesOne" => $sliderDesOne, "sliderDesTwo" => $sliderDesTwo, "fatherCategory" => $option_list, "url" => strtolower(str_replace(" ", "-", $urlVowel)), "status" => $status); 
+                $arrData[] = array("name_category" => utf8_decode($name), "photo" => $photo, "icon" => $icon, "sliderDst" => $sliderDst, "sliderMbl" => $sliderMbl, "sliderDesOne" => $sliderDesOne, "sliderDesTwo" => $sliderDesTwo, "fatherCategory" => $option_list, "url" => strtolower(str_replace(" ", "-", $urlVowel)), "status" => $status); 
                 return $GLOBALS["db"]->insert_multiple("categories", $arrData);
             }else{
                 return "exist";

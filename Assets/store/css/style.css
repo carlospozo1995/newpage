@@ -15408,21 +15408,26 @@ input {
 .product-default-single-item .image-box {
     position: relative;
     overflow: hidden;
+    margin-top: 10px; /*change*/
 }
 .product-default-single-item .image-link {
     display: block;
     position: relative;
+    margin: auto;
 }
 .product-default-single-item .image-link img {
-    width: 100%;
+    width: 80%; /*change 100*/
     height: auto;
     transition: all 0.5s ease;
+    display: flex;
+    margin: auto;
 }
 .product-default-single-item .image-link img:nth-child(2) {
     position: absolute;
     left: 0;
+    right: 0; /*change*/
     top: 0;
-    width: 100%;
+    width: 80%; /*change 100*/
     height: 100%;
     opacity: 0;
 }
@@ -16282,6 +16287,7 @@ input {
     padding-bottom: 15px;
     border-bottom: 2px solid #ededed;
     position: relative;
+    color: #1000c3;
 }
 .sidebar-title::after {
     content: "";
@@ -16291,7 +16297,6 @@ input {
     left: 0;
     bottom: -1.5px;
 /*  change  background: #b19361;*/
-/*    background: linear-gradient(to bottom, #4431DE, #ff6666);*/
     background: #8E8E8E;
 }
 

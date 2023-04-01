@@ -58,13 +58,14 @@ $(document).ready(function () {
             success: function(data){               
                 window.history.replaceState({}, '', element.attr('href'));
                 if(data.total_products.length > 0){
+                    // Reset data store
+                    $('#data-store').val(data.sons);
                     // Reset navigation page
                     $('.navigation-page').html(html_nav);
                     // Reset total products displayed
                     $('.page-amount').html(data.total_products.length+' Productos');
 
                     // Reset order products
-                    $('#products-order').attr("data-sons", `${data.sons}`);
                     $("#products-order").val('default');
                     $("#products-order").niceSelect('update');
 
@@ -76,7 +77,7 @@ $(document).ready(function () {
                     if (data.total_products.length > 10) {
                         start = 10;
                         $('.container-pagination-btn').html(`<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
-                                            <button id="load-more" class="load-more time-trans-txt" data-sons="${data.sons}">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
+                                            <button id="load-more" class="load-more time-trans-txt">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
                                          </div>`);
                     }else{
                         $('.container-pagination-btn').html("");
@@ -113,10 +114,7 @@ $(document).ready(function () {
                         contentList += li.prop('outerHTML');
                     }
                     $(".content-check-brand").html(contentList);
-                    $(".content-check-brand").attr('data-sons', data.sons);
 
-                    // Reset sons range products
-                    $('#slider-range').attr('data-sons', data.sons)
                 }else{
                     $('.content-section-page').html(data.content);
                 }
@@ -133,7 +131,7 @@ $(document).ready(function () {
 
     // ORDER BY PRODUCTS
     $("#products-order").change(function () {
-        let sons_category = $(this).attr('data-sons');
+        let sons_category = $('#data-store').val();
         let this_val = $(this).val();
 
         // Data brand checked
@@ -173,7 +171,7 @@ $(document).ready(function () {
                 if (data.total_products.length > 10) {
                         start = 10;
                         $('.container-pagination-btn').html(`<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
-                                            <button id="load-more" class="load-more time-trans-txt" data-sons="${sons_category}">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
+                                            <button id="load-more" class="load-more time-trans-txt">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
                                          </div>`);
                 }else{
                     $('.container-pagination-btn').html("");
@@ -193,7 +191,7 @@ $(document).ready(function () {
     // SHOW PRODUCTS BY BRAND
     $('.content-section-page').on('change', ".content-check-brand input[type='checkbox']", function () {
         // Data brand checked
-        let sons_category = $('.content-check-brand').attr('data-sons');
+        let sons_category = $('#data-store').val();
         let brand_check = $('.content-check-brand input[type="checkbox"]:checked');
         let ids_check = [];
         for (var i = 0; i < brand_check.length; i++) {
@@ -227,13 +225,13 @@ $(document).ready(function () {
                 if (data.total_products.length > 10) {
                         start = 10;
                         $('.container-pagination-btn').html(`<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
-                                            <button id="load-more" class="load-more time-trans-txt" data-sons="${sons_category}">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
+                                            <button id="load-more" class="load-more time-trans-txt">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
                                          </div>`);
                 }else{
                     $('.container-pagination-btn').html("");
                 }
 
-                // Price filter products range
+                // Price filter products range (no ajax function)
                 let price_column = data.total_products.map(function(product) {
                     return product.price;
                 });
@@ -257,7 +255,7 @@ $(document).ready(function () {
 
     // LOAD MORE PRODUCTS (BUTTON)
     $('.content-section-page .container-pagination-btn').on('click', '#load-more', function () {
-        let sons_category = $(this).data('sons');
+        let sons_category = $('#data-store').val();
 
         // Data brand checked
         let brand_check = $('.content-check-brand input[type="checkbox"]:checked');
@@ -338,7 +336,7 @@ $(document).ready(function () {
                 $('#slider-range').attr('data-min', ui.values[0])
                 $('#slider-range').attr('data-max', ui.values[1])
 
-                let sons_category = $('#slider-range').attr('data-sons');
+                let sons_category = $('#data-store').val();
 
                 // Data brand checked
                 let brand_check = $('.content-check-brand input[type="checkbox"]:checked');
@@ -373,15 +371,11 @@ $(document).ready(function () {
                         if (data.total_products.length > 10) {
                             start = 10;
                             $('.container-pagination-btn').html(`<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
-                                                <button id="load-more" class="load-more time-trans-txt" data-sons="${sons_category}">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
+                                                <button id="load-more" class="load-more time-trans-txt">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
                                              </div>`);
                         }else{
                             $('.container-pagination-btn').html("");
                         }
-
-                        // if (data.total_products.length == 0) {
-                        //     $('.col-lg-9').html('no hay produstos para mostrar');
-                        // }
                     },
                     error: function(xhr, status, error) {
                         

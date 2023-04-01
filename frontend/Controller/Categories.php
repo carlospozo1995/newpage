@@ -58,7 +58,7 @@
 								$sliderDesOne = empty($_POST['sliderDesOne']) ? null : $_POST['sliderDesOne'];
 								$sliderDesTwo = empty($_POST['sliderDesTwo']) ? null : $_POST['sliderDesTwo'];
 
-								$nameNotSpace = str_replace(' ', '-', $name);
+								$nameNotSpace = str_replace(' ', '-', Utils::replaceVowel(utf8_decode($name)));
 							
 								if (empty($id)) {
 									$option = 1;

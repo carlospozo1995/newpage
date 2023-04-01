@@ -7,7 +7,7 @@
 			$request = "";
 
 			if ($data != "") {
-				$sql = "SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND name_category IN (".$data.")";
+				$sql = "SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (".$data.")";
 				$request = $GLOBALS["db"]->selectAll($sql, array());;
 				if (count($request) > 0) {
 				 	for ($i=0; $i < count($request); $i++) { 
@@ -25,7 +25,7 @@
 			$request = "";
 
 			if ($data != "") {
-				$sql = "SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND name_product IN (".$data.")";
+				$sql = "SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (".$data.")";
 				$request = $GLOBALS["db"]->selectAll($sql, array());;
 				if (count($request) > 0) {
 				 	for ($i=0; $i < count($request); $i++) { 

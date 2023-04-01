@@ -91,6 +91,7 @@
 
             <div class="shop-section">
                 <div class="container">
+                    <input type="hidden" id="data-store" value="<?= Utils::encryptStore($id_sons); ?>">
                     <div class="row flex-column-reverse flex-lg-row">
                         <div class="col-lg-3">
 
@@ -153,7 +154,7 @@
                                     <h6 class="sidebar-title">FILTER BY PRICE</h6>
                                     <div class="sidebar-content position-relative">
                                         <div class="cont-load-more"><span class="loader-more-data"></span></div>
-                                        <div id="slider-range" data-sons="<?= Utils::encryptStore($id_sons) ?>" data-min="<?= $price_min; ?>" data-max="<?= $price_max; ?>"></div>
+                                        <div id="slider-range" data-min="<?= $price_min; ?>" data-max="<?= $price_max; ?>"></div>
                                         <div class="filter-type-price">
                                             <label for="amount">Price range:</label>
                                             <input type="text" id="amount">
@@ -167,7 +168,7 @@
                                         <div class="cont-load-more"><span class="loader-more-data"></span></div>
                                         <div class="filter-type-select">
                                         <?php
-                                        echo '<ul class="content-check-brand" data-sons="'.Utils::encryptStore($id_sons).'">';
+                                        echo '<ul class="content-check-brand">';
                                             $countBrand = array();
                                             foreach ($total_products as $product) {
                                                 if(isset($countBrand[$product['brand']])){
@@ -230,7 +231,7 @@
                                                 <label class="mr-2">Ordenar por:</label>
                                                 <form action="#">
                                                     <fieldset>
-                                                        <select data-sons="<?= Utils::encryptStore($id_sons); ?>" name="products-order" id="products-order">
+                                                        <select name="products-order" id="products-order">
                                                             <option value="default">Por defecto</option>
                                                             <option value="discount">Descuentos</option>
                                                             <option value="recent">Recien agregados</option>
@@ -262,7 +263,7 @@
                                                                 <div class="image-box">
                                                                 <?php
 
-                                                                echo '<a href="" class="image-link' . (!empty($product['discount']) ? ' content-off" data-discount="'.$product['discount'].'% off"' : '"') . '>';
+                                                                echo '<a href="'.BASE_URL.'producto/'.'" class="image-link' . (!empty($product['discount']) ? ' content-off" data-discount="'.$product['discount'].'% off"' : '"') . '>';
                                                                     // PRINT IMAGES OF PRODUCTS
                                                                     echo implode('', $product_images[$product['id_product']]);
 
@@ -393,7 +394,7 @@
                                 echo '<div class="container-pagination-btn">';
                                 if (count($total_products) > 10) {
                                     echo '<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
-                                            <button id="load-more" class="load-more time-trans-txt  position-relative" data-sons="'.Utils::encryptStore($id_sons).'">VER MÁS <div class="cont-load-more"><span class="loader-more-data"></span></div></button>
+                                            <button id="load-more" class="load-more time-trans-txt  position-relative">VER MÁS <div class="cont-load-more"><span class="loader-more-data"></span></div></button>
                                          </div>';
                                 }
                                 echo '</div>';
