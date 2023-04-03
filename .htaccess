@@ -64,6 +64,7 @@ RewriteRule ^categoria/orderProducts/$ %{ENV:REWRITEBASE}index.php?show=categori
 RewriteRule ^categoria/rangePriceProducts/$ %{ENV:REWRITEBASE}index.php?show=categoria&action=rangePriceProducts [L]
 RewriteRule ^categoria/(.+)$ %{ENV:REWRITEBASE}index.php?show=categoria&cat_path=$1 [L]
 
+RewriteRule ^producto/(.+)$ %{ENV:REWRITEBASE}index.php?show=producto&prod_path=$1 [L]
 
 
 #EXAMPLES

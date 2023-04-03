@@ -42,6 +42,6 @@
     define("SMONEY", "$");
 
     // ADD SLIDERS STORE VIEW
-    define("CATEGORIES_SLIDERS", "133, 104, 125");
+    define("CATEGORIES_SLIDERS", "181");
     define("PRODUCTS_SLIDERS", "1, 2, 3");
 ?>

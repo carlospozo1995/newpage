@@ -177,14 +177,3 @@
 
 		<br><br><br><br><br><br><br><br><br>
 	</div>
-
-
-
-	<div class="contenedorBtn">
-		<button class="btnTest">click 1</button>
-		<button class="btnTest">click 2</button>
-		<button class="btnTest">click 3</button>
-	</div>
-
-	<br><br>
-	<button class="addbtn">agregar btn</button>

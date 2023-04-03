@@ -243,7 +243,7 @@
 			                <div class="image-box">
 			                ';
 
-			    $content_grid .= '<a href="" class="image-link' . (!empty($product['discount']) ? ' content-off" data-discount="'.$product['discount'].'% off"' : '"') . '>';
+			    $content_grid .= '<a href="'.BASE_URL.'producto/'.$product['url'].'" class="image-link' . (!empty($product['discount']) ? ' content-off" data-discount="'.$product['discount'].'% off"' : '"') . '>';
 			    // PRINT IMAGES OF PRODUCTS
 			    $content_grid .= implode('', $product_images[$product['id_product']]);
 			    $content_grid .= '</a>';
@@ -263,7 +263,7 @@
 
 			                <div class="content">
 			                    <div class="text-center">
-			                        <h6><a class="title-product" href="#">'.$product['name_product'].'</a></h6>
+			                        <h6><a class="title-product" href="'.BASE_URL.'producto/'.$product['url'].'">'.$product['name_product'].'</a></h6>
 			                        <p>'.$product['brand'].'</p>
 			                ';
 
@@ -286,14 +286,14 @@
 			    $content_single .= '
 			        <div class="col-12">
 			            <div class="product-list-single">
-			            	<a href="" class="product-list-img-link' . (!empty($product['discount']) ? ' content-off" data-discount="'.$product['discount'].'% off"' : '"') . '>';
+			            	<a href="'.BASE_URL.'producto/'.$product['url'].'" class="product-list-img-link' . (!empty($product['discount']) ? ' content-off" data-discount="'.$product['discount'].'% off"' : '"') . '>';
 			                    // PRINT IMAGES OF PRODUCTS
 			                    $content_single .= implode('', $product_images[$product['id_product']]);
 			                $content_single .= '</a>';
 
 			                $content_single .= '<div class="product-list-content">
 			                	<h5 class="product-list-link">
-			                        <a href="product-details-default.html">'. $product['name_product'] .'</a>
+			                        <a href="'.BASE_URL.'producto/'.$product['url'].'">'. $product['name_product'] .'</a>
 			                    </h5>
 			                    <p>'. $product['brand'] .'</p>';
 

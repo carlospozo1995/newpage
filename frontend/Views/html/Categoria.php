@@ -263,7 +263,7 @@
                                                                 <div class="image-box">
                                                                 <?php
 
-                                                                echo '<a href="'.BASE_URL.'producto/'.'" class="image-link' . (!empty($product['discount']) ? ' content-off" data-discount="'.$product['discount'].'% off"' : '"') . '>';
+                                                                echo '<a href="'.BASE_URL."producto/".$product["url"].'" class="image-link' . (!empty($product['discount']) ? ' content-off" data-discount="'.$product['discount'].'% off"' : '"') . '>';
                                                                     // PRINT IMAGES OF PRODUCTS
                                                                     echo implode('', $product_images[$product['id_product']]);
 
@@ -285,7 +285,7 @@
 
                                                                 <div class="content">
                                                                     <div class="text-center">
-                                                                        <h6><a class="title-product" href="#"><?= $product['name_product']; ?></a></h6>
+                                                                        <h6><a class="title-product" href="<?= BASE_URL.'producto/'.$product['url']; ?>"><?= $product['name_product']; ?></a></h6>
                                                                         <p><?= $product['brand']; ?></p>
 
                                                                     <?php
@@ -326,14 +326,14 @@
                                                         <div class="col-12">
                                                             <div class="product-list-single">
                                                             <?php
-                                                            echo '<a href="" class="product-list-img-link' . (!empty($product['discount']) ? ' content-off" data-discount="'.$product['discount'].'% off"' : '"') . '>';
+                                                            echo '<a href="'.BASE_URL."producto/".$product["url"].'" class="product-list-img-link' . (!empty($product['discount']) ? ' content-off" data-discount="'.$product['discount'].'% off"' : '"') . '>';
                                                                 // PRINT IMAGES OF PRODUCTS
                                                                 echo implode('', $product_images[$product['id_product']]);
                                                             echo '</a>';
                                                             ?>
                                                                 <div class="product-list-content">
                                                                     <h5 class="product-list-link">
-                                                                        <a href="product-details-default.html"><?=  $product['name_product']; ?></a>
+                                                                        <a href="<?= BASE_URL.'producto/'.$product['url']; ?>"><?=  $product['name_product']; ?></a>
                                                                     </h5>
                                                                     <p><?= $product['brand']; ?></p>
                                                                 <?php

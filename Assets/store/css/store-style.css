@@ -63,7 +63,7 @@
 }
 
 .container-slider{
-    margin-top: -210px;
+    margin-top: -197px;
 }
 
 .text-justify{
@@ -76,14 +76,18 @@
 .header-top-contact-hover-color--page a:hover{
     color: #fbbb01;
 }
-
+.icon-menu-desktop{
+    width: 45px;
+}
 .action-hover-color--page.header-action-link li a:hover {
     color: #1000c3;
 }
 .action-hover-color--page.header-action-link li a span {
     background: #1000c3;
 }
-
+.main-menu nav > ul > li > a > span {
+    font-size: 12px;
+}
 .main-menu nav > ul > li > .show-effect {
     text-align: center;
     overflow: hidden;
@@ -128,7 +132,7 @@
 .sub-menu .item-sub-menu > a{
     transform: scale(1.0);
     font-weight: 700;
-    font-size: 15px;
+    font-size: 13px;
     color: black;
 }
 .sub-menu .item-sub-menu > a:hover{
@@ -145,7 +149,7 @@
 .son-sub-menu .item-son-sub-menu > a{
     display: flex;
     color: #007bff;
-    font-size: 15px;
+    font-size: 13px;
 }
 .son-sub-menu .item-son-sub-menu > a:hover{
     transform: translateX(5px);
@@ -242,7 +246,7 @@
     box-shadow: 0 8px 20px rgba(68, 49, 222, 0.5);
 }
 
-@media (min-width: 1225px){
+@media (min-width: 1250px){
     .sliders-container-mbl{
         display: none;
     }

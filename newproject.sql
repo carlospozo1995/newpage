@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 01-04-2023 a las 03:05:48
+-- Tiempo de generación: 03-04-2023 a las 22:04:06
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 7.4.19
 
@@ -47,76 +47,84 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id_category`, `name_category`, `photo`, `icon`, `sliderDst`, `sliderMbl`, `sliderDesOne`, `sliderDesTwo`, `datecreate`, `fatherCategory`, `url`, `status`) VALUES
-(104, 'CATÉGORY 1', 'photo_CATEGORY-1_064bf93d85efa2ee7aa99419015c9161.jpg', 'icon_CATEGORY-1_064bf93d85efa2ee7aa99419015c9161.jpg', 'sliderDst_CATEGORY-1_e3c4160f3d899e61271687f8e56cb4a8.jpg', 'sliderMbl_CATEGORY-1_e3c4160f3d899e61271687f8e56cb4a8.jpg', 'Sld des<br> categoria  dst', 'Sld des categoria 2 mbl', '2023-02-15 15:30:51', NULL, 'category-1', 1),
-(105, 'Categoría 1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:32:51', 104, 'categoria-1.1', 1),
-(106, 'Categoria 1.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:33:08', 105, 'categoria-1.1.1', 1),
-(107, 'Categoria 1.1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:33:22', 105, 'categoria-1.1.2', 1),
-(108, 'Categoria 1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:33:33', 104, 'categoria-1.2', 1),
-(109, 'Categoria 1.2.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:33:48', 108, 'categoria-1.2.1', 1),
-(110, 'Categoria 1.2.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:34:14', 108, 'categoria-1.2.2', 1),
-(111, 'Categoria 1.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:35:59', 104, 'categoria-1.3', 1),
-(112, 'Categoria 1.3.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:37:28', 111, 'categoria-1.3.1', 1),
-(113, 'Categoria 1.3.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:37:40', 111, 'categoria-1.3.2', 1),
-(114, 'Categoria 1.3.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:37:53', 111, 'categoria-1.3.3', 1),
-(115, 'Categoria 1.4', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:38:29', 104, 'categoria-1.4', 1),
-(116, 'Categoria 1.4.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:38:45', 115, 'categoria-1.4.1', 1),
-(117, 'Categoria 1.4.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:39:01', 115, 'categoria-1.4.2', 1),
-(118, 'CATEGORY 2', 'photo_CATEGORY-2_a534a9244d3c59eb8d8ba3ea43f18230.jpg', 'icon_CATEGORY-2_a534a9244d3c59eb8d8ba3ea43f18230.jpg', NULL, NULL, NULL, NULL, '2023-02-15 15:40:21', NULL, 'category-2', 1),
-(119, 'Categoria 2.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:40:45', 118, 'categoria-2.1', 1),
-(120, 'Categoria 2.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:41:27', 119, 'categoria-2.1.1', 1),
-(121, 'Categoria 2.1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:42:27', 119, 'categoria-2.1.2', 1),
-(122, 'Categoria 2.1.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:42:49', 119, 'categoria-2.1.3', 1),
-(123, 'Categoria 2.1.4', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:43:12', 119, 'categoria-2.1.4', 1),
-(124, 'Categoria 2.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:43:38', 118, 'categoria-2.2', 1),
-(125, 'Categoria 2.2.1', NULL, NULL, 'sliderDst_Categoria-2.2.1_0a57e7be4e8a7fd00ea126f685324d2d.jpg', 'sliderMbl_Categoria-2.2.1_0a57e7be4e8a7fd00ea126f685324d2d.jpg', NULL, 'Sld des categoria 2.2.1 mbl', '2023-02-15 15:44:12', 124, 'categoria-2.2.1', 1),
-(126, 'Categoria 2.2.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:45:21', 124, 'categoria-2.2.2', 1),
-(127, 'Categoria 2.2.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:45:38', 124, 'categoria-2.2.3', 1),
-(128, 'CATEGORY 3', 'photo_CATEGORY-3_f7d3a7ced482f6fc26957c141974b4c6.jpg', 'icon_CATEGORY-3_f7d3a7ced482f6fc26957c141974b4c6.jpg', NULL, NULL, NULL, NULL, '2023-02-15 15:55:43', NULL, 'category-3', 1),
-(129, 'Categoria 3.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:56:08', 128, 'categoria-3.1', 1),
-(130, 'Categoria 3.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:56:22', 129, 'categoria-3.1.1', 1),
-(131, 'Categoria 3.1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:56:43', 129, 'categoria-3.1.2', 1),
-(132, 'Categoria 3.1.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:57:25', 129, 'categoria-3.1.3', 1),
-(133, 'Categoria 3.2', NULL, NULL, 'sliderDst_Categoria-3.2_c09525fe213cd5ee4084cfd48779020c.jpg', 'sliderMbl_Categoria-3.2_c09525fe213cd5ee4084cfd48779020c.jpg', 'Sld des <br>categoria 3.2 dst', NULL, '2023-02-15 15:57:49', 128, 'categoria-3.2', 1),
-(134, 'Categoria 3.2.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:58:22', 133, 'categoria-3.2.1', 1),
-(135, 'Categoria 3.2.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:58:45', 133, 'categoria-3.2.2', 1),
-(136, 'Categoria 3.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 15:59:03', 128, 'categoria-3.3', 1),
-(137, 'CATEGORY 4', 'photo_CATEGORY-4_f07cac553251d3d5fe20877214158b1a.jpg', 'icon_CATEGORY-4_f07cac553251d3d5fe20877214158b1a.jpg', NULL, NULL, NULL, NULL, '2023-02-15 16:00:52', NULL, 'category-4', 1),
-(138, 'Categoria 4.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:01:09', 137, 'categoria-4.1', 1),
-(139, 'Categoria 4.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:01:24', 138, 'categoria-4.1.1', 1),
-(140, 'Categoria 4.1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:01:53', 138, 'categoria-4.1.2', 1),
-(141, 'Categoria 4.1.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:02:48', 138, 'categoria-4.1.3', 1),
-(142, 'Categoria 4.1.4', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:03:00', 138, 'categoria-4.1.4', 1),
-(143, 'Categoria 4.1.5', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:03:13', 138, 'categoria-4.1.5', 1),
-(144, 'Categoria 4.1.6', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:03:26', 138, 'categoria-4.1.6', 1),
-(145, 'CATEGORY 5', 'photo_CATEGORY-5_256ef423c55b20300398a7372703c767.jpg', 'icon_CATEGORY-5_256ef423c55b20300398a7372703c767.jpg', NULL, NULL, NULL, NULL, '2023-02-15 16:04:35', NULL, 'category-5', 1),
-(146, 'Categoria 5.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:04:49', 145, 'categoria-5.1', 1),
-(147, 'Categoria 5.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:05:09', 146, 'categoria-5.1.1', 1),
-(148, 'Categoria 5.1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:05:18', 146, 'categoria-5.1.2', 1),
-(149, 'Categoria 5.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:05:38', 145, 'categoria-5.2', 1),
-(150, 'Categoria 5.2.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:05:56', 149, 'categoria-5.2.1', 1),
-(151, 'Categoria 5.2.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:06:09', 149, 'categoria-5.2.2', 1),
-(152, 'Categoria 5.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:06:50', 145, 'categoria-5.3', 1),
-(153, 'Categoria 5.3.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:07:09', 152, 'categoria-5.3.1', 1),
-(154, 'Categoria 5.3.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:07:20', 152, 'categoria-5.3.2', 1),
-(155, 'Categoria 5.3.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:07:30', 152, 'categoria-5.3.3', 1),
-(156, 'Categoria 5.4', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:07:53', 145, 'categoria-5.4', 1),
-(157, 'Categoria 5.4.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:08:05', 156, 'categoria-5.4.1', 1),
-(158, 'Categoria 5.4.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:08:16', 156, 'categoria-5.4.2', 1),
-(159, 'CATEGORY 6', 'photo_CATEGORY-6_d8ea0dc2d78cf6d09d1ff8f678bff11c.jpg', 'icon_CATEGORY-6_d8ea0dc2d78cf6d09d1ff8f678bff11c.jpg', NULL, NULL, NULL, NULL, '2023-02-15 16:09:13', NULL, 'category-6', 1),
-(160, 'Categoria 6.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:09:36', 159, 'categoria-6.1', 1),
-(161, 'Categoria 6.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:10:42', 160, 'categoria-6.1.1', 1),
-(162, 'Categoria 6.1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:11:01', 160, 'categoria-6.1.2', 1),
-(163, 'Categoria 6.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:11:20', 159, 'categoria-6.2', 1),
-(164, 'Categoria 6.2.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:12:07', 163, 'categoria-6.2.1', 1),
-(165, 'Categoria 6.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:12:48', 159, 'categoria-6.3', 1),
-(166, 'Categoria 6.3.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:13:16', 165, 'categoria-6.3.1', 1),
-(167, 'Categoria 6.3.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:13:36', 165, 'categoria-6.3.2', 1),
-(168, 'CATEGORY 7', 'photo_Categoria-7_63a318e0cb7632d2a20d845d4e5724b7.jpg', 'icon_Categoria-7_63a318e0cb7632d2a20d845d4e5724b7.jpg', NULL, NULL, NULL, NULL, '2023-02-15 16:14:09', NULL, 'category-7', 1),
-(169, 'Categoria 7.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:14:42', 168, 'categoria-7.1', 1),
-(170, 'Categoria 7.1.1', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:15:00', 169, 'categoria-7.1.1', 1),
-(171, 'Categoria 7.1.2', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:15:10', 169, 'categoria-7.1.2', 1),
-(172, 'Categoria 7.1.3', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-15 16:15:22', 169, 'categoria-7.1.3', 1),
-(179, 'Categoriá 7.1.4', NULL, NULL, NULL, NULL, NULL, NULL, '2023-03-30 21:59:00', 169, 'categoria-7.1.4', 1);
+(181, 'Electrodomésticos', 'photo_Electrodomesticos_bea4d01ceb34861ae2bba8d6f12fe47d.jpg', 'icon_Electrodomesticos_bea4d01ceb34861ae2bba8d6f12fe47d.jpg', 'sliderDst_Electrodomesticos_fcdcd7e192473afb9d13436a1da12c3d.jpg', 'sliderMbl_Electrodomesticos_4980f90774bf763734cb46474c4b72fb.jpg', 'aksbd', 'LO MEJOR EN LINEA BLANCA', '2023-04-02 15:20:14', NULL, 'electrodomesticos', 1),
+(182, 'Climatización', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 15:45:20', 181, 'climatizacion', 1),
+(183, 'Ventiladores', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 15:45:46', 182, 'ventiladores', 1),
+(184, 'Aire acondicionado', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 15:46:31', 182, 'aire-acondicionado', 1),
+(185, 'Cocinas', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 15:47:44', 181, 'cocinas', 1),
+(186, 'Cocinas a gas', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 15:47:56', 185, 'cocinas-a-gas', 1),
+(187, 'Cocinas de inducción', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 15:48:13', 185, 'cocinas-de-induccion', 1),
+(188, 'Hornos', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 15:48:26', 185, 'hornos', 1),
+(189, 'Lavado y secado', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 15:49:37', 181, 'lavado-y-secado', 1),
+(190, 'Lavadoras', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 15:49:51', 189, 'lavadoras', 1),
+(191, 'Secadoras', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 15:50:06', 189, 'secadoras', 1),
+(192, 'Refrigeración', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 15:57:47', 181, 'refrigeracion', 1),
+(193, 'Refrigeradoras', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 15:58:03', 192, 'refrigeradoras', 1),
+(194, 'Congeladores', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 15:58:19', 192, 'congeladores', 1),
+(195, 'Audio & video', 'photo_Audio-y-video_b1171eff61b34c02d8a77d971df880a3.jpg', 'icon_Audio-y-video_b1171eff61b34c02d8a77d971df880a3.jpg', NULL, NULL, NULL, NULL, '2023-04-02 16:38:22', NULL, 'audio-video', 1),
+(196, 'Audio & sonido', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:41:12', 195, 'audio-sonido', 1),
+(197, 'Equipos de sonido', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:41:56', 196, 'equipos-de-sonido', 1),
+(198, 'Parlantes portátiles', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:43:05', 196, 'parlantes-portatiles', 1),
+(199, 'Barras de sonido', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:43:18', 196, 'barras-de-sonido', 1),
+(200, 'Audifonos', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:43:42', 196, 'audifonos', 1),
+(201, 'Micrófonos', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:44:12', 196, 'microfonos', 1),
+(202, 'Tv & video', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:44:49', 195, 'tv-video', 1),
+(203, 'Televisores', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:45:13', 202, 'televisores', 1),
+(204, 'Soportes de pared', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:45:24', 202, 'soportes-de-pared', 1),
+(205, 'Antenas prepago', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:45:38', 202, 'antenas-prepago', 1),
+(206, 'Técnologia', 'photo_Tecnologia_d14e8b7f6a367881dc933b97c547bb5e.jpg', 'icon_Tecnologia_d14e8b7f6a367881dc933b97c547bb5e.jpg', NULL, NULL, NULL, NULL, '2023-04-02 16:47:38', NULL, 'tecnologia', 1),
+(207, 'Computadoras', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:48:00', 206, 'computadoras', 1),
+(208, 'Laptos', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:48:14', 207, 'laptos', 1),
+(209, 'De escritorio', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:48:27', 207, 'de-escritorio', 1),
+(210, 'Monitores', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:48:48', 207, 'monitores', 1),
+(211, 'Impresoras', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:49:06', 207, 'impresoras', 1),
+(212, 'Smartphones', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:49:58', 206, 'smartphones', 1),
+(213, 'Celulares', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:50:12', 212, 'celulares', 1),
+(214, 'Tablets', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:50:24', 212, 'tablets', 1),
+(215, 'Proyectores', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:50:51', 206, 'proyectores', 1),
+(216, 'Electromenores', 'photo_Electromenores_c8e17eb43d4291e013d13c86b6b08d6d.jpg', 'icon_Electromenores_c8e17eb43d4291e013d13c86b6b08d6d.jpg', NULL, NULL, NULL, NULL, '2023-04-02 16:51:58', NULL, 'electromenores', 1),
+(217, 'Ayudantes del hogar', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:52:37', 216, 'ayudantes-del-hogar', 1),
+(218, 'Ollas eléctricas', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:52:56', 217, 'ollas-electricas', 1),
+(219, 'Arroceras', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:53:12', 217, 'arroceras', 1),
+(220, 'Exprimidores', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:53:31', 217, 'exprimidores', 1),
+(221, 'Planchas de ropa', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:53:56', 217, 'planchas-de-ropa', 1),
+(222, 'Licuadoras', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:54:17', 217, 'licuadoras', 1),
+(223, 'Dispensadores', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:54:33', 217, 'dispensadores', 1),
+(224, 'Air fryer', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:55:13', 217, 'air-fryer', 1),
+(225, 'Batidoras', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:55:42', 217, 'batidoras', 1),
+(226, 'Cafeteras', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:55:56', 217, 'cafeteras', 1),
+(227, 'Sanducheras y wafleras', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:56:23', 217, 'sanducheras-y-wafleras', 1),
+(228, 'Hogar', 'photo_Hogar_7648f1d178dc6a25553d300f048c841f.jpg', 'icon_Hogar_7648f1d178dc6a25553d300f048c841f.jpg', NULL, NULL, NULL, NULL, '2023-04-02 16:59:24', NULL, 'hogar', 1),
+(229, 'Cocina', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:59:50', 228, 'cocina', 1),
+(230, 'Ollas y sartenes', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:00:15', 229, 'ollas-y-sartenes', 1),
+(231, 'Utensilios', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:00:32', 229, 'utensilios', 1),
+(232, 'Dormitorio', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:01:15', 228, 'dormitorio', 1),
+(233, 'Colchones', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:01:27', 232, 'colchones', 1),
+(234, 'Bases de colchones', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:01:49', 232, 'bases-de-colchones', 1),
+(235, 'Camas y sofacamas', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:02:10', 232, 'camas-y-sofacamas', 1),
+(236, 'Aspirado y limpieza', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:02:47', 228, 'aspirado-y-limpieza', 1),
+(237, 'Aspiradoras', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:03:05', 236, 'aspiradoras', 1),
+(238, 'Hidrolavadoras', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:03:17', 236, 'hidrolavadoras', 1),
+(239, 'Muebles', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:03:59', 228, 'muebles', 1),
+(240, 'Muebles de sala', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:04:12', 239, 'muebles-de-sala', 1),
+(241, 'Muebles de cocina', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:04:31', 239, 'muebles-de-cocina', 1),
+(242, 'Muebles de dormitorio', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:05:03', 239, 'muebles-de-dormitorio', 1),
+(243, 'Movilidad', 'photo_Movilidad_69d02cc877817f72c60a161f7b61b353.jpg', 'icon_Movilidad_69d02cc877817f72c60a161f7b61b353.jpg', NULL, NULL, NULL, NULL, '2023-04-02 17:05:35', NULL, 'movilidad', 1),
+(244, 'Motos', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:06:00', 243, 'motos', 1),
+(245, 'Motos eléctricas', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:06:15', 244, 'motos-electricas', 1),
+(246, 'Motos de combustión', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:06:42', 244, 'motos-de-combustion', 1),
+(247, 'Bicicletas', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:07:01', 243, 'bicicletas', 1),
+(248, 'BMX', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:07:14', 247, 'bmx', 1),
+(249, 'Montaña', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:07:29', 247, 'monta-a', 1),
+(250, 'Infantiles', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:07:49', 247, 'infantiles', 1),
+(251, 'Accesorios', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:08:34', 243, 'accesorios', 1),
+(252, 'Cascos', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:08:43', 251, 'cascos', 1),
+(253, 'Guantes', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:08:54', 251, 'guantes', 1),
+(254, 'Cuidado personal', 'photo_Cuidado-personal_30d2e1af79ad2f1a446719d60e2b7aa7.jpg', 'icon_Cuidado-personal_30d2e1af79ad2f1a446719d60e2b7aa7.jpg', NULL, NULL, NULL, NULL, '2023-04-02 17:09:30', NULL, 'cuidado-personal', 1),
+(255, 'Belleza', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:09:49', 254, 'belleza', 1),
+(256, 'Rizadores y planchas', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:10:16', 255, 'rizadores-y-planchas', 1),
+(257, 'Afeitadoras y cortadoras de pelo', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:10:39', 255, 'afeitadoras-y-cortadoras-de-pelo', 1),
+(258, 'Secadoras de cabello', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 17:11:10', 255, 'secadoras-de-cabello', 1);
 
 -- --------------------------------------------------------
 
@@ -129,20 +137,6 @@ CREATE TABLE `img_product` (
   `product_id` bigint(20) NOT NULL,
   `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `img_product`
---
-
-INSERT INTO `img_product` (`id_img`, `product_id`, `image`) VALUES
-(1, 1, 'imgRef_1_52fb6bac67b406f70436e98c9c65eead.jpg'),
-(2, 1, 'imgRef_1_e3dca321e58188193ef053d0a9a6f377.jpg'),
-(3, 1, 'imgRef_1_06f2fab2f8896ac3ccecdf76eb9d4eb0.jpg'),
-(4, 1, 'imgRef_1_342203a2311255fa62f784d4d99ca07f.jpg'),
-(5, 9, 'imgRef_9_4915bfed6917470a8be9b30d9540ea3b.jpg'),
-(6, 9, 'imgRef_9_bdd4825e652bd104a3807208cfe90c91.jpg'),
-(7, 9, 'imgRef_9_a87e07ac955307bafbfd4d5c10cb629f.jpg'),
-(8, 9, 'imgRef_9_ba962b56491c384d3f445506de8d5ae4.jpg');
 
 -- --------------------------------------------------------
 
@@ -236,46 +230,6 @@ CREATE TABLE `products` (
   `url` varchar(150) DEFAULT NULL,
   `status` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `products`
---
-
-INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `desMain`, `desGeneral`, `sliderDst`, `sliderMbl`, `sliderDes`, `brand`, `price`, `stock`, `prevPrice`, `discount`, `cantDues`, `priceDues`, `datacreate`, `url`, `status`) VALUES
-(1, 131, 133887000, 'Tostador de pan 600w InduramaTpi-2cr', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', NULL, 'sliderDst_Producto-1_d94878f943bee08da79cc00f0b7088d4.jpg', 'sliderMbl_Producto-1_d94878f943bee08da79cc00f0b7088d4.jpg', NULL, 'INDURAMA', '1000.00', 12, '900.00', 10, 10, '100.00', '2023-02-18 22:18:43', 'tostador-de-pan-600w-induramatpi-2cr', 1),
-(2, 136, 78945600, 'Combo Hidrolavadora K2 Mx Karcher Mas Aspiradora Wd1', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ', NULL, 'sliderDst_Producto-2_e9553ef1ee311602e4da6698919f57b1.jpg', 'sliderMbl_Producto-2_e9553ef1ee311602e4da6698919f57b1.jpg', NULL, 'INDURAMA', '900.00', NULL, '1000.00', 5, 10, '100.00', '2023-02-18 22:20:49', 'combo-hidrolavadora-k2-mx-karcher-mas-aspiradora-wd1', 1),
-(3, 132, 987123000, 'Audifonos Gt5 Negro Xiaomi Haylou', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ', NULL, 'sliderDst_Producto-3_864cd10ccb821d7c292f11ba77124670.jpg', 'sliderMbl_Producto-3_864cd10ccb821d7c292f11ba77124670.jpg', 'slider producto 3', 'INDURAMA', '34.90', NULL, NULL, NULL, 10, '4.00', '2023-02-18 22:22:31', 'audifonos-gt5-negro-xiaomi-haylou', 1),
-(5, 136, 657686800, 'Microondas Grill 42 L Indurama Mwgi-42 Cr ', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, NULL, NULL, NULL, 'INDURAMA', '189.00', 1, '259.00', NULL, NULL, NULL, '2023-02-25 19:44:27', 'microondas-grill-42-l-indurama-mwgi-42-cr-', 1),
-(6, 136, 547215645, 'Cafetera C/molino 1.5 L Indurama Mci-cr', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', NULL, NULL, NULL, NULL, 'INDURAMA', '50.00', 45, NULL, 10, NULL, NULL, '2023-02-28 16:08:39', 'cafetera-c/molino-1.5-l-indurama-mci-cr', 1),
-(7, 131, 32562116000, 'Aire Acondicionado Zitro 10200 BTU', ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut l', NULL, NULL, NULL, NULL, 'INDURAMA', '269.00', 8, '329.00', 45, 10, '35.00', '2023-03-09 11:13:06', 'aire-acondicionado-zitro-10200-btu', 1),
-(8, 131, 152008100, 'Watch MNP13LZ/A Series 8 gps 45mm |Midnight', 'lorem ipsumn iushdkjuio jkhasjkdh kohiaskdnjk ,ihskjdn kjhsdm mdasn ', NULL, NULL, NULL, NULL, 'INDURAMA', '373.00', 8, '50.00', NULL, NULL, NULL, '2023-03-13 16:47:44', 'watch-mnp13lz/a-series-8-gps-45mm-|midnight', 1),
-(9, 130, 97520004500, 'Celular X6 Gris | 64 gb', 'lorem ipsum kjbsjkd klashnjkd kjahsjkd jhsdjk nkjhaskbn.', NULL, NULL, NULL, NULL, 'INDURAMA', '350.00', NULL, '500.00', NULL, 12, '35.00', '2023-03-13 16:49:28', 'celular-x6-gris-|-64-gb', 1),
-(10, 130, 17451400, 'Tablet Pad 2022 6+128Gb', 'lorejkn ksjdhfjkn sdifjsd sdlifjlsnf skdjfsnf kisfn', NULL, NULL, NULL, NULL, 'LENOVO', '123.37', NULL, '329.00', 5, NULL, NULL, '2023-03-13 16:56:10', 'tablet-pad-2022-6+128gb', 1),
-(11, 142, 632450000, 'Laptop AMD Ryzen 5  8GB RAM/512GB ROM HP', 'lorem fdunsduinsdknfdnisdik fisdids isdfnsoifn lsdfklklkd sdlf .', NULL, NULL, NULL, NULL, 'HP', '699.00', NULL, '729.00', 15, 12, '50.00', '2023-03-14 18:23:11', 'laptop-amd-ryzen-5--8gb-ram/512gb-rom-hp', 1),
-(12, 144, 42525000, 'Impresora Multifuncion L5290 Epson Ecotank', 'faxcvsg  vgsvcvb fdx sedfxvcx sefghnsfddb fgsdvx kjands klads lkjmasljd lkjlaksjdkj lkjsadkj sssssssacvvcvb sfgxvb dfgvfdg', NULL, NULL, NULL, NULL, 'EPSON', '459.00', NULL, '500.00', NULL, 5, '100.00', '2023-03-14 18:24:31', 'impresora-multifuncion-l5290-epson-ecotank', 1),
-(13, 143, 123258000, 'Moto Electrica 500w 3 V Rojo Ecomove Eb', ' ndfgcvbsd sdfgsdf szfsg sdfgdfgdf sdfsf sdfsdf', NULL, NULL, NULL, NULL, 'ECOMOVE', '500.00', 8, '600.00', NULL, 12, '70.00', '2023-03-14 18:26:35', 'moto-electrica-500w-3-v-rojo-ecomove-eb', 1),
-(14, 140, 87413698800, 'Casco Integral De Moto t g Gris Armor 501 Sp Expo Techno', 'fsxdfsdf sdfgs cv  vs sfsgsdfbdfd s gvsdgs afsdfsd', NULL, NULL, NULL, NULL, 'ARMOR', '40.00', NULL, '50.00', 8, NULL, NULL, '2023-03-14 18:27:46', 'casco-integral-de-moto-t-g-gris-armor-501-sp-expo-techno', 1),
-(15, 140, 7896320000452, 'Aire Acondicionado 18000 Btu Longtime', 'xvsxv xfdvxcv dfgvsdfs dfbvxc xbcvbbbbbbbbbbbbbbbbbbbbbbbb cxvbcvbcbcvbvc cv cbcvbc cbvcbcvbcb cvcbcvb cvbcbc   cv cv cv cc c c cv c c cvc', NULL, NULL, NULL, NULL, ' LONGTIME', '40.00', NULL, '800.00', NULL, NULL, NULL, '2023-03-14 18:30:13', 'aire-acondicionado-18000-btu-longtime', 1),
-(16, 144, 852000147963, 'Aire acondicionado Premier Split blanco 18000 Btu', 'ikshdfkjnf fsoidfonsfsjf sfisf sf sfsfd sdfs frsf sf sfslkjhsodjfosj fskhdfklsjofjhos oishdolkfosijd oifshdfonsdf osidf n', NULL, NULL, NULL, NULL, 'START SONIC', '300.00', 5, NULL, NULL, NULL, NULL, '2023-03-14 18:31:32', 'aire-acondicionado-premier-split-blanco-18000-btu', 1),
-(17, 135, 4320212000, 'Freidora De Vapor A Presion Ninja', 'fgddfg dsfgdbfgh dserftwef erfgdfgdf sdrfdfgbfdg sdfgdfg dfgdgbfd rgfdgdfg fdgdfgdfg dfgfghdf dfgsdgffd bvnmvbnvb bvcb ', NULL, NULL, NULL, NULL, 'NINJA', '279.00', NULL, '300.00', 9, NULL, NULL, '2023-03-16 17:01:56', 'freidora-de-vapor-a-presion-ninja', 1),
-(18, 135, 5464510546200, 'Exprimidor Clasico 1.2 L Negro Umco', 'ghbs dkahndk cnbmxzcm m,bnzxc, jhasjk kasjhd kjsd jchadn kasjhd, jashkj kjhsdjhdfns ksjdhfh kjsdfkh', NULL, NULL, NULL, NULL, 'UMCO', '24.90', NULL, NULL, 100, 3, '10.00', '2023-03-16 17:04:25', 'exprimidor-clasico-1.2-l-negro-umco', 1),
-(19, 134, 452398085598922, 'Cafetera Minime Nescafe Dolce Gusto', 'djfghs jksdhf sdkjfhks xcnmvjs sidnf sdjfn xjjs dfojlksjdf lsc xzm sdknjf  xcvi fsn skdlnalj kjhndf', NULL, NULL, NULL, NULL, 'NESCAFE', '129.00', NULL, '89.00', NULL, NULL, NULL, '2023-03-16 17:05:30', 'cafetera-minime-nescafe-dolce-gusto', 1),
-(20, 136, 7870005120560, 'Horno Freidora De Aire 1800w Ninja Ref Dt200', 'hbdjk dfnsdkjf dsfjiosdf dsfhsodf khdskf khdsk kdhfs, fkshfs fsdf sfs fs dfsf sfnsfs fsfsfsf sf sfsf sf sf sd', NULL, NULL, NULL, NULL, 'NINJA', '339.00', 5, '350.00', 20, 12, '25.00', '2023-03-16 17:07:35', 'horno-freidora-de-aire-1800w-ninja-ref-dt200', 1),
-(21, 135, 15615894005151, 'Licuadora 1.25 L 3 V 700w Oster', 'gdfisa ajdhasid adkansd kahsdkjn askjdhjask sakjdkjas  khnkmas kjhaskjd jkhdskjf jkj dsfkjds fkfsdjfsdn j n nnjk jn jn', NULL, NULL, NULL, NULL, 'OSTER', '89.00', NULL, '100.00', 9, NULL, NULL, '2023-03-16 17:09:37', 'licuadora-1.25-l-3-v-700w-oster', 1),
-(22, 132, 45265035626, 'Licuadora Profesional con Procesador 1200W Ninja Auto-IQ', 'sdfsd  ghi hihi h ikjn kijkniuhiujn ijuhi niuhiunjmohu uonhiouhn uhkjn kjhjn jikhiunbhiuhiu nhiuhi nkh ikjn ', NULL, NULL, NULL, NULL, 'INDURAMA', '239.00', 8, '300.00', 20, NULL, NULL, '2023-03-16 17:11:42', 'licuadora-profesional-con-procesador-1200w-ninja-auto-iq', 1),
-(23, 130, 185111818100, 'Lavadora Carga Superior 18 Kg Negro Electrolux Impeller', 'jhbsad aksdnbad asknakjnd kjnasdkjhasd kjhndkahjd kjhnsadkhjad dkandkanjd  askandkjnad aksdkjand adanb kj iuhnkn kjnkn ', NULL, NULL, NULL, NULL, 'ELECTROLUX', '499.00', NULL, '550.00', 3, NULL, NULL, '2023-03-17 22:01:29', 'lavadora-carga-superior-18-kg-negro-electrolux-impeller', 1),
-(24, 134, 5120041501275, 'Lavadora Dos Tinas 7 Kg Blanca Electrolux', 'dhgasd djhabd akdha akdhna akdnad ksnad kasdjlka akdnalkjasdkjndlkajs dknjasjdla dakjndanda dkad adalkda daldkna dadjad ', NULL, NULL, NULL, NULL, 'ELECTROLUX', '219.00', 4, '350.00', NULL, 10, '20.00', '2023-03-17 22:03:08', 'lavadora-dos-tinas-7-kg-blanca-electrolux', 1),
-(25, 106, 4420450420400, 'Parrilla Freidora De Aire Ninja', 'ajsgdbuda aihsdia aiudha aiusd adiuad adiuad adiuad adi', NULL, NULL, NULL, NULL, 'NINJA', '319.00', NULL, '400.00', NULL, NULL, NULL, '2023-03-17 22:04:31', 'parrilla-freidora-de-aire-ninja', 1),
-(26, 134, 1600251601, 'Celular Poco M3 64gb/4gb Ram Negro Xiaomi', 'kajshda daja as das dasd ad ada da ds asdadada ad adsasdasd asdasdkjahdkja asjdbabda ajsdba djadsa djashda djads as', NULL, NULL, NULL, NULL, 'XIAOMI', '209.00', 8, '239.00', NULL, 10, '25.00', '2023-03-19 08:55:50', 'celular-poco-m3-64gb/4gb-ram-negro-xiaomi', 1),
-(27, 136, 485600051252, 'Celular C21y 64gb/4gb Ram Azul Realme', 'ajd dahsd ih coi asdasd ao  adkasd doias daikda sdaidna dakjsd adikad adia dain', NULL, NULL, NULL, NULL, 'INDURAMA', '159.00', NULL, '179.00', 9, NULL, NULL, '2023-03-19 08:56:42', 'celular-c21y-64gb/4gb-ram-azul-realme', 1),
-(28, 132, 3120210259100, 'Pizarra Digital Lcd 13.5\' Xiaomi', 'daskjda aisd adaiod aisda dikcdksda asklndlakjsdo asndojaiodj adoajoidj dkiansndjka danda dad adn', NULL, NULL, NULL, NULL, 'XIAOMI', '34.00', NULL, NULL, NULL, 5, '7.00', '2023-03-19 08:58:19', 'pizarra-digital-lcd-13.5\'-xiaomi', 1),
-(29, 132, 4152085205, 'Mouse Gamer Logitech G203', 'hasbd daisdias asidaishd iasd absjdbas dasd asda sdasda das das dasikjdnaksda dad a daksdkasda ajsdba dasdkadk askdajdisak', NULL, NULL, NULL, NULL, 'INDURAMA', '24.00', 10, NULL, 2, NULL, NULL, '2023-03-19 08:59:37', 'mouse-gamer-logitech-g203', 1),
-(30, 144, 541021456102, 'Cocina a Gas 6 Quemadores C/grill Mabe', 'dkifhsfds ksdjfs fsfjsdf sdofsfs fsodflsmkfs fsldfmmcxvmx sdflkdjmslf s flsdkfsdmfsdf sdfksmflsjflsd fsdlfksdf ', NULL, NULL, NULL, NULL, 'MABE', '419.00', 8, '500.00', 10, NULL, NULL, '2023-03-23 17:30:51', 'cocina-a-gas-6-quemadores-c/grill-mabe', 1),
-(31, 150, 1204512410, 'Cocineta A Gas C/tapa 4 Hornillas Encendido Eléctrico Kombo', 'dfsdf sds s kjh jj kmnjojmn oljioi lkmjoi jlkmlkjdjfl osdjfsd loidjfjsdfj fosdijfjsdf sjdfsd', NULL, NULL, NULL, NULL, 'KOMBO', '99.00', NULL, NULL, NULL, 5, '24.00', '2023-03-23 17:33:28', 'cocineta-a-gas-c/tapa-4-hornillas-encendido-electrico-kombo', 1),
-(32, 141, 1210789687560, 'Cocina A Gas 4 Quemadores Mabe', 'ddasdasd fsd fs df sd sdfnbijsbnfkjsd sfhskdnfksjkfsd skdfhnksdnfsnjdf sdhfsndfjsidof fsidhfsnd', NULL, NULL, NULL, NULL, 'MABE', '159.00', 2, '200.00', 70, 10, '18.00', '2023-03-23 17:35:17', 'cocina-a-gas-4-quemadores-mabe', 1),
-(35, 142, 120451241085, 'Balanza Digital Inteligente Omron Hbf226', 'asdadasdasdacx x jhgu bhbnbbibndksf fsdflfdlsoijfs fsjdflisjfsj fsfjsnf sfnsfjkfsmfsf', NULL, NULL, NULL, NULL, 'OMRON', '89.00', NULL, NULL, NULL, NULL, NULL, '2023-03-23 17:43:58', 'balanza-digital-inteligente-omron-hbf226', 1),
-(47, 141, 12011422222, 'Teclado C/mouse Negro Maxell', 'fdsacjdjdhya sdahs dadaudh iahdiahdadiuhaidhuaidhi audaiusd adhiadiadahdiaidhuaidh', NULL, NULL, NULL, NULL, 'MAXELL', '456.00', NULL, NULL, NULL, NULL, NULL, '2023-03-31 21:47:11', 'teclado-c/mouse-negro-maxell', 1),
-(48, 139, 1211054645464, 'Parlante Gamer P/computadora Negro Onikuma L6', 'vvdsgosdg dgdgkgpokdpgk dfpgpkd gpkg pdkgpdfgk dpfgpdfgp dgpofg pdkgpfodpg kdpgfpfdokgpd fgk', NULL, NULL, NULL, NULL, 'ONIKUMA', '45.22', 8, NULL, NULL, NULL, NULL, '2023-03-31 21:49:03', 'parlante-gamer-p/computadora-negro-onikuma-l6', 1);
 
 -- --------------------------------------------------------
 
@@ -406,13 +360,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id_category` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=182;
+  MODIFY `id_category` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=259;
 
 --
 -- AUTO_INCREMENT de la tabla `img_product`
 --
 ALTER TABLE `img_product`
-  MODIFY `id_img` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_img` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `modules`
@@ -430,7 +384,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`

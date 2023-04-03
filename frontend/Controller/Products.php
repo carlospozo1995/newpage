@@ -33,7 +33,7 @@
 
 								$id = $_POST['id_product'];
 								$name = utf8_encode($_POST['name_product']);
-								$desMain = $_POST['desMainProd'];
+								$desMain = utf8_encode($_POST['desMainProd']);
 								$desGeneral = empty($_POST['desGeneralProd']) ? null : $_POST['desGeneralProd'];
 								$option_list = Utils::desencriptar($_POST['listCategories']);
 								$brand = strtoupper($_POST['brand']);

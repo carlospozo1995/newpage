@@ -100,7 +100,7 @@
                                         echo '<ul>';
                                             foreach ($categoriesFather[""] as $category) {
                                                 echo '<li class="has-dropdown item-menu">';
-                                                    echo '<a href="'.BASE_URL.'categoria/'.$category['url'].'" class="show-effect"> <div><img src="'.MEDIA_ADMIN.'files/images/uploads/'.$category['icon'].'" alt=""></div> <span>'.$category["name_category"].'</span></a>';
+                                                    echo '<a href="'.BASE_URL.'categoria/'.$category['url'].'" class="show-effect"> <div><img class="icon-menu-desktop" src="'.MEDIA_ADMIN.'files/images/uploads/'.$category['icon'].'" alt=""></div> <span>'.$category["name_category"].'</span></a>';
                                                     if(!empty($categoriesFather[$category['id_category']])){ 
                                                         echo '<ul class="sub-menu d-flex">';
                                                         foreach ($categoriesFather[$category['id_category']] as $subcategory) {

@@ -2,7 +2,7 @@
 
     class Models_Store{
 
-        
+        // SQL PAGE CATEGORIAS
         static public function getCategories($data1, $data2, $data3)
         {   
             $sql = "SELECT * FROM categories WHERE (url = ? AND fatherCategory IS NULL)";
@@ -34,7 +34,13 @@
             return $GLOBALS["db"]->selectAll($sql, array());
         }
 
+        // SQL PAGE CATEGORIAS
+        static public function getProduct($data)
+        {
+            $sql = "SELECT * FROM products WHERE url = ?";
+            return $GLOBALS["db"]->auto_array($sql, array($data));
+        }
+
     }
 
-    // SELECT * FROM products WHERE category_id IN (129,133,136,130,131,132,134,135) AND brand IN("XIAOMI", "ELECTROLUX") AND status = 1 ORDER BY price DESC LIMIT 0, 10;
 ?>

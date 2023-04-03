@@ -11761,7 +11761,7 @@ progress {
         text-align: center !important;
     }
 }
-@media (min-width: 1225px) {
+@media (min-width: 1250px) {
     .float-xl-left {
         float: left !important;
     }
@@ -16878,7 +16878,10 @@ table {
     cursor: pointer;
 }
 .product-image-thumb .product-image-thumb-single:hover img, .product-image-thumb .product-image-thumb-single.swiper-slide-thumb-active img {
-    border: 1px solid #b19361;
+/* change  border: 1px solid #b19361;*/
+    border-style: solid;
+    border-width: 1px;
+    border-image: linear-gradient(to bottom, #ff0000, #0000ff) 1;
 }
 .product-image-thumb .product-image-thumb-single:last-child {
     margin-bottom: 0 !important;
@@ -18098,7 +18101,7 @@ Pages - Contact
     display: inline-block;
 }
 .main-menu nav > ul > .has-dropdown {
-    margin-right: 5px;
+/*  change  margin-right: 5px;*/
 }
 .main-menu nav > ul > .has-dropdown:last-child {
     margin-right: 0;
@@ -18125,7 +18128,7 @@ Pages - Contact
     font-weight: 500;
     display: block;
     line-height: 35px;
-    text-transform: capitalize;
+/*  change  text-transform: capitalize;*/
     color: #777;
     position: relative;
     transition: all 0.5s ease;

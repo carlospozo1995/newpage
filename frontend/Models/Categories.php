@@ -28,7 +28,7 @@
             $request = $GLOBALS["db"]->auto_array($sql, array($name));
 
             if (empty($request)) {
-                $arrData[] = array("name_category" => utf8_decode($name), "photo" => $photo, "icon" => $icon, "sliderDst" => $sliderDst, "sliderMbl" => $sliderMbl, "sliderDesOne" => $sliderDesOne, "sliderDesTwo" => $sliderDesTwo, "fatherCategory" => $option_list, "url" => strtolower(str_replace(" ", "-", $urlVowel)), "status" => $status); 
+                $arrData[] = array("name_category" => utf8_decode($name), "photo" => $photo, "icon" => $icon, "sliderDst" => $sliderDst, "sliderMbl" => $sliderMbl, "sliderDesOne" => $sliderDesOne, "sliderDesTwo" => $sliderDesTwo, "fatherCategory" => $option_list, "url" => preg_replace('/[^a-z0-9]+/', '-', strtolower($urlVowel)), "status" => $status); 
                 return $GLOBALS["db"]->insert_multiple("categories", $arrData);
             }else{
                 return "exist";
@@ -54,7 +54,7 @@
             
             if(empty($request)){
                 $urlVowel = Utils::replaceVowel(utf8_decode($name));
-                $arrData = array("name_category" => $name, "photo" => $photo, "icon" => $icon, "sliderDst" => $sliderDst, "sliderMbl" => $sliderMbl, "sliderDesOne" => $sliderDesOne, "sliderDesTwo" => $sliderDesTwo, "fatherCategory" => $option_list, "url" => strtolower(str_replace(" ", "-", $urlVowel)), "status" => $status);
+                $arrData = array("name_category" => $name, "photo" => $photo, "icon" => $icon, "sliderDst" => $sliderDst, "sliderMbl" => $sliderMbl, "sliderDesOne" => $sliderDesOne, "sliderDesTwo" => $sliderDesTwo, "fatherCategory" => $option_list, "url" => preg_replace('/[^a-z0-9]+/', '-', strtolower($urlVowel)), "status" => $status);
                 $result = $GLOBALS["db"]->update("categories", $arrData, "id_category='".$id."'");
 
                 if($result > 0){
