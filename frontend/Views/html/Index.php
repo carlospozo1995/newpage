@@ -23,13 +23,13 @@
 	                                        	if (!empty($slider_category[$i]['sliderDesTwo'])) {
 	                                        		echo '<h4 class="subtitle">'.$slider_category[$i]['sliderDesTwo'].'</h4>';
 	                                        		echo '<h1 class="title">'.$slider_category[$i]['sliderDesOne'].'</h1>';
-	                                        		echo '<a href="product-details-default.html" class="btn btn-lg btn-outline-aqua">view </a>';
+	                                        		echo '<a href="product-details-default.html" class="btn btn-lg btn-outline-store">ver </a>';
 	                                        	}else{
 	                                        		echo '<h1 class="title title-time-one">'.$slider_category[$i]['sliderDesOne'].'</h1>';
-	                                        		echo '<a href="product-details-default.html" class="btn btn-lg btn-outline-aqua a-time-two">view </a>';
+	                                        		echo '<a href="product-details-default.html" class="btn btn-lg btn-outline-store a-time-two">ver </a>';
 	                                        	}
 	                                        }else{
-	                                        	echo '<a href="product-details-default.html" class="btn btn-lg btn-outline-aqua a-time-one">view </a>';
+	                                        	echo '<a href="product-details-default.html" class="btn btn-lg btn-outline-store a-time-one">ver </a>';
 	                                        }
 	                                        ?>
 	                                    </div>
@@ -59,10 +59,10 @@
 	                                        <?php   
 	                                        if (!empty($slider_product[$i]['sliderDes'])){
 	                                            echo '<h1 class="title title-time-one">'.$slider_product[$i]['sliderDes'].'</h1>';
-	                                            echo ' <a href="product-details-default.html" class="btn btn-lg btn-outline-aqua a-time-two">shop
+	                                            echo ' <a href="product-details-default.html" class="btn btn-lg btn-outline-store a-time-two">shop
 	                                            now </a>';
 	                                        }else{
-	                                            echo '<a href="product-details-default.html" class="btn btn-lg btn-outline-aqua a-time-one">shop
+	                                            echo '<a href="product-details-default.html" class="btn btn-lg btn-outline-store a-time-one">shop
 	                                            now </a>';
 	                                        }
 	                                        ?>

@@ -55,8 +55,8 @@
 								$sliderMbl = $_FILES['sliderMbl'];
 								$sliderDst = $_FILES['sliderDst'];		
 												
-								$sliderDesOne = empty($_POST['sliderDesOne']) ? null : $_POST['sliderDesOne'];
-								$sliderDesTwo = empty($_POST['sliderDesTwo']) ? null : $_POST['sliderDesTwo'];
+								$sliderDesOne = empty($_POST['sliderDesOne']) ? null : utf8_encode($_POST['sliderDesOne']);
+								$sliderDesTwo = empty($_POST['sliderDesTwo']) ? null : utf8_encode($_POST['sliderDesTwo']);
 
 								$nameNotSpace = str_replace(' ', '-', Utils::replaceVowel(utf8_decode($name)));
 							
