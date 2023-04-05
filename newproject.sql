@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 04-04-2023 a las 04:20:27
+-- Tiempo de generación: 05-04-2023 a las 13:19:53
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 7.4.19
 
@@ -47,7 +47,7 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id_category`, `name_category`, `photo`, `icon`, `sliderDst`, `sliderMbl`, `sliderDesOne`, `sliderDesTwo`, `datecreate`, `fatherCategory`, `url`, `status`) VALUES
-(181, 'Electrodomésticos', 'photo_Electrodomesticos_bea4d01ceb34861ae2bba8d6f12fe47d.jpg', 'icon_Electrodomesticos_bea4d01ceb34861ae2bba8d6f12fe47d.jpg', 'sliderDst_Electrodomesticos_d8d8c6b39d3390bfac745aca19bca3f6.jpg', 'sliderMbl_Electrodomesticos_d668e1c4c07aaec76ea5ea9c62b06807.jpg', NULL, NULL, '2023-04-02 15:20:14', NULL, 'electrodomesticos', 1),
+(181, 'Electrodomésticos', 'photo_Electrodomesticos_bea4d01ceb34861ae2bba8d6f12fe47d.jpg', 'icon_Electrodomesticos_bea4d01ceb34861ae2bba8d6f12fe47d.jpg', 'sliderDst_Electrodomesticos_a4bc57cc2b69cfe7f8a2738a25ece829.jpg', 'sliderMbl_Electrodomesticos_6359218a63836b83bc359a095d1250a5.jpg', NULL, NULL, '2023-04-02 15:20:14', NULL, 'electrodomesticos', 1),
 (182, 'Climatización', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 15:45:20', 181, 'climatizacion', 1),
 (183, 'Ventiladores', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 15:45:46', 182, 'ventiladores', 1),
 (184, 'Aire acondicionado', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 15:46:31', 182, 'aire-acondicionado', 1),
@@ -74,7 +74,7 @@ INSERT INTO `categories` (`id_category`, `name_category`, `photo`, `icon`, `slid
 (205, 'Antenas prepago', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:45:38', 202, 'antenas-prepago', 1),
 (206, 'Técnologia', 'photo_Tecnologia_d14e8b7f6a367881dc933b97c547bb5e.jpg', 'icon_Tecnologia_d14e8b7f6a367881dc933b97c547bb5e.jpg', NULL, NULL, NULL, NULL, '2023-04-02 16:47:38', NULL, 'tecnologia', 1),
 (207, 'Computadoras', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:48:00', 206, 'computadoras', 1),
-(208, 'Laptos', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:48:14', 207, 'laptos', 1),
+(208, 'Laptos', NULL, NULL, 'sliderDst_Laptos_d65b6a8c348fe35a05e9ce7c72176896.jpg', 'sliderMbl_Laptos_fafa7d1f3685137e633430390f73fe98.jpg', 'LO MEJOR EN LAPTOS', 'Para el trabajo, estudio o juegos', '2023-04-02 16:48:14', 207, 'laptos', 1),
 (209, 'De escritorio', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:48:27', 207, 'de-escritorio', 1),
 (210, 'Monitores', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:48:48', 207, 'monitores', 1),
 (211, 'Impresoras', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:49:06', 207, 'impresoras', 1),
@@ -137,6 +137,20 @@ CREATE TABLE `img_product` (
   `product_id` bigint(20) NOT NULL,
   `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `img_product`
+--
+
+INSERT INTO `img_product` (`id_img`, `product_id`, `image`) VALUES
+(5, 1, 'imgRef_1_d29442fa3973a272a0c98555b551dfd4.jpg'),
+(6, 1, 'imgRef_1_3b4db5609a971d12aeb2104d25dcf004.jpg'),
+(7, 1, 'imgRef_1_a4c972835f013c1dbe33c0d801ef5cd6.jpg'),
+(8, 1, 'imgRef_1_f1e7d9f465a5ad7f782b42eb40518a21.jpg'),
+(11, 2, 'imgRef_2_edd588de79f7fb19083de042df4bc67a.jpg'),
+(12, 2, 'imgRef_2_f38a288a0348f8950930668f8887333f.jpg'),
+(13, 2, 'imgRef_2_dfdbe147b3951f2cdde6b04107a91afe.jpg'),
+(14, 2, 'imgRef_2_9ced708b9f098ce6290b2ddf159e050a.jpg');
 
 -- --------------------------------------------------------
 
@@ -230,6 +244,14 @@ CREATE TABLE `products` (
   `url` varchar(150) DEFAULT NULL,
   `status` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `products`
+--
+
+INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `desMain`, `desGeneral`, `sliderDst`, `sliderMbl`, `sliderDes`, `brand`, `price`, `stock`, `prevPrice`, `discount`, `cantDues`, `priceDues`, `datacreate`, `url`, `status`) VALUES
+(1, 186, 133644000, 'Cocina A Gas 4 Quemadores Blanca Mabe Em5100eb0', 'Cocinas que potencian tu vida. Descubre nuevas destrezas, que encienden gratas conversaciones, uniéndolo todo, para crear momento exquisitos.', '<p><strong>Caracter&iacute;sticas</strong></p>\r\n<p>-Acabado Easy Clean Pro<br />Recubrimiento de esmalte porcenalizado en horno, que permite limpiar la superficie de manera f&aacute;cil como un vidrio.<br /><br />-Quemadores Semi-r&aacute;pidos.<br />Quemadores estandar que regulan la intensidad de la flama adapt&aacute;ndose a todas tus necesidades<br /><br />-Doble vidrio en la puerta del horno.<br />Tu cocina Mabe es m&aacute;s segura, ya que su doble vidrio panor&aacute;mico en la puerta del horno te expone menos al calor.<br /><br />-Perillas erg&oacute;nomicas<br />Nuevo dise&ntilde;o que evita el ingreso de residuos de comida al interior<br /><br /><strong>Especificaciones</strong></p>\r\n<ul>\r\n<li>Ancho sin empaque: 52cm</li>\r\n<li>Ancho con empaque: 59cm</li>\r\n<li>Alto sin empaque: 92.5cm</li>\r\n<li>Alto con empaque: 93cm</li>\r\n<li>Profundo con empaque: 59cm</li>\r\n<li>Profundo sin empaque: 58.6cm</li>\r\n<li>Peso (kg) con empaque: 29.18</li>\r\n<li>Peso (kg) sin empaque: 26.2</li>\r\n<li>Tipo de control en el horno :termo control</li>\r\n<li>Tipo de instalaci&oacute;n: Piso</li>\r\n<li>N&uacute;mero de Quemadores: 4</li>\r\n<li>Parrillas superiores: 2 alambr&oacute;n</li>\r\n<li>Parrillas en el horno: 1 parilla fija</li>\r\n</ul>', 'sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg', 'sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg', NULL, 'MABE', '159.00', 10, '249.00', 34, NULL, NULL, '2023-04-04 18:04:56', 'cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0', 1),
+(2, 198, 39220, 'Minicomponente 1 cuerpo JBLPARTYBOX710AM', 'Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas', '<p><strong>Especificaciones </strong></p>\r\n<ul>\r\n<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>\r\n<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>\r\n<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>\r\n<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>\r\n<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>\r\n<li>Dimensiones: 1.3 x 3 x 1.4\' / 39.9 x 90.5 x 43.6 cm</li>\r\n<li>Peso: 27.8Kg</li>\r\n</ul>', 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg', 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg', 'LLEVA LA FIESTA A TODAS PARTES', 'JBL', '899.00', 5, '1767.13', NULL, 24, '86.00', '2023-04-04 21:48:19', 'minicomponente-1-cuerpo-jblpartybox710am', 1);
 
 -- --------------------------------------------------------
 
@@ -360,13 +382,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id_category` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=261;
+  MODIFY `id_category` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=259;
 
 --
 -- AUTO_INCREMENT de la tabla `img_product`
 --
 ALTER TABLE `img_product`
-  MODIFY `id_img` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_img` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `modules`
@@ -384,7 +406,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`

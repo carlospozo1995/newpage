@@ -241,7 +241,7 @@
                                                 <div class="hero-slider-content">
                                                     <?php   
                                                     if (!empty($slider_product[$i]['sliderDes'])){
-                                                        echo '<h1 class="title title-time-one">'.$slider_product[$i]['sliderDes'].'</h1>';
+                                                        echo '<h1 style="margin-top:-125px" class="title title-time-one">'.$slider_product[$i]['sliderDes'].'</h1>';
                                                     }
                                                     ?>
                                                 </div>

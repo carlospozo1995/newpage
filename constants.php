@@ -43,5 +43,5 @@
 
     // ADD SLIDERS STORE VIEW
     define("CATEGORIES_SLIDERS", "181, 208");
-    define("PRODUCTS_SLIDERS", "1");
+    define("PRODUCTS_SLIDERS", "1,2");
 ?>

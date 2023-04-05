@@ -1105,3 +1105,829 @@
 <li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
 <li>Peso: 27.8Kg</li>
 </ul>",sliderMbl= NULL,sliderDst= NULL,sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/04 10:01:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:01:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:01:42] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/04 10:01:42] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1)
+[2023/04/04 10:01:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:01:42] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/04 10:01:42] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1)
+[2023/04/04 10:01:56] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:01:56] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:01:56] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:01:56] SQL Query: SELECT * FROM categories WHERE (url = 'audio-video' AND fatherCategory IS NULL)
+[2023/04/04 10:01:56] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-video'
+[2023/04/04 10:01:56] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/04/04 10:01:56] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/04/04 10:01:56] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/04/04 10:02:00] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:00] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:00] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:00] SQL Query: SELECT * FROM categories WHERE (url = 'electrodomesticos' AND fatherCategory IS NULL)
+[2023/04/04 10:02:00] SQL Query: SELECT id_category FROM categories WHERE url = 'electrodomesticos'
+[2023/04/04 10:02:00] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/04/04 10:02:00] SQL Query: SELECT * FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND status = 1  LIMIT 0, 10
+[2023/04/04 10:02:00] SQL Query: SELECT * FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND status = 1 
+[2023/04/04 10:02:00] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/04/04 10:02:00] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:03] SQL Query: SELECT * FROM categories WHERE (url = 'tecnologia' AND fatherCategory IS NULL)
+[2023/04/04 10:02:03] SQL Query: SELECT id_category FROM categories WHERE url = 'tecnologia'
+[2023/04/04 10:02:03] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/04/04 10:02:03] SQL Query: SELECT * FROM products WHERE category_id IN (207,212,215,208,209,210,211,213,214)   AND status = 1  LIMIT 0, 10
+[2023/04/04 10:02:03] SQL Query: SELECT * FROM products WHERE category_id IN (207,212,215,208,209,210,211,213,214)   AND status = 1 
+[2023/04/04 10:02:06] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:06] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:06] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:06] SQL Query: SELECT * FROM categories WHERE (url = 'electromenores' AND fatherCategory IS NULL)
+[2023/04/04 10:02:06] SQL Query: SELECT id_category FROM categories WHERE url = 'electromenores'
+[2023/04/04 10:02:06] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/04/04 10:02:06] SQL Query: SELECT * FROM products WHERE category_id IN (217,218,219,220,221,222,223,224,225,226,227)   AND status = 1  LIMIT 0, 10
+[2023/04/04 10:02:06] SQL Query: SELECT * FROM products WHERE category_id IN (217,218,219,220,221,222,223,224,225,226,227)   AND status = 1 
+[2023/04/04 10:02:10] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:10] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:10] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:10] SQL Query: SELECT * FROM categories WHERE (url = 'audio-video' AND fatherCategory IS NULL)
+[2023/04/04 10:02:10] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-video'
+[2023/04/04 10:02:10] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/04/04 10:02:10] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/04/04 10:02:10] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/04/04 10:02:12] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:12] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:12] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:12] SQL Query: SELECT * FROM categories WHERE (url = 'tecnologia' AND fatherCategory IS NULL)
+[2023/04/04 10:02:12] SQL Query: SELECT id_category FROM categories WHERE url = 'tecnologia'
+[2023/04/04 10:02:12] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/04/04 10:02:12] SQL Query: SELECT * FROM products WHERE category_id IN (207,212,215,208,209,210,211,213,214)   AND status = 1  LIMIT 0, 10
+[2023/04/04 10:02:12] SQL Query: SELECT * FROM products WHERE category_id IN (207,212,215,208,209,210,211,213,214)   AND status = 1 
+[2023/04/04 10:02:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:15] SQL Query: SELECT * FROM categories WHERE (url = 'electromenores' AND fatherCategory IS NULL)
+[2023/04/04 10:02:15] SQL Query: SELECT id_category FROM categories WHERE url = 'electromenores'
+[2023/04/04 10:02:15] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/04/04 10:02:15] SQL Query: SELECT * FROM products WHERE category_id IN (217,218,219,220,221,222,223,224,225,226,227)   AND status = 1  LIMIT 0, 10
+[2023/04/04 10:02:15] SQL Query: SELECT * FROM products WHERE category_id IN (217,218,219,220,221,222,223,224,225,226,227)   AND status = 1 
+[2023/04/04 10:02:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:17] SQL Query: SELECT * FROM categories WHERE (url = 'audio-video' AND fatherCategory IS NULL)
+[2023/04/04 10:02:17] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-video'
+[2023/04/04 10:02:17] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/04/04 10:02:17] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/04/04 10:02:17] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/04/04 10:02:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:19] SQL Query: SELECT * FROM categories WHERE (url = 'electrodomesticos' AND fatherCategory IS NULL)
+[2023/04/04 10:02:19] SQL Query: SELECT id_category FROM categories WHERE url = 'electrodomesticos'
+[2023/04/04 10:02:19] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/04/04 10:02:19] SQL Query: SELECT * FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND status = 1  LIMIT 0, 10
+[2023/04/04 10:02:19] SQL Query: SELECT * FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND status = 1 
+[2023/04/04 10:02:19] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/04/04 10:02:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:02:39] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/04/04 10:02:39] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/04/04 10:02:39] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/04/04 10:02:43] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/04/04 10:02:43] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/04/04 10:02:43] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/04/04 10:02:49] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/04 10:02:49] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/04 10:03:08] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/04 10:03:08] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl= NULL,sliderDst= NULL,sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/04 10:03:12] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:03:12] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:03:12] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:03:12] SQL Query: SELECT * FROM categories WHERE (url = 'audio-video' AND fatherCategory IS NULL)
+[2023/04/04 10:03:12] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-video'
+[2023/04/04 10:03:12] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/04/04 10:03:12] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/04/04 10:03:12] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/04/04 10:03:12] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/04 10:03:12] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:15:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:15:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:15:47] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/04 10:15:47] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1)
+[2023/04/04 10:15:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:15:47] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/04 10:15:47] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1)
+[2023/04/04 10:17:11] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:17:11] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:17:11] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/04 10:17:11] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1)
+[2023/04/04 10:17:11] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/04 10:17:11] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/04 10:17:11] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1)
+[2023/04/05 06:26:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:26:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:26:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 06:26:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1)
+[2023/04/05 06:26:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:26:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 06:26:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1)
+[2023/04/05 06:31:47] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/04/05 06:31:47] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/04/05 06:31:47] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/04/05 06:31:51] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/04/05 06:31:51] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/04/05 06:31:51] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/04/05 06:31:55] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 06:31:55] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 06:32:14] SQL execute: INSERT INTO img_product (product_id,image) VALUES('2','imgRef_2_a9541d2b2db4848350042bc585082053.jpg');
+[2023/04/05 06:32:27] SQL execute: INSERT INTO img_product (product_id,image) VALUES('2','imgRef_2_46d608bfc539ea3dac3b88eb35549bbb.jpg');
+[2023/04/05 06:33:19] SQL execute: DELETE FROM img_product WHERE product_id = '2' AND image = 'imgRef_2_46d608bfc539ea3dac3b88eb35549bbb.jpg'
+[2023/04/05 06:33:23] SQL execute: DELETE FROM img_product WHERE product_id = '2' AND image = 'imgRef_2_a9541d2b2db4848350042bc585082053.jpg'
+[2023/04/05 06:33:28] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 06:33:28] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 06:33:40] SQL execute: INSERT INTO img_product (product_id,image) VALUES('2','imgRef_2_edd588de79f7fb19083de042df4bc67a.jpg');
+[2023/04/05 06:33:46] SQL execute: INSERT INTO img_product (product_id,image) VALUES('2','imgRef_2_f38a288a0348f8950930668f8887333f.jpg');
+[2023/04/05 06:33:51] SQL execute: INSERT INTO img_product (product_id,image) VALUES('2','imgRef_2_dfdbe147b3951f2cdde6b04107a91afe.jpg');
+[2023/04/05 06:33:57] SQL execute: INSERT INTO img_product (product_id,image) VALUES('2','imgRef_2_9ced708b9f098ce6290b2ddf159e050a.jpg');
+[2023/04/05 06:34:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:04] SQL Query: SELECT * FROM categories WHERE (url = 'audio-video' AND fatherCategory IS NULL) OR (url = 'audio-sonido' AND fatherCategory = (SELECT id_category FROM categories WHERE url = 'audio-video'))
+[2023/04/05 06:34:04] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-sonido'
+[2023/04/05 06:34:04] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/04/05 06:34:04] SQL Query: SELECT * FROM products WHERE category_id IN (197,198,199,200,201)   AND status = 1  LIMIT 0, 10
+[2023/04/05 06:34:04] SQL Query: SELECT * FROM products WHERE category_id IN (197,198,199,200,201)   AND status = 1 
+[2023/04/05 06:34:04] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 06:34:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:11] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:11] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:11] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:11] SQL Query: SELECT * FROM categories WHERE (url = 'audio-video' AND fatherCategory IS NULL)
+[2023/04/05 06:34:11] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-video'
+[2023/04/05 06:34:11] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/04/05 06:34:11] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/04/05 06:34:11] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/04/05 06:34:11] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 06:34:11] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:14] SQL Query: SELECT * FROM categories WHERE (url = 'audio-video' AND fatherCategory IS NULL)
+[2023/04/05 06:34:14] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-video'
+[2023/04/05 06:34:15] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/04/05 06:34:15] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/04/05 06:34:15] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/04/05 06:34:15] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 06:34:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:17] SQL Query: SELECT * FROM categories WHERE (url = 'audio-video' AND fatherCategory IS NULL)
+[2023/04/05 06:34:17] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-video'
+[2023/04/05 06:34:17] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/04/05 06:34:17] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/04/05 06:34:17] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/04/05 06:34:17] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 06:34:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:20] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:20] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:20] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:20] SQL Query: SELECT * FROM categories WHERE (url = 'audio-video' AND fatherCategory IS NULL)
+[2023/04/05 06:34:20] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-video'
+[2023/04/05 06:34:20] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/04/05 06:34:20] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/04/05 06:34:20] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/04/05 06:34:20] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 06:34:20] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:36] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:36] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:36] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:36] SQL Query: SELECT * FROM categories WHERE (url = 'electrodomesticos' AND fatherCategory IS NULL)
+[2023/04/05 06:34:36] SQL Query: SELECT id_category FROM categories WHERE url = 'electrodomesticos'
+[2023/04/05 06:34:36] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/04/05 06:34:36] SQL Query: SELECT * FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND status = 1  LIMIT 0, 10
+[2023/04/05 06:34:36] SQL Query: SELECT * FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND status = 1 
+[2023/04/05 06:34:36] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/04/05 06:34:36] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:34:55] SQL Query: SELECT id_category FROM categories WHERE url = 'parlantes-portatiles'
+[2023/04/05 06:34:55] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/04/05 06:34:55] SQL Query: SELECT * FROM products WHERE category_id IN (198)   AND status = 1  LIMIT 0, 10
+[2023/04/05 06:34:55] SQL Query: SELECT * FROM products WHERE category_id IN (198)   AND status = 1 
+[2023/04/05 06:34:55] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 06:35:07] SQL Query: SELECT * FROM products WHERE category_id IN (198)  AND brand IN ("JBL")  AND status = 1  LIMIT 0, 10
+[2023/04/05 06:35:07] SQL Query: SELECT * FROM products WHERE category_id IN (198)  AND brand IN ("JBL")  AND status = 1 
+[2023/04/05 06:35:07] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 06:35:10] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:35:10] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:35:10] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 06:35:10] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1)
+[2023/04/05 06:35:10] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:35:10] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 06:35:10] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1)
+[2023/04/05 06:43:04] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 06:43:04] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 06:43:29] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 06:43:29] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 06:45:06] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:45:06] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:45:06] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 06:45:06] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 06:45:06] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:45:06] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 06:45:06] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 06:47:17] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 06:47:17] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 06:47:34] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg'
+[2023/04/05 06:47:34] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 06:47:34] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_ec366487b4c006f193d44bff5bb19909.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 06:47:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:47:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:47:38] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 06:47:38] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 06:47:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:47:38] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 06:47:38] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 06:48:42] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 06:48:42] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 06:48:51] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_ec366487b4c006f193d44bff5bb19909.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg'
+[2023/04/05 06:48:51] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 06:48:51] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_dfdbe147b3951f2cdde6b04107a91afe.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 06:48:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:48:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:48:55] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 06:48:55] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 06:48:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:48:55] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 06:48:55] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 06:50:48] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 06:50:48] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 06:50:58] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_dfdbe147b3951f2cdde6b04107a91afe.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg'
+[2023/04/05 06:50:58] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 06:50:58] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_c7fb6f4a911d8d1ba2b8b527009be847.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 06:51:02] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:51:02] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:51:02] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 06:51:02] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 06:51:02] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:51:02] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 06:51:02] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 06:55:39] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 06:55:39] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 06:55:47] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_c7fb6f4a911d8d1ba2b8b527009be847.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg'
+[2023/04/05 06:55:47] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 06:55:47] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_a1f3dd83140d9bb1b1e68b81f8a7262c.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 06:55:51] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:55:51] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:55:51] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 06:55:51] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 06:55:51] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 06:55:51] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 06:55:51] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:00:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:00:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:00:01] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:00:01] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:00:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:00:01] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:00:01] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:01:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:01:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:01:03] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:01:03] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:01:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:01:03] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:01:03] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:01:18] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:01:18] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:01:18] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:01:18] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:01:18] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:01:18] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:01:18] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:04:36] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 07:04:36] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 07:04:47] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 07:04:47] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 07:04:54] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_a1f3dd83140d9bb1b1e68b81f8a7262c.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg'
+[2023/04/05 07:04:54] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 07:04:54] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_722cd13970e2f23ec4e8916de9486634.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 07:04:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:04:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:04:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:04:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:04:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:04:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:04:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:05:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:05:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:05:47] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:05:47] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:05:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:05:47] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:05:47] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:09:04] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 07:09:04] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 07:09:11] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_722cd13970e2f23ec4e8916de9486634.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg'
+[2023/04/05 07:09:11] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 07:09:11] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_c06a71a68cbfab7fd2d83555a6d7f58a.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 07:09:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:09:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:09:15] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:09:15] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:09:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:09:15] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:09:15] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:10:51] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 07:10:51] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 07:11:01] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_c06a71a68cbfab7fd2d83555a6d7f58a.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg'
+[2023/04/05 07:11:01] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 07:11:01] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_3a24531373229c2585118e0641257f34.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 07:11:05] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:11:05] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:11:05] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:11:05] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:11:05] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:11:05] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:11:05] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:22:09] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 07:22:09] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 07:22:18] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_3a24531373229c2585118e0641257f34.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg'
+[2023/04/05 07:22:18] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 07:22:18] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_8adc3c509b5b1f09e6adc10df4caea05.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 07:22:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:22:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:22:21] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:22:21] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:22:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:22:21] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:22:21] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:24:45] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 07:24:45] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 07:24:52] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_8adc3c509b5b1f09e6adc10df4caea05.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg'
+[2023/04/05 07:24:52] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 07:24:52] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_e68e8a938ca9d36d72b4822de8e172ca.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 07:24:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:24:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:24:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:24:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:24:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:24:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:24:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:25:55] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 07:25:55] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 07:26:03] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_e68e8a938ca9d36d72b4822de8e172ca.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg'
+[2023/04/05 07:26:03] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 07:26:03] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_eb16c8bf12d2bdaede13b986259a1be3.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 07:26:08] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:26:08] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:26:08] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:26:08] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:26:08] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:26:08] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:26:08] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:28:02] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 07:28:02] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 07:28:11] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_eb16c8bf12d2bdaede13b986259a1be3.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg'
+[2023/04/05 07:28:11] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 07:28:11] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_c06a71a68cbfab7fd2d83555a6d7f58a.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 07:28:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:28:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:28:17] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:28:17] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:28:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:28:17] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:28:17] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:29:52] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 07:29:52] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 07:30:31] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_c06a71a68cbfab7fd2d83555a6d7f58a.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg'
+[2023/04/05 07:30:31] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 07:30:31] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_4a411c58b303c30f6ae25dabe9f95265.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 07:30:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:30:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:30:38] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:30:38] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:30:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:30:38] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:30:38] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:31:17] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 07:31:17] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 07:31:24] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_4a411c58b303c30f6ae25dabe9f95265.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg'
+[2023/04/05 07:31:24] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 07:31:24] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_e38a993a77bc4070f65550e4b04c9f30.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 07:31:29] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:31:29] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:31:29] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:31:29] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:31:29] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:31:29] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:31:29] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:35:23] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 07:35:23] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 07:42:36] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_e38a993a77bc4070f65550e4b04c9f30.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg'
+[2023/04/05 07:42:36] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 07:42:36] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_a54f42abc4e402ae4f64d8a665337fe2.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 07:42:40] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:42:40] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:42:40] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:42:40] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:42:40] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:42:40] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:42:40] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:44:20] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 07:44:20] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 07:44:28] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_a54f42abc4e402ae4f64d8a665337fe2.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg'
+[2023/04/05 07:44:28] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 07:44:28] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_0ebaf0a363b8d1dab92f0fa21fb9f153.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 07:44:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:44:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:44:33] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:44:33] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:44:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:44:33] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:44:33] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:44:47] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 07:44:47] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 07:44:54] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_0ebaf0a363b8d1dab92f0fa21fb9f153.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg'
+[2023/04/05 07:44:54] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 07:44:54] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_722cd13970e2f23ec4e8916de9486634.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 07:44:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:44:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:44:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:44:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:44:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:44:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:44:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:48:00] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '1'
+[2023/04/05 07:48:00] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/04/05 07:48:02] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 07:48:02] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 07:49:53] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 07:49:53] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 07:50:00] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_722cd13970e2f23ec4e8916de9486634.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg'
+[2023/04/05 07:50:00] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 07:50:00] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_66f15dc01170889e6ae1a61d4474a796.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 07:50:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:50:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:50:04] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:50:04] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:50:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:50:04] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:50:04] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:56:58] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 07:56:58] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 07:57:04] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_66f15dc01170889e6ae1a61d4474a796.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg'
+[2023/04/05 07:57:04] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 07:57:04] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 07:57:08] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:57:08] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:57:08] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:57:08] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 07:57:08] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 07:57:08] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 07:57:08] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:03:35] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:03:35] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:03:35] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:03:35] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:03:35] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:03:35] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:03:35] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:03:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:03:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:03:49] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:03:49] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:03:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:03:49] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:03:49] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:04:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:04:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:04:04] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:04:04] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:04:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:04:04] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:04:04] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:05:28] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 08:05:28] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 08:05:36] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_13d5c7e2fc8600ebbb49d765012ee023.jpg'
+[2023/04/05 08:05:36] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 08:05:36] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_46467f0d7525d5914d28ce797b4204ac.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 08:05:41] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:05:41] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:05:41] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:05:41] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:05:41] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:05:41] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:05:41] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:06:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:06:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:06:04] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:06:04] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:06:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:06:04] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:06:04] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:07:50] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 08:07:50] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 08:07:57] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_46467f0d7525d5914d28ce797b4204ac.jpg'
+[2023/04/05 08:07:57] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 08:07:57] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_e03e3e7a1f0f0fc28503b3762a463bd7.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 08:08:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:08:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:08:01] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:08:01] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:08:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:08:01] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:08:01] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:08:43] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:08:43] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:08:43] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:08:43] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:08:43] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:08:43] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:08:43] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:09:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:09:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:09:14] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:09:14] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:09:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:09:14] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:09:14] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:10:24] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 08:10:24] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 08:10:32] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_e03e3e7a1f0f0fc28503b3762a463bd7.jpg'
+[2023/04/05 08:10:32] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 08:10:32] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_80eea1be0a89dabc9b270b44e00f5351.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 08:10:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:10:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:10:38] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:10:38] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:10:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:10:38] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:10:38] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:12:04] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/04/05 08:12:04] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/05 08:12:11] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_80eea1be0a89dabc9b270b44e00f5351.jpg'
+[2023/04/05 08:12:11] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/04/05 08:12:11] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p><strong>Especificaciones </strong></p>
+<ul>
+<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>
+<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>
+<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>
+<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>
+<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>
+<li>Dimensiones: 1.3 x 3 x 1.4' / 39.9 x 90.5 x 43.6 cm</li>
+<li>Peso: 27.8Kg</li>
+</ul>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount= NULL,cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/04/05 08:12:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:12:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:12:14] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:12:14] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:12:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:12:14] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:12:14] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:15:34] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/04/05 08:15:34] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/04/05 08:15:34] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/04/05 08:25:08] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:25:08] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:25:09] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:25:09] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:25:09] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:25:09] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:25:09] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:26:30] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/04/05 08:26:36] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/04/05 08:26:36] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/04/05 08:26:36] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/04/05 08:26:39] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '1'
+[2023/04/05 08:26:39] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/04/05 08:26:49] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg' AND sliderMbl = 'sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg'
+[2023/04/05 08:26:49] SQL Query: SELECT * FROM products WHERE code = '133644000' AND id_product != 1
+[2023/04/05 08:26:49] SQL execute: UPDATE products SET category_id="186",code="133644000",name_product="Cocina A Gas 4 Quemadores Blanca Mabe Em5100eb0",desMain="Cocinas que potencian tu vida. Descubre nuevas destrezas, que encienden gratas conversaciones, uniéndolo todo, para crear momento exquisitos.",desGeneral="<p><strong>Caracter&iacute;sticas</strong></p>
+<p>-Acabado Easy Clean Pro<br />Recubrimiento de esmalte porcenalizado en horno, que permite limpiar la superficie de manera f&aacute;cil como un vidrio.<br /><br />-Quemadores Semi-r&aacute;pidos.<br />Quemadores estandar que regulan la intensidad de la flama adapt&aacute;ndose a todas tus necesidades<br /><br />-Doble vidrio en la puerta del horno.<br />Tu cocina Mabe es m&aacute;s segura, ya que su doble vidrio panor&aacute;mico en la puerta del horno te expone menos al calor.<br /><br />-Perillas erg&oacute;nomicas<br />Nuevo dise&ntilde;o que evita el ingreso de residuos de comida al interior<br /><br /><strong>Especificaciones</strong></p>
+<ul>
+<li>Ancho sin empaque: 52cm</li>
+<li>Ancho con empaque: 59cm</li>
+<li>Alto sin empaque: 92.5cm</li>
+<li>Alto con empaque: 93cm</li>
+<li>Profundo con empaque: 59cm</li>
+<li>Profundo sin empaque: 58.6cm</li>
+<li>Peso (kg) con empaque: 29.18</li>
+<li>Peso (kg) sin empaque: 26.2</li>
+<li>Tipo de control en el horno :termo control</li>
+<li>Tipo de instalaci&oacute;n: Piso</li>
+<li>N&uacute;mero de Quemadores: 4</li>
+<li>Parrillas superiores: 2 alambr&oacute;n</li>
+<li>Parrillas en el horno: 1 parilla fija</li>
+</ul>",sliderMbl="sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_ff937cd43dcb5283c7b4292ae7606ed7.jpg",sliderDst="sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg",sliderDes= NULL,brand="MABE",price="159.00",stock="10",prevPrice="249.00",discount="34",cantDues= NULL,priceDues= NULL,url="cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0",status="1" WHERE id_product='1'
+[2023/04/05 08:33:12] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:33:12] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:33:12] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:33:12] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/05 08:33:12] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/05 08:33:12] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/05 08:33:12] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
