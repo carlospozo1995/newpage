@@ -49,7 +49,7 @@
 								$sliderMbl = $_FILES['sliderMbl'];
 								$sliderDst = $_FILES['sliderDst'];		
 												
-								$sliderDes = empty($_POST['sliderDes']) ? null : $_POST['sliderDes'];
+								$sliderDes = empty($_POST['sliderDes']) ? null : utf8_encode($_POST['sliderDes']);
 
 								$nameNotSpace = str_replace(' ', '-', Utils::replaceVowel(utf8_decode($name)));
 
@@ -76,10 +76,10 @@
 									}
 
 									if (!empty($sliderDst['name']) && !empty($sliderMbl['name'])) {
-										$undef_sliderDst = "sliderDst_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-										$undef_sliderMbl = "sliderMbl_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-										$sliderDst["name_upload"] = "sliderDst_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-										$sliderMbl["name_upload"] = "sliderMbl_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$undef_sliderDst = "sliderDst_".preg_replace('/[^a-z0-9]+/', '-', strtolower($nameNotSpace)).'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$undef_sliderMbl = "sliderMbl_".preg_replace('/[^a-z0-9]+/', '-', strtolower($nameNotSpace)).'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$sliderDst["name_upload"] = "sliderDst_".preg_replace('/[^a-z0-9]+/', '-', strtolower($nameNotSpace)).'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$sliderMbl["name_upload"] = "sliderMbl_".preg_replace('/[^a-z0-9]+/', '-', strtolower($nameNotSpace)).'_'.md5(date("d-m-Y H:m:s")).".jpg";
 										$sliderDst["file_product"] = "";
 										$sliderMbl["file_product"] = "";
 									}else{
@@ -105,9 +105,9 @@
 										}else{
 											$undef_sliderMbl = null;
 										}
-									}else{
-										$undef_sliderMbl = "sliderMbl_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-										$sliderMbl["name_upload"] = "sliderMbl_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+									}else{ 
+										$undef_sliderMbl = "sliderMbl_".preg_replace('/[^a-z0-9]+/', '-', strtolower($nameNotSpace)).'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$sliderMbl["name_upload"] = "sliderMbl_".preg_replace('/[^a-z0-9]+/', '-', strtolower($nameNotSpace)).'_'.md5(date("d-m-Y H:m:s")).".jpg";
 										$sliderMbl["file_product"] = "";									
 									}
 
@@ -118,8 +118,8 @@
 											$undef_sliderDst = null;
 										}
 									}else{
-										$undef_sliderDst = "sliderDst_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-										$sliderDst["name_upload"] = "sliderDst_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$undef_sliderDst = "sliderDst_".preg_replace('/[^a-z0-9]+/', '-', strtolower($nameNotSpace)).'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$sliderDst["name_upload"] = "sliderDst_".preg_replace('/[^a-z0-9]+/', '-', strtolower($nameNotSpace)).'_'.md5(date("d-m-Y H:m:s")).".jpg";
 										$sliderDst["file_product"] = "";
 									}
 

@@ -14657,8 +14657,9 @@ input {
     transform: translateY(-50%);
 }
 .hero-slider-content .subtitle {
-    font-size: 12px;
+    font-size: 15px;
     text-transform: uppercase;
+    font-weight: bold;
 }
 @media (min-width: 576px) {
     .hero-slider-content .subtitle {
@@ -14690,6 +14691,11 @@ input {
     font-weight: 600;
     line-height: 1;
     text-transform: capitalize;
+     background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, #00ffff,  white);
+
 }
 @media (min-width: 576px) {
     .hero-slider-content .title {

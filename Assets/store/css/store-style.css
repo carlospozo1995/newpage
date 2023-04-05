@@ -86,7 +86,7 @@
     background: #1000c3;
 }
 .main-menu nav > ul > li > a > span {
-    font-size: 12px;
+    font-size: 13px;
 }
 .main-menu nav > ul > li > .show-effect {
     text-align: center;
@@ -132,7 +132,7 @@
 .sub-menu .item-sub-menu > a{
     transform: scale(1.0);
     font-weight: 700;
-    font-size: 13px;
+    font-size: 14px;
     color: black;
 }
 .sub-menu .item-sub-menu > a:hover{
@@ -149,7 +149,7 @@
 .son-sub-menu .item-son-sub-menu > a{
     display: flex;
     color: #007bff;
-    font-size: 13px;
+    font-size: 14px;
 }
 .son-sub-menu .item-son-sub-menu > a:hover{
     transform: translateX(5px);
@@ -166,24 +166,12 @@
 }
 
 /* ----- SLIDERS ----- */
-.hero-single-slider-item.swiper-slide-active .hero-slider-content .title-time-one,
-.hero-single-slider-item.swiper-slide-active .hero-slider-content .a-time-one {
+.hero-single-slider-item.swiper-slide-active .hero-slider-content .title-time-one{
     animation: fadeInUp 1s ease 0.3s 1 backwards !important;
 }
-.hero-single-slider-item.swiper-slide-active .hero-slider-content .a-time-two {
-    animation: fadeInUp 1s ease 1s 1 backwards !important;
-}
 
-.btn-outline-store{
-    transform: scale(1.0);
-    color: white;
-    font-size: 25px;
-    border-radius: 10px;
-    background: red;
-    padding: 10px 40px;
-}
-.btn-outline-store:hover{
-    color: white;
+.hero-slider-active .swiper-pagination.active-color-store span.swiper-pagination-bullet-active {
+    background: #6548e2 !important;
 }
 /*Menu Mobile*/
 
@@ -449,6 +437,16 @@
 }
 
 /**/
+@media (max-width:1365px){
+    .main-menu nav > ul > li > a > span
+    {
+        font-size: 12px;
+    }
+    .sub-menu .item-sub-menu > a
+    .son-sub-menu .item-son-sub-menu > a{
+        font-size: 13px;
+    }
+}
 @media(max-width: 992px){
     .footer-bg{
         margin-top: 60px ;

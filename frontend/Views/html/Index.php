@@ -10,7 +10,9 @@
 					?>	
 	                <div class="hero-single-slider-item swiper-slide">
 	                    <div class="hero-slider-bg">
-							<img src="<?= $slider_category[$i]['sliderMbl'] ?>">
+							<a href="#">
+								<img src="<?= $slider_category[$i]['sliderMbl'] ?>">
+							</a>
 	                    </div>
 
 	                    <div class="hero-slider-wrapper">
@@ -19,19 +21,16 @@
 	                                <div class="col-auto">
 	                                    <div class="hero-slider-content">
 	                                        <?php 
-	                                        if (!empty($slider_category[$i]['sliderDesOne'])) {
-	                                        	if (!empty($slider_category[$i]['sliderDesTwo'])) {
-	                                        		echo '<h4 class="subtitle">'.$slider_category[$i]['sliderDesTwo'].'</h4>';
-	                                        		echo '<h1 class="title">'.$slider_category[$i]['sliderDesOne'].'</h1>';
-	                                        		echo '<a href="product-details-default.html" class="btn btn-lg btn-outline-store">ver </a>';
-	                                        	}else{
-	                                        		echo '<h1 class="title title-time-one">'.$slider_category[$i]['sliderDesOne'].'</h1>';
-	                                        		echo '<a href="product-details-default.html" class="btn btn-lg btn-outline-store a-time-two">ver </a>';
-	                                        	}
-	                                        }else{
-	                                        	echo '<a href="product-details-default.html" class="btn btn-lg btn-outline-store a-time-one">ver </a>';
-	                                        }
-	                                        ?>
+                                            if (!empty($slider_category[$i]['sliderDesOne'])) {
+                                                if (!empty($slider_category[$i]['sliderDesTwo'])) {
+                                                    echo '<h4 class="subtitle">'.$slider_category[$i]['sliderDesTwo'].'</h4>';
+                                                    echo '<h1 class="title">'.$slider_category[$i]['sliderDesOne'].'</h1>';
+                                                    
+                                                }else{
+                                                    echo '<h1 class="title title-time-one">'.$slider_category[$i]['sliderDesOne'].'</h1>';
+                                                }
+                                            }
+                                            ?>
 	                                    </div>
 	                                </div>
 	                            </div>
@@ -48,7 +47,9 @@
 					?>	
 	                <div class="hero-single-slider-item swiper-slide">
 	                    <div class="hero-slider-bg">
-							<img src="<?= $slider_product[$i]['sliderMbl'] ?>">
+	                    	<a href="#">
+								<img src="<?= $slider_product[$i]['sliderMbl'] ?>">
+	            			</a>
 	                    </div>
 
 	                    <div class="hero-slider-wrapper">
@@ -57,15 +58,10 @@
 	                                <div class="col-auto">
 	                                    <div class="hero-slider-content">
 	                                        <?php   
-	                                        if (!empty($slider_product[$i]['sliderDes'])){
-	                                            echo '<h1 class="title title-time-one">'.$slider_product[$i]['sliderDes'].'</h1>';
-	                                            echo ' <a href="product-details-default.html" class="btn btn-lg btn-outline-store a-time-two">shop
-	                                            now </a>';
-	                                        }else{
-	                                            echo '<a href="product-details-default.html" class="btn btn-lg btn-outline-store a-time-one">shop
-	                                            now </a>';
-	                                        }
-	                                        ?>
+                                            if (!empty($slider_product[$i]['sliderDes'])){
+                                                echo '<h1 class="title title-time-one">'.$slider_product[$i]['sliderDes'].'</h1>';
+                                            }
+                                            ?>
 	                                    </div>
 	                                </div>
 	                            </div>
@@ -78,7 +74,7 @@
 	            </div>
 
 	            <!-- If we need pagination -->
-	            <div class="swiper-pagination active-color-aqua"></div>
+	            <div class="swiper-pagination active-color-store"></div>
 
 	            <!-- If we need navigation buttons -->
 	            <div class="swiper-button-prev d-none d-lg-block"></div>
