@@ -14691,7 +14691,7 @@ input {
     font-weight: 600;
     line-height: 1;
     text-transform: capitalize;
-     background-clip: text;
+    background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     background-image: linear-gradient(to right, #00ffff,  white);
@@ -16759,24 +16759,20 @@ table {
 @media (min-width: 992px) {
     .product-details-content-area {
         margin-top: 0;
+        background-color: #f7f7f7;
+        border-radius: 10px;
+        padding: 15px 20px;
     }
 }
 .product-details-content-area .product-details-text .title {
-    font-size: 26px;
-}
-@media (min-width: 768px) {
-    .product-details-content-area .product-details-text .title {
-        font-size: 28px;
-    }
+    font-size: 24px;
+    font-weight: bold; 
+    text-transform: capitalize;
+    color: rgba(68,49,222,0.9);;
 }
 @media (min-width: 992px) {
     .product-details-content-area .product-details-text .title {
-        font-size: 30px;
-    }
-}
-@media (min-width: 1225px) {
-    .product-details-content-area .product-details-text .title {
-        font-size: 34px;
+        font-size: 28px;
     }
 }
 .product-details-content-area .product-details-text .customer-review {
@@ -16784,7 +16780,7 @@ table {
 }
 .product-details-content-area .product-details-text .price {
     font-size: 28px;
-    color: #24262b;
+    font-weight: bold;
     margin-bottom: 15px;
 }
 .product-details-content-area .product-details-text .product-details-variable {
@@ -16909,8 +16905,8 @@ table {
     margin-bottom: 40px;
     padding-top: 20px;
     padding-bottom: 20px;
-    border-top: 1px solid #ededed;
-    border-bottom: 1px solid #ededed;
+    border-top: 1px solid #E4E4E4;
+    border-bottom: 1px solid #E4E4E4;
 }
 .product-details-variable .title {
     font-weight: 600;
@@ -16942,23 +16938,6 @@ table {
     margin-right: 20px;
 }
 
-.product-add-to-cart-btn a {
-    display: inline-block;
-    font-size: 16px;
-    background: #24262b;
-    height: 50px;
-    line-height: 50px;
-    text-transform: uppercase;
-    text-align: center;
-    color: #FFF;
-    border-radius: 3px;
-    margin-top: 7px;
-    font-weight: 700;
-    padding: 0 50px;
-}
-.product-add-to-cart-btn a:hover {
-    background: #b19361;
-}
 
 /* Variable - Color*/
 .product-variable-color label {

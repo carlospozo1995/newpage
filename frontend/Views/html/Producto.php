@@ -13,10 +13,10 @@
 		    $cant_show = array_slice($img_product, 0, 4);
 		    foreach ($cant_show as $image) {
 		        $show_zoom .= '
-		            <div class="product-image-large-image swiper-slide zoom-image-hover img-responsive">
-		                <img src="'.MEDIA_ADMIN.'files/images/upload_products/'.$image["image"].'" alt="">
-		            </div>
-		        ';
+				    <div class="product-image-large-image swiper-slide zoom-image-hover img-responsive">
+				        <img src="'.MEDIA_ADMIN.'files/images/upload_products/'.$image["image"].'" alt="">
+				    </div>
+				';
 
 		        $show_vertical .= '
 		        	<div class="product-image-thumb-single swiper-slide">
@@ -75,11 +75,58 @@
 					</div>
 
 					<div class="col-xl-7 col-lg-6">
-						<div class="product-details-content-area product-details--golden" data-aos="fade-up" data-aos-delay="200">
+						<div class="product-details-content-area" data-aos="fade-up" data-aos-delay="200">
 							<div class="product-details-text">
-								<h4 class="title font-weight-bold"><?= strtoupper(Utils::replaceVowel($data_product['name_product'])); ?></h4>
-								<div><?= $data_product['desGeneral']; ?></div>
+								<span>COD: <?= $data_product['code']; ?></span>
+								<p class="product-brand-name">Marca: <span><?= strtoupper($data_product['brand']); ?></span></p>
+								<h4 class="title"><?= strtoupper(Utils::replaceVowel($data_product['name_product'])); ?></h4>
+								<p class="h5 mt-3 lh-sm c-gray"><?= $data_product['desMain']; ?></p>
+								
+								<div class="product-content-validation">
+								<?php
+									echo !empty($data_product['stock']) ? '<span>¡ QUEDAN '.$data_product['stock'].' DISPONIBLE !</span>' : '';
+
+									echo !empty($data_product['cantDues']) ? '
+										<div class="content-value-product no-empty">
+											<div class="product-price-data no-empty">	
+									' : '
+										<div class="content-value-product empty">
+											<div class="product-price-data empty">	
+									';		
+											echo (!empty($data_product['prevPrice'])) ? '<del>'.SMONEY. Utils::formatMoney($data_product['prevPrice']).'</del>' : '';
+                                        	echo '<span>'.SMONEY.Utils::formatMoney($data_product['price']).'</span>';
+										echo '</div>';
+
+											echo (!empty($data_product['cantDues'])) ? '<span class="ml-2 text-left text-secondary">'.$data_product['cantDues'].' cuotas '.SMONEY. Utils::formatMoney($data_product['priceDues']).'</span>' : '';
+									echo '</div>';
+								?>
+								</div>
 							</div>
+
+							<div class="product-details-variable">
+								<div class="d-flex align-items-center justify-content-center">
+	                                <div class="variable-single-item ">
+	                                    <span>Cantidad</span>
+	                                    <div class="product-variable-quantity">
+	                                        <input min="1" max="100" value="1" type="number">
+	                                    </div>
+	                                </div>
+
+	                                <div class="product-btn-store">
+	                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart"><i class="fa fa-plus"></i> Agregar al carrito</a>
+	                                </div>
+                            	</div>
+
+                            	<div class="product-content-buy">
+                            		<div class="product-btn-store">
+	                                    <a href="#"><i class="fa fa-whatsapp"></i> Comprar por whatsapp</a>
+	                                </div>
+	                                <div class="product-btn-store">
+	                                    <a href="#"><i class="fa fa-shopping-cart"></i> Comprar ahora</a>
+	                                </div>
+                            	</div>
+							</div>
+
 						</div>
 			  		</div>
 			  	</div>
@@ -102,6 +149,5 @@
 	    </div>
 
 <?php	
-
 	}
 ?>
