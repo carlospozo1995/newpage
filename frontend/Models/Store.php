@@ -41,6 +41,39 @@
             return $GLOBALS["db"]->auto_array($sql, array($data));
         }
 
-    }
+        // static public function getNameCategories($id_product)
+        // {
+        //     $sql = "SELECT CONCAT_WS(' > ', c4.name_category, c3.name_category, c2.name_category, c1.name_category) AS category_path
+        //         FROM products p
+        //         JOIN categories c1 ON p.category_id = c1.id_category
+        //         LEFT JOIN categories c2 ON c1.fatherCategory = c2.id_category
+        //         LEFT JOIN categories c3 ON c2.fatherCategory = c3.id_category
+        //         LEFT JOIN categories c4 ON c3.fatherCategory = c4.id_category
+        //         WHERE p.id_product = $id_product";
+        //     return $GLOBALS["db"]->selectAll($sql, array());
+        // }
 
+        static public function getNameCategories($id_product)
+        {
+            $sql = "SELECT CONCAT_WS(' > ', categories.category_path) AS category_path
+                    FROM (
+                        SELECT 
+                            c.id_category, 
+                            c.name_category,
+                            (
+                                SELECT CONCAT_WS(' > ', cp.name_category, c.name_category) 
+                                FROM categories cp
+                                WHERE cp.id_category = c.fatherCategory
+                            ) AS category_path
+                        FROM categories c
+                        JOIN products p ON p.category_id = c.id_category
+                        WHERE p.id_product = $id_product
+                    ) categories
+                    WHERE categories.category_path IS NOT NULL";
+
+            return $GLOBALS["db"]->selectAll($sql, array());
+        }
+
+
+    }
 ?>

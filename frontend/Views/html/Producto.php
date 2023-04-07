@@ -108,7 +108,9 @@
 	                                <div class="variable-single-item ">
 	                                    <span>Cantidad</span>
 	                                    <div class="product-variable-quantity">
-	                                        <input min="1" max="100" value="1" type="number">
+	                                    	<i class="fa fa-minus pl-4 pr-2 btn-minus"></i>
+											<input type="number" min="1" max="<?= $data_product['stock']; ?>" value="1">
+	                                    	<i class="fa fa-plus pr-4 pl-2 btn-plus"></i>
 	                                    </div>
 	                                </div>
 
@@ -119,7 +121,7 @@
 
                             	<div class="product-content-buy">
                             		<div class="product-btn-store">
-	                                    <a href="#"><i class="fa fa-whatsapp"></i> Comprar por whatsapp</a>
+	                                    <a href="#" class="btn-buy-whatsapp"><i class="fa fa-whatsapp"></i> Comprar por whatsapp</a>
 	                                </div>
 	                                <div class="product-btn-store">
 	                                    <a href="#"><i class="fa fa-shopping-cart"></i> Comprar ahora</a>
@@ -134,6 +136,8 @@
 	    </div>
 		
 <?php
+
+	Utils::dep(Models_Store::getNameCategories(2));
 	}else{
 ?>
 		<div class="error-section">

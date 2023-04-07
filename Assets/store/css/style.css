@@ -16512,7 +16512,7 @@ a.ui-button:active,
 }
 
 .breadcrumb-nav-color--black li a {
-    font-weight: 600;
+    font-weight: 500;
     color: #3E414A;
     transition: background-image 0.5s ease;
 }
@@ -16995,13 +16995,28 @@ table {
 }
 
 /* Variable - Quantity*/
+.product-variable-quantity{
+    border: 1px solid #E4E4E4;
+    display: flex;
+    border-radius: 20px;
+}
+.product-variable-quantity i{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}   
 .product-variable-quantity input {
-    width: 90px;
-    border: 1px solid #ededed;
     background: none;
     height: 50px;
     padding: 0 12px;
     border-radius: 5px;
+    text-align: center;
+    width: 70px;
+}
+.product-variable-quantity input[type=number]::-webkit-inner-spin-button, 
+.product-variable-quantity input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
 }
 
 /* Variable - Size*/

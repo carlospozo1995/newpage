@@ -435,6 +435,7 @@
     color: rgba(68,49,222,0.9);
     font-weight: bold;
 }
+
 .product-btn-store a{
     background: #24262b;
     display: flex;
@@ -452,6 +453,11 @@
 .product-btn-store i{
     font-size: 20px;
 }
+.btn-buy-whatsapp{
+    background: #25D366 !important;
+    color: #000 !important;
+}
+
 /* ----- DIFFFERENT RESPONSIVE ----- */
 @media (max-width:1365px){
     .main-menu nav > ul > li > a > span
@@ -510,12 +516,10 @@
     }
 }
 @media (max-width: 1225px){
-   /* .product-content-buy{
-        display: inline-block;
-    }
     .product-btn-store{
+        width: max-content;
         margin: auto;
-    }*/
+    }
 }
 @media (min-width: 1100px){
     .col-xl-3 {
