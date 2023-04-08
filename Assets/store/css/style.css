@@ -16934,11 +16934,6 @@ table {
     color: #81ca33;
 }
 
-.product-variable-quantity {
-    margin-right: 20px;
-}
-
-
 /* Variable - Color*/
 .product-variable-color label {
     line-height: 0;
@@ -17018,6 +17013,7 @@ table {
     -webkit-appearance: none; 
     margin: 0; 
 }
+.product-variable-quantity input[type=number] { -moz-appearance:textfield; }
 
 /* Variable - Size*/
 .product-variable-size {

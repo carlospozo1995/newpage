@@ -378,7 +378,6 @@ $(document).ready(function () {
                         }
                     },
                     error: function(xhr, status, error) {
-                        
                     },
                     complete: function() {
                         $('.content-loading').css("display","none");

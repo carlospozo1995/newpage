@@ -25,6 +25,11 @@
 		        ';
 		    }   
 		}
+		$data = Models_Store::getNameCategories($data_product['id_product']);
+		foreach ($data as $key => $value) {
+			echo '<p>'$key'</p>';
+		}
+
 ?>		
 		<div class="breadcrumb-section" data-aos="fade-up" data-aos-delay="0">
             <div class="pt-4 pb-4 mb-4 bg-mist-white">
@@ -53,24 +58,25 @@
 	                    	<div class="product-large-image product-large-image-vartical swiper-container ml-5">
 	                            <div class="swiper-wrapper">
 	                            	<?php
-	                            		if (!empty($show_zoom)) {
-	                            			echo $show_zoom;
-	                            		}else{
-	                            			echo '
+	                            		echo !empty($show_zoom) ? $show_zoom : '
 	                            				<div class="product-image-large-image swiper-slide zoom-image-hover img-responsive">
 	                            					<img src="'.MEDIA_ADMIN.'files/images/upload_products/empty_img.png" alt="">
 												</div>
 	                            			';
-	                            		}
 	                            	?>
 								</div>
 	                        </div>
 
 	                        <div class="product-image-thumb product-image-thumb-vartical swiper-container pos-relative">
-                            	<div class="swiper-wrapper">
-                            		<?php echo $show_vertical; ?>
-                            	</div>
-                            </div>
+								<div class="swiper-wrapper">
+									<?php
+										echo !empty($show_vertical) ? $show_vertical : '
+												<div class="product-image-thumb-single swiper-slide">
+									                <img class="img-fluid" src="'.MEDIA_ADMIN.'files/images/upload_products/empty_img.png" alt="">
+									            </div>';
+									?>
+								</div>
+							</div>
 						</div>
 					</div>
 
@@ -82,9 +88,9 @@
 								<h4 class="title"><?= strtoupper(Utils::replaceVowel($data_product['name_product'])); ?></h4>
 								<p class="h5 mt-3 lh-sm c-gray"><?= $data_product['desMain']; ?></p>
 								
-								<div class="product-content-validation">
+								<div class="product-content-validation align-items-sm-center justify-content-sm-center d-sm-flex">
 								<?php
-									echo !empty($data_product['stock']) ? '<span>¡ QUEDAN '.$data_product['stock'].' DISPONIBLE !</span>' : '';
+									echo !empty($data_product['stock']) ? '<span>¡ QUEDAN '.$data_product['stock'].' DISPONIBLE !</span>' : '<span>LO SENTIMOS NO HAY DISPONIBLES</span>';
 
 									echo !empty($data_product['cantDues']) ? '
 										<div class="content-value-product no-empty">
@@ -103,11 +109,14 @@
 								</div>
 							</div>
 
+							<?php
+							if(!empty($data_product['stock'])){
+							?>
 							<div class="product-details-variable">
-								<div class="d-flex align-items-center justify-content-center">
+								<div class="d-lg-flex align-items-center justify-content-center mb-small-3">
 	                                <div class="variable-single-item ">
 	                                    <span>Cantidad</span>
-	                                    <div class="product-variable-quantity">
+	                                    <div class="product-variable-quantity mr-lg-4">
 	                                    	<i class="fa fa-minus pl-4 pr-2 btn-minus"></i>
 											<input type="number" min="1" max="<?= $data_product['stock']; ?>" value="1">
 	                                    	<i class="fa fa-plus pr-4 pl-2 btn-plus"></i>
@@ -128,6 +137,9 @@
 	                                </div>
                             	</div>
 							</div>
+							<?php
+							}
+							?>
 
 						</div>
 			  		</div>
@@ -136,8 +148,6 @@
 	    </div>
 		
 <?php
-
-	Utils::dep(Models_Store::getNameCategories(2));
 	}else{
 ?>
 		<div class="error-section">

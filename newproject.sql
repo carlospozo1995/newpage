@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 05-04-2023 a las 13:19:53
+-- Tiempo de generación: 07-04-2023 a las 17:00:22
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 7.4.19
 
@@ -200,14 +200,6 @@ INSERT INTO `permissions` (`id_permissions`, `rol_id`, `module_id`, `ver`, `crea
 (133, 6, 2, 0, 0, 0, 0),
 (134, 6, 3, 0, 0, 0, 0),
 (135, 6, 4, 0, 0, 0, 0),
-(148, 30, 1, 0, 0, 0, 0),
-(149, 30, 2, 0, 0, 0, 0),
-(150, 30, 3, 0, 0, 0, 0),
-(151, 30, 4, 0, 0, 0, 0),
-(156, 32, 1, 0, 0, 0, 0),
-(157, 32, 2, 0, 0, 0, 0),
-(158, 32, 3, 0, 0, 0, 0),
-(159, 32, 4, 0, 0, 0, 0),
 (160, 2, 1, 1, 0, 0, 0),
 (161, 2, 2, 1, 1, 0, 0),
 (162, 2, 3, 1, 1, 1, 0),
@@ -250,8 +242,13 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `desMain`, `desGeneral`, `sliderDst`, `sliderMbl`, `sliderDes`, `brand`, `price`, `stock`, `prevPrice`, `discount`, `cantDues`, `priceDues`, `datacreate`, `url`, `status`) VALUES
-(1, 186, 133644000, 'Cocina A Gas 4 Quemadores Blanca Mabe Em5100eb0', 'Cocinas que potencian tu vida. Descubre nuevas destrezas, que encienden gratas conversaciones, uniéndolo todo, para crear momento exquisitos.', '<p><strong>Caracter&iacute;sticas</strong></p>\r\n<p>-Acabado Easy Clean Pro<br />Recubrimiento de esmalte porcenalizado en horno, que permite limpiar la superficie de manera f&aacute;cil como un vidrio.<br /><br />-Quemadores Semi-r&aacute;pidos.<br />Quemadores estandar que regulan la intensidad de la flama adapt&aacute;ndose a todas tus necesidades<br /><br />-Doble vidrio en la puerta del horno.<br />Tu cocina Mabe es m&aacute;s segura, ya que su doble vidrio panor&aacute;mico en la puerta del horno te expone menos al calor.<br /><br />-Perillas erg&oacute;nomicas<br />Nuevo dise&ntilde;o que evita el ingreso de residuos de comida al interior<br /><br /><strong>Especificaciones</strong></p>\r\n<ul>\r\n<li>Ancho sin empaque: 52cm</li>\r\n<li>Ancho con empaque: 59cm</li>\r\n<li>Alto sin empaque: 92.5cm</li>\r\n<li>Alto con empaque: 93cm</li>\r\n<li>Profundo con empaque: 59cm</li>\r\n<li>Profundo sin empaque: 58.6cm</li>\r\n<li>Peso (kg) con empaque: 29.18</li>\r\n<li>Peso (kg) sin empaque: 26.2</li>\r\n<li>Tipo de control en el horno :termo control</li>\r\n<li>Tipo de instalaci&oacute;n: Piso</li>\r\n<li>N&uacute;mero de Quemadores: 4</li>\r\n<li>Parrillas superiores: 2 alambr&oacute;n</li>\r\n<li>Parrillas en el horno: 1 parilla fija</li>\r\n</ul>', 'sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg', 'sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg', NULL, 'MABE', '159.00', 10, '249.00', 34, NULL, NULL, '2023-04-04 18:04:56', 'cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0', 1),
-(2, 198, 39220, 'Minicomponente 1 cuerpo JBLPARTYBOX710AM', 'Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas', '<p><strong>Especificaciones </strong></p>\r\n<ul>\r\n<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>\r\n<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>\r\n<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>\r\n<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>\r\n<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>\r\n<li>Dimensiones: 1.3 x 3 x 1.4\' / 39.9 x 90.5 x 43.6 cm</li>\r\n<li>Peso: 27.8Kg</li>\r\n</ul>', 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg', 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg', 'LLEVA LA FIESTA A TODAS PARTES', 'JBL', '899.00', 5, '1767.13', NULL, 24, '86.00', '2023-04-04 21:48:19', 'minicomponente-1-cuerpo-jblpartybox710am', 1);
+(1, 186, 133644000, 'Cocina A Gas 4 Quemadores Em5100eb0', 'Cocinas que potencian tu vida. Descubre nuevas destrezas, que encienden gratas conversaciones, uniéndolo todo, para crear momento exquisitos.', '<p><strong>Caracter&iacute;sticas</strong></p>\r\n<p>-Acabado Easy Clean Pro<br />Recubrimiento de esmalte porcenalizado en horno, que permite limpiar la superficie de manera f&aacute;cil como un vidrio.<br /><br />-Quemadores Semi-r&aacute;pidos.<br />Quemadores estandar que regulan la intensidad de la flama adapt&aacute;ndose a todas tus necesidades<br /><br />-Doble vidrio en la puerta del horno.<br />Tu cocina Mabe es m&aacute;s segura, ya que su doble vidrio panor&aacute;mico en la puerta del horno te expone menos al calor.<br /><br />-Perillas erg&oacute;nomicas<br />Nuevo dise&ntilde;o que evita el ingreso de residuos de comida al interior<br /><br /><strong>Especificaciones</strong></p>\r\n<ul>\r\n<li>Ancho sin empaque: 52cm</li>\r\n<li>Ancho con empaque: 59cm</li>\r\n<li>Alto sin empaque: 92.5cm</li>\r\n<li>Alto con empaque: 93cm</li>\r\n<li>Profundo con empaque: 59cm</li>\r\n<li>Profundo sin empaque: 58.6cm</li>\r\n<li>Peso (kg) con empaque: 29.18</li>\r\n<li>Peso (kg) sin empaque: 26.2</li>\r\n<li>Tipo de control en el horno :termo control</li>\r\n<li>Tipo de instalaci&oacute;n: Piso</li>\r\n<li>N&uacute;mero de Quemadores: 4</li>\r\n<li>Parrillas superiores: 2 alambr&oacute;n</li>\r\n<li>Parrillas en el horno: 1 parilla fija</li>\r\n</ul>', 'sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg', 'sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_ff937cd43dcb5283c7b4292ae7606ed7.jpg', NULL, 'MABE', '159.00', 10, '249.00', 34, NULL, NULL, '2023-04-04 18:04:56', 'cocina-a-gas-4-quemadores-em5100eb0', 1),
+(2, 198, 39220, 'Minicomponente 1 cuerpo JBLPARTYBOX710AM', 'Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas', '<p><strong>Especificaciones </strong></p>\r\n<ul>\r\n<li>Potente sonido original JBL PRO: crea una conexi&oacute;n musical instant&aacute;nea con 800 potentes vatios de sonido JBL Original Pro de alto rendimiento. Los tweeters duales de 2.75 pulgadas y los woofers de 8 pulgadas emparejados con su puerto de reflejo de graves sintonizado ofrecen una perfecci&oacute;n de audio detallada para la m&uacute;sica tan fuerte que literalmente puedes sentir el ritmo.</li>\r\n<li>Luces de fiesta: luces, color, fiesta. Transforma cualquier espacio en un concierto de rock, club nocturno y sala de karaoke, todo enrollado en uno. Sincroniza tu m&uacute;sica con estrobosc&oacute;picos din&aacute;micos y personalizables, un efecto nocturno estrellado &uacute;nico y patrones de club intermitentes del siguiente nivel f&aacute;cilmente controlados a trav&eacute;s de los diales aerodin&aacute;micos y f&aacute;ciles de usar o la aplicaci&oacute;n PartyBox.</li>\r\n<li>Dise&ntilde;o port&aacute;til: haz que la fiesta ruede con ruedas grandes, robustas y suaves y un mango de f&aacute;cil agarre para una c&oacute;moda portabilidad y colocaci&oacute;n del JBL PartyBox 710 dondequiera que la m&uacute;sica te lleve.&nbsp;</li>\r\n<li>IPX4 a prueba de salpicaduras: ya sea que est&eacute;s de fiesta con amigos en tu patio trasero o bebiendo bebidas junto a la piscina, el JBL PartyBox 710 es IPX4 a prueba de salpicaduras, por lo que nunca tendr&aacute;s que preocuparte de que la fiesta se moje demasiado y salvaje.</li>\r\n<li>Aplicaci&oacute;n PartyBox: la aplicaci&oacute;n JBL PartyBox hace que sea m&aacute;s f&aacute;cil que nunca controlar tu m&uacute;sica, actualizar la configuraci&oacute;n y personalizar los colores y patrones de tu espect&aacute;culo de luz para el ambiente perfecto de fiesta.</li>\r\n<li>Dimensiones: 1.3 x 3 x 1.4\' / 39.9 x 90.5 x 43.6 cm</li>\r\n<li>Peso: 27.8Kg</li>\r\n</ul>', 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg', 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg', 'LLEVA LA FIESTA A TODAS PARTES', 'JBL', '899.00', 5, '1767.13', 10, 24, '86.00', '2023-04-04 21:48:19', 'minicomponente-1-cuerpo-jblpartybox710am', 1),
+(3, 203, 134899000, 'Televisor 65\' Android 11 Uhd', 'Última tecnología High Dynamic Range (HDR), que permite disfrutar de un increíble brillo, color, contraste, detalle y dimensionalidad', '<div><strong>Caracter&iacute;sticas:</strong></div>\r\n<ul>\r\n<li>\r\n<div>Chromecast Incorporado</div>\r\n</li>\r\n<li>\r\n<div>Resoluci&oacute;n 3840x2160</div>\r\n</li>\r\n<li>\r\n<div>CPU ARM Cortex Quad Core</div>\r\n</li>\r\n<li>\r\n<div>Memoria 2 GB DDR</div>\r\n</li>\r\n<li>\r\n<div>Flash 8G</div>\r\n</li>\r\n<li>\r\n<div>Dolby Audio: Audio Power 8W+8W.</div>\r\n</li>\r\n<li>\r\n<div>Sonido Envolvente Simulado</div>\r\n</li>\r\n<li>\r\n<div>1 Puerto Ethernet / LAN</div>\r\n</li>\r\n<li>\r\n<div>Apto Para Red</div>\r\n</li>\r\n<li>\r\n<div>Frecuencia de Refresco de Pantalla 60HZ</div>\r\n</li>\r\n<li>\r\n<div>Se&ntilde;al de Video Soportada PAL M/N; NTSC M</div>\r\n</li>\r\n<li>\r\n<div>3 Puertos HDMI</div>\r\n</li>\r\n<li>\r\n<div>Potencia de Salida de Bocina 8 Ohm- 10w X2</div>\r\n</li>\r\n</ul>\r\n<div><strong>Incluye:</strong></div>\r\n<ul>\r\n<li>\r\n<div>Procesador Quad Core</div>\r\n</li>\r\n<li>\r\n<div>Control Remoto controlado por voz</div>\r\n</li>\r\n<li>\r\n<div>Google Assistant</div>\r\n</li>\r\n<li>\r\n<div>App Store: Google Play</div>\r\n</li>\r\n<li>\r\n<div>Apps Predefinidas: Netflix, Youtube,</div>\r\n</li>\r\n<li>\r\n<div>Prime Video y Play Store</div>\r\n</li>\r\n<li>\r\n<div>Bluetooth&reg;</div>\r\n</li>\r\n<li>\r\n<div>Chromecast / DLNA</div>\r\n</li>\r\n<li>\r\n<div>Surround Stereo</div>\r\n</li>\r\n<li>\r\n<div>Sound Mode</div>\r\n</li>\r\n<li>\r\n<div>Entradas 2USB / 3HDMI</div>\r\n</li>\r\n<li>\r\n<div>Manual de usuario</div>\r\n</li>\r\n<li>\r\n<div>Bases de patas</div>\r\n</li>\r\n</ul>\r\n<div><strong>Garant&iacute;a:&nbsp;</strong>24 meses</div>', NULL, NULL, NULL, 'DIGGIO', '649.00', NULL, '749.00', NULL, NULL, NULL, '2023-04-07 09:33:17', 'televisor-65-android-11-uhd', 1),
+(4, 190, 137126000, 'Lavadora automatica 13 KG blanco', 'Lavado inteligente One Touch, inicia tu lavado con un solo clic y ahorra utilizando el nivel exacto de agua.', '<ul>\r\n<li>Capacidad de lavado 13 kg - Panel de control digital con luz LED</li>\r\n<li>Tapa de vidrio transparente con cerrado suave</li>\r\n<li>8 programas de lavado</li>\r\n<li>Temporizador/apagado autom&aacute;tico</li>\r\n<li>Funciones: Water Flow Technology</li>\r\n<li>Poderosas corrientes de agua para eliminar las manchas m&aacute;s dif&iacute;ciles.</li>\r\n<li>Eco Clean System: Ahorra hasta un 40% de tiempo y energ&iacute;a en cada lavado.</li>\r\n</ul>\r\n<p><strong>Garant&iacute;a:&nbsp;</strong>12 meses</p>', NULL, NULL, NULL, 'SMC', '359.00', NULL, '399.00', 10, NULL, NULL, '2023-04-07 09:38:55', 'lavadora-automatica-13-kg-blanco', 1),
+(5, 200, 15252000556, 'Audifonos C/microfono negro  H200', 'Auriculares estéreo con micrófono H200. Micrófono de alta sensibilidad, comunicación clara y fluida con sus compañeros de equipo.', '<ul>\r\n<li>Controla f&aacute;cilmente el volumen en juegos, pel&iacute;culas, m&uacute;sica.</li>\r\n<li>Control en cable.</li>\r\n<li>Compatibilidad: PCs, port&aacute;tiles, smartphones y otros dispositivos con salida de audio de 3.5 mm.</li>\r\n<li>USB para luz led azul.</li>\r\n<li>Bot&oacute;n de encendido / apagado de luz en orejera.</li>\r\n</ul>', NULL, NULL, NULL, 'HP', '25.01', NULL, NULL, NULL, NULL, NULL, '2023-04-07 09:44:49', 'audifonos-c-microfono-negro-h200', 1),
+(6, 204, 45800015274, 'Soporte P/tv De 37\' A 70\' Space', 'Soporte de pared para TV de 37 y hasta 70 pulgadas.', NULL, NULL, NULL, NULL, 'SPACE', '9.00', NULL, NULL, NULL, NULL, NULL, '2023-04-07 09:46:39', 'soporte-p-tv-de-37-a-70-space', 1),
+(7, 199, 145700055, 'Barra de sonido sl4 300w', 'Barra de sonido sl4 300w Lg', NULL, NULL, NULL, NULL, 'LG', '239.00', NULL, NULL, NULL, NULL, NULL, '2023-04-07 09:50:32', 'barra-de-sonido-sl4-300w', 1);
 
 -- --------------------------------------------------------
 
@@ -273,18 +270,7 @@ CREATE TABLE `roles` (
 INSERT INTO `roles` (`id_rol`, `name_rol`, `description_rol`, `status`) VALUES
 (1, 'Administrador', 'Todos los permisos', 1),
 (2, 'Supervisor', 'Ciertos permisos', 1),
-(6, 'Cliente', 'Permisos restringidos', 1),
-(29, 'Test two', 'Test description two', 1),
-(30, 'Test three', 'Test description three', 1),
-(31, 'Test four', 'Test description four', 1),
-(32, 'Test five', 'Test description five', 1),
-(33, 'Test one', 'Test description six', 1),
-(34, 'Test seven', 'Test description seven', 1),
-(35, 'Test eight', 'Test descripion eight', 1),
-(36, 'Test nine', 'Test description nine', 1),
-(37, 'Test ten', 'Test description ten', 1),
-(38, 'Test eleven', 'Test description eleven', 1),
-(39, 'Test twelve', 'Test description twelve', 1);
+(6, 'Cliente', 'Permisos restringidos', 1);
 
 -- --------------------------------------------------------
 
@@ -313,14 +299,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id_user`, `dni`, `name_user`, `surname_user`, `phone`, `email`, `password`, `update_status`, `rolid`, `datecreate`, `status`) VALUES
 (1, '0706715653', 'Carlos', 'Pozo', '0994603678', 'carlospozo95@gmail.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 1, '2023-01-04 02:16:48', 1),
 (2, '1234567891', 'Andres', 'Ramirez', '994603678', 'carlos.pfloger@yahoo.com', '5bbe8ae0595ae2af0168d6ace893831b49e65b0a', 1, 2, '2022-12-04 21:37:17', 1),
-(3, '12345', 'Carlos', 'Ramirez', '42746942', 'carlos.pflogger@hotmail.com', '5bbe8ae0595ae2af0168d6ace893831b49e65b0a', 1, 6, '2022-12-17 02:36:16', 2),
-(13, '0123456789', 'Test One', 'Test One', '41241564', 'one@one.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 29, '2023-01-12 11:03:18', 2),
-(14, '5454564', 'Test two', 'Test two', '47454566', 'two@two.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 29, '2023-01-12 11:21:36', 1),
-(15, '4122545622154', 'Test three', 'Test three', '1245255', 'three@three.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 6, '2023-01-12 15:35:26', 1),
-(16, '896983274', 'Test four', 'Test four', '54156551', 'four123@four.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 30, '2023-01-12 15:55:09', 1),
-(17, '123456987', 'Test five', 'Test five', '1235855258', 'five@five.com', '5bbe8ae0595ae2af0168d6ace893831b49e65b0a', 1, 6, '2023-01-12 17:59:08', 2),
-(18, '93647479574', 'Test six', 'Text six', '839378448', 'six@six.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 6, '2023-01-13 12:53:21', 2),
-(19, '64314641', 'Test eight', 'Test height', '65464654', 'eight@height.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 29, '2023-01-14 22:01:11', 1);
+(3, '12345', 'Carlos', 'Ramirez', '42746942', 'carlos.pflogger@hotmail.com', '5bbe8ae0595ae2af0168d6ace893831b49e65b0a', 1, 6, '2022-12-17 02:36:16', 2);
 
 --
 -- Índices para tablas volcadas
@@ -406,19 +385,19 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id_rol` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id_rol` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_user` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
