@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 07-04-2023 a las 17:00:22
+-- Tiempo de generación: 09-04-2023 a las 23:10:38
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 7.4.19
 
@@ -61,14 +61,14 @@ INSERT INTO `categories` (`id_category`, `name_category`, `photo`, `icon`, `slid
 (192, 'Refrigeración', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 15:57:47', 181, 'refrigeracion', 1),
 (193, 'Refrigeradoras', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 15:58:03', 192, 'refrigeradoras', 1),
 (194, 'Congeladores', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 15:58:19', 192, 'congeladores', 1),
-(195, 'Audio & video', 'photo_Audio-y-video_b1171eff61b34c02d8a77d971df880a3.jpg', 'icon_Audio-y-video_b1171eff61b34c02d8a77d971df880a3.jpg', NULL, NULL, NULL, NULL, '2023-04-02 16:38:22', NULL, 'audio-video', 1),
-(196, 'Audio & sonido', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:41:12', 195, 'audio-sonido', 1),
+(195, 'Audio y video', 'photo_Audio-y-video_b1171eff61b34c02d8a77d971df880a3.jpg', 'icon_Audio-y-video_b1171eff61b34c02d8a77d971df880a3.jpg', NULL, NULL, NULL, NULL, '2023-04-02 16:38:22', NULL, 'audio-y-video', 1),
+(196, 'Audio y sonido', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:41:12', 195, 'audio-y-sonido', 1),
 (197, 'Equipos de sonido', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:41:56', 196, 'equipos-de-sonido', 1),
 (198, 'Parlantes portátiles', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:43:05', 196, 'parlantes-portatiles', 1),
 (199, 'Barras de sonido', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:43:18', 196, 'barras-de-sonido', 1),
 (200, 'Audifonos', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:43:42', 196, 'audifonos', 1),
 (201, 'Micrófonos', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:44:12', 196, 'microfonos', 1),
-(202, 'Tv & video', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:44:49', 195, 'tv-video', 1),
+(202, 'Tv y video', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:44:49', 195, 'tv-y-video', 1),
 (203, 'Televisores', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:45:13', 202, 'televisores', 1),
 (204, 'Soportes de pared', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:45:24', 202, 'soportes-de-pared', 1),
 (205, 'Antenas prepago', NULL, NULL, NULL, NULL, NULL, NULL, '2023-04-02 16:45:38', 202, 'antenas-prepago', 1),
@@ -247,8 +247,9 @@ INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `de
 (3, 203, 134899000, 'Televisor 65\' Android 11 Uhd', 'Última tecnología High Dynamic Range (HDR), que permite disfrutar de un increíble brillo, color, contraste, detalle y dimensionalidad', '<div><strong>Caracter&iacute;sticas:</strong></div>\r\n<ul>\r\n<li>\r\n<div>Chromecast Incorporado</div>\r\n</li>\r\n<li>\r\n<div>Resoluci&oacute;n 3840x2160</div>\r\n</li>\r\n<li>\r\n<div>CPU ARM Cortex Quad Core</div>\r\n</li>\r\n<li>\r\n<div>Memoria 2 GB DDR</div>\r\n</li>\r\n<li>\r\n<div>Flash 8G</div>\r\n</li>\r\n<li>\r\n<div>Dolby Audio: Audio Power 8W+8W.</div>\r\n</li>\r\n<li>\r\n<div>Sonido Envolvente Simulado</div>\r\n</li>\r\n<li>\r\n<div>1 Puerto Ethernet / LAN</div>\r\n</li>\r\n<li>\r\n<div>Apto Para Red</div>\r\n</li>\r\n<li>\r\n<div>Frecuencia de Refresco de Pantalla 60HZ</div>\r\n</li>\r\n<li>\r\n<div>Se&ntilde;al de Video Soportada PAL M/N; NTSC M</div>\r\n</li>\r\n<li>\r\n<div>3 Puertos HDMI</div>\r\n</li>\r\n<li>\r\n<div>Potencia de Salida de Bocina 8 Ohm- 10w X2</div>\r\n</li>\r\n</ul>\r\n<div><strong>Incluye:</strong></div>\r\n<ul>\r\n<li>\r\n<div>Procesador Quad Core</div>\r\n</li>\r\n<li>\r\n<div>Control Remoto controlado por voz</div>\r\n</li>\r\n<li>\r\n<div>Google Assistant</div>\r\n</li>\r\n<li>\r\n<div>App Store: Google Play</div>\r\n</li>\r\n<li>\r\n<div>Apps Predefinidas: Netflix, Youtube,</div>\r\n</li>\r\n<li>\r\n<div>Prime Video y Play Store</div>\r\n</li>\r\n<li>\r\n<div>Bluetooth&reg;</div>\r\n</li>\r\n<li>\r\n<div>Chromecast / DLNA</div>\r\n</li>\r\n<li>\r\n<div>Surround Stereo</div>\r\n</li>\r\n<li>\r\n<div>Sound Mode</div>\r\n</li>\r\n<li>\r\n<div>Entradas 2USB / 3HDMI</div>\r\n</li>\r\n<li>\r\n<div>Manual de usuario</div>\r\n</li>\r\n<li>\r\n<div>Bases de patas</div>\r\n</li>\r\n</ul>\r\n<div><strong>Garant&iacute;a:&nbsp;</strong>24 meses</div>', NULL, NULL, NULL, 'DIGGIO', '649.00', NULL, '749.00', NULL, NULL, NULL, '2023-04-07 09:33:17', 'televisor-65-android-11-uhd', 1),
 (4, 190, 137126000, 'Lavadora automatica 13 KG blanco', 'Lavado inteligente One Touch, inicia tu lavado con un solo clic y ahorra utilizando el nivel exacto de agua.', '<ul>\r\n<li>Capacidad de lavado 13 kg - Panel de control digital con luz LED</li>\r\n<li>Tapa de vidrio transparente con cerrado suave</li>\r\n<li>8 programas de lavado</li>\r\n<li>Temporizador/apagado autom&aacute;tico</li>\r\n<li>Funciones: Water Flow Technology</li>\r\n<li>Poderosas corrientes de agua para eliminar las manchas m&aacute;s dif&iacute;ciles.</li>\r\n<li>Eco Clean System: Ahorra hasta un 40% de tiempo y energ&iacute;a en cada lavado.</li>\r\n</ul>\r\n<p><strong>Garant&iacute;a:&nbsp;</strong>12 meses</p>', NULL, NULL, NULL, 'SMC', '359.00', NULL, '399.00', 10, NULL, NULL, '2023-04-07 09:38:55', 'lavadora-automatica-13-kg-blanco', 1),
 (5, 200, 15252000556, 'Audifonos C/microfono negro  H200', 'Auriculares estéreo con micrófono H200. Micrófono de alta sensibilidad, comunicación clara y fluida con sus compañeros de equipo.', '<ul>\r\n<li>Controla f&aacute;cilmente el volumen en juegos, pel&iacute;culas, m&uacute;sica.</li>\r\n<li>Control en cable.</li>\r\n<li>Compatibilidad: PCs, port&aacute;tiles, smartphones y otros dispositivos con salida de audio de 3.5 mm.</li>\r\n<li>USB para luz led azul.</li>\r\n<li>Bot&oacute;n de encendido / apagado de luz en orejera.</li>\r\n</ul>', NULL, NULL, NULL, 'HP', '25.01', NULL, NULL, NULL, NULL, NULL, '2023-04-07 09:44:49', 'audifonos-c-microfono-negro-h200', 1),
-(6, 204, 45800015274, 'Soporte P/tv De 37\' A 70\' Space', 'Soporte de pared para TV de 37 y hasta 70 pulgadas.', NULL, NULL, NULL, NULL, 'SPACE', '9.00', NULL, NULL, NULL, NULL, NULL, '2023-04-07 09:46:39', 'soporte-p-tv-de-37-a-70-space', 1),
-(7, 199, 145700055, 'Barra de sonido sl4 300w', 'Barra de sonido sl4 300w Lg', NULL, NULL, NULL, NULL, 'LG', '239.00', NULL, NULL, NULL, NULL, NULL, '2023-04-07 09:50:32', 'barra-de-sonido-sl4-300w', 1);
+(6, 204, 45800015274, 'Soporte P/tv De 37\' A 70\' Space', 'Soporte de pared para TV de 37 y hasta 70 pulgadas.', NULL, NULL, NULL, NULL, 'SPACE', '9.00', NULL, '15.00', NULL, 9, '1.00', '2023-04-07 09:46:39', 'soporte-p-tv-de-37-a-70-space', 1),
+(7, 199, 145700055, 'Barra de sonido sl4 300w', 'Barra de sonido sl4 300w Lg', NULL, NULL, NULL, NULL, 'LG', '239.00', 2, NULL, NULL, NULL, NULL, '2023-04-07 09:50:32', 'barra-de-sonido-sl4-300w', 1),
+(8, 215, 10052546521, 'Proyector galaxias smarth NHA-G100', 'Lo mejor para tu hogar que lo vuelvas Smart', '<ul>\r\n<li>Proyector de galaxias y estrellas inteligente con conexi&oacute;n Wi-Fi&nbsp;</li>\r\n<li>Emparejamiento f&aacute;cil</li>\r\n<li>Configura diferentes colores y escenas desde tu dispositivo m&oacute;vil; proyecta galaxias y estrellas</li>\r\n<li>Col&oacute;calo donde quieras con m&uacute;ltiples ajustes de &aacute;ngulo</li>\r\n<li>Aplicaci&oacute;n compatible con iOS y Android&trade;</li>\r\n<li>Gesti&oacute;n remota desde cualquier lugar en el mundo con la app m&oacute;vil</li>\r\n<li>Horarios programables y temporizador para &oacute;ptima automatizaci&oacute;n</li>\r\n<li>Regula la intensidad de la luz y controla la rotaci&oacute;n de acuerdo con tu estado de &aacute;nimo</li>\r\n<li>Comparte el acceso</li>\r\n<li>Cable de 1,7m ofrece flexibilidad en la ubicaci&oacute;n</li>\r\n</ul>', NULL, NULL, NULL, 'NEXXT', '60.00', 2, '107.74', NULL, 8, '10.00', '2023-04-08 09:41:23', 'proyector-galaxias-smarth-nha-g100', 1);
 
 -- --------------------------------------------------------
 
@@ -385,7 +386,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`

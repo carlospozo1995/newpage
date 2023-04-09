@@ -25,11 +25,6 @@
 		        ';
 		    }   
 		}
-		$data = Models_Store::getNameCategories($data_product['id_product']);
-		foreach ($data as $key => $value) {
-			echo '<p>'$key'</p>';
-		}
-
 ?>		
 		<div class="breadcrumb-section" data-aos="fade-up" data-aos-delay="0">
             <div class="pt-4 pb-4 mb-4 bg-mist-white">
@@ -39,7 +34,24 @@
                             <div class="breadcrumb-nav breadcrumb-nav-color--black">
                                 <nav aria-label="breadcrumb">
                                     <ul class="navigation-page">
-                                        <li><a href="<?= BASE_URL ?>">HOME</a></li>
+                                    	<?php
+                                    	
+                                    	echo '<li><a href="'.BASE_URL.'">HOME</a></li>';
+                                    	$categoryNames = Models_Store::getCategoryNames($data_product['id_product']);
+
+                                    	$category1 = strtoupper(Utils::replaceVowel($categoryNames['category1']));
+                                    	$category2 = strtoupper(Utils::replaceVowel($categoryNames['category2']));
+                                    	$category3 = !empty($categoryNames['category3']) ? strtoupper(Utils::replaceVowel($categoryNames['category3'])) : "";
+                                    	
+                                    	$url1 = $categoryNames['url1'];
+                                    	$url2 = $categoryNames['url2'];
+                                    	$url3 = !empty($categoryNames['url3']) ? "/".$categoryNames['url3'] : "";
+
+                                    	echo !empty($category3) ? '<li><a href="'.BASE_URL.'categoria'.$url3.'">'.$category3.'</a></li>' : "";
+                                    	echo '<li><a href="'.BASE_URL.'categoria'.$url3.'/'.$url2.'">'.$category2.'</a></li>';
+                                    	echo '<li><a href="'.BASE_URL.'categoria'.$url3.'/'.$url2.'/'.$url1.'">'.$category1.'</a></li>';
+
+                                    	?>
                                     </ul>
                                 </nav>
                             </div>

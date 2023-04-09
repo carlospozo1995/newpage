@@ -34,144 +34,29 @@
             return $GLOBALS["db"]->selectAll($sql, array());
         }
 
-        // SQL PAGE CATEGORIAS
+        // SQL PAGE PRODUCTO
         static public function getProduct($data)
         {
             $sql = "SELECT * FROM products WHERE url = ?";
             return $GLOBALS["db"]->auto_array($sql, array($data));
         }
 
-        static public function getNameCategories($id_product)
+        static public function getCategoryNames($id_product)
         {
-            // $sql = "SELECT CONCAT_WS(' > ', c4.name_category, c3.name_category, c2.name_category, c1.name_category) AS category_path
-            //     FROM products p
-            //     JOIN categories c1 ON p.category_id = c1.id_category
-            //     LEFT JOIN categories c2 ON c1.fatherCategory = c2.id_category
-            //     LEFT JOIN categories c3 ON c2.fatherCategory = c3.id_category
-            //     LEFT JOIN categories c4 ON c3.fatherCategory = c4.id_category
-            //     WHERE p.id_product = $id_product";
+            $sql = "SELECT 
+                c1.name_category AS category1, c1.url AS url1,
+                c2.name_category AS category2, c2.url AS url2,
+                c3.name_category AS category3, c3.url AS url3
+            FROM 
+                (SELECT * FROM products WHERE id_product = ?) p
+                JOIN categories c1 ON p.category_id = c1.id_category
+                LEFT JOIN categories c2 ON c1.fatherCategory = c2.id_category
+                LEFT JOIN categories c3 ON c2.fatherCategory = c3.id_category
+            ";
 
-           
-            // $sql = "SELECT c1.name_category as category1, c2.name_category as category2, c3.name_category as category3, c4.name_category as category4
-            // FROM products p
-            // JOIN categories c1 ON p.category_id = c1.id_category
-            // LEFT JOIN categories c2 ON c1.fatherCategory = c2.id_category
-            // LEFT JOIN categories c3 ON c2.fatherCategory = c3.id_category
-            // LEFT JOIN categories c4 ON c3.fatherCategory = c4.id_category
-            // WHERE p.id_product = $id_product";
-           
-
-            // $sql = "SELECT category.name_category
-            // FROM products p
-            // JOIN categories category ON p.category_id = category.id_category";
-
-            // for ($i = 1; $i <= 4; $i++) {
-            //     $sql .= " LEFT JOIN categories cat{$i} ON category.fatherCategory = cat{$i}.id_category";
-            // }
-
-            // $sql .= " WHERE p.id_product = $id_product";
-
-
-
-
-            // $sql = "SELECT category.name_category as category_name, cat1.name_category as parent_category_name";
-
-            // for ($i = 2; $i <= 4; $i++) {
-            //     $sql .= " , cat{$i}.name_category as parent_cat{$i}_name";
-            // }
-
-            // $sql .= " FROM products p
-            //         JOIN categories category ON p.category_id = category.id_category";
-
-            // for ($i = 1; $i <= 4; $i++) {
-            //     $sql .= " LEFT JOIN categories cat{$i} ON category.fatherCategory = cat{$i}.id_category";
-            // }
-
-            // $sql .= " WHERE p.id_product = $id_product";
-
-
-
-            // $sql = "SELECT category.name_category as category1";
-
-            // for ($i = 2; $i <= 3; $i++) {
-            //     $sql .= " , cat{$i}.name_category as category{$i}";
-            // }
-
-            // $sql .= " FROM products p
-            //         JOIN categories category ON p.category_id = category.id_category";
-
-            // for ($i = 1; $i <= 3; $i++) {
-            //     $sql .= " LEFT JOIN categories cat{$i} ON category.fatherCategory = cat{$i}.id_category";
-            // }
-
-            // $sql .= " WHERE p.id_product = $id_product";
-
-            //         return $GLOBALS["db"]->selectAll($sql, array());
-            //     }
-
-
-           // $sql = "SELECT 
-           //      CONCAT_WS(' > ', c1.name_category, IFNULL(c2.name_category, ''), IFNULL(c3.name_category, '')) AS category_path
-           //  FROM 
-           //      products p
-           //      JOIN categories c1 ON p.category_id = c1.id_category
-           //      LEFT JOIN categories c2 ON c1.fatherCategory = c2.id_category
-           //      LEFT JOIN categories c3 ON c2.fatherCategory = c3.id_category
-           //  WHERE 
-           //      p.id_product = $id_product
-           //  UNION
-           //  SELECT
-           //      CONCAT_WS(' > ', c4.name_category, c3.name_category, c2.name_category, c1.name_category) AS category_path
-           //  FROM
-           //      products p
-           //      JOIN categories c1 ON p.category_id = c1.id_category
-           //      LEFT JOIN categories c2 ON c1.fatherCategory = c2.id_category
-           //      LEFT JOIN categories c3 ON c2.fatherCategory = c3.id_category
-           //      LEFT JOIN categories c4 ON c3.fatherCategory = c4.id_category
-           //  WHERE
-           //      p.id_product = $id_product
-           //      AND c3.id_category IS NULL";
-
-
-
-
-
-        //    $sql = "SELECT 
-        //     CONCAT_WS(' > ', c1.name_category, c2.name_category) AS category_path
-        // FROM 
-        //     products p
-        //     JOIN categories c1 ON p.category_id = c1.id_category
-        //     JOIN categories c2 ON c1.fatherCategory = c2.id_category
-        // WHERE 
-        //     p.id_product = $id_product
-        // UNION
-        // SELECT
-        //     CONCAT_WS(' > ', c1.name_category) AS category_path
-        // FROM
-        //     products p
-        //     JOIN categories c1 ON p.category_id = c1.id_category
-        // WHERE
-        //     p.id_product = $id_product
-        //     AND c1.fatherCategory IS NULL";
-
-
-
-
-            $sql = "SELECT c1.name_category as category1, c2.name_category as category2, c3.name_category as category3
-        FROM 
-            products p
-            JOIN categories c1 ON p.category_id = c1.id_category
-            LEFT JOIN categories c2 ON c1.fatherCategory = c2.id_category
-            LEFT JOIN categories c3 ON c2.fatherCategory = c3.id_category
-        WHERE 
-            p.id_product = $id_product";
-
-
-             return $GLOBALS["db"]->selectAll($sql, array());
-
+            $result = $GLOBALS["db"]->selectAll($sql, array($id_product));
+            return isset($result[0]) ? $result[0] : array();
         }
-           
-
 
     }
 ?>
