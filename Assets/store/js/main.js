@@ -500,4 +500,46 @@
         }
     });
 
+    /************************************************
+     * Add To Cart Modal
+     ***********************************************/
+    $('.addToCart').each(function () {
+        $(this).on('click', function (e) {
+            e.preventDefault();
+            let id = $(this).attr("id");
+            let amount = 1;
+            let name = $(this).data("name");
+            let price = parseFloat($(this).data("price"));
+            // $('.cart-name-product').text(name_product.toUpperCase());
+            // $('.cart-price-product').text(price_product);
+            
+            if ($('#amount-product').length) {
+                amount = parseInt($('#amount-product').val());
+            }
+
+            $.ajax({
+                url: base_url + "index/addCartProduct/",
+                dataType: 'JSON',
+                method: 'POST',
+                data: {
+                    id_product: id,
+                    amount_product: amount,
+                },
+                beforeSend: function() {
+                    
+                },
+                success: function(data){
+                    console.log(data);
+                },
+                error: function(xhr, status, error) {
+                },
+                complete: function() {
+                    
+                }
+            });
+
+            $("#modalAddcart").modal("show");
+        })
+    });
+
 })(jQuery);

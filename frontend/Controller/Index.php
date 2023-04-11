@@ -6,8 +6,19 @@
 			$action = Utils::getParam("action", "");
 			$data = array();
 			switch ($action) {
-				case ' ':
-					return false;
+				case 'addCartProduct':
+					if($_POST){
+						$amountCart = 0;
+						$id_product = Utils::desencriptar($_POST['id_product']);
+						$amountProduct = $_POST['amount_product'];
+						$data = "";
+						if(!empty($id_product)){
+							$arrInfoProd = Models_Store::getProductId($id_product);
+						}else{
+							// $data = "eror";
+						}
+						echo json_encode($arrInfoProd);
+					}
 				break;
 				
 				default:

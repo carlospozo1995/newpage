@@ -12,7 +12,7 @@ RewriteEngine On
 ErrorDocument 404 "Lo siento, la página que estás buscando no existe."
 
 RewriteRule ^$ %{ENV:REWRITEBASE}index.php?show=Index [L]
-#RewriteRule ^index/loadMore/$ %{ENV:REWRITEBASE}index.php?show=Index&action=loadMore [L]
+RewriteRule ^index/addCartProduct/$ %{ENV:REWRITEBASE}index.php?show=Index&action=addCartProduct [L]
 
 #LOGIN
 RewriteRule ^(login/|login|Login|LOGIN)$ %{ENV:REWRITEBASE}index.php?show=login [L]

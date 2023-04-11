@@ -130,13 +130,13 @@
 	                                    <span>Cantidad</span>
 	                                    <div class="product-variable-quantity mr-lg-4">
 	                                    	<i class="fa fa-minus pl-4 pr-2 btn-minus"></i>
-											<input type="number" min="1" max="<?= $data_product['stock']; ?>" value="1">
+											<input id="amount-product" type="number" min="1" max="<?= $data_product['stock']; ?>" value="1">
 	                                    	<i class="fa fa-plus pr-4 pl-2 btn-plus"></i>
 	                                    </div>
 	                                </div>
 
 	                                <div class="product-btn-store">
-	                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart"><i class="fa fa-plus"></i> Agregar al carrito</a>
+	                                    <a href="#" id="<?= Utils::encryptStore($data_product['id_product']); ?>" class="addToCart" data-price="<?= $data_product['price']; ?>" data-name="<?= $data_product['name_product']; ?>"><i class="icon-basket"></i> Agregar al carrito</a>
 	                                </div>
                             	</div>
 
@@ -145,7 +145,7 @@
 	                                    <a href="#" class="btn-buy-whatsapp"><i class="fa fa-whatsapp"></i> Comprar por whatsapp</a>
 	                                </div>
 	                                <div class="product-btn-store">
-	                                    <a href="#"><i class="fa fa-shopping-cart"></i> Comprar ahora</a>
+	                                    <a href="#"><i class="icon-bag"></i> Comprar ahora</a>
 	                                </div>
                             	</div>
 							</div>

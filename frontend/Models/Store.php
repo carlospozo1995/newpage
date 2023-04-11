@@ -37,7 +37,7 @@
         // SQL PAGE PRODUCTO
         static public function getProduct($data)
         {
-            $sql = "SELECT * FROM products WHERE url = ?";
+            $sql = "SELECT * FROM products WHERE url = ? AND status = 1";
             return $GLOBALS["db"]->auto_array($sql, array($data));
         }
 
@@ -56,6 +56,30 @@
 
             $result = $GLOBALS["db"]->selectAll($sql, array($id_product));
             return isset($result[0]) ? $result[0] : array();
+        }
+
+        static public function getProductId($data)
+        {
+            $sql_prod = "SELECT p.id_product, p.category_id, p.code, p.name_product, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = ?";
+            $request_prod = $GLOBALS["db"]->auto_array($sql_prod, array($data));
+            
+            if (!empty($request_prod)) {
+                $id_product = $request_prod['id_product'];
+                $sql_img = "SELECT image FROM img_product WHERE product_id = ?";
+                $request_img = $GLOBALS["db"]->selectAll($sql_img, array($id_product));
+                
+                if(count($request_img) > 0){
+                    for ($i=0; $i < count($request_img); $i++) { 
+                        $request_img[$i]['url_image'] = MEDIA_ADMIN.'files/images/upload_products/'.$request_img[$i]["image"];
+                    }
+                }else{
+                    $request_img[0]['url_image'] = MEDIA_ADMIN.'files/images/upload_products/empty_img.png';
+                }
+
+                $request_prod['images'] = $request_img;
+            }
+
+            return $request_prod;
         }
 
     }
