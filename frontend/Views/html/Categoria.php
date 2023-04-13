@@ -276,7 +276,7 @@
                                                                             <a href=""><i class="icon-heart" title="Añadir a favoritos"></i></a>
                                                                             <?php
                                                                             if (!empty($product['stock'])) {
-                                                                                echo '<a href="" class="addToCart" id="'.Utils::encriptar($product['id_product']).'" data-price="'.$product['price']; ?>" data-name="<?= $product['name_product'].'"><i class="icon-basket" title="Añadir al carrito"></i></a>';
+                                                                                echo '<a href="" class="addToCart" id="'.Utils::encriptar($product['id_product']).'"><i class="icon-basket" title="Añadir al carrito"></i></a>';
                                                                             }
                                                                             ?>
                                                                         </div>
@@ -366,7 +366,7 @@
                                                                         </a>
                                                                         <?php
                                                                         if (!empty($product['stock'])) {
-                                                                            echo '<a href="compare.html" class="btn btn-lg btn-black-default-hover addToCart" id="'.Utils::encriptar($product['id_product']).'" title="Añadir al carrito" data-price="'.$product['price'].'" data-name="'.$product['name_product'].'">
+                                                                            echo '<a href="compare.html" class="btn btn-lg btn-black-default-hover addToCart" id="'.Utils::encriptar($product['id_product']).'" title="Añadir al carrito">
                                                                                     <i class="icon-basket"></i>
                                                                                 </a>';
                                                                         }

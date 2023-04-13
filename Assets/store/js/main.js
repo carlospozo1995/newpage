@@ -510,8 +510,6 @@
             let amount = 1;
             let name = $(this).data("name");
             let price = parseFloat($(this).data("price"));
-            // $('.cart-name-product').text(name_product.toUpperCase());
-            // $('.cart-price-product').text(price_product);
             
             if ($('#amount-product').length) {
                 amount = parseInt($('#amount-product').val());
@@ -532,6 +530,7 @@
                     console.log(data);
                 },
                 error: function(xhr, status, error) {
+                    console.log(error)
                 },
                 complete: function() {
                     

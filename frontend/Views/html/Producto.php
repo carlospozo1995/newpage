@@ -136,7 +136,7 @@
 	                                </div>
 
 	                                <div class="product-btn-store">
-	                                    <a href="#" id="<?= Utils::encryptStore($data_product['id_product']); ?>" class="addToCart" data-price="<?= $data_product['price']; ?>" data-name="<?= $data_product['name_product']; ?>"><i class="icon-basket"></i> Agregar al carrito</a>
+	                                    <a href="#" id="<?= Utils::encriptar($data_product['id_product']); ?>" class="addToCart"><i class="icon-basket"></i> Agregar al carrito</a>
 	                                </div>
                             	</div>
 
