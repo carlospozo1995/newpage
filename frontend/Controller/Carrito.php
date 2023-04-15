@@ -1,6 +1,6 @@
 <?php
 
-	class Controller_Producto{
+	class Controller_Carrito{
 		
 		public function buildPage()
 		{	
@@ -13,10 +13,8 @@
 				break;
 			
 				default:
-					$data["file_js"][] = "producto-store";
-					if (!empty($_GET['prod_path'])) {
-						View::renderPage('Producto', $data);
-					}
+					// $data["file_js"][] = "producto-store";
+					View::renderPage('Carrito', $data);
 				break;
 			}
 		}

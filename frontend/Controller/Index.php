@@ -10,7 +10,6 @@
 				case 'addCartProduct':
 					if($_POST){
 						$dataCart = array();
-						$data_product = "";
 						$amountCart = 0;
 						$id_product = Utils::desencriptar($_POST['id_product']);
 						$amountProduct = $_POST['amount_product'];
@@ -21,7 +20,7 @@
 													'code' => $arrInfoProd['code'],
 													'name' => $arrInfoProd['name_product'],
 													'amount_product' => $amountProduct,
-													'precio' => $arrInfoProd['price'],
+													'price' => $arrInfoProd['price'],
 													'image' => $arrInfoProd['images'][0]['url_image']);
 							
 								if (isset($_SESSION['dataCart'])) {
@@ -44,12 +43,50 @@
 									array_push($dataCart, $data_product);
 									$_SESSION['dataCart'] = $dataCart;
 								}
-								$data = array($data_product);
+
+								foreach ($_SESSION['dataCart'] as $product) {
+									$amountCart += $product['amount_product'];
+								}
+								$html_shoppingCart = "";
+								$html_shoppingCart = Utils::getFileModal('Template/Modals/shoppingCart_modal', $_SESSION['dataCart']);
+								$data = array("status" => true, "product_added" => $data_product, "html_shoppingCart" => $html_shoppingCart, "amountCart" => $amountCart);
 							}
 						}else{
-							$data = array($data_product);
+							$data = array("status" => false, "error" => "Ha ocurrido un error. Intentelo más tarde.");
 						}
-						echo json_encode($data_product);
+						echo json_encode($data);
+					}
+				break;
+
+				case 'delItemCart':
+					if (isset($_POST)) {
+						$dataCart = array();
+						$amountCart  = 0;
+						$option = $_POST['option'];
+						$id_product = Utils::desencriptar($_POST['id_product']);
+						if(!empty($id_product) AND ($option == 1 OR $option == 2)){
+							$dataCart = $_SESSION['dataCart'];
+							for ($i=0; $i < count($dataCart); $i++) { 
+								if($dataCart[$i]['id'] == $id_product){
+									unset($dataCart[$i]);
+								}
+							}
+							sort($dataCart);
+							$_SESSION['dataCart'] = $dataCart;
+
+							foreach ($_SESSION['dataCart'] as $product) {
+								$amountCart += $product['amount_product'];
+							}
+
+							$html_shoppingCart = "";
+							if ($option == 1) {
+								$html_shoppingCart = Utils::getFileModal('Template/Modals/shoppingCart_modal', $_SESSION['dataCart']);
+							}
+							$data = array("status" => true, "html_shoppingCart" => $html_shoppingCart, "amountCart" => $amountCart);
+						}else{
+							$data = array("status" => false, "error" => "Ha ocurrido un error. Intentelo más tarde.");
+						}
+						echo json_encode($data);
 					}
 				break;
 				

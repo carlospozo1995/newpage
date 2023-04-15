@@ -14547,6 +14547,16 @@ input {
     border-color: #66cec4;
     background: transparent;
 }
+.btn-deep-blue{
+    background: #4431DE;
+    border-color: #4431DE;
+    color: #FFF;
+}
+.btn-deep-blue:hover{
+    color: #4431DE;
+    border-color: #4431DE;
+    background: transparent;
+}
 .btn-black-default-hover {
     background: #24262b;
     color: #FFF;
@@ -16768,7 +16778,8 @@ table {
     font-size: 24px;
     font-weight: bold; 
     text-transform: capitalize;
-    color: rgba(68,49,222,0.9);;
+/*    color: rgba(68,49,222,0.9);*/
+    color: #4431DE;
 }
 @media (min-width: 992px) {
     .product-details-content-area .product-details-text .title {
@@ -18930,6 +18941,7 @@ Pages - Contact
 
 .offcanvas-cart-item-delete {
     color: red;
+    cursor: pointer;
 }
 .offcanvas-cart-item-delete:hover {
     color: red;
@@ -19118,8 +19130,8 @@ Pages - Contact
     border-radius: 3px;
 }
 .modal-close:hover {
-    color: #b19361;
-    border-color: #b19361;
+    color: #F15555;
+    border-color: #F15555;
 }
 @media (min-width: 768px) {
     .modal-close {
@@ -19207,8 +19219,9 @@ Pages - Contact
 .modal-add-cart-product-cart-buttons a {
     margin-top: 10px;
     margin-bottom: 10px;
-    background: #b19361;
+    background: #F15555;
     color: white;
+    border-radius: 6px;
     padding: 5px 10px;
     margin-right: 0px;
     text-align: center;
@@ -19226,14 +19239,15 @@ Pages - Contact
 }
 
 .modal-add-cart-info i {
-    color: #b19361;
+    color: #F15555;
     padding-right: 10px;
     font-size: 16px;
 }
 
 .modal-continue-button a {
     text-decoration: underline;
-    color: #b19361;
+    color: #F15555;
+    font-weight: bold;
 }
 .modal-continue-button a:hover {
     text-decoration: none;

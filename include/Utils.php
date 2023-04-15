@@ -215,6 +215,14 @@
 	    	}
 	    }
 
+	    static public function getFileModal(string $url, $data)
+	    {
+	    	ob_start();
+	    	require_once(RUTA_VIEW."/html/{$url}.php");
+	    	$file = ob_get_clean();
+	    	return $file;
+	    }
+
 	    static public function permissionsData(int $id_module)
 	    {
 	    	$id_rol = $_SESSION['data_user']['id_rol'];

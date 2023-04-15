@@ -2,6 +2,12 @@
     "use strict";
 
     /*****************************
+     * Number Format
+     *****************************/
+    function numberFormat(number, decimals = 2, decPoint = ',', thousandsSep = '.') {
+        return number.toFixed(decimals).replace('.', decPoint).replace(/\B(?=(\d{3})+(?!\d))/g, thousandsSep);
+    }
+    /*****************************
      * Commons Variables
      *****************************/
     var $window = $(window),
@@ -527,18 +533,92 @@
                     
                 },
                 success: function(data){
-                    console.log(data);
+                    if (data.status) {
+                        let product_added = data.product_added;
+
+                        $(".addd-product-container").html(`
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="modal-add-cart-product-img">
+                                                <img class="img-fluid"
+                                                    src="${product_added.image}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <p class="modal-add-cart-info"><i class="fa fa-check-square"></i>Añadido al carrito con éxito!</p>
+                                            <p class="cart-name-product font-weight-bold c-p-deep-blue">${product_added.name.toUpperCase()}</p>
+                                            <p> <strong>Precio: </strong> <span class="cart-price-product">$${numberFormat(parseFloat(product_added.price))}</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 modal-border">
+                                    <ul class="modal-add-cart-product-shipping-info">
+                                        <li> <strong><i class="icon-shopping-cart"></i> Tiene ${data.amountCart} productos en su carrito.</strong></li>
+                                        <li>
+                                            <div class="modal-add-cart-product-cart-buttons font-weight-bold">
+                                                <a href="${base_url}carrito">Ver carrito</a>
+                                                <a href="checkout.html">Procesar pago</a>
+                                            </div>
+                                        </li>
+                                        <li class="modal-continue-button"><a href="#" data-bs-dismiss="modal">CONTINUAR COMPRANDO</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            `);
+
+                        $('.amount-product-cart').text(data.amountCart);
+                        $("#container-shopping-cart").html(data.html_shoppingCart);
+                    }else{
+                        $(".addd-product-container").html(`<h1 class="text-center text-danger">${data.error}</h1>`);
+                    }
                 },
                 error: function(xhr, status, error) {
-                    console.log(error)
                 },
                 complete: function() {
                     
                 }
-            });
-
-            $("#modalAddcart").modal("show");
+            });     
         })
     });
 
+
 })(jQuery);
+
+/*****************************
+* Delete Item Shopping Cart
+*****************************/
+function delItemCart(element) {
+    let option = $(element).attr("option");
+    let id = $(element).attr("idpr");
+    
+    if (option == 1 || option == 2) {
+        $.ajax({
+            url: base_url + "index/delItemCart/",
+            dataType: 'JSON',
+            method: 'POST',
+            data: {
+                id_product: id,
+                option: option,
+            },
+            beforeSend: function() {
+                
+            },
+            success: function(data){
+                if (data.status) {
+                    $('.amount-product-cart').text(data.amountCart);
+                    $("#container-shopping-cart").html(data.html_shoppingCart);
+                }else{
+                    Swal.fire({icon: 'error', html: `<span class="font-weight-bold">${data.error}</span>`, confirmButtonColor: '#4431DE'});
+                }
+            },
+            error: function(xhr, status, error) {
+                console.log(error)
+            },
+            complete: function() {
+                
+            }
+        });   
+    }
+}

@@ -151,33 +151,7 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-7">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="modal-add-cart-product-img">
-                                            <img class="img-fluid"
-                                                src="" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <p class="cart-name-product font-weight-bold"></p>
-                                        <div class="modal-add-cart-info"><i class="fa fa-check-square"></i>Añadido al carrito con éxito!</div>
-                                        <div class="modal-add-cart-product-cart-buttons">
-                                            <a href="cart.html">Ver carrito</a>
-                                            <a href="checkout.html">Procesar pago</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-5 modal-border">
-                                <ul class="modal-add-cart-product-shipping-info">
-                                    <li> <strong><i class="icon-shopping-cart"></i> There Are 5 Items In Your
-                                            Cart.</strong></li>
-                                    <li> <strong>TOTAL PRICE: </strong> <span class="cart-price-product"></span></li>
-                                    <li class="modal-continue-button"><a href="#" data-bs-dismiss="modal">CONTINUAR COMPRANDO</a></li>
-                                </ul>
-                            </div>
+                        <div class="addd-product-container">
                         </div>
                     </div>
                 </div>
@@ -194,6 +168,7 @@
     <script src="<?= MEDIA_STORE; ?>js/vendor/bootstrap.min.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/vendor/jquery-ui.min.js"></script>
 
+    <script src="<?= MEDIA_STORE; ?>js/plugins/sweetalert2.min.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/plugins/swiper-bundle.min.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/plugins/material-scrolltop.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/plugins/jquery.nice-select.min.js"></script>

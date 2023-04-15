@@ -66,6 +66,14 @@
 			case 'categoria':
 				return "Categoria";
 			break;
+
+			case 'producto':
+				return "Producto";
+			break;
+
+			case 'carrito':
+				return "Carrito";
+			break;
 		}
 
 		return ucfirst($name);

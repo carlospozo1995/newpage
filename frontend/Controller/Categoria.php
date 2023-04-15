@@ -4,6 +4,7 @@
 		
 		public function buildPage()
 		{	
+			session_start();
 			$data = array();
 			$action = Utils::getParam("action", "");
 			switch ($action) {

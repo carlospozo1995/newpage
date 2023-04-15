@@ -13,6 +13,7 @@ ErrorDocument 404 "Lo siento, la página que estás buscando no existe."
 
 RewriteRule ^$ %{ENV:REWRITEBASE}index.php?show=Index [L]
 RewriteRule ^index/addCartProduct/$ %{ENV:REWRITEBASE}index.php?show=Index&action=addCartProduct [L]
+RewriteRule ^index/delItemCart/$ %{ENV:REWRITEBASE}index.php?show=Index&action=delItemCart [L]
 
 #LOGIN
 RewriteRule ^(login/|login|Login|LOGIN)$ %{ENV:REWRITEBASE}index.php?show=login [L]
@@ -65,6 +66,7 @@ RewriteRule ^categoria/rangePriceProducts/$ %{ENV:REWRITEBASE}index.php?show=cat
 RewriteRule ^categoria/(.+)$ %{ENV:REWRITEBASE}index.php?show=categoria&cat_path=$1 [L]
 
 RewriteRule ^producto/(.+)$ %{ENV:REWRITEBASE}index.php?show=producto&prod_path=$1 [L]
+RewriteRule ^(carrito/|carrito|Carrito)$ %{ENV:REWRITEBASE}index.php?show=carrito [L]
 
 
 #EXAMPLES

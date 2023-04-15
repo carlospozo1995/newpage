@@ -1,3 +1,14 @@
+<?php
+
+    $amountProduct = 0;
+    if(isset($_SESSION['dataCart']) and count($_SESSION['dataCart']) > 0){ 
+        foreach($_SESSION['dataCart'] as $product) {
+            $amountProduct += $product['amount_product'];
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +28,7 @@
     <link rel="stylesheet" href="<?= MEDIA_STORE; ?>css/vendor/simple-line-icons.css">
     <link rel="stylesheet" href="<?= MEDIA_STORE; ?>css/vendor/jquery-ui.min.css">
 
+    <link rel="stylesheet" href="<?= MEDIA_STORE; ?>css/plugins/sweetalert2.min.css">
     <link rel="stylesheet" href="<?= MEDIA_STORE; ?>css/plugins/swiper-bundle.min.css">
     <link rel="stylesheet" href="<?= MEDIA_STORE; ?>css/plugins/animate.min.css">
     <link rel="stylesheet" href="<?= MEDIA_STORE; ?>css/plugins/nice-select.css">
@@ -51,7 +63,7 @@
                         <div class="z-20 header-top-left">
                             <div class="header-logo">
                                 <div class="logo">
-                                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/logo_text.png" alt=""></a>
+                                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/no-test/logo_text.png" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -61,13 +73,13 @@
                                 <li>
                                     <a href="#offcanvas-wishlish" class="offcanvas-toggle">
                                         <i class="icon-heart"></i>
-                                        <span class="item-count">3</span>
+                                        <span class="item-count">0</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#offcanvas-add-cart" class="offcanvas-toggle">
                                         <i class="icon-basket-loaded"></i>
-                                        <span class="item-count">3</span>
+                                        <span class="item-count amount-product-cart"><?= $amountProduct; ?></span>
                                     </a>
                                 </li>
                                 <li>
@@ -281,7 +293,7 @@
                             <li>
                                 <a href="<?= BASE_URL; ?>">
                                     <div class="logo">
-                                        <img src="<?= MEDIA_STORE ?>images/logo/logo_text.png" alt="">
+                                        <img src="<?= MEDIA_STORE ?>images/logo/no-test/logo_text.png" alt="">
                                     </div>
                                 </a>
                             </li>
@@ -298,13 +310,13 @@
                             <li>
                                 <a href="#offcanvas-wishlish" class="offcanvas-toggle">
                                     <i class="icon-heart"></i>
-                                    <span class="item-count">3</span>
+                                    <span class="item-count">0</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#offcanvas-add-cart" class="offcanvas-toggle">
                                     <i class="icon-basket-loaded"></i>
-                                    <span class="item-count">3</span>
+                                    <span class="item-count amount-product-cart"><?= $amountProduct; ?></span>
                                 </a>
                             </li>
                             <li>
@@ -384,7 +396,7 @@
             <!-- Start Mobile contact Info -->
             <div class="mobile-contact-info">
                 <div class="logo">
-                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/logo.png" alt=""></a>
+                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/no-test/logo.png" alt=""></a>
                 </div>
 
                 <address class="address">
@@ -430,71 +442,10 @@
 
         <!-- Start  Offcanvas Addcart Wrapper -->
         <div class="offcanvas-add-cart-wrapper">
-            <h4 class="offcanvas-title">Shopping Cart</h4>
-            <ul class="offcanvas-cart">
-                <li class="offcanvas-cart-item-single">
-                    <div class="offcanvas-cart-item-block">
-                        <a href="#" class="offcanvas-cart-item-image-link">
-                            <img src="" alt=""
-                                class="offcanvas-cart-image">
-                        </a>
-                        <div class="offcanvas-cart-item-content">
-                            <a href="#" class="offcanvas-cart-item-link">Car Wheel</a>
-                            <div class="offcanvas-cart-item-details">
-                                <span class="offcanvas-cart-item-details-quantity">1 x </span>
-                                <span class="offcanvas-cart-item-details-price">$49.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="offcanvas-cart-item-delete text-right">
-                        <a href="#" class="offcanvas-cart-item-delete"><i class="fa fa-trash-o"></i></a>
-                    </div>
-                </li>
-                <li class="offcanvas-cart-item-single">
-                    <div class="offcanvas-cart-item-block">
-                        <a href="#" class="offcanvas-cart-item-image-link">
-                            <img src="" alt=""
-                                class="offcanvas-cart-image">
-                        </a>
-                        <div class="offcanvas-cart-item-content">
-                            <a href="#" class="offcanvas-cart-item-link">Car Vails</a>
-                            <div class="offcanvas-cart-item-details">
-                                <span class="offcanvas-cart-item-details-quantity">3 x </span>
-                                <span class="offcanvas-cart-item-details-price">$500.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="offcanvas-cart-item-delete text-right">
-                        <a href="#" class="offcanvas-cart-item-delete"><i class="fa fa-trash-o"></i></a>
-                    </div>
-                </li>
-                <li class="offcanvas-cart-item-single">
-                    <div class="offcanvas-cart-item-block">
-                        <a href="#" class="offcanvas-cart-item-image-link">
-                            <img src="" alt=""
-                                class="offcanvas-cart-image">
-                        </a>
-                        <div class="offcanvas-cart-item-content">
-                            <a href="#" class="offcanvas-cart-item-link">Shock Absorber</a>
-                            <div class="offcanvas-cart-item-details">
-                                <span class="offcanvas-cart-item-details-quantity">1 x </span>
-                                <span class="offcanvas-cart-item-details-price">$350.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="offcanvas-cart-item-delete text-right">
-                        <a href="#" class="offcanvas-cart-item-delete"><i class="fa fa-trash-o"></i></a>
-                    </div>
-                </li>
-            </ul>
-            <div class="offcanvas-cart-total-price">
-                <span class="offcanvas-cart-total-price-text">Subtotal:</span>
-                <span class="offcanvas-cart-total-price-value">$170.00</span>
+            <h4 class="offcanvas-title text-center font-weight-bold">CARRITO DE COMPRAS</h4>
+            <div id="container-shopping-cart">
+                <?php Utils::loadModalFile("shoppingCart", "") ?>
             </div>
-            <ul class="offcanvas-cart-action-button">
-                <li><a href="cart.html" class="btn btn-block btn-aqua">View Cart</a></li>
-                <li><a href="compare.html" class=" btn btn-block btn-aqua mt-5">Checkout</a></li>
-            </ul>
         </div> <!-- End  Offcanvas Addcart Wrapper -->
 
     </div> <!-- End  Offcanvas Addcart Section -->

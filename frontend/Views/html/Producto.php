@@ -136,7 +136,7 @@
 	                                </div>
 
 	                                <div class="product-btn-store">
-	                                    <a href="#" id="<?= Utils::encriptar($data_product['id_product']); ?>" class="addToCart"><i class="icon-basket"></i> Agregar al carrito</a>
+	                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" id="<?= Utils::encriptar($data_product['id_product']); ?>" class="addToCart"><i class="icon-basket"></i> Agregar al carrito</a>
 	                                </div>
                             	</div>
 
