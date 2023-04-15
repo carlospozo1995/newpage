@@ -14557,6 +14557,17 @@ input {
     border-color: #4431DE;
     background: transparent;
 }
+.btn-coral{
+    background: #F15555;
+    border-color: #F15555;
+    color: #FFF;
+}
+.btn-coral:hover{ 
+    color: #F15555;
+    border-color: #F15555;
+    background: transparent;
+}
+
 .btn-black-default-hover {
     background: #24262b;
     color: #FFF;
@@ -16679,7 +16690,7 @@ table {
 
 .table_page table thead tr th {
     color: #24262b;
-    border-bottom: 3px solid #b19361;
+    border-bottom: 3px solid #F15555;
     border-right: 1px solid #ededed;
     font-size: 16px;
     font-weight: 600;
@@ -16738,7 +16749,7 @@ table {
     height: 40px;
     padding: 0 5px 0 10px;
     background: none;
-    border: 1px solid #ededed;
+/*  change  border: 1px solid #ededed;*/
 }
 .table_page table tbody tr td.product_addcart {
     min-width: 180px;
@@ -16765,11 +16776,11 @@ table {
 *****************************/
 .product-details-content-area {
     margin-top: 40px;
+    background-color: #f7f7f7;
 }
 @media (min-width: 992px) {
     .product-details-content-area {
         margin-top: 0;
-        background-color: #f7f7f7;
         border-radius: 10px;
         padding: 15px 20px;
     }
@@ -16913,11 +16924,11 @@ table {
 
 .product-details-variable {
     margin-top: 40px;
-    margin-bottom: 40px;
+/*    margin-bottom: 40px;*/
     padding-top: 20px;
     padding-bottom: 20px;
     border-top: 1px solid #E4E4E4;
-    border-bottom: 1px solid #E4E4E4;
+/*    border-bottom: 1px solid #E4E4E4;*/
 }
 .product-details-variable .title {
     font-weight: 600;
@@ -17131,7 +17142,7 @@ table {
 
 .coupon_code {
     border: 1px solid #ededed;
-    margin-top: 60px;
+    border-radius: 3px;
 }
 .coupon_code h3, .coupon_code .h3 {
     color: #ffffff;
@@ -17141,6 +17152,7 @@ table {
     text-transform: uppercase;
     font-size: 16px;
     font-weight: 600;
+    border-radius: 3px 3px 0px 0px;
 }
 
 .coupon_inner {

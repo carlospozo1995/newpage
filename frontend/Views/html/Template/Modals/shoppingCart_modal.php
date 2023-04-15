@@ -11,12 +11,12 @@
     ?>
             <li class="offcanvas-cart-item-single">
                 <div class="offcanvas-cart-item-block">
-                    <a href="#" class="offcanvas-cart-item-image-link">
+                    <a href="<?= BASE_URL."producto/".$product['url']; ?>" class="offcanvas-cart-item-image-link">
                         <img src="<?= $product['image']; ?>" alt=""
                             class="offcanvas-cart-image">
                     </a>
                     <div class="offcanvas-cart-item-content">
-                        <a href="#" class="offcanvas-cart-item-link"><?= $product['name']; ?></a>
+                        <a href="<?= BASE_URL."producto/".$product['url']; ?>" class="offcanvas-cart-item-link"><?= $product['name']; ?></a>
                         <div class="offcanvas-cart-item-details">
                             <span class="offcanvas-cart-item-details-quantity"><?= $product['amount_product']; ?> x </span>
                             <span class="offcanvas-cart-item-details-price">$<?= Utils::formatMoney($product['price']); ?></span>

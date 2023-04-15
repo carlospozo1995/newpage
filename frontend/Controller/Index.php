@@ -21,6 +21,8 @@
 													'name' => $arrInfoProd['name_product'],
 													'amount_product' => $amountProduct,
 													'price' => $arrInfoProd['price'],
+													'stock' => $arrInfoProd['stock'],
+													'url' => $arrInfoProd['url'],
 													'image' => $arrInfoProd['images'][0]['url_image']);
 							
 								if (isset($_SESSION['dataCart'])) {

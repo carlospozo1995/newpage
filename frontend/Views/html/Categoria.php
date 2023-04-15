@@ -66,7 +66,7 @@
                                     <nav aria-label="breadcrumb">
                                         <ul class="navigation-page">
                                             <?php
-                                                echo '<li><a href="'.BASE_URL.'">HOME</a></li>';
+                                                echo '<li><a href="'.BASE_URL.'">INICIO</a></li>';
                                                 foreach ($cat_path as $key => $value) {
                                                     if ($key == count($cat_path)-1) {
                                                         echo '<li class="active">'.strtoupper(str_replace("-", " ", $value)).'</li>';

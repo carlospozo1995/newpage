@@ -36,7 +36,7 @@
                                     <ul class="navigation-page">
                                     	<?php
                                     	
-                                    	echo '<li><a href="'.BASE_URL.'">HOME</a></li>';
+                                    	echo '<li><a href="'.BASE_URL.'">INICIO</a></li>';
                                     	$categoryNames = Models_Store::getCategoryNames($data_product['id_product']);
 
                                     	$category1 = strtoupper(Utils::replaceVowel($categoryNames['category1']));

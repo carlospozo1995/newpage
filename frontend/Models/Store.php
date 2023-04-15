@@ -60,7 +60,7 @@
 
         static public function getProductId($data)
         {
-            $sql_prod = "SELECT p.id_product, p.category_id, p.code, p.name_product, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = ?";
+            $sql_prod = "SELECT p.id_product, p.category_id, p.code, p.name_product, p.stock, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = ?";
             $request_prod = $GLOBALS["db"]->auto_array($sql_prod, array($data));
             
             if (!empty($request_prod)) {
