@@ -1,12 +1,10 @@
 <?php
-
     $amountProduct = 0;
     if(isset($_SESSION['dataCart']) and count($_SESSION['dataCart']) > 0){ 
         foreach($_SESSION['dataCart'] as $product) {
             $amountProduct += $product['amount_product'];
         }
     }
-
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +17,7 @@
 	<meta name="author" content="">
 	<title><?= $title_store ?></title>
 
-   <!--  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet"> -->
 
@@ -63,7 +61,7 @@
                         <div class="z-20 header-top-left">
                             <div class="header-logo">
                                 <div class="logo">
-                                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/logo_text.png" alt=""></a>
+                                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/no-test/logo_text.png" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -76,12 +74,18 @@
                                         <span class="item-count">0</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#offcanvas-add-cart" class="offcanvas-toggle">
-                                        <i class="icon-basket-loaded"></i>
-                                        <span class="item-count amount-product-cart"><?= $amountProduct; ?></span>
-                                    </a>
-                                </li>
+                                <?php
+                                if($section_name != "Carrito"){
+                                ?>
+                                    <li>
+                                        <a href="#offcanvas-add-cart" class="offcanvas-toggle">
+                                            <i class="icon-basket-loaded"></i>
+                                            <span class="item-count amount-product-cart"><?= $amountProduct; ?></span>
+                                        </a>
+                                    </li>
+                                <?php
+                                }
+                                ?>
                                 <li>
                                     <a href="#search">
                                         <i class="icon-magnifier"></i>
@@ -293,7 +297,7 @@
                             <li>
                                 <a href="<?= BASE_URL; ?>">
                                     <div class="logo">
-                                        <img src="<?= MEDIA_STORE ?>images/logo/logo_text.png" alt="">
+                                        <img src="<?= MEDIA_STORE ?>images/logo/no-test/logo_text.png" alt="">
                                     </div>
                                 </a>
                             </li>
@@ -313,12 +317,18 @@
                                     <span class="item-count">0</span>
                                 </a>
                             </li>
+                            <?php
+                                if($section_name != "Carrito"){
+                            ?>
                             <li>
                                 <a href="#offcanvas-add-cart" class="offcanvas-toggle">
                                     <i class="icon-basket-loaded"></i>
                                     <span class="item-count amount-product-cart"><?= $amountProduct; ?></span>
                                 </a>
                             </li>
+                            <?php
+                            }
+                            ?>
                             <li>
                                 <a href="#mobile-menu-offcanvas" class="offcanvas-toggle offside-menu">
                                     <i class="icon-menu"></i>
@@ -396,7 +406,7 @@
             <!-- Start Mobile contact Info -->
             <div class="mobile-contact-info">
                 <div class="logo">
-                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/logo.png" alt=""></a>
+                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/no-test/logo.png" alt=""></a>
                 </div>
 
                 <address class="address">
@@ -414,7 +424,7 @@
 
                 <ul class="user-link">
                     <li><a href="wishlist.html">Wishlist</a></li>
-                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="<?= BASE_URL; ?>carrito">Carrito</a></li>
                     <li><a href="checkout.html">Checkout</a></li>
                 </ul>
             </div>

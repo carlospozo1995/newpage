@@ -10,6 +10,9 @@
 .c-p-deep-blue{
     color: #4431DE;
 }
+.c.p-coral{
+    
+}
 .c-intense-gold{
     color: #fbbb01;
 }
@@ -537,7 +540,7 @@
     }
 }
 @media(min-width: 992px){
-    .product-details-section, .cart-section{
+    .product-details-section, .cart-section, .empty-cart-section{
         margin-bottom: 40px;
         margin-top: 40px;
     }

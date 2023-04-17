@@ -6,7 +6,7 @@
     <ul class="offcanvas-cart">
     <?php
         foreach ($_SESSION['dataCart'] as $product) {
-            $total += $product['amount_product'] * $product['price'];
+            $total += $product['amount_product'] > $product['stock'] ? $product['stock'] * $product['price'] : $product['amount_product'] * $product['price'];
             $id_product = Utils::encriptar($product['id']);
     ?>
             <li class="offcanvas-cart-item-single">
@@ -18,7 +18,7 @@
                     <div class="offcanvas-cart-item-content">
                         <a href="<?= BASE_URL."producto/".$product['url']; ?>" class="offcanvas-cart-item-link"><?= $product['name']; ?></a>
                         <div class="offcanvas-cart-item-details">
-                            <span class="offcanvas-cart-item-details-quantity"><?= $product['amount_product']; ?> x </span>
+                            <span class="offcanvas-cart-item-details-quantity"><?= $product['amount_product'] > $product['stock'] ? $product['stock'] : $product['amount_product']; ?> x </span>
                             <span class="offcanvas-cart-item-details-price">$<?= Utils::formatMoney($product['price']); ?></span>
                         </div>
                     </div>
