@@ -60,9 +60,9 @@ if(isset($_SESSION['dataCart']) and count($_SESSION['dataCart']) > 0){
                                         <td class="product-price">$<?= Utils::formatMoney($product['price']); ?></td>
                                         <td class="product_quantity">
                                             <div class="product-variable-quantity m-auto" style="width: max-content;">
-                                                <i class="fa fa-minus pl-4 pr-2 btn-minus btn-num-product-down" idpr="<?= $id_product; ?>"></i>
+                                                <i class="fa fa-minus pl-4 pr-2 btn-minus" idpr="<?= $id_product; ?>"></i>
                                                 <input id="amount-product" type="number" min="1" max="<?= $product['stock']; ?>" value="<?= $product['amount_product'] > $product['stock'] ? $product['stock'] : $product['amount_product']; ?>" idpr="<?= $id_product; ?>">
-                                                <i class="fa fa-plus pr-4 pl-2 btn-plus btn-num-product-down" idpr="<?= $id_product; ?>"></i>
+                                                <i class="fa fa-plus pr-4 pl-2 btn-plus" idpr="<?= $id_product; ?>"></i>
                                             </div>
                                         </td>
                                         <td class="product_total">$<?= Utils::formatMoney($total_product); ?></td>

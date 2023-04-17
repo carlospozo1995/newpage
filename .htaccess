@@ -58,7 +58,6 @@ RewriteRule ^(products/|products|Products)/delProduct/$ %{ENV:REWRITEBASE}index.
 #PAGES-STORE
 RewriteRule ^(test/|test|Test|TEST)$ %{ENV:REWRITEBASE}index.php?show=test [L]
 
-#RewriteRule ^(categoria/|categoria)$ %{ENV:REWRITEBASE}index.php?show=categoria [L]
 RewriteRule ^categoria/loadProducts/$ %{ENV:REWRITEBASE}index.php?show=categoria&action=loadProducts [L]
 RewriteRule ^categoria/loadMoreProducts/$ %{ENV:REWRITEBASE}index.php?show=categoria&action=loadMoreProducts [L]
 RewriteRule ^categoria/orderProducts/$ %{ENV:REWRITEBASE}index.php?show=categoria&action=orderProducts [L]
@@ -67,8 +66,8 @@ RewriteRule ^categoria/(.+)$ %{ENV:REWRITEBASE}index.php?show=categoria&cat_path
 
 RewriteRule ^producto/(.+)$ %{ENV:REWRITEBASE}index.php?show=producto&prod_path=$1 [L]
 
-RewriteRule ^(carrito/|carrito|Carrito)$ %{ENV:REWRITEBASE}index.php?show=carrito [L]
-
+RewriteRule ^(carrito/|carrito|Carrito)$ %{ENV:REWRITEBASE}index.php?show=Carrito [L]
+RewriteRule ^(carrito/|carrito|Carrito)/updateProductPrice/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=updateProductPrice [L]
 
 #EXAMPLES
 #RewriteRule ^(resetPassword)/ajaxSetPass$ %{ENV:REWRITEBASE}index.php?show=ResetPassword [L]

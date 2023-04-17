@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 15-04-2023 a las 00:50:22
+-- Tiempo de generación: 17-04-2023 a las 00:24:32
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 7.4.19
 
@@ -147,10 +147,10 @@ INSERT INTO `img_product` (`id_img`, `product_id`, `image`) VALUES
 (6, 1, 'imgRef_1_3b4db5609a971d12aeb2104d25dcf004.jpg'),
 (7, 1, 'imgRef_1_a4c972835f013c1dbe33c0d801ef5cd6.jpg'),
 (8, 1, 'imgRef_1_f1e7d9f465a5ad7f782b42eb40518a21.jpg'),
-(11, 2, 'imgRef_2_edd588de79f7fb19083de042df4bc67a.jpg'),
-(12, 2, 'imgRef_2_f38a288a0348f8950930668f8887333f.jpg'),
-(13, 2, 'imgRef_2_dfdbe147b3951f2cdde6b04107a91afe.jpg'),
-(14, 2, 'imgRef_2_9ced708b9f098ce6290b2ddf159e050a.jpg');
+(14, 2, 'imgRef_2_9ced708b9f098ce6290b2ddf159e050a.jpg'),
+(15, 2, 'imgRef_2_3ff874d51ed18020524ad3242fbbf30a.jpg'),
+(16, 2, 'imgRef_2_9c9cdb2ff5ca19a695fb8f121c9a876e.jpg'),
+(17, 2, 'imgRef_2_fbe927e8fcc9fe9db721e8e5dda4ade2.jpg');
 
 -- --------------------------------------------------------
 
@@ -368,7 +368,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT de la tabla `img_product`
 --
 ALTER TABLE `img_product`
-  MODIFY `id_img` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_img` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `modules`

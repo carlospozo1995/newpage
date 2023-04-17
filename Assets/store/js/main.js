@@ -7,6 +7,33 @@
     function numberFormat(number, decimals = 2, decPoint = ',', thousandsSep = '.') {
         return number.toFixed(decimals).replace('.', decPoint).replace(/\B(?=(\d{3})+(?!\d))/g, thousandsSep);
     }
+
+    /*****************************
+     * Update Product Price (Shopping Cart - Page)
+     *****************************/
+    function updateProductPrice(id, amount) {
+        $.ajax({
+            url: base_url + "carrito/updateProductPrice/",
+            dataType: 'JSON',
+            method: 'POST',
+            data: {
+                id_product: id,
+                amount_product: amount,
+            },
+            beforeSend: function() {
+                
+            },
+            success: function(data){
+                console.log(data);
+            },
+            error: function(xhr, status, error) {
+                console.log(error)
+            },
+            complete: function() {
+                
+            }
+        }); 
+    }
     /*****************************
      * Commons Variables
      *****************************/
@@ -85,37 +112,6 @@
     /**************************
      * Offcanvas: Menu Content
      **************************/
-    
-    // Change function //
-    // function mobileOffCanvasMenu() {
-    //     var $offCanvasNav = $('.offcanvas-menu'),
-    //         $offCanvasNavSubMenu = $offCanvasNav.find('.mobile-sub-menu');
-
-    //     /*Add Toggle Button With Off Canvas Sub Menu*/
-    //     $offCanvasNavSubMenu.parent().prepend('<div class="offcanvas-menu-expand"></div>');
-
-    //     /*Category Sub Menu Toggle*/
-    //     $offCanvasNav.on('click', 'li a, .offcanvas-menu-expand', function(e) {
-    //         var $this = $(this);
-
-    //         if ($this.attr('href') === '#' || $this.hasClass('offcanvas-menu-expand')) {
-    //             e.preventDefault();
-    //             if ($this.siblings('ul:visible').length) {
-    //                 $this.parent('li').removeClass('active');
-    //                 $this.siblings('ul').slideUp();
-    //                 $this.parent('li').find('li').removeClass('active');
-    //                 $this.parent('li').find('ul:visible').slideUp();
-    //             } else {
-    //                 $this.parent('li').addClass('active');
-    //                 $this.closest('li').siblings('li').removeClass('active').find('li').removeClass('active');
-    //                 $this.closest('li').siblings('li').find('ul:visible').slideUp();
-    //                 $this.siblings('ul').slideDown();
-    //             }
-    //         }
-    //     });
-    // }
-
-
     function mobileOffCanvasMenu() {
         var $offCanvasNav = $('.offcanvas-menu'),
         $offCanvasNavSubMenu = $offCanvasNav.find('.mobile-sub-menu');
@@ -128,6 +124,7 @@
                 $this.children('.cont-link').append('<span class="offcanvas-menu-expand-icon d-flex align-items-center"><i class="fa fa-angle-right"></i></span>');
             }
         });
+
 
         /*Category Sub Menu Toggle*/
         $offCanvasNav.on('click', 'li a, .offcanvas-menu-expand-icon', function(e) {
@@ -519,8 +516,22 @@
             let value = parseInt(input.val());
             if ($(this).hasClass('btn-minus')) {
                 input.val(Math.max(value - 1, 1));
+                if(name_page == "Carrito"){
+                    let id = $(this).attr("idpr");
+                    let amount = input.val();
+
+                    updateProductPrice(id, amount);
+                     
+                }
             } else if ($(this).hasClass('btn-plus')) {
                 input.val(Math.min(value + 1, stock_quantity));
+                if(name_page == "Carrito"){
+                    let id = $(this).attr("idpr");
+                    let amount = input.val();
+
+                    updateProductPrice(id, amount);
+                                              
+                }
             } else if ($(this).is('input[type="number"]')) {
                 input.val(Math.min(Math.max(value, 1), stock_quantity));
             }
@@ -533,6 +544,13 @@
                 $(this).val(1);
             } else if (value > stock_quantity) {
                 $(this).val(stock_quantity);
+            }
+
+            if(name_page == "Carrito"){
+                let id = $(this).attr("idpr");
+                let amount = $(this).val();
+
+                updateProductPrice(id, amount);
             }
         });
     });
