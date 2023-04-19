@@ -24,10 +24,17 @@
                 
             },
             success: function(data){
-                console.log(data);
+                if(data.status){
+                    let row_product = $(`#${id}`);
+                    row_product.find('td').eq(5).text(data.total_product);
+                    $('.subtotal-cart').html(data.subtotal);
+                    $('.total-cart').html(data.total);
+                }else{
+                    Swal.fire({icon: 'error', html: `<span class="font-weight-bold">${data.error}</span>`, confirmButtonColor: '#4431DE'});
+                }
             },
             error: function(xhr, status, error) {
-                console.log(error)
+                Swal.fire({icon: 'error', html: `<span class="font-weight-bold">Ha ocurrido un error. Inténtelo más tarde.</span>`, confirmButtonColor: '#4431DE'});
             },
             complete: function() {
                 
@@ -514,23 +521,22 @@
         $(this).on('click input', '.btn-minus, .btn-plus, input[type="number"]', function () {
             let input = $(this).siblings('input[type="number"]');
             let value = parseInt(input.val());
+
             if ($(this).hasClass('btn-minus')) {
                 input.val(Math.max(value - 1, 1));
-                if(name_page == "Carrito"){
-                    let id = $(this).attr("idpr");
-                    let amount = input.val();
-
-                    updateProductPrice(id, amount);
-                     
+                
+                let id = $(this).attr("idpr");
+                let amount = input.val();
+                if(id != null){
+                    updateProductPrice(id, amount);    
                 }
             } else if ($(this).hasClass('btn-plus')) {
                 input.val(Math.min(value + 1, stock_quantity));
-                if(name_page == "Carrito"){
-                    let id = $(this).attr("idpr");
-                    let amount = input.val();
 
+                let id = $(this).attr("idpr");
+                let amount = input.val();
+                if(id != null){
                     updateProductPrice(id, amount);
-                                              
                 }
             } else if ($(this).is('input[type="number"]')) {
                 input.val(Math.min(Math.max(value, 1), stock_quantity));
@@ -539,18 +545,16 @@
 
         $(this).find('input[type="number"]').on('blur', function () {
             let value = parseInt($(this).val());
-
             if (isNaN(value) || value === '' || value === null) {
                 $(this).val(1);
             } else if (value > stock_quantity) {
                 $(this).val(stock_quantity);
             }
 
-            if(name_page == "Carrito"){
-                let id = $(this).attr("idpr");
-                let amount = $(this).val();
-
-                updateProductPrice(id, amount);
+            let id = $(this).attr("idpr");
+            let amount = $(this).val();
+            if(id != null){
+                updateProductPrice(id, amount);    
             }
         });
     });
@@ -630,7 +634,6 @@
         })
     });
 
-
 })(jQuery);
 
 /*****************************
@@ -654,8 +657,17 @@ function delItemCart(element) {
             },
             success: function(data){
                 if (data.status) {
-                    $('.amount-product-cart').text(data.amountCart);
-                    $("#container-shopping-cart").html(data.html_shoppingCart);
+                    if(option == 1){
+                        $('.amount-product-cart').text(data.amountCart);
+                        $("#container-shopping-cart").html(data.html_shoppingCart);  
+                    }else{
+                        $(element).parent().parent().remove();
+                        $('.subtotal-cart').text(data.subtotal);
+                        $('.total-cart').text(data.total);
+                        if($('#table-cart tr').length == 1){
+                            window.location.href = base_url;
+                        }
+                    }
                 }else{
                     Swal.fire({icon: 'error', html: `<span class="font-weight-bold">${data.error}</span>`, confirmButtonColor: '#4431DE'});
                 }

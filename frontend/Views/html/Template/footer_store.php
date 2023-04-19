@@ -161,7 +161,6 @@
 
     
     <script> const base_url = "<?= BASE_URL; ?>"; </script>
-    <script> const name_page = "<?= $section_name; ?>"; </script>
     <script src="<?= MEDIA_STORE; ?>js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/vendor/jquery-3.5.1.min.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/vendor/jquery-migrate-3.3.0.min.js"></script>

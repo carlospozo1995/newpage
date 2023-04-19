@@ -54,7 +54,7 @@
 								$data = array("status" => true, "product_added" => $data_product, "html_shoppingCart" => $html_shoppingCart, "amountCart" => $amountCart);
 							}
 						}else{
-							$data = array("status" => false, "error" => "Ha ocurrido un error. Intentelo más tarde.");
+							$data = array("status" => false, "error" => "Ha ocurrido un error. Inténtelo más tarde.");
 						}
 						echo json_encode($data);
 					}
@@ -64,6 +64,9 @@
 					if (isset($_POST)) {
 						$dataCart = array();
 						$amountCart  = 0;
+						$subtotal = 0;
+						// $total_iva = calculation and sum of all taxes
+						$total = 0;
 						$option = $_POST['option'];
 						$id_product = Utils::desencriptar($_POST['id_product']);
 						if(!empty($id_product) AND ($option == 1 OR $option == 2)){
@@ -78,15 +81,19 @@
 
 							foreach ($_SESSION['dataCart'] as $product) {
 								$amountCart += $product['amount_product'];
+								$subtotal += $product['amount_product'] * $product['price'];
+								// $total_iva = calculation and sum of all taxes
 							}
+							// El total va el subtotal sumado con el total_iva
+							$total = $subtotal;
 
 							$html_shoppingCart = "";
 							if ($option == 1) {
 								$html_shoppingCart = Utils::getFileModal('Template/Modals/shoppingCart_modal', $_SESSION['dataCart']);
 							}
-							$data = array("status" => true, "html_shoppingCart" => $html_shoppingCart, "amountCart" => $amountCart);
+							$data = array("status" => true, "html_shoppingCart" => $html_shoppingCart, "amountCart" => $amountCart, "subtotal" => Utils::formatMoney($subtotal), "total" => Utils::formatMoney($total));
 						}else{
-							$data = array("status" => false, "error" => "Ha ocurrido un error. Intentelo más tarde.");
+							$data = array("status" => false, "error" => "Ha ocurrido un error. Inténtelo más tarde.");
 						}
 						echo json_encode($data);
 					}

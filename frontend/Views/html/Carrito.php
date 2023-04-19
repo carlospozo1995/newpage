@@ -18,19 +18,20 @@
 </div>
 
 <?php
-$total_cart = 0;
+$subtotal = 0;
+// $total_iva = 0; (Variable if the product contains taxes)
+$total = 0;
 if(isset($_SESSION['dataCart']) and count($_SESSION['dataCart']) > 0){
 ?>
-<!-- ...:::: Start Cart Section:::... -->
+
 <div class="cart-section">
-    <!-- Start Cart Table -->
     <div class="cart-table-wrapper" data-aos="fade-up" data-aos-delay="0">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-8">
                     <div class="table_desc">
                         <div class="table_page table-responsive">
-                            <table>
+                            <table id="table-cart">
                                 <thead>
                                     <tr>
                                         <th class="product_remove">Eliminar</th>
@@ -46,12 +47,14 @@ if(isset($_SESSION['dataCart']) and count($_SESSION['dataCart']) > 0){
 
                                     foreach ($_SESSION['dataCart'] as $product) {
                                         $total_product = $product['amount_product'] > $product['stock'] ? $product['stock'] * $product['price'] : $product['amount_product'] * $product['price'];
-                                        $total_cart += $total_product;
+                                        $subtotal += $total_product;
+                                        // $total_iva = calculation and sum of all taxes
+                                        $total = $subtotal; //add subtotal plus tax
                                         $id_product = Utils::encriptar($product['id']);
                                     ?>
-                                    <tr>
+                                    <tr id="<?= Utils::encriptar($product['id']); ?>">
                                         <td class="product_remove">
-                                            <a href="#" idpr="<?=  Utils::encriptar($product['id']); ?>" option="2" onclick="delItemCart(this)"><i class="fa fa-trash-o"></i></a>
+                                            <span class="search-click" idpr="<?= Utils::encriptar($product['id']); ?>" option="2" onclick="delItemCart(this)"><i class="fa fa-trash-o"></i></span>
                                         </td>
                                         <td class="product_thumb"><a href="<?= BASE_URL.'producto/'.$product['url']; ?>"><img
                                                     src="<?= $product['image']; ?>"
@@ -81,12 +84,12 @@ if(isset($_SESSION['dataCart']) and count($_SESSION['dataCart']) > 0){
                         <div class="coupon_inner">
                             <div class="cart_subtotal">
                                 <p>Subtotal</p>
-                                <p class="cart_amount">$<?= Utils::formatMoney($total_cart); ?></p>
+                                <p class="cart_amount subtotal-cart">$<?= Utils::formatMoney($subtotal); ?></p>
                             </div>
                             <hr>
                             <div class="cart_subtotal">
                                 <p>Total</p>
-                                <p class="cart_amount">$<?= Utils::formatMoney($total_cart); ?></p>
+                                <p class="cart_amount total-cart">$<?= Utils::formatMoney($total); ?></p>
                             </div>
                             <div class="checkout_btn">
                                 <a href="#" class="btn btn-md btn-coral">Procesar pago</a>
@@ -96,13 +99,12 @@ if(isset($_SESSION['dataCart']) and count($_SESSION['dataCart']) > 0){
                 </div>
             </div>
         </div>
-    </div> <!-- End Cart Table -->
+    </div>
 
 </div>
 <?php
 }else{
 ?>
-<!-- ...::::Start About Us Center Section:::... -->
 <div class="empty-cart-section section-fluid">
     <div class="emptycart-wrapper">
         <div class="container">
@@ -120,7 +122,7 @@ if(isset($_SESSION['dataCart']) and count($_SESSION['dataCart']) > 0){
             </div>
         </div>
     </div>
-</div> <!-- ...::::End  About Us Center Section:::... -->
+</div>
 <?php
 }
 ?>

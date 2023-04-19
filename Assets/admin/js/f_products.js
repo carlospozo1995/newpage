@@ -400,6 +400,7 @@ function watch(data) {
                     $("#celCategory").text(obj_request.category);
                     $("#celPrice").text("$ " + numberFormat(parseFloat(obj_request.price)));
                     $("#celPricePrev").text("$ " + numberFormat(parseFloat(obj_request.prevPrice)));
+                    obj_request.prevPrice != null ? $("#celPricePrev").text("$ " + numberFormat(parseFloat(obj_request.prevPrice))) : $("#celPricePrev").text("");
                     $("#celDiscount").text(obj_request.discount);
                     $("#celStock").text(obj_request.stock);
                     obj_request.url_sliderDst != null ? $("#celSlrDesktop").html('<img class="w-25" src="'+ obj_request.url_sliderDst +'" alt="">') : $("#celSlrDesktop").html("");
@@ -407,7 +408,7 @@ function watch(data) {
                     $("#celDesMain").text(obj_request.desMain);
                     $("#celDesGeneral").html(obj_request.desGeneral);
                     $("#celCantDues").text(obj_request.cantDues);
-                    $("#celPriceDues").text("$ " + numberFormat(parseFloat(obj_request.priceDues)));
+                    obj_request.priceDues != null ? $("#celPriceDues").text("$ " + numberFormat(parseFloat(obj_request.priceDues))) : $("#celPriceDues").text("");
 
                     for (let i = 0; i < obj_request.images_product.length; i++) {
                         htmlPhoto += `<img class="w-25 px-1 py-1" src="${obj_request.images_product[i].url_image}">`;
