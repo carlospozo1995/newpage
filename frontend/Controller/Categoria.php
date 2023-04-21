@@ -251,13 +251,13 @@
 
 			    $content_grid .= '
 			                    <div class="action-link">
-			                        <div class="action-link-left">
-			                            <a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart">Add to Cart</a>
-			                        </div>
-			                        <div class="action-link-right">
-			                            <a href="" data-bs-toggle="modal" data-bs-target="#modalQuickview"><i class="icon-magnifier"></i></a>
-			                            <a href=""><i class="icon-heart"></i></a>
-			                            <a href=""><i class="icon-shuffle"></i></a>
+			                        <div class="action-link-right mx-auto">
+			                            <a href="" data-bs-toggle="modal" data-bs-target="#modalQuickview"><i class="icon-eye" title="Vista rápida"></i></a>
+			                            <a href=""><i class="icon-heart" title="Añadir a favoritos"></i></a>';
+			    if (!empty($product['stock'])) {
+    				$content_grid .= '<a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="addToCart" id="'.Utils::encriptar($product['id_product']).'"><i class="icon-basket" title="Añadir al carrito"></i></a>';
+				}
+			    $content_grid .= '
 			                        </div>
 			                    </div>
 			                </div>
@@ -316,13 +316,20 @@
 				                $content_single .= (empty($product['stock'])) ? '<p class="n-stock">No disponible</p>' : '';
 
 				                $content_single .= '<div class="product-action-icon-link-list">
-				                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="btn btn-lg btn-black-default-hover">Add to cart</a>
-				                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalQuickview" class="btn btn-lg btn-black-default-hover"><i class="icon-magnifier"></i></a>
-				                    <a href="wishlist.html" class="btn btn-lg btn-black-default-hover"><i class="icon-heart"></i></a>
-				                    <a href="compare.html" class="btn btn-lg btn-black-default-hover"><i class="icon-shuffle"></i></a>
-				                </div>';
-
-			                $content_single .= '</div>
+				                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalQuickview" class="btn btn-lg btn-black-default-hover" title="Vista rápida">
+                                    	<i class="icon-eye" ></i>
+                                    </a>
+                                    <a href="wishlist.html" class="btn btn-lg btn-black-default-hover" title="Añadir a favoritos">
+                                        <i class="icon-heart"></i>
+                                    </a>';
+                                if (!empty($product['stock'])) {
+				    				$content_single .= '<a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="btn btn-lg btn-black-default-hover addToCart" id="'.Utils::encriptar($product['id_product']).'" title="Añadir al carrito">
+                                    		<i class="icon-basket"></i>
+                                        </a>';
+								}
+                                $content_single .= '
+				                </div>
+				            </div>
 			        	</div>    
 			        </div>';
 			}

@@ -562,76 +562,74 @@
     /************************************************
      * Add To Cart Modal
      ***********************************************/
-    $('.addToCart').each(function () {
-        $(this).on('click', function (e) {
-            e.preventDefault();
-            let id = $(this).attr("id");
-            let amount = 1;
-            
-            if ($('#amount-product').length) {
-                amount = parseInt($('#amount-product').val());
-            }
+    $(document).on('click', '.addToCart', function (e) {
+        e.preventDefault();
+        let id = $(this).attr("id");
+        let amount = 1;
+        
+        if ($('#amount-product').length) {
+            amount = parseInt($('#amount-product').val());
+        }
 
-            $.ajax({
-                url: base_url + "index/addCartProduct/",
-                dataType: 'JSON',
-                method: 'POST',
-                data: {
-                    id_product: id,
-                    amount_product: amount,
-                },
-                beforeSend: function() {
-                    
-                },
-                success: function(data){
-                    if (data.status) {
-                        let product_added = data.product_added;
+        $.ajax({
+            url: base_url + "index/addCartProduct/",
+            dataType: 'JSON',
+            method: 'POST',
+            data: {
+                id_product: id,
+                amount_product: amount,
+            },
+            beforeSend: function() {
+                
+            },
+            success: function(data){
+                if (data.status) {
+                    let product_added = data.product_added;
 
-                        $(".addd-product-container").html(`
-                            <div class="row">
-                                <div class="col-md-7">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="modal-add-cart-product-img">
-                                                <img class="img-fluid"
-                                                    src="${product_added.image}" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <p class="modal-add-cart-info"><i class="fa fa-check-square"></i>Añadido al carrito con éxito!</p>
-                                            <p class="cart-name-product font-weight-bold c-p-deep-blue">${product_added.name.toUpperCase()}</p>
-                                            <p> <strong>Precio: </strong> <span class="cart-price-product">$${numberFormat(parseFloat(product_added.price))}</span></p>
+                    $(".addd-product-container").html(`
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="modal-add-cart-product-img">
+                                            <img class="img-fluid"
+                                                src="${product_added.image}" alt="">
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-5 modal-border">
-                                    <ul class="modal-add-cart-product-shipping-info">
-                                        <li> <strong><i class="icon-shopping-cart"></i> Tiene ${data.amountCart} productos en su carrito.</strong></li>
-                                        <li>
-                                            <div class="modal-add-cart-product-cart-buttons font-weight-bold">
-                                                <a href="${base_url}carrito">Ver carrito</a>
-                                                <a href="checkout.html">Procesar pago</a>
-                                            </div>
-                                        </li>
-                                        <li class="modal-continue-button"><a href="#" data-bs-dismiss="modal">CONTINUAR COMPRANDO</a></li>
-                                    </ul>
+                                    <div class="col-md-8">
+                                        <p class="modal-add-cart-info"><i class="fa fa-check-square"></i>Añadido al carrito con éxito!</p>
+                                        <p class="cart-name-product font-weight-bold c-p-deep-blue">${product_added.name.toUpperCase()}</p>
+                                        <p> <strong>Precio: </strong> <span class="cart-price-product">$${numberFormat(parseFloat(product_added.price))}</span></p>
+                                    </div>
                                 </div>
                             </div>
-                            `);
+                            <div class="col-md-5 modal-border">
+                                <ul class="modal-add-cart-product-shipping-info">
+                                    <li> <strong><i class="icon-shopping-cart"></i> Tiene ${data.amountCart} productos en su carrito.</strong></li>
+                                    <li>
+                                        <div class="modal-add-cart-product-cart-buttons font-weight-bold">
+                                            <a href="${base_url}carrito">Ver carrito</a>
+                                            <a href="checkout.html">Procesar pago</a>
+                                        </div>
+                                    </li>
+                                    <li class="modal-continue-button"><a href="#" data-bs-dismiss="modal">CONTINUAR COMPRANDO</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        `);
 
-                        $('.amount-product-cart').text(data.amountCart);
-                        $("#container-shopping-cart").html(data.html_shoppingCart);
-                    }else{
-                        $(".addd-product-container").html(`<h1 class="text-center text-danger">${data.error}</h1>`);
-                    }
-                },
-                error: function(xhr, status, error) {
-                },
-                complete: function() {
-                    
+                    $('.amount-product-cart').text(data.amountCart);
+                    $("#container-shopping-cart").html(data.html_shoppingCart);
+                }else{
+                    $(".addd-product-container").html(`<h1 class="text-center text-danger">${data.error}</h1>`);
                 }
-            });     
-        })
+            },
+            error: function(xhr, status, error) {
+            },
+            complete: function() {
+                
+            }
+        });     
     });
 
 })(jQuery);
