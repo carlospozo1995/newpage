@@ -48,8 +48,12 @@
 				default:
 					// $data["file_js"][] = "producto-store";
 
-					if (isset($_GET['process_payment']) && $_GET['process_payment'] == 'procesarpago') {
-						empty($_SESSION['dataCart']) ? header("Location: ".BASE_URL) : View::renderPage('Payment', $data);
+					if (isset($_GET['process_payment'])) {
+						if ($_GET['process_payment'] == 'comprar') {
+							empty($_SESSION['dataCart']) ? header("Location: ".BASE_URL) : View::renderPage('Payment', $data);
+						}else{
+							header("Location: ".BASE_URL."carrito/");
+						}
 					}else{
 						View::renderPage('Carrito', $data);
 					}

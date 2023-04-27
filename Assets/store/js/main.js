@@ -609,7 +609,7 @@
                                     <li>
                                         <div class="modal-add-cart-product-cart-buttons font-weight-bold">
                                             <a href="${base_url}carrito">Ver carrito</a>
-                                            <a href="${base_url}carrito/procesarpago">Procesar pago</a>
+                                            <a href="${base_url}carrito/comprar">Procesar pago</a>
                                         </div>
                                     </li>
                                     <li class="modal-continue-button"><a href="#" data-bs-dismiss="modal">CONTINUAR COMPRANDO</a></li>

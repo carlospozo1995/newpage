@@ -37,7 +37,7 @@
     </div>
     <ul class="offcanvas-cart-action-button">
         <li><a href="<?= BASE_URL; ?>carrito" class="btn btn-block btn-deep-blue">Ver Carrito</a></li>
-        <li><a href="compare.html" class=" btn btn-block btn-deep-blue mt-5">Procesar Pago</a></li>
+        <li><a href="<?= BASE_URL; ?>carrito/comprar" class=" btn btn-block btn-deep-blue mt-5">Procesar Pago</a></li>
     </ul>
 <?php        
     }else{

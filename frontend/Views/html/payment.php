@@ -36,7 +36,18 @@ foreach ($_SESSION['dataCart'] as $product) {
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-8">
-                    
+                    <?php
+                            if (isset($_SESSION['login'])) {
+                            ?>
+                            <p>existe session user</p>
+                            <?php
+                            }else{
+                            ?>
+                            <p>no existe sesion usuario</p>
+                            <?php
+                            }
+                            ?>
+
                 </div>
 
                 <div class="col-lg-4 col-md-4">
@@ -53,13 +64,13 @@ foreach ($_SESSION['dataCart'] as $product) {
                                 <p class="cart_amount total-cart">$<?= Utils::formatMoney($total); ?></p>
                             </div>
                             <?php
-                            // if (isset($_SESSION['login'])) {
+                            if (isset($_SESSION['login'])) {
                             ?>
                             <div class="checkout_btn">
                                 <a href="<?= BASE_URL; ?>carrito/procesarpago" class="btn btn-md btn-coral">Finalizar compra</a>
                             </div>		
                             <?php
-                            // }
+                            }
                             ?>
                         </div>
                     </div>

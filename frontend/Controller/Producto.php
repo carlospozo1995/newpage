@@ -5,20 +5,20 @@
 		public function buildPage()
 		{	
 			session_start();
-			$data = array();
-			$action = Utils::getParam("action", "");
-			switch ($action) {
-				case ' ':
-					return false;
-				break;
+			// $data = array();
+			// $action = Utils::getParam("action", "");
+			// switch ($action) {
+			// 	case ' ':
+			// 		return false;
+			// 	break;
 			
-				default:
+				// default:
 					$data["file_js"][] = "producto-store";
-					if (!empty($_GET['prod_path'])) {
+					if (isset($_GET['prod_path']) && !empty($_GET['prod_path'])) {
 						View::renderPage('Producto', $data);
 					}
-				break;
-			}
+			// 	break;
+			// }
 		}
 	}
 
