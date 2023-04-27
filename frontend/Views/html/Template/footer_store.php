@@ -137,9 +137,8 @@
     <!-- material-scrolltop button -->
     <button class="material-scrolltop" type="button"><i class="fa fa-chevron-up text-light"></i></button>
 
-    <!-- Start Modal Add cart -->
     <div class="modal fade" id="modalAddcart" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog  modal-dialog-centered modal-xl" role="document">
+        <div class="modal-dialog  modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="container-fluid">
@@ -157,9 +156,89 @@
                 </div>
             </div>
         </div>
-    </div> <!-- End Modal Add cart -->
+    </div>
 
-    
+    <div class="modal fade" tabindex="-1" id="modal-user">
+        <div class="modal-dialog">
+            <div class="modal-content p-1">
+                <div class="d-block">
+                    <div class="d-flex justify-content-end p-2"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <h5 class="modal-title text-center c-p-deep-blue font-weight-bold">INGRESE A SU CUENTA</h5>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="POST">
+                        <div class="default-form-box">
+                            <div class="box-session">
+                                <i class="fa fa-envelope-o"></i>
+                                <input type="email" placeholder="Correo electrónico">
+                            </div>
+                        </div>
+                        <div class="default-form-box">
+                            <div class="box-session">
+                                <i class="fa fa-lock"></i>
+                                <input type="password" placeholder="Contraseña">
+                            </div>
+                        </div>
+                        <div class="login_submit">
+                            <a class="mb-4 text-right" href="#">Olvidé mi contraseña</a>
+                            <button class="btn btn-md btn-black-default-hover m-auto" type="submit">ENTRAR</button>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#modal-register" data-bs-dismiss="modal" class="text-center mt-4">¿No tiene una cuenta? Registrese</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" id="modal-register">
+        <div class="modal-dialog">
+            <div class="modal-content p-1">
+                <div class="d-block">
+                    <div class="d-flex justify-content-end p-2"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <h5 class="modal-title text-center c-p-deep-blue font-weight-bold">NUEVO REGISTRO DE CUENTA</h5>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="POST">
+                        <div class="default-form-box">
+                            <div class="box-session">
+                                <i class="fa fa-user-o"></i>
+                                <input type="text" placeholder="Nombre">
+                            </div>
+                        </div>
+                        <div class="default-form-box">
+                            <div class="box-session">
+                                <i class="fa fa-user-o"></i>
+                                <input type="text" placeholder="Apellido">
+                            </div>
+                        </div>
+                        <div class="default-form-box">
+                            <div class="box-session">
+                                <i class="fa fa-envelope-o"></i>
+                                <input type="email" placeholder="Correo electrónico">
+                            </div>
+                        </div>
+                        <div class="default-form-box">
+                            <div class="box-session">
+                                <i class="fa fa-lock"></i>
+                                <input type="password" placeholder="Contraseña">
+                            </div>
+                        </div>
+                        <div class="default-form-box">
+                            <div class="box-session">
+                                <i class="fa fa-lock"></i>
+                                <input type="password" placeholder="Repetir contraseña">
+                            </div>
+                        </div>
+                        <div class="login_submit">
+                            <button class="btn btn-md btn-black-default-hover m-auto" type="submit">CREAR CUENTA</button>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#modal-user" data-bs-dismiss="modal" class="text-center mt-4">¿Ya tienes una cuenta? Ingrese</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script> const base_url = "<?= BASE_URL; ?>"; </script>
     <script src="<?= MEDIA_STORE; ?>js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/vendor/jquery-3.5.1.min.js"></script>

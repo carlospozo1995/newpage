@@ -92,7 +92,7 @@ if(isset($_SESSION['dataCart']) and count($_SESSION['dataCart']) > 0){
                                 <p class="cart_amount total-cart">$<?= Utils::formatMoney($total); ?></p>
                             </div>
                             <div class="checkout_btn">
-                                <a href="<?= BASE_URL; ?>" class="btn btn-md btn-coral">Procesar pago</a>
+                                <a href="<?= BASE_URL; ?>carrito/procesarpago" class="btn btn-md btn-coral">Procesar pago</a>
                             </div>
                         </div>
                     </div>

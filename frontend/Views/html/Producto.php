@@ -145,7 +145,7 @@
 	                                    <a href="#" class="btn-buy-whatsapp"><i class="fa fa-whatsapp"></i> Comprar por whatsapp</a>
 	                                </div>
 	                                <div class="product-btn-store">
-	                                    <a href="#"><i class="icon-bag"></i> Comprar ahora</a>
+	                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" id="<?= Utils::encriptar($data_product['id_product']); ?>" class="addToCart"><i class="icon-bag"></i> Comprar ahora</a>
 	                                </div>
                             	</div>
 							</div>

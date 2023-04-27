@@ -609,7 +609,7 @@
                                     <li>
                                         <div class="modal-add-cart-product-cart-buttons font-weight-bold">
                                             <a href="${base_url}carrito">Ver carrito</a>
-                                            <a href="checkout.html">Procesar pago</a>
+                                            <a href="${base_url}carrito/procesarpago">Procesar pago</a>
                                         </div>
                                     </li>
                                     <li class="modal-continue-button"><a href="#" data-bs-dismiss="modal">CONTINUAR COMPRANDO</a></li>
@@ -660,8 +660,8 @@ function delItemCart(element) {
                         $("#container-shopping-cart").html(data.html_shoppingCart);  
                     }else{
                         $(element).parent().parent().remove();
-                        $('.subtotal-cart').text(data.subtotal);
-                        $('.total-cart').text(data.total);
+                        $('.subtotal-cart').text('$'+data.subtotal);
+                        $('.total-cart').text('$'+data.total);
                         if($('#table-cart tr').length == 1){
                             window.location.href = base_url;
                         }

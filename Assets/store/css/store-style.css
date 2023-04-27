@@ -81,6 +81,23 @@
 .text-justify{
     text-align: justify !important;
 }
+
+.box-session{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ededed;
+    border-radius: 6px;
+}
+.box-session:focus-within{
+    border: 1px solid #4431DE;
+}
+.box-session input{
+    border: none !important;
+}
+.box-session i{
+    margin-left: 10px;
+}
+
 /* ----- MENU GENERAL---- */
 
 /*Menu Desktop*/
@@ -216,7 +233,6 @@
 .mobile-contact-info .social-link li a:hover {
     color: #4431DE;
 }
-
 
 /* ----- CATEGORY - PRODUCT (PAGE) ----- */
 .sort-tab-btn .nav-link.active {

@@ -5488,7 +5488,7 @@ progress {
 
 @media (min-width: 576px) {
     .modal-dialog {
-        max-width: 500px;
+        max-width: 350px;
         margin: 28px auto;
     }
 
@@ -5504,7 +5504,7 @@ progress {
         max-width: 300px;
     }
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
     .modal-lg,
 .modal-xl {
         max-width: 800px;
@@ -5515,6 +5515,7 @@ progress {
         max-width: 1140px;
     }
 }
+
 .modal-fullscreen {
     width: 100vw;
     max-width: none;
@@ -14571,10 +14572,12 @@ input {
 .btn-black-default-hover {
     background: #24262b;
     color: #FFF;
+    border: 1px solid transparent;
 }
 .btn-black-default-hover:hover {
-    background: #b19361;
-    color: #FFF;
+    background: #fff;
+    color: #4431DE;
+    border: 1px solid #4431DE;
 }
 .btn-outline-golden {
     border-color: #24262b;
@@ -16228,9 +16231,9 @@ input {
     font-size: 18px;
 }
 
-.checkbox-default {
+/*.checkbox-default {
     line-height: 1;
-}
+}*/
 .checkbox-default > span {
     display: inline-block;
     transform: translateX(35px);
@@ -16789,7 +16792,6 @@ table {
     font-size: 24px;
     font-weight: bold; 
     text-transform: capitalize;
-/*    color: rgba(68,49,222,0.9);*/
     color: #4431DE;
 }
 @media (min-width: 992px) {
@@ -19109,25 +19111,6 @@ Pages - Contact
     z-index: 99999;
     background: rgba(0, 0, 0, 0.5);
     padding-right: 0 !important;
-}
-.modal-dialog {
-    max-width: calc(100% - 20px) !important;
-    margin: 0 auto !important;
-}
-@media (min-width: 768px) {
-    .modal-dialog {
-        max-width: 730px !important;
-    }
-}
-@media (min-width: 992px) {
-    .modal-dialog {
-        max-width: 870px !important;
-    }
-}
-@media (min-width: 1225px) {
-    .modal-dialog {
-        min-width: 825px !important;
-    }
 }
 .modal-body {
     padding-top: 20px;

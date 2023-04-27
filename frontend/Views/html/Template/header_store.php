@@ -69,13 +69,18 @@
                         <div class="z-20 header-top-right">
                             <ul class="header-action-link action-color--black action-hover-color--page">
                                 <li>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modal-user">
+                                        <i class="icon-user"></i>
+                                    </a>
+                                </li>
+                                <li>
                                     <a href="#offcanvas-wishlish" class="offcanvas-toggle">
                                         <i class="icon-heart"></i>
                                         <span class="item-count">0</span>
                                     </a>
                                 </li>
                                 <?php
-                                if($section_name != "Carrito"){
+                                if($section_name != "Carrito" && $section_name != "Payment"){
                                 ?>
                                     <li>
                                         <a href="#offcanvas-add-cart" class="offcanvas-toggle">
@@ -307,8 +312,8 @@
                     <div class="mobile-right-side">
                         <ul class="header-action-link action-color--black action-hover-color--page">
                             <li>
-                                <a href="#search">
-                                    <i class="icon-magnifier"></i>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#modal-user">
+                                    <i class="icon-user"></i>
                                 </a>
                             </li>
                             <li>
@@ -318,7 +323,7 @@
                                 </a>
                             </li>
                             <?php
-                                if($section_name != "Carrito"){
+                                if($section_name != "Carrito" && $section_name != "Payment"){
                             ?>
                             <li>
                                 <a href="#offcanvas-add-cart" class="offcanvas-toggle">
@@ -329,6 +334,11 @@
                             <?php
                             }
                             ?>
+                            <li>
+                                <a href="#search">
+                                    <i class="icon-magnifier"></i>
+                                </a>
+                            </li>
                             <li>
                                 <a href="#mobile-menu-offcanvas" class="offcanvas-toggle offside-menu">
                                     <i class="icon-menu"></i>
@@ -538,8 +548,3 @@
 
     <!-- START SECTION PAGE -->
     <div class="content-section-page">
-
-   <?php
-        // Utils::dep($slider_category);
-        // Utils::dep($slider_product);
-    ?>

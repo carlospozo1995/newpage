@@ -24,7 +24,7 @@
 				require_once(RUTA_VIEW . 'html/Template/header_unique.php');
 			}
 
-			if($namePage == 'Index' || $namePage == 'Test' || $namePage == 'Categoria' || $namePage == 'Producto' || $namePage == 'Carrito'){
+			if($namePage == 'Index' || $namePage == 'Test' || $namePage == 'Categoria' || $namePage == 'Producto' || $namePage == 'Carrito' || $namePage == 'Payment'){
 				require_once(RUTA_VIEW . 'html/Template/header_store.php');
 			}
 
@@ -39,7 +39,7 @@
 			if ($namePage == 'Login' || $namePage == 'ResetPassword') {
 				require_once(RUTA_VIEW . 'html/Template/footer_unique.php');
 			}
-			if($namePage == 'Index' || $namePage == 'Test' || $namePage == 'Categoria' || $namePage == 'Producto' || $namePage == 'Carrito'){
+			if($namePage == 'Index' || $namePage == 'Test' || $namePage == 'Categoria' || $namePage == 'Producto' || $namePage == 'Carrito' || $namePage == 'Payment'){
 				require_once(RUTA_VIEW . 'html/Template/footer_store.php');
 			}
 

@@ -74,6 +74,7 @@
 			case 'carrito':
 				return "Carrito";
 			break;
+
 		}
 
 		return ucfirst($name);
