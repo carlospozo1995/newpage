@@ -34,19 +34,94 @@ foreach ($_SESSION['dataCart'] as $product) {
 <div class="cart-section">
     <div class="cart-table-wrapper" data-aos="fade-up" data-aos-delay="0">
         <div class="container">
-            <div class="row">
+            <div class="row position-relative">
+                <div class="content-loading">
+                    <span class="loader-store"></span>
+                </div>
                 <div class="col-lg-8 col-md-8">
                     <?php
-                            if (isset($_SESSION['login'])) {
-                            ?>
-                            <p>existe session user</p>
-                            <?php
-                            }else{
-                            ?>
-                            <p>no existe sesion usuario</p>
-                            <?php
-                            }
-                            ?>
+                    if (isset($_SESSION['login'])) {
+                    ?>
+                    <p>existe session user</p>
+                    <?php
+                    }else{
+                    ?>
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link nav-session active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-login" type="button" role="tab" aria-controls="nav-home" aria-selected="true">INICIAR SESIÓN</button>
+                            <button class="nav-link nav-session" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-register" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">REGISTRO</button>
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="account_form" data-aos="fade-up" data-aos-delay="0">
+                                <!-- <div class="alert alert-danger" role="alert">
+                                    A simple danger alert—check it out!
+                                </div> -->
+                                <form id="form-login_store">
+                                    <div class="default-form-box">
+                                        <div class="box-session">
+                                            <i class="fa fa-envelope-o"></i>
+                                            <input type="email" placeholder="Correo electrónico" id="email-login">
+                                        </div>
+                                    </div>
+                                    <div class="default-form-box">
+                                        <div class="box-session">
+                                            <i class="fa fa-lock"></i>
+                                            <input type="password" placeholder="Contraseña" id="password-login">
+                                        </div>
+                                    </div>
+                                    <div class="login_submit">
+                                        <a class="mb-4 text-right" href="#">Olvidé mi contraseña</a>
+                                        <button class="btn btn-md btn-black-default-hover m-auto" type="submit">ENTRAR</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="account_form register" data-aos="fade-up" data-aos-delay="200">
+                                <form action="#" method="POST">
+                                    <div class="default-form-box">
+                                        <div class="box-session">
+                                            <i class="fa fa-user-o"></i>
+                                            <input type="text" placeholder="Nombre">
+                                        </div>
+                                    </div>
+                                    <div class="default-form-box">
+                                        <div class="box-session">
+                                            <i class="fa fa-user-o"></i>
+                                            <input type="text" placeholder="Apellido">
+                                        </div>
+                                    </div>
+                                    <div class="default-form-box">
+                                        <div class="box-session">
+                                            <i class="fa fa-envelope-o"></i>
+                                            <input type="email" placeholder="Correo electrónico">
+                                        </div>
+                                    </div>
+                                    <div class="default-form-box">
+                                        <div class="box-session">
+                                            <i class="fa fa-lock"></i>
+                                            <input type="password" placeholder="Contraseña">
+                                        </div>
+                                    </div>
+                                    <div class="default-form-box">
+                                        <div class="box-session">
+                                            <i class="fa fa-lock"></i>
+                                            <input type="password" placeholder="Repetir contraseña">
+                                        </div>
+                                    </div>
+                                    <div class="login_submit">
+                                        <button class="btn btn-md btn-black-default-hover m-auto" type="submit">CREAR CUENTA</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                    }
+                    ?>
 
                 </div>
 

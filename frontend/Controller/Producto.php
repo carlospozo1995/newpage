@@ -13,9 +13,9 @@
 			// 	break;
 			
 				// default:
-					$data["file_js"][] = "producto-store";
+					// $data["file_js"][] = "producto-store";
 					if (isset($_GET['prod_path']) && !empty($_GET['prod_path'])) {
-						View::renderPage('Producto', $data);
+						View::renderPage('Producto');
 					}
 			// 	break;
 			// }

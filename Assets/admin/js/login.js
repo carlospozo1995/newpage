@@ -45,7 +45,8 @@ $(document).ready(function(){
                     },
                     success: function(data){
                         if (data.status) {
-                            window.location = base_url + "dashboard";
+                            // window.location = base_url + "dashboard";
+                            window.location.reload(false);
                         }else{
                             msgShow(2, 'Error', data.msg);
                             $("#password").val("");

@@ -98,6 +98,10 @@
     margin-left: 10px;
 }
 
+.nav-tabs .nav-session.active{
+    color: #4431DE;
+    font-weight: bold;
+}
 /* ----- MENU GENERAL---- */
 
 /*Menu Desktop*/

@@ -41,7 +41,6 @@
 							                </div>
 							            </div>';
         				}
-        				
         				$data = array("content" => $content, "sons" => Utils::encryptStore($id_sons), "total_products" =>  $total_products);
 						echo json_encode($data);
 					}
