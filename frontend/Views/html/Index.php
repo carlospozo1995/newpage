@@ -83,10 +83,7 @@
 	    </div>
 	    <!-- End Hero Slider Section-->
 
-	    <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
-
-	    <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Dismissible popover" data-bs-content="And here's some amazing content. It's very engaging. Right? Click <a href='https://www.google.com'>here</a> to go to Google.">Dismissible popover</a>
-
+		<button class="cursor-pointer" id="btnpopover">btn popover</button>
 
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

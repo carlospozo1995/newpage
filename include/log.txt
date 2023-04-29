@@ -3813,3 +3813,487 @@
 [2023/04/28 11:37:26] SQL Query: SELECT * FROM categories WHERE  status = 1
 [2023/04/28 11:37:26] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
 [2023/04/28 11:37:26] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:29:43] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:29:43] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:29:43] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:29:43] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:29:43] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:29:43] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:29:43] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:29:52] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:29:52] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:29:52] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:29:52] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/04/29 12:29:52] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/04/29 12:29:52] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/04/29 12:29:52] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/04/29 12:29:52] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/04/29 12:29:52] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/04/29 12:29:52] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/04/29 12:29:52] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/04/29 12:29:52] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/04/29 12:29:52] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/04/29 12:29:52] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:29:56] SQL Query: SELECT p.id_product, p.category_id, p.code, p.name_product, p.stock, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = '2'
+[2023/04/29 12:29:56] SQL Query: SELECT image FROM img_product WHERE product_id = '2'
+[2023/04/29 12:29:58] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:29:58] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:29:58] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:30:34] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/04/29 12:30:34] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/04/29 12:30:34] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:30:34] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:30:34] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:37:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:37:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:37:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:38:36] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:38:36] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:38:36] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:38:36] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:38:36] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:38:36] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:38:36] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:39:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:39:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:39:28] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:39:28] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:39:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:39:28] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:39:28] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:42:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:42:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:42:04] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:42:04] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:42:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:42:04] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:42:04] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:42:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:42:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:42:15] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:42:15] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:42:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:42:15] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:42:15] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:43:18] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:43:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:43:19] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:43:19] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:43:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:43:19] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:43:19] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:44:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:44:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:44:03] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:44:03] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:44:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:44:03] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:44:03] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:44:16] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:44:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:44:17] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:44:17] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:44:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:44:17] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:44:17] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:44:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:44:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:44:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:44:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:44:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:44:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:44:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:46:29] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:46:29] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:46:29] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:46:29] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:46:29] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:46:29] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:46:29] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:46:41] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:46:41] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:46:41] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:46:41] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:46:41] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:46:41] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:46:41] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:46:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:46:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:46:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:46:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:46:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:46:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:46:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:47:07] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:47:07] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:47:07] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:47:07] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 12:47:07] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 12:47:07] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 12:47:07] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:01:31] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:01:31] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:01:31] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:01:31] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:01:31] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:01:31] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:01:31] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:02:56] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:02:56] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:02:56] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:02:56] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:02:56] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:02:56] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:02:56] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:05:52] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:05:52] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:05:52] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:05:52] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:05:52] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:05:52] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:05:52] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:07:12] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:07:12] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:07:12] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:07:12] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:07:12] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:07:12] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:07:12] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:09:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:09:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:09:42] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:09:42] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:09:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:09:42] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:09:42] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:15:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:15:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:15:38] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:15:38] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:15:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:15:38] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:15:38] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:16:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:16:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:16:49] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:16:49] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:16:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:16:49] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:16:49] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:19:48] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:19:48] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:19:48] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:19:48] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:19:48] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:19:48] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:19:48] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:22:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:22:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:22:24] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:22:24] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:22:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:22:24] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:22:24] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:22:34] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:22:34] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:22:34] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:22:34] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:22:34] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:22:34] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:22:34] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:25:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:25:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:25:30] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:25:30] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:25:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:25:30] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:25:30] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:25:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:25:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:25:55] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:25:55] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:25:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:25:55] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:25:55] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:26:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:26:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:26:49] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:26:49] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:26:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:26:49] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:26:49] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:27:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:27:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:27:17] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:27:17] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:27:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:27:17] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:27:17] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:27:37] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:27:37] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:27:37] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:27:37] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:27:37] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:27:37] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:27:37] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:28:00] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:28:00] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:28:00] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:28:00] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:28:00] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:28:01] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:28:01] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:34:35] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:34:35] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:34:35] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:34:35] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:34:35] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:34:35] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:34:35] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:34:41] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:34:41] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:34:41] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:35:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:35:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:35:47] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:35:47] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:35:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:35:47] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:35:47] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:36:23] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:36:23] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:36:23] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:36:23] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:36:23] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:36:23] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:36:23] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:37:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:37:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:37:19] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:37:19] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:37:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:37:19] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:37:19] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:38:20] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:38:20] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:38:20] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:38:20] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:38:20] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:38:20] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:38:20] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:38:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:38:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:38:30] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:38:30] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:38:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:38:30] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:38:30] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:38:53] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:38:53] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:38:53] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:38:53] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:38:53] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:38:53] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:38:53] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:39:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:39:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:39:14] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:39:14] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:39:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:39:14] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:39:14] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:39:29] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:39:29] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:39:29] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:39:29] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:39:29] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:39:29] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:39:29] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:39:35] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:39:35] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:39:35] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:39:35] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:39:35] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:39:35] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:39:35] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:40:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:40:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:40:03] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:40:03] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:40:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:40:03] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:40:03] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:40:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:40:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:40:28] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:40:28] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:40:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:40:28] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:40:28] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:40:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:40:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:40:47] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:40:47] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:40:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:40:47] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:40:47] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:41:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:41:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:41:01] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:41:01] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:41:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:41:01] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:41:01] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:41:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:41:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:41:15] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:41:15] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:41:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:41:15] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:41:15] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:42:45] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:42:45] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:42:45] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:42:45] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:42:45] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:42:45] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:42:45] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:44:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:44:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:44:14] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:44:14] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:44:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:44:14] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:44:14] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:45:22] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:45:22] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:45:22] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:45:22] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:45:22] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:45:22] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:45:22] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:46:50] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:46:50] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:46:50] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:46:50] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:46:50] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:46:50] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:46:50] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:46:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:46:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:46:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:46:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:46:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:46:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:46:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:47:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:47:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:47:15] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:47:15] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:47:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:47:15] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:47:15] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:47:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:47:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:47:30] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:47:30] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:47:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:47:30] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:47:30] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:47:36] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:47:36] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:47:36] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:47:36] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:47:36] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:47:36] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:47:36] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:48:06] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:48:06] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:48:06] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:48:06] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:48:06] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:48:06] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:48:06] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:48:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:48:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:48:33] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:48:33] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:48:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:48:33] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:48:33] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:48:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:48:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:48:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:48:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:48:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:48:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:48:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:49:32] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:49:32] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:49:32] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:49:32] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:49:32] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:49:32] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:49:32] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:49:52] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:49:52] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:49:52] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:49:52] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:49:52] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:49:52] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:49:52] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:51:31] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:51:31] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:51:31] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:51:31] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:51:31] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:51:31] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/04/29 01:51:31] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/04/29 01:51:37] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:51:37] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:51:37] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:53:51] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:53:51] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:53:51] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:54:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:54:22] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:54:22] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:55:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:55:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:55:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:55:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:55:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:55:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:56:32] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:56:32] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:56:32] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:57:27] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:57:27] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:57:27] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:57:43] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:57:43] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:57:43] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:57:54] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:57:54] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:57:54] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:58:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:58:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 01:58:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 02:00:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 02:00:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 02:00:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 02:00:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 02:00:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 02:00:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 02:00:51] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 02:00:51] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 02:00:51] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 02:01:05] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 02:01:05] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 02:01:05] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 02:01:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 02:01:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 02:01:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 02:01:45] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 02:01:45] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/04/29 02:01:45] SQL Query: SELECT * FROM categories WHERE  status = 1

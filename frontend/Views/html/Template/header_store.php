@@ -69,7 +69,7 @@
                         <div class="z-20 header-top-right">
                             <ul class="header-action-link action-color--black action-hover-color--page">
                                 <li class="position-relative user-session">
-                                    <a class="cursor-pointer"<?= isset($_SESSION['login']) ? ' tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom" data-bs-content="local"' : ' data-bs-toggle="modal" data-bs-target="#modal-user"';?>>
+                                    <a class="cursor-pointer"<?= isset($_SESSION['login']) ? ' id="popover_mycount"' : ' data-bs-toggle="modal" data-bs-target="#modal-user"';?>>
                                         <i class="icon-user"></i>
                                     </a>
                                 </li>

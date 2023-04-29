@@ -241,7 +241,41 @@ $(document).ready(function () {
     	});
     }
 
+    $('#btnpopover').popover({
+    html: true,
+    content: '<a href="https://www.google.com/">one</a>',
+    trigger: 'focus',
+    placement: 'bottom',
 });
+
+    // $('#btnpopover').popover({
+    //     html: true,
+    //     content: '<a href="https://www.google.com/">one</a>',
+    //     trigger: 'manual', // Cambiar trigger a 'manual'
+    //     placement: 'bottom',
+    // }).on('focusout', function() { // Agregar evento focusout
+    //     $(this).popover('hide');
+    // }).on('click', function() { // Agregar evento click
+    //     $(this).popover('toggle');
+    // });
+
+    $('#popover_mycount').popover({
+        html: true,
+        content: `
+            <ul class="content-dialog_mycount text-center font-weight-bold h6">
+                <li class="mb-2 mt-1"><a href="#">MI CUENTA</a></li>
+                <li><a href="#">CERRAR SESIÓN</a></li>
+            </ul>`,
+        trigger: 'click',
+        placement: 'bottom',
+    });
+
+});
+// `
+//             <div class="content-dialog_mycount">
+//                 <a href="#">MI CUENTA</a>
+//                 <a href="#">CERRAR SESIÓN</a>
+//             </div>`,
 
 /*****************************
 * Delete Item Shopping Cart

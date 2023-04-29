@@ -264,10 +264,10 @@
     <script src="<?= MEDIA_STORE; ?>js/main.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/store-functions.js"></script>
     <script>
-        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-          return new bootstrap.Popover(popoverTriggerEl)
-        })
+        // var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        // var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        //   return new bootstrap.Popover(popoverTriggerEl)
+        // })
     </script>
 
     <?php
