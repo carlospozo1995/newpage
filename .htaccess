@@ -18,6 +18,7 @@ RewriteRule ^index/delItemCart/$ %{ENV:REWRITEBASE}index.php?show=Index&action=d
 #LOGIN
 RewriteRule ^(login/|login|Login|LOGIN)$ %{ENV:REWRITEBASE}index.php?show=login [L]
 RewriteRule ^(login/|login|Login|LOGIN)/ajaxLogin/$ %{ENV:REWRITEBASE}index.php?show=Login&action=ajaxLogin [L]
+RewriteRule ^(login/|login|Login|LOGIN)/logout/$ %{ENV:REWRITEBASE}index.php?show=Login&action=logout [L]
 
 #RESET PASSWORD
 RewriteRule ^(login/|login|Login|LOGIN)/ajaxEmailSend/$ %{ENV:REWRITEBASE}index.php?show=Login&action=ajaxEmailSend [L]

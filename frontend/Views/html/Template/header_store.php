@@ -48,11 +48,12 @@
     <header class="header-section d-none d-xl-block">
         <div class="header-wrapper">
 
-            <div class="header-top-main header-bottom-color--black section-fluid">
+            <div class="header-top-main header-bottom-color--black section-fluid<?= isset($_SESSION['login']) ? ' d-flex justify-content-between align-items-center' : '';?>">
                 <div class="header-top-contact header-top-contact-color--white header-top-contact-hover-color--page">
                     <a href="tel:0123456789" class="icon-space-right"><i class="icon-call-in"></i>0123456789</a>
                     <a href="mailto:demo@example.com" class="icon-space-right"><i class="icon-envelope"></i>demo@example.com</a>
                 </div>
+                <?= isset($_SESSION['login']) ? '<span class="text-light font-weight-bold text-uppercase">'.'!HOLA¡ '.$_SESSION['data_user']['name_user'].' '.$_SESSION['data_user']['surname_user'].'</span>' : ''; ?>
             </div>
 
             <?php if($section_name == "Index"){echo '<div class="header-top header-top-bg--white section-fluid">';}else{echo '<div class="header-top header-top-bg--white section-fluid" style="background: linear-gradient(to right, #bae1e1, #f5e7e3)">';} ?>
@@ -69,9 +70,9 @@
                         <div class="z-20 header-top-right">
                             <ul class="header-action-link action-color--black action-hover-color--page">
                                 <li class="position-relative user-session">
-                                    <a class="cursor-pointer"<?= isset($_SESSION['login']) ? ' id="popover_mycount"' : ' data-bs-toggle="modal" data-bs-target="#modal-user"';?>>
+                                    <button<?= isset($_SESSION['login']) ? ' id="popover_mycount"' : ' data-bs-toggle="modal" data-bs-target="#modal-user"';?>>
                                         <i class="icon-user"></i>
-                                    </a>
+                                    </button>
                                 </li>
                                 <li>
                                     <a href="#offcanvas-wishlish" class="offcanvas-toggle">
@@ -311,10 +312,10 @@
 
                     <div class="mobile-right-side">
                         <ul class="header-action-link action-color--black action-hover-color--page">
-                            <li>
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#modal-user">
+                            <li class="position-relative user-session">
+                                <button<?= isset($_SESSION['login']) ? ' id="popover_mycount"' : ' data-bs-toggle="modal" data-bs-target="#modal-user"';?>>
                                     <i class="icon-user"></i>
-                                </a>
+                                </button>
                             </li>
                             <li>
                                 <a href="#offcanvas-wishlish" class="offcanvas-toggle">

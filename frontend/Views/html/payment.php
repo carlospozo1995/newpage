@@ -65,7 +65,7 @@ foreach ($_SESSION['dataCart'] as $product) {
                                     </div>
                                     <div class="default-form-box">
                                         <div class="box-session">
-                                            <i class="fa fa-lock"></i>
+                                            <i class="icon-lock"></i>
                                             <input type="password" placeholder="Contraseña" id="password_login">
                                             <span class="mr-3" role='button'><i class="fa fa-eye-slash show-password"></i></span>
                                         </div>
@@ -101,14 +101,14 @@ foreach ($_SESSION['dataCart'] as $product) {
                                     </div>
                                     <div class="default-form-box">
                                         <div class="box-session">
-                                            <i class="fa fa-lock"></i>
+                                            <i class="icon-lock"></i>
                                             <input type="password" placeholder="Contraseña">
                                             <span class="mr-3" role='button'><i class="fa fa-eye-slash show-password"></i></span>
                                         </div>
                                     </div>
                                     <div class="default-form-box">
                                         <div class="box-session">
-                                            <i class="fa fa-lock"></i>
+                                            <i class="icon-lock"></i>
                                             <input type="password" placeholder="Repetir contraseña">
                                             <span class="mr-3" role='button'><i class="fa fa-eye-slash show-password"></i></span>
                                         </div>

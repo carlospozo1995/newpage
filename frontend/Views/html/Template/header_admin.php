@@ -73,7 +73,8 @@
 
 						          	<li class="user-footer">
 								            <a href="" class="btn btn-default btn-flat">Perfil</a>
-								            <a href="<?= BASE_URL ?>logout" class="btn btn-default btn-flat float-right">Cerrar sesión</a>
+								            <!-- <a href="<?= BASE_URL ?>logout" class="btn btn-default btn-flat float-right">Cerrar sesión</a> -->
+								            <button class="btn btn-default btn-flat float-right" id="session_close">Cerrar sesión</button>
 						          	</li>
 						        </ul>
 

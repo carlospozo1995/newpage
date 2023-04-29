@@ -197,3 +197,27 @@ function removeImage(item) {
 function numberFormat(number, decimals = 2, decPoint = ',', thousandsSep = '.') {
     return number.toFixed(decimals).replace('.', decPoint).replace(/\B(?=(\d{3})+(?!\d))/g, thousandsSep);
 }
+
+$('#session_close').on('click', function () {
+    $.ajax({
+        url: base_url + "login/logout/",
+        // dataType: 'JSON',
+        // method: 'POST',
+        // data: {
+        //     id_product: id,
+        //     option: option,
+        // },
+        beforeSend: function() {
+            
+        },
+        success: function(data){
+            window.location.reload(false);
+        },
+        error: function(xhr, status, error) {
+            console.log(error)
+        },
+        complete: function() {
+            
+        }
+    });  
+})
