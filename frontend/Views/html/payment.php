@@ -55,20 +55,19 @@ foreach ($_SESSION['dataCart'] as $product) {
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-home-tab">
                             <div class="account_form" data-aos="fade-up" data-aos-delay="0">
-                                <!-- <div class="alert alert-danger" role="alert">
-                                    A simple danger alert—check it out!
-                                </div> -->
                                 <form id="form-login_store">
+                                    <div class="alert-login"></div>
                                     <div class="default-form-box">
                                         <div class="box-session">
                                             <i class="fa fa-envelope-o"></i>
-                                            <input type="email" placeholder="Correo electrónico" id="email-login">
+                                            <input type="email" placeholder="Correo electrónico" id="email_login">
                                         </div>
                                     </div>
                                     <div class="default-form-box">
                                         <div class="box-session">
                                             <i class="fa fa-lock"></i>
-                                            <input type="password" placeholder="Contraseña" id="password-login">
+                                            <input type="password" placeholder="Contraseña" id="password_login">
+                                            <span class="mr-3" role='button'><i class="fa fa-eye-slash show-password"></i></span>
                                         </div>
                                     </div>
                                     <div class="login_submit">
@@ -104,12 +103,14 @@ foreach ($_SESSION['dataCart'] as $product) {
                                         <div class="box-session">
                                             <i class="fa fa-lock"></i>
                                             <input type="password" placeholder="Contraseña">
+                                            <span class="mr-3" role='button'><i class="fa fa-eye-slash show-password"></i></span>
                                         </div>
                                     </div>
                                     <div class="default-form-box">
                                         <div class="box-session">
                                             <i class="fa fa-lock"></i>
                                             <input type="password" placeholder="Repetir contraseña">
+                                            <span class="mr-3" role='button'><i class="fa fa-eye-slash show-password"></i></span>
                                         </div>
                                     </div>
                                     <div class="login_submit">

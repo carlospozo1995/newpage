@@ -1,5 +1,28 @@
 $(document).ready(function () {
+    /*****************************
+     * Show Password
+     *****************************/
+    $('.show-password').each(function () {
+        $(this).on('click', function () {
+            var input = $(this).parent().prev();
+            if ($(this).hasClass('fa-eye-slash')) {
+                $(this).removeClass('fa-eye-slash').addClass('fa-eye');
+                input.prop('type', 'text');
+            } else {
+                $(this).addClass('fa-eye-slash').removeClass('fa-eye');
+                input.prop('type', 'password');
+            }
+        })
+    })
 
+    /*****************************
+     * Alert Login-Register(Store)
+     *****************************/
+    function msgAlert(container, msg){
+        let htmlAlert = $(container).html(`<div class="alert alert-danger alert-dismissible fade show" role="alert">${msg}
+                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>`).hide().fadeIn();
+    }
 
     /*****************************
      * Number Format
@@ -166,6 +189,10 @@ $(document).ready(function () {
     /************************************************
      * Login From Store
      ***********************************************/
+    function validarFormulario(){
+        let validar = true;
+        return validar;
+    }
     let formLoginStore = $('#form-login_store');
     if(formLoginStore.length){
         formLoginStore.submit(function(e){
@@ -173,20 +200,47 @@ $(document).ready(function () {
 
             let email = $("#email_login").val();
             let password = $("#password_login").val();
-            // if(emptyValidate(email) && emptyValidate(password)){
-            //     msgShow(2, 'Error', 'Ingrese correo y contraseña');
-            //     return false;
-            // }else if(emptyValidate(email)){
-            //     msgShow(2,'Error', 'Ingrese correo');
-            //     return false;
-            // }else if(emptyValidate(password)){
-            //     msgShow(2,'Error', 'Ingrese contraseña');
-            //     return false;
-            // }else{
-                $('.content-loading').css("display","flex");
-			// }
+            if(email == "" && password == ""){
+                msgAlert('.alert-login', 'Ingrese su correo y contraseña.');
+                return false;
+            }
+            else if(email == ""){
+               msgAlert('.alert-login', 'Ingrese su correo.');
+                return false;
+            }else if(password == ""){
+                msgAlert('.alert-login', 'Ingrese su contraseña.');
+                return false;
+            }else{
+                $.ajax({
+                    url: base_url + "login/ajaxLogin/",
+                    dataType: 'JSON',
+                    method: 'POST',
+                    data: {
+                        email: email,
+                        password: password
+                    },
+                    beforeSend: function() {
+                        $('.content-loading').css("display","flex");
+                    },
+                    success: function(data){
+                        if (data.status) {
+                            window.location.reload(false);
+                        }else{
+                            msgAlert('.alert-login', data.msg);
+                            $("#password").val("");
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                    },
+                    complete: function() {
+                        $('.content-loading').css("display","none");
+                    }
+                });   
+			}
+
     	});
     }
+
 });
 
 /*****************************

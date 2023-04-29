@@ -4878,8 +4878,8 @@ progress {
 
 .alert-danger {
     color: #030303;
-    background-color: #cdcdcd;
-    border-color: #b9b9b9;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
 }
 .alert-danger .alert-link {
     color: black;
@@ -16147,7 +16147,7 @@ input {
 .default-form-box input[type=date],
 .default-form-box textarea {
     border: 1px solid #ededed;
-    border-radius: 3px;
+    border-radius: 6px;
     background: none;
     height: 40px;
     width: 100%;

@@ -54,7 +54,6 @@
 						$status = false;
 						$msg = $e->getMessage();
 					}
-					sleep(5);
 					$data = array("status"=>$status,"msg"=>$msg);
 					echo json_encode($data);
 

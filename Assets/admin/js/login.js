@@ -22,15 +22,11 @@ $(document).ready(function(){
                 msgShow(2, 'Error', 'Ingrese correo y contraseña');
                 return false;
             }else if(emptyValidate(email)){
-
                 msgShow(2,'Error', 'Ingrese correo');
                 return false;
-
             }else if(emptyValidate(password)){
-
                 msgShow(2,'Error', 'Ingrese contraseña');
                 return false;
-                
             }else{
                 loading.css("display","flex");
                 let url_ajax = base_url + "login/ajaxLogin/";
