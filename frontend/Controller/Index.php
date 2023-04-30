@@ -98,7 +98,14 @@
 						echo json_encode($data);
 					}
 				break;
-				
+
+				case 'logout':
+					$session_shopping = $_SESSION['dataCart'];
+		          	session_unset();
+		          	// session_destroy();
+		          	$_SESSION['dataCart'] = $session_shopping;
+				break;
+
 				default:
 					$data["file_css"][] = "index-store";
 					$data["file_js"][] = "index-store"; 

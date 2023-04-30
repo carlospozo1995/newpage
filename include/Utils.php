@@ -73,8 +73,10 @@
 		static public function sessionEnd()
 		{
 			session_start();
+			$session_shopping = $_SESSION['dataCart'];
           	session_unset();
-          	session_destroy();
+          	$_SESSION['dataCart'] = $session_shopping;
+          	// session_destroy();
 
           	header('Location: '.BASE_URL.'login');
 		}

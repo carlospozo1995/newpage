@@ -107,15 +107,6 @@
 
 					$data = array("status" => $status, "msg" => $msg);
 					echo json_encode($data);
-
-				break;
-				case 'logout':
-					session_start();
-					$session_shopping = $_SESSION['dataCart'];
-		          	session_unset();
-		          	// session_destroy();
-		          	$_SESSION['dataCart'] = $session_shopping;
-		          	// header('Location: '.BASE_URL.'login');
 				break;
 				
 				default:

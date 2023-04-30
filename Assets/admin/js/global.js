@@ -200,13 +200,7 @@ function numberFormat(number, decimals = 2, decPoint = ',', thousandsSep = '.') 
 
 $('#session_close').on('click', function () {
     $.ajax({
-        url: base_url + "login/logout/",
-        // dataType: 'JSON',
-        // method: 'POST',
-        // data: {
-        //     id_product: id,
-        //     option: option,
-        // },
+        url: base_url + "index/logout/",
         beforeSend: function() {
             
         },
@@ -214,7 +208,6 @@ $('#session_close').on('click', function () {
             window.location.reload(false);
         },
         error: function(xhr, status, error) {
-            console.log(error)
         },
         complete: function() {
             

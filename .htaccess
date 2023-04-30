@@ -14,11 +14,11 @@ ErrorDocument 404 "Lo siento, la página que estás buscando no existe."
 RewriteRule ^$ %{ENV:REWRITEBASE}index.php?show=Index [L]
 RewriteRule ^index/addCartProduct/$ %{ENV:REWRITEBASE}index.php?show=Index&action=addCartProduct [L]
 RewriteRule ^index/delItemCart/$ %{ENV:REWRITEBASE}index.php?show=Index&action=delItemCart [L]
+RewriteRule ^index/logout/$ %{ENV:REWRITEBASE}index.php?show=Index&action=logout [L]
 
 #LOGIN
 RewriteRule ^(login/|login|Login|LOGIN)$ %{ENV:REWRITEBASE}index.php?show=login [L]
 RewriteRule ^(login/|login|Login|LOGIN)/ajaxLogin/$ %{ENV:REWRITEBASE}index.php?show=Login&action=ajaxLogin [L]
-RewriteRule ^(login/|login|Login|LOGIN)/logout/$ %{ENV:REWRITEBASE}index.php?show=Login&action=logout [L]
 
 #RESET PASSWORD
 RewriteRule ^(login/|login|Login|LOGIN)/ajaxEmailSend/$ %{ENV:REWRITEBASE}index.php?show=Login&action=ajaxEmailSend [L]
