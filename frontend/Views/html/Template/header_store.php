@@ -1,12 +1,3 @@
-<?php
-    $amountProduct = 0;
-    if(isset($_SESSION['dataCart']) and count($_SESSION['dataCart']) > 0){ 
-        foreach($_SESSION['dataCart'] as $product) {
-            $amountProduct += $product['amount_product'];
-        }
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,7 +77,7 @@
                                     <li>
                                         <a href="#offcanvas-add-cart" class="offcanvas-toggle">
                                             <i class="icon-basket-loaded"></i>
-                                            <span class="item-count amount-product-cart"><?= $amountProduct; ?></span>
+                                            <span class="item-count amount-product-cart">0</span>
                                         </a>
                                     </li>
                                 <?php
@@ -329,7 +320,7 @@
                             <li>
                                 <a href="#offcanvas-add-cart" class="offcanvas-toggle">
                                     <i class="icon-basket-loaded"></i>
-                                    <span class="item-count amount-product-cart"><?= $amountProduct; ?></span>
+                                    <span class="item-count amount-product-cart">0</span>
                                 </a>
                             </li>
                             <?php

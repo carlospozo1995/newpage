@@ -116,6 +116,7 @@ $(document).ready(function () {
     /************************************************
      * Add To Cart Modal
      ***********************************************/
+    const dataCart = [];
     $(document).on('click', '.addToCart', function (e) {
         e.preventDefault();
         let id = $(this).attr("id");
@@ -131,14 +132,23 @@ $(document).ready(function () {
             method: 'POST',
             data: {
                 id_product: id,
-                amount_product: amount,
             },
             beforeSend: function() {
                 
             },
             success: function(data){
                 if (data.status) {
+                    
                     let product_added = data.product_added;
+                    if(dataCart.some(product=> product.id === id)){
+                        const indexProduct_added = dataCart.findIndex(product=> product.id === id);
+                        dataCart[indexProduct_added].amount_product += amount; 
+                    }else{
+                        product_added.amount_product = amount;
+                        dataCart.push(product_added);
+                    }
+                    
+                    let amountCart = dataCart.reduce((acc, product) => acc + product.amount_product, 0);
 
                     $(".addd-product-container").html(`
                         <div class="row">
@@ -159,7 +169,7 @@ $(document).ready(function () {
                             </div>
                             <div class="col-md-5 modal-border">
                                 <ul class="modal-add-cart-product-shipping-info">
-                                    <li> <strong><i class="icon-shopping-cart"></i> Tiene ${data.amountCart} productos en su carrito.</strong></li>
+                                    <li> <strong><i class="icon-shopping-cart"></i> Tiene ${amountCart} productos en su carrito.</strong></li>
                                     <li>
                                         <div class="modal-add-cart-product-cart-buttons font-weight-bold">
                                             <a href="${base_url}carrito">Ver carrito</a>
@@ -172,8 +182,9 @@ $(document).ready(function () {
                         </div>
                         `);
 
-                    $('.amount-product-cart').text(data.amountCart);
-                    $("#container-shopping-cart").html(data.html_shoppingCart);
+                    $(".amount-product-cart").text(amountCart);
+                    localStorage.setItem("dataCart", JSON.stringify(dataCart));
+                    // $("#container-shopping-cart").html(data.html_shoppingCart);
                 }else{
                     $(".addd-product-container").html(`<h1 class="text-center text-danger">${data.error}</h1>`);
                 }
@@ -189,10 +200,6 @@ $(document).ready(function () {
     /************************************************
      * Login From Store
      ***********************************************/
-    function validarFormulario(){
-        let validar = true;
-        return validar;
-    }
     let formLoginStore = $('#form-login_store');
     if(formLoginStore.length){
         formLoginStore.submit(function(e){
@@ -269,7 +276,117 @@ $(document).ready(function () {
         placement: 'bottom',
     });
 
+    /*****************************
+    * Page Shopping Cart
+    *****************************/
+    let dataCartLs = JSON.parse(localStorage.getItem("dataCart"));
+    if(dataCartLs) {
 
+        $('#shopping-cart-container').html(`
+
+            <div class="cart-section">
+                <div class="cart-table-wrapper" data-aos="fade-up" data-aos-delay="0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8">
+                                <div class="table_desc">
+                                    <div class="table_page table-responsive">
+                                        <table id="table-cart">
+                                            <thead>
+                                                <tr>
+                                                    <th class="product_remove">Eliminar</th>
+                                                    <th class="product_thumb">Imagen</th>
+                                                    <th class="product_name">Producto</th>
+                                                    <th class="product-price">Precio</th>
+                                                    <th class="product_quantity">Cantidad</th>
+                                                    <th class="product_total">Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4">
+                                <div class="coupon_code right" data-aos="fade-up" data-aos-delay="400">
+                                    <h3 class="text-center">Total del carrito</h3>
+                                    <div class="coupon_inner">
+                                        <div class="cart_subtotal">
+                                            <p>Subtotal</p>
+                                            <p class="cart_amount subtotal-cart">$<?= Utils::formatMoney($subtotal); ?></p>
+                                        </div>
+                                        <hr>
+                                        <div class="cart_subtotal">
+                                            <p>Total</p>
+                                            <p class="cart_amount total-cart">$<?= Utils::formatMoney($total); ?></p>
+                                        </div>
+                                        <div class="checkout_btn">
+                                            <a href="<?= BASE_URL; ?>carrito/comprar" class="btn btn-md btn-coral">Procesar pago</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            `);
+
+        let tbodyCart = $("#table-cart tbody");
+        dataCartLs.forEach(function (item) {
+            let row = $(`<tr id="${item.id}">`);
+
+            let removeCell = $('<td class="product_remove">');
+            let thumbCell = $('<td class="product_thumb">');
+            let nameCell = $('<td class="product_name">');
+            let priceCell = $('<td class="product-price">');
+            let quantityCell = $('<td class="product_quantity">');
+            let totalCell = $('<td class="product_total">');
+
+            removeCell.html(`<span class="cursor-pointer" idpr="${item.id}" option="2" onclick="delItemCart(this)"><i class="fa fa-trash-o"></i></span>`);
+            thumbCell.html(`<a href="${base_url}producto/${item.url}"><img src="${item.image}" alt=""></a>`);
+            nameCell.html(`<a href="${base_url}producto/${item.url}">${item.name}</a>`);
+            priceCell.html("$" + numberFormat(Number(item.price)));
+            // quantityCell.html(item.quantity);
+            // totalCell.html("$" + item.total);
+            quantityCell.html("item.quantity");
+            totalCell.html("$");
+
+            row.append(removeCell);
+            row.append(thumbCell);
+            row.append(nameCell);
+            row.append(priceCell);
+            row.append(quantityCell);
+            row.append(totalCell);
+
+            tbodyCart.append(row);   
+        });
+    }else{
+        $('#shopping-cart-container').html(`
+            <div class="empty-cart-section section-fluid">
+                <div class="emptycart-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-md-10 offset-md-1 col-xl-6 offset-xl-3">
+                                <div class="emptycart-content text-center">
+                                    <div class="image">
+                                        <img class="img-fluid" src="${media_store}images/empty-cart.png" alt="">
+                                    </div>
+                                    <h4 class="title">Su carrito esta vacio</h4>
+                                    <h6 class="sub-title">Lo sentimos... ¡No se encontró ningún artículo dentro de su carrito!</h6>
+                                    <a href="<?= BASE_URL; ?>" class="btn btn-lg btn-coral">Continuar comprando</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `);
+    }
 });
 /*****************************
 * Delete Item Shopping Cart

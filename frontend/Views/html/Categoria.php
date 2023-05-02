@@ -56,8 +56,6 @@
                 }
             }
             // ----------------------
-            // Utils::dep($_SESSION['dataCart']);
-            // Utils::dep($_SESSION['idUser']);
 ?>
             <div class="breadcrumb-section" data-aos="fade-up" data-aos-delay="0">
                 <div class="pt-4 pb-4 mb-4 bg-mist-white">

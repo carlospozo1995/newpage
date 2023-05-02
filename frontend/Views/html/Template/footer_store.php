@@ -166,17 +166,17 @@
                     <h5 class="modal-title text-center c-p-deep-blue font-weight-bold">INGRESE A SU CUENTA</h5>
                 </div>
                 <div class="modal-body">
-                    <form action="#" method="POST">
+                    <form id="form-login_store">
                         <div class="default-form-box">
                             <div class="box-session">
                                 <i class="fa fa-envelope-o"></i>
-                                <input type="email" placeholder="Correo electrónico">
+                                <input type="email" placeholder="Correo electrónico" id="email_login">
                             </div>
                         </div>
                         <div class="default-form-box">
                             <div class="box-session">
                                 <i class="icon-lock"></i>
-                                <input type="password" placeholder="Contraseña">
+                                <input type="password" placeholder="Contraseña" id="password_login">
                                 <span class="mr-3" role='button'><i class="fa fa-eye-slash show-password"></i></span>
                             </div>
                         </div>
@@ -243,6 +243,7 @@
     </div>
 
     <script> const base_url = "<?= BASE_URL; ?>"; </script>
+    <script> const media_store= "<?= MEDIA_STORE; ?>"; </script>
     <script src="<?= MEDIA_STORE; ?>js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/vendor/jquery-3.5.1.min.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/vendor/jquery-migrate-3.3.0.min.js"></script>
