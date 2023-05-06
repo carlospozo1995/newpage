@@ -47,7 +47,8 @@ $(document).ready(function () {
                 let id = $(this).attr("idpr");
                 let amount = input.val();
                 if(id != null){
-                    updateProductPrice(id, amount);    
+                    updateProductPrice(id, amount);
+                    // upNumberCart();    
                 }
             } else if ($(this).hasClass('btn-plus')) {
                 input.val(Math.min(value + 1, stock_quantity));
@@ -56,6 +57,7 @@ $(document).ready(function () {
                 let amount = input.val();
                 if(id != null){
                     updateProductPrice(id, amount);
+                    // upNumberCart();
                 }
             } else if ($(this).is('input[type="number"]')) {
                 input.val(Math.min(Math.max(value, 1), stock_quantity));
@@ -73,7 +75,8 @@ $(document).ready(function () {
             let id = $(this).attr("idpr");
             let amount = $(this).val();
             if(id != null){
-                updateProductPrice(id, amount);    
+                updateProductPrice(id, amount); 
+                // upNumberCart();   
             }
         });
     });
@@ -289,7 +292,7 @@ $(document).ready(function () {
                                         </div>
                                         <div class="cart_subtotal">
                                             <p>IVA</p>
-                                            <p class="cart_amount subtotal-cart">$${numberFormat(totalIva)}</p>
+                                            <p class="cart_amount iva-cart">$${numberFormat(totalIva)}</p>
                                         </div>
                                         <hr>
                                         <div class="cart_subtotal">
@@ -312,53 +315,42 @@ $(document).ready(function () {
     }
 
     function updateProductPrice(id, amount) {
-        // if(id != ""){
-        //     let totalProduct = 0;
-        //     for (var i = 0; i < dataCart.length; i++) {
-        //         if (dataCart[i]['id'] === id) {
-        //             // dataCart[i]['amount_product'] = amount;
-        //             // dataCart[i]['price'] = dataCart[i]['price'] * amount;
-        //         }
-        //     }
-        //     console.log(dataCart);
-        // }else{
-        //     Swal.fire({icon: 'error', html: `<span class="font-weight-bold">Ha ocurrido un error. Inténtelo más tarde.</span>`, confirmButtonColor: '#4431DE'});
-        // }
+        if(id != ""){
+            if (dataCart.findIndex(product=> product.id === id) > -1) {
+                // let upDataCart = [];
+                // let total = 0;
+                // let subtotal = 0;
+                // let totalIva = 0;
+                // let totalProduct = 0;
+
+                // upDataCart = dataCart;
+                // for (var i = 0; i < upDataCart.length; i++) {
+                //     if (upDataCart[i]['id'] === id) {
+                //         upDataCart[i]['amount_product'] = amount;
+                //         totalProduct = amount * upDataCart[i]['price'];
+                //     }
+                // }
+                // localStorage.setItem("dataCart", JSON.stringify(upDataCart));
+                // dataCart.forEach(item => {
+                //     subtotal += item.price * item.amount_product;
+                //     // totalIva (create IVA function and add them
+                // });
+
+                // total = subtotal + totalIva;
+
+                // let row_product = $(`#${id}`);
+                //     row_product.find('td').eq(5).text("$" + numberFormat(totalProduct));
+                // $(".subtotal-cart").text("$" + numberFormat(subtotal));
+                // $(".iva-cart").text("$" + numberFormat(totalIva));
+                // $(".total-cart").text("$" + numberFormat(total));
+            }else{
+                Swal.fire({icon: 'error', html: `<span class="font-weight-bold">Ha ocurrido un error. Inténtelo más tarde.</span>`, confirmButtonColor: '#4431DE'});
+            }
+        }else{
+            Swal.fire({icon: 'error', html: `<span class="font-weight-bold">Ha ocurrido un error. Inténtelo más tarde.</span>`, confirmButtonColor: '#4431DE'});
+        }
     }
 
-    /*****************************
-     * Update Product Price (Shopping Cart - Page)
-     *****************************/
-    // function updateProductPrice(id, amount) {
-    //     $.ajax({
-    //         url: base_url + "carrito/updateProductPrice/",
-    //         dataType: 'JSON',
-    //         method: 'POST',
-    //         data: {
-    //             id_product: id,
-    //             amount_product: amount,
-    //         },
-    //         beforeSend: function() {
-                
-    //         },
-    //         success: function(data){
-    //             if(data.status){
-    //                 let row_product = $(`#${id}`);
-    //                 row_product.find('td').eq(5).text(data.total_product);
-    //                 $('.subtotal-cart').html(data.subtotal);
-    //                 $('.total-cart').html(data.total);
-    //             }else{
-    //                 Swal.fire({icon: 'error', html: `<span class="font-weight-bold">${data.error}</span>`, confirmButtonColor: '#4431DE'});
-    //             }
-    //         },
-    //         error: function(xhr, status, error) {
-    //             Swal.fire({icon: 'error', html: `<span class="font-weight-bold">Ha ocurrido un error. Inténtelo más tarde.</span>`, confirmButtonColor: '#4431DE'});
-    //         },
-    //         complete: function() {
-                
-    //         }
-    //     }); 
-    // }
 });
 
 function delItemCart(element) {
