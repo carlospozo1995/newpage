@@ -1,11 +1,11 @@
-$(document).ready(function () {
+$(window).ready(function () {
     let dataCart;
     let dataCartLS = localStorage.getItem("dataCart");
     if (dataCartLS) {
         dataCart = JSON.parse(dataCartLS);
-        upNumberCart();
         modalShoppingCart();
         viewShoppingCart();
+        upNumberCart();
     }else{
         dataCart = [];
         $("#container-shopping-cart").html('<h1 class="text-center c-p-deep-blue">Vacio</h1>');
@@ -47,8 +47,7 @@ $(document).ready(function () {
                 let id = $(this).attr("idpr");
                 let amount = input.val();
                 if(id != null){
-                    updateProductPrice(id, amount);
-                    // upNumberCart();    
+                    updateProductPrice(id, amount);    
                 }
             } else if ($(this).hasClass('btn-plus')) {
                 input.val(Math.min(value + 1, stock_quantity));
@@ -57,7 +56,6 @@ $(document).ready(function () {
                 let amount = input.val();
                 if(id != null){
                     updateProductPrice(id, amount);
-                    // upNumberCart();
                 }
             } else if ($(this).is('input[type="number"]')) {
                 input.val(Math.min(Math.max(value, 1), stock_quantity));
@@ -75,8 +73,7 @@ $(document).ready(function () {
             let id = $(this).attr("idpr");
             let amount = $(this).val();
             if(id != null){
-                updateProductPrice(id, amount); 
-                // upNumberCart();   
+                updateProductPrice(id, amount);   
             }
         });
     });
@@ -109,13 +106,19 @@ $(document).ready(function () {
                     let product_added = data.product_added;
                     if(dataCart.some(product=> product.id === id)){
                         const indexProduct_added = dataCart.findIndex(product=> product.id === id);
-                        dataCart[indexProduct_added].amount_product += amount; 
+                        if ((dataCart[indexProduct_added].amount_product + amount) < dataCart[indexProduct_added].stock){
+                            dataCart[indexProduct_added].amount_product += amount;
+                        }else{
+                            dataCart[indexProduct_added].amount_product = dataCart[indexProduct_added].stock;
+                        }
                     }else{
                         product_added.amount_product = amount;
                         dataCart.push(product_added);
                     }
-                    
-                    const amountCart = dataCart.reduce((acc, product) => acc + product.amount_product, 0);
+
+                    localStorage.setItem("dataCart", JSON.stringify(dataCart));
+                    console.log(dataCart);
+                    const amountCart = dataCart.reduce((acc, product) => acc + parseFloat(product.amount_product), 0);
 
                     $(".addd-product-container").html(`
                         <div class="row">
@@ -150,7 +153,6 @@ $(document).ready(function () {
                         `);
 
                     upNumberCart();
-                    localStorage.setItem("dataCart", JSON.stringify(dataCart));
                     modalShoppingCart();
 
                 }else{
@@ -166,16 +168,22 @@ $(document).ready(function () {
     });
 
     function upNumberCart(){
-        let numberCart = dataCart.reduce((acc, product) => acc + product.amount_product, 0);
+        let numberCart = dataCart.reduce((acc, product) => acc + parseFloat(product.amount_product), 0);
         $(".amount-product-cart").text(numberCart);
     }
+    // function upNumberCart(){
+    //     let numberCart = 0;
+    //     for (var i = 0; i < dataCart.length; i++) {
+    //         numberCart += parseFloat(dataCart[i].amount_product);
+    //     }
+    //     $(".amount-product-cart").html(numberCart);
+    // }
 
     function modalShoppingCart() {
         const ul = $("<ul class='offcanvas-cart'></ul>");
         let total = 0;
         dataCart.forEach(item => {
             total += item.amount_product > item.stock ? item.stock * item.price : item.amount_product * item.price;
-            
             let li =  `<li class="offcanvas-cart-item-single">
                             <div class="offcanvas-cart-item-block">
                                 <a href="${base_url}producto/${item.url}" class="offcanvas-cart-item-image-link">
@@ -317,25 +325,22 @@ $(document).ready(function () {
     function updateProductPrice(id, amount) {
         if(id != ""){
             if (dataCart.findIndex(product=> product.id === id) > -1) {
-                // let upDataCart = [];
                 // let total = 0;
                 // let subtotal = 0;
                 // let totalIva = 0;
                 // let totalProduct = 0;
 
-                // upDataCart = dataCart;
-                // for (var i = 0; i < upDataCart.length; i++) {
-                //     if (upDataCart[i]['id'] === id) {
-                //         upDataCart[i]['amount_product'] = amount;
-                //         totalProduct = amount * upDataCart[i]['price'];
+                // for (var i = 0; i < dataCart.length; i++) {
+                //     if (dataCart[i]['id'] === id) {
+                //         dataCart[i]['amount_product'] = amount;
+                //         totalProduct = amount * dataCart[i]['price'];
                 //     }
                 // }
-                // localStorage.setItem("dataCart", JSON.stringify(upDataCart));
+                // localStorage.setItem("dataCart", JSON.stringify(dataCart));
                 // dataCart.forEach(item => {
                 //     subtotal += item.price * item.amount_product;
                 //     // totalIva (create IVA function and add them
                 // });
-
                 // total = subtotal + totalIva;
 
                 // let row_product = $(`#${id}`);
@@ -350,7 +355,6 @@ $(document).ready(function () {
             Swal.fire({icon: 'error', html: `<span class="font-weight-bold">Ha ocurrido un error. Inténtelo más tarde.</span>`, confirmButtonColor: '#4431DE'});
         }
     }
-
 });
 
 function delItemCart(element) {
