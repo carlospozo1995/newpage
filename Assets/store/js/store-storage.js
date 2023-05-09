@@ -106,6 +106,10 @@ $(window).ready(function () {
                     let product_added = data.product_added;
                     if(dataCart.some(product=> product.id === id)){
                         const indexProduct_added = dataCart.findIndex(product=> product.id === id);
+                        if(product_added.stock != dataCart[indexProduct_added].stock){
+                            dataCart[indexProduct_added].stock = product_added.stock;
+                        }
+
                         if ((dataCart[indexProduct_added].amount_product + amount) < dataCart[indexProduct_added].stock){
                             dataCart[indexProduct_added].amount_product += amount;
                         }else{
@@ -312,35 +316,35 @@ $(window).ready(function () {
             </div>
         `);
 
-        $("#table-cart tbody").html(tbodyContent)
+        $("#table-cart tbody").html(tbodyContent);
     }
 
     function updateProductPrice(id, amount) {
         if(id != ""){
             if (dataCart.findIndex(product=> product.id === id) > -1) {
-                // let total = 0;
-                // let subtotal = 0;
-                // let totalIva = 0;
-                // let totalProduct = 0;
+                let total = 0;
+                let subtotal = 0;
+                let totalIva = 0;
+                let totalProduct = 0;
 
-                // for (var i = 0; i < dataCart.length; i++) {
-                //     if (dataCart[i]['id'] === id) {
-                //         dataCart[i]['amount_product'] = amount;
-                //         totalProduct = amount * dataCart[i]['price'];
-                //     }
-                // }
-                // localStorage.setItem("dataCart", JSON.stringify(dataCart));
-                // dataCart.forEach(item => {
-                //     subtotal += item.price * item.amount_product;
-                //     // totalIva (create IVA function and add them
-                // });
-                // total = subtotal + totalIva;
+                for (var i = 0; i < dataCart.length; i++) {
+                    if (dataCart[i]['id'] === id) {
+                        dataCart[i]['amount_product'] = amount;
+                        totalProduct = amount * dataCart[i]['price'];
+                    }
+                }
+                localStorage.setItem("dataCart", JSON.stringify(dataCart));
+                dataCart.forEach(item => {
+                    subtotal += item.price * item.amount_product;
+                    // totalIva (create IVA function and add them
+                });
+                total = subtotal + totalIva;
 
-                // let row_product = $(`#${id}`);
-                //     row_product.find('td').eq(5).text("$" + numberFormat(totalProduct));
-                // $(".subtotal-cart").text("$" + numberFormat(subtotal));
-                // $(".iva-cart").text("$" + numberFormat(totalIva));
-                // $(".total-cart").text("$" + numberFormat(total));
+                let row_product = $(`#${id}`);
+                    row_product.find('td').eq(5).text("$" + numberFormat(totalProduct));
+                $(".subtotal-cart").text("$" + numberFormat(subtotal));
+                $(".iva-cart").text("$" + numberFormat(totalIva));
+                $(".total-cart").text("$" + numberFormat(total));
             }else{
                 Swal.fire({icon: 'error', html: `<span class="font-weight-bold">Ha ocurrido un error. Inténtelo más tarde.</span>`, confirmButtonColor: '#4431DE'});
             }
