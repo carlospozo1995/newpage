@@ -45,7 +45,7 @@ $(window).ready(function () {
                 input.val(Math.max(value - 1, 1));
                 
                 let id = $(this).attr("idpr");
-                let amount = input.val();
+                let amount = parseInt(input.val());
                 if(id != null){
                     updateProductPrice(id, amount);    
                 }
@@ -53,7 +53,7 @@ $(window).ready(function () {
                 input.val(Math.min(value + 1, stock_quantity));
 
                 let id = $(this).attr("idpr");
-                let amount = input.val();
+                let amount = parseInt(input.val());
                 if(id != null){
                     updateProductPrice(id, amount);
                 }
@@ -71,7 +71,7 @@ $(window).ready(function () {
             }
 
             let id = $(this).attr("idpr");
-            let amount = $(this).val();
+            let amount = parseInt($(this).val());
             if(id != null){
                 updateProductPrice(id, amount);   
             }
@@ -118,7 +118,7 @@ $(window).ready(function () {
 
                     localStorage.setItem("dataCart", JSON.stringify(dataCart));
                     console.log(dataCart);
-                    const amountCart = dataCart.reduce((acc, product) => acc + parseFloat(product.amount_product), 0);
+                    const amountCart = dataCart.reduce((acc, product) => acc + product.amount_product, 0);
 
                     $(".addd-product-container").html(`
                         <div class="row">
@@ -133,7 +133,7 @@ $(window).ready(function () {
                                     <div class="col-md-8">
                                         <p class="modal-add-cart-info"><i class="fa fa-check-square"></i>Añadido al carrito con éxito!</p>
                                         <p class="cart-name-product font-weight-bold c-p-deep-blue">${product_added.name.toUpperCase()}</p>
-                                        <p> <strong>Precio: </strong> <span class="cart-price-product">$${numberFormat(parseFloat(product_added.price))}</span></p>
+                                        <p> <strong>Precio: </strong> <span class="cart-price-product">$${numberFormat(product_added.price)}</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -168,16 +168,9 @@ $(window).ready(function () {
     });
 
     function upNumberCart(){
-        let numberCart = dataCart.reduce((acc, product) => acc + parseFloat(product.amount_product), 0);
+        let numberCart = dataCart.reduce((acc, product) => acc + product.amount_product, 0);
         $(".amount-product-cart").text(numberCart);
     }
-    // function upNumberCart(){
-    //     let numberCart = 0;
-    //     for (var i = 0; i < dataCart.length; i++) {
-    //         numberCart += parseFloat(dataCart[i].amount_product);
-    //     }
-    //     $(".amount-product-cart").html(numberCart);
-    // }
 
     function modalShoppingCart() {
         const ul = $("<ul class='offcanvas-cart'></ul>");
@@ -194,7 +187,7 @@ $(window).ready(function () {
                                     <a href="${base_url}producto/${item.url}" class="offcanvas-cart-item-link">${item.name}</a>
                                     <div class="offcanvas-cart-item-details">
                                         <span class="offcanvas-cart-item-details-quantity">${item.amount_product > item.stock ? item.stock : item.amount_product} x </span>
-                                        <span class="offcanvas-cart-item-details-price">$${numberFormat(parseFloat(item.price))}</span>
+                                        <span class="offcanvas-cart-item-details-price">$${numberFormat(item.price)}</span>
                                     </div>
                                 </div>
                             </div>
@@ -208,7 +201,7 @@ $(window).ready(function () {
         const modalFooter = `
             <div class="offcanvas-cart-total-price">
                 <span class="offcanvas-cart-total-price-text">Total:</span>
-                <span class="offcanvas-cart-total-price-value">$${numberFormat(parseFloat(total))}</span>
+                <span class="offcanvas-cart-total-price-value">$${numberFormat(total)}</span>
             </div>
             <ul class="offcanvas-cart-action-button">
                 <li><a href="${base_url}carrito" class="btn btn-block btn-deep-blue">Ver Carrito</a></li>
@@ -244,7 +237,7 @@ $(window).ready(function () {
                     </td>
 
                     <td class="product_price">
-                        $${numberFormat(parseFloat(item.price))}
+                        $${numberFormat(item.price)}
                     </td>
 
                     <td class="product_quantity">

@@ -14,10 +14,10 @@
 							$arrInfoProd = Models_Store::getProductId($id_product);
 							if(!empty($arrInfoProd)){
 								$data_product = array('id' => $_POST['id_product'],
-													'code' => $arrInfoProd['code'],
+													'code' => intval($arrInfoProd['code']),
 													'name' => $arrInfoProd['name_product'],
-													'price' => $arrInfoProd['price'],
-													'stock' => $arrInfoProd['stock'],
+													'price' => floatval($arrInfoProd['price']),
+													'stock' => intval($arrInfoProd['stock']),
 													'url' => $arrInfoProd['url'],
 													'image' => $arrInfoProd['images'][0]['url_image']);
 							
