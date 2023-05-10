@@ -1,5 +1,7 @@
+
+let dataCart;
+
 $(window).ready(function () {
-    let dataCart;
     let dataCartLS = localStorage.getItem("dataCart");
     if (dataCartLS) {
         dataCart = JSON.parse(dataCartLS);
@@ -8,8 +10,8 @@ $(window).ready(function () {
         upNumberCart();
     }else{
         dataCart = [];
-        $("#container-shopping-cart").html('<h1 class="text-center c-p-deep-blue">Vacio</h1>');
-        $('#shopping-cart-container').html(`
+        $("#modal-shopping-cart-container").html('<h1 class="text-center c-p-deep-blue">Vacio</h1>');
+        $('#view-shopping-cart-container').html(`
             <div class="empty-cart-section section-fluid">
                 <div class="emptycart-wrapper">
                     <div class="container">
@@ -102,13 +104,14 @@ $(window).ready(function () {
             },
             success: function(data){
                 if (data.status) {
+
                     
                     let product_added = data.product_added;
                     if(dataCart.some(product=> product.id === id)){
                         const indexProduct_added = dataCart.findIndex(product=> product.id === id);
-                        if(product_added.stock != dataCart[indexProduct_added].stock){
-                            dataCart[indexProduct_added].stock = product_added.stock;
-                        }
+                        // if(product_added.stock != dataCart[indexProduct_added].stock){
+                        //     dataCart[indexProduct_added].stock = product_added.stock;
+                        // }
 
                         if ((dataCart[indexProduct_added].amount_product + amount) < dataCart[indexProduct_added].stock){
                             dataCart[indexProduct_added].amount_product += amount;
@@ -121,7 +124,6 @@ $(window).ready(function () {
                     }
 
                     localStorage.setItem("dataCart", JSON.stringify(dataCart));
-                    console.log(dataCart);
                     const amountCart = dataCart.reduce((acc, product) => acc + product.amount_product, 0);
 
                     $(".addd-product-container").html(`
@@ -195,7 +197,7 @@ $(window).ready(function () {
                                     </div>
                                 </div>
                             </div>
-                            <div class="offcanvas-cart-item-delete text-right" idpr="${item.id}" option="1" onclick="delItemCart(this)">
+                            <div class="offcanvas-cart-item-delete text-right" id="cart-item-delete" idpr="${item.id}" option="1">
                                 <span class="offcanvas-cart-item-delete"><i class="fa fa-trash-o"></i></span>
                             </div>
                         </li>`;
@@ -214,7 +216,7 @@ $(window).ready(function () {
         `;
 
         const modalContent = ul.prop('outerHTML') + modalFooter;
-        $("#container-shopping-cart").html(modalContent);
+        $("#modal-shopping-cart-container").html(modalContent);
     }
 
     function viewShoppingCart() {
@@ -230,7 +232,7 @@ $(window).ready(function () {
             tbodyContent += `
                 <tr id="${item.id}">
                     <td class="product_remove">
-                        <span class="cursor-pointer" idpr="${item.id}" option="2" onclick="delItemCart(this)"><i class="fa fa-trash-o"></i></span>
+                        <span class="cursor-pointer" id="cart-item-delete" idpr="${item.id}" option="2"><i class="fa fa-trash-o"></i></span>
                     </td>
                     <td class="product_thumb">
                         <a href="${base_url}producto/${item.url}"><img src="${item.image}?>" alt=""></a>
@@ -260,7 +262,7 @@ $(window).ready(function () {
         });
         total = subtotal + totalIva;
 
-        $('#shopping-cart-container').html(`
+        $('#view-shopping-cart-container').html(`
             <div class="cart-section">
                 <div class="cart-table-wrapper" data-aos="fade-up" data-aos-delay="0">
                     <div class="container">
@@ -352,53 +354,59 @@ $(window).ready(function () {
             Swal.fire({icon: 'error', html: `<span class="font-weight-bold">Ha ocurrido un error. Inténtelo más tarde.</span>`, confirmButtonColor: '#4431DE'});
         }
     }
+
+    /*****************************
+     * Delete Item Shopping Cart
+     *****************************/
+
+    $("#modal-shopping-cart-container, #view-shopping-cart-container").on('click', '#cart-item-delete', function () {
+        let option = parseInt($(this).attr("option"));
+        let id = $(this).attr("idpr");
+        
+        if ((option == 1 || option == 2) && id != "") {
+            let index = dataCart.findIndex(product=> product.id === id)
+            if (index > -1) {
+                let total = 0;
+                dataCart.splice(index, 1);
+                localStorage.setItem("dataCart", JSON.stringify(dataCart));
+                upNumberCart();
+                if(option == 1){
+                    if(dataCart.length == 0){
+                        localStorage.removeItem("dataCart");
+                        $("#modal-shopping-cart-container").html('<h1 class="text-center c-p-deep-blue">Vacio</h1>');
+                    }else{
+                        dataCart.forEach(item => {
+                            total += item.amount_product * item.price;
+                        });
+                        $('.offcanvas-cart-total-price-value').html(numberFormat(total));
+                        $(this).parent().remove();
+                    }
+                }else{
+                    if(dataCart.length == 0){
+                        localStorage.removeItem("dataCart");
+                        window.location.href = base_url;
+                    }else{
+                        let subtotal = 0;
+                        let totalIva = 0;
+                        dataCart.forEach(item => {
+                            subtotal += item.amount_product * item.price;
+                             // totalIva (create IVA function and add them)
+                        });
+                        total = subtotal + totalIva;
+                        $(this).parent().parent().remove();
+
+                        $(".subtotal-cart").text("$" + numberFormat(subtotal));
+                        $(".iva-cart").text("$" + numberFormat(totalIva));
+                        $(".total-cart").text("$" + numberFormat(total));
+                    }
+                }
+            }else{
+                Swal.fire({icon: 'error', html: `<span class="font-weight-bold">Ha ocurrido un error. Inténtelo más tarde.</span>`, confirmButtonColor: '#4431DE'});
+            }
+        }else{
+            Swal.fire({icon: 'error', html: `<span class="font-weight-bold">Ha ocurrido un error. Inténtelo más tarde.</span>`, confirmButtonColor: '#4431DE'});
+        }
+    })    
+
 });
 
-function delItemCart(element) {
-    console.log(element)
-}
-/*****************************
-* Delete Item Shopping Cart
-*****************************/
-// function delItemCart(element) {
-//     let option = $(element).attr("option");
-//     let id = $(element).attr("idpr");
-    
-//     if (option == 1 || option == 2) {
-//         $.ajax({
-//             url: base_url + "index/delItemCart/",
-//             dataType: 'JSON',
-//             method: 'POST',
-//             data: {
-//                 id_product: id,
-//                 option: option,
-//             },
-//             beforeSend: function() {
-                
-//             },
-//             success: function(data){
-//                 if (data.status) {
-//                     if(option == 1){
-//                         $('.amount-product-cart').text(data.amountCart);
-//                         $("#container-shopping-cart").html(data.html_shoppingCart);  
-//                     }else{
-//                         $(element).parent().parent().remove();
-//                         $('.subtotal-cart').text('$'+data.subtotal);
-//                         $('.total-cart').text('$'+data.total);
-//                         if($('#table-cart tr').length == 1){
-//                             window.location.href = base_url;
-//                         }
-//                     }
-//                 }else{
-//                     Swal.fire({icon: 'error', html: `<span class="font-weight-bold">${data.error}</span>`, confirmButtonColor: '#4431DE'});
-//                 }
-//             },
-//             error: function(xhr, status, error) {
-//                 console.log(error)
-//             },
-//             complete: function() {
-                
-//             }
-//         });   
-//     }
-// }

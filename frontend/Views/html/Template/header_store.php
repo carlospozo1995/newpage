@@ -455,7 +455,7 @@
         <!-- Start  Offcanvas Addcart Wrapper -->
         <div class="offcanvas-add-cart-wrapper">
             <h4 class="offcanvas-title text-center font-weight-bold">CARRITO DE COMPRAS</h4>
-            <div id="container-shopping-cart">
+            <div id="modal-shopping-cart-container">
                 
             </div>
         </div> <!-- End  Offcanvas Addcart Wrapper -->

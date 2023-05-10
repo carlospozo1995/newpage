@@ -17,6 +17,6 @@
     </div>
 </div>
 
-<div id="shopping-cart-container">
+<div id="view-shopping-cart-container">
     
 </div>
