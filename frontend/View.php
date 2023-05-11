@@ -15,7 +15,6 @@
 
 			$ruta_page = RUTA_VIEW . 'html/' . $namePage .'.php';	
 
-
 			if ($namePage == 'Dashboard' || $namePage == 'Roles' || $namePage == 'Users' || $namePage == 'Categories' || $namePage == 'Products') {
 				require_once(RUTA_VIEW . 'html/Template/header_admin.php');
 			}
@@ -42,6 +41,9 @@
 			if($namePage == 'Index' || $namePage == 'Test' || $namePage == 'Categoria' || $namePage == 'Producto' || $namePage == 'Carrito' || $namePage == 'Payment'){
 				require_once(RUTA_VIEW . 'html/Template/footer_store.php');
 			}
+
+
+			
 
 		}
 	}

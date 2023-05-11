@@ -1,8 +1,8 @@
 // let getUrl = window.location.pathname;
-/*****************************
- * Modify Url
- *****************************/ 
-// var newUrl = getUrl.replace(/\/{2,}/g, '/').replace(/\/+$/, '');
+// /*****************************
+//  * Modify Url
+//  *****************************/ 
+// let newUrl = getUrl.replace(/\/{2,}/g, '/').replace(/\/+$/, '');
 // if(window.location.href != base_url){
 //     if(newUrl != getUrl){
 //         window.history.replaceState({}, '', newUrl);
@@ -11,17 +11,19 @@
 // }
 
 /*****************************
- * Alert Login-Register(Store)
+ * Modify View (comprar)
  *****************************/
-// if(localStorage.getItem("dataCart") == null){
-//     if(getUrl.split("/").pop() == "comprar"){
-//         window.location.href = base_url + "carrito";
-//     }
+// if(localStorage.getItem("dataCart") == null && getUrl.split("/").pop() == "comprar"){
+//     window.location.href = base_url + "carrito";
 // }
 
-// if(window.location.pathname.split("/").pop() == "comprar"){
-//     $('.user-session').remove();
+// if (getUrl.split("/").pop() == "comprar") {
+//     $('#modal-user').remove();
+//     $('#modal-register').remove();
+// }else{
+//     $('.user-session').removeClass('d-none');
 // }
+
 
 /*****************************
  * Alert Login-Register(Store)

@@ -158,6 +158,7 @@
         </div>
     </div>
 
+    <?php if($section_name != "Payment"){ ?>
     <div class="modal fade" tabindex="-1" id="modal-user">
         <div class="modal-dialog">
             <div class="modal-content p-1">
@@ -241,6 +242,7 @@
             </div>
         </div>
     </div>
+    <?php } ?>
 
     <script> const base_url = "<?= BASE_URL; ?>"; </script>
     <script> const media_store= "<?= MEDIA_STORE; ?>"; </script>

@@ -60,11 +60,17 @@
 
                         <div class="z-20 header-top-right">
                             <ul class="header-action-link action-color--black action-hover-color--page">
+                                <?php
+                                if($section_name != "Payment"){
+                                ?>
                                 <li class="position-relative user-session">
                                     <button<?= isset($_SESSION['login']) ? ' id="popover_mycount"' : ' data-bs-toggle="modal" data-bs-target="#modal-user"';?>>
                                         <i class="icon-user"></i>
                                     </button>
                                 </li>
+                                <?php
+                                }
+                                ?>
                                 <li>
                                     <a href="#offcanvas-wishlish" class="offcanvas-toggle">
                                         <i class="icon-heart"></i>
@@ -303,29 +309,27 @@
 
                     <div class="mobile-right-side">
                         <ul class="header-action-link action-color--black action-hover-color--page">
+                            <?php if($section_name != "Payment"){ ?>
                             <li class="position-relative user-session">
                                 <button<?= isset($_SESSION['login']) ? ' id="popover_mycount"' : ' data-bs-toggle="modal" data-bs-target="#modal-user"';?>>
                                     <i class="icon-user"></i>
                                 </button>
                             </li>
+                            <?php } ?>
                             <li>
                                 <a href="#offcanvas-wishlish" class="offcanvas-toggle">
                                     <i class="icon-heart"></i>
                                     <span class="item-count">0</span>
                                 </a>
                             </li>
-                            <?php
-                                if($section_name != "Carrito" && $section_name != "Payment"){
-                            ?>
+                            <?php if($section_name != "Carrito" && $section_name != "Payment"){ ?>
                             <li>
                                 <a href="#offcanvas-add-cart" class="offcanvas-toggle">
                                     <i class="icon-basket-loaded"></i>
                                     <span class="item-count amount-product-cart">0</span>
                                 </a>
                             </li>
-                            <?php
-                            }
-                            ?>
+                            <?php } ?>
                             <li>
                                 <a href="#search">
                                     <i class="icon-magnifier"></i>
