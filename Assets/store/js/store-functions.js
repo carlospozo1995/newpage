@@ -1,3 +1,28 @@
+// let getUrl = window.location.pathname;
+/*****************************
+ * Modify Url
+ *****************************/ 
+// var newUrl = getUrl.replace(/\/{2,}/g, '/').replace(/\/+$/, '');
+// if(window.location.href != base_url){
+//     if(newUrl != getUrl){
+//         window.history.replaceState({}, '', newUrl);
+//         location.reload();
+//     }
+// }
+
+/*****************************
+ * Alert Login-Register(Store)
+ *****************************/
+// if(localStorage.getItem("dataCart") == null){
+//     if(getUrl.split("/").pop() == "comprar"){
+//         window.location.href = base_url + "carrito";
+//     }
+// }
+
+// if(window.location.pathname.split("/").pop() == "comprar"){
+//     $('.user-session').remove();
+// }
+
 /*****************************
  * Alert Login-Register(Store)
  *****************************/

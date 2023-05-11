@@ -4,13 +4,6 @@ $(document).ready(function () {
     var perLoad = 10;
     var loading = false;
 
-    // MODIFY URL
-    var newUrl = window.location.pathname.replace(/\/{2,}/g, '/').replace(/\/+$/, '');
-    if(newUrl != window.location.pathname){
-        window.history.replaceState({}, '', newUrl);
-        location.reload();
-    }
-
     // LOAD PRODUCTS BY CATEGORIES
     $('.category-url').click(function (e) {
         e.preventDefault();

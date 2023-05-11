@@ -1,16 +1,3 @@
-<?php
-$subtotal = 0;
-// $total_iva = 0; (Variable if the product contains taxes)
-$total = 0;
-
-foreach ($_SESSION['dataCart'] as $product) {
-    $total_product = $product['amount_product'] > $product['stock'] ? $product['stock'] * $product['price'] : $product['amount_product'] * $product['price'];
-    $subtotal += $total_product;
-    // $total_iva = calculation and sum of all taxes
-    $total = $subtotal; //add subtotal plus tax
-    $id_product = Utils::encriptar($product['id']);
-}
-?>
 
 <div class="breadcrumb-section" data-aos="fade-up" data-aos-delay="0">
     <div class="pt-4 pb-4 mb-4 bg-mist-white">
@@ -132,12 +119,12 @@ foreach ($_SESSION['dataCart'] as $product) {
                         <div class="coupon_inner">
                             <div class="cart_subtotal">
                                 <p>Subtotal</p>
-                                <p class="cart_amount subtotal-cart">$<?= Utils::formatMoney($subtotal); ?></p>
+                                <p class="cart_amount subtotal-cart">$</p>
                             </div>
                             <hr>
                             <div class="cart_subtotal">
                                 <p>Total</p>
-                                <p class="cart_amount total-cart">$<?= Utils::formatMoney($total); ?></p>
+                                <p class="cart_amount total-cart">$</p>
                             </div>
                             <?php
                             if (isset($_SESSION['login'])) {

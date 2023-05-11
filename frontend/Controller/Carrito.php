@@ -8,41 +8,27 @@
 			$data = array();
 			$action = Utils::getParam("action", "");
 			switch ($action) {
-				case 'updateProductPrice':
-					// if(isset($_POST)){
-					// 	$id_product = Utils::desencriptar($_POST['id_product']);
-					// 	$amount_product = $_POST['amount_product'];
-
-					// 	$dataCart = array();
-					// 	$total_product = 0;
-					// 	$subtotal = 0;
-					// 	// $total_iva = calculation and sum of all taxes
-					// 	$total = 0;
-
-					// 	if(!empty($id_product)){
-					// 		$dataCart = $_SESSION['dataCart'];
-					// 		for ($i=0; $i < count($dataCart); $i++) { 
-					// 			if($dataCart[$i]['id'] == $id_product){
-					// 				$dataCart[$i]['amount_product'] = $amount_product;
-					// 				$total_product = $dataCart[$i]['price'] * $amount_product;
-					// 				break;
-					// 			}
-					// 		}
-
-					// 		$_SESSION['dataCart'] = $dataCart;
-					// 		foreach ($_SESSION['dataCart'] as $product) {
-					// 			$subtotal += $product['amount_product'] * $product['price'];
-					// 			// $total_iva = calculation and sum of all taxes
-					// 		}
-					// 		// El total va el subtotal sumado con el total_iva
-					// 		$total = $subtotal;
-					// 		$data = array("status" => true,"total_product" => '$'.Utils::formatMoney($total_product), "subtotal" => '$'.Utils::formatMoney($subtotal), "total" => '$'.Utils::formatMoney($total));
-					// 	}else{
-					// 		$data = array("status" => false, "error" => "Ha ocurrido un error. Inténtelo más tarde.");
-					// 	}
-						
-					// 	echo json_encode($data);
-					// }
+				case 'addCartProduct':
+					if($_POST){
+						$id_product = Utils::desencriptar($_POST['id_product']);
+						if(!empty($id_product)){
+							$arrInfoProd = Models_Store::getProductId($id_product);
+							if(!empty($arrInfoProd)){
+								$data_product = array('id' => $_POST['id_product'],
+													'code' => intval($arrInfoProd['code']),
+													'name' => $arrInfoProd['name_product'],
+													'price' => floatval($arrInfoProd['price']),
+													'stock' => intval($arrInfoProd['stock']),
+													'url' => $arrInfoProd['url'],
+													'image' => $arrInfoProd['images'][0]['url_image']);
+							
+								$data = array("status" => true, "product_added" => $data_product);
+							}
+						}else{
+							$data = array("status" => false, "error" => "Ha ocurrido un error. Inténtelo más tarde.");
+						}
+						echo json_encode($data);
+					}
 				break;
 			
 				default:
@@ -50,7 +36,8 @@
 
 					if (isset($_GET['process_payment'])) {
 						if ($_GET['process_payment'] == 'comprar') {
-							empty($_SESSION['dataCart']) ? header("Location: ".BASE_URL) : View::renderPage('Payment', $data);
+							// empty($_SESSION['dataCart']) ? header("Location: ".BASE_URL) : View::renderPage('Payment', $data);
+							View::renderPage('Payment', $data);
 						}else{
 							header("Location: ".BASE_URL."carrito/");
 						}

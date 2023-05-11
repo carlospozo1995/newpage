@@ -1,7 +1,6 @@
 
-let dataCart;
-
 $(window).ready(function () {
+    let dataCart;
     let dataCartLS = localStorage.getItem("dataCart");
     if (dataCartLS) {
         dataCart = JSON.parse(dataCartLS);
@@ -93,7 +92,7 @@ $(window).ready(function () {
         }
 
         $.ajax({
-            url: base_url + "index/addCartProduct/",
+            url: base_url + "carrito/addCartProduct/",
             dataType: 'JSON',
             method: 'POST',
             data: {
@@ -104,8 +103,6 @@ $(window).ready(function () {
             },
             success: function(data){
                 if (data.status) {
-
-                    
                     let product_added = data.product_added;
                     if(dataCart.some(product=> product.id === id)){
                         const indexProduct_added = dataCart.findIndex(product=> product.id === id);
@@ -182,7 +179,7 @@ $(window).ready(function () {
         const ul = $("<ul class='offcanvas-cart'></ul>");
         let total = 0;
         dataCart.forEach(item => {
-            total += item.amount_product > item.stock ? item.stock * item.price : item.amount_product * item.price;
+            total += item.amount_product * item.price;
             let li =  `<li class="offcanvas-cart-item-single">
                             <div class="offcanvas-cart-item-block">
                                 <a href="${base_url}producto/${item.url}" class="offcanvas-cart-item-image-link">
@@ -192,7 +189,7 @@ $(window).ready(function () {
                                 <div class="offcanvas-cart-item-content">
                                     <a href="${base_url}producto/${item.url}" class="offcanvas-cart-item-link">${item.name}</a>
                                     <div class="offcanvas-cart-item-details">
-                                        <span class="offcanvas-cart-item-details-quantity">${item.amount_product > item.stock ? item.stock : item.amount_product} x </span>
+                                        <span class="offcanvas-cart-item-details-quantity">${item.amount_product} x </span>
                                         <span class="offcanvas-cart-item-details-price">$${numberFormat(item.price)}</span>
                                     </div>
                                 </div>
@@ -225,8 +222,8 @@ $(window).ready(function () {
         let totalIva = 0;
         let tbodyContent;
         dataCart.forEach(item => {
-            let totalProduct = item.amount_product > item.stock ? item.stock * item.price : item.amount_product * item.price;
-            subtotal += item.amount_product > item.stock ? item.stock * item.price : item.amount_product * item.price;
+            let totalProduct = item.amount_product * item.price;
+            subtotal += item.amount_product * item.price;
             // totalIva (create IVA function and add them)
 
             tbodyContent += `
@@ -249,7 +246,7 @@ $(window).ready(function () {
                     <td class="product_quantity">
                         <div class="product-variable-quantity m-auto" style="width: max-content;">
                             <i class="fa fa-minus pl-4 pr-2 btn-minus" idpr="${item.id}"></i>
-                            <input id="amount-product" type="number" min="1" max="${item.stock}" value="${item.amount_product > item.stock ? item.stock : item.amount_product}" idpr="${item.id}">
+                            <input id="amount-product" type="number" min="1" max="${item.stock}" value="${item.amount_product}" idpr="${item.id}">
                             <i class="fa fa-plus pr-4 pl-2 btn-plus" idpr="${item.id}"></i>
                         </div>
                     </td>
@@ -358,7 +355,6 @@ $(window).ready(function () {
     /*****************************
      * Delete Item Shopping Cart
      *****************************/
-
     $("#modal-shopping-cart-container, #view-shopping-cart-container").on('click', '#cart-item-delete', function () {
         let option = parseInt($(this).attr("option"));
         let id = $(this).attr("idpr");
@@ -370,36 +366,42 @@ $(window).ready(function () {
                 dataCart.splice(index, 1);
                 localStorage.setItem("dataCart", JSON.stringify(dataCart));
                 upNumberCart();
-                if(option == 1){
-                    if(dataCart.length == 0){
-                        localStorage.removeItem("dataCart");
-                        $("#modal-shopping-cart-container").html('<h1 class="text-center c-p-deep-blue">Vacio</h1>');
-                    }else{
-                        dataCart.forEach(item => {
-                            total += item.amount_product * item.price;
-                        });
-                        $('.offcanvas-cart-total-price-value').html(numberFormat(total));
-                        $(this).parent().remove();
-                    }
-                }else{
-                    if(dataCart.length == 0){
-                        localStorage.removeItem("dataCart");
-                        window.location.href = base_url;
-                    }else{
-                        let subtotal = 0;
-                        let totalIva = 0;
-                        dataCart.forEach(item => {
-                            subtotal += item.amount_product * item.price;
-                             // totalIva (create IVA function and add them)
-                        });
-                        total = subtotal + totalIva;
-                        $(this).parent().parent().remove();
+                
+                switch (option){
+                    case 1:
+                        if(dataCart.length == 0){
+                            localStorage.removeItem("dataCart");
+                            $("#modal-shopping-cart-container").html('<h1 class="text-center c-p-deep-blue">Vacio</h1>');
+                        }else{
+                            dataCart.forEach(item => {
+                                total += item.amount_product * item.price;
+                            });
+                            $('.offcanvas-cart-total-price-value').html(numberFormat(total));
+                            $(this).parent().remove();
+                        }
+                    break;
 
-                        $(".subtotal-cart").text("$" + numberFormat(subtotal));
-                        $(".iva-cart").text("$" + numberFormat(totalIva));
-                        $(".total-cart").text("$" + numberFormat(total));
-                    }
+                    case 2:
+                        if(dataCart.length == 0){
+                            localStorage.removeItem("dataCart");
+                            window.location.href = base_url;
+                        }else{
+                            let subtotal = 0;
+                            let totalIva = 0;
+                            dataCart.forEach(item => {
+                                subtotal += item.amount_product * item.price;
+                                 // totalIva (create IVA function and add them)
+                            });
+                            total = subtotal + totalIva;
+                            $(this).parent().parent().remove();
+
+                            $(".subtotal-cart").text("$" + numberFormat(subtotal));
+                            $(".iva-cart").text("$" + numberFormat(totalIva));
+                            $(".total-cart").text("$" + numberFormat(total));
+                        }
+                    break;
                 }
+
             }else{
                 Swal.fire({icon: 'error', html: `<span class="font-weight-bold">Ha ocurrido un error. Inténtelo más tarde.</span>`, confirmButtonColor: '#4431DE'});
             }
@@ -409,4 +411,3 @@ $(window).ready(function () {
     })    
 
 });
-

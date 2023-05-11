@@ -11,9 +11,7 @@ RewriteEngine On
 
 ErrorDocument 404 "Lo siento, la página que estás buscando no existe."
 
-RewriteRule ^$ %{ENV:REWRITEBASE}index.php?show=Index [L]
-RewriteRule ^index/addCartProduct/$ %{ENV:REWRITEBASE}index.php?show=Index&action=addCartProduct [L]
-RewriteRule ^index/delItemCart/$ %{ENV:REWRITEBASE}index.php?show=Index&action=delItemCart [L]
+RewriteRule ^$ %{ENV:REWRITEBASE}index.php?show=Index [L]	
 RewriteRule ^index/logout/$ %{ENV:REWRITEBASE}index.php?show=Index&action=logout [L]
 
 #LOGIN
@@ -68,7 +66,7 @@ RewriteRule ^categoria/(.+)$ %{ENV:REWRITEBASE}index.php?show=categoria&cat_path
 RewriteRule ^producto/(.+)$ %{ENV:REWRITEBASE}index.php?show=producto&prod_path=$1 [L]
 
 RewriteRule ^(carrito/|carrito|Carrito)$ %{ENV:REWRITEBASE}index.php?show=Carrito [L]
-RewriteRule ^(carrito/|carrito|Carrito)/updateProductPrice/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=updateProductPrice [L]
+RewriteRule ^(carrito/|carrito|Carrito)/addCartProduct/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=addCartProduct [L]
 RewriteRule ^carrito/(.+)$ %{ENV:REWRITEBASE}index.php?show=Carrito&process_payment=$1 [L]
 
 #EXAMPLES
@@ -77,7 +75,6 @@ RewriteRule ^carrito/(.+)$ %{ENV:REWRITEBASE}index.php?show=Carrito&process_paym
 #BASE_URL.'resetPassword?email='.$resetEmail.'&token='.$token;up;
 
 #RewriteRule ^categoria/(.+)$ %{ENV:REWRITEBASE}index.php?show=categoria&urlCategories=$1 [L,QSA]
-
 
 #RewriteRule ^categoria/([^/]+)/?$ %{ENV:REWRITEBASE}index.php?show=categoria&category1=$1 [L]
 #RewriteRule ^categoria/([^/]+)/([^/]+)/?$ %{ENV:REWRITEBASE}index.php?show=categoria&category1=$1&category2=$2 [L]

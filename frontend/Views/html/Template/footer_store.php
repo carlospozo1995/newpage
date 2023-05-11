@@ -244,6 +244,7 @@
 
     <script> const base_url = "<?= BASE_URL; ?>"; </script>
     <script> const media_store= "<?= MEDIA_STORE; ?>"; </script>
+    
     <script src="<?= MEDIA_STORE; ?>js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/vendor/jquery-3.5.1.min.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/vendor/jquery-migrate-3.3.0.min.js"></script>
@@ -265,13 +266,14 @@
     <script src="<?= MEDIA_STORE; ?>js/main.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/store-functions.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/store-storage.js"></script>
-
+    
     <?php
     if(isset($file_js) && is_array($file_js) && !empty($file_js)){
         foreach ($file_js as $keyjs => $valuejs) {
             echo '<script src="'.MEDIA_STORE.'js/'.$valuejs.'.js"></script>';
         }
     }
+
 ?>
 </body>
 </html>
