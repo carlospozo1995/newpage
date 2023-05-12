@@ -36,7 +36,7 @@
 
 					if (isset($_GET['process_payment'])) {
 						if ($_GET['process_payment'] == 'comprar') {
-							// empty($_SESSION['dataCart']) ? header("Location: ".BASE_URL) : View::renderPage('Payment', $data);
+							$data["file_js"][] = "payment";
 							View::renderPage('Payment', $data);
 						}else{
 							header("Location: ".BASE_URL."carrito/");

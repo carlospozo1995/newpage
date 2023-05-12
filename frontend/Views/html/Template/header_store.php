@@ -60,8 +60,14 @@
 
                         <div class="z-20 header-top-right">
                             <ul class="header-action-link action-color--black action-hover-color--page">
-                                <?php
-                                if($section_name != "Payment"){
+                                <?php if($section_name != "Payment"){ ?>
+                                <li class="position-relative user-session">
+                                    <button<?= isset($_SESSION['login']) ? ' id="popover_mycount"' : ' data-bs-toggle="modal" data-bs-target="#modal-user"';?>>
+                                        <i class="icon-user"></i>
+                                    </button>
+                                </li>
+                                <?php }else{
+                                    if (isset($_SESSION['login'])) {
                                 ?>
                                 <li class="position-relative user-session">
                                     <button<?= isset($_SESSION['login']) ? ' id="popover_mycount"' : ' data-bs-toggle="modal" data-bs-target="#modal-user"';?>>
@@ -69,8 +75,9 @@
                                     </button>
                                 </li>
                                 <?php
-                                }
-                                ?>
+                                    }
+                                } ?>
+
                                 <li>
                                     <a href="#offcanvas-wishlish" class="offcanvas-toggle">
                                         <i class="icon-heart"></i>
@@ -315,7 +322,17 @@
                                     <i class="icon-user"></i>
                                 </button>
                             </li>
-                            <?php } ?>
+                            <?php } else{
+                                if(isset($_SESSION['login'])){
+                            ?>
+                            <li class="position-relative user-session">
+                                <button<?= isset($_SESSION['login']) ? ' id="popover_mycount"' : ' data-bs-toggle="modal" data-bs-target="#modal-user"';?>>
+                                    <i class="icon-user"></i>
+                                </button>
+                            </li>
+                            <?php       
+                                }
+                            }?>
                             <li>
                                 <a href="#offcanvas-wishlish" class="offcanvas-toggle">
                                     <i class="icon-heart"></i>

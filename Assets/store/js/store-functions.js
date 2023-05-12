@@ -1,29 +1,8 @@
-// let getUrl = window.location.pathname;
-// /*****************************
-//  * Modify Url
-//  *****************************/ 
-// let newUrl = getUrl.replace(/\/{2,}/g, '/').replace(/\/+$/, '');
-// if(window.location.href != base_url){
-//     if(newUrl != getUrl){
-//         window.history.replaceState({}, '', newUrl);
-//         location.reload();
-//     }
-// }
+let getUrl = window.location.pathname;
 
-/*****************************
- * Modify View (comprar)
- *****************************/
-// if(localStorage.getItem("dataCart") == null && getUrl.split("/").pop() == "comprar"){
-//     window.location.href = base_url + "carrito";
-// }
-
-// if (getUrl.split("/").pop() == "comprar") {
-//     $('#modal-user').remove();
-//     $('#modal-register').remove();
-// }else{
-//     $('.user-session').removeClass('d-none');
-// }
-
+if(localStorage.getItem("dataCart") == null && getUrl.split("/").pop() == "comprar"){
+    window.location.href = base_url + "carrito";
+}
 
 /*****************************
  * Alert Login-Register(Store)

@@ -13,6 +13,18 @@
 			$section_name = $namePage;
 			// ---------------------------------- //
 
+			// ---------- MODIFY URL ----------//
+			$current_url = preg_replace('/\/{2,}/', '/', $_SERVER['REQUEST_URI']);
+			$current_url = preg_replace('/\/+$/', '', $current_url);
+
+			if("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] != BASE_URL){
+				if ($current_url != $_SERVER['REQUEST_URI']){
+					header("Location: " . $current_url, true, 301);
+					exit();
+				}
+			}
+			// ---------------------------------- //
+
 			$ruta_page = RUTA_VIEW . 'html/' . $namePage .'.php';	
 
 			if ($namePage == 'Dashboard' || $namePage == 'Roles' || $namePage == 'Users' || $namePage == 'Categories' || $namePage == 'Products') {
@@ -41,9 +53,6 @@
 			if($namePage == 'Index' || $namePage == 'Test' || $namePage == 'Categoria' || $namePage == 'Producto' || $namePage == 'Carrito' || $namePage == 'Payment'){
 				require_once(RUTA_VIEW . 'html/Template/footer_store.php');
 			}
-
-
-			
 
 		}
 	}
