@@ -29,7 +29,30 @@
                     <?php
                     if (isset($_SESSION['login'])) {
                     ?>
-                    <p>existe session user</p>
+                    <div class="checkout-data_user" data-aos="fade-up" data-aos-delay="400" style="border: 1px solid red; border-radius: 6px;">
+                        <div class="title-data_user">
+                            <h3>Billing Details</h3>
+                            <i class="icon-note" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"></i>
+                        </div>
+                        <div class="collapse" id="collapseExample">
+                            <div>
+                                Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <p>
+                      <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Link with href
+                      </a>
+                      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Button with data-bs-target
+                      </button>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                      <div class="card card-body">
+                        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                      </div>
+                    </div> -->
                     <?php
                     }else{
                     ?>
@@ -119,12 +142,16 @@
                         <div class="coupon_inner">
                             <div class="cart_subtotal">
                                 <p>Subtotal</p>
-                                <p class="cart_amount subtotal-cart">$</p>
+                                <p class="cart_amount subtotal-payment"></p>
+                            </div>
+                            <div class="cart_subtotal">
+                                <p>IVA</p>
+                                <p class="cart_amount iva-payment"></p>
                             </div>
                             <hr>
                             <div class="cart_subtotal">
                                 <p>Total</p>
-                                <p class="cart_amount total-cart">$</p>
+                                <p class="cart_amount total-payment"></p>
                             </div>
                             <?php
                             if (isset($_SESSION['login'])) {

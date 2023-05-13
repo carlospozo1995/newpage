@@ -1,6 +1,5 @@
-let getUrl = window.location.pathname;
 
-if(localStorage.getItem("dataCart") == null && getUrl.split("/").pop() == "comprar"){
+if(localStorage.getItem("dataCart") == null && window.location.pathname.split("/").pop() == "comprar"){
     window.location.href = base_url + "carrito";
 }
 
@@ -71,6 +70,7 @@ $(document).ready(function () {
                     },
                     success: function(data){
                         if (data.status) {
+                            localStorage.setItem("client", JSON.stringify(data.user));
                             window.location.reload(false);
                         }else{
                             msgAlert('.alert-login', data.msg);
@@ -112,6 +112,7 @@ $(document).ready(function () {
                 
             },
             success: function(data){
+                localStorage.removeItem("client");
                 window.location.reload(false);
             },
             error: function(xhr, status, error) {

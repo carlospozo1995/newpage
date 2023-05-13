@@ -41,7 +41,13 @@
                             		
                             		$arr_rol_user = Models_Usuario::dataSessionlogin($_SESSION['idUser']); 
 									// Models_Usuario::updateStatuPass($_SESSION['idUser'], array('update_status' => 1));
-
+                            		$user = array(
+                            			'identificacion' => $_SESSION['data_user']['dni'],
+                            			'nombre' => $_SESSION['data_user']['name_user'],
+                            			'apellido' => $_SESSION['data_user']['surname_user'],
+                            			'telefono' => $_SESSION['data_user']['phone'],
+                            			'correo' => $_SESSION['data_user']['email']
+                            		);
                             		$status = true;
                             		$msg = "OK";								
 								}else{
@@ -51,10 +57,11 @@
 							}
 						}
 					} catch (Exception $e) {
+						$user = "";
 						$status = false;
 						$msg = $e->getMessage();
 					}
-					$data = array("status"=>$status,"msg"=>$msg);
+					$data = array("status"=>$status,"msg"=>$msg, "user" => $user);
 					echo json_encode($data);
 
 				break;
