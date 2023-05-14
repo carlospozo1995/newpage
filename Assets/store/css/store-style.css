@@ -494,6 +494,40 @@
     color: #000 !important;
 }
 
+/* ----- PAYMENT PROCESSES (PAGE) ----- */
+.checkout-data_buy{
+    border: 1px solid #ededed;
+    border-radius: 3px;
+}
+.checkout-data_buy .title-data_buy h3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    line-height: 36px;
+    padding: 5px 15px;
+    background: #333;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 3px 3px 0px 0px;
+    margin-bottom: 0;
+}
+
+.purchase-summary{
+    border: 1px solid #ededed;
+    border-radius: 3px;
+}
+.purchase-summary h3{
+    color: #ffffff;
+    line-height: 36px;
+    padding: 5px 15px;
+    background: #333;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 3px 3px 0px 0px;
+}
 /* ----- DIFFFERENT RESPONSIVE ----- */
 @media (max-width: 400px) {
     .header-action-link li a i{

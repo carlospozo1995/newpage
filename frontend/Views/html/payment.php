@@ -29,30 +29,62 @@
                     <?php
                     if (isset($_SESSION['login'])) {
                     ?>
-                    <div class="checkout-data_user" data-aos="fade-up" data-aos-delay="400" style="border: 1px solid red; border-radius: 6px;">
-                        <div class="title-data_user">
-                            <h3>Billing Details</h3>
-                            <i class="icon-note" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"></i>
+                    <div class="checkout-data_buy mb-4" data-aos="fade-up" data-aos-delay="400" >
+                        <div class="title-data_buy">
+                            <h3>1. DATOS<i class="icon-note" data-bs-toggle="collapse" data-bs-target="#dataCollapse" role="button" aria-expanded="false"></i></h3>
                         </div>
-                        <div class="collapse" id="collapseExample">
+                        <div class="px-5 py-5 collapse" id="dataCollapse">
+                            <div class="mb-3">
+                                <span class="font-weight-bold">Cédula</span>
+                                <input disabled type="text" class="form-control" value="<?= $_SESSION['data_user']['dni']; ?>">
+                            </div>
+                            <div class="mb-3">
+                                <span class="font-weight-bold">Nombre</span>
+                                <input type="text" class="form-control" value="<?= $_SESSION['data_user']['name_user']; ?>">
+                            </div>
+                            <div class="mb-3">
+                                <span class="font-weight-bold">Apellido</span>
+                                <input type="text" class="form-control" value="<?= $_SESSION['data_user']['surname_user']; ?>">
+                            </div>
+                            <div class="mb-3">
+                                <span class="font-weight-bold">Correo</span>
+                                <input type="text" class="form-control" value="<?= $_SESSION['data_user']['email']; ?>">
+                            </div>
                             <div>
-                                Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                                <span class="font-weight-bold">Teléfono / Movil</span>
+                                <input type="text" class="form-control" value="<?= $_SESSION['data_user']['phone']; ?>">
                             </div>
                         </div>
                     </div>
-                    <!-- <p>
-                      <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                        Link with href
-                      </a>
-                      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                        Button with data-bs-target
-                      </button>
-                    </p>
-                    <div class="collapse" id="collapseExample">
-                      <div class="card card-body">
-                        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                      </div>
-                    </div> -->
+                    
+                    <div class="checkout-data_buy mb-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="title-data_buy">
+                            <h3>2. ENVIO<i class="icon-note"></i></h3>
+                        </div>
+
+                        <div class="px-5 py-5">
+                            <div class="default-form-box">
+                                <label class="font-weight-bold" for="localidad">Localidad</label>
+                                <select class="country_option mb-3 nice-select wide" name="country" id="localidad">
+                                    <option value="2">Balao</option>
+                                    <option value="3">Santa Rita</option>
+                                    <option value="4">San Carlos</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <span class="font-weight-bold">Dirección</span>
+                                <input type="text" class="form-control">
+                            </div> 
+                            <div class="mb-3">
+                                <span class="font-weight-bold">Información adicional(ej: cerca de..)</span>
+                                <input type="text" class="form-control" placeholder="Opcional">
+                            </div> 
+                            <div>
+                                <span class="font-weight-bold">Destinatario</span>
+                                <input type="text" class="form-control" placeholder="<?= $_SESSION['data_user']['name_user']." ".$_SESSION['data_user']['surname_user']; ?>">
+                            </div>
+                        </div>
+                    </div>
                     <?php
                     }else{
                     ?>
@@ -137,6 +169,16 @@
                 </div>
 
                 <div class="col-lg-4 col-md-4">
+                    <?php
+                    if(isset($_SESSION['login'])){
+                    ?>
+                    <div class="mb-4 purchase-summary" data-aos="fade-up" data-aos-delay="400">
+                        <h3 class="text-center">RESUMEN DE COMPRA</h3>
+                    </div>
+                    <?php
+                    }
+                    ?>
+
                     <div class="coupon_code right" data-aos="fade-up" data-aos-delay="400">
                         <h3 class="text-center">Total del carrito</h3>
                         <div class="coupon_inner">

@@ -17366,7 +17366,7 @@ table {
     width: 100%;
 }
 .country_option .list {
-    height: 150px;
+    height: 120px;
     overflow-y: scroll;
 }
 

@@ -70,7 +70,7 @@ $(document).ready(function () {
                     },
                     success: function(data){
                         if (data.status) {
-                            localStorage.setItem("client", JSON.stringify(data.user));
+                            // localStorage.setItem("client", JSON.stringify(data.user));
                             window.location.reload(false);
                         }else{
                             msgAlert('.alert-login', data.msg);
@@ -112,7 +112,7 @@ $(document).ready(function () {
                 
             },
             success: function(data){
-                localStorage.removeItem("client");
+                // localStorage.removeItem("client");
                 window.location.reload(false);
             },
             error: function(xhr, status, error) {
