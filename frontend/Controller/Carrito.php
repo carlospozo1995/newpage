@@ -42,28 +42,19 @@
 
 							foreach ($products as $product) {
 							    $newProduct = array(
-							        'id' => $product['id_product'],
-							        'code' => $product['code'],
+							        'id' => Utils::encriptar($product['id_product']),
+							        'code' => intval($product['code']),
 							        'name' => $product['name_product'],
-							        'price' => $product['price'],
-							        'stock' => $product['stock'],
+							        'price' => floatval($product['price']),
+							        'stock' => intval($product['stock']),
 							        'url' => $product['url'],
+									'image' => $product['images'][0]['url_image']
 							    );
-
-							    // if (isset($product['images']) && is_array($product['images'])) {
-							    //     if (count($product['images']) > 0) {
-							    //         $newProduct['image'] = $product['images'][0]['url_image'];
-							    //     } else {
-							    //         $newProduct['image'] = '';
-							    //     }
-							    // }
 
 							    $newArray[] = $newProduct;
 							}
 							echo json_encode($newArray);
-	
 						}
-						
 					}	
 				break;
 			

@@ -20,10 +20,10 @@ $(window).ready(function () {
                 
             },
             success: function(data){
-                console.log(dataCart)
-                console.log(data)
+                // console.log(dataCart);
+                // console.log(data);
                 // const idsArrayPrincipal = $.map(data, function(producto) {
-                //   return producto.id_product;
+                //   return producto.id;
                 // });
 
                 // $.each(dataCart, function(index, subArraySecundario) {
@@ -36,6 +36,76 @@ $(window).ready(function () {
                 //     }
                 // })
                 // console.log(dataCart);
+
+
+
+                // // Obtén una referencia al subarray de productos del array principal
+                // const productosArrayPrincipal = arrayPrincipal[0];
+
+                // // Actualiza el array secundario con los cambios del array principal
+                // for (let i = arraySecundario.length - 1; i >= 0; i--) {
+                //     const subArraySecundario = arraySecundario[i];
+                  
+                //     for (let j = subArraySecundario.length - 1; j >= 0; j--) {
+                //         const productoSecundario = subArraySecundario[j];
+                        
+                //         // Verifica si el producto no existe en el array principal
+                //         const existeEnPrincipal = productosArrayPrincipal.some(producto => producto.id === productoSecundario.id);
+                        
+                //         // Si no existe, elimina el producto del array secundario
+                //         if (!existeEnPrincipal) {
+                //             subArraySecundario.splice(j, 1);
+                //         } else {
+                //             // Actualiza los datos del producto secundario con los del producto principal
+                //             const productoPrincipal = productosArrayPrincipal.find(producto => producto.id === productoSecundario.id);
+                //             Object.assign(productoSecundario, productoPrincipal);
+                //         }
+                //     }
+                // }
+
+                // console.log(dataCart);
+
+
+                const arrayPrincipal = [
+                  [{ id: 1, nombre: 'producto 1', precio: 10 },
+                  { id: 2, nombre: 'producto 2', precio: 20 },
+                  { id: 3, nombre: 'producto 3', precio: 30 }
+                  ]
+                ];
+
+                const arraySecundario = [
+                  [{ id: 1, nombre: 'producto 1', precio: 5 },
+                  { id: 2, nombre: 'producto 2', precio: 90 },
+                  { id: 3, nombre: 'producto 3', precio: 30 }
+                  ]
+                ];
+
+                // Obtén una referencia al subarray de productos del array principal
+                const productosArrayPrincipal = arrayPrincipal[0];
+
+                // Actualiza el array secundario con los cambios del array principal
+                for (let i = arraySecundario.length - 1; i >= 0; i--) {
+                  const subArraySecundario = arraySecundario[i];
+                  
+                  for (let j = subArraySecundario.length - 1; j >= 0; j--) {
+                    const productoSecundario = subArraySecundario[j];
+                    
+                    // Verifica si el producto no existe en el array principal
+                    const existeEnPrincipal = productosArrayPrincipal.some(producto => producto.id === productoSecundario.id);
+                    
+                    // Si no existe, elimina el producto del array secundario
+                    if (!existeEnPrincipal) {
+                      subArraySecundario.splice(j, 1);
+                    } else {
+                      // Actualiza los datos del producto secundario con los del producto principal
+                      const productoPrincipal = productosArrayPrincipal.find(producto => producto.id === productoSecundario.id);
+                      Object.assign(productoSecundario, productoPrincipal);
+                    }
+                  }
+                }
+
+                console.log(arraySecundario);
+
             },
             error: function(xhr, status, error) {
             },
@@ -43,6 +113,7 @@ $(window).ready(function () {
                 
             }
         });     
+        
 
         modalShoppingCart();
         viewShoppingCart();

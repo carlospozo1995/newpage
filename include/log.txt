@@ -607,3 +607,702 @@
 [2023/05/15 07:23:31] SQL Query: SELECT * FROM categories WHERE  status = 1
 [2023/05/15 07:23:34] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (1,2,8,5) AND status = 1
 [2023/05/15 07:23:34] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1,2,8,5)
+[2023/05/15 09:12:45] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:12:45] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:12:45] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/05/15 09:12:45] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/05/15 09:12:45] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:12:45] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/05/15 09:12:45] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/05/15 09:12:51] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (1,2,8,5) AND status = 1
+[2023/05/15 09:12:51] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1,2,8,5)
+[2023/05/15 09:13:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:13:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:13:14] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/05/15 09:13:14] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/05/15 09:13:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:13:14] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/05/15 09:13:14] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/05/15 09:13:17] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (1,2,8,5) AND status = 1
+[2023/05/15 09:13:17] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1,2,8,5)
+[2023/05/15 09:13:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:13:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:13:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/05/15 09:13:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/05/15 09:13:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:13:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/05/15 09:13:57] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/05/15 09:14:00] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (1,2,8,5) AND status = 1
+[2023/05/15 09:14:00] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1,2,8,5)
+[2023/05/15 09:15:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:15:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:15:13] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/05/15 09:15:13] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/05/15 09:15:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:15:13] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/05/15 09:15:13] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/05/15 09:15:16] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (1,2,8,5) AND status = 1
+[2023/05/15 09:15:16] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1,2,8,5)
+[2023/05/15 09:15:31] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:15:31] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:15:31] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:15:31] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:15:31] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:15:31] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:15:31] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:15:31] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:15:31] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:15:31] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:15:31] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:15:31] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:15:31] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:15:31] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:15:33] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (8) AND status = 1
+[2023/05/15 09:15:33] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (8)
+[2023/05/15 09:15:44] SQL Query: SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = '2'
+[2023/05/15 09:15:44] SQL Query: SELECT image FROM img_product WHERE product_id = '2'
+[2023/05/15 09:15:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:15:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:15:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:15:46] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:15:46] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:15:46] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:15:46] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:15:47] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:15:47] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:15:47] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:15:47] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:15:47] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:15:47] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:15:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:15:49] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (8,2) AND status = 1
+[2023/05/15 09:15:49] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (8,2)
+[2023/05/15 09:22:53] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:22:53] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:22:53] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:22:53] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:22:53] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:22:53] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:22:53] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:22:53] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:22:53] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:22:53] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:22:53] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:22:53] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:22:53] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:22:53] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:23:07] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:23:07] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:23:07] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:23:07] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:23:07] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:23:07] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:23:07] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:23:07] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:23:07] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:23:07] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:23:07] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:23:07] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:23:07] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:23:07] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:23:31] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:23:31] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:23:31] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:23:31] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:23:31] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:23:31] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:23:31] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:23:31] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:23:31] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:23:31] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:23:31] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:23:31] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:23:31] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:23:31] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:23:33] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (8,2) AND status = 1
+[2023/05/15 09:23:33] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (8,2)
+[2023/05/15 09:23:45] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:23:45] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:23:45] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:23:45] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:23:45] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:23:45] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:23:45] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:23:45] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:23:45] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:23:45] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:23:45] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:23:45] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:23:45] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:23:45] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:23:47] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (8,2) AND status = 1
+[2023/05/15 09:23:47] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (8,2)
+[2023/05/15 09:30:44] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:30:44] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:30:44] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:30:44] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:30:44] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:30:44] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:30:44] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:30:44] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:30:44] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:30:44] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:30:44] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:30:44] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:30:44] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:30:44] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:30:56] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:30:56] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:30:56] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:30:56] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:30:56] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:30:56] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:30:56] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:30:56] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:30:56] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:30:56] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:30:56] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:30:56] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:30:56] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:30:56] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:30:59] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (8,2) AND status = 1
+[2023/05/15 09:30:59] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (8,2)
+[2023/05/15 09:31:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:31:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:31:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:31:17] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:31:17] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:31:17] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:31:18] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:31:18] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:31:18] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:31:18] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:31:18] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:31:18] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:31:18] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:31:18] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:31:20] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (8,2) AND status = 1
+[2023/05/15 09:31:20] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (8,2)
+[2023/05/15 09:31:43] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:31:43] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:31:43] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:31:43] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:31:43] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:31:43] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:31:43] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:31:43] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:31:43] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:31:43] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:31:43] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:31:43] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:31:43] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:31:43] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:31:46] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (8,2) AND status = 1
+[2023/05/15 09:31:46] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (8,2)
+[2023/05/15 09:32:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:32:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:32:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:32:01] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:32:01] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:32:01] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:32:02] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:32:02] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:32:02] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:32:02] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:32:02] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:32:02] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:32:02] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:32:02] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:32:05] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (8,2) AND status = 1
+[2023/05/15 09:32:05] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (8,2)
+[2023/05/15 09:34:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:34:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:34:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:34:28] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:34:28] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:34:28] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:34:28] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:34:28] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:34:28] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:34:28] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:34:28] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:34:28] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:34:28] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:34:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:34:31] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (8,2) AND status = 1
+[2023/05/15 09:34:31] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (8,2)
+[2023/05/15 09:34:59] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:34:59] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:34:59] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:34:59] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:34:59] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:34:59] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:34:59] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:34:59] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:34:59] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:34:59] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:34:59] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:34:59] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:34:59] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:34:59] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:35:02] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (8,2) AND status = 1
+[2023/05/15 09:35:02] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (8,2)
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:35:33] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:35:33] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:35:33] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:35:33] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:35:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:35:34] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:35:34] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:35:34] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:35:34] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:35:34] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:35:34] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:35:34] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:35:34] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:35:34] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:35:34] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:35:34] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:35:34] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:35:34] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:35:34] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:35:36] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (8,2) AND status = 1
+[2023/05/15 09:35:36] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (8,2)
+[2023/05/15 09:35:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:35:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:35:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:35:57] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:35:57] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:35:57] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:35:57] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:35:57] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:35:57] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:35:57] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:35:57] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:35:57] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:35:57] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:35:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:36:00] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (8,2) AND status = 1
+[2023/05/15 09:36:00] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (8,2)
+[2023/05/15 09:36:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:36:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:36:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:36:30] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:36:30] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:36:30] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:36:30] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:36:30] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:36:30] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:36:30] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:36:30] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:36:30] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:36:30] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:36:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:36:37] SQL Query: SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = '2'
+[2023/05/15 09:36:37] SQL Query: SELECT image FROM img_product WHERE product_id = '2'
+[2023/05/15 09:36:40] SQL Query: SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = '5'
+[2023/05/15 09:36:40] SQL Query: SELECT image FROM img_product WHERE product_id = '5'
+[2023/05/15 09:36:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:36:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:36:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:36:42] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:36:42] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:36:42] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:36:42] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:36:42] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:36:42] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:36:42] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:36:42] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:36:42] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:36:42] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:36:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:36:44] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 09:36:44] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 09:38:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:38:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:38:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:38:14] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:38:14] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:38:14] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:38:14] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:38:14] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:38:14] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:38:14] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:38:14] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:38:14] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:38:14] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:38:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:38:17] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 09:38:17] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 09:38:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:38:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:38:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:38:24] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:38:24] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:38:24] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:38:24] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:38:24] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:38:24] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:38:24] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:38:24] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:38:24] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:38:24] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:38:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:38:27] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 09:38:27] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 09:38:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:38:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:38:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:38:42] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:38:42] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:38:42] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:38:42] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:38:42] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:38:42] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:38:42] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:38:42] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:38:42] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:38:42] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:38:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:38:45] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 09:38:45] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 09:41:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:41:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:41:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:41:33] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:41:33] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:41:33] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:41:33] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:41:33] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:41:33] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:41:33] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:41:33] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:41:33] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:41:33] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:41:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:41:36] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 09:41:36] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 09:41:50] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:41:50] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:41:50] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:41:50] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:41:50] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:41:50] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:41:50] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:41:50] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:41:50] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:41:50] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:41:50] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:41:50] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:41:50] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:41:50] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:41:52] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 09:41:52] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 09:42:00] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:42:00] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:42:00] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:42:00] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:42:00] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:42:00] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:42:00] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:42:00] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:42:00] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:42:00] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:42:00] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:42:00] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:42:00] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:42:00] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:42:02] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 09:42:02] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 09:43:23] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:43:23] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:43:23] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:43:23] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:43:23] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:43:23] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:43:24] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:43:24] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:43:24] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:43:24] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:43:24] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:43:24] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:43:24] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:43:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:43:26] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 09:43:26] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 09:43:37] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:43:37] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:43:37] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:43:37] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:43:37] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:43:37] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:43:37] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:43:37] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:43:37] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:43:37] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:43:37] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:43:37] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:43:37] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:43:37] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:43:40] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 09:43:40] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 09:43:52] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:43:52] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:43:52] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:43:52] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:43:52] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:43:52] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:43:52] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:43:52] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:43:52] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:43:52] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:43:52] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:43:52] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:43:52] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:43:52] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:43:55] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 09:43:55] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 09:44:15] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/05/15 09:44:15] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/05/15 09:44:15] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/05/15 09:44:19] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/05/15 09:44:19] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/05/15 09:44:19] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/05/15 09:44:32] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/05/15 09:44:32] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:44:37] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg'
+[2023/05/15 09:44:37] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/05/15 09:44:37] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral= NULL,sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount="10",cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="2" WHERE id_product='2'
+[2023/05/15 09:44:40] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:44:40] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:44:40] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:44:40] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:44:40] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:44:40] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:44:40] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:44:40] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:44:40] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:44:40] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:44:40] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:44:40] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:44:40] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:44:42] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 09:44:42] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 09:45:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:45:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:45:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:45:01] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:45:01] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:45:01] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:45:01] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:45:01] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:45:01] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:45:01] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:45:01] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:45:01] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:45:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:45:04] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 09:45:04] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 09:45:07] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/05/15 09:45:07] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:45:11] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg'
+[2023/05/15 09:45:11] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/05/15 09:45:11] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral= NULL,sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="5",prevPrice="1767.13",discount="10",cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/05/15 09:45:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:45:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:45:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:45:15] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 09:45:15] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 09:45:15] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 09:45:15] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 09:45:15] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 09:45:15] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 09:45:15] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 09:45:15] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 09:45:15] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 09:45:15] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 09:45:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 09:45:17] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 09:45:17] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 10:11:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:11:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:11:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:11:46] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 10:11:46] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 10:11:46] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 10:11:46] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 10:11:46] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 10:11:46] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 10:11:46] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 10:11:46] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 10:11:46] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 10:11:47] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 10:11:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:11:49] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 10:11:49] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 10:14:04] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/05/15 10:14:04] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 10:14:37] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg'
+[2023/05/15 10:14:37] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/05/15 10:14:37] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral= NULL,sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="6",prevPrice="1767.13",discount="10",cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/05/15 10:14:42] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '5'
+[2023/05/15 10:14:42] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 10:14:47] SQL Query: SELECT * FROM products WHERE code = '15252000556' AND id_product != 5
+[2023/05/15 10:14:47] SQL execute: UPDATE products SET category_id="200",code="15252000556",name_product="Audifonos C/microfono negro  H200",desMain="Auriculares estéreo con micrófono H200. Micrófono de alta sensibilidad, comunicación clara y fluida con sus compañeros de equipo.",desGeneral="<ul>
+<li>Controla f&aacute;cilmente el volumen en juegos, pel&iacute;culas, m&uacute;sica.</li>
+<li>Control en cable.</li>
+<li>Compatibilidad: PCs, port&aacute;tiles, smartphones y otros dispositivos con salida de audio de 3.5 mm.</li>
+<li>USB para luz led azul.</li>
+<li>Bot&oacute;n de encendido / apagado de luz en orejera.</li>
+</ul>",sliderMbl= NULL,sliderDst= NULL,sliderDes= NULL,brand="HP",price="25.01",stock="10",prevPrice= NULL,discount= NULL,cantDues= NULL,priceDues= NULL,url="audifonos-c-microfono-negro-h200",status="1" WHERE id_product='5'
+[2023/05/15 10:14:52] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:14:52] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:14:52] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:14:52] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 10:14:52] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 10:14:52] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 10:14:52] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 10:14:52] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 10:14:52] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 10:14:52] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 10:14:52] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 10:14:52] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 10:14:52] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 10:14:52] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:14:54] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 10:14:54] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 10:21:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:21:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:21:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:21:47] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 10:21:47] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 10:21:47] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 10:21:47] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 10:21:47] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 10:21:47] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 10:21:47] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 10:21:47] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 10:21:47] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 10:21:47] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 10:21:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:21:50] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 10:21:50] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 10:22:00] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:22:00] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:22:00] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:22:00] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 10:22:00] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 10:22:00] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 10:22:00] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 10:22:00] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 10:22:00] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 10:22:00] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 10:22:00] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 10:22:00] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 10:22:01] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 10:22:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:22:03] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 10:22:03] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 10:27:08] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:27:08] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:27:08] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:27:08] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 10:27:08] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 10:27:08] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 10:27:08] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 10:27:08] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 10:27:08] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 10:27:08] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 10:27:08] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 10:27:08] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 10:27:08] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 10:27:08] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:27:11] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 10:27:11] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 10:27:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:27:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:27:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:27:30] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 10:27:30] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 10:27:30] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 10:27:30] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 10:27:30] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 10:27:30] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 10:27:30] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 10:27:30] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 10:27:30] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 10:27:30] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 10:27:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:27:33] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 10:27:33] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 10:27:48] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:27:48] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:27:48] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:27:48] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 10:27:48] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 10:27:48] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 10:27:48] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 10:27:48] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 10:27:48] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 10:27:48] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 10:27:48] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 10:27:48] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 10:27:48] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 10:27:48] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:27:50] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 10:27:50] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 10:28:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:28:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:28:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:28:04] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 10:28:04] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 10:28:04] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 10:28:04] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 10:28:04] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 10:28:04] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 10:28:04] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 10:28:04] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 10:28:04] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 10:28:04] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 10:28:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:28:06] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 10:28:06] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
+[2023/05/15 10:28:27] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:28:27] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:28:27] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:28:27] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/15 10:28:27] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/15 10:28:27] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/15 10:28:27] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/15 10:28:27] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/15 10:28:27] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/15 10:28:27] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/15 10:28:27] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/15 10:28:27] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/15 10:28:27] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/15 10:28:27] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/15 10:28:30] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,5) AND status = 1
+[2023/05/15 10:28:30] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,5)
