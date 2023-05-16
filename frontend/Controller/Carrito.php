@@ -30,6 +30,42 @@
 						echo json_encode($data);
 					}
 				break;
+				case 'getProducts':
+					if (isset($_POST)) {
+				        $ids_products = implode(',', array_map(function($data) {
+						    return Utils::desencriptar($data);
+						}, $_POST['ids_products']));
+						$products = Models_Store::getProductsStorage($ids_products);
+						
+						if(!empty($products)){
+							$newArray = array();
+
+							foreach ($products as $product) {
+							    $newProduct = array(
+							        'id' => $product['id_product'],
+							        'code' => $product['code'],
+							        'name' => $product['name_product'],
+							        'price' => $product['price'],
+							        'stock' => $product['stock'],
+							        'url' => $product['url'],
+							    );
+
+							    // if (isset($product['images']) && is_array($product['images'])) {
+							    //     if (count($product['images']) > 0) {
+							    //         $newProduct['image'] = $product['images'][0]['url_image'];
+							    //     } else {
+							    //         $newProduct['image'] = '';
+							    //     }
+							    // }
+
+							    $newArray[] = $newProduct;
+							}
+							echo json_encode($newArray);
+	
+						}
+						
+					}	
+				break;
 			
 				default:
 					// $data["file_js"][] = "producto-store";

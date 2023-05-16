@@ -60,7 +60,7 @@
 
         static public function getProductId($data)
         {
-            $sql_prod = "SELECT p.id_product, p.category_id, p.code, p.name_product, p.stock, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = ?";
+            $sql_prod = "SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = ?";
             $request_prod = $GLOBALS["db"]->auto_array($sql_prod, array($data));
             
             if (!empty($request_prod)) {
@@ -80,6 +80,31 @@
             }
 
             return $request_prod;
+        }
+
+        static public function getProductsStorage($data)
+        {
+            $sql = "SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN ($data) AND status = 1";
+            $products = $GLOBALS["db"]->selectAll($sql, array());
+
+            $sql_img = "SELECT product_id, image FROM img_product WHERE product_id IN ($data)";
+            $request_img = $GLOBALS["db"]->selectAll($sql_img, array());
+
+            foreach ($products as &$product) {
+                $images = array_filter($request_img, function ($img) use ($product) {
+                    return $img['product_id'] == $product['id_product'];
+                });
+                if (count($images) > 0) {
+                    foreach ($images as &$img) {
+                        $img['url_image'] = MEDIA_ADMIN . 'files/images/upload_products/' . $img['image'];
+                    }
+                    $product['images'] = $images;
+                } else {
+                    $product['images'][]['url_image'] = MEDIA_ADMIN . 'files/images/upload_products/empty_img.png';
+                }
+            }
+
+            return $products;
         }
 
     }

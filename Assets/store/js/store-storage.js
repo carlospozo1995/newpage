@@ -4,6 +4,46 @@ $(window).ready(function () {
     let dataCartLS = localStorage.getItem("dataCart");
     if (dataCartLS) {
         dataCart = JSON.parse(dataCartLS);
+
+        let productIds = $.map(dataCart, function(product) {
+            return product.id;
+        });
+
+        $.ajax({
+            url: base_url + "carrito/getProducts/",
+            dataType: 'JSON',
+            method: 'POST',
+            data: {
+                ids_products: productIds,
+            },
+            beforeSend: function() {
+                
+            },
+            success: function(data){
+                console.log(dataCart)
+                console.log(data)
+                // const idsArrayPrincipal = $.map(data, function(producto) {
+                //   return producto.id_product;
+                // });
+
+                // $.each(dataCart, function(index, subArraySecundario) {
+                //     const algunIdFaltante = $.grep(productIds, function(id) {
+                //         return $.inArray(id, idsArrayPrincipal) === -1;
+                //     }).length > 0;
+
+                //     if (algunIdFaltante) {
+                //         dataCart.splice(index, 1);
+                //     }
+                // })
+                // console.log(dataCart);
+            },
+            error: function(xhr, status, error) {
+            },
+            complete: function() {
+                
+            }
+        });     
+
         modalShoppingCart();
         viewShoppingCart();
         upNumberCart();
