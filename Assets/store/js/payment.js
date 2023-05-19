@@ -1,5 +1,6 @@
 $(document).ready(function () {
 	let cartStorage = JSON.parse(localStorage.getItem('dataCart'));
+	console.log(cartStorage)
 	let total = 0;
     let subtotal = 0;
     let totalIva = 0;

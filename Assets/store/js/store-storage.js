@@ -1,11 +1,10 @@
 
 $(window).ready(function () {
     let dataCart;
-    let dataCartLS = localStorage.getItem("dataCart");
-    if (dataCartLS) {
-        dataCart = JSON.parse(dataCartLS);
+    if (localStorage.getItem("dataCart")) {
+        dataCart = JSON.parse(localStorage.getItem("dataCart"));
 
-        let productIds = $.map(dataCart, function(product) {
+        let dataCart_productIds = $.map(dataCart, function(product) {
             return product.id;
         });
 
@@ -14,46 +13,74 @@ $(window).ready(function () {
             dataType: 'JSON',
             method: 'POST',
             data: {
-                ids_products: productIds,
+                productIds: dataCart_productIds,
             },
             beforeSend: function() {
                 
             },
             success: function(data){
-
+                // console.log(dataCart)
+                // console.log(data);
                 for (let i = dataCart.length - 1; i >= 0; i--) {
-                  const productLocalStorage = dataCart[i];
+                    const productLocalStorage = dataCart[i];
+                    const existsData = data.some(product => product.id === productLocalStorage.id);
 
-                  // Verifica si el producto no existe en el array principal
-                  const existsData = data.some(product => product.id === productLocalStorage.id);
-
-                  // Si no existe, elimina el producto del array secundario
-                  if (!existsData) {
-                    dataCart.splice(i, 1);
-                    modalShoppingCart();
-                    upNumberCart();
-                  } else {
-                    // Actualiza los datos del producto secundario con los del producto principal
-                    const productData = data.find(product => product.id === productLocalStorage.id);
-                    Object.assign(productLocalStorage, productData);
-                    
-                    modalShoppingCart();
-                    upNumberCart();
-                  }
+                    if (!existsData) {
+                        dataCart.splice(i, 1);
+                        localStorage.setItem("dataCart", JSON.stringify(dataCart));
+                        modalShoppingCart();
+                        upNumberCart();
+                    }else {
+                        // data[i].amount_product = dataCart[i].amount_product > dataCart[i].stock ? dataCart[i].stock : dataCart[i].amount_product;
+                        // const productData = data.find(product => product.id === productLocalStorage.id);
+                        
+                        
+                        // if(productLocalStorage['amount_product'] > data[i]['stock']){
+                        //     productLocalStorage['amount_product'] = data[i]['stock']
+                        // }
+                        // console.log(productLocalStorage)
+                        // Object.assign(productLocalStorage, productData);
+                        // console.log(data)
+                        // localStorage.setItem("dataCart", JSON.stringify(data));
+                        // console.log(dataCart)
+                        modalShoppingCart();
+                        upNumberCart();
+                        viewShoppingCart();
+                    }
                 }
-                localStorage.setItem("dataCart", JSON.stringify(dataCart));
-                dataCart = JSON.parse(dataCartLS);
             },
             error: function(xhr, status, error) {
                 localStorage.removeItem("dataCart");
+                dataCart = [];
+                $("#modal-shopping-cart-container").html('<h1 class="text-center c-p-deep-blue">Vacio</h1>');
+                $('#view-shopping-cart-container').html(`
+                    <div class="empty-cart-section section-fluid">
+                        <div class="emptycart-wrapper">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12 col-md-10 offset-md-1 col-xl-6 offset-xl-3">
+                                        <div class="emptycart-content text-center">
+                                            <div class="image">
+                                                <img class="img-fluid" src="${media_store}images/empty-cart.png" alt="">
+                                            </div>
+                                            <h4 class="title">Su carrito esta vacio</h4>
+                                            <h6 class="sub-title">Lo sentimos... ¡No se encontró ningún artículo dentro de su carrito!</h6>
+                                            <a href="${base_url}" class="btn btn-lg btn-coral">Continuar comprando</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `);
             },
             complete: function() {
             }
-        });     
-        
-        modalShoppingCart();
-        viewShoppingCart();
-        upNumberCart();
+        });
+        // modalShoppingCart();
+        // upNumberCart();
+        // viewShoppingCart();
+
     }else{
         dataCart = [];
         $("#modal-shopping-cart-container").html('<h1 class="text-center c-p-deep-blue">Vacio</h1>');
@@ -134,8 +161,8 @@ $(window).ready(function () {
         let id = $(this).attr("id");
         let amount = 1;
         
-        if ($('#amount-product').length) {
-            amount = parseInt($('#amount-product').val());
+        if ($('.amount-product').length) {
+            amount = parseInt($('.amount-product').val());
         }
 
         $.ajax({
@@ -293,7 +320,7 @@ $(window).ready(function () {
                     <td class="product_quantity">
                         <div class="product-variable-quantity m-auto" style="width: max-content;">
                             <i class="fa fa-minus pl-4 pr-2 btn-minus" idpr="${item.id}"></i>
-                            <input id="amount-product" type="number" min="1" max="${item.stock}" value="${item.amount_product}" idpr="${item.id}">
+                            <input class="amount-product" type="number" min="1" max="${item.stock}" value="${item.amount_product}" idpr="${item.id}">
                             <i class="fa fa-plus pr-4 pl-2 btn-plus" idpr="${item.id}"></i>
                         </div>
                     </td>

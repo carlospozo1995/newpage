@@ -32,12 +32,12 @@
 				break;
 				case 'getProducts':
 					if (isset($_POST)) {
-				        $ids_products = implode(',', array_map(function($data) {
+				        $productIds = implode(',', array_map(function($data) {
 						    return Utils::desencriptar($data);
-						}, $_POST['ids_products']));
-						$products = Models_Store::getProductsStorage($ids_products);
-						
+						}, $_POST['productIds']));
+						$products = Models_Store::getProductsStorage($productIds);
 						if(!empty($products)){
+
 							$newArray = array();
 
 							foreach ($products as $product) {

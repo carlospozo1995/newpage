@@ -130,7 +130,7 @@
 	                                    <span>Cantidad</span>
 	                                    <div class="product-variable-quantity mr-lg-4">
 	                                    	<i class="fa fa-minus pl-4 pr-2 btn-minus"></i>
-											<input id="amount-product" type="number" min="1" max="<?= $data_product['stock']; ?>" value="1">
+											<input class="amount-product" type="number" min="1" max="<?= $data_product['stock']; ?>" value="1">
 	                                    	<i class="fa fa-plus pr-4 pl-2 btn-plus"></i>
 	                                    </div>
 	                                </div>
