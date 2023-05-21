@@ -14921,3 +14921,713 @@
 [2023/05/20 07:29:36] SQL Query: SELECT * FROM categories WHERE  status = 1
 [2023/05/20 07:29:39] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
 [2023/05/20 07:29:39] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/05/20 07:41:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:41:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:41:01] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/05/20 07:41:01] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/05/20 07:41:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:41:01] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/05/20 07:41:01] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/05/20 07:41:05] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/05/20 07:41:05] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/05/20 07:41:41] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:41:41] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:41:41] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/05/20 07:41:41] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/05/20 07:41:41] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:41:41] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/05/20 07:41:41] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/05/20 07:41:44] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/05/20 07:41:44] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/05/20 07:42:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:42:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:42:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:42:01] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/20 07:42:01] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/20 07:42:01] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/20 07:42:01] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/20 07:42:01] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/20 07:42:01] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/20 07:42:01] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/20 07:42:01] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/20 07:42:01] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/20 07:42:01] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/20 07:42:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:42:03] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/05/20 07:42:03] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/05/20 07:42:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:42:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:42:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:42:28] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/20 07:42:28] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/20 07:42:28] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/20 07:42:28] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/20 07:42:28] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/20 07:42:28] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/20 07:42:28] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/20 07:42:28] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/20 07:42:28] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/20 07:42:28] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/20 07:42:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:42:31] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/05/20 07:42:31] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/05/20 07:42:37] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:42:37] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:42:37] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:42:37] SQL Query: SELECT * FROM products WHERE url = 'minicomponente-1-cuerpo-jblpartybox710am' AND status = 1
+[2023/05/20 07:42:37] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/20 07:42:37] SQL Query: SELECT 
+                c1.name_category AS category1, c1.url AS url1,
+                c2.name_category AS category2, c2.url AS url2,
+                c3.name_category AS category3, c3.url AS url3
+            FROM 
+                (SELECT * FROM products WHERE id_product = '2') p
+                JOIN categories c1 ON p.category_id = c1.id_category
+                LEFT JOIN categories c2 ON c1.fatherCategory = c2.id_category
+                LEFT JOIN categories c3 ON c2.fatherCategory = c3.id_category
+            
+[2023/05/20 07:42:38] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/05/20 07:42:38] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/05/20 07:43:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:43:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:43:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:43:14] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/05/20 07:43:14] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/05/20 07:43:25] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:43:25] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:43:25] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:43:25] SQL Query: SELECT * FROM products WHERE url = 'minicomponente-1-cuerpo-jblpartybox710am' AND status = 1
+[2023/05/20 07:43:25] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/20 07:43:25] SQL Query: SELECT 
+                c1.name_category AS category1, c1.url AS url1,
+                c2.name_category AS category2, c2.url AS url2,
+                c3.name_category AS category3, c3.url AS url3
+            FROM 
+                (SELECT * FROM products WHERE id_product = '2') p
+                JOIN categories c1 ON p.category_id = c1.id_category
+                LEFT JOIN categories c2 ON c1.fatherCategory = c2.id_category
+                LEFT JOIN categories c3 ON c2.fatherCategory = c3.id_category
+            
+[2023/05/20 07:43:26] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/05/20 07:43:26] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/05/20 07:52:32] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:52:32] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:52:32] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:52:34] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/05/20 07:52:34] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/05/20 07:52:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:52:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:52:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:52:53] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/05/20 07:52:53] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/05/20 07:52:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:52:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:52:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:53:02] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/05/20 07:53:02] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/05/20 07:53:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:53:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:53:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:53:19] SQL Query: SELECT * FROM products WHERE url = 'minicomponente-1-cuerpo-jblpartybox710am' AND status = 1
+[2023/05/20 07:53:19] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/20 07:53:19] SQL Query: SELECT 
+                c1.name_category AS category1, c1.url AS url1,
+                c2.name_category AS category2, c2.url AS url2,
+                c3.name_category AS category3, c3.url AS url3
+            FROM 
+                (SELECT * FROM products WHERE id_product = '2') p
+                JOIN categories c1 ON p.category_id = c1.id_category
+                LEFT JOIN categories c2 ON c1.fatherCategory = c2.id_category
+                LEFT JOIN categories c3 ON c2.fatherCategory = c3.id_category
+            
+[2023/05/20 07:53:21] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/05/20 07:53:21] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/05/20 07:53:31] SQL Query: SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = '2'
+[2023/05/20 07:53:31] SQL Query: SELECT image FROM img_product WHERE product_id = '2'
+[2023/05/20 07:53:53] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:53:53] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:53:53] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 07:53:54] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/05/20 07:53:54] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/05/20 08:12:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:12:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:12:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:12:13] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/20 08:12:13] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/20 08:12:13] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/20 08:12:13] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/20 08:12:13] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/20 08:12:13] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/20 08:12:13] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/20 08:12:13] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/20 08:12:13] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/20 08:12:13] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/20 08:12:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:12:16] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/05/20 08:12:16] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/05/20 08:12:18] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:12:18] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:12:18] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:12:18] SQL Query: SELECT * FROM categories WHERE (url = 'electrodomesticos' AND fatherCategory IS NULL)
+[2023/05/20 08:12:18] SQL Query: SELECT id_category FROM categories WHERE url = 'electrodomesticos'
+[2023/05/20 08:12:18] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/20 08:12:18] SQL Query: SELECT * FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND status = 1  LIMIT 0, 10
+[2023/05/20 08:12:18] SQL Query: SELECT * FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND status = 1 
+[2023/05/20 08:12:18] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/05/20 08:12:18] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
+[2023/05/20 08:12:18] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:12:20] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/05/20 08:12:20] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/05/20 08:12:22] SQL Query: SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = '1'
+[2023/05/20 08:12:22] SQL Query: SELECT image FROM img_product WHERE product_id = '1'
+[2023/05/20 08:12:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:12:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:12:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:12:26] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:12:26] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:12:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:12:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:12:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:12:46] SQL Query: SELECT * FROM products WHERE url = 'cocina-a-gas-4-quemadores-em5100eb0' AND status = 1
+[2023/05/20 08:12:46] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/05/20 08:12:46] SQL Query: SELECT 
+                c1.name_category AS category1, c1.url AS url1,
+                c2.name_category AS category2, c2.url AS url2,
+                c3.name_category AS category3, c3.url AS url3
+            FROM 
+                (SELECT * FROM products WHERE id_product = '1') p
+                JOIN categories c1 ON p.category_id = c1.id_category
+                LEFT JOIN categories c2 ON c1.fatherCategory = c2.id_category
+                LEFT JOIN categories c3 ON c2.fatherCategory = c3.id_category
+            
+[2023/05/20 08:12:48] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:12:48] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:13:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:13:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:13:04] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:13:05] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:13:05] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:17:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:17:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:17:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:17:03] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:17:03] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:19:07] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:19:07] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:19:07] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:19:10] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:19:10] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:20:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:20:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:20:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:20:49] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:20:49] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:21:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:21:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:21:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:21:07] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:21:07] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:22:07] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:22:07] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:22:07] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:22:09] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:22:09] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:22:16] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:22:16] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:22:16] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:22:16] SQL Query: SELECT * FROM products WHERE url = 'minicomponente-1-cuerpo-jblpartybox710am' AND status = 1
+[2023/05/20 08:22:16] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/20 08:22:16] SQL Query: SELECT 
+                c1.name_category AS category1, c1.url AS url1,
+                c2.name_category AS category2, c2.url AS url2,
+                c3.name_category AS category3, c3.url AS url3
+            FROM 
+                (SELECT * FROM products WHERE id_product = '2') p
+                JOIN categories c1 ON p.category_id = c1.id_category
+                LEFT JOIN categories c2 ON c1.fatherCategory = c2.id_category
+                LEFT JOIN categories c3 ON c2.fatherCategory = c3.id_category
+            
+[2023/05/20 08:22:18] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:22:18] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:24:00] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:24:00] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:24:00] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:24:00] SQL Query: SELECT * FROM products WHERE url = 'minicomponente-1-cuerpo-jblpartybox710am' AND status = 1
+[2023/05/20 08:24:00] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/20 08:24:00] SQL Query: SELECT 
+                c1.name_category AS category1, c1.url AS url1,
+                c2.name_category AS category2, c2.url AS url2,
+                c3.name_category AS category3, c3.url AS url3
+            FROM 
+                (SELECT * FROM products WHERE id_product = '2') p
+                JOIN categories c1 ON p.category_id = c1.id_category
+                LEFT JOIN categories c2 ON c1.fatherCategory = c2.id_category
+                LEFT JOIN categories c3 ON c2.fatherCategory = c3.id_category
+            
+[2023/05/20 08:24:03] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:24:03] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:31:18] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:31:18] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:31:18] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:31:18] SQL Query: SELECT * FROM products WHERE url = 'minicomponente-1-cuerpo-jblpartybox710am' AND status = 1
+[2023/05/20 08:31:18] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/20 08:31:18] SQL Query: SELECT 
+                c1.name_category AS category1, c1.url AS url1,
+                c2.name_category AS category2, c2.url AS url2,
+                c3.name_category AS category3, c3.url AS url3
+            FROM 
+                (SELECT * FROM products WHERE id_product = '2') p
+                JOIN categories c1 ON p.category_id = c1.id_category
+                LEFT JOIN categories c2 ON c1.fatherCategory = c2.id_category
+                LEFT JOIN categories c3 ON c2.fatherCategory = c3.id_category
+            
+[2023/05/20 08:31:21] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:31:21] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:31:29] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:31:29] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:31:29] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:31:30] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:31:30] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:31:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:31:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:31:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:31:38] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/20 08:31:38] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/20 08:31:38] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/20 08:31:38] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/20 08:31:38] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/20 08:31:38] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/20 08:31:38] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/20 08:31:38] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/20 08:31:38] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/20 08:31:38] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/20 08:31:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:31:40] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:31:40] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:31:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:31:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:31:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:31:49] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:31:49] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:33:39] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'f915b689e1a3cb35da89db54af3569f8bc445c9a'
+[2023/05/20 08:33:45] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/05/20 08:33:45] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/05/20 08:33:45] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/05/20 08:33:50] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/05/20 08:33:50] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/05/20 08:33:50] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/05/20 08:34:02] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/05/20 08:34:02] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/20 08:34:08] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg'
+[2023/05/20 08:34:08] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/05/20 08:34:08] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral= NULL,sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="1",prevPrice="1767.13",discount="9",cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/05/20 08:34:16] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:34:16] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:34:16] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:34:19] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:34:19] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:34:35] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:34:35] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:34:35] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:34:35] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/20 08:34:35] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/20 08:34:35] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/20 08:34:35] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/20 08:34:35] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/20 08:34:35] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/20 08:34:35] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/20 08:34:35] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/20 08:34:35] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/20 08:34:35] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/20 08:34:35] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:34:37] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:34:37] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:34:48] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '1'
+[2023/05/20 08:34:48] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/05/20 08:34:52] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg' AND sliderMbl = 'sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_ff937cd43dcb5283c7b4292ae7606ed7.jpg'
+[2023/05/20 08:34:52] SQL Query: SELECT * FROM products WHERE code = '133644000' AND id_product != 1
+[2023/05/20 08:34:52] SQL execute: UPDATE products SET category_id="186",code="133644000",name_product="Cocina A Gas 4 Quemadores Em5100eb0",desMain="Cocinas que potencian tu vida. Descubre nuevas destrezas, que encienden gratas conversaciones, uniéndolo todo, para crear momento exquisitos.",desGeneral="<p><strong>Caracter&iacute;sticas</strong></p>
+<p>-Acabado Easy Clean Pro<br />Recubrimiento de esmalte porcenalizado en horno, que permite limpiar la superficie de manera f&aacute;cil como un vidrio.<br /><br />-Quemadores Semi-r&aacute;pidos.<br />Quemadores estandar que regulan la intensidad de la flama adapt&aacute;ndose a todas tus necesidades<br /><br />-Doble vidrio en la puerta del horno.<br />Tu cocina Mabe es m&aacute;s segura, ya que su doble vidrio panor&aacute;mico en la puerta del horno te expone menos al calor.<br /><br />-Perillas erg&oacute;nomicas<br />Nuevo dise&ntilde;o que evita el ingreso de residuos de comida al interior<br /><br /><strong>Especificaciones</strong></p>
+<ul>
+<li>Ancho sin empaque: 52cm</li>
+<li>Ancho con empaque: 59cm</li>
+<li>Alto sin empaque: 92.5cm</li>
+<li>Alto con empaque: 93cm</li>
+<li>Profundo con empaque: 59cm</li>
+<li>Profundo sin empaque: 58.6cm</li>
+<li>Peso (kg) con empaque: 29.18</li>
+<li>Peso (kg) sin empaque: 26.2</li>
+<li>Tipo de control en el horno :termo control</li>
+<li>Tipo de instalaci&oacute;n: Piso</li>
+<li>N&uacute;mero de Quemadores: 4</li>
+<li>Parrillas superiores: 2 alambr&oacute;n</li>
+<li>Parrillas en el horno: 1 parilla fija</li>
+</ul>",sliderMbl="sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_ff937cd43dcb5283c7b4292ae7606ed7.jpg",sliderDst="sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg",sliderDes= NULL,brand="MABE",price="159.00",stock="10",prevPrice="249.00",discount="34",cantDues= NULL,priceDues= NULL,url="cocina-a-gas-4-quemadores-em5100eb0",status="2" WHERE id_product='1'
+[2023/05/20 08:35:02] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:35:02] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:35:02] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:35:04] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:35:04] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:35:09] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:35:09] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:35:09] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:35:09] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/20 08:35:09] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/20 08:35:09] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/20 08:35:09] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/20 08:35:09] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/20 08:35:09] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/20 08:35:09] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/20 08:35:09] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/20 08:35:09] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/20 08:35:09] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/20 08:35:09] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:35:11] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/05/20 08:35:11] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/05/20 08:35:19] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '1'
+[2023/05/20 08:35:19] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/05/20 08:35:21] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg' AND sliderMbl = 'sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_ff937cd43dcb5283c7b4292ae7606ed7.jpg'
+[2023/05/20 08:35:21] SQL Query: SELECT * FROM products WHERE code = '133644000' AND id_product != 1
+[2023/05/20 08:35:21] SQL execute: UPDATE products SET category_id="186",code="133644000",name_product="Cocina A Gas 4 Quemadores Em5100eb0",desMain="Cocinas que potencian tu vida. Descubre nuevas destrezas, que encienden gratas conversaciones, uniéndolo todo, para crear momento exquisitos.",desGeneral="<p><strong>Caracter&iacute;sticas</strong></p>
+<p>-Acabado Easy Clean Pro<br />Recubrimiento de esmalte porcenalizado en horno, que permite limpiar la superficie de manera f&aacute;cil como un vidrio.<br /><br />-Quemadores Semi-r&aacute;pidos.<br />Quemadores estandar que regulan la intensidad de la flama adapt&aacute;ndose a todas tus necesidades<br /><br />-Doble vidrio en la puerta del horno.<br />Tu cocina Mabe es m&aacute;s segura, ya que su doble vidrio panor&aacute;mico en la puerta del horno te expone menos al calor.<br /><br />-Perillas erg&oacute;nomicas<br />Nuevo dise&ntilde;o que evita el ingreso de residuos de comida al interior<br /><br /><strong>Especificaciones</strong></p>
+<ul>
+<li>Ancho sin empaque: 52cm</li>
+<li>Ancho con empaque: 59cm</li>
+<li>Alto sin empaque: 92.5cm</li>
+<li>Alto con empaque: 93cm</li>
+<li>Profundo con empaque: 59cm</li>
+<li>Profundo sin empaque: 58.6cm</li>
+<li>Peso (kg) con empaque: 29.18</li>
+<li>Peso (kg) sin empaque: 26.2</li>
+<li>Tipo de control en el horno :termo control</li>
+<li>Tipo de instalaci&oacute;n: Piso</li>
+<li>N&uacute;mero de Quemadores: 4</li>
+<li>Parrillas superiores: 2 alambr&oacute;n</li>
+<li>Parrillas en el horno: 1 parilla fija</li>
+</ul>",sliderMbl="sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_ff937cd43dcb5283c7b4292ae7606ed7.jpg",sliderDst="sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg",sliderDes= NULL,brand="MABE",price="159.00",stock="10",prevPrice="249.00",discount="34",cantDues= NULL,priceDues= NULL,url="cocina-a-gas-4-quemadores-em5100eb0",status="2" WHERE id_product='1'
+[2023/05/20 08:35:23] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '1'
+[2023/05/20 08:35:23] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/05/20 08:35:27] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg' AND sliderMbl = 'sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_ff937cd43dcb5283c7b4292ae7606ed7.jpg'
+[2023/05/20 08:35:27] SQL Query: SELECT * FROM products WHERE code = '133644000' AND id_product != 1
+[2023/05/20 08:35:27] SQL execute: UPDATE products SET category_id="186",code="133644000",name_product="Cocina A Gas 4 Quemadores Em5100eb0",desMain="Cocinas que potencian tu vida. Descubre nuevas destrezas, que encienden gratas conversaciones, uniéndolo todo, para crear momento exquisitos.",desGeneral="<p><strong>Caracter&iacute;sticas</strong></p>
+<p>-Acabado Easy Clean Pro<br />Recubrimiento de esmalte porcenalizado en horno, que permite limpiar la superficie de manera f&aacute;cil como un vidrio.<br /><br />-Quemadores Semi-r&aacute;pidos.<br />Quemadores estandar que regulan la intensidad de la flama adapt&aacute;ndose a todas tus necesidades<br /><br />-Doble vidrio en la puerta del horno.<br />Tu cocina Mabe es m&aacute;s segura, ya que su doble vidrio panor&aacute;mico en la puerta del horno te expone menos al calor.<br /><br />-Perillas erg&oacute;nomicas<br />Nuevo dise&ntilde;o que evita el ingreso de residuos de comida al interior<br /><br /><strong>Especificaciones</strong></p>
+<ul>
+<li>Ancho sin empaque: 52cm</li>
+<li>Ancho con empaque: 59cm</li>
+<li>Alto sin empaque: 92.5cm</li>
+<li>Alto con empaque: 93cm</li>
+<li>Profundo con empaque: 59cm</li>
+<li>Profundo sin empaque: 58.6cm</li>
+<li>Peso (kg) con empaque: 29.18</li>
+<li>Peso (kg) sin empaque: 26.2</li>
+<li>Tipo de control en el horno :termo control</li>
+<li>Tipo de instalaci&oacute;n: Piso</li>
+<li>N&uacute;mero de Quemadores: 4</li>
+<li>Parrillas superiores: 2 alambr&oacute;n</li>
+<li>Parrillas en el horno: 1 parilla fija</li>
+</ul>",sliderMbl="sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_ff937cd43dcb5283c7b4292ae7606ed7.jpg",sliderDst="sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg",sliderDes= NULL,brand="MABE",price="159.00",stock="10",prevPrice="249.00",discount="34",cantDues= NULL,priceDues= NULL,url="cocina-a-gas-4-quemadores-em5100eb0",status="1" WHERE id_product='1'
+[2023/05/20 08:35:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:35:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:35:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:35:30] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/20 08:35:30] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/20 08:35:30] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/20 08:35:30] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/20 08:35:30] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/20 08:35:30] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/20 08:35:30] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/20 08:35:30] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/20 08:35:30] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/20 08:35:30] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/20 08:35:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:35:33] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/05/20 08:35:33] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/05/20 08:35:37] SQL Query: SELECT id_category FROM categories WHERE url = 'electrodomesticos'
+[2023/05/20 08:35:37] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/20 08:35:37] SQL Query: SELECT * FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND status = 1  LIMIT 0, 10
+[2023/05/20 08:35:37] SQL Query: SELECT * FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND status = 1 
+[2023/05/20 08:35:37] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/05/20 08:35:37] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
+[2023/05/20 08:35:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:35:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:35:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:35:38] SQL Query: SELECT * FROM products WHERE url = 'cocina-a-gas-4-quemadores-em5100eb0' AND status = 1
+[2023/05/20 08:35:38] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/05/20 08:35:38] SQL Query: SELECT 
+                c1.name_category AS category1, c1.url AS url1,
+                c2.name_category AS category2, c2.url AS url2,
+                c3.name_category AS category3, c3.url AS url3
+            FROM 
+                (SELECT * FROM products WHERE id_product = '1') p
+                JOIN categories c1 ON p.category_id = c1.id_category
+                LEFT JOIN categories c2 ON c1.fatherCategory = c2.id_category
+                LEFT JOIN categories c3 ON c2.fatherCategory = c3.id_category
+            
+[2023/05/20 08:35:41] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/05/20 08:35:41] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/05/20 08:35:45] SQL Query: SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = '1'
+[2023/05/20 08:35:45] SQL Query: SELECT image FROM img_product WHERE product_id = '1'
+[2023/05/20 08:35:53] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:35:53] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:35:53] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:35:53] SQL Query: SELECT * FROM products WHERE url = 'minicomponente-1-cuerpo-jblpartybox710am' AND status = 1
+[2023/05/20 08:35:53] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/20 08:35:53] SQL Query: SELECT 
+                c1.name_category AS category1, c1.url AS url1,
+                c2.name_category AS category2, c2.url AS url2,
+                c3.name_category AS category3, c3.url AS url3
+            FROM 
+                (SELECT * FROM products WHERE id_product = '2') p
+                JOIN categories c1 ON p.category_id = c1.id_category
+                LEFT JOIN categories c2 ON c1.fatherCategory = c2.id_category
+                LEFT JOIN categories c3 ON c2.fatherCategory = c3.id_category
+            
+[2023/05/20 08:35:55] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:35:55] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:36:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:36:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:36:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:36:03] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:36:03] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:36:31] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '1'
+[2023/05/20 08:36:31] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/05/20 08:36:57] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg' AND sliderMbl = 'sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_ff937cd43dcb5283c7b4292ae7606ed7.jpg'
+[2023/05/20 08:36:57] SQL Query: SELECT * FROM products WHERE code = '133644000' AND id_product != 1
+[2023/05/20 08:36:57] SQL execute: UPDATE products SET category_id="186",code="133644000",name_product="Cocina A Gas 4 Quemadores Em5100eb0",desMain="Cocinas que potencian tu vida. Descubre nuevas destrezas, que encienden gratas conversaciones, uniéndolo todo, para crear momento exquisitos.",desGeneral="<p><strong>Caracter&iacute;sticas</strong></p>
+<p>-Acabado Easy Clean Pro<br />Recubrimiento de esmalte porcenalizado en horno, que permite limpiar la superficie de manera f&aacute;cil como un vidrio.<br /><br />-Quemadores Semi-r&aacute;pidos.<br />Quemadores estandar que regulan la intensidad de la flama adapt&aacute;ndose a todas tus necesidades<br /><br />-Doble vidrio en la puerta del horno.<br />Tu cocina Mabe es m&aacute;s segura, ya que su doble vidrio panor&aacute;mico en la puerta del horno te expone menos al calor.<br /><br />-Perillas erg&oacute;nomicas<br />Nuevo dise&ntilde;o que evita el ingreso de residuos de comida al interior<br /><br /><strong>Especificaciones</strong></p>
+<ul>
+<li>Ancho sin empaque: 52cm</li>
+<li>Ancho con empaque: 59cm</li>
+<li>Alto sin empaque: 92.5cm</li>
+<li>Alto con empaque: 93cm</li>
+<li>Profundo con empaque: 59cm</li>
+<li>Profundo sin empaque: 58.6cm</li>
+<li>Peso (kg) con empaque: 29.18</li>
+<li>Peso (kg) sin empaque: 26.2</li>
+<li>Tipo de control en el horno :termo control</li>
+<li>Tipo de instalaci&oacute;n: Piso</li>
+<li>N&uacute;mero de Quemadores: 4</li>
+<li>Parrillas superiores: 2 alambr&oacute;n</li>
+<li>Parrillas en el horno: 1 parilla fija</li>
+</ul>",sliderMbl="sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_ff937cd43dcb5283c7b4292ae7606ed7.jpg",sliderDst="sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg",sliderDes= NULL,brand="MABE",price="159.00",stock="5",prevPrice="249.00",discount="34",cantDues= NULL,priceDues= NULL,url="cocina-a-gas-4-quemadores-em5100eb0",status="1" WHERE id_product='1'
+[2023/05/20 08:37:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:37:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:37:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:37:03] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:37:03] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:37:37] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '1'
+[2023/05/20 08:37:37] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/05/20 08:37:40] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/05/20 08:37:40] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/20 08:37:49] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg'
+[2023/05/20 08:37:49] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/05/20 08:37:49] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral= NULL,sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="1",prevPrice="1767.13",discount="9",cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="2" WHERE id_product='2'
+[2023/05/20 08:37:51] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:37:51] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:37:51] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:37:53] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
+[2023/05/20 08:37:53] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/05/20 08:38:09] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '1'
+[2023/05/20 08:38:09] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/05/20 08:38:21] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg' AND sliderMbl = 'sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_ff937cd43dcb5283c7b4292ae7606ed7.jpg'
+[2023/05/20 08:38:21] SQL Query: SELECT * FROM products WHERE code = '133644000' AND id_product != 1
+[2023/05/20 08:38:21] SQL execute: UPDATE products SET category_id="186",code="133644000",name_product="Cocina A Gas 4 Quemadores Em5100eb095",desMain="Cocinas que potencian tu vida. Descubre nuevas destrezas, que encienden gratas conversaciones, uniéndolo todo, para crear momento exquisitos.",desGeneral="<p><strong>Caracter&iacute;sticas</strong></p>
+<p>-Acabado Easy Clean Pro<br />Recubrimiento de esmalte porcenalizado en horno, que permite limpiar la superficie de manera f&aacute;cil como un vidrio.<br /><br />-Quemadores Semi-r&aacute;pidos.<br />Quemadores estandar que regulan la intensidad de la flama adapt&aacute;ndose a todas tus necesidades<br /><br />-Doble vidrio en la puerta del horno.<br />Tu cocina Mabe es m&aacute;s segura, ya que su doble vidrio panor&aacute;mico en la puerta del horno te expone menos al calor.<br /><br />-Perillas erg&oacute;nomicas<br />Nuevo dise&ntilde;o que evita el ingreso de residuos de comida al interior<br /><br /><strong>Especificaciones</strong></p>
+<ul>
+<li>Ancho sin empaque: 52cm</li>
+<li>Ancho con empaque: 59cm</li>
+<li>Alto sin empaque: 92.5cm</li>
+<li>Alto con empaque: 93cm</li>
+<li>Profundo con empaque: 59cm</li>
+<li>Profundo sin empaque: 58.6cm</li>
+<li>Peso (kg) con empaque: 29.18</li>
+<li>Peso (kg) sin empaque: 26.2</li>
+<li>Tipo de control en el horno :termo control</li>
+<li>Tipo de instalaci&oacute;n: Piso</li>
+<li>N&uacute;mero de Quemadores: 4</li>
+<li>Parrillas superiores: 2 alambr&oacute;n</li>
+<li>Parrillas en el horno: 1 parilla fija</li>
+</ul>",sliderMbl="sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_ff937cd43dcb5283c7b4292ae7606ed7.jpg",sliderDst="sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg",sliderDes= NULL,brand="MABE",price="159.00",stock="5",prevPrice="249.00",discount="34",cantDues= NULL,priceDues= NULL,url="cocina-a-gas-4-quemadores-em5100eb095",status="1" WHERE id_product='1'
+[2023/05/20 08:38:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:38:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:38:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:38:31] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (1) AND status = 1
+[2023/05/20 08:38:31] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1)
+[2023/05/20 08:38:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:38:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:38:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:38:33] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/20 08:38:33] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/20 08:38:33] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/20 08:38:33] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/20 08:38:33] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/20 08:38:33] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/20 08:38:33] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/20 08:38:33] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/20 08:38:33] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/20 08:38:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:38:35] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (1) AND status = 1
+[2023/05/20 08:38:35] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1)
+[2023/05/20 08:38:47] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '1'
+[2023/05/20 08:38:47] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/05/20 08:38:50] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg' AND sliderMbl = 'sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_ff937cd43dcb5283c7b4292ae7606ed7.jpg'
+[2023/05/20 08:38:50] SQL Query: SELECT * FROM products WHERE code = '133644000' AND id_product != 1
+[2023/05/20 08:38:50] SQL execute: UPDATE products SET category_id="186",code="133644000",name_product="Cocina A Gas 4 Quemadores Em5100eb0",desMain="Cocinas que potencian tu vida. Descubre nuevas destrezas, que encienden gratas conversaciones, uniéndolo todo, para crear momento exquisitos.",desGeneral="<p><strong>Caracter&iacute;sticas</strong></p>
+<p>-Acabado Easy Clean Pro<br />Recubrimiento de esmalte porcenalizado en horno, que permite limpiar la superficie de manera f&aacute;cil como un vidrio.<br /><br />-Quemadores Semi-r&aacute;pidos.<br />Quemadores estandar que regulan la intensidad de la flama adapt&aacute;ndose a todas tus necesidades<br /><br />-Doble vidrio en la puerta del horno.<br />Tu cocina Mabe es m&aacute;s segura, ya que su doble vidrio panor&aacute;mico en la puerta del horno te expone menos al calor.<br /><br />-Perillas erg&oacute;nomicas<br />Nuevo dise&ntilde;o que evita el ingreso de residuos de comida al interior<br /><br /><strong>Especificaciones</strong></p>
+<ul>
+<li>Ancho sin empaque: 52cm</li>
+<li>Ancho con empaque: 59cm</li>
+<li>Alto sin empaque: 92.5cm</li>
+<li>Alto con empaque: 93cm</li>
+<li>Profundo con empaque: 59cm</li>
+<li>Profundo sin empaque: 58.6cm</li>
+<li>Peso (kg) con empaque: 29.18</li>
+<li>Peso (kg) sin empaque: 26.2</li>
+<li>Tipo de control en el horno :termo control</li>
+<li>Tipo de instalaci&oacute;n: Piso</li>
+<li>N&uacute;mero de Quemadores: 4</li>
+<li>Parrillas superiores: 2 alambr&oacute;n</li>
+<li>Parrillas en el horno: 1 parilla fija</li>
+</ul>",sliderMbl="sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_ff937cd43dcb5283c7b4292ae7606ed7.jpg",sliderDst="sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg",sliderDes= NULL,brand="MABE",price="159.00",stock="5",prevPrice="249.00",discount="34",cantDues= NULL,priceDues= NULL,url="cocina-a-gas-4-quemadores-em5100eb0",status="1" WHERE id_product='1'
+[2023/05/20 08:38:54] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:38:54] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:38:54] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:38:54] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/20 08:38:54] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/20 08:38:54] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/20 08:38:54] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/20 08:38:54] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/20 08:38:54] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/20 08:38:54] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/20 08:38:54] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/20 08:38:54] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/20 08:38:54] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:38:56] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (1) AND status = 1
+[2023/05/20 08:38:56] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1)
+[2023/05/20 08:39:03] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/05/20 08:39:03] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/20 08:39:08] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg'
+[2023/05/20 08:39:08] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/05/20 08:39:08] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral= NULL,sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="1",prevPrice="1767.13",discount="9",cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/05/20 08:39:10] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/05/20 08:39:10] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/20 08:39:14] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg'
+[2023/05/20 08:39:14] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/05/20 08:39:14] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral= NULL,sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="899.00",stock="4",prevPrice="1767.13",discount="9",cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/05/20 08:39:22] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:39:22] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:39:22] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:39:22] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/05/20 08:39:22] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/05/20 08:39:22] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/20 08:39:22] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/05/20 08:39:22] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/05/20 08:39:22] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/05/20 08:39:22] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/05/20 08:39:22] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/05/20 08:39:22] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/05/20 08:39:22] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/05/20 08:39:22] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:39:25] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (1) AND status = 1
+[2023/05/20 08:39:25] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1)
+[2023/05/20 08:39:28] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/05/20 08:39:28] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/05/20 08:39:28] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/05/20 08:42:55] SQL Query: SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = '2'
+[2023/05/20 08:42:55] SQL Query: SELECT image FROM img_product WHERE product_id = '2'
+[2023/05/20 08:43:01] SQL Query: SELECT id_category FROM categories WHERE url = 'electrodomesticos'
+[2023/05/20 08:43:01] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/05/20 08:43:01] SQL Query: SELECT * FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND status = 1  LIMIT 0, 10
+[2023/05/20 08:43:01] SQL Query: SELECT * FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND status = 1 
+[2023/05/20 08:43:01] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/05/20 08:43:01] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
+[2023/05/20 08:43:02] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:43:02] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:43:02] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:43:02] SQL Query: SELECT * FROM products WHERE url = 'cocina-a-gas-4-quemadores-em5100eb0' AND status = 1
+[2023/05/20 08:43:02] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/05/20 08:43:02] SQL Query: SELECT 
+                c1.name_category AS category1, c1.url AS url1,
+                c2.name_category AS category2, c2.url AS url2,
+                c3.name_category AS category3, c3.url AS url3
+            FROM 
+                (SELECT * FROM products WHERE id_product = '1') p
+                JOIN categories c1 ON p.category_id = c1.id_category
+                LEFT JOIN categories c2 ON c1.fatherCategory = c2.id_category
+                LEFT JOIN categories c3 ON c2.fatherCategory = c3.id_category
+            
+[2023/05/20 08:43:05] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (1,2) AND status = 1
+[2023/05/20 08:43:05] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1,2)
+[2023/05/20 08:43:22] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '1'
+[2023/05/20 08:43:22] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/05/20 08:43:27] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg' AND sliderMbl = 'sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_ff937cd43dcb5283c7b4292ae7606ed7.jpg'
+[2023/05/20 08:43:27] SQL Query: SELECT * FROM products WHERE code = '133644000' AND id_product != 1
+[2023/05/20 08:43:27] SQL execute: UPDATE products SET category_id="186",code="133644000",name_product="Cocina A Gas 4 Quemadores Em5100eb0",desMain="Cocinas que potencian tu vida. Descubre nuevas destrezas, que encienden gratas conversaciones, uniéndolo todo, para crear momento exquisitos.",desGeneral="<p><strong>Caracter&iacute;sticas</strong></p>
+<p>-Acabado Easy Clean Pro<br />Recubrimiento de esmalte porcenalizado en horno, que permite limpiar la superficie de manera f&aacute;cil como un vidrio.<br /><br />-Quemadores Semi-r&aacute;pidos.<br />Quemadores estandar que regulan la intensidad de la flama adapt&aacute;ndose a todas tus necesidades<br /><br />-Doble vidrio en la puerta del horno.<br />Tu cocina Mabe es m&aacute;s segura, ya que su doble vidrio panor&aacute;mico en la puerta del horno te expone menos al calor.<br /><br />-Perillas erg&oacute;nomicas<br />Nuevo dise&ntilde;o que evita el ingreso de residuos de comida al interior<br /><br /><strong>Especificaciones</strong></p>
+<ul>
+<li>Ancho sin empaque: 52cm</li>
+<li>Ancho con empaque: 59cm</li>
+<li>Alto sin empaque: 92.5cm</li>
+<li>Alto con empaque: 93cm</li>
+<li>Profundo con empaque: 59cm</li>
+<li>Profundo sin empaque: 58.6cm</li>
+<li>Peso (kg) con empaque: 29.18</li>
+<li>Peso (kg) sin empaque: 26.2</li>
+<li>Tipo de control en el horno :termo control</li>
+<li>Tipo de instalaci&oacute;n: Piso</li>
+<li>N&uacute;mero de Quemadores: 4</li>
+<li>Parrillas superiores: 2 alambr&oacute;n</li>
+<li>Parrillas en el horno: 1 parilla fija</li>
+</ul>",sliderMbl="sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_ff937cd43dcb5283c7b4292ae7606ed7.jpg",sliderDst="sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg",sliderDes= NULL,brand="MABE",price="159.00",stock="4",prevPrice="249.00",discount="34",cantDues= NULL,priceDues= NULL,url="cocina-a-gas-4-quemadores-em5100eb0",status="1" WHERE id_product='1'
+[2023/05/20 08:43:37] SQL Query: SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = '1'
+[2023/05/20 08:43:37] SQL Query: SELECT image FROM img_product WHERE product_id = '1'
+[2023/05/20 08:43:43] SQL Query: SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = '1'
+[2023/05/20 08:43:43] SQL Query: SELECT image FROM img_product WHERE product_id = '1'
+[2023/05/20 08:43:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:43:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:43:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:43:47] SQL Query: SELECT * FROM products WHERE url = 'cocina-a-gas-4-quemadores-em5100eb0' AND status = 1
+[2023/05/20 08:43:47] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/05/20 08:43:47] SQL Query: SELECT 
+                c1.name_category AS category1, c1.url AS url1,
+                c2.name_category AS category2, c2.url AS url2,
+                c3.name_category AS category3, c3.url AS url3
+            FROM 
+                (SELECT * FROM products WHERE id_product = '1') p
+                JOIN categories c1 ON p.category_id = c1.id_category
+                LEFT JOIN categories c2 ON c1.fatherCategory = c2.id_category
+                LEFT JOIN categories c3 ON c2.fatherCategory = c3.id_category
+            
+[2023/05/20 08:43:49] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (1,2) AND status = 1
+[2023/05/20 08:43:49] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1,2)
+[2023/05/20 08:43:54] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:43:54] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:43:54] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:43:57] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (1,2) AND status = 1
+[2023/05/20 08:43:57] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1,2)
+[2023/05/20 08:44:04] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '1'
+[2023/05/20 08:44:04] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
+[2023/05/20 08:44:09] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg' AND sliderMbl = 'sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_ff937cd43dcb5283c7b4292ae7606ed7.jpg'
+[2023/05/20 08:44:09] SQL Query: SELECT * FROM products WHERE code = '133644000' AND id_product != 1
+[2023/05/20 08:44:09] SQL execute: UPDATE products SET category_id="186",code="133644000",name_product="Cocina A Gas 4 Quemadores Em5100eb0",desMain="Cocinas que potencian tu vida. Descubre nuevas destrezas, que encienden gratas conversaciones, uniéndolo todo, para crear momento exquisitos.",desGeneral="<p><strong>Caracter&iacute;sticas</strong></p>
+<p>-Acabado Easy Clean Pro<br />Recubrimiento de esmalte porcenalizado en horno, que permite limpiar la superficie de manera f&aacute;cil como un vidrio.<br /><br />-Quemadores Semi-r&aacute;pidos.<br />Quemadores estandar que regulan la intensidad de la flama adapt&aacute;ndose a todas tus necesidades<br /><br />-Doble vidrio en la puerta del horno.<br />Tu cocina Mabe es m&aacute;s segura, ya que su doble vidrio panor&aacute;mico en la puerta del horno te expone menos al calor.<br /><br />-Perillas erg&oacute;nomicas<br />Nuevo dise&ntilde;o que evita el ingreso de residuos de comida al interior<br /><br /><strong>Especificaciones</strong></p>
+<ul>
+<li>Ancho sin empaque: 52cm</li>
+<li>Ancho con empaque: 59cm</li>
+<li>Alto sin empaque: 92.5cm</li>
+<li>Alto con empaque: 93cm</li>
+<li>Profundo con empaque: 59cm</li>
+<li>Profundo sin empaque: 58.6cm</li>
+<li>Peso (kg) con empaque: 29.18</li>
+<li>Peso (kg) sin empaque: 26.2</li>
+<li>Tipo de control en el horno :termo control</li>
+<li>Tipo de instalaci&oacute;n: Piso</li>
+<li>N&uacute;mero de Quemadores: 4</li>
+<li>Parrillas superiores: 2 alambr&oacute;n</li>
+<li>Parrillas en el horno: 1 parilla fija</li>
+</ul>",sliderMbl="sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_ff937cd43dcb5283c7b4292ae7606ed7.jpg",sliderDst="sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg",sliderDes= NULL,brand="MABE",price="159.00",stock="3",prevPrice="249.00",discount="34",cantDues= NULL,priceDues= NULL,url="cocina-a-gas-4-quemadores-em5100eb0",status="1" WHERE id_product='1'
+[2023/05/20 08:44:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:44:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:44:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/05/20 08:44:34] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (1,2) AND status = 1
+[2023/05/20 08:44:34] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1,2)

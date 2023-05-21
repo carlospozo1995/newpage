@@ -33,6 +33,53 @@ $(window).ready(function () {
                 upNumberCart();
                 modalShoppingCart();
                 viewShoppingCart();
+
+                $('.product-variable-quantity').each(function () {
+                    var product_quantity = parseInt($(this).find('input[type="number"]').attr('max'));
+
+                    $(this).on('click input', '.btn-minus, .btn-plus, input[type="number"]', function () {
+                        let input = $(this).siblings('input[type="number"]');
+                        let value = parseInt(input.val());
+
+                        if ($(this).hasClass('btn-minus')) {
+                            input.val(Math.max(value - 1, 1));
+                            
+                            let id = $(this).attr("idpr");
+                            let amount = parseInt(input.val());
+                            
+                            if(id != null){
+                                updateProductPrice(id, amount);    
+                            }
+                        } else if ($(this).hasClass('btn-plus')) {
+                            input.val(Math.min(value + 1, product_quantity));
+
+                            let id = $(this).attr("idpr");
+                            let amount = parseInt(input.val());
+                            
+                            if(id != null){
+                                updateProductPrice(id, amount);
+                            }
+                        } else if ($(this).is('input[type="number"]')) {
+                            input.val(Math.min(Math.max(value, 1), product_quantity));
+                        }
+                    });
+
+                    $(this).find('input[type="number"]').on('blur', function () {
+                        let value = parseInt($(this).val());
+                        if (isNaN(value) || value === '' || value === null) {
+                            $(this).val(1);
+                        } else if (value > product_quantity) {
+                            $(this).val(product_quantity);
+                        }
+
+                        let id = $(this).attr("idpr");
+                        let amount = parseInt($(this).val());
+                        
+                        if(id != null){
+                            updateProductPrice(id, amount);   
+                        }
+                    });
+                });
             },
             error: function(xhr, status, error) {
                 localStorage.removeItem("shoppingCartData");
@@ -89,7 +136,6 @@ $(window).ready(function () {
     /************************************************
     * QUANTITY OF PRODUCT TO BUY (input-number)
     ***********************************************/
-    // console.log($(document),('.product-variable-quantity'))
     $('.product-variable-quantity').each(function () {
         var stock_quantity = parseInt($(this).find('input[type="number"]').attr('max'));
 
@@ -99,22 +145,8 @@ $(window).ready(function () {
 
             if ($(this).hasClass('btn-minus')) {
                 input.val(Math.max(value - 1, 1));
-                
-                let id = $(this).attr("idpr");
-                let amount = parseInt(input.val());
-                console.log(amount)
-                // if(id != null){
-                //     updateProductPrice(id, amount);    
-                // }
             } else if ($(this).hasClass('btn-plus')) {
                 input.val(Math.min(value + 1, stock_quantity));
-
-                let id = $(this).attr("idpr");
-                let amount = parseInt(input.val());
-                console.log(amount)
-                // if(id != null){
-                //     updateProductPrice(id, amount);
-                // }
             } else if ($(this).is('input[type="number"]')) {
                 input.val(Math.min(Math.max(value, 1), stock_quantity));
             }
@@ -127,13 +159,6 @@ $(window).ready(function () {
             } else if (value > stock_quantity) {
                 $(this).val(stock_quantity);
             }
-
-            let id = $(this).attr("idpr");
-            let amount = parseInt($(this).val());
-            console.log(amount)
-            // if(id != null){
-            //     updateProductPrice(id, amount);   
-            // }
         });
     });
 
