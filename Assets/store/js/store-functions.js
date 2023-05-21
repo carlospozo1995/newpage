@@ -1,5 +1,5 @@
 
-if(localStorage.getItem("dataCart") == null && window.location.pathname.split("/").pop() == "comprar"){
+if(localStorage.getItem("shoppingCartData") == null && window.location.pathname.split("/").pop() == "comprar"){
     window.location.href = base_url + "carrito";
 }
 

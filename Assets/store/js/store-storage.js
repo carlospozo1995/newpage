@@ -486,7 +486,6 @@ $(window).ready(function () {
                         }
                     break;
                 }
-
             }else{
                 Swal.fire({icon: 'error', html: `<span class="font-weight-bold">Ha ocurrido un error. Inténtelo más tarde.</span>`, confirmButtonColor: '#4431DE'});
             }
