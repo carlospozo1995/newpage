@@ -82,56 +82,6 @@
             return $request_prod;
         }
 
-        // static public function getProductsStorage($data)
-        // {
-        //     $sql = "SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN ($data) AND status = 1";
-        //     $products = $GLOBALS["db"]->selectAll($sql, array());
-
-        //     $sql_img = "SELECT product_id, image FROM img_product WHERE product_id IN ($data)";
-        //     $request_img = $GLOBALS["db"]->selectAll($sql_img, array());
-
-        //     foreach ($products as &$product) {
-        //         $images = array_filter($request_img, function ($img) use ($product) {
-        //             return $img['product_id'] == $product['id_product'];
-        //         });
-        //         if (count($images) > 0) {
-        //             foreach ($images as $img) {
-        //                 $img['url_image'] = MEDIA_ADMIN . 'files/images/upload_products/' . $img['image'];
-        //             }
-        //             $product['images'] = $images;
-        //         } else {
-        //             $product['images'][]['url_image'] = MEDIA_ADMIN . 'files/images/upload_products/empty_img.png';
-        //         }
-        //     }
-
-        //     return $products;
-        // }
-
-        // static public function getProductsStorage($data)
-        // {
-        //     $sql = "SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN ($data) AND status = 1";
-        //     $products = $GLOBALS["db"]->selectAll($sql, array());
-
-        //     $sql_img = "SELECT product_id, image FROM img_product WHERE product_id IN ($data)";
-        //     $request_img = $GLOBALS["db"]->selectAll($sql_img, array());
-
-        //     foreach ($products as &$product) {
-        //         $images = array_filter($request_img, function ($img) use ($product) {
-        //             return $img['product_id'] == $product['id_product'];
-        //         });
-        //         if (count($images) > 0) {
-        //             foreach ($images as $img) {
-        //                 $img['url_image'] = MEDIA_ADMIN . 'files/images/upload_products/' . $img['image'];
-        //             }
-        //             $product['images'] = array_values($images); // Reinicia los índices del array de imágenes
-        //         } else {
-        //             $product['images'][]['url_image'] = MEDIA_ADMIN . 'files/images/upload_products/empty_img.png';
-        //         }
-        //     }
-
-        //     return $products;
-        // }
-
         static public function getProductsStorage($data)
         {
             $sql = "SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN ($data) AND status = 1";
@@ -145,7 +95,7 @@
                     return $img['product_id'] == $product['id_product'];
                 });
                 if (count($images) > 0) {
-                    $product['images'] = array_values($images); // Reinicia los índices del array de imágenes
+                    $product['images'] = array_values($images);
                     foreach ($product['images'] as &$image) {
                         $image['url_image'] = MEDIA_ADMIN . 'files/images/upload_products/' . $image['image'];
                     }
@@ -156,8 +106,6 @@
 
             return $products;
         }
-
-
 
     }
 ?>

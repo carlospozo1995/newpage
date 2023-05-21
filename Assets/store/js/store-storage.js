@@ -1,10 +1,8 @@
 
 $(window).ready(function () {
-    let dataCart;
-    if (localStorage.getItem("dataCart")) {
-        dataCart = JSON.parse(localStorage.getItem("dataCart"));
-
-        let dataCart_productIds = $.map(dataCart, function(product) {
+    if (localStorage.getItem("shoppingCartData")) {
+        let cartData_view = JSON.parse(localStorage.getItem("shoppingCartData"));
+        let cartData_productIds = $.map(cartData_view, function(product) {
             return product.id;
         });
 
@@ -13,45 +11,31 @@ $(window).ready(function () {
             dataType: 'JSON',
             method: 'POST',
             data: {
-                productIds: dataCart_productIds,
+                productIds: cartData_productIds,
             },
             beforeSend: function() {
-                
+            
             },
             success: function(data){
-                // console.log(dataCart)
-                // console.log(data);
-                for (let i = dataCart.length - 1; i >= 0; i--) {
-                    const productLocalStorage = dataCart[i];
-                    const existsData = data.some(product => product.id === productLocalStorage.id);
+                for (let i = cartData_view.length - 1; i >= 0; i--) {
+                    const product_cartData = cartData_view[i];
+                    const existsData = data.some(product => product.id === product_cartData.id);
 
                     if (!existsData) {
-                        dataCart.splice(i, 1);
-                        localStorage.setItem("dataCart", JSON.stringify(dataCart));
-                        modalShoppingCart();
-                        upNumberCart();
+                        cartData_view.splice(i, 1);
                     }else {
-                        // data[i].amount_product = dataCart[i].amount_product > dataCart[i].stock ? dataCart[i].stock : dataCart[i].amount_product;
-                        // const productData = data.find(product => product.id === productLocalStorage.id);
-                        
-                        
-                        // if(productLocalStorage['amount_product'] > data[i]['stock']){
-                        //     productLocalStorage['amount_product'] = data[i]['stock']
-                        // }
-                        // console.log(productLocalStorage)
-                        // Object.assign(productLocalStorage, productData);
-                        // console.log(data)
-                        // localStorage.setItem("dataCart", JSON.stringify(data));
-                        // console.log(dataCart)
-                        modalShoppingCart();
-                        upNumberCart();
-                        viewShoppingCart();
+                        const productData = data.find(product => product.id === product_cartData.id);
+                        product_cartData['amount_product'] = product_cartData['amount_product'] > productData.stock ? productData.stock : product_cartData['amount_product'];
+                        Object.assign(product_cartData, productData);
                     }
                 }
+                localStorage.setItem("shoppingCartData", JSON.stringify(cartData_view));
+                upNumberCart();
+                modalShoppingCart();
+                viewShoppingCart();
             },
             error: function(xhr, status, error) {
-                localStorage.removeItem("dataCart");
-                dataCart = [];
+                localStorage.removeItem("shoppingCartData");
                 $("#modal-shopping-cart-container").html('<h1 class="text-center c-p-deep-blue">Vacio</h1>');
                 $('#view-shopping-cart-container').html(`
                     <div class="empty-cart-section section-fluid">
@@ -74,15 +58,11 @@ $(window).ready(function () {
                     </div>
                 `);
             },
-            complete: function() {
+            complete: function(data) {
+
             }
         });
-        // modalShoppingCart();
-        // upNumberCart();
-        // viewShoppingCart();
-
     }else{
-        dataCart = [];
         $("#modal-shopping-cart-container").html('<h1 class="text-center c-p-deep-blue">Vacio</h1>');
         $('#view-shopping-cart-container').html(`
             <div class="empty-cart-section section-fluid">
@@ -109,6 +89,7 @@ $(window).ready(function () {
     /************************************************
     * QUANTITY OF PRODUCT TO BUY (input-number)
     ***********************************************/
+    // console.log($(document),('.product-variable-quantity'))
     $('.product-variable-quantity').each(function () {
         var stock_quantity = parseInt($(this).find('input[type="number"]').attr('max'));
 
@@ -121,17 +102,19 @@ $(window).ready(function () {
                 
                 let id = $(this).attr("idpr");
                 let amount = parseInt(input.val());
-                if(id != null){
-                    updateProductPrice(id, amount);    
-                }
+                console.log(amount)
+                // if(id != null){
+                //     updateProductPrice(id, amount);    
+                // }
             } else if ($(this).hasClass('btn-plus')) {
                 input.val(Math.min(value + 1, stock_quantity));
 
                 let id = $(this).attr("idpr");
                 let amount = parseInt(input.val());
-                if(id != null){
-                    updateProductPrice(id, amount);
-                }
+                console.log(amount)
+                // if(id != null){
+                //     updateProductPrice(id, amount);
+                // }
             } else if ($(this).is('input[type="number"]')) {
                 input.val(Math.min(Math.max(value, 1), stock_quantity));
             }
@@ -147,9 +130,10 @@ $(window).ready(function () {
 
             let id = $(this).attr("idpr");
             let amount = parseInt($(this).val());
-            if(id != null){
-                updateProductPrice(id, amount);   
-            }
+            console.log(amount)
+            // if(id != null){
+            //     updateProductPrice(id, amount);   
+            // }
         });
     });
 
@@ -177,25 +161,26 @@ $(window).ready(function () {
             },
             success: function(data){
                 if (data.status) {
+                    let cartData;
                     let product_added = data.product_added;
-                    if(dataCart.some(product=> product.id === id)){
-                        const indexProduct_added = dataCart.findIndex(product=> product.id === id);
-                        // if(product_added.stock != dataCart[indexProduct_added].stock){
-                        //     dataCart[indexProduct_added].stock = product_added.stock;
-                        // }
 
-                        if ((dataCart[indexProduct_added].amount_product + amount) < dataCart[indexProduct_added].stock){
-                            dataCart[indexProduct_added].amount_product += amount;
+                    localStorage.getItem("shoppingCartData") ? cartData = JSON.parse(localStorage.getItem("shoppingCartData")) : cartData = [] ;
+
+                    if(cartData.some(product=> product.id === id)){
+                        const indexProduct_added = cartData.findIndex(product=> product.id === id);
+
+                        if ((cartData[indexProduct_added].amount_product + amount) < cartData[indexProduct_added].stock){
+                            cartData[indexProduct_added].amount_product += amount;
                         }else{
-                            dataCart[indexProduct_added].amount_product = dataCart[indexProduct_added].stock;
+                            cartData[indexProduct_added].amount_product = cartData[indexProduct_added].stock;
                         }
                     }else{
                         product_added.amount_product = amount;
-                        dataCart.push(product_added);
+                        cartData.push(product_added);
                     }
 
-                    localStorage.setItem("dataCart", JSON.stringify(dataCart));
-                    const amountCart = dataCart.reduce((acc, product) => acc + product.amount_product, 0);
+                    localStorage.setItem("shoppingCartData", JSON.stringify(cartData));
+                    const amountCart = cartData.reduce((acc, product) => acc + product.amount_product, 0);
 
                     $(".addd-product-container").html(`
                         <div class="row">
@@ -227,11 +212,10 @@ $(window).ready(function () {
                                 </ul>
                             </div>
                         </div>
-                        `);
+                    `);
 
                     upNumberCart();
                     modalShoppingCart();
-
                 }else{
                     $(".addd-product-container").html(`<h1 class="text-center text-danger">${data.error}</h1>`);
                 }
@@ -245,14 +229,14 @@ $(window).ready(function () {
     });
 
     function upNumberCart(){
-        let numberCart = dataCart.reduce((acc, product) => acc + product.amount_product, 0);
+        let numberCart = JSON.parse(localStorage.getItem("shoppingCartData")).reduce((acc, product) => acc + product.amount_product, 0);
         $(".amount-product-cart").text(numberCart);
     }
 
     function modalShoppingCart() {
         const ul = $("<ul class='offcanvas-cart'></ul>");
         let total = 0;
-        dataCart.forEach(item => {
+        JSON.parse(localStorage.getItem("shoppingCartData")).forEach(item => {
             total += item.amount_product * item.price;
             let li =  `<li class="offcanvas-cart-item-single">
                             <div class="offcanvas-cart-item-block">
@@ -295,7 +279,7 @@ $(window).ready(function () {
         let subtotal = 0;
         let totalIva = 0;
         let tbodyContent;
-        dataCart.forEach(item => {
+        JSON.parse(localStorage.getItem("shoppingCartData")).forEach(item => {
             let totalProduct = item.amount_product * item.price;
             subtotal += item.amount_product * item.price;
             // totalIva (create IVA function and add them)
@@ -394,20 +378,21 @@ $(window).ready(function () {
 
     function updateProductPrice(id, amount) {
         if(id != ""){
-            if (dataCart.findIndex(product=> product.id === id) > -1) {
+            let cartData_up = JSON.parse(localStorage.getItem("shoppingCartData"));
+            if (cartData_up.findIndex(product=> product.id === id) > -1) {
                 let total = 0;
                 let subtotal = 0;
                 let totalIva = 0;
                 let totalProduct = 0;
 
-                for (var i = 0; i < dataCart.length; i++) {
-                    if (dataCart[i]['id'] === id) {
-                        dataCart[i]['amount_product'] = amount;
-                        totalProduct = amount * dataCart[i]['price'];
+                for (var i = 0; i < cartData_up.length; i++) {
+                    if (cartData_up[i]['id'] === id) {
+                        cartData_up[i]['amount_product'] = amount;
+                        totalProduct = amount * cartData_up[i]['price'];
                     }
                 }
-                localStorage.setItem("dataCart", JSON.stringify(dataCart));
-                dataCart.forEach(item => {
+                localStorage.setItem("shoppingCartData", JSON.stringify(cartData_up));
+                cartData_up.forEach(item => {
                     subtotal += item.price * item.amount_product;
                     // totalIva (create IVA function and add them
                 });
@@ -434,20 +419,21 @@ $(window).ready(function () {
         let id = $(this).attr("idpr");
         
         if ((option == 1 || option == 2) && id != "") {
-            let index = dataCart.findIndex(product=> product.id === id)
+            let cartData_delete = JSON.parse(localStorage.getItem("shoppingCartData"));
+            let index = cartData_delete.findIndex(product=> product.id === id)
             if (index > -1) {
                 let total = 0;
-                dataCart.splice(index, 1);
-                localStorage.setItem("dataCart", JSON.stringify(dataCart));
+                cartData_delete.splice(index, 1);
+                localStorage.setItem("shoppingCartData", JSON.stringify(cartData_delete));
                 upNumberCart();
                 
                 switch (option){
                     case 1:
-                        if(dataCart.length == 0){
-                            localStorage.removeItem("dataCart");
+                        if(cartData_delete.length == 0){
+                            localStorage.removeItem("shoppingCartData");
                             $("#modal-shopping-cart-container").html('<h1 class="text-center c-p-deep-blue">Vacio</h1>');
                         }else{
-                            dataCart.forEach(item => {
+                            cartData_delete.forEach(item => {
                                 total += item.amount_product * item.price;
                             });
                             $('.offcanvas-cart-total-price-value').html(numberFormat(total));
@@ -456,13 +442,13 @@ $(window).ready(function () {
                     break;
 
                     case 2:
-                        if(dataCart.length == 0){
-                            localStorage.removeItem("dataCart");
+                        if(cartData_delete.length == 0){
+                            localStorage.removeItem("shoppingCartData");
                             window.location.href = base_url;
                         }else{
                             let subtotal = 0;
                             let totalIva = 0;
-                            dataCart.forEach(item => {
+                            cartData_delete.forEach(item => {
                                 subtotal += item.amount_product * item.price;
                                  // totalIva (create IVA function and add them)
                             });
