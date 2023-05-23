@@ -33,10 +33,10 @@
                         <div class="title-data_buy">
                             <h3>1. DATOS<i class="icon-note" data-bs-toggle="collapse" data-bs-target="#dataCollapse" role="button" aria-expanded="false"></i></h3>
                         </div>
-                        <form class="client_data">
+                        <!-- <form class="client_data"> -->
                             <div class="px-5 py-5 collapse" id="dataCollapse">
                                 <div class="mb-3">
-                                    <span class="font-weight-bold">Cédula</span>
+                                    <span class="font-weight-bold">Cédula o RUC</span>
                                     <input disabled type="text" class="form-control" value="<?= $_SESSION['data_user']['dni']; ?>">
                                 </div>
                                 <div class="mb-3">
@@ -56,11 +56,11 @@
                                     <input type="text" class="form-control" value="<?= $_SESSION['data_user']['phone']; ?>">
                                 </div>
 
-                                 <div class="text-center">
+                                 <!-- <div class="text-center">
                                     <button class="btn btn-md btn-black-default-hover m-auto" type="submit">IR AL ENVIO</button>
-                                </div>
+                                </div> -->
                             </div>
-                        </form>
+                        <!-- </form> -->
                     </div>
                     
                     <div class="checkout-data_buy mb-4" data-aos="fade-up" data-aos-delay="400">
@@ -68,7 +68,7 @@
                             <h3>2. ENVIO<i class="icon-note"></i></h3>
                         </div>
 
-                        <form class="form-shipping_information">
+                        <!-- <form class="form-shipping_information"> -->
                             <div class="px-5 py-5">
                                 <div class="default-form-box">
                                     <label class="font-weight-bold" for="localidad">Localidad</label>
@@ -83,7 +83,7 @@
                                     <input type="text" class="form-control">
                                 </div> 
                                 <div class="mb-3">
-                                    <span class="font-weight-bold">Información adicional(ej: cerca de..)</span>
+                                    <span class="font-weight-bold">Información adicional(ej: cerca de...)</span>
                                     <input type="text" class="form-control" placeholder="Opcional">
                                 </div> 
                                 <div class="mb-5">
@@ -91,11 +91,11 @@
                                     <input type="text" class="form-control" placeholder="Persona a recibir">
                                 </div>
 
-                                <div class="text-center">
+                                <!-- <div class="text-center">
                                     <button class="btn btn-md btn-black-default-hover m-auto" type="submit">IR AL PAGO</button>
-                                </div>
+                                </div> -->
                             </div>
-                        </form>
+                        <!-- </form> -->
                     </div>
                     <?php
                     }else{
@@ -134,36 +134,42 @@
 
                         <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-profile-tab">
                             <div class="account_form register" data-aos="fade-up" data-aos-delay="200">
-                                <form action="#" method="POST">
+                                <form class="register-client">
                                     <div class="default-form-box">
                                         <div class="box-session">
-                                            <i class="fa fa-user-o"></i>
-                                            <input type="text" placeholder="Nombre">
+                                            <i class="fa fa-id-badge"></i>
+                                            <input type="text" class="client-dni" placeholder="Cédula o RUC">
                                         </div>
                                     </div>
                                     <div class="default-form-box">
                                         <div class="box-session">
                                             <i class="fa fa-user-o"></i>
-                                            <input type="text" placeholder="Apellido">
+                                            <input type="text" class="client-name" placeholder="Nombre">
+                                        </div>
+                                    </div>
+                                    <div class="default-form-box">
+                                        <div class="box-session">
+                                            <i class="fa fa-user-o"></i>
+                                            <input type="text" class="client-surname" placeholder="Apellido">
                                         </div>
                                     </div>
                                     <div class="default-form-box">
                                         <div class="box-session">
                                             <i class="fa fa-envelope-o"></i>
-                                            <input type="email" placeholder="Correo electrónico">
+                                            <input type="email" class="client-email" placeholder="Correo electrónico">
                                         </div>
                                     </div>
                                     <div class="default-form-box">
                                         <div class="box-session">
                                             <i class="icon-lock"></i>
-                                            <input type="password" placeholder="Contraseña">
+                                            <input type="password" class="client-password" placeholder="Contraseña">
                                             <span class="mr-3" role='button'><i class="fa fa-eye-slash show-password"></i></span>
                                         </div>
                                     </div>
                                     <div class="default-form-box">
                                         <div class="box-session">
                                             <i class="icon-lock"></i>
-                                            <input type="password" placeholder="Repetir contraseña">
+                                            <input type="password" class="client-repeatPass" placeholder="Repetir contraseña">
                                             <span class="mr-3" role='button'><i class="fa fa-eye-slash show-password"></i></span>
                                         </div>
                                     </div>
@@ -202,10 +208,16 @@
                                 <p>IVA</p>
                                 <p class="cart_amount iva-payment"></p>
                             </div>
+                            <?php
+                            if(isset($_SESSION['login'])){
+                            ?>
                             <div class="cart_subtotal">
                                 <p>ENVIO</p>
                                 <p class="cart_amount shipment-payment"></p>
                             </div>
+                            <?php
+                            }
+                            ?>
                             <hr>
                             <div class="cart_subtotal">
                                 <p>Total</p>

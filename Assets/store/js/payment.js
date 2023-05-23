@@ -1,4 +1,32 @@
 $(document).ready(function () {
+
+	if($('.register-client').length){
+		$('.register-client').submit((e) => {
+        	e.preventDefault();
+    		let dni_r = $('.client-dni').val();
+    		let name_r = $('.client-name').val();
+    		let surname_r = $('.client-surname').val();
+    		let email_r = $('.client-email').val();
+    		let password_r = $('.client-password').val();
+    		let repeatPass_r = $('.client-repeatPass').val();
+
+    		$('.register-client input').each(function () {
+    			if($(this).val() === ""){
+    				$(this).parent().css("border", "1px solid red");
+    			}else{
+    				$(this).parent().css("border", "1px solid #4431DE");
+    				
+    			}
+    			
+    		})
+    		// if(dni_r == "" || name_r == "" || surname_r == "" || email_r == "" || password_r == "" || repeatPass_r == ""){
+
+    		// }
+    	});
+	}else{
+		
+	}
+
 	let cartStorage = JSON.parse(localStorage.getItem('shoppingCartData'));
 
 	let cartStorage_productIds = $.map(cartStorage, function(product) {
