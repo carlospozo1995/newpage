@@ -90,10 +90,9 @@
 														"asunto" => 'Recuperación de contraseña - '.NAME_EMPRESA,
 														"url_recovery" => $url_recovery
 													); 
-
 								
 								$sendEmail = Utils::sendEmail($dataEmailUser, 'email_reset');
-
+								
 								if ($sendEmail) {
 									$arrDataUpStatu['update_status'] = 2;
 									Models_Usuario::updateStatuPass($userEmail['id_user'], $arrDataUpStatu);

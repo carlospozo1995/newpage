@@ -112,6 +112,13 @@
     color: #4431DE;
     font-weight: bold;
 }
+
+.valid-content{
+    border: 1px solid #28a745 !important;
+}
+.invalid-content{
+    border: 1px solid red !important;
+}
 /* ----- MENU GENERAL---- */
 
 /*Menu Desktop*/

@@ -25,8 +25,8 @@
 
     // VARIABLES SEND EMAIL - PHP MAILER
     define("MAIL_HOST", "smtp.gmail.com");
-    define("MAIL_USERNAME", "pruebaempresa95@gmail.com");
-    define("MAIL_PASSWORD", "tzmjvdejuyimmwlb");
+    define("MAIL_USERNAME", "carlospozo95@gmail.com");
+    define("MAIL_PASSWORD", "cmcwuhevpctvhaxn");
 
     // MODULES PERMISSIONS
     define("MDASHBOARD", 1);

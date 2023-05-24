@@ -122,7 +122,10 @@ $(document).ready(function () {
             }
         });  
     });
-
+    
+    /************************************************
+     * Validate Inputs - Store
+     ***********************************************/
     function testExpression(value, regex) {
         if (regex.test(value)) {
             return true;
@@ -142,19 +145,19 @@ $(document).ready(function () {
                         expresion = testExpression(inputValue, /^([a-zA-ZÑñÁáÉéÍíÓóÚú\s])*$/);
                         break;
                     case $(this).hasClass('valid_phone'):
-                        expresion = testExpression(inputValue, /^([0-9]{7,10})$/);
+                        expresion = testExpression(inputValue, /^\d{7}(?:\d{3})?$/);
                         break;
-                    case $(this).hasClass('valid_number'):
-                        expresion = testExpression(inputValue, /^\d+$/);
-                        break;
-                    case $(this).hasClass('valid_price'):
-                        expresion = testExpression(inputValue, /^\d{1,}[.,]\d{2}$/);
-                        break;
+                    // case $(this).hasClass('valid_number'):
+                    //     expresion = testExpression(inputValue, /^\d+$/);
+                    //     break;
+                    // case $(this).hasClass('valid_price'):
+                    //     expresion = testExpression(inputValue, /^\d{1,}[.,]\d{2}$/);
+                    //     break;
                     case $(this).hasClass('valid_email'):
                         expresion = testExpression(inputValue, /^(([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9])+\.)+([a-zA-Z0-9]{2,4}))*$/);
                         break;
                     case $(this).hasClass('valid_password'):
-                        expresion = testExpression(inputValue, /^(?=.*\d)(?=.*[a-z]).{8,}$/);
+                        expresion = testExpression(inputValue, /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/);
                         break;
                     default:
                         return false;
@@ -163,14 +166,17 @@ $(document).ready(function () {
 
                 if (inputValue != "") {
                     if (!expresion) {
-                        $(this).parent().addClass('is-invalid');
+                        $(this).parent().addClass('invalid-content');
+                        $(this).parent().siblings().removeClass('d-none');
                     } else {
-                        $(this).parent().removeClass('is-invalid');
-                        $(this).parent().addClass('is-valid');
+                        $(this).parent().removeClass('invalid-content');
+                        $(this).parent().addClass('valid-content');
+                        $(this).parent().siblings().addClass('d-none');
                     }
                 } else {
-                    $(this).parent().removeClass('is-invalid');
-                    $(this).parent().removeClass('is-valid');
+                    $(this).parent().removeClass('invalid-content');
+                    $(this).parent().removeClass('valid-content');
+                    $(this).parent().siblings().addClass('d-none');
                 }
             });
         });

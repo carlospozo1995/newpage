@@ -12,16 +12,18 @@ $(document).ready(function () {
 
     		$('.register-client input').each(function () {
     			if($(this).val() === ""){
-    				$(this).parent().css("border", "1px solid red");
-    			}else{
-    				$(this).parent().css("border", "1px solid #4431DE");
-    				
+    				$(this).parent().addClass('invalid-content');
     			}
-    			
     		})
-    		// if(dni_r == "" || name_r == "" || surname_r == "" || email_r == "" || password_r == "" || repeatPass_r == ""){
+			
+			// console.log($('.register-client .valid'))
+			$('.register-client .valid').each(function () {
+				if($(this).parent().hasClass('invalid-content')){
+					$(this).parent().parent().parent().prepend("<span>Por favor asegúrese de no tener campos en rojo.</span>");
+					return false;
+				}
+			})
 
-    		// }
     	});
 	}else{
 		
