@@ -147,12 +147,6 @@ $(document).ready(function () {
                     case $(this).hasClass('valid_phone'):
                         expresion = testExpression(inputValue, /^\d{7}(?:\d{3})?$/);
                         break;
-                    // case $(this).hasClass('valid_number'):
-                    //     expresion = testExpression(inputValue, /^\d+$/);
-                    //     break;
-                    // case $(this).hasClass('valid_price'):
-                    //     expresion = testExpression(inputValue, /^\d{1,}[.,]\d{2}$/);
-                    //     break;
                     case $(this).hasClass('valid_email'):
                         expresion = testExpression(inputValue, /^(([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9])+\.)+([a-zA-Z0-9]{2,4}))*$/);
                         break;
@@ -167,16 +161,13 @@ $(document).ready(function () {
                 if (inputValue != "") {
                     if (!expresion) {
                         $(this).parent().addClass('invalid-content');
-                        $(this).parent().siblings().removeClass('d-none');
                     } else {
                         $(this).parent().removeClass('invalid-content');
                         $(this).parent().addClass('valid-content');
-                        $(this).parent().siblings().addClass('d-none');
                     }
                 } else {
                     $(this).parent().removeClass('invalid-content');
                     $(this).parent().removeClass('valid-content');
-                    $(this).parent().siblings().addClass('d-none');
                 }
             });
         });
