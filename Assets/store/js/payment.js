@@ -1,46 +1,5 @@
 $(document).ready(function () {
 
-	if($('.register-client').length){
-
-		const inputsRegister = $('.register-client input');
-		inputsRegister.each(function () {
-			$(this).on('keyup', function () {
-				if ($(this).parent().hasClass('invalid-content')) {
-					$(this).parent().siblings().removeClass('d-none');
-				}else{
-					$(this).parent().siblings().addClass('d-none');
-				}
-			})
-		})
-		
-		$('.register-client').submit((e) => {
-        	e.preventDefault();
-    		let dni_r = $('.client-dni').val();
-    		let name_r = $('.client-name').val();
-    		let surname_r = $('.client-surname').val();
-    		let email_r = $('.client-email').val();
-    		let password_r = $('.client-password').val();
-    		let repeatPass_r = $('.client-repeatPass').val();
-
-    		inputsRegister.each(function () {
-    			if($(this).val() === ""){
-    				$(this).parent().addClass('invalid-content');
-    			}
-
-				if($(this).parent().hasClass('invalid-content')){
-					$(this).parent().parent().parent().prepend("<span>Por favor asegúrese de no tener campos en rojo.</span>");
-					return false;
-				}
-    		})
-			
-			if(inputsRegister.val() != "" && !inputsRegister.parent().hasClass('invalid-content')){
-				
-			}
-    	});
-	}else{
-		
-	}
-
 	let cartStorage = JSON.parse(localStorage.getItem('shoppingCartData'));
 
 	let cartStorage_productIds = $.map(cartStorage, function(product) {

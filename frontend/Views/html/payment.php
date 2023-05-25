@@ -135,6 +135,7 @@
                         <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-profile-tab">
                             <div class="account_form register" data-aos="fade-up" data-aos-delay="200">
                                 <form class="register-client">
+                                    <div class="alert-register"></div>
                                     <div class="default-form-box">
                                         <div class="box-session">
                                             <i class="fa fa-user-o"></i>

@@ -168,6 +168,7 @@
                 </div>
                 <div class="modal-body">
                     <form id="form-login_store">
+                        <div class="alert-login"></div>
                         <div class="default-form-box">
                             <div class="box-session">
                                 <i class="fa fa-envelope-o"></i>
@@ -200,38 +201,43 @@
                     <h5 class="modal-title text-center c-p-deep-blue font-weight-bold">NUEVO REGISTRO DE CUENTA</h5>
                 </div>
                 <div class="modal-body">
-                    <form action="#" method="POST">
+                    <form class="register-client">
+                        <div class="alert-register"></div>
                         <div class="default-form-box">
                             <div class="box-session">
                                 <i class="fa fa-user-o"></i>
-                                <input type="text" placeholder="Nombre">
+                                <input type="text" class="client-name valid valid_text" placeholder="Nombre">
                             </div>
+                            <span class="d-none text-danger fs-12">Este campo solo debe contener letras y espacios.</span>
                         </div>
                         <div class="default-form-box">
                             <div class="box-session">
                                 <i class="fa fa-user-o"></i>
-                                <input type="text" placeholder="Apellido">
+                                <input type="text" class="client-surname valid valid_text" placeholder="Apellido">
                             </div>
+                            <span class="d-none text-danger fs-12">Este campo solo debe contener letras y espacios.</span>
+                        </div>
+                        <div class="default-form-box">
+                            <div class="box-session">
+                                <i class="icon-phone"></i>
+                                <input type="text" class="client-phone valid valid_phone" placeholder="Teléfono / celular">
+                            </div>
+                            <span class="d-none text-danger fs-12">Añadir números de 7 o 10 dígitos.</span>
                         </div>
                         <div class="default-form-box">
                             <div class="box-session">
                                 <i class="fa fa-envelope-o"></i>
-                                <input type="email" placeholder="Correo electrónico">
+                                <input type="email" class="client-email valid valid_email" placeholder="Correo electrónico">
                             </div>
+                            <span class="d-none text-danger fs-12">Este campo debe tener un correo existente.</span>
                         </div>
                         <div class="default-form-box">
                             <div class="box-session">
                                 <i class="icon-lock"></i>
-                                <input type="password" placeholder="Contraseña">
+                                <input type="password" class="client-password valid valid_password" placeholder="Contraseña">
                                 <span class="mr-3" role='button'><i class="fa fa-eye-slash show-password"></i></span>
                             </div>
-                        </div>
-                        <div class="default-form-box">
-                            <div class="box-session">
-                                <i class="icon-lock"></i>
-                                <input type="password" placeholder="Repetir contraseña">
-                                <span class="mr-3" role='button'><i class="fa fa-eye-slash show-password"></i></span>
-                            </div>
+                            <span class="d-none text-danger fs-12">Añadir mínimo 8 caracteres entre numeros, letras minusculas y mayusculas.</span>
                         </div>
                         <div class="login_submit">
                             <button class="btn btn-md btn-black-default-hover m-auto" type="submit">CREAR CUENTA</button>

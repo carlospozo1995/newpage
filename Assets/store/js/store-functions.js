@@ -174,4 +174,42 @@ $(document).ready(function () {
     }
 
     validateExpresion();
+
+    if($('.register-client').length){
+
+		const inputsRegister = $('.register-client input');
+		inputsRegister.each(function () {
+			$(this).on('keyup', function () {
+				if ($(this).parent().hasClass('invalid-content')) {
+					$(this).parent().siblings().removeClass('d-none');
+				}else{
+					$(this).parent().siblings().addClass('d-none');
+				}
+			})
+		})
+		
+		$('.register-client').submit((e) => {
+        	e.preventDefault();
+    		let name_r = $('.client-name').val();
+    		let surname_r = $('.client-surname').val();
+    		let phone_r = $('.client-phone').val();
+    		let email_r = $('.client-email').val();
+    		let password_r = $('.client-password').val();
+
+    		inputsRegister.each(function () {
+    			if($(this).val() === ""){
+    				$(this).parent().addClass('invalid-content');
+    			}
+
+				if($(this).parent().hasClass('invalid-content')){
+                    msgAlert('.alert-register', 'Por favor asegúrese de no tener campos en rojo.');
+                    return false;
+				}
+    		})
+			
+			if(inputsRegister.val() != "" && !inputsRegister.parent().hasClass('invalid-content')){
+                
+			}
+    	});
+	}
 });

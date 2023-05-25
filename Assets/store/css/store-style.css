@@ -10,9 +10,6 @@
 .c-p-deep-blue{
     color: #4431DE;
 }
-.c.p-coral{
-    
-}
 .c-intense-gold{
     color: #fbbb01;
 }
@@ -31,7 +28,6 @@
 .bg-p-deep-blue{
     background: #4431DE;
 }
-
 
 /* ----- Z-INDEX ------ */
 .z-1{
@@ -72,6 +68,29 @@
 }
 .z-1000{
     z-index: 1000 !important;
+}
+
+/* ----- FONT-SIZE ------ */
+.fs-8{
+    font-size: 8px !important;
+}
+.fs-10{
+    font-size: 10px !important;
+}
+.fs-12{
+    font-size: 12px !important;
+}
+.fs-14{
+    font-size: 14px !important;
+}
+.fs-16{
+    font-size: 16px !important;
+}
+.fs-18{
+    font-size: 18px !important;
+}
+.fs-20{
+    font-size: 20px !important;
 }
 
 .container-slider{
