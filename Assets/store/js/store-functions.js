@@ -175,6 +175,9 @@ $(document).ready(function () {
 
     validateExpresion();
 
+    /************************************************
+     * Register Client - Store
+     ***********************************************/
     if($('.register-client').length){
 
 		const inputsRegister = $('.register-client input');
@@ -208,7 +211,29 @@ $(document).ready(function () {
     		})
 			
 			if(inputsRegister.val() != "" && !inputsRegister.parent().hasClass('invalid-content')){
-                
+                $.ajax({
+                    url: base_url + "index/registerClient/",
+                    dataType: 'JSON',
+                    method: 'POST',
+                    data: {
+                        name_client: name_r,
+                        surname_client: surname_r,
+                        phone_client: phone_r,
+                        email_client: email_r,
+                        password_client: password_r
+                    },
+                    beforeSend: function() {
+                        
+                    },
+                    success: function(data){
+                        console.log(data);
+                    },
+                    error: function(xhr, status, error) {
+                    },
+                    complete: function() {
+                        
+                    }
+                });   
 			}
     	});
 	}

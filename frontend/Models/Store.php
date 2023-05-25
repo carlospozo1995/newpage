@@ -1,6 +1,20 @@
 <?php
 
     class Models_Store{
+        // SQL INSERT CLIENT
+        static public function insertClient($name, $surname, $phone, $email, $password)
+        {
+            $sql = "SELECT * FROM users WHERE email = ?";
+            $request = $GLOBALS["db"]->auto_array($sql, array($email));     
+            if (empty($request)) {
+                $arrData[] = array("name_user" => ucfirst($name), "surname_user" => ucfirst($surname), "phone" => $phone, "email"  => $email, "password" => $password); 
+                $result = $GLOBALS["db"]->insert_multiple("users", $arrData);
+            }else{
+
+            }
+
+            return $result;
+        }
 
         // SQL PAGE CATEGORIAS
         static public function getCategories($data1, $data2, $data3)

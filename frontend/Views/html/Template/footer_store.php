@@ -229,7 +229,7 @@
                                 <i class="fa fa-envelope-o"></i>
                                 <input type="email" class="client-email valid valid_email" placeholder="Correo electrónico">
                             </div>
-                            <span class="d-none text-danger fs-12">Este campo debe tener un correo existente.</span>
+                            <span class="d-none text-danger fs-12">Este campo debe tener un correo valido.</span>
                         </div>
                         <div class="default-form-box">
                             <div class="box-session">

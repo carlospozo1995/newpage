@@ -13,6 +13,7 @@ ErrorDocument 404 "Lo siento, la página que estás buscando no existe."
 
 RewriteRule ^$ %{ENV:REWRITEBASE}index.php?show=Index [L]	
 RewriteRule ^index/logout/$ %{ENV:REWRITEBASE}index.php?show=Index&action=logout [L]
+RewriteRule ^index/registerClient/$ %{ENV:REWRITEBASE}index.php?show=Index&action=registerClient [L]
 
 #LOGIN
 RewriteRule ^(login/|login|Login|LOGIN)$ %{ENV:REWRITEBASE}index.php?show=login [L]
