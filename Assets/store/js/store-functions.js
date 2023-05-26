@@ -84,7 +84,6 @@ $(document).ready(function () {
                     }
                 });   
 			}
-
     	});
     }
 
@@ -226,7 +225,12 @@ $(document).ready(function () {
                         
                     },
                     success: function(data){
-                        console.log(data);
+                        if(data.status){
+                            window.location.reload(false);
+                        }else{
+                            msgAlert('.alert-register', data.msg);
+                            return false;
+                        }
                     },
                     error: function(xhr, status, error) {
                     },

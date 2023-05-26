@@ -7,10 +7,10 @@
             $sql = "SELECT * FROM users WHERE email = ?";
             $request = $GLOBALS["db"]->auto_array($sql, array($email));     
             if (empty($request)) {
-                $arrData[] = array("name_user" => ucfirst($name), "surname_user" => ucfirst($surname), "phone" => $phone, "email"  => $email, "password" => $password); 
+                $arrData[] = array("name_user" => ucfirst($name), "surname_user" => ucfirst($surname), "phone" => $phone, "email"  => $email, "password" => $password, "rolid" => 6); 
                 $result = $GLOBALS["db"]->insert_multiple("users", $arrData);
             }else{
-
+                $result = "email_exists";
             }
 
             return $result;

@@ -39,7 +39,7 @@
 									$_SESSION['timeout'] = true;
                             		$_SESSION['inicio'] = time();	
                             		
-                            		$arr_rol_user = Models_Usuario::dataSessionlogin($_SESSION['idUser']); 
+                            		Models_Usuario::dataSessionlogin($_SESSION['idUser']); 
 									// Models_Usuario::updateStatuPass($_SESSION['idUser'], array('update_status' => 1));
                             		// $user = array(
                             		// 	'identificacion' => $_SESSION['data_user']['dni'],
