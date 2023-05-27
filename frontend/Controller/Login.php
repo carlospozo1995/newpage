@@ -2,13 +2,12 @@
 
 	class Controller_Login{
 		public function buildPage()
-		{
+		{	
 			session_start();
-		
 			if (Utils::isLogged()) {
 				header('Location: '.BASE_URL.'Dashboard');
-				// $arrDataUpStatus['update_status'] = 1;
-				// Models_Usuario::updateStatuPass($_SESSION['idUser'], $arrDataUpStatus);
+			}else{
+				setcookie('PHPSESSID', '', time() - 3600, '/');
 			}
 			// Utils::dep($_SESSION['id_user_token']);
 			$action = Utils::getParam("action", "");
@@ -38,7 +37,7 @@
 									$_SESSION['login'] = true;
 									$_SESSION['timeout'] = true;
                             		$_SESSION['inicio'] = time();	
-                            		
+                            		session_regenerate_id(true);
                             		Models_Usuario::dataSessionlogin($_SESSION['idUser']); 
 									// Models_Usuario::updateStatuPass($_SESSION['idUser'], array('update_status' => 1));
                             		// $user = array(
@@ -116,11 +115,9 @@
 				break;
 				
 				default:
-
 					$data["file_css"][] = "login";
 					$data["file_js"][] = "login"; 
 					View::renderPage('Login', $data);
-				
 				break;
 			}
 		}

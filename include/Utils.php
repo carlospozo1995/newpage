@@ -54,12 +54,12 @@
 				return false;
 			}
 		}
-
+		
 		static public function sessionStart()
 		{
 		 	session_start();
 		 	$timeSession = 7200;
-
+			
 		 	if (isset($_SESSION['timeout'])) {
 	 			$session_in = time() - $_SESSION['inicio'];
 	 			if ($session_in > $timeSession) {
@@ -72,13 +72,33 @@
 
 		static public function sessionEnd()
 		{
-			session_start();
           	session_unset();
           	session_destroy();
-
           	header('Location: '.BASE_URL.'login');
 		}
 
+
+		static public function sessionStartStore()
+		{
+		 	session_start();
+		 	$timeSession = 7200;
+
+		 	if (isset($_SESSION['timeout'])) {
+	 			$session_in = time() - $_SESSION['inicio'];
+	 			if ($session_in > $timeSession) {
+	 				self::sessionEndStore();
+	 			}
+		 	}else{
+		 		self::sessionEndStore();
+		 	}
+		}
+
+		static public function sessionEndStore()
+		{
+          	session_unset();
+          	session_destroy();
+			setcookie('PHPSESSID', '', time() - 3600, '/');
+		}
 		// EMAIL FUNCTIONS - RECOVER PASSWORD
 
 		static public function tokenReset()

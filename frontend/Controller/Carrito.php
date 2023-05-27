@@ -4,7 +4,8 @@
 		
 		public function buildPage()
 		{	
-			session_start();
+			Utils::sessionStartStore();
+			// session_start();
 			$data = array();
 			$action = Utils::getParam("action", "");
 			switch ($action) {
@@ -60,7 +61,6 @@
 			
 				default:
 					// $data["file_js"][] = "producto-store";
-
 					if (isset($_GET['process_payment'])) {
 						if ($_GET['process_payment'] == 'comprar') {
 							$data["file_js"][] = "payment";
@@ -71,7 +71,7 @@
 					}else{
 						View::renderPage('Carrito', $data);
 					}
-					
+
 				break;
 			}
 		}

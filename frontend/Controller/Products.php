@@ -3,7 +3,7 @@
 	class Controller_Products{
 
 		public function buildPage()
-		{
+		{	
 			Utils::sessionStart();
 			if (empty($_SESSION['idUser'])) {
 				header('Location: '.BASE_URL.'login');

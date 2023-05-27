@@ -37,7 +37,7 @@
                             <div class="px-5 py-5 collapse" id="dataCollapse">
                                 <div class="mb-3">
                                     <span class="font-weight-bold">Cédula o RUC</span>
-                                    <input disabled type="text" class="form-control" value="<?= $_SESSION['data_user']['dni']; ?>">
+                                    <input type="text" class="form-control" value="<?= $_SESSION['data_user']['dni']; ?>">
                                 </div>
                                 <div class="mb-3">
                                     <span class="font-weight-bold">Nombre</span>

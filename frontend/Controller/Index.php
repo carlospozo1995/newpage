@@ -12,6 +12,7 @@
 				case 'logout':
 		          	session_unset();
 		          	session_destroy();
+					setcookie('PHPSESSID', '', time() - 3600, '/');
 				break;
 				case 'registerClient':
 					if($_POST){
@@ -42,6 +43,7 @@
 										$_SESSION['timeout'] = true;
 										$_SESSION['inicio'] = time();
 										Models_Usuario::dataSessionlogin($request);
+										session_regenerate_id(true);
 										
 										$status = true;
 										$msg = "";
