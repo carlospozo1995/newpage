@@ -93,7 +93,7 @@ $(document).ready(function () {
     $('body #popover_mycount').popover({
         html: true,
         content: `
-                <ul class="content-dialog_mycount text-center font-weight-bold h6">
+                <ul class=" z-1000 content-dialog_mycount text-center font-weight-bold h6">
                     <li class="mb-2 mt-1"><i class="fa fa-user-o pr-2 pl-2"></i><a href="https://www.google.com/">MI CUENTA</a></li>
                     <li><i class="icon-lock-open pr-2 pl-2" aria-hidden="true"></i><a href="" id="close_session">CERRAR SESIÓN</a></li>
                 </ul>`,

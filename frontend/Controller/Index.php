@@ -10,9 +10,7 @@
 			$msg = "";
 			switch ($action) {
 				case 'logout':
-		          	session_unset();
-		          	session_destroy();
-					setcookie('PHPSESSID', '', time() - 3600, '/');
+					Utils::sessionEndStore();
 				break;
 				case 'registerClient':
 					if($_POST){

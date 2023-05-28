@@ -1,12 +1,17 @@
 $(document).ready(function () {
-	let flag = true;
-	$('.form-client_data input').each(function () {
-		if ($(this).val() === "") {
-			flag = false;
-			return false;
-		}
-	});
-	if(flag){
+
+	function mainFormValidation() {
+		let flag = true;
+		$('.form-client_data input').each(function () {
+			if ($(this).val() === "") {
+				flag = false;
+				return false;
+			}
+		});
+		return flag;
+	}
+	
+	if(mainFormValidation()){
 		$('.btn-collapse-data').removeClass('d-block');
 		$('.btn-collapse-shipping').addClass('d-none');
 		$('#dataCollapse').hide();
@@ -25,18 +30,12 @@ $(document).ready(function () {
 		$('.btn-collapse-data').removeClass('d-block');
 		$('.btn-collapse-shipping').addClass('d-block');
 		$('.btn-collapse-shipping').removeClass('d-none');
+		$('.process-payment').slideUp();	
 	});
 
 	$('.btn-collapse-shipping').click(function () {
-		let flagtwo = true;
-		$('.form-client_data input').each(function () {
-			if ($(this).val() === "") {
-				flagtwo = false;
-				return false;
-			}
-		});
-
-		if (flagtwo) {
+		$('.process-payment').slideUp();
+		if (mainFormValidation()) {
 			$('#dataCollapse').slideUp();
 			$('#shippingCollapse').slideDown();
 			$('.btn-collapse-data').addClass('d-block');
@@ -48,14 +47,7 @@ $(document).ready(function () {
 
 	$('.form-client_data').submit(function (e) {
 		e.preventDefault();
-		let flagthree = true;
-		$('.form-client_data input').each(function () {
-			if ($(this).val() === "") {
-				flagthree = false;
-				return false;
-			}
-		});
-		if(flagthree){
+		if(mainFormValidation()){
 			$('.btn-collapse-data').removeClass('d-none');
 			$('.btn-collapse-data').addClass('d-block');
 			$('.btn-collapse-shipping').addClass('d-none');
@@ -67,6 +59,15 @@ $(document).ready(function () {
 		}
 	})
 
+	$('.form-shipping_information').submit(function (e) {
+		e.preventDefault();
+		if($('#location').val() != "" && $('#address').val() != "" && $('#addressee').val() != ""){
+			$('.process-payment').slideDown();
+			$('.btn-collapse-shipping').removeClass('d-none');
+			$('.btn-collapse-shipping').addClass('d-block');
+			$('#shippingCollapse').slideUp();
+		}
+	})
 
 	let cartStorage = JSON.parse(localStorage.getItem('shoppingCartData'));
 
@@ -103,7 +104,7 @@ $(document).ready(function () {
 		    let subtotal = 0;
 		    let totalIva = 0;
 
-		    const selectLocality = $('.country_option');
+		    const selectLocality = $('#location');
 		    let totalEnvio = 0;
 
 		    const ul = $("<ul class='offcanvas-cart py-3 px-3'></ul>");

@@ -73,7 +73,7 @@
                             <form class="form-shipping_information">
                                 <div class="default-form-box">
                                     <label class="font-weight-bold" for="localidad">Localidad</label>
-                                    <select class="country_option mb-3 nice-select wide" name="country" id="localidad">
+                                    <select class="country_option mb-3 nice-select wide" name="country" id="location">
                                         <option value="1">Balao</option>
                                         <option value="2">Santa Rita</option>
                                         <option value="3">San Carlos</option>
@@ -81,7 +81,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <span class="font-weight-bold">Dirección</span>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="address">
                                 </div> 
                                 <div class="mb-3">
                                     <span class="font-weight-bold">Información adicional(ej: cerca de...)</span>
@@ -89,7 +89,7 @@
                                 </div> 
                                 <div class="mb-5">
                                     <span class="font-weight-bold">Destinatario</span>
-                                    <input type="text" class="form-control" placeholder="Persona a recibir">
+                                    <input type="text" class="form-control" placeholder="Persona a recibir" id="addressee">
                                 </div>
 
                                 <div class="text-center">
@@ -197,7 +197,7 @@
                     }
                     ?>
 
-                    <div class="coupon_code right" data-aos="fade-up" data-aos-delay="400">
+                    <div class="coupon_code right mb-5" data-aos="fade-up" data-aos-delay="400">
                         <h3 class="text-center">Total del carrito</h3>
                         <div class="coupon_inner">
                             <div class="cart_subtotal">
@@ -224,16 +224,29 @@
                                 <p class="cart_amount total-payment"></p>
                             </div>
                             <?php
-                            if (isset($_SESSION['login'])) {
+                            // if (isset($_SESSION['login'])) {
                             ?>
-                            <div class="checkout_btn">
+                            <!-- <div class="checkout_btn">
                                 <a href="<?= BASE_URL; ?>carrito/procesarpago" class="btn btn-md btn-coral">Finalizar compra</a>
-                            </div>		
+                            </div>		 -->
                             <?php
-                            }
+                            // }
                             ?>
                         </div>
                     </div>
+
+                    <?php
+                        if (isset($_SESSION['login'])) {
+                    ?>
+                    <div class="process-payment collapse" data-aos="fade-up" data-aos-delay="400">
+                        <p style="background: blue; color: white;">pago paymendez</p>
+                        <span>proceso de pago</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis veniam sed eaque rerum recusandae itaque dolor ex, tenetur ipsum ullam eos quaerat magnam nostrum minima nam cupiditate sit? Nostrum, perspiciatis.</p>
+                    </div>
+                    <?php
+                          }
+                    ?>
+
                 </div>
             </div>
         </div>
