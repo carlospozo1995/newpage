@@ -45,15 +45,6 @@
 	      
 	      	return $default;
 		}
-
-		static public function isLogged()
-		{
-			if(isset($_SESSION['idUser'])){
-				return true;
-			}else{
-				return false;
-			}
-		}
 		
 		static public function sessionStart()
 		{
@@ -76,7 +67,6 @@
           	session_destroy();
           	header('Location: '.BASE_URL.'login');
 		}
-
 
 		static public function sessionStartStore()
 		{

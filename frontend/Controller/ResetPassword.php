@@ -6,7 +6,7 @@
 		{	
 			session_start();
 		
-			if (Utils::isLogged()) {
+			if (isset($_SESSION['idUser'])) {
 				header('Location: '.BASE_URL.'Dashboard');
 			}
 

@@ -31,10 +31,11 @@
                     ?>
                     <div class="checkout-data_buy mb-4" data-aos="fade-up" data-aos-delay="400" >
                         <div class="title-data_buy">
-                            <h3>1. DATOS<i class="icon-note" data-bs-toggle="collapse" data-bs-target="#dataCollapse" role="button" aria-expanded="false"></i></h3>
+                            <h3>1. DATOS<i class="icon-note btn-collapse-data" role="button"></i></h3>
                         </div>
-                        <!-- <form class="client_data"> -->
-                            <div class="px-5 py-5 collapse" id="dataCollapse">
+                        
+                        <div class="px-5 py-5" id="dataCollapse">
+                            <form class="form-client_data">
                                 <div class="mb-3">
                                     <span class="font-weight-bold">Cédula o RUC</span>
                                     <input type="text" class="form-control" value="<?= $_SESSION['data_user']['dni']; ?>">
@@ -56,20 +57,20 @@
                                     <input type="text" class="form-control" value="<?= $_SESSION['data_user']['phone']; ?>">
                                 </div>
 
-                                 <!-- <div class="text-center">
+                                <div class="text-center">
                                     <button class="btn btn-md btn-black-default-hover m-auto" type="submit">IR AL ENVIO</button>
-                                </div> -->
-                            </div>
-                        <!-- </form> -->
+                                </div>
+                            </form>
+                        </div>
                     </div>
                     
                     <div class="checkout-data_buy mb-4" data-aos="fade-up" data-aos-delay="400">
                         <div class="title-data_buy">
-                            <h3>2. ENVIO<i class="icon-note"></i></h3>
+                            <h3>2. ENVIO<i class="icon-note btn-collapse-shipping" role="button"></i></h3>
                         </div>
 
-                        <!-- <form class="form-shipping_information"> -->
-                            <div class="px-5 py-5">
+                        <div class="px-5 py-5" id="shippingCollapse">
+                            <form class="form-shipping_information">
                                 <div class="default-form-box">
                                     <label class="font-weight-bold" for="localidad">Localidad</label>
                                     <select class="country_option mb-3 nice-select wide" name="country" id="localidad">
@@ -91,11 +92,11 @@
                                     <input type="text" class="form-control" placeholder="Persona a recibir">
                                 </div>
 
-                                <!-- <div class="text-center">
+                                <div class="text-center">
                                     <button class="btn btn-md btn-black-default-hover m-auto" type="submit">IR AL PAGO</button>
-                                </div> -->
-                            </div>
-                        <!-- </form> -->
+                                </div>
+                            </form>
+                        </div>
                     </div>
                     <?php
                     }else{
@@ -139,35 +140,35 @@
                                     <div class="default-form-box">
                                         <div class="box-session">
                                             <i class="fa fa-user-o"></i>
-                                            <input type="text" class="client-name valid valid_text" placeholder="Nombre">
+                                            <input type="text" class="client-name valid valid_text" placeholder="Nombre" required>
                                         </div>
                                         <span class="d-none text-danger">Este campo solo debe contener letras y espacios.</span>
                                     </div>
                                     <div class="default-form-box">
                                         <div class="box-session">
                                             <i class="fa fa-user-o"></i>
-                                            <input type="text" class="client-surname valid valid_text" placeholder="Apellido">
+                                            <input type="text" class="client-surname valid valid_text" placeholder="Apellido" required>
                                         </div>
                                         <span class="d-none text-danger">Este campo solo debe contener letras y espacios.</span>
                                     </div>
                                     <div class="default-form-box">
                                         <div class="box-session">
                                             <i class="icon-phone"></i>
-                                            <input type="text" class="client-phone valid valid_phone" placeholder="Teléfono / celular">
+                                            <input type="text" class="client-phone valid valid_phone" placeholder="Teléfono / celular" required>
                                         </div>
                                         <span class="d-none text-danger">Este campo solo debe contener números de 7 o 10 dígitos.</span>
                                     </div>
                                     <div class="default-form-box">
                                         <div class="box-session">
                                             <i class="fa fa-envelope-o"></i>
-                                            <input type="email" class="client-email valid valid_email" placeholder="Correo electrónico">
+                                            <input type="email" class="client-email valid valid_email" placeholder="Correo electrónico" required>
                                         </div>
                                         <span class="d-none text-danger">Este campo debe tener un correo existente.</span>
                                     </div>
                                     <div class="default-form-box">
                                         <div class="box-session">
                                             <i class="icon-lock"></i>
-                                            <input type="password" class="client-password valid valid_password" placeholder="Contraseña">
+                                            <input type="password" class="client-password valid valid_password" placeholder="Contraseña" required>
                                             <span class="mr-3" role='button'><i class="fa fa-eye-slash show-password"></i></span>
                                         </div>
                                         <span class="d-none text-danger">La contraseña por lo mínimo debe tener 8 caracteres entre numeros, letras minusculas y mayusculas.</span>

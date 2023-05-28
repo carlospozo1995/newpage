@@ -1,4 +1,72 @@
 $(document).ready(function () {
+	let flag = true;
+	$('.form-client_data input').each(function () {
+		if ($(this).val() === "") {
+			flag = false;
+			return false;
+		}
+	});
+	if(flag){
+		$('.btn-collapse-data').removeClass('d-block');
+		$('.btn-collapse-shipping').addClass('d-none');
+		$('#dataCollapse').hide();
+		$('#shippingCollapse').show();
+	}else{
+		$('.btn-collapse-data').addClass('d-none');
+		$('.btn-collapse-shipping').removeClass('d-block');
+		$('#dataCollapse').show();
+		$('#shippingCollapse').hide();
+	}
+
+	$('.btn-collapse-data').click(function () {
+		$('#dataCollapse').slideDown();
+		$('#shippingCollapse').slideUp();
+		$('.btn-collapse-data').addClass('d-none');
+		$('.btn-collapse-data').removeClass('d-block');
+		$('.btn-collapse-shipping').addClass('d-block');
+		$('.btn-collapse-shipping').removeClass('d-none');
+	});
+
+	$('.btn-collapse-shipping').click(function () {
+		let flagtwo = true;
+		$('.form-client_data input').each(function () {
+			if ($(this).val() === "") {
+				flagtwo = false;
+				return false;
+			}
+		});
+
+		if (flagtwo) {
+			$('#dataCollapse').slideUp();
+			$('#shippingCollapse').slideDown();
+			$('.btn-collapse-data').addClass('d-block');
+			$('.btn-collapse-data').removeClass('d-none');
+			$('.btn-collapse-shipping').addClass('d-none');
+			$('.btn-collapse-shipping').removeClass('d-block');
+		}
+	});
+
+	$('.form-client_data').submit(function (e) {
+		e.preventDefault();
+		let flagthree = true;
+		$('.form-client_data input').each(function () {
+			if ($(this).val() === "") {
+				flagthree = false;
+				return false;
+			}
+		});
+		if(flagthree){
+			$('.btn-collapse-data').removeClass('d-none');
+			$('.btn-collapse-data').addClass('d-block');
+			$('.btn-collapse-shipping').addClass('d-none');
+			$('.btn-collapse-shipping').removeClass('d-block');
+			$('#dataCollapse').slideUp();
+			$('#shippingCollapse').slideDown();
+		}else{
+			console.log('llene el formulario 1 para avanzar');
+		}
+	})
+
 
 	let cartStorage = JSON.parse(localStorage.getItem('shoppingCartData'));
 

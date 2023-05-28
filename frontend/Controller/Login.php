@@ -4,12 +4,12 @@
 		public function buildPage()
 		{	
 			session_start();
-			if (Utils::isLogged()) {
+			if (isset($_SESSION['idUser'])) {
 				header('Location: '.BASE_URL.'Dashboard');
 			}else{
 				setcookie('PHPSESSID', '', time() - 3600, '/');
 			}
-			// Utils::dep($_SESSION['id_user_token']);
+			
 			$action = Utils::getParam("action", "");
 			$data = array();
 			$msg = "";

@@ -235,7 +235,6 @@ $(document).ready(function () {
                     error: function(xhr, status, error) {
                     },
                     complete: function() {
-                        
                     }
                 });   
 			}
