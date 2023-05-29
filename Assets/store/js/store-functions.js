@@ -152,6 +152,9 @@ $(document).ready(function () {
                     case $(this).hasClass('valid_password'):
                         expresion = testExpression(inputValue, /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/);
                         break;
+                    case $(this).hasClass('valid_empty'):
+                            expresion = testExpression(inputValue, /^\s*.*\S.*\s*$/);
+                    break;
                     default:
                         return false;
                         break;
@@ -160,13 +163,23 @@ $(document).ready(function () {
                 if (inputValue != "") {
                     if (!expresion) {
                         $(this).parent().addClass('invalid-content');
+                        $(this).parent().removeClass('valid-content');
+                        $(this).parent().siblings().removeClass('d-none');
                     } else {
                         $(this).parent().removeClass('invalid-content');
                         $(this).parent().addClass('valid-content');
+                        $(this).parent().siblings().addClass('d-none');
                     }
                 } else {
-                    $(this).parent().removeClass('invalid-content');
-                    $(this).parent().removeClass('valid-content');
+                    if ($("#content-data_buy").length) {
+                        $(this).parent().addClass('invalid-content');
+                        $(this).parent().removeClass('valid-content');
+                        $(this).parent().siblings().removeClass('d-none');
+                    }else{
+                        $(this).parent().removeClass('invalid-content');
+                        $(this).parent().removeClass('valid-content');
+                        $(this).parent().siblings().addClass('d-none');
+                    }
                 }
             });
         });
@@ -179,16 +192,16 @@ $(document).ready(function () {
      ***********************************************/
     if($('.register-client').length){
 
-		const inputsRegister = $('.register-client input');
-		inputsRegister.each(function () {
-			$(this).on('keyup', function () {
-				if ($(this).parent().hasClass('invalid-content')) {
-					$(this).parent().siblings().removeClass('d-none');
-				}else{
-					$(this).parent().siblings().addClass('d-none');
-				}
-			})
-		})
+		// const inputsRegister = $('.register-client input');
+		// inputsRegister.each(function () {
+		// 	$(this).on('keyup', function () {
+		// 		if ($(this).parent().hasClass('invalid-content')) {
+		// 			$(this).parent().siblings().removeClass('d-none');
+		// 		}else{
+		// 			$(this).parent().siblings().addClass('d-none');
+		// 		}
+		// 	})
+		// })
 		
 		$('.register-client').submit((e) => {
         	e.preventDefault();

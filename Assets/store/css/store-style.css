@@ -93,6 +93,13 @@
     font-size: 20px !important;
 }
 
+.textarea{
+    width: 100%;
+    height: 100px;
+    max-height: 200px;
+    min-height: 100px;
+}
+
 .container-slider{
     margin-top: -197px;
 }

@@ -29,73 +29,100 @@
                     <?php
                     if (isset($_SESSION['login'])) {
                     ?>
-                    <div class="checkout-data_buy mb-4" data-aos="fade-up" data-aos-delay="400" >
-                        <div class="title-data_buy">
-                            <h3>1. DATOS<i class="icon-note btn-collapse-data" role="button"></i></h3>
-                        </div>
-                        
-                        <div class="px-5 py-5" id="dataCollapse">
-                            <form class="form-client_data">
-                                <div class="mb-3">
-                                    <span class="font-weight-bold">Cédula o RUC</span>
-                                    <input type="text" class="form-control" value="<?= $_SESSION['data_user']['dni']; ?>">
-                                </div>
-                                <div class="mb-3">
-                                    <span class="font-weight-bold">Nombre</span>
-                                    <input type="text" class="form-control" value="<?= $_SESSION['data_user']['name_user']; ?>">
-                                </div>
-                                <div class="mb-3">
-                                    <span class="font-weight-bold">Apellido</span>
-                                    <input type="text" class="form-control" value="<?= $_SESSION['data_user']['surname_user']; ?>">
-                                </div>
-                                <div class="mb-3">
-                                    <span class="font-weight-bold">Correo</span>
-                                    <input type="text" class="form-control" value="<?= $_SESSION['data_user']['email']; ?>">
-                                </div>
-                                <div class="mb-5">
-                                    <span class="font-weight-bold">Teléfono / Movil</span>
-                                    <input type="text" class="form-control" value="<?= $_SESSION['data_user']['phone']; ?>">
-                                </div>
+                    <div id="content-data_buy" data-aos="fade-up" data-aos-delay="400">
+                        <div class="checkout-data_buy mb-4">
+                            <div class="title-data_buy">
+                                <h3>1. DATOS <i class="icon-note btn-collapse-data" role="button" data-bs-toggle="collapse" data-bs-target="#dataCollapse" aria-expanded="false"></i></h3>
+                            </div>
+                            
+                            <div class="px-5 py-5 collapse" id="dataCollapse">
+                                <form class="form-client_data">
+                                    <div class="alert-client-data"></div>
+                                    <div class="default-form-box">
+                                        <span class="font-weight-bold">Cédula o RUC</span>
+                                        <div class="box-session">
+                                            <input type="text" class="valid valid_empty" value="<?= $_SESSION['data_user']['dni']; ?>">
+                                        </div>
+                                        <span class="d-none text-danger">Por favor llenar este campo.</span>
+                                    </div>
+                                    <div class="default-form-box">
+                                        <span class="font-weight-bold">Nombre</span>
+                                        <div class="box-session">
+                                            <input type="text" class="valid valid_text" value="<?= $_SESSION['data_user']['name_user']; ?>">
+                                        </div>
+                                        <span class="d-none text-danger">Este campo solo debe contener letras y espacios.</span>
+                                    </div>
+                                    <div class="default-form-box">
+                                        <span class="font-weight-bold">Apellido</span>
+                                        <div class="box-session">
+                                            <input type="text" class="valid valid_text" value="<?= $_SESSION['data_user']['surname_user']; ?>">
+                                        </div>
+                                        <span class="d-none text-danger">Este campo solo debe contener letras y espacios.</span>
+                                    </div>
+                                    <div class="default-form-box">
+                                        <span class="font-weight-bold">Correo</span>
+                                        <div class="box-session">
+                                            <input type="text" class="valid valid_email" value="<?= $_SESSION['data_user']['email']; ?>">
+                                        </div>
+                                        <span class="d-none text-danger">Este campo debe tener un correo existente.</span>
+                                    </div>
+                                    <div class="default-form-box">
+                                        <span class="font-weight-bold">Teléfono / Movil</span>
+                                        <div class="box-session">
+                                            <input type="text" class="valid valid_phone" value="<?= $_SESSION['data_user']['phone']; ?>">
+                                        </div>
+                                        <span class="d-none text-danger">Este campo solo debe contener números de 7 o 10 dígitos.</span>
+                                    </div>
 
-                                <div class="text-center">
-                                    <button class="btn btn-md btn-black-default-hover m-auto" type="submit">IR AL ENVIO</button>
-                                </div>
-                            </form>
+                                    <div class="text-center">
+                                        <button class="btn btn-md btn-black-default-hover m-auto" type="submit">IR AL ENVIO</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="checkout-data_buy mb-4" data-aos="fade-up" data-aos-delay="400">
-                        <div class="title-data_buy">
-                            <h3>2. ENVIO<i class="icon-note btn-collapse-shipping" role="button"></i></h3>
-                        </div>
+                                    
+                        <div class="checkout-data_buy mb-4">
+                            <div class="title-data_buy">
+                                <h3>2. ENVIO<i class="icon-note btn-collapse-shipping" role="button" data-bs-toggle="collapse" data-bs-target="#shippingCollapse" aria-expanded="false"></i></h3>
+                            </div>
 
-                        <div class="px-5 py-5" id="shippingCollapse">
-                            <form class="form-shipping_information">
-                                <div class="default-form-box">
-                                    <label class="font-weight-bold" for="localidad">Localidad</label>
-                                    <select class="country_option mb-3 nice-select wide" name="country" id="location">
-                                        <option value="1">Balao</option>
-                                        <option value="2">Santa Rita</option>
-                                        <option value="3">San Carlos</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <span class="font-weight-bold">Dirección</span>
-                                    <input type="text" class="form-control" id="address">
-                                </div> 
-                                <div class="mb-3">
-                                    <span class="font-weight-bold">Información adicional(ej: cerca de...)</span>
-                                    <input type="text" class="form-control" placeholder="Opcional">
-                                </div> 
-                                <div class="mb-5">
-                                    <span class="font-weight-bold">Destinatario</span>
-                                    <input type="text" class="form-control" placeholder="Persona a recibir" id="addressee">
-                                </div>
-
-                                <div class="text-center">
-                                    <button class="btn btn-md btn-black-default-hover m-auto" type="submit">IR AL PAGO</button>
-                                </div>
-                            </form>
+                            <div class="px-5 py-5 collapse" id="shippingCollapse" >
+                                <form class="form-shipping_information">
+                                    <div class="default-form-box">
+                                        <label class="font-weight-bold" for="localidad">Localidad</label>
+                                        <select class="country_option mb-3 nice-select wide" name="country" id="location">
+                                            <option value="1">Balao</option>
+                                            <option value="2">Santa Rita</option>
+                                            <option value="3">San Carlos</option>
+                                        </select>
+                                    </div>
+                                    <div class="default-form-box">
+                                        <span class="font-weight-bold">Dirección</span>
+                                        <div class="box-session">
+                                            <input type="text" class="valid valid_empty" id="address">
+                                        </div>
+                                    </div> 
+                                    <div class="default-form-box">
+                                        <span class="font-weight-bold">Información adicional (Opcional)</span>
+                                        <div class="box-session">
+                                            <input type="text" class="valid valid_empty" placeholder="Cerca de...">
+                                        </div>
+                                    </div> 
+                                    <div class="default-form-box">
+                                        <span class="font-weight-bold">Destinatario</span>
+                                        <div class="box-session">
+                                            <input type="text" class="valid valid_empty" placeholder="Persona a recibir" id="addressee">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <span class="font-weight-bold">Mensaje (Opcional)</span>
+                                        <textarea class="form-control textarea" name="" id="" placeholder="Escribe tu mensaje aquí"></textarea>
+                                    </div>
+                                    <div class="text-center">
+                                        <button class="btn btn-md btn-black-default-hover m-auto" type="submit">IR AL PAGO</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                     <?php
