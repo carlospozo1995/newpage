@@ -20,15 +20,33 @@ $(document).ready(function () {
 		});
 		return flag;
 	}
+	function processForm() {
+		if (dataFormValidation() && dataInputValidation()) {
+			$('#dataCollapse').collapse('hide');
+			$('#shippingCollapse').slideDown();
+			$('.btn-collapse-data').addClass('d-block');
+			$('.btn-collapse-data').removeClass('d-none');
+			$('.btn-collapse-shipping').addClass('d-none');
+			$('.btn-collapse-shipping').removeClass('d-block');
+
+			$('.alert-client-data').html("");
+			$('.form-client_data .box-session').each(function () {
+				$(this).removeClass('valid-content');
+			});
+		}else{
+			msgAlert('.alert-client-data', 'Por favor asegúrese de no tener los campos requeridos en rojo o vacios.');
+			return false;
+		}
+	}
 
 	if(dataFormValidation()){
 		$('#dataCollapse').collapse('hide');
-		$('#shippingCollapse').collapse('show');
+		$('#shippingCollapse').slideDown();
 		$('.btn-collapse-data').removeClass('d-block');
 		$('.btn-collapse-shipping').addClass('d-none');
 	}else{
 		$('#dataCollapse').collapse('show');
-		$('#shippingCollapse').collapse('hide');
+		$('#shippingCollapse').slideUp();
 		$('.btn-collapse-data').addClass('d-none');
 		$('.btn-collapse-shipping').removeClass('d-block');
 	}
@@ -41,30 +59,32 @@ $(document).ready(function () {
 			$('.btn-collapse-shipping').removeClass('d-none');
 		}
 		$('#dataCollapse').collapse('toggle');
-		$('#shippingCollapse').collapse('toggle');
+		$('#shippingCollapse').slideUp();
 	})
 
 	$('.form-client_data').submit(function (e) {
 		e.preventDefault();
-		if (dataFormValidation() && dataInputValidation()) {
-			$('#dataCollapse').collapse('hide');
-			$('#shippingCollapse').collapse('show')
-			$('.btn-collapse-data').addClass('d-block');
-			$('.btn-collapse-data').removeClass('d-none');
-			$('.btn-collapse-shipping').addClass('d-none');
-			$('.btn-collapse-shipping').removeClass('d-block');
+		processForm();
+	});
 
-			$('.alert-client-data').html("");
+	$('.btn-collapse-shipping').click(function (event) {
+		processForm();
+	});
+
+	$('.form-shipping_information').submit(function (e) {
+		e.preventDefault();
+		if($('#location').val() != "" && $('#address').val() != "" && $('#addressee').val() != ""){
+			$('.btn-collapse-shipping').removeClass('d-none');
+			$('.btn-collapse-shipping').addClass('d-block');
+			$('#shippingCollapse').slideUp();
+			$('.alert-shipping_information').html("");
+			$('.form-shipping_information .box-session').each(function () {
+				$(this).removeClass('valid-content');
+			});
 		}else{
-			msgAlert('.alert-client-data', 'Por favor asegúrese de no tener campos en rojo o vacios.');
-			return false;
+			msgAlert('.alert-shipping_information', 'Por favor asegúrese de no tener los campos requeridos en rojo o vacios.');
 		}
 	});
-
-	$('.btn-collapse-shipping').click(function () {
-
-	});
-
 
 	let cartStorage = JSON.parse(localStorage.getItem('shoppingCartData'));
 

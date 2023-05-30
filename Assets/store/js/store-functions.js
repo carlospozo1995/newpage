@@ -164,21 +164,21 @@ $(document).ready(function () {
                     if (!expresion) {
                         $(this).parent().addClass('invalid-content');
                         $(this).parent().removeClass('valid-content');
-                        $(this).parent().siblings().removeClass('d-none');
+                        $(this).parent().next().removeClass('d-none');
                     } else {
                         $(this).parent().removeClass('invalid-content');
                         $(this).parent().addClass('valid-content');
-                        $(this).parent().siblings().addClass('d-none');
+                        $(this).parent().next().addClass('d-none');
                     }
                 } else {
                     if ($("#content-data_buy").length) {
                         $(this).parent().addClass('invalid-content');
                         $(this).parent().removeClass('valid-content');
-                        $(this).parent().siblings().removeClass('d-none');
+                        $(this).parent().next().removeClass('d-none');
                     }else{
                         $(this).parent().removeClass('invalid-content');
                         $(this).parent().removeClass('valid-content');
-                        $(this).parent().siblings().addClass('d-none');
+                        $(this).parent().next().addClass('d-none');
                     }
                 }
             });

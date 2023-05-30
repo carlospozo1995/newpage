@@ -30,6 +30,7 @@
                     if (isset($_SESSION['login'])) {
                     ?>
                     <div id="content-data_buy" data-aos="fade-up" data-aos-delay="400">
+                        <p class="font-weight-bold">CAMPOS REQUERIDOS (<span class="text-danger">*</span>)</p>
                         <div class="checkout-data_buy mb-4">
                             <div class="title-data_buy">
                                 <h3>1. DATOS <i class="icon-note btn-collapse-data" role="button" data-bs-toggle="collapse" data-bs-target="#dataCollapse" aria-expanded="false"></i></h3>
@@ -39,35 +40,35 @@
                                 <form class="form-client_data">
                                     <div class="alert-client-data"></div>
                                     <div class="default-form-box">
-                                        <span class="font-weight-bold">Cédula o RUC</span>
+                                        <span class="font-weight-bold">Cédula o RUC <span class="text-danger">*</span></span>
                                         <div class="box-session">
                                             <input type="text" class="valid valid_empty" value="<?= $_SESSION['data_user']['dni']; ?>">
                                         </div>
                                         <span class="d-none text-danger">Por favor llenar este campo.</span>
                                     </div>
                                     <div class="default-form-box">
-                                        <span class="font-weight-bold">Nombre</span>
+                                        <span class="font-weight-bold">Nombre <span class="text-danger">*</span></span>
                                         <div class="box-session">
                                             <input type="text" class="valid valid_text" value="<?= $_SESSION['data_user']['name_user']; ?>">
                                         </div>
                                         <span class="d-none text-danger">Este campo solo debe contener letras y espacios.</span>
                                     </div>
                                     <div class="default-form-box">
-                                        <span class="font-weight-bold">Apellido</span>
+                                        <span class="font-weight-bold">Apellido <span class="text-danger">*</span></span>
                                         <div class="box-session">
                                             <input type="text" class="valid valid_text" value="<?= $_SESSION['data_user']['surname_user']; ?>">
                                         </div>
                                         <span class="d-none text-danger">Este campo solo debe contener letras y espacios.</span>
                                     </div>
                                     <div class="default-form-box">
-                                        <span class="font-weight-bold">Correo</span>
+                                        <span class="font-weight-bold">Correo <span class="text-danger">*</span></span>
                                         <div class="box-session">
                                             <input type="text" class="valid valid_email" value="<?= $_SESSION['data_user']['email']; ?>">
                                         </div>
                                         <span class="d-none text-danger">Este campo debe tener un correo existente.</span>
                                     </div>
                                     <div class="default-form-box">
-                                        <span class="font-weight-bold">Teléfono / Movil</span>
+                                        <span class="font-weight-bold">Teléfono / celular <span class="text-danger">*</span></span>
                                         <div class="box-session">
                                             <input type="text" class="valid valid_phone" value="<?= $_SESSION['data_user']['phone']; ?>">
                                         </div>
@@ -83,13 +84,14 @@
                                     
                         <div class="checkout-data_buy mb-4">
                             <div class="title-data_buy">
-                                <h3>2. ENVIO<i class="icon-note btn-collapse-shipping" role="button" data-bs-toggle="collapse" data-bs-target="#shippingCollapse" aria-expanded="false"></i></h3>
+                                <h3>2. ENVIO<i class="icon-note btn-collapse-shipping" role="button"></i></h3>
                             </div>
 
-                            <div class="px-5 py-5 collapse" id="shippingCollapse" >
+                            <div class="px-5 py-5" id="shippingCollapse" >
                                 <form class="form-shipping_information">
+                                <div class="alert-shipping_information"></div>
                                     <div class="default-form-box">
-                                        <label class="font-weight-bold" for="localidad">Localidad</label>
+                                        <label class="font-weight-bold" for="localidad">Localidad <span class="text-danger">*</span></label>
                                         <select class="country_option mb-3 nice-select wide" name="country" id="location">
                                             <option value="1">Balao</option>
                                             <option value="2">Santa Rita</option>
@@ -97,22 +99,24 @@
                                         </select>
                                     </div>
                                     <div class="default-form-box">
-                                        <span class="font-weight-bold">Dirección</span>
+                                        <span class="font-weight-bold">Dirección <span class="text-danger">*</span></span>
                                         <div class="box-session">
                                             <input type="text" class="valid valid_empty" id="address">
                                         </div>
+                                        <span class="d-none text-danger">Por favor llenar este campo.</span>
                                     </div> 
                                     <div class="default-form-box">
                                         <span class="font-weight-bold">Información adicional (Opcional)</span>
                                         <div class="box-session">
-                                            <input type="text" class="valid valid_empty" placeholder="Cerca de...">
+                                            <input type="text" placeholder="Cerca de...">
                                         </div>
                                     </div> 
                                     <div class="default-form-box">
-                                        <span class="font-weight-bold">Destinatario</span>
+                                        <span class="font-weight-bold">Destinatario <span class="text-danger">*</span></span>
                                         <div class="box-session">
                                             <input type="text" class="valid valid_empty" placeholder="Persona a recibir" id="addressee">
                                         </div>
+                                        <span class="d-none text-danger">Por favor llenar este campo.</span>
                                     </div>
                                     <div class="mb-3">
                                         <span class="font-weight-bold">Mensaje (Opcional)</span>
