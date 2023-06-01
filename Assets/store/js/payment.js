@@ -57,6 +57,7 @@ $(document).ready(function () {
 			$('.btn-collapse-data').removeClass('d-block');
 			$('.btn-collapse-shipping').addClass('d-block');
 			$('.btn-collapse-shipping').removeClass('d-none');
+			$('.process-payment').slideUp();
 		}
 		$('#dataCollapse').collapse('toggle');
 		$('#shippingCollapse').slideUp();
@@ -67,7 +68,8 @@ $(document).ready(function () {
 		processForm();
 	});
 
-	$('.btn-collapse-shipping').click(function (event) {
+	$('.btn-collapse-shipping').click(function () {
+		$('.process-payment').slideUp();
 		processForm();
 	});
 
@@ -81,6 +83,7 @@ $(document).ready(function () {
 			$('.form-shipping_information .box-session').each(function () {
 				$(this).removeClass('valid-content');
 			});
+			$('.process-payment').slideDown();
 		}else{
 			msgAlert('.alert-shipping_information', 'Por favor asegúrese de no tener los campos requeridos en rojo o vacios.');
 		}
@@ -177,5 +180,16 @@ $(document).ready(function () {
         complete: function() {
         }
 	});
+
+	if($('.process-payment').length){
+		let methodBuy = $('.payment-selection .buy-by .form-check-input');
+		if(methodBuy.val() == 'bank-transfer'){
+			$('.collapse_method-buy').slideDown();
+			$('.collapse_default-buy').slideUp();
+		}else{
+			$('.collapse_method-buy').slideUp();
+			$('.collapse_default-buy').slideDown();
+		}
+	}
 	
 });

@@ -22,15 +22,12 @@
     <div class="cart-table-wrapper" data-aos="fade-up" data-aos-delay="0">
         <div class="container">
             <div class="row position-relative">
-                <div class="content-loading">
-                    <span class="loader-store"></span>
-                </div>
-                <div class="col-lg-8 col-md-8">
-                    <?php
-                    if (isset($_SESSION['login'])) {
-                    ?>
+                <?php
+                if (isset($_SESSION['login'])) {
+                ?>
+                <p class="font-weight-bold">CAMPOS REQUERIDOS (<span class="text-danger">*</span>)</p>
+                <div class="col-lg-7 col-md-7">
                     <div id="content-data_buy" data-aos="fade-up" data-aos-delay="400">
-                        <p class="font-weight-bold">CAMPOS REQUERIDOS (<span class="text-danger">*</span>)</p>
                         <div class="checkout-data_buy mb-4">
                             <div class="title-data_buy">
                                 <h3>1. DATOS <i class="icon-note btn-collapse-data" role="button" data-bs-toggle="collapse" data-bs-target="#dataCollapse" aria-expanded="false"></i></h3>
@@ -42,35 +39,35 @@
                                     <div class="default-form-box">
                                         <span class="font-weight-bold">Cédula o RUC <span class="text-danger">*</span></span>
                                         <div class="box-session">
-                                            <input type="text" class="valid valid_empty" value="<?= $_SESSION['data_user']['dni']; ?>">
+                                            <input type="text" class="valid valid_empty" value="<?= $_SESSION['data_user']['dni']; ?>" required>
                                         </div>
                                         <span class="d-none text-danger">Por favor llenar este campo.</span>
                                     </div>
                                     <div class="default-form-box">
                                         <span class="font-weight-bold">Nombre <span class="text-danger">*</span></span>
                                         <div class="box-session">
-                                            <input type="text" class="valid valid_text" value="<?= $_SESSION['data_user']['name_user']; ?>">
+                                            <input type="text" class="valid valid_text" value="<?= $_SESSION['data_user']['name_user']; ?>" required>
                                         </div>
                                         <span class="d-none text-danger">Este campo solo debe contener letras y espacios.</span>
                                     </div>
                                     <div class="default-form-box">
                                         <span class="font-weight-bold">Apellido <span class="text-danger">*</span></span>
                                         <div class="box-session">
-                                            <input type="text" class="valid valid_text" value="<?= $_SESSION['data_user']['surname_user']; ?>">
+                                            <input type="text" class="valid valid_text" value="<?= $_SESSION['data_user']['surname_user']; ?>" required>
                                         </div>
                                         <span class="d-none text-danger">Este campo solo debe contener letras y espacios.</span>
                                     </div>
                                     <div class="default-form-box">
                                         <span class="font-weight-bold">Correo <span class="text-danger">*</span></span>
                                         <div class="box-session">
-                                            <input type="text" class="valid valid_email" value="<?= $_SESSION['data_user']['email']; ?>">
+                                            <input type="text" class="valid valid_email" value="<?= $_SESSION['data_user']['email']; ?>" required>
                                         </div>
                                         <span class="d-none text-danger">Este campo debe tener un correo existente.</span>
                                     </div>
                                     <div class="default-form-box">
                                         <span class="font-weight-bold">Teléfono / celular <span class="text-danger">*</span></span>
                                         <div class="box-session">
-                                            <input type="text" class="valid valid_phone" value="<?= $_SESSION['data_user']['phone']; ?>">
+                                            <input type="text" class="valid valid_phone" value="<?= $_SESSION['data_user']['phone']; ?>" required>
                                         </div>
                                         <span class="d-none text-danger">Este campo solo debe contener números de 7 o 10 dígitos.</span>
                                     </div>
@@ -89,7 +86,7 @@
 
                             <div class="px-5 py-5" id="shippingCollapse" >
                                 <form class="form-shipping_information">
-                                <div class="alert-shipping_information"></div>
+                                    <div class="alert-shipping_information"></div>
                                     <div class="default-form-box">
                                         <label class="font-weight-bold" for="localidad">Localidad <span class="text-danger">*</span></label>
                                         <select class="country_option mb-3 nice-select wide" name="country" id="location">
@@ -101,7 +98,7 @@
                                     <div class="default-form-box">
                                         <span class="font-weight-bold">Dirección <span class="text-danger">*</span></span>
                                         <div class="box-session">
-                                            <input type="text" class="valid valid_empty" id="address">
+                                            <input type="text" class="valid valid_empty" id="address" required>
                                         </div>
                                         <span class="d-none text-danger">Por favor llenar este campo.</span>
                                     </div> 
@@ -114,7 +111,7 @@
                                     <div class="default-form-box">
                                         <span class="font-weight-bold">Destinatario <span class="text-danger">*</span></span>
                                         <div class="box-session">
-                                            <input type="text" class="valid valid_empty" placeholder="Persona a recibir" id="addressee">
+                                            <input type="text" class="valid valid_empty" placeholder="Persona a recibir" id="addressee" required>
                                         </div>
                                         <span class="d-none text-danger">Por favor llenar este campo.</span>
                                     </div>
@@ -128,10 +125,89 @@
                                 </form>
                             </div>
                         </div>
+
+                        <div class="checkout-data_buy">
+                            <div class="title-data_buy">
+                                <h3>3. MÉTODO DE PAGO</h3>
+                            </div>
+
+                            <div class="process-payment collapse">
+                                <div class="payment-selection px-5 py-5">
+                                    <div class="buy-by buy_bank-transfer">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="bank-transfer" name="flexRadioDefault" value="bank-transfer" checked>
+                                            <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="bank-transfer">Transferencia bancaria directa</label>
+                                        </div>
+                                        <div class="collapse_method-buy">
+                                            <p class="text-dark">Realiza tu pago directamente en nuestra cuenta bancaria.</p>
+                                            <p class="text-dark">Por favor, incluya el número de pedido en los detalles de la transferencia o también al concluir el depósito enviar una foto del comprobante y el número de pedido al correo <a href="mailto:ejemplo@gmail.com" class="text-primary">ejemplo@gmail.com</a> o a nuestro whatsapp 0987654321. 
+                                            </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="buy-by buy-test-example">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="flexRadioDefault2" name="flexRadioDefault" value="default-transfer">
+                                            <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="flexRadioDefault2">checked 2</label>
+                                        </div>
+                                        <div class="collapse_default-buy">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nesciunt id voluptatem, praesentium corrupti explicabo nulla. Laudantium ducimus architecto et repellendus maxime, quam unde, fugiat culpa consequatur veniam nostrum vitae!locale_filter_matches Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita adipisci ea, voluptatum necessitatibus error perspiciatis exercitationem suscipit libero modi sapiente accusamus deleniti eos debitis ipsum, cumque voluptatibus optio iusto odio.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="accept-terms mt-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                            <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="flexCheckDefault">
+                                                Default checkbox
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                            <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="flexCheckChecked">
+                                                Checked checkbox
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="process-payment collapse coupon_code">
+                            <h3 class="text-center">Método de pago</h3>
+                            <div class="payment-selection px-3 py-3">
+                                <div class="buy_bank-transfer">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="bank-transfer" name="flexRadioDefault" checked>
+                                        <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="bank-transfer">Transferencia bancaria directa</label>
+                                    </div>
+                                    <div>
+                                        <p>Realiza tu pago directamente en nuestra cuenta bancaria.</p>
+                                        <p>Por favor, incluya el número de pedido en los detalles de la transferencia o también al conluir el depósito enviar una foto del comprobante y el número de pedido a <a href="mailto:ejemplo@gmail.com">ejemplo@gmail.com</a> o a nuestro whatsapp 0987654321. 
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="buy-test-example">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="flexRadioDefault2" name="flexRadioDefault">
+                                        <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="flexRadioDefault2">checked 2</label>
+                                    </div>
+                                </div>
+                            </div>               
+                        </div> -->
+                        
+
+
                     </div>
-                    <?php
-                    }else{
-                    ?>
+                <?php
+                }else{
+                ?>
+                <div class="content-loading">
+                    <span class="loader-store"></span>
+                </div>
+                <div class="col-lg-7 col-md-7">
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
                             <button class="nav-link nav-session active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-login" type="button" role="tab" aria-controls="nav-home" aria-selected="true">INICIAR SESIÓN</button>
@@ -211,13 +287,13 @@
                             </div>
                         </div>
                     </div>
-                    <?php
-                    }
-                    ?>
+                <?php
+                }
+                ?>
 
                 </div>
 
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-5 col-md-5">
                     <?php
                     if(isset($_SESSION['login'])){
                     ?>
@@ -254,30 +330,8 @@
                                 <p>Total</p>
                                 <p class="cart_amount total-payment"></p>
                             </div>
-                            <?php
-                            // if (isset($_SESSION['login'])) {
-                            ?>
-                            <!-- <div class="checkout_btn">
-                                <a href="<?= BASE_URL; ?>carrito/procesarpago" class="btn btn-md btn-coral">Finalizar compra</a>
-                            </div>		 -->
-                            <?php
-                            // }
-                            ?>
                         </div>
                     </div>
-
-                    <?php
-                        if (isset($_SESSION['login'])) {
-                    ?>
-                    <div class="process-payment collapse" data-aos="fade-up" data-aos-delay="400">
-                        <p style="background: blue; color: white;">pago paymendez</p>
-                        <span>proceso de pago</span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis veniam sed eaque rerum recusandae itaque dolor ex, tenetur ipsum ullam eos quaerat magnam nostrum minima nam cupiditate sit? Nostrum, perspiciatis.</p>
-                    </div>
-                    <?php
-                          }
-                    ?>
-
                 </div>
             </div>
         </div>
