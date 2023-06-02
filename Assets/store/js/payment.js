@@ -182,14 +182,17 @@ $(document).ready(function () {
 	});
 
 	if($('.process-payment').length){
-		let methodBuy = $('.payment-selection .buy-by .form-check-input');
-		if(methodBuy.val() == 'bank-transfer'){
-			$('.collapse_method-buy').slideDown();
-			$('.collapse_default-buy').slideUp();
-		}else{
-			$('.collapse_method-buy').slideUp();
-			$('.collapse_default-buy').slideDown();
-		}
+		$('.collapse_method-buy-default').slideUp();
+		let methodBuy = $('.payment-selection .form-check-input');
+		methodBuy.click(function () {
+			if ($(this).val() == 'bank-transfer') {
+				$('.collapse_method-buy-transfer').slideDown();
+				$('.collapse_method-buy-default').slideUp();
+			  } else {
+				$('.collapse_method-buy-transfer').slideUp();
+				$('.collapse_method-buy-default').slideDown();
+			  }
+		});
 	}
 	
 });

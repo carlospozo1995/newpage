@@ -131,75 +131,42 @@
                                 <h3>3. MÉTODO DE PAGO</h3>
                             </div>
 
-                            <div class="process-payment collapse">
-                                <div class="payment-selection px-5 py-5">
-                                    <div class="buy-by buy_bank-transfer">
+                            <div class="process-payment collapse px-5 py-5">
+                                <div class="payment-selection">
+                                    <div class="buy_bank-transfer">
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" id="bank-transfer" name="flexRadioDefault" value="bank-transfer" checked>
                                             <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="bank-transfer">Transferencia bancaria directa</label>
                                         </div>
-                                        <div class="collapse_method-buy">
+                                        <div class="collapse_method-buy-transfer">
                                             <p class="text-dark">Realiza tu pago directamente en nuestra cuenta bancaria.</p>
-                                            <p class="text-dark">Por favor, incluya el número de pedido en los detalles de la transferencia o también al concluir el depósito enviar una foto del comprobante y el número de pedido al correo <a href="mailto:ejemplo@gmail.com" class="text-primary">ejemplo@gmail.com</a> o a nuestro whatsapp 0987654321. 
+                                            <p class="text-dark">Por favor, incluya el número de pedido en los detalles de la transferencia o también al concluir el depósito enviar una foto del comprobante y el número de pedido al correo <a href="mailto:ejemplo@gmail.com" class="text-primary font-weight-bold">ejemplo@gmail.com</a> o a nuestro whatsapp <span class="text-primary font-weight-bold">0987654321</span>. 
                                             </p>
                                         </div>
                                     </div>
                                     
-                                    <div class="buy-by buy-test-example">
+                                    <div class="buy-test-example">
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" id="flexRadioDefault2" name="flexRadioDefault" value="default-transfer">
                                             <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="flexRadioDefault2">checked 2</label>
                                         </div>
-                                        <div class="collapse_default-buy">
+                                        <div class="collapse_method-buy-default" style="display: none;">
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nesciunt id voluptatem, praesentium corrupti explicabo nulla. Laudantium ducimus architecto et repellendus maxime, quam unde, fugiat culpa consequatur veniam nostrum vitae!locale_filter_matches Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita adipisci ea, voluptatum necessitatibus error perspiciatis exercitationem suscipit libero modi sapiente accusamus deleniti eos debitis ipsum, cumque voluptatibus optio iusto odio.</p>
                                         </div>
                                     </div>
-
-                                    <div class="accept-terms mt-4">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                            <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="flexCheckDefault">
-                                                Default checkbox
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                                            <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="flexCheckChecked">
-                                                Checked checkbox
-                                            </label>
-                                        </div>
-                                    </div>
-                                    
                                 </div>
+
+                                <div class="accept-terms mt-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="flexCheckDefault">
+                                        Acepto los <a href="" class="text-primary">Términos y Condiciones</a> <span class="text-danger fs-12">* Obligatorio</span>
+                                        </label>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-
-                        <!-- <div class="process-payment collapse coupon_code">
-                            <h3 class="text-center">Método de pago</h3>
-                            <div class="payment-selection px-3 py-3">
-                                <div class="buy_bank-transfer">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" id="bank-transfer" name="flexRadioDefault" checked>
-                                        <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="bank-transfer">Transferencia bancaria directa</label>
-                                    </div>
-                                    <div>
-                                        <p>Realiza tu pago directamente en nuestra cuenta bancaria.</p>
-                                        <p>Por favor, incluya el número de pedido en los detalles de la transferencia o también al conluir el depósito enviar una foto del comprobante y el número de pedido a <a href="mailto:ejemplo@gmail.com">ejemplo@gmail.com</a> o a nuestro whatsapp 0987654321. 
-                                        </p>
-                                    </div>
-                                </div>
-                                
-                                <div class="buy-test-example">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" id="flexRadioDefault2" name="flexRadioDefault">
-                                        <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="flexRadioDefault2">checked 2</label>
-                                    </div>
-                                </div>
-                            </div>               
-                        </div> -->
-                        
-
-
                     </div>
                 <?php
                 }else{
