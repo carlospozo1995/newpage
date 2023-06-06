@@ -156,13 +156,17 @@
                                     </div>
                                 </div>
 
-                                <div class="accept-terms mt-4">
+                                <div class="accept-terms mt-4 mb-5">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                         <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="flexCheckDefault">
                                         Acepto los <a href="" class="text-primary">Términos y Condiciones</a> <span class="text-danger fs-12">* Obligatorio</span>
                                         </label>
                                     </div>
+                                </div>
+
+                                <div id="finalize-purchase">
+                                    <button class="btn btn-block btn-deep-blue m-auto max-content" disabled>REALIZAR PEDIDO</button>
                                 </div>
 
                             </div>

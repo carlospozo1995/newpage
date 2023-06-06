@@ -58,6 +58,12 @@
 						}
 					}	
 				break;
+
+				case 'paymentProcess':
+					if(isset($_POST)){
+						echo json_encode(($_POST));
+					}
+				break;
 			
 				default:
 					// $data["file_js"][] = "producto-store";

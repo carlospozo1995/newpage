@@ -110,7 +110,9 @@
 .text-justify{
     text-align: justify !important;
 }
-
+.max-content{
+    width: max-content !important;
+}
 .cursor-pointer{
     cursor: pointer  !important;
 }
