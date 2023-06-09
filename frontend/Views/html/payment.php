@@ -1,4 +1,24 @@
+<script src="https://www.paypal.com/sdk/js?client-id=AVUMJn0Je6qKFSS6gjUfO44QGhz0UnmBHNpuXOnLDU0z5RUxboWt5vK87tZew5R6MeJRhu2sC7MtJvtv"></script>
 
+<script>
+    paypal.Buttons({
+        createOrder: function(data, actions) {
+        return actions.order.create({
+            purchase_units: [{
+            amount: {
+                value: '10.00' // Importe del pago
+            }
+            }]
+        });
+        },
+        onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+            alert('Pago completado por ' + details.payer.name.given_name);
+            // Aquí puedes realizar acciones adicionales después de que se haya completado el pago
+        });
+        }
+    }).render('#paypal-button-container');
+</script>
 <div class="breadcrumb-section" data-aos="fade-up" data-aos-delay="0">
     <div class="pt-4 pb-4 mb-4 bg-mist-white">
         <div class="container">
@@ -148,10 +168,10 @@
                                     <div class="buy-test-example">
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" id="flexRadioDefault2" name="flexRadioDefault" value="default-transfer">
-                                            <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="flexRadioDefault2">checked 2</label>
+                                            <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="flexRadioDefault2"><img src="<?= MEDIA_STORE; ?>images/img-paypal.jpg" alt=""></label>
                                         </div>
                                         <div class="collapse_method-buy-default" style="display: none;">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nesciunt id voluptatem, praesentium corrupti explicabo nulla. Laudantium ducimus architecto et repellendus maxime, quam unde, fugiat culpa consequatur veniam nostrum vitae!locale_filter_matches Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita adipisci ea, voluptatum necessitatibus error perspiciatis exercitationem suscipit libero modi sapiente accusamus deleniti eos debitis ipsum, cumque voluptatibus optio iusto odio.</p>
+                                            <div id="paypal-button-container"></div>
                                         </div>
                                     </div>
                                 </div>

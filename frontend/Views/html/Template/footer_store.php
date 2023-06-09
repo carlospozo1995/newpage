@@ -274,6 +274,13 @@
     <script src="<?= MEDIA_STORE; ?>js/main.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/store-functions.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/store-storage.js"></script>
+    <?php
+        if ($section_name === 'Payment' && isset($_SESSION['login'])) {
+    ?>
+    <?php
+        echo 'local';
+        }
+    ?>
     
     <?php
     if(isset($file_js) && is_array($file_js) && !empty($file_js)){
@@ -285,55 +292,3 @@
 ?>
 </body>
 </html>
-
-
-
-<!-- <div class="metodo-de-pago">
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-        <label class="form-check-label" for="flexRadioDefault1">
-            Default radio
-        </label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-        <label class="form-check-label" for="flexRadioDefault2">
-            Default checked radio
-        </label>
-    </div>
-</div>
-<div class="terminos-condiciones">
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
-            Default checkbox
-        </label>
-    </div>
-</div>
-<button class="btn btn-deep-blue m-auto" disabled>comprar</button>
-<script> -->
-    $(document).ready(function() {
-
-        // function checkButtonState() {
-        //     let flag = false;
-        //     var metodoPagoChecked = $('.metodo-de-pago input:checked').length > 0;
-        //     var terminosChecked = $('.terminos-condiciones input').prop('checked');
-        //     if(metodoPagoChecked && terminosChecked){
-        //         flag = true
-        //     }
-
-        //     return flag;
-        // }
-
-        // $('.metodo-de-pago input, .terminos-condiciones input').change(function () {
-        //     $('button').prop('disabled', !(checkButtonState()));
-        // });
-
-        // $('button').click(function () {
-        //     console.log('.....')
-        //     console.log(checkButtonState())
-        // })
-
-
-    });
-</script>

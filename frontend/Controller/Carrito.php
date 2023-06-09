@@ -68,6 +68,11 @@
 				default:
 					// $data["file_js"][] = "producto-store";
 					if (isset($_GET['process_payment'])) {
+
+						// if(isset($_SESSION['login'])){
+						// 	echo "local";
+						// }
+
 						if ($_GET['process_payment'] == 'comprar') {
 							$data["file_js"][] = "payment";
 							View::renderPage('Payment', $data);
