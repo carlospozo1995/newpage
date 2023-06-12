@@ -25,6 +25,37 @@
 			}
 			// ---------------------------------- //
 
+			// ---------- CODIGO DE ARRIBA PERO MODIFICADO PARA EL SERVER ----------//
+			// if($section_name != 'Index'){
+		    //     // ---------- MODIFY URL ----------//
+    		// 	$current_url = preg_replace('/\/{2,}/', '/', $_SERVER['REQUEST_URI']);
+    		// 	$current_url = preg_replace('/\/+$/', '', $current_url);
+    
+    		// 	if("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] != BASE_URL){
+    		// 		if ($current_url != $_SERVER['REQUEST_URI']){
+    		// 			header("Location: " . $current_url, true, 301);
+    		// 			exit();
+    		// 		}
+    		// 	}
+    		// 	// ---------------------------------- //
+		    // }else{
+            //     // Obtener la URL actual
+            //     $currentUrlMain = $_SERVER['REQUEST_URI'];
+                
+            //     // Verificar si la URL tiene múltiples diagonales al final
+            //     if (substr($currentUrlMain, -2) === '//') {
+            //         // Reemplazar las diagonales múltiples por una sola diagonal
+            //         $correctUrl = rtrim($currentUrlMain, '/') . '/';
+                
+            //         // Generar la URL completa
+            //         $redirectUrl = 'https://' . $_SERVER['HTTP_HOST'] . $correctUrl;
+                
+            //         // Redirigir al usuario a la nueva URL
+            //         header('Location: ' . $redirectUrl);
+            //         exit();
+            //     }
+		    // }
+
 			$ruta_page = RUTA_VIEW . 'html/' . $namePage .'.php';	
 
 			if ($namePage == 'Dashboard' || $namePage == 'Roles' || $namePage == 'Users' || $namePage == 'Categories' || $namePage == 'Products') {

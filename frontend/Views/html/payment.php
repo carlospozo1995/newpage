@@ -1,24 +1,9 @@
 <script src="https://www.paypal.com/sdk/js?client-id=AVUMJn0Je6qKFSS6gjUfO44QGhz0UnmBHNpuXOnLDU0z5RUxboWt5vK87tZew5R6MeJRhu2sC7MtJvtv"></script>
-
 <script>
-    paypal.Buttons({
-        createOrder: function(data, actions) {
-        return actions.order.create({
-            purchase_units: [{
-            amount: {
-                value: '10.00' // Importe del pago
-            }
-            }]
-        });
-        },
-        onApprove: function(data, actions) {
-        return actions.order.capture().then(function(details) {
-            alert('Pago completado por ' + details.payer.name.given_name);
-            // Aquí puedes realizar acciones adicionales después de que se haya completado el pago
-        });
-        }
-    }).render('#paypal-button-container');
+    paypal.Buttons().render('#paypal-button-container');
+
 </script>
+
 <div class="breadcrumb-section" data-aos="fade-up" data-aos-delay="0">
     <div class="pt-4 pb-4 mb-4 bg-mist-white">
         <div class="container">
