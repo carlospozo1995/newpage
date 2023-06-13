@@ -97,7 +97,6 @@ $(document).ready(function () {
 		$('.form-client_data input').each(function () {
 			if ($(this).val() === "") {
 				flag = false;
-				return false;
 			}
 		});
 		return flag;
@@ -182,15 +181,15 @@ $(document).ready(function () {
 	});
 
 	if($('.process-payment').length){
-		$('.collapse_method-buy-default').slideUp();
+		$('.collapse_method-buy-card').slideUp();
 		let methodBuy = $('.payment-selection .form-check-input');
 		methodBuy.click(function () {
 			if ($(this).val() == 'bank-transfer') {
 				$('.collapse_method-buy-transfer').slideDown();
-				$('.collapse_method-buy-default').slideUp();
+				$('.collapse_method-buy-card').slideUp();
 			  } else {
 				$('.collapse_method-buy-transfer').slideUp();
-				$('.collapse_method-buy-default').slideDown();
+				$('.collapse_method-buy-card').slideDown();
 			  }
 		});
 	}
@@ -202,7 +201,7 @@ $(document).ready(function () {
 		var paymentMethod = $('.payment-selection input:checked').length > 0;
 		var termsChecked = $('.accept-terms input').prop('checked');
 		if(paymentMethod && termsChecked){
-			flag = true
+			flag = true;
 		}
 		return flag
 	}
@@ -211,15 +210,25 @@ $(document).ready(function () {
 		$('#finalize-purchase button').prop('disabled', !(checkButtonState()));
 	});
 
-
 	$('#finalize-purchase button').click(function () {
-
 		$.ajax({
 			url: base_url + "carrito/paymentProcess/",
 			dataType: 'JSON',
 			method: 'POST',
 			data: {
-				info_client: dataFormValidation()
+				dni: $('#dni-client').val(),
+				name: $('#name-client').val(),
+				surname: $('#surname-client').val(),
+				email: $('#email-client').val(),
+				phone: $('#phone-client').val(),
+				main_town: $('#location').val(),
+				address: $('#address').val(),
+				additional_information: $('#additional-information').val(),
+				addressee: $('#addressee').val(),
+				customer_message: $('#customer-message').val(),
+				payment_method: $('.payment-selection input:checked').val(),
+				info_client_state: JSON.stringify(dataFormValidation()),
+				check_state : JSON.stringify(checkButtonState())
 			},
 			beforeSend: function() {
 			

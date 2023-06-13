@@ -1,8 +1,58 @@
-<script src="https://www.paypal.com/sdk/js?client-id=AVUMJn0Je6qKFSS6gjUfO44QGhz0UnmBHNpuXOnLDU0z5RUxboWt5vK87tZew5R6MeJRhu2sC7MtJvtv"></script>
-<script>
-    paypal.Buttons().render('#paypal-button-container');
+<?php
+    
+if(isset($_SESSION['login'])){
+?>
 
-</script>
+<!-- CUENTA PAYPAL DE TESTEO -->
+<!-- <script src="https://www.paypal.com/sdk/js?client-id=AVUMJn0Je6qKFSS6gjUfO44QGhz0UnmBHNpuXOnLDU0z5RUxboWt5vK87tZew5R6MeJRhu2sC7MtJvtv"></script> -->
+
+<!-- CUENTA PAYPAL DE PRODUCCION -->
+<!-- <script src="https://www.paypal.com/sdk/js?client-id=AQvYtvVL9jZsZXbEay8BvSOIUcOJn9eqaKRvbEBbvBplZgiOwB1qhpmxgTMuGrS436phOHpfqfxHt5hm"></script> -->
+
+<!-- <script>
+    paypal.Buttons().render('#paypal-button-container');
+</script> -->
+
+
+
+<!-- DATAFAST -->
+<!-- <script type="text/javascript" src="https://www.datafast.com.ec/js/dfAdditionalValidations1.js"> -->
+
+<!-- NUVEI -->
+<!-- <script src="https://cdn.paymentez.com/ccapi/sdk/payment_sdk_stable.min.js" charset="UTF-8"></script> -->
+<?php
+}   
+?>
+
+<?php
+// $url = 'https://eu-test.oppwa.com/v1/checkouts';
+// $data = array(
+//     'entityId' => '8a829418533cf31d01533d06f2ee06fa',
+//     'amount' => '92.00',
+//     'currency' => 'USD',
+//     'paymentType' => 'DB'
+// );
+// $options = array(
+//     'http' => array(
+//         'header' => "Authorization: Bearer OGE4Mjk0MTg1MzNjZjMxZDAxNTMzZDA2ZmQwNDA3NDh8WHQ3RjIyUUVOWA==\r\n" .
+//                     "Content-Type: application/x-www-form-urlencoded\r\n",
+//         'method' => 'POST',
+//         'content' => http_build_query($data)
+//     )
+// );
+// $context = stream_context_create($options);
+// $response = file_get_contents($url, false, $context);
+
+// if ($response === FALSE) {
+//     echo "Error al conectar al gateway de pagos.";
+// } else {
+//     echo "Conexión exitosa al gateway de pagos.";
+//     echo $response;
+//     // Mostrar el resultado de la respuesta del gateway de pagos si se desea
+// }
+?>
+
+
 
 <div class="breadcrumb-section" data-aos="fade-up" data-aos-delay="0">
     <div class="pt-4 pb-4 mb-4 bg-mist-white">
@@ -44,35 +94,35 @@
                                     <div class="default-form-box">
                                         <span class="font-weight-bold">Cédula o RUC <span class="text-danger">*</span></span>
                                         <div class="box-session">
-                                            <input type="text" class="valid valid_empty" value="<?= $_SESSION['data_user']['dni']; ?>" required>
+                                            <input type="text" id="dni-client" class="valid valid_empty" value="<?= $_SESSION['data_user']['dni']; ?>" required>
                                         </div>
                                         <span class="d-none text-danger">Por favor llenar este campo.</span>
                                     </div>
                                     <div class="default-form-box">
                                         <span class="font-weight-bold">Nombre <span class="text-danger">*</span></span>
                                         <div class="box-session">
-                                            <input type="text" class="valid valid_text" value="<?= $_SESSION['data_user']['name_user']; ?>" required>
+                                            <input type="text" class="valid valid_text" id="name-client" value="<?= $_SESSION['data_user']['name_user']; ?>" required>
                                         </div>
                                         <span class="d-none text-danger">Este campo solo debe contener letras y espacios.</span>
                                     </div>
                                     <div class="default-form-box">
                                         <span class="font-weight-bold">Apellido <span class="text-danger">*</span></span>
                                         <div class="box-session">
-                                            <input type="text" class="valid valid_text" value="<?= $_SESSION['data_user']['surname_user']; ?>" required>
+                                            <input type="text" class="valid valid_text" id="surname-client" value="<?= $_SESSION['data_user']['surname_user']; ?>" required>
                                         </div>
                                         <span class="d-none text-danger">Este campo solo debe contener letras y espacios.</span>
                                     </div>
                                     <div class="default-form-box">
                                         <span class="font-weight-bold">Correo <span class="text-danger">*</span></span>
                                         <div class="box-session">
-                                            <input type="text" class="valid valid_email" value="<?= $_SESSION['data_user']['email']; ?>" required>
+                                            <input type="text" class="valid valid_email" id="email-client" value="<?= $_SESSION['data_user']['email']; ?>" required>
                                         </div>
                                         <span class="d-none text-danger">Este campo debe tener un correo existente.</span>
                                     </div>
                                     <div class="default-form-box">
                                         <span class="font-weight-bold">Teléfono / celular <span class="text-danger">*</span></span>
                                         <div class="box-session">
-                                            <input type="text" class="valid valid_phone" value="<?= $_SESSION['data_user']['phone']; ?>" required>
+                                            <input type="text" class="valid valid_phone" id="phone-client" value="<?= $_SESSION['data_user']['phone']; ?>" required>
                                         </div>
                                         <span class="d-none text-danger">Este campo solo debe contener números de 7 o 10 dígitos.</span>
                                     </div>
@@ -110,7 +160,7 @@
                                     <div class="default-form-box">
                                         <span class="font-weight-bold">Información adicional (Opcional)</span>
                                         <div class="box-session">
-                                            <input type="text" placeholder="Cerca de...">
+                                            <input type="text" placeholder="Cerca de..." id="additional-information">
                                         </div>
                                     </div> 
                                     <div class="default-form-box">
@@ -122,7 +172,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <span class="font-weight-bold">Mensaje (Opcional)</span>
-                                        <textarea class="form-control textarea" name="" id="" placeholder="Escribe tu mensaje aquí"></textarea>
+                                        <textarea class="form-control textarea" name="" id="customer-message" placeholder="Escribe tu mensaje aquí"></textarea>
                                     </div>
                                     <div class="text-center">
                                         <button class="btn btn-md btn-black-default-hover m-auto" type="submit">IR AL PAGO</button>
@@ -152,10 +202,10 @@
                                     
                                     <div class="buy-test-example">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" id="flexRadioDefault2" name="flexRadioDefault" value="default-transfer">
-                                            <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="flexRadioDefault2"><img src="<?= MEDIA_STORE; ?>images/img-paypal.jpg" alt=""></label>
+                                            <input class="form-check-input" type="radio" id="credit-card" name="flexRadioDefault" value="credit-card">
+                                            <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="credit-card"><img src="<?= MEDIA_STORE; ?>images/img-paypal.jpg" alt=""></label>
                                         </div>
-                                        <div class="collapse_method-buy-default" style="display: none;">
+                                        <div class="collapse_method-buy-card" style="display: none;">
                                             <div id="paypal-button-container"></div>
                                         </div>
                                     </div>
