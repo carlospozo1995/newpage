@@ -8,6 +8,8 @@
 			// session_start();
 			$data = array();
 			$action = Utils::getParam("action", "");
+			$msg = "";
+			$status = true;
 			switch ($action) {
 				case 'addCartProduct':
 					if($_POST){
@@ -61,7 +63,39 @@
 
 				case 'paymentProcess':
 					if(isset($_POST)){
-						echo json_encode($_POST);
+						$dni_client = $_POST['dni'];
+						$name_client = $_POST['name'];
+						$surname_client = $_POST['surname'];
+						$email_client = $_POST['email'];
+						$phone_client = $_POST['phone'];
+						$main_town = $_POST['main_town'];
+						$street = $_POST['address'];
+						$add_info = $_POST['additional_information'];
+						$addressee = $_POST['addressee'];
+						$customer_message = $_POST['customer_message'];
+						$payment_method = isset($_POST['payment_method']) ? $_POST['payment_method'] : '';
+						$info_client_state = filter_var($_POST['info_client_state'], FILTER_VALIDATE_BOOLEAN);
+						$check_state = filter_var($_POST['check_state'], FILTER_VALIDATE_BOOLEAN);				
+						
+						try {
+							if ($info_client_state && $check_state && $payment_method != '' && $main_town != '' && $street != '' && $addressee) {
+								if($payment_method == 'bank-transfer'){
+									$data = 'transfer';
+								}else if($payment_method == 'credit-card'){
+									$data = 'credit';
+								}else{
+									throw new Exception("No es posible realizar el proceso intentelo mas tarde.");
+								}
+							}else{
+								throw new Exception("No es posible realizar el proceso intentelo mas tarde.");
+							}
+						} catch (Exception $e) {
+							$status = false;
+							$msg = $e->getMessage();
+						}
+
+						$data = array("status"=>$status,"msg"=>$msg);
+						echo json_encode($data);
 					}
 				break;
 			

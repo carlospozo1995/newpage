@@ -52,8 +52,6 @@ if(isset($_SESSION['login'])){
 // }
 ?>
 
-
-
 <div class="breadcrumb-section" data-aos="fade-up" data-aos-delay="0">
     <div class="pt-4 pb-4 mb-4 bg-mist-white">
         <div class="container">
@@ -221,7 +219,7 @@ if(isset($_SESSION['login'])){
                                 </div>
 
                                 <div id="finalize-purchase">
-                                    <button class="btn btn-block btn-deep-blue m-auto max-content" disabled>REALIZAR PEDIDO</button>
+                                    <button class="btn btn-block btn-deep-blue m-auto max-content position-relative" disabled>REALIZAR PEDIDO<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
                                 </div>
 
                             </div>

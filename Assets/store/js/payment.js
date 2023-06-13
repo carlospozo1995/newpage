@@ -227,11 +227,11 @@ $(document).ready(function () {
 				addressee: $('#addressee').val(),
 				customer_message: $('#customer-message').val(),
 				payment_method: $('.payment-selection input:checked').val(),
-				info_client_state: JSON.stringify(dataFormValidation()),
-				check_state : JSON.stringify(checkButtonState())
+				info_client_state: dataFormValidation(),
+				check_state : checkButtonState()
 			},
 			beforeSend: function() {
-			
+				$('#finalize-purchase button .cont-load-more').css("display", "flex");
 			},
 			success: function(data){
 				console.log(data);
@@ -239,6 +239,7 @@ $(document).ready(function () {
 			error: function(xhr, status, error) {
 			},
 			complete: function() {
+				$('#finalize-purchase button .cont-load-more').css("display", "none");
 			}
 		});
 	})	
