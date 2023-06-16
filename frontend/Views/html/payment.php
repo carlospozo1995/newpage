@@ -51,7 +51,7 @@ if(isset($_SESSION['login'])){
 //     // Mostrar el resultado de la respuesta del gateway de pagos si se desea
 // }
 ?>
-<script>
+<!-- <script>
     let getlocal = JSON.parse(localStorage.getItem('shoppingCartData'));
     // console.log(getlocal);
     let to = 0;
@@ -62,8 +62,8 @@ if(isset($_SESSION['login'])){
     to = subt;
 </script>
 
-<script data-reference-id="26c03e06-7464-4539-a361-2eb843bdf849">const s=document.createElement("script");s.src="https://static.dlocalgo.com/dlocalgo.min.js",s.async=!0,document.body.appendChild(s),s.addEventListener("load",()=>{const e=document.querySelector('script[data-reference-id="26c03e06-7464-4539-a361-2eb843bdf849"]'),t=e.parentNode,n="dp-btn-26c03e06-7464-4539-a361-2eb843bdf849",c=document.createElement("div");c.id=n,t.insertBefore(c,e);new DlocalGo("oFFiyqntfIYTEuLdTwIlRuMXunQMYfBN").createCheckout(n,{subType:"BUTTON",country:"EC",currency:"USD",amount:to,lang:"",text:"COMPRAR"})});</script>
-
+<script data-reference-id="26c03e06-7464-4539-a361-2eb843bdf849">const s=document.createElement("script");s.src="https://static.dlocalgo.com/dlocalgo.min.js",s.async=!0,document.body.appendChild(s),s.addEventListener("load",()=>{const e=document.querySelector('script[data-reference-id="26c03e06-7464-4539-a361-2eb843bdf849"]'),t=e.parentNode,n="dp-btn-26c03e06-7464-4539-a361-2eb843bdf849",c=document.createElement("div");c.id=n,t.insertBefore(c,e);new DlocalGo("oFFiyqntfIYTEuLdTwIlRuMXunQMYfBN").createCheckout(n,{subType:"BUTTON",country:"EC",currency:"USD",amount:to,lang:"",text:"COMPRAR"})});</script> -->
+<div><a href="<?= BASE_URL; ?>pago">pagar</a></div>
 <div class="breadcrumb-section" data-aos="fade-up" data-aos-delay="0">
     <div class="pt-4 pb-4 mb-4 bg-mist-white">
         <div class="container">

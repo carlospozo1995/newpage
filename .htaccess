@@ -72,6 +72,8 @@ RewriteRule ^(carrito/|carrito|Carrito)/getProducts/$ %{ENV:REWRITEBASE}index.ph
 RewriteRule ^(carrito/|carrito|Carrito)/paymentProcess/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=paymentProcess [L]
 RewriteRule ^carrito/(.+)$ %{ENV:REWRITEBASE}index.php?show=Carrito&process_payment=$1 [L]
 
+RewriteRule ^(pago/|pago|Pago)$ %{ENV:REWRITEBASE}index.php?show=Pago [L]
+
 
 #EXAMPLES
 #RewriteRule ^(resetPassword)/ajaxSetPass$ %{ENV:REWRITEBASE}index.php?show=ResetPassword [L]

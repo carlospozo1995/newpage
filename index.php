@@ -75,6 +75,9 @@
 				return "Carrito";
 			break;
 
+			case 'pago':
+				return "Carrito";
+			break;
 		}
 
 		return ucfirst($name);
