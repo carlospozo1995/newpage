@@ -274,13 +274,6 @@
     <script src="<?= MEDIA_STORE; ?>js/main.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/store-functions.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/store-storage.js"></script>
-    <?php
-        if ($section_name === 'Payment' && isset($_SESSION['login'])) {
-    ?>
-    <?php
-        echo 'local';
-        }
-    ?>
     
     <?php
     if(isset($file_js) && is_array($file_js) && !empty($file_js)){

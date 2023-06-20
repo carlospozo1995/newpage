@@ -210,64 +210,68 @@ $(document).ready(function () {
 		$('#finalize-purchase button').prop('disabled', !(checkButtonState()));
 	});
 
-	// $('#finalize-purchase button').click(function () {
-		// $.ajax({
-		// 	url: base_url + "carrito/paymentProcess/",
-		// 	dataType: 'JSON',
-		// 	method: 'POST',
-		// 	data: {
-		// 		dni: $('#dni-client').val(),
-		// 		name: $('#name-client').val(),
-		// 		surname: $('#surname-client').val(),
-		// 		email: $('#email-client').val(),
-		// 		phone: $('#phone-client').val(),
-		// 		main_town: $('#location').val(),
-		// 		address: $('#address').val(),
-		// 		additional_information: $('#additional-information').val(),
-		// 		addressee: $('#addressee').val(),
-		// 		customer_message: $('#customer-message').val(),
-		// 		payment_method: $('.payment-selection input:checked').val(),
-		// 		info_client_state: dataFormValidation(),
-		// 		check_state : checkButtonState()
-		// 	},
-		// 	beforeSend: function() {
-		// 		$('#finalize-purchase button .cont-load-more').css("display", "flex");
-		// 	},
-		// 	success: function(data){
-		// 		console.log(data);
-		// 	},
-		// 	error: function(xhr, status, error) {
-		// 	},
-		// 	complete: function() {
-		// 		$('#finalize-purchase button .cont-load-more').css("display", "none");
-		// 	}
-		// });
-	// })	
-
 	$('#finalize-purchase button').click(function () {
-		if ($('.payment-selection input:checked').val() == 'credit-card') {
-			var parametros ={
-				amount: "100",
-				amountWithoutTax: "100",
-				clientTransactionID: "testeo001",
-				responseUrl: "http://localhost/carlos/page/pago",
-				cancellationUrl: "http://localhost/carlos/page/pago"};
+		$.ajax({
+			url: base_url + "carrito/paymentProcess/",
+			dataType: 'JSON',
+			method: 'POST',
+			data: {
+				dni: $('#dni-client').val(),
+				dataStorage: JSON.parse(localStorage.getItem('shoppingCartData')),
+				name: $('#name-client').val(),
+				surname: $('#surname-client').val(),
+				email: $('#email-client').val(),
+				phone: $('#phone-client').val(),
+				main_town: $('#location').val(),
+				address: $('#address').val(),
+				additional_information: $('#additional-information').val(),
+				addressee: $('#addressee').val(),
+				customer_message: $('#customer-message').val(),
+				payment_method: $('.payment-selection input:checked').val(),
+				info_client_state: dataFormValidation(),
+				check_state : checkButtonState()
+			},
+			beforeSend: function() {
+				$('.cart-section .content-loading').css("display", "flex");
+			},
+			success: function(data){
+				if(data.status && data.card_paymnet != ""){
+					if(data.card_payment){
 
-			$.ajax({
-			    data: parametros,
-			    url: 'https://pay.payphonetodoesposible.com/api/button/Prepare',
-			    type:'POST',
-			    beforeSend:function(xhr){
-			    	xhr.setRequestHeader ('Authorization', "Bearer cXRzrJV5VTo9gIOwK_t7E-AtapcAay8vyxLn5ybwdtQGXLTxYHxqntgC-62TDDo7G_y3bmVkuidDprJ8SlL-KY3bbnWkUkDEeNCFeRub77X5uJA03bZNgq7rJDJG-yZWn7tpOz2VanUoxeEekcywaYUvyETFEdcpRcTpxczZyOXFJbaJ8lUqHsQsU2rP65InKo3jS8bmmOpqhBvIKcATXleUKvvhWSUfQqk_l_iudoQO6tQ9gamZg6LcXMSka2Uq21YUOclqCEJNOguim7ncSPWMRzJ_8Uh_Y1HO3uQiFrUkyynmVkfkfYbUk-IHUxDD6Eld4BkzzlmFkr6GNZpQw3RNwlk")
-				},
-			    success:function SolicitarPago(respuesta){
-					location.href = respuesta.payWithCard;
-			    },
-			    error: function(mensajeerror){
-			        alert ("Error en la llamada:" + mensajeerror.Message);
-			    }
-			});
-		}
-	})
+						var parametros ={
+							amount: data.total * 100,
+							amountWithoutTax: data.total * 100,
+							clientTransactionID: data.unique_code,
+							responseUrl: "http://localhost/carlos/page/pago",
+							cancellationUrl: "http://localhost/carlos/page/pago"
+						};
+
+						$.ajax({
+						    data: parametros,
+						    url: 'https://pay.payphonetodoesposible.com/api/button/Prepare',
+						    type:'POST',
+						    beforeSend:function(xhr){
+						    	xhr.setRequestHeader ('Authorization', "Bearer gO_1oRhE5GAxtxYWSIYlhRmDbJUbzk0-xXMiwtfs60sqdgxt623tq7njAcxkCiQhaKhDPTiH1au-kvdH45TDHtlfeja8z8-BYhc08CG07qFeXsiYHC04dRAlIYWRtRQiJCWaeDEKTKvEk8u-WKVTC40sAK9G9eOVXvKQMOKXRkFT6ZRChOhVWPFsL4cIX4Jar69kZSr-vB8dm1pfy2Xpsdgp-UXpghipQPB6GdA02cZ0tEBIzhhphp4CYdr6CJLtaTJWC9ZShppsyJC4iE0mlB_oUha4Ree-lv7NMWjTLhoqiWDdq6WANz2zHkva7nppLiijexjcqpRGwl8YntCDH5ube1E")
+							},
+						    success:function SolicitarPago(respuesta){
+						        location.href = respuesta.payWithCard;
+						    }, 
+						    error: function(mensajeerror){
+						        alert ("Error en la llamada:" + mensajeerror.Message);
+						    }
+						});
+
+					}
+				}else{
+					console.log(data.msg);
+				}
+			},
+			error: function(xhr, status, error) {
+			},
+			complete: function() {
+				// $('.cart-section .content-loading').css("display", "none");
+			}
+		});
+	})	
 
 });

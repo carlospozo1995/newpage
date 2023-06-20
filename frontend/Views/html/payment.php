@@ -1,69 +1,4 @@
-<?php
-    
-if(isset($_SESSION['login'])){
-?>
 
-<!-- CUENTA PAYPAL DE TESTEO -->
-<!-- <script src="https://www.paypal.com/sdk/js?client-id=AVUMJn0Je6qKFSS6gjUfO44QGhz0UnmBHNpuXOnLDU0z5RUxboWt5vK87tZew5R6MeJRhu2sC7MtJvtv"></script> -->
-
-<!-- CUENTA PAYPAL DE PRODUCCION -->
-<!-- <script src="https://www.paypal.com/sdk/js?client-id=AQvYtvVL9jZsZXbEay8BvSOIUcOJn9eqaKRvbEBbvBplZgiOwB1qhpmxgTMuGrS436phOHpfqfxHt5hm"></script> -->
-
-<!-- <script>
-    paypal.Buttons().render('#paypal-button-container');
-</script> -->
-
-
-
-<!-- DATAFAST -->
-<!-- <script type="text/javascript" src="https://www.datafast.com.ec/js/dfAdditionalValidations1.js"> -->
-
-<!-- NUVEI -->
-<!-- <script src="https://cdn.paymentez.com/ccapi/sdk/payment_sdk_stable.min.js" charset="UTF-8"></script> -->
-<?php
-}   
-?>
-
-<?php
-// $url = 'https://eu-test.oppwa.com/v1/checkouts';
-// $data = array(
-//     'entityId' => '8a829418533cf31d01533d06f2ee06fa',
-//     'amount' => '92.00',
-//     'currency' => 'USD',
-//     'paymentType' => 'DB'
-// );
-// $options = array(
-//     'http' => array(
-//         'header' => "Authorization: Bearer OGE4Mjk0MTg1MzNjZjMxZDAxNTMzZDA2ZmQwNDA3NDh8WHQ3RjIyUUVOWA==\r\n" .
-//                     "Content-Type: application/x-www-form-urlencoded\r\n",
-//         'method' => 'POST',
-//         'content' => http_build_query($data)
-//     )
-// );
-// $context = stream_context_create($options);
-// $response = file_get_contents($url, false, $context);
-
-// if ($response === FALSE) {
-//     echo "Error al conectar al gateway de pagos.";
-// } else {
-//     echo "Conexión exitosa al gateway de pagos.";
-//     echo $response;
-//     // Mostrar el resultado de la respuesta del gateway de pagos si se desea
-// }
-?>
-<!-- <script>
-    let getlocal = JSON.parse(localStorage.getItem('shoppingCartData'));
-    // console.log(getlocal);
-    let to = 0;
-    let subt = 0;
-    JSON.parse(localStorage.getItem('shoppingCartData')).forEach(item => {
-        subt += item.amount_product * item.price;
-    });
-    to = subt;
-</script>
-
-<script data-reference-id="26c03e06-7464-4539-a361-2eb843bdf849">const s=document.createElement("script");s.src="https://static.dlocalgo.com/dlocalgo.min.js",s.async=!0,document.body.appendChild(s),s.addEventListener("load",()=>{const e=document.querySelector('script[data-reference-id="26c03e06-7464-4539-a361-2eb843bdf849"]'),t=e.parentNode,n="dp-btn-26c03e06-7464-4539-a361-2eb843bdf849",c=document.createElement("div");c.id=n,t.insertBefore(c,e);new DlocalGo("oFFiyqntfIYTEuLdTwIlRuMXunQMYfBN").createCheckout(n,{subType:"BUTTON",country:"EC",currency:"USD",amount:to,lang:"",text:"COMPRAR"})});</script> -->
-<div><a href="<?= BASE_URL; ?>pago">pagar</a></div>
 <div class="breadcrumb-section" data-aos="fade-up" data-aos-delay="0">
     <div class="pt-4 pb-4 mb-4 bg-mist-white">
         <div class="container">
@@ -83,7 +18,16 @@ if(isset($_SESSION['login'])){
     </div>
 </div>
 
-<div class="cart-section">
+<div class="cart-section position-relative">
+    <?php
+    if (isset($_SESSION['login'])) {
+    ?>
+    <div class="content-loading">
+        <span class="loader-store"></span>
+    </div>
+    <?php
+    }
+    ?>
     <div class="cart-table-wrapper" data-aos="fade-up" data-aos-delay="0">
         <div class="container">
             <div class="row position-relative">
@@ -213,10 +157,10 @@ if(isset($_SESSION['login'])){
                                     <div class="buy-test-example">
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" id="credit-card" name="flexRadioDefault" value="credit-card">
-                                            <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="credit-card"><img src="<?= MEDIA_STORE; ?>images/img-paypal.jpg" alt=""></label>
+                                            <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="credit-card"><img src="<?= MEDIA_STORE; ?>images/img-payphone.png" alt=""></label>
                                         </div>
                                         <div class="collapse_method-buy-card" style="display: none;">
-                                            <div id="paypal-button-container"></div>
+                                            <p class="text-dark">Payphone es la solución completa para pagos en línea. Segura, fácil y rápida.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -231,7 +175,7 @@ if(isset($_SESSION['login'])){
                                 </div>
 
                                 <div id="finalize-purchase">
-                                    <button class="btn btn-block btn-deep-blue m-auto max-content position-relative" disabled>REALIZAR PEDIDO<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
+                                    <button class="btn btn-block btn-deep-blue m-auto max-content" disabled>REALIZAR PEDIDO</button>
                                 </div>
 
                             </div>

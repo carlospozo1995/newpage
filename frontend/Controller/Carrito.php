@@ -63,6 +63,13 @@
 
 				case 'paymentProcess':
 					if(isset($_POST)){
+						$card_payment = "";
+						$data_storage = $_POST['dataStorage'];
+						$unique_code = "";
+						$shipping_cost = 0;
+						$subtotal = 0;
+						$iva = 0;
+						$total = 0;
 						$dni_client = $_POST['dni'];
 						$name_client = $_POST['name'];
 						$surname_client = $_POST['surname'];
@@ -79,10 +86,28 @@
 						
 						try {
 							if ($info_client_state && $check_state && $payment_method != '' && $main_town != '' && $street != '' && $addressee) {
+								foreach ($data_storage as $value) {
+									$subtotal += $value['price'] * $value['amount_product'];
+								}
+
+								if ($subtotal < 100) {
+									if($main_town == 1){
+										$shipping_cost = 0;
+									}else if($main_town == 2){
+										$shipping_cost = 5;
+									}else{
+										$shipping_cost = 10;
+									}
+								}
+
+								$total = $subtotal + $iva + $shipping_cost;
+
 								if($payment_method == 'bank-transfer'){
-									$data = 'transfer';
+									$card_payment = false;
+									$unique_code = Utils::uniqueCode();
 								}else if($payment_method == 'credit-card'){
-									$data = 'credit';
+									$card_payment = true;
+									$unique_code = Utils::uniqueCode();
 								}else{
 									throw new Exception("No es posible realizar el proceso intentelo mas tarde.");
 								}
@@ -93,8 +118,8 @@
 							$status = false;
 							$msg = $e->getMessage();
 						}
-
-						$data = array("status"=>$status,"msg"=>$msg);
+						sleep(3);
+						$data = array("status"=>$status,"msg"=>$msg, "card_payment" => $card_payment, "total" => $total, "unique_code" => $unique_code);
 						echo json_encode($data);
 					}
 				break;

@@ -296,6 +296,12 @@
 			return $name;
     	}
 
+    	static public function uniqueCode() 
+    	{
+	    	$uniqueCode = date('YmdHis') . substr(str_shuffle(str_repeat('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', 5)), 0, 5);
+	    	return md5($uniqueCode);
+		}	
+
 	}
 
 ?>
