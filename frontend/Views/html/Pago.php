@@ -1,19 +1,6 @@
 	
 <?php
-	$url_payment = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-
-	$queryString = parse_url($url_payment, PHP_URL_QUERY);
-	parse_str($queryString, $params);
-
-	$transaction = $params['id'];
-	$client = $params['clientTransactionId'];
-
-	//Preparar JSON de llamada
-	$data_array = array(
-	"id"=> (int)$transaction,
-	"clientTxId"=>$client );
-
-	$data = json_encode($data_array);
+	$data = json_encode($template_vars);
 
 	//Iniciar Llamada
 	$curl = curl_init();
@@ -29,7 +16,7 @@
 	curl_close($curl);
 
 	//En la variable result obtienes todos los parámetros de respuesta
-	// echo $result;
+	echo $result;
 ?>
 <!-- <script src="<?= MEDIA_STORE; ?>js/vendor/jquery-3.5.1.min.js"></script>
 <script>
@@ -70,18 +57,18 @@
 	<title></title>
 </head>
 <body>
-	<div class="carlos">
+	<div>
 	<?php
 
-	$data = json_decode($result, true);
-	$statusCode = $data['statusCode'];
+	$data_transaction = json_decode($result, true);
+	$statusCode = $data_transaction['statusCode'];
 	
 	if($statusCode == 2){
 	?>
-	<h1><?= $data['message']; ?></h1>
+		<h1><?= $data_transaction['message']; ?></h1>
 	<?php
 	}else{
-		echo '...';
+		echo '<h1>COMPRA EXITOSA</h1>';
 	}
 
 	?>
@@ -90,6 +77,11 @@
 
 	<!-- <div id="confirmacion"></div> -->
 
-	<!-- <script src="<?= MEDIA_STORE; ?>js/vendor/jquery-3.5.1.min.js"></script> -->
+	<script src="<?= MEDIA_STORE; ?>js/vendor/jquery-3.5.1.min.js"></script>
+	<?php if ($statusCode != 2): ?>
+	<script>
+		localStorage.removeItem("shoppingCartData");
+	</script>
+	<?php endif ?>
 </body>
 </html>
