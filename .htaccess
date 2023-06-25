@@ -73,6 +73,7 @@ RewriteRule ^(carrito/|carrito|Carrito)/paymentProcess/$ %{ENV:REWRITEBASE}index
 RewriteRule ^carrito/(.+)$ %{ENV:REWRITEBASE}index.php?show=Carrito&process_payment=$1 [L]
 
 RewriteRule ^(pago/|pago|Pago)$ %{ENV:REWRITEBASE}index.php?show=Pago [L]
+RewriteRule ^(cancelacion/|cancelacion|Cancelacion)$ %{ENV:REWRITEBASE}index.php?show=Cancelacion [L]
 
 
 #EXAMPLES

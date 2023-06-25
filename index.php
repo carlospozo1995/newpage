@@ -76,7 +76,11 @@
 			break;
 
 			case 'pago':
-				return "Carrito";
+				return "Pago";
+			break;
+
+			case 'cancelacion':
+				return "Cancelacion";
 			break;
 		}
 

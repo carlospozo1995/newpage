@@ -243,7 +243,7 @@ $(document).ready(function () {
 							amountWithoutTax: data.total * 100,
 							clientTransactionID: data.unique_code,
 							responseUrl: "http://localhost/carlos/page/pago",
-							cancellationUrl: "http://localhost/carlos/page/pago"
+							cancellationUrl: "http://localhost/carlos/page/cancelacion"
 						};
 
 						$.ajax({
@@ -251,7 +251,7 @@ $(document).ready(function () {
 						    url: 'https://pay.payphonetodoesposible.com/api/button/Prepare',
 						    type:'POST',
 						    beforeSend:function(xhr){
-						    	xhr.setRequestHeader ('Authorization', "Bearer gO_1oRhE5GAxtxYWSIYlhRmDbJUbzk0-xXMiwtfs60sqdgxt623tq7njAcxkCiQhaKhDPTiH1au-kvdH45TDHtlfeja8z8-BYhc08CG07qFeXsiYHC04dRAlIYWRtRQiJCWaeDEKTKvEk8u-WKVTC40sAK9G9eOVXvKQMOKXRkFT6ZRChOhVWPFsL4cIX4Jar69kZSr-vB8dm1pfy2Xpsdgp-UXpghipQPB6GdA02cZ0tEBIzhhphp4CYdr6CJLtaTJWC9ZShppsyJC4iE0mlB_oUha4Ree-lv7NMWjTLhoqiWDdq6WANz2zHkva7nppLiijexjcqpRGwl8YntCDH5ube1E")
+						    	xhr.setRequestHeader ('Authorization', "Bearer H69wgPGoCNlXxD_4pm4YhDd_EY2mC7K5hK7xHx2-qFcREHkmoCYl96ObQwSg-5mwVtjksrSwdhLe8_wuvkrhS33RFMolMbw2z3xcqaWRglZqSzVTyZ4F_pQwO2R-Uo6CRoOgrgLfWdl0E8rbmFaAYKsIdeCMQqTjZ0Keh1nl-3G1IRZr5TqAf1J9gqkjEGNGdjZgZS3O91rzyymlyl5AmmDommGDDChPV7_J9I-5XnY3M4X5x4Z7GqUpoCYUdBf0whGh8p2Qa_CEPJWEFHsssbunkZrF0l3RPxXPs8I0ecUH1I0xF6IhLyqiXvWKApjjTgYL8iFC2eG5tXupeZfTT_-hue0")
 							},
 						    success:function SolicitarPago(respuesta){
 						        location.href = respuesta.payWithCard;

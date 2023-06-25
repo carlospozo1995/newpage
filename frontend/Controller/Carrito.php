@@ -118,7 +118,6 @@
 							$status = false;
 							$msg = $e->getMessage();
 						}
-						sleep(3);
 						$data = array("status"=>$status,"msg"=>$msg, "card_payment" => $card_payment, "total" => $total, "unique_code" => $unique_code);
 						echo json_encode($data);
 					}
