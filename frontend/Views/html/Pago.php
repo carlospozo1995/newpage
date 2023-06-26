@@ -62,7 +62,8 @@
 
 	$data_transaction = json_decode($result, true);
 	$statusCode = $data_transaction['statusCode'];
-	
+	$dateTransaction = $data_transaction['date'];
+
 	if($statusCode == 2){
 	?>
 		<h1><?= $data_transaction['message']; ?></h1>
@@ -70,17 +71,20 @@
 	}else{
 		echo '<h1>COMPRA EXITOSA</h1>';
 	}
-
 	?>
 		
 	</div>
 
 	<!-- <div id="confirmacion"></div> -->
-
 	<script src="<?= MEDIA_STORE; ?>js/vendor/jquery-3.5.1.min.js"></script>
-	<?php if ($statusCode != 2): ?>
+	<?php if ($statusCode != 2 && (strtotime(date("Y-m-d\TH:i:s.u")) > strtotime($dateTransaction) + 5)): ?>
 	<script>
-		localStorage.removeItem("shoppingCartData");
+		let productsTransaction =  JSON.parse(localStorage.getItem("shoppingCartData"));
+		let dataIds = $.map(productsTransaction, function(product) {
+            return product.id;
+        });
+
+		// localStorage.removeItem("shoppingCartData");
 	</script>
 	<?php endif ?>
 </body>

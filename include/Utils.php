@@ -302,6 +302,14 @@
 	    	return md5($uniqueCode);
 		}	
 
+		static public function decodeCode($code)
+		{
+		    $decodedCode = substr($code, 0, 14); // Extraer los primeros 14 dígitos, que representan la fecha y hora en formato 'YmdHis'
+		    $decodedTime = DateTime::createFromFormat('YmdHis', $decodedCode); // Crear un objeto DateTime a partir del formato 'YmdHis'
+		    
+		    return $decodedTime;
+		}
+
 	}
 
 ?>
