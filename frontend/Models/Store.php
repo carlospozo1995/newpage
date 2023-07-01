@@ -121,5 +121,27 @@
             return $products;
         }
 
+        static public function updateStockTransaction($productIdsArr, $amountProductsArr, $productsIds)
+        {
+            $sql = "UPDATE products SET stock = CASE id_product ";
+
+            foreach ($productIdsArr as $index => $productId) {
+                $amount = $amountProductsArr[$index];
+                $sql .= "WHEN $productId THEN stock - $amount ";
+            }
+
+            $sql .= "ELSE stock END WHERE FIND_IN_SET(id_product, '$productsIds')";
+
+            $request =  $GLOBALS["db"]->execute($sql);
+            if($request) {$result = "ok";}
+            return $result;
+        }
+
+        // static public function getProductsTransaction($productsIds)
+        // {
+        //     $sql = "SELECT id_product, name_product, stock, price FROM products WHERE id_product IN ($productsIds)";
+        //     return $GLOBALS["db"]->selectAll($sql, array($productsIds));   
+        // }
+
     }
 ?>

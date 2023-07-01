@@ -254,7 +254,7 @@
 			                        <div class="action-link-right mx-auto">
 			                            <a href="" data-bs-toggle="modal" data-bs-target="#modalQuickview"><i class="icon-eye" title="Vista rápida"></i></a>
 			                            <a href=""><i class="icon-heart" title="Añadir a favoritos"></i></a>';
-			    if (!empty($product['stock'])) {
+			    if (!empty($product['stock']) && $product['stock'] > 0) {
     				$content_grid .= '<a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="addToCart" id="'.Utils::encriptar($product['id_product']).'"><i class="icon-basket" title="Añadir al carrito"></i></a>';
 				}
 			    $content_grid .= '
@@ -313,7 +313,7 @@
 				                $content_single .= (!empty($product['cantDues'])) ? '<span class="ml-2 text-left">'.$product['cantDues'].' cuotas '.SMONEY. Utils::formatMoney($product['priceDues']).'</span>' : '';
 				                $content_single .= '</div>';
 				                $content_single .= '<p class="mt-3 text-justify">'. $product['desMain'] .'</p>';
-				                $content_single .= (empty($product['stock'])) ? '<p class="n-stock">No disponible</p>' : '';
+				                $content_single .= (empty($product['stock']) || $product['stock'] <= 0) ? '<p class="n-stock">No disponible</p>' : '';
 
 				                $content_single .= '<div class="product-action-icon-link-list">
 				                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalQuickview" class="btn btn-lg btn-black-default-hover" title="Vista rápida">
@@ -322,7 +322,7 @@
                                     <a href="wishlist.html" class="btn btn-lg btn-black-default-hover" title="Añadir a favoritos">
                                         <i class="icon-heart"></i>
                                     </a>';
-                                if (!empty($product['stock'])) {
+                                if (!empty($product['stock']) && $product['stock'] > 0) {
 				    				$content_single .= '<a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="btn btn-lg btn-black-default-hover addToCart" id="'.Utils::encriptar($product['id_product']).'" title="Añadir al carrito">
                                     		<i class="icon-basket"></i>
                                         </a>';

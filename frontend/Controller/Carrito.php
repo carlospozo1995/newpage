@@ -61,15 +61,15 @@
 					}	
 				break;
 
-				case 'paymentProcess':
+				case 'paymentTypeValidation':
 					if(isset($_POST)){
 						$card_payment = "";
-						$data_storage = $_POST['dataStorage'];
-						$unique_code = "";
-						$shipping_cost = 0;
-						$subtotal = 0;
-						$iva = 0;
-						$total = 0;
+						// $data_storage = $_POST['dataStorage'];
+						// $unique_code = "";
+						// $shipping_cost = 0;
+						// $subtotal = 0;
+						// $iva = 0;
+						// $total = 0;
 						$dni_client = $_POST['dni'];
 						$name_client = $_POST['name'];
 						$surname_client = $_POST['surname'];
@@ -86,28 +86,28 @@
 						
 						try {
 							if ($info_client_state && $check_state && $payment_method != '' && $main_town != '' && $street != '' && $addressee) {
-								foreach ($data_storage as $value) {
-									$subtotal += $value['price'] * $value['amount_product'];
-								}
+								// foreach ($data_storage as $value) {
+								// 	$subtotal += $value['price'] * $value['amount_product'];
+								// }
 
-								if ($subtotal < 100) {
-									if($main_town == 1){
-										$shipping_cost = 0;
-									}else if($main_town == 2){
-										$shipping_cost = 5;
-									}else{
-										$shipping_cost = 10;
-									}
-								}
+								// if ($subtotal < 100) {
+								// 	if($main_town == 1){
+								// 		$shipping_cost = 0;
+								// 	}else if($main_town == 2){
+								// 		$shipping_cost = 5;
+								// 	}else{
+								// 		$shipping_cost = 10;
+								// 	}
+								// }
 
-								$total = $subtotal + $iva + $shipping_cost;
+								// $total = $subtotal + $iva + $shipping_cost;
 
 								if($payment_method == 'bank-transfer'){
 									$card_payment = false;
-									$unique_code = Utils::uniqueCode();
+									// $unique_code = Utils::uniqueCode();
 								}else if($payment_method == 'credit-card'){
 									$card_payment = true;
-									$unique_code = Utils::uniqueCode();
+									// $unique_code = Utils::uniqueCode();
 								}else{
 									throw new Exception("No es posible realizar el proceso intentelo mas tarde.");
 								}
@@ -118,8 +118,121 @@
 							$status = false;
 							$msg = $e->getMessage();
 						}
-						$data = array("status"=>$status,"msg"=>$msg, "card_payment" => $card_payment, "total" => $total, "unique_code" => $unique_code);
+						$data = array("status"=>$status,"msg"=>$msg, "card_payment" => $card_payment);
+						// $data = array("status"=>$status,"msg"=>$msg, "card_payment" => $card_payment, "total" => $total, "unique_code" => $unique_code);
 						echo json_encode($data);
+					}
+				break;
+
+				case 'checkProductStock':
+					if (isset($_POST)) {
+						$localStorage = $_POST['cartStorage'];
+						$main_town = $_POST['main_town'];
+						$unique_code = Utils::uniqueCode();
+						$shipping_cost = 0;
+						$subtotal = 0;
+						$iva = 0;
+						$total = 0;
+
+						$productsIdsArr = array_map(function($data){
+							return Utils::desencriptar($data['id']);
+						}, $localStorage);
+						$amountProductsArr = array_map(function($data){
+							return $data['amount_product'];
+						}, $localStorage); 
+						$productsIds = implode(',', $productsIdsArr);
+						$amountProducts = implode(',', $amountProductsArr);
+						$priceProducts = implode(',', array_map(function($data){
+							return $data['price'];
+						}, $localStorage));
+
+						$request = Models_Store::getProductsStorage($productsIds);
+
+						$notEnoughStock = array();
+						$storageChanges = "";
+						$amountProductNewArr = "";
+						$newArrayStorage = "";
+						foreach ($request as $row) {
+						    $productId = $row['id_product'];
+						    $productStock = $row['stock'];
+						    $productPrice = $row['price'];
+
+						    $index = array_search($productId, explode(',', $productsIds));
+						    $requestedAmount = explode(',', $amountProducts)[$index];
+						    $requestedPrice = explode(',', $priceProducts)[$index];
+
+						    if (($productStock < $requestedAmount || $requestedAmount <= 0 || $requestedAmount === null) || (floatval($productPrice) != floatval($requestedPrice))) {
+
+						    	if (($productStock < $requestedAmount || $requestedAmount <= 0 || $requestedAmount === null) && (floatval($productPrice) != floatval($requestedPrice))) {
+						    		$amountProductNewArr = $productStock;
+						    	}
+
+						    	if($productStock < $requestedAmount || $requestedAmount <= 0 || $requestedAmount === null){$amountProductNewArr = $productStock;}
+
+						    	if(floatval($productPrice) != floatval($requestedPrice)){
+						    		$amountProductNewArr = $requestedAmount;
+						    	}
+
+						    	$notEnoughStock[] = array('amount_product' =>$amountProductNewArr, 'id' => Utils::encriptar($productId), 'name' => $row['name_product'], 'price' => $row['price'], 'stock' => $productStock, 'image' => $row['images'][0]['url_image'], 'code' => $row['code'], 'url' => '');
+						    }
+						}
+
+						if (empty($notEnoughStock)) {
+							foreach ($localStorage as $value) {
+								$subtotal += $value['price'] * $value['amount_product'];
+							}
+
+							if ($subtotal < 100) {
+								if($main_town == 1){
+									$shipping_cost = 0;
+								}else if($main_town == 2){
+									$shipping_cost = 5;
+								}else{
+									$shipping_cost = 10;
+								}
+							}
+
+							$total = $subtotal + $iva + $shipping_cost;
+
+							if (count($productsIdsArr) == count($amountProductsArr)) {
+							    // $updateStock = Models_Store::updateStockTransaction($productIdsArr, $amountProductsArr, $productsIds);
+							}
+						} else {
+						    $status = false;
+						    $storageChanges = $notEnoughStock;
+
+
+						    $array1_ids = array_column($localStorage, 'id');
+							$array2_ids = array_column($notEnoughStock, 'id');
+
+							// Recorrer el primer array y verificar si hay cambios en el segundo array
+							foreach ($localStorage as $key => $product) {
+							    $id = $product['id'];
+
+							    if (in_array($id, $array2_ids)) {
+							        // Obtener el índice del producto en el segundo array
+							        $index = array_search($id, $array2_ids);
+
+							        // Actualizar el precio y/o nombre del producto si hay cambios
+							        if (isset($notEnoughStock[$index]['price'])) {
+							            $localStorage[$key]['price'] = $notEnoughStock[$index]['price'];
+							        }
+							        if (isset($notEnoughStock[$index]['nombre'])) {
+							            $localStorage[$key]['nombre'] = $notEnoughStock[$index]['nombre'];
+							        }
+							    }
+							}
+
+							// Combinar los productos sin cambios del primer array con los productos actualizados del segundo array
+							$new_array = array_merge($localStorage, array_diff_key($notEnoughStock, array_flip($array1_ids)));
+							$new_array = array_unique($new_array, SORT_REGULAR);
+
+							$newArrayStorage = $new_array;
+
+						}
+						$data = array('status' => $status, 'storageChanges' => $storageChanges, 'newArrayStorage' => $newArrayStorage , "total" => $total, "unique_code" => $unique_code);
+						echo json_encode($data);
+
 					}
 				break;
 			

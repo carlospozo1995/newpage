@@ -275,7 +275,7 @@
                                                                             <a href="" data-bs-toggle="modal" data-bs-target="#modalQuickview"><i class="icon-eye" title="Vista rápida"></i></a>
                                                                             <a href=""><i class="icon-heart" title="Añadir a favoritos"></i></a>
                                                                             <?php
-                                                                            if (!empty($product['stock'])) {
+                                                                            if (!empty($product['stock']) && $product['stock'] > 0) {
                                                                                 echo '<a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="addToCart" id="'.Utils::encriptar($product['id_product']).'"><i class="icon-basket" title="Añadir al carrito"></i></a>';
                                                                             }
                                                                             ?>
@@ -355,7 +355,7 @@
                                                                 ?>
                                                                     <p class="mt-3 text-justify"><?=  $product['desMain']; ?></p>
 
-                                                                    <?php echo (empty($product['stock'])) ? '<p class="n-stock">No disponible</p>' : ''; ?>
+                                                                    <?php echo (empty($product['stock']) || $product['stock'] <= 0) ? '<p class="n-stock">No disponible</p>' : ''; ?>
 
                                                                     <div class="product-action-icon-link-list">
                                                                         <a href="#" data-bs-toggle="modal" data-bs-target="#modalQuickview" class="btn btn-lg btn-black-default-hover" title="Vista rápida">
@@ -365,7 +365,7 @@
                                                                             <i class="icon-heart"></i>
                                                                         </a>
                                                                         <?php
-                                                                        if (!empty($product['stock'])) {
+                                                                        if (!empty($product['stock']) && $product['stock'] > 0) {
                                                                             echo '<a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="btn btn-lg btn-black-default-hover addToCart" id="'.Utils::encriptar($product['id_product']).'" title="Añadir al carrito">
                                                                                     <i class="icon-basket"></i>
                                                                                 </a>';

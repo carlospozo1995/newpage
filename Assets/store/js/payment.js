@@ -212,7 +212,7 @@ $(document).ready(function () {
 
 	$('#finalize-purchase button').click(function () {
 		$.ajax({
-			url: base_url + "carrito/paymentProcess/",
+			url: base_url + "carrito/paymentTypeValidation/",
 			dataType: 'JSON',
 			method: 'POST',
 			data: {
@@ -232,35 +232,60 @@ $(document).ready(function () {
 				check_state : checkButtonState()
 			},
 			beforeSend: function() {
-				$('.cart-section .content-loading').css("display", "flex");
+				// $('.cart-section .content-loading').css("display", "flex");
 			},
 			success: function(data){
 				if(data.status && data.card_paymnet != ""){
 					if(data.card_payment){
+						// let amountProducts = $.map(cartStorage, function(product) {
+					    // 	return product.amount_product;
+						// });
+						// $.ajax({
+						// 	url: base_url + "carrito/checkProductStock/",
+						// 	dataType: 'JSON',
+						// 	method: 'POST',
+						// 	data: {
+						// 		productIds: cartStorage_productIds,
+						// 		amountProducts: amountProducts
+						// 	},
+						// 	beforeSend: function() {
+						// 	},
+						// 	success: function(data){
+						// 		if(data.status){
+						// 			// var parametros ={
+						// 			// 	amount: data.total * 100,
+						// 			// 	amountWithoutTax: data.total * 100,
+						// 			// 	clientTransactionID: data.unique_code,
+						// 			// 	responseUrl: "http://localhost/carlos/page/pago",
+						// 			// 	cancellationUrl: "http://localhost/carlos/page/cancelacion"
+						// 			// };
 
-						var parametros ={
-							amount: data.total * 100,
-							amountWithoutTax: data.total * 100,
-							clientTransactionID: data.unique_code,
-							responseUrl: "http://localhost/carlos/page/pago",
-							cancellationUrl: "http://localhost/carlos/page/cancelacion"
-						};
-
-						$.ajax({
-						    data: parametros,
-						    url: 'https://pay.payphonetodoesposible.com/api/button/Prepare',
-						    type:'POST',
-						    beforeSend:function(xhr){
-						    	xhr.setRequestHeader ('Authorization', "Bearer H69wgPGoCNlXxD_4pm4YhDd_EY2mC7K5hK7xHx2-qFcREHkmoCYl96ObQwSg-5mwVtjksrSwdhLe8_wuvkrhS33RFMolMbw2z3xcqaWRglZqSzVTyZ4F_pQwO2R-Uo6CRoOgrgLfWdl0E8rbmFaAYKsIdeCMQqTjZ0Keh1nl-3G1IRZr5TqAf1J9gqkjEGNGdjZgZS3O91rzyymlyl5AmmDommGDDChPV7_J9I-5XnY3M4X5x4Z7GqUpoCYUdBf0whGh8p2Qa_CEPJWEFHsssbunkZrF0l3RPxXPs8I0ecUH1I0xF6IhLyqiXvWKApjjTgYL8iFC2eG5tXupeZfTT_-hue0")
-							},
-						    success:function SolicitarPago(respuesta){
-						        location.href = respuesta.payWithCard;
-						    }, 
-						    error: function(mensajeerror){
-						        alert ("Error en la llamada:" + mensajeerror.Message);
-						    }
-						});
-
+						// 			// $.ajax({
+						// 			//     data: parametros,
+						// 			//     url: 'https://pay.payphonetodoesposible.com/api/button/Prepare',
+						// 			//     type:'POST',
+						// 			//     beforeSend:function(xhr){
+						// 			//     	xhr.setRequestHeader ('Authorization', "Bearer H69wgPGoCNlXxD_4pm4YhDd_EY2mC7K5hK7xHx2-qFcREHkmoCYl96ObQwSg-5mwVtjksrSwdhLe8_wuvkrhS33RFMolMbw2z3xcqaWRglZqSzVTyZ4F_pQwO2R-Uo6CRoOgrgLfWdl0E8rbmFaAYKsIdeCMQqTjZ0Keh1nl-3G1IRZr5TqAf1J9gqkjEGNGdjZgZS3O91rzyymlyl5AmmDommGDDChPV7_J9I-5XnY3M4X5x4Z7GqUpoCYUdBf0whGh8p2Qa_CEPJWEFHsssbunkZrF0l3RPxXPs8I0ecUH1I0xF6IhLyqiXvWKApjjTgYL8iFC2eG5tXupeZfTT_-hue0")
+						// 			// 	},
+						// 			//     success:function SolicitarPago(respuesta){
+						// 			//         location.href = respuesta.payWithCard;
+						// 			//     }, 
+						// 			//     error: function(mensajeerror){
+						// 			//         alert ("Error en la llamada:" + mensajeerror.Message);
+						// 			//     }
+						// 			// });
+						// 		}
+						// 	},
+						// 	error: function(xhr, status, error) {
+						// 	},
+						// 	complete: function() {
+						// 	}
+						// });
+						checkProductStock();
+					}else{
+						// aqui va el codigo si es pagar por transferrencia
+						console.log('pago por transferencia');
+						checkProductStock();
 					}
 				}else{
 					console.log(data.msg);
@@ -272,6 +297,29 @@ $(document).ready(function () {
 				// $('.cart-section .content-loading').css("display", "none");
 			}
 		});
-	})	
+	})
+
+	function checkProductStock (){
+		$.ajax({
+			url: base_url + "carrito/checkProductStock/",
+			dataType: 'JSON',
+			method: 'POST',
+			data: {
+				main_town: $('#location').val(),
+				cartStorage: cartStorage,
+			},
+			beforeSend: function() {
+			},
+			success: function(data){
+				console.log(cartStorage);
+				console.log(data);
+			},
+			error: function(xhr, status, error) {
+				console.log(error)
+			},
+			complete: function() {
+			}
+		});
+	}	
 
 });

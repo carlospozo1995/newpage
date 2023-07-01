@@ -170,6 +170,10 @@
             return $this->execute( $query );    
         }
 
+        // function updateSimpleString( $query ) {  
+        //     return $this->execute( $query );    
+        // }
+
         function delete( $table, $where ) {
             $query  = 'DELETE FROM ';
             $query .= $table;

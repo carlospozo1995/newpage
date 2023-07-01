@@ -102,7 +102,7 @@
 								
 								<div class="product-content-validation align-items-sm-center justify-content-sm-center d-sm-flex">
 								<?php
-									echo !empty($data_product['stock']) ? '<span>¡ QUEDAN '.$data_product['stock'].' DISPONIBLE !</span>' : '<span>LO SENTIMOS NO HAY DISPONIBLES</span>';
+									echo !empty($data_product['stock']) && $data_product['stock'] > 0 ? '<span>¡ QUEDAN '.$data_product['stock'].' DISPONIBLE !</span>' : '<span>LO SENTIMOS NO HAY DISPONIBLES</span>';
 
 									echo !empty($data_product['cantDues']) ? '
 										<div class="content-value-product no-empty">
@@ -122,13 +122,13 @@
 							</div>
 
 							<?php
-							if(!empty($data_product['stock'])){
+							if(!empty($data_product['stock']) && $data_product['stock'] > 0){
 							?>
 							<div class="product-details-variable">
 								<div class="d-lg-flex align-items-center justify-content-center mb-small-3">
 	                                <div class="variable-single-item ">
 	                                    <span>Cantidad</span>
-	                                    <div class="product-variable-quantity mr-lg-4">
+	                                    <div class="mr-lg-4" id="product-variable-quantity">
 	                                    	<i class="fa fa-minus pl-4 pr-2 btn-minus"></i>
 											<input class="amount-product" type="number" min="1" max="<?= $data_product['stock']; ?>" value="1">
 	                                    	<i class="fa fa-plus pr-4 pl-2 btn-plus"></i>

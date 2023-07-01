@@ -83,6 +83,133 @@
 	    </div>
 	    <!-- End Hero Slider Section-->
 
+	    <?php
+
+	    	// $array1 = array(
+			//     array(
+			//         'id' => 1,
+			//         'nombre' => 'Producto 1',
+			//         'price' => 10.99,
+			//         'local' => 1
+			//     ),
+			//     array(
+			//         'id' => 2,
+			//         'nombre' => 'Producto 2',
+			//         'price' => 20.49,
+			//         'local' => 2
+			//     ),
+			//     array(
+			//         'id' => 3,
+			//         'nombre' => 'Producto 3',
+			//         'price' => 15.75,
+			//         'local' => 3
+			//     )
+			// );
+
+			// $array2 = array(
+			//     array(
+			//         'id' => 2,
+			//         'nombre' => 'Producto 2',
+			//         'price' => 20.00
+			//     ),
+			//     array(
+			//         'id' => 3,
+			//         'nombre' => 'Producto 3',
+			//         'price' => 15.75
+			//     )
+			// );
+
+			// // Obtener un array asociativo con los valores de 'id' como clave
+			// $array1_ids = array_column($array1, 'id');
+			// $array2_ids = array_column($array2, 'id');
+
+			// // Recorrer el primer array y verificar si hay cambios en el segundo array
+			// foreach ($array1 as $key => $product) {
+			//     $id = $product['id'];
+
+			//     if (in_array($id, $array2_ids)) {
+			//         // Obtener el índice del producto en el segundo array
+			//         $index = array_search($id, $array2_ids);
+
+			//         // Actualizar los campos del producto si hay cambios
+			//         foreach ($product as $field => $value) {
+			//             if (isset($array2[$index][$field])) {
+			//                 $array1[$key][$field] = $array2[$index][$field];
+			//             }
+			//         }
+			//     }
+			// }
+
+			// // Combinar los productos sin cambios del primer array con los productos actualizados del segundo array
+			// $new_array = array_replace(array_combine($array1_ids, $array1), array_combine($array2_ids, $array2));
+
+			// // Mostrar el nuevo array resultante
+			// Utils::dep(array_values($new_array));
+
+	    $array1 = array(
+		    array(
+		        'id' => '1',
+		        'nombre' => 'Producto 1',
+		        'price' => 10.99
+		    ),
+		    array(
+		        'id' => 2,
+		        'nombre' => 'Producto 2',
+		        'price' => 20.49
+		    ),
+		    array(
+		        'id' => 3,
+		        'nombre' => 'Producto 3',
+		        'price' => 15.75
+		    )
+		);
+
+		$array2 = array(
+		    array(
+		        'id' => 2,
+		        'nombre' => 'Producto 2',
+		        'price' => 20.00
+		    ),
+		    array(
+		        'id' => 3,
+		        'nombre' => 'Producto 3',
+		        'price' => 15.75
+		    )
+		);
+
+		// Obtener un array asociativo con los valores de 'id' como clave
+		$array1_ids = array_column($array1, 'id');
+		$array2_ids = array_column($array2, 'id');
+
+		// Recorrer el primer array y verificar si hay cambios en el segundo array
+		foreach ($array1 as $key => $product) {
+		    $id = $product['id'];
+
+		    if (in_array($id, $array2_ids)) {
+		        // Obtener el índice del producto en el segundo array
+		        $index = array_search($id, $array2_ids);
+
+		        // Actualizar el precio y/o nombre del producto si hay cambios
+		        if (isset($array2[$index]['price'])) {
+		            $array1[$key]['price'] = $array2[$index]['price'];
+		        }
+		        if (isset($array2[$index]['nombre'])) {
+		            $array1[$key]['nombre'] = $array2[$index]['nombre'];
+		        }
+		    }
+		}
+
+		// Combinar los productos sin cambios del primer array con los productos actualizados del segundo array
+		$new_array = array_merge($array1, array_diff_key($array2, array_flip($array1_ids)));
+		$new_array = array_unique($new_array, SORT_REGULAR);
+		// Mostrar el nuevo array resultante
+		Utils::dep($new_array);
+
+	    ?>
+
+
+
+
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

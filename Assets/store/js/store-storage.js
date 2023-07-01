@@ -66,7 +66,7 @@ $(window).ready(function () {
 
                     $(this).find('input[type="number"]').on('blur', function () {
                         let value = parseInt($(this).val());
-                        if (isNaN(value) || value === '' || value === null) {
+                        if (isNaN(value) || value === '' || value === null || value == 0) {
                             $(this).val(1);
                         } else if (value > product_quantity) {
                             $(this).val(product_quantity);
@@ -134,9 +134,9 @@ $(window).ready(function () {
     }
 
     /************************************************
-    * QUANTITY OF PRODUCT TO BUY (input-number)
+    * QUANTITY OF PRODUCT TO BUY (input-number) (Al parecer esto hay que eliminarlo)
     ***********************************************/
-    $('.product-variable-quantity').each(function () {
+    $('#product-variable-quantity').each(function () {
         var stock_quantity = parseInt($(this).find('input[type="number"]').attr('max'));
 
         $(this).on('click input', '.btn-minus, .btn-plus, input[type="number"]', function () {
@@ -154,7 +154,7 @@ $(window).ready(function () {
 
         $(this).find('input[type="number"]').on('blur', function () {
             let value = parseInt($(this).val());
-            if (isNaN(value) || value === '' || value === null) {
+            if (isNaN(value) || value === '' || value === null || value == 0) {
                 $(this).val(1);
             } else if (value > stock_quantity) {
                 $(this).val(stock_quantity);

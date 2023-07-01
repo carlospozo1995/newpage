@@ -74,18 +74,13 @@
 	?>
 		
 	</div>
-
+	
+	<script> const base_url = "<?= BASE_URL; ?>"; </script>
+    <script> const media_store= "<?= MEDIA_STORE; ?>"; </script>
 	<!-- <div id="confirmacion"></div> -->
 	<script src="<?= MEDIA_STORE; ?>js/vendor/jquery-3.5.1.min.js"></script>
-	<?php if ($statusCode != 2 && (strtotime(date("Y-m-d\TH:i:s.u")) > strtotime($dateTransaction) + 5)): ?>
-	<script>
-		let productsTransaction =  JSON.parse(localStorage.getItem("shoppingCartData"));
-		let dataIds = $.map(productsTransaction, function(product) {
-            return product.id;
-        });
-
-		// localStorage.removeItem("shoppingCartData");
-	</script>
+	<?php if ($statusCode != 2 && (strtotime(date("Y-m-d\TH:i:s.u")) < strtotime($dateTransaction) + 5)): ?>
+	<script src="<?= MEDIA_STORE; ?>js/store-transaction.js"></script>
 	<?php endif ?>
 </body>
 </html>
