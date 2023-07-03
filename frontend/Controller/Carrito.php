@@ -169,7 +169,7 @@
 
 						    	if($productStock < $requestedAmount || $requestedAmount <= 0 || $requestedAmount === null){$amountProductNewArr = $productStock;}
 
-						    	if(floatval($productPrice) != floatval($requestedPrice)){
+						    	if(floatval($productPrice) != floatval($requestedPrice) && $productStock == $requestedAmount){
 						    		$amountProductNewArr = $requestedAmount;
 						    	}
 
@@ -195,39 +195,56 @@
 							$total = $subtotal + $iva + $shipping_cost;
 
 							if (count($productsIdsArr) == count($amountProductsArr)) {
-							    // $updateStock = Models_Store::updateStockTransaction($productIdsArr, $amountProductsArr, $productsIds);
+							    $updateStock = Models_Store::updateStockTransaction($productsIdsArr, $amountProductsArr, $productsIds);
 							}
 						} else {
 						    $status = false;
 						    $storageChanges = $notEnoughStock;
 
+							$newArray = array();
 
-						    $array1_ids = array_column($localStorage, 'id');
-							$array2_ids = array_column($notEnoughStock, 'id');
+							$indexedArray2 = array();
+							foreach ($storageChanges as $item2) {
+							    $indexedArray2[$item2['id']] = $item2;
+							}
 
-							// Recorrer el primer array y verificar si hay cambios en el segundo array
-							foreach ($localStorage as $key => $product) {
-							    $id = $product['id'];
+							foreach ($localStorage as $item1) {
+							    if (isset($indexedArray2[$item1['id']])) {
+							        $item2 = $indexedArray2[$item1['id']];
 
-							    if (in_array($id, $array2_ids)) {
-							        // Obtener el índice del producto en el segundo array
-							        $index = array_search($id, $array2_ids);
-
-							        // Actualizar el precio y/o nombre del producto si hay cambios
-							        if (isset($notEnoughStock[$index]['price'])) {
-							            $localStorage[$key]['price'] = $notEnoughStock[$index]['price'];
+							        if ($item1['stock'] != $item2['stock'] || $item1['price'] != $item2['price']) {
+							            $newArray[] = $item2;
+							        } else {
+							            $newArray[] = $item1;
 							        }
-							        if (isset($notEnoughStock[$index]['nombre'])) {
-							            $localStorage[$key]['nombre'] = $notEnoughStock[$index]['nombre'];
-							        }
+							    } else {
+							        $newArray[] = $item1;
 							    }
 							}
 
-							// Combinar los productos sin cambios del primer array con los productos actualizados del segundo array
-							$new_array = array_merge($localStorage, array_diff_key($notEnoughStock, array_flip($array1_ids)));
-							$new_array = array_unique($new_array, SORT_REGULAR);
+							foreach ($storageChanges as $item2) {
+							    if (!isset($indexedArray2[$item2['id']])) {
+							        $newArray[] = $item2;
+							    }
+							}
 
-							$newArrayStorage = $new_array;
+							$newArrayStorage = $newArray;
+
+							foreach ($newArrayStorage as $value) {
+								$subtotal += floatval($value['price']) * intval($value['amount_product']);
+							}
+
+							if ($subtotal < 100) {
+								if($main_town == 1){
+									$shipping_cost = 0;
+								}else if($main_town == 2){
+									$shipping_cost = 5;
+								}else{
+									$shipping_cost = 10;
+								}
+							}
+
+							$total = $subtotal + $iva + $shipping_cost;
 
 						}
 						$data = array('status' => $status, 'storageChanges' => $storageChanges, 'newArrayStorage' => $newArrayStorage , "total" => $total, "unique_code" => $unique_code);

@@ -85,125 +85,102 @@
 
 	    <?php
 
-	    	// $array1 = array(
-			//     array(
-			//         'id' => 1,
-			//         'nombre' => 'Producto 1',
-			//         'price' => 10.99,
-			//         'local' => 1
-			//     ),
-			//     array(
-			//         'id' => 2,
-			//         'nombre' => 'Producto 2',
-			//         'price' => 20.49,
-			//         'local' => 2
-			//     ),
-			//     array(
-			//         'id' => 3,
-			//         'nombre' => 'Producto 3',
-			//         'price' => 15.75,
-			//         'local' => 3
-			//     )
-			// );
-
-			// $array2 = array(
-			//     array(
-			//         'id' => 2,
-			//         'nombre' => 'Producto 2',
-			//         'price' => 20.00
-			//     ),
-			//     array(
-			//         'id' => 3,
-			//         'nombre' => 'Producto 3',
-			//         'price' => 15.75
-			//     )
-			// );
-
-			// // Obtener un array asociativo con los valores de 'id' como clave
-			// $array1_ids = array_column($array1, 'id');
-			// $array2_ids = array_column($array2, 'id');
-
-			// // Recorrer el primer array y verificar si hay cambios en el segundo array
-			// foreach ($array1 as $key => $product) {
-			//     $id = $product['id'];
-
-			//     if (in_array($id, $array2_ids)) {
-			//         // Obtener el índice del producto en el segundo array
-			//         $index = array_search($id, $array2_ids);
-
-			//         // Actualizar los campos del producto si hay cambios
-			//         foreach ($product as $field => $value) {
-			//             if (isset($array2[$index][$field])) {
-			//                 $array1[$key][$field] = $array2[$index][$field];
-			//             }
-			//         }
-			//     }
-			// }
-
-			// // Combinar los productos sin cambios del primer array con los productos actualizados del segundo array
-			// $new_array = array_replace(array_combine($array1_ids, $array1), array_combine($array2_ids, $array2));
-
-			// // Mostrar el nuevo array resultante
-			// Utils::dep(array_values($new_array));
-
-	    $array1 = array(
+		$array1 = array(
 		    array(
-		        'id' => '1',
-		        'nombre' => 'Producto 1',
-		        'price' => 10.99
-		    ),
+	            'id' => 'f5758148488669b5dbb09340b774e69b',
+	            'code' => '133644000',
+	            'name' => 'Cocina A Gas 4 Quemadores Em5100eb0',
+	            'price' => '2',
+	            'stock' => '5',
+	            'url' => 'cocina-a-gas-4-quemadores-em5100eb0',
+	            'image' => 'http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_1_c7f844dc4796aca33627688918b5222b.jpg',
+	            'amount_product' => '3'
+		        ),
 		    array(
-		        'id' => 2,
-		        'nombre' => 'Producto 2',
-		        'price' => 20.49
-		    ),
-		    array(
-		        'id' => 3,
-		        'nombre' => 'Producto 3',
-		        'price' => 15.75
+	            'id' => '87439af5fb123070f781d885084b90f9',
+	            'code' => '39220',
+	            'name' => 'Minicomponente 1 cuerpo JBLPARTYBOX710AM',
+	            'price' => '1',
+	            'stock' => '4',
+	            'url' => 'minicomponente-1-cuerpo-jblpartybox710am',
+	            'image' => 'http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_2_bceddd68f307dcd05b53406dfba397c4.jpg',
+	            'amount_product' => '2'
+		        ),
+			array(
+	            'id' => 'c355510a7978ca55ea6471512b6b2dae',
+	            'code' => '15252000556',
+	            'name' => 'Audifonos C/microfono negro  H200',
+	            'price' => '25.01',
+	            'stock' => '3',
+	            'url' => 'audifonos-c-microfono-negro-h200',
+	            'image' => 'http://localhost/carlos/page/Assets/admin/files/images/upload_products/empty_img.png',
+	            'amount_product' => '1'
 		    )
 		);
 
 		$array2 = array(
-		    array(
-		        'id' => 2,
-		        'nombre' => 'Producto 2',
-		        'price' => 20.00
-		    ),
-		    array(
-		        'id' => 3,
-		        'nombre' => 'Producto 3',
-		        'price' => 15.75
-		    )
+			array(
+				'id' => 'f5758148488669b5dbb09340b774e69b',
+				'code' => '133644000',
+				'name' => 'Cocina A Gas 4 Quemadores Em5100eb0',
+				'price' => '2',
+				'stock' => '2',
+				'url' => '',
+				'image' => 'http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_1_c7f844dc4796aca33627688918b5222b.jpg',
+				'amount_product' => '2'
+			),
+			array(
+				'id' => '87439af5fb123070f781d885084b90f9',
+				'code' => '39220',
+				'name' => 'Minicomponente 1 cuerpo JBLPARTYBOX710AM',
+				'price' => '3',
+				'stock' => '4',
+				'url' => '',
+				'image' => 'http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_2_bceddd68f307dcd05b53406dfba397c4.jpg',
+				'amount_product' => '2'
+			)
 		);
+// Crear un nuevo array combinando los elementos de ambos arrays
+$newArray = array();
 
-		// Obtener un array asociativo con los valores de 'id' como clave
-		$array1_ids = array_column($array1, 'id');
-		$array2_ids = array_column($array2, 'id');
+							// Indexar los elementos del array2 por ID
+							$indexedArray2 = array();
+							foreach ($array2 as $item2) {
+							    $indexedArray2[$item2['id']] = $item2;
+							}
 
-		// Recorrer el primer array y verificar si hay cambios en el segundo array
-		foreach ($array1 as $key => $product) {
-		    $id = $product['id'];
+							// Recorrer los elementos del array1
+							foreach ($array1 as $item1) {
+							    if (isset($indexedArray2[$item1['id']])) {
+							        $item2 = $indexedArray2[$item1['id']];
 
-		    if (in_array($id, $array2_ids)) {
-		        // Obtener el índice del producto en el segundo array
-		        $index = array_search($id, $array2_ids);
+							        // Comparar el stock y precio
+							        if ($item1['stock'] != $item2['stock'] || $item1['price'] != $item2['price']) {
+							            // Si hay cambios, agregar el elemento del array2 al nuevo array
+							            $newArray[] = $item2;
+							        } else {
+							            // Si no hay cambios, agregar el elemento del array1 al nuevo array
+							            $newArray[] = $item1;
+							        }
+							    } else {
+							        // Si el elemento del array1 no existe en el array2, agregarlo al nuevo array
+							        $newArray[] = $item1;
+							    }
+							}
 
-		        // Actualizar el precio y/o nombre del producto si hay cambios
-		        if (isset($array2[$index]['price'])) {
-		            $array1[$key]['price'] = $array2[$index]['price'];
-		        }
-		        if (isset($array2[$index]['nombre'])) {
-		            $array1[$key]['nombre'] = $array2[$index]['nombre'];
-		        }
-		    }
-		}
+							// Agregar los elementos restantes del array2 al nuevo array
+							foreach ($array2 as $item2) {
+							    if (!isset($indexedArray2[$item2['id']])) {
+							        $newArray[] = $item2;
+							    }
+							}
 
-		// Combinar los productos sin cambios del primer array con los productos actualizados del segundo array
-		$new_array = array_merge($array1, array_diff_key($array2, array_flip($array1_ids)));
-		$new_array = array_unique($new_array, SORT_REGULAR);
-		// Mostrar el nuevo array resultante
-		Utils::dep($new_array);
+
+// Imprimir el nuevo array
+Utils::dep($newArray);
+
+
+
 
 	    ?>
 
