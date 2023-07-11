@@ -7,7 +7,7 @@
 			if (isset($_SESSION['idUser'])) {
 				header('Location: '.BASE_URL.'Dashboard');
 			}else{
-				setcookie('PHPSESSID', '', time() - 3600, '/');
+				setcookie('PHPSESSID', '', time() - 7200, '/');
 			}
 			
 			$action = Utils::getParam("action", "");

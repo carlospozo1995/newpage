@@ -1,9 +1,9 @@
 <?php
 
 	class Controller_Carrito{
-		
+
 		public function buildPage()
-		{	
+		{
 			Utils::sessionStartStore();
 			// session_start();
 			$data = array();
@@ -24,7 +24,7 @@
 													'stock' => intval($arrInfoProd['stock']),
 													'url' => $arrInfoProd['url'],
 													'image' => $arrInfoProd['images'][0]['url_image']);
-							
+
 								$data = array("status" => true, "product_added" => $data_product);
 							}
 						}else{
@@ -38,7 +38,7 @@
 				        $productIds = implode(',', array_map(function($data) {
 						    return Utils::desencriptar($data);
 						}, $_POST['productIds']));
-						$products = Models_Store::getProductsStorage($productIds);
+						$products = Models_Store::getOrderedProducts($productIds);
 						if(!empty($products)){
 
 							$newArray = array();
@@ -58,18 +58,12 @@
 							}
 							echo json_encode($newArray);
 						}
-					}	
+					}
 				break;
 
 				case 'paymentTypeValidation':
 					if(isset($_POST)){
-						$card_payment = "";
-						// $data_storage = $_POST['dataStorage'];
-						// $unique_code = "";
-						// $shipping_cost = 0;
-						// $subtotal = 0;
-						// $iva = 0;
-						// $total = 0;
+						$ordered_products = $_POST['ordered_products'];
 						$dni_client = $_POST['dni'];
 						$name_client = $_POST['name'];
 						$surname_client = $_POST['surname'];
@@ -82,32 +76,17 @@
 						$customer_message = $_POST['customer_message'];
 						$payment_method = isset($_POST['payment_method']) ? $_POST['payment_method'] : '';
 						$info_client_state = filter_var($_POST['info_client_state'], FILTER_VALIDATE_BOOLEAN);
-						$check_state = filter_var($_POST['check_state'], FILTER_VALIDATE_BOOLEAN);				
-						
+						$check_state = filter_var($_POST['check_state'], FILTER_VALIDATE_BOOLEAN);
+
+						$payment_type = "";
+						$verifyProductsDb = self::verifyProductsDb($ordered_products, $main_town);
+
 						try {
-							if ($info_client_state && $check_state && $payment_method != '' && $main_town != '' && $street != '' && $addressee) {
-								// foreach ($data_storage as $value) {
-								// 	$subtotal += $value['price'] * $value['amount_product'];
-								// }
-
-								// if ($subtotal < 100) {
-								// 	if($main_town == 1){
-								// 		$shipping_cost = 0;
-								// 	}else if($main_town == 2){
-								// 		$shipping_cost = 5;
-								// 	}else{
-								// 		$shipping_cost = 10;
-								// 	}
-								// }
-
-								// $total = $subtotal + $iva + $shipping_cost;
-
+							if ($info_client_state && $check_state && $payment_method != '' && $main_town != '' && $street != '' && $addressee != '' && $ordered_products != '') {
 								if($payment_method == 'bank-transfer'){
-									$card_payment = false;
-									// $unique_code = Utils::uniqueCode();
+									$payment_type = false;
 								}else if($payment_method == 'credit-card'){
-									$card_payment = true;
-									// $unique_code = Utils::uniqueCode();
+									$payment_type = true;
 								}else{
 									throw new Exception("No es posible realizar el proceso intentelo mas tarde.");
 								}
@@ -118,138 +97,8 @@
 							$status = false;
 							$msg = $e->getMessage();
 						}
-						$data = array("status"=>$status,"msg"=>$msg, "card_payment" => $card_payment);
-						// $data = array("status"=>$status,"msg"=>$msg, "card_payment" => $card_payment, "total" => $total, "unique_code" => $unique_code);
+						$data = array("status"=>$status, 'paymentType' => $payment_type, 'verifyProductsDb' => $verifyProductsDb, "msg"=>$msg);
 						echo json_encode($data);
-					}
-				break;
-
-				case 'checkProductStock':
-					if (isset($_POST)) {
-						$localStorage = $_POST['cartStorage'];
-						$main_town = $_POST['main_town'];
-						$unique_code = Utils::uniqueCode();
-						$shipping_cost = 0;
-						$subtotal = 0;
-						$iva = 0;
-						$total = 0;
-
-						$productsIdsArr = array_map(function($data){
-							return Utils::desencriptar($data['id']);
-						}, $localStorage);
-						$amountProductsArr = array_map(function($data){
-							return $data['amount_product'];
-						}, $localStorage); 
-						$productsIds = implode(',', $productsIdsArr);
-						$amountProducts = implode(',', $amountProductsArr);
-						$priceProducts = implode(',', array_map(function($data){
-							return $data['price'];
-						}, $localStorage));
-
-						$request = Models_Store::getProductsStorage($productsIds);
-
-						$notEnoughStock = array();
-						$storageChanges = "";
-						$amountProductNewArr = "";
-						$newArrayStorage = "";
-						foreach ($request as $row) {
-						    $productId = $row['id_product'];
-						    $productStock = $row['stock'];
-						    $productPrice = $row['price'];
-
-						    $index = array_search($productId, explode(',', $productsIds));
-						    $requestedAmount = explode(',', $amountProducts)[$index];
-						    $requestedPrice = explode(',', $priceProducts)[$index];
-
-						    if (($productStock < $requestedAmount || $requestedAmount <= 0 || $requestedAmount === null) || (floatval($productPrice) != floatval($requestedPrice))) {
-
-						    	if (($productStock < $requestedAmount || $requestedAmount <= 0 || $requestedAmount === null) && (floatval($productPrice) != floatval($requestedPrice))) {
-						    		$amountProductNewArr = $productStock;
-						    	}
-
-						    	if($productStock < $requestedAmount || $requestedAmount <= 0 || $requestedAmount === null){$amountProductNewArr = $productStock;}
-
-						    	if(floatval($productPrice) != floatval($requestedPrice) && $productStock == $requestedAmount){
-						    		$amountProductNewArr = $requestedAmount;
-						    	}
-
-						    	$notEnoughStock[] = array('amount_product' =>$amountProductNewArr, 'id' => Utils::encriptar($productId), 'name' => $row['name_product'], 'price' => $row['price'], 'stock' => $productStock, 'image' => $row['images'][0]['url_image'], 'code' => $row['code'], 'url' => '');
-						    }
-						}
-
-						if (empty($notEnoughStock)) {
-							foreach ($localStorage as $value) {
-								$subtotal += $value['price'] * $value['amount_product'];
-							}
-
-							if ($subtotal < 100) {
-								if($main_town == 1){
-									$shipping_cost = 0;
-								}else if($main_town == 2){
-									$shipping_cost = 5;
-								}else{
-									$shipping_cost = 10;
-								}
-							}
-
-							$total = $subtotal + $iva + $shipping_cost;
-
-							if (count($productsIdsArr) == count($amountProductsArr)) {
-							    $updateStock = Models_Store::updateStockTransaction($productsIdsArr, $amountProductsArr, $productsIds);
-							}
-						} else {
-						    $status = false;
-						    $storageChanges = $notEnoughStock;
-
-							$newArray = array();
-
-							$indexedArray2 = array();
-							foreach ($storageChanges as $item2) {
-							    $indexedArray2[$item2['id']] = $item2;
-							}
-
-							foreach ($localStorage as $item1) {
-							    if (isset($indexedArray2[$item1['id']])) {
-							        $item2 = $indexedArray2[$item1['id']];
-
-							        if ($item1['stock'] != $item2['stock'] || $item1['price'] != $item2['price']) {
-							            $newArray[] = $item2;
-							        } else {
-							            $newArray[] = $item1;
-							        }
-							    } else {
-							        $newArray[] = $item1;
-							    }
-							}
-
-							foreach ($storageChanges as $item2) {
-							    if (!isset($indexedArray2[$item2['id']])) {
-							        $newArray[] = $item2;
-							    }
-							}
-
-							$newArrayStorage = $newArray;
-
-							foreach ($newArrayStorage as $value) {
-								$subtotal += floatval($value['price']) * intval($value['amount_product']);
-							}
-
-							if ($subtotal < 100) {
-								if($main_town == 1){
-									$shipping_cost = 0;
-								}else if($main_town == 2){
-									$shipping_cost = 5;
-								}else{
-									$shipping_cost = 10;
-								}
-							}
-
-							$total = $subtotal + $iva + $shipping_cost;
-
-						}
-						$data = array('status' => $status, 'storageChanges' => $storageChanges, 'newArrayStorage' => $newArrayStorage , "total" => $total, "unique_code" => $unique_code);
-						echo json_encode($data);
-
 					}
 				break;
 			
@@ -274,6 +123,107 @@
 				break;
 			}
 		}
+
+		public function verifyProductsDb($ordereProducts, $mainTown) {
+			$unique_code = Utils::uniqueCode();
+			$shipping_cost = 0;
+			$subtotal = 0;
+			$iva = 0;
+			$total = 0;
+
+			$productsIdsArr = array_map(function($data){return Utils::desencriptar($data['id']);}, $ordereProducts);
+			$productsAmountArr = array_map(function($data){return $data['amount_product'];}, $ordereProducts);
+			$productsPriceArr = array_map(function($data){ return $data['price']; }, $ordereProducts);
+			
+			$productsIds = implode(',', $productsIdsArr);
+						
+			$requestProducts = Models_Store::getOrderedProducts($productsIds);
+			
+			$productsWithChanges = array();
+			$newQuantityProduct = null;
+			$newProductsArray = array();
+			$stockUpdate = true;
+
+			foreach ($requestProducts as $product) {
+				$id  = $product['id_product'];
+				$stock = intval( $product['stock']);
+				$price = floatval($product['price']);
+
+				$index = array_search($id, $productsIdsArr);
+				$orderedAmount = intval($productsAmountArr[$index]);
+				$orderedPrice = floatval($productsPriceArr[$index]);
+
+				if (($stock < $orderedAmount || $stock <= 0 || $stock === null) || ($price != $orderedPrice)) {
+					
+					$stockUpdate = false;
+					if ($stock < $orderedAmount || $stock <= 0 || $stock === null) {
+						$newQuantityProduct = $stock;
+					}
+
+					if($orderedAmount < $stock){
+						$newQuantityProduct = $orderedAmount;
+					}
+
+					$productsWithChanges[] = array('amount_product' => $newQuantityProduct, 'id' => Utils::encriptar($id), 'name' => $product['name_product'], 'price' => $price, 'stock' => $stock, 'image' => $product['images'][0]['url_image'], 'code' => intval($product['code']), 'url' => '');
+				}
+			}
+
+			if($stockUpdate === true){
+				Models_Store::updateStockTransaction($productsIdsArr, $productsAmountArr, $productsIds);
+			}
+			
+			if (empty($productsWithChanges)) {
+				foreach ($ordereProducts as $product) {
+					$subtotal += $product['price'] * $product['amount_product'];
+				}
+			}else{
+				$indexedArray2 = array();
+				foreach ($productsWithChanges as $item2) {
+					$indexedArray2[$item2['id']] = $item2;
+				}
+				foreach ($ordereProducts as $item1) {
+					if (isset($indexedArray2[$item1['id']])) {
+						$item2 = $indexedArray2[$item1['id']];
+						
+						if ($item1['stock'] != $item2['stock'] || $item1['price'] != $item2['price']) {
+							$newProductsArray[] = $item2;
+						}else{
+							$newProductsArray[] = $item1;
+						}
+					}else{
+						$newProductsArray[] = $item1; 
+					}
+				}
+
+				foreach ($productsWithChanges as $item2) {
+					if(!isset($indexedArray2[$item2['id']])){
+						$newProductsArray[] = $item2;
+					}
+				}
+
+				foreach ($newProductsArray as $value) {
+					$subtotal += floatval($value['price']) * intval($value['amount_product']);
+				}
+
+			}
+
+			if ($subtotal < 100) {
+				if($mainTown == 1){
+					$shipping_cost = 0;
+				}else if($mainTown == 2){
+					$shipping_cost = 5;
+				}else{
+					$shipping_cost = 10;
+				}
+			}
+
+			if ($subtotal > 0) {
+				$total = $subtotal + $iva + $shipping_cost;
+			}
+
+			return array('total' =>  $total, 'flag_stockUpdate' => $stockUpdate, 'productsWithChanges' => $productsWithChanges, 'newProductsArray ' => $newProductsArray);
+		}
+
 	}
 
 ?>

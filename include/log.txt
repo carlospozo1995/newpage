@@ -1,398 +1,467 @@
-[2023/07/02 10:48:33] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:48:33] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:48:33] SQL execute: UPDATE products SET stock = CASE id_product ELSE stock END WHERE FIND_IN_SET(id_product, '2')
-[2023/07/02 10:49:21] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:49:21] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:49:27] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:49:27] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:49:35] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:49:35] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:49:35] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN stock - 4 ELSE stock END WHERE FIND_IN_SET(id_product, '2')
-[2023/07/02 10:49:42] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:49:42] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:50:10] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:50:10] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:50:10] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:50:11] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:50:11] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:50:11] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:50:11] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:50:22] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:50:22] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:50:22] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:50:23] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:50:23] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:50:23] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:50:23] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:51:02] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:51:02] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:51:02] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:51:06] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:51:06] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:51:06] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:51:06] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:51:15] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:51:15] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:51:15] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN stock - 4 ELSE stock END WHERE FIND_IN_SET(id_product, '2')
-[2023/07/02 10:51:23] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:51:23] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:52:45] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:52:45] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:52:45] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:52:47] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:52:47] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:52:47] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:52:48] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:52:48] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:52:48] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:52:48] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:52:53] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:52:53] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:52:53] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:52:53] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:52:54] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:52:54] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:52:54] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:52:54] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
-[2023/07/02 10:52:54] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/07/02 10:52:54] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/07/02 10:52:54] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
-[2023/07/02 10:52:54] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
-[2023/07/02 10:52:54] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/07/02 10:52:54] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/07/02 10:52:54] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/07/02 10:52:54] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/07/02 10:52:54] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/07/02 10:52:54] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:52:56] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:52:56] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:53:02] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:02] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:02] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:03] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:53:03] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:53:08] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:08] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:08] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:10] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:53:10] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:53:10] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:53:10] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:53:22] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:22] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:22] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:22] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
-[2023/07/02 10:53:22] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/07/02 10:53:22] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/07/02 10:53:22] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
-[2023/07/02 10:53:22] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
-[2023/07/02 10:53:22] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/07/02 10:53:22] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/07/02 10:53:22] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/07/02 10:53:22] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/07/02 10:53:22] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/07/02 10:53:22] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:24] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:53:24] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:53:26] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:26] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:26] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:27] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:53:27] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:53:34] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:34] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:34] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:35] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:53:35] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:53:35] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:53:35] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:53:47] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:47] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:47] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:47] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
-[2023/07/02 10:53:47] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/07/02 10:53:47] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/07/02 10:53:47] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
-[2023/07/02 10:53:47] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
-[2023/07/02 10:53:47] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/07/02 10:53:47] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/07/02 10:53:47] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/07/02 10:53:47] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/07/02 10:53:47] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/07/02 10:53:47] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:49] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:53:49] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:53:53] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:53] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:53] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:55] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:53:55] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:53:57] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:57] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:57] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:57] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
-[2023/07/02 10:53:57] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/07/02 10:53:57] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/07/02 10:53:57] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
-[2023/07/02 10:53:57] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
-[2023/07/02 10:53:57] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/07/02 10:53:57] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/07/02 10:53:57] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/07/02 10:53:57] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/07/02 10:53:57] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/07/02 10:53:57] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:53:59] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:53:59] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:54:02] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:54:02] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:54:02] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:54:04] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:54:04] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:54:11] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:54:11] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:54:11] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:54:13] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:54:13] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:54:13] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:54:15] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:54:15] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:54:15] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:54:15] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:54:16] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:54:16] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:54:16] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:54:16] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:54:53] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:54:53] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:54:53] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN stock - 2 ELSE stock END WHERE FIND_IN_SET(id_product, '2')
-[2023/07/02 10:55:18] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:55:18] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:55:18] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN stock - 1 ELSE stock END WHERE FIND_IN_SET(id_product, '2')
-[2023/07/02 10:55:43] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:55:43] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:55:43] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:55:45] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:55:45] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:55:45] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:55:47] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:55:47] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:55:47] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:55:47] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:55:49] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:55:49] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:55:49] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:55:49] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:56:09] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:56:09] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:56:09] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:56:09] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
-[2023/07/02 10:56:09] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/07/02 10:56:09] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/07/02 10:56:09] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
-[2023/07/02 10:56:09] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
-[2023/07/02 10:56:09] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/07/02 10:56:09] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/07/02 10:56:09] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/07/02 10:56:09] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/07/02 10:56:09] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/07/02 10:56:09] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:56:11] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:56:11] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:56:13] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:56:13] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:56:13] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:56:15] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:56:15] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:56:18] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:56:18] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:56:18] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:56:20] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:56:20] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:56:20] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:56:20] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:56:26] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:56:26] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:56:26] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:56:26] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
-[2023/07/02 10:56:26] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/07/02 10:56:26] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/07/02 10:56:26] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
-[2023/07/02 10:56:26] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
-[2023/07/02 10:56:26] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/07/02 10:56:26] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/07/02 10:56:26] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/07/02 10:56:26] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/07/02 10:56:26] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/07/02 10:56:26] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:56:28] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:56:28] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:56:35] SQL Query: SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = '2'
-[2023/07/02 10:56:35] SQL Query: SELECT image FROM img_product WHERE product_id = '2'
-[2023/07/02 10:56:37] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:56:37] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:56:37] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:56:41] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:56:41] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:56:41] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:56:41] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:57:04] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:57:04] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:57:04] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN stock - 2 ELSE stock END WHERE FIND_IN_SET(id_product, '2')
-[2023/07/02 10:57:08] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:57:08] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:59:27] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:59:27] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:59:27] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:59:29] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:59:29] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:59:29] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 10:59:34] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:59:34] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:59:34] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:59:34] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:59:35] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:59:35] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 10:59:35] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 10:59:35] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 11:15:51] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:15:51] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:15:51] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:15:54] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:15:54] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:15:54] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:15:57] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 11:15:57] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 11:15:57] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 11:15:57] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 11:15:59] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 11:15:59] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 11:15:59] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 11:15:59] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 11:16:10] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:16:10] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:16:10] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:16:10] SQL Query: SELECT * FROM categories WHERE (url = 'electrodomesticos' AND fatherCategory IS NULL)
-[2023/07/02 11:16:10] SQL Query: SELECT id_category FROM categories WHERE url = 'electrodomesticos'
-[2023/07/02 11:16:10] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/07/02 11:16:10] SQL Query: SELECT * FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND status = 1  LIMIT 0, 10
-[2023/07/02 11:16:10] SQL Query: SELECT * FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND status = 1 
-[2023/07/02 11:16:10] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
-[2023/07/02 11:16:10] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/07/02 11:16:10] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:16:12] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 11:16:12] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 11:16:14] SQL Query: SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = '1'
-[2023/07/02 11:16:14] SQL Query: SELECT image FROM img_product WHERE product_id = '1'
-[2023/07/02 11:16:18] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:16:18] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:16:18] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:16:20] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
-[2023/07/02 11:16:20] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
-[2023/07/02 11:16:20] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
-[2023/07/02 11:16:20] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
-[2023/07/02 11:17:51] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:17:51] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:17:51] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:17:51] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
-[2023/07/02 11:17:51] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/07/02 11:17:51] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/07/02 11:17:51] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
-[2023/07/02 11:17:51] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
-[2023/07/02 11:17:51] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/07/02 11:17:51] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/07/02 11:17:51] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/07/02 11:17:51] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/07/02 11:17:51] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/07/02 11:17:51] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:17:53] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 11:17:53] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 11:17:58] SQL Query: SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = '2'
-[2023/07/02 11:17:58] SQL Query: SELECT image FROM img_product WHERE product_id = '2'
-[2023/07/02 11:18:01] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:18:01] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:18:01] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:18:02] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 11:18:02] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 11:18:02] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 11:18:02] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 11:18:28] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:18:28] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:18:28] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:18:28] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
-[2023/07/02 11:18:28] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/07/02 11:18:28] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/07/02 11:18:28] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
-[2023/07/02 11:18:28] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
-[2023/07/02 11:18:28] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/07/02 11:18:28] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/07/02 11:18:28] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/07/02 11:18:28] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/07/02 11:18:28] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/07/02 11:18:28] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:18:30] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
-[2023/07/02 11:18:30] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
-[2023/07/02 11:18:35] SQL Query: SELECT id_category FROM categories WHERE url = 'electrodomesticos'
-[2023/07/02 11:18:35] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/07/02 11:18:35] SQL Query: SELECT * FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND status = 1  LIMIT 0, 10
-[2023/07/02 11:18:35] SQL Query: SELECT * FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND status = 1 
-[2023/07/02 11:18:35] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
-[2023/07/02 11:18:35] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/07/02 11:18:37] SQL Query: SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = '1'
-[2023/07/02 11:18:37] SQL Query: SELECT image FROM img_product WHERE product_id = '1'
-[2023/07/02 11:18:40] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:18:40] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:18:40] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:18:42] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
-[2023/07/02 11:18:42] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
-[2023/07/02 11:18:48] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:18:48] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:18:48] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:18:48] SQL Query: SELECT * FROM products WHERE url = 'cocina-a-gas-4-quemadores-em5100eb0' AND status = 1
-[2023/07/02 11:18:48] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
-[2023/07/02 11:18:48] SQL Query: SELECT 
-                c1.name_category AS category1, c1.url AS url1,
-                c2.name_category AS category2, c2.url AS url2,
-                c3.name_category AS category3, c3.url AS url3
-            FROM 
-                (SELECT * FROM products WHERE id_product = '1') p
-                JOIN categories c1 ON p.category_id = c1.id_category
-                LEFT JOIN categories c2 ON c1.fatherCategory = c2.id_category
-                LEFT JOIN categories c3 ON c2.fatherCategory = c3.id_category
-            
-[2023/07/02 11:18:49] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
-[2023/07/02 11:18:49] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
-[2023/07/02 11:18:55] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:18:55] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:18:55] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:18:57] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
-[2023/07/02 11:18:57] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
-[2023/07/02 11:18:57] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
-[2023/07/02 11:18:57] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
-[2023/07/02 11:20:42] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
-[2023/07/02 11:20:42] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
-[2023/07/02 11:20:42] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN stock - 3 WHEN 1 THEN stock - 1 ELSE stock END WHERE FIND_IN_SET(id_product, '2,1')
-[2023/07/02 11:20:55] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
-[2023/07/02 11:20:55] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
-[2023/07/02 11:22:46] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
-[2023/07/02 11:22:46] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
-[2023/07/02 11:23:51] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
-[2023/07/02 11:23:51] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
-[2023/07/02 11:25:59] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:25:59] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:25:59] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:26:02] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
-[2023/07/02 11:26:02] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
-[2023/07/02 11:26:02] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
-[2023/07/02 11:26:02] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
-[2023/07/02 11:26:03] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:26:03] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:26:03] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/07/02 11:26:06] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
-[2023/07/02 11:26:06] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
-[2023/07/02 11:26:06] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
-[2023/07/02 11:26:06] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
-[2023/07/02 11:27:08] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
-[2023/07/02 11:27:08] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
-[2023/07/02 11:27:08] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN stock - 3 WHEN 1 THEN stock - 1 ELSE stock END WHERE FIND_IN_SET(id_product, '2,1')
-[2023/07/02 11:27:14] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,1) AND status = 1
-[2023/07/02 11:27:14] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,1)
+[2023/07/10 11:27:48] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,3) AND status = 1
+[2023/07/10 11:27:48] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,3)
+[2023/07/10 11:27:48] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN CASE WHEN stock > 0 THEN stock - 4 ELSE 0 END WHEN 3 THEN CASE WHEN stock > 0 THEN stock - 3 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '2,3')
+[2023/07/10 11:27:58] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,3) AND status = 1
+[2023/07/10 11:27:58] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,3)
+[2023/07/10 11:28:06] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,3) AND status = 1
+[2023/07/10 11:28:06] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,3)
+[2023/07/10 11:50:26] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/07/10 11:50:26] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/07/10 11:50:27] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/07/10 11:50:33] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/07/10 11:50:33] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/07/10 11:50:36] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg'
+[2023/07/10 11:50:36] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/07/10 11:50:36] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p>3</p>
+<p>&nbsp;</p>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="4.00",stock="5",prevPrice="5.00",discount="9",cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/07/10 11:50:40] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '3'
+[2023/07/10 11:50:40] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/07/10 11:50:43] SQL Query: SELECT * FROM products WHERE code = '134899000' AND id_product != 3
+[2023/07/10 11:50:43] SQL execute: UPDATE products SET category_id="203",code="134899000",name_product="Televisor 65' Android 11 Uhd",desMain="Última tecnología High Dynamic Range (HDR), que permite disfrutar de un increíble brillo, color, contraste, detalle y dimensionalidad",desGeneral="<div><strong>Caracter&iacute;sticas:</strong></div>
+<ul>
+<li>
+<div>Chromecast Incorporado</div>
+</li>
+<li>
+<div>Resoluci&oacute;n 3840x2160</div>
+</li>
+<li>
+<div>CPU ARM Cortex Quad Core</div>
+</li>
+<li>
+<div>Memoria 2 GB DDR</div>
+</li>
+<li>
+<div>Flash 8G</div>
+</li>
+<li>
+<div>Dolby Audio: Audio Power 8W+8W.</div>
+</li>
+<li>
+<div>Sonido Envolvente Simulado</div>
+</li>
+<li>
+<div>1 Puerto Ethernet / LAN</div>
+</li>
+<li>
+<div>Apto Para Red</div>
+</li>
+<li>
+<div>Frecuencia de Refresco de Pantalla 60HZ</div>
+</li>
+<li>
+<div>Se&ntilde;al de Video Soportada PAL M/N; NTSC M</div>
+</li>
+<li>
+<div>3 Puertos HDMI</div>
+</li>
+<li>
+<div>Potencia de Salida de Bocina 8 Ohm- 10w X2</div>
+</li>
+</ul>
+<div><strong>Incluye:</strong></div>
+<ul>
+<li>
+<div>Procesador Quad Core</div>
+</li>
+<li>
+<div>Control Remoto controlado por voz</div>
+</li>
+<li>
+<div>Google Assistant</div>
+</li>
+<li>
+<div>App Store: Google Play</div>
+</li>
+<li>
+<div>Apps Predefinidas: Netflix, Youtube,</div>
+</li>
+<li>
+<div>Prime Video y Play Store</div>
+</li>
+<li>
+<div>Bluetooth&reg;</div>
+</li>
+<li>
+<div>Chromecast / DLNA</div>
+</li>
+<li>
+<div>Surround Stereo</div>
+</li>
+<li>
+<div>Sound Mode</div>
+</li>
+<li>
+<div>Entradas 2USB / 3HDMI</div>
+</li>
+<li>
+<div>Manual de usuario</div>
+</li>
+<li>
+<div>Bases de patas</div>
+</li>
+</ul>
+<div><strong>Garant&iacute;a:&nbsp;</strong>24 meses</div>",sliderMbl= NULL,sliderDst= NULL,sliderDes= NULL,brand="DIGGIO",price="3.00",stock="4",prevPrice="749.00",discount="1",cantDues= NULL,priceDues= NULL,url="televisor-65-android-11-uhd",status="1" WHERE id_product='3'
+[2023/07/10 11:50:57] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '2'
+[2023/07/10 11:50:57] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/07/10 11:51:02] SQL Query: SELECT sliderDst, sliderMbl FROM products WHERE sliderDst = 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg' AND sliderMbl = 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg'
+[2023/07/10 11:51:02] SQL Query: SELECT * FROM products WHERE code = '39220' AND id_product != 2
+[2023/07/10 11:51:02] SQL execute: UPDATE products SET category_id="198",code="39220",name_product="Minicomponente 1 cuerpo JBLPARTYBOX710AM",desMain="Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas",desGeneral="<p>3</p>
+<p>&nbsp;</p>",sliderMbl="sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg",sliderDst="sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg",sliderDes="LLEVA LA FIESTA A TODAS PARTES",brand="JBL",price="3.00",stock="5",prevPrice="5.00",discount="9",cantDues="24",priceDues="86.00",url="minicomponente-1-cuerpo-jblpartybox710am",status="1" WHERE id_product='2'
+[2023/07/10 11:51:05] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '3'
+[2023/07/10 11:51:05] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/07/10 11:51:09] SQL Query: SELECT * FROM products WHERE code = '134899000' AND id_product != 3
+[2023/07/10 11:51:09] SQL execute: UPDATE products SET category_id="203",code="134899000",name_product="Televisor 65' Android 11 Uhd",desMain="Última tecnología High Dynamic Range (HDR), que permite disfrutar de un increíble brillo, color, contraste, detalle y dimensionalidad",desGeneral="<div><strong>Caracter&iacute;sticas:</strong></div>
+<ul>
+<li>
+<div>Chromecast Incorporado</div>
+</li>
+<li>
+<div>Resoluci&oacute;n 3840x2160</div>
+</li>
+<li>
+<div>CPU ARM Cortex Quad Core</div>
+</li>
+<li>
+<div>Memoria 2 GB DDR</div>
+</li>
+<li>
+<div>Flash 8G</div>
+</li>
+<li>
+<div>Dolby Audio: Audio Power 8W+8W.</div>
+</li>
+<li>
+<div>Sonido Envolvente Simulado</div>
+</li>
+<li>
+<div>1 Puerto Ethernet / LAN</div>
+</li>
+<li>
+<div>Apto Para Red</div>
+</li>
+<li>
+<div>Frecuencia de Refresco de Pantalla 60HZ</div>
+</li>
+<li>
+<div>Se&ntilde;al de Video Soportada PAL M/N; NTSC M</div>
+</li>
+<li>
+<div>3 Puertos HDMI</div>
+</li>
+<li>
+<div>Potencia de Salida de Bocina 8 Ohm- 10w X2</div>
+</li>
+</ul>
+<div><strong>Incluye:</strong></div>
+<ul>
+<li>
+<div>Procesador Quad Core</div>
+</li>
+<li>
+<div>Control Remoto controlado por voz</div>
+</li>
+<li>
+<div>Google Assistant</div>
+</li>
+<li>
+<div>App Store: Google Play</div>
+</li>
+<li>
+<div>Apps Predefinidas: Netflix, Youtube,</div>
+</li>
+<li>
+<div>Prime Video y Play Store</div>
+</li>
+<li>
+<div>Bluetooth&reg;</div>
+</li>
+<li>
+<div>Chromecast / DLNA</div>
+</li>
+<li>
+<div>Surround Stereo</div>
+</li>
+<li>
+<div>Sound Mode</div>
+</li>
+<li>
+<div>Entradas 2USB / 3HDMI</div>
+</li>
+<li>
+<div>Manual de usuario</div>
+</li>
+<li>
+<div>Bases de patas</div>
+</li>
+</ul>
+<div><strong>Garant&iacute;a:&nbsp;</strong>24 meses</div>",sliderMbl= NULL,sliderDst= NULL,sliderDes= NULL,brand="DIGGIO",price="2.00",stock="4",prevPrice="749.00",discount="1",cantDues= NULL,priceDues= NULL,url="televisor-65-android-11-uhd",status="1" WHERE id_product='3'
+[2023/07/10 11:51:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/10 11:51:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/10 11:51:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/10 11:51:15] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/07/10 11:51:15] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/07/10 11:51:15] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/07/10 11:51:15] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/07/10 11:51:15] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/07/10 11:51:15] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/07/10 11:51:15] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/07/10 11:51:15] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/07/10 11:51:15] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/07/10 11:51:15] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/07/10 11:51:15] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/10 11:51:16] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/10 11:51:16] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/10 11:51:16] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/10 11:51:16] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/07/10 11:51:16] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/07/10 11:51:16] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/07/10 11:51:16] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/07/10 11:51:16] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/07/10 11:51:16] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/07/10 11:51:16] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/07/10 11:51:16] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/07/10 11:51:16] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/07/10 11:51:16] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/07/10 11:51:16] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/10 11:51:19] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,3) AND status = 1
+[2023/07/10 11:51:19] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,3)
+[2023/07/10 11:51:20] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2,3) AND status = 1
+[2023/07/10 11:51:20] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2,3)
+[2023/07/10 11:51:25] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/10 11:51:25] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/10 11:51:25] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/10 11:51:28] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/10 11:51:28] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/10 11:51:28] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/10 11:51:28] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/10 11:51:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/10 11:51:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/10 11:51:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/10 11:51:35] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/10 11:51:35] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/10 11:51:35] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/10 11:51:35] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/10 11:52:16] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/10 11:52:16] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/10 11:52:16] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN CASE WHEN stock > 0 THEN stock - 3 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '2')
+[2023/07/10 11:53:01] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/10 11:53:01] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/10 11:53:33] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/10 11:53:33] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/10 11:53:33] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN CASE WHEN stock > 0 THEN stock - 3 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '2')
+[2023/07/10 11:55:29] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/10 11:55:29] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/10 11:55:29] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN CASE WHEN stock > 0 THEN stock - 3 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '2')
+[2023/07/10 11:55:34] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/10 11:55:34] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/10 11:56:10] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/10 11:56:10] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/10 11:57:45] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/10 11:57:45] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/10 11:58:11] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/10 11:58:11] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/10 11:58:34] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/10 11:58:34] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/10 11:58:54] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/10 11:58:54] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/10 11:59:25] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/10 11:59:25] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/10 11:59:25] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN CASE WHEN stock > 0 THEN stock - 4 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '2')
+[2023/07/10 11:59:34] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/10 11:59:34] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:03:06] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:03:06] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:03:06] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN CASE WHEN stock > 0 THEN stock - 3 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '2')
+[2023/07/11 12:21:12] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:21:12] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:21:12] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN CASE WHEN stock > 0 THEN stock - 3 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '2')
+[2023/07/11 12:21:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:21:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:21:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:21:27] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:21:27] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:21:27] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:21:27] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:21:42] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/07/11 12:21:42] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
+[2023/07/11 12:21:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:21:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:21:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:21:44] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:21:45] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:21:45] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:21:45] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:21:53] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:21:53] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:21:53] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN CASE WHEN stock > 0 THEN stock - 2 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '2')
+[2023/07/11 12:22:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:22:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:22:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:22:55] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/07/11 12:22:55] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/07/11 12:22:55] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/07/11 12:22:55] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/07/11 12:22:55] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/07/11 12:22:55] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/07/11 12:22:55] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/07/11 12:22:55] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/07/11 12:22:55] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/07/11 12:22:55] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/07/11 12:22:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:22:58] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:22:58] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:22:59] SQL Query: SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = '2'
+[2023/07/11 12:22:59] SQL Query: SELECT image FROM img_product WHERE product_id = '2'
+[2023/07/11 12:23:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:23:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:23:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:23:03] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:23:03] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:23:03] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:23:03] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:23:08] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:23:08] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:23:08] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:23:11] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:23:11] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:23:11] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:23:11] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:23:24] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:23:24] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:23:24] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN CASE WHEN stock > 0 THEN stock - 3 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '2')
+[2023/07/11 12:26:22] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:26:22] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:26:22] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN CASE WHEN stock > 0 THEN stock - 3 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '2')
+[2023/07/11 12:26:43] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:26:44] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:26:44] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:26:52] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:26:52] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:26:52] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:26:52] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:27:00] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:27:00] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:27:00] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:27:04] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:27:04] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:27:04] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:27:04] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:27:23] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlosandrespozo95@gmail.com' AND password = '23b1c07727ebb1e01bcee636877b6641a5fe1ced'
+[2023/07/11 12:27:23] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '27'
+[2023/07/11 12:27:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:27:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:27:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:27:25] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:27:25] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:27:25] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:27:25] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:27:50] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:27:50] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:27:50] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN CASE WHEN stock > 0 THEN stock - 2 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '2')
+[2023/07/11 12:28:01] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:28:01] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:28:05] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:28:05] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:29:09] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:29:09] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:29:10] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:29:10] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:29:10] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:29:10] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:29:10] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:29:10] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:29:10] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:29:10] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:29:10] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:29:10] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:29:10] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:29:10] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:29:40] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:29:40] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:29:40] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:29:40] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/07/11 12:29:40] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/07/11 12:29:40] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/07/11 12:29:40] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/07/11 12:29:40] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/07/11 12:29:40] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/07/11 12:29:40] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/07/11 12:29:40] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/07/11 12:29:40] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/07/11 12:29:40] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/07/11 12:29:40] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:29:42] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:29:42] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:29:45] SQL Query: SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = '2'
+[2023/07/11 12:29:45] SQL Query: SELECT image FROM img_product WHERE product_id = '2'
+[2023/07/11 12:29:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:29:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:29:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:29:49] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:29:49] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:29:49] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:29:49] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:29:54] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:29:54] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:29:54] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN CASE WHEN stock > 0 THEN stock - 4 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '2')
+[2023/07/11 12:30:03] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:30:03] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:30:44] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:30:44] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:30:45] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:30:45] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:30:46] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:30:46] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:30:46] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:30:46] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:30:46] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:30:46] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:30:46] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:30:46] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:30:46] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:30:46] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:33:23] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:33:23] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:33:23] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 12:33:26] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:33:26] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:33:26] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:33:26] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:33:38] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:33:38] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:33:38] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN CASE WHEN stock > 0 THEN stock - 3 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '2')
+[2023/07/11 12:33:39] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:33:39] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:33:39] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:33:39] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:33:39] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:33:39] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:34:19] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:34:19] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:34:44] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:34:44] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:35:18] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:35:18] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:35:18] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:35:18] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:35:18] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:35:18] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:35:19] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:35:19] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:35:19] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:35:19] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:35:19] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:35:19] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:35:20] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:35:20] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:35:21] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:35:21] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:35:21] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:35:21] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:35:21] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:35:21] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:35:21] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:35:21] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 12:35:21] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 12:35:22] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)

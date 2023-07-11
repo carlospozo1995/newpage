@@ -14,7 +14,7 @@ $(document).ready(function () {
             productIds: cartStorage_productIds,
         },
         beforeSend: function() {
-        
+
         },
         success: function(data){
             for (let i = cartStorage.length - 1; i >= 0; i--) {
@@ -73,7 +73,7 @@ $(document).ready(function () {
 					}else{
 						totalEnvio = 10;
 					}
-					total = subtotal + totalIva + totalEnvio;	
+					total = subtotal + totalIva + totalEnvio;
 					$('.shipment-payment').text("$"+numberFormat(totalEnvio));
 					$('.total-payment').text("$"+numberFormat(total));
 				});
@@ -205,7 +205,7 @@ $(document).ready(function () {
 		}
 		return flag
 	}
-	
+
 	$('.payment-selection input, .accept-terms input').change(function () {
 		$('#finalize-purchase button').prop('disabled', !(checkButtonState()));
 	});
@@ -217,7 +217,7 @@ $(document).ready(function () {
 			method: 'POST',
 			data: {
 				dni: $('#dni-client').val(),
-				dataStorage: JSON.parse(localStorage.getItem('shoppingCartData')),
+				ordered_products: cartStorage,
 				name: $('#name-client').val(),
 				surname: $('#surname-client').val(),
 				email: $('#email-client').val(),
@@ -235,91 +235,24 @@ $(document).ready(function () {
 				// $('.cart-section .content-loading').css("display", "flex");
 			},
 			success: function(data){
-				if(data.status && data.card_paymnet != ""){
-					if(data.card_payment){
-						// let amountProducts = $.map(cartStorage, function(product) {
-					    // 	return product.amount_product;
-						// });
-						// $.ajax({
-						// 	url: base_url + "carrito/checkProductStock/",
-						// 	dataType: 'JSON',
-						// 	method: 'POST',
-						// 	data: {
-						// 		productIds: cartStorage_productIds,
-						// 		amountProducts: amountProducts
-						// 	},
-						// 	beforeSend: function() {
-						// 	},
-						// 	success: function(data){
-						// 		if(data.status){
-						// 			// var parametros ={
-						// 			// 	amount: data.total * 100,
-						// 			// 	amountWithoutTax: data.total * 100,
-						// 			// 	clientTransactionID: data.unique_code,
-						// 			// 	responseUrl: "http://localhost/carlos/page/pago",
-						// 			// 	cancellationUrl: "http://localhost/carlos/page/cancelacion"
-						// 			// };
-
-						// 			// $.ajax({
-						// 			//     data: parametros,
-						// 			//     url: 'https://pay.payphonetodoesposible.com/api/button/Prepare',
-						// 			//     type:'POST',
-						// 			//     beforeSend:function(xhr){
-						// 			//     	xhr.setRequestHeader ('Authorization', "Bearer H69wgPGoCNlXxD_4pm4YhDd_EY2mC7K5hK7xHx2-qFcREHkmoCYl96ObQwSg-5mwVtjksrSwdhLe8_wuvkrhS33RFMolMbw2z3xcqaWRglZqSzVTyZ4F_pQwO2R-Uo6CRoOgrgLfWdl0E8rbmFaAYKsIdeCMQqTjZ0Keh1nl-3G1IRZr5TqAf1J9gqkjEGNGdjZgZS3O91rzyymlyl5AmmDommGDDChPV7_J9I-5XnY3M4X5x4Z7GqUpoCYUdBf0whGh8p2Qa_CEPJWEFHsssbunkZrF0l3RPxXPs8I0ecUH1I0xF6IhLyqiXvWKApjjTgYL8iFC2eG5tXupeZfTT_-hue0")
-						// 			// 	},
-						// 			//     success:function SolicitarPago(respuesta){
-						// 			//         location.href = respuesta.payWithCard;
-						// 			//     }, 
-						// 			//     error: function(mensajeerror){
-						// 			//         alert ("Error en la llamada:" + mensajeerror.Message);
-						// 			//     }
-						// 			// });
-						// 		}
-						// 	},
-						// 	error: function(xhr, status, error) {
-						// 	},
-						// 	complete: function() {
-						// 	}
-						// });
-						checkProductStock();
-					}else{
-						// aqui va el codigo si es pagar por transferrencia
-						console.log('pago por transferencia');
-						checkProductStock();
-					}
-				}else{
-					console.log(data.msg);
+				if(data.status && data.paymentType != ""){
+					console.log(data.paymentType)
+					// if (data.paymentType) {
+					// 	console.log('tarjeta');
+					// 	console.log(data);
+					// }else{
+					// 	console.log('transferencia');
+					// 	console.log(data);
+					// }
 				}
 			},
 			error: function(xhr, status, error) {
+				console.log(error);
 			},
 			complete: function() {
 				// $('.cart-section .content-loading').css("display", "none");
 			}
 		});
 	})
-
-	function checkProductStock (){
-		$.ajax({
-			url: base_url + "carrito/checkProductStock/",
-			dataType: 'JSON',
-			method: 'POST',
-			data: {
-				main_town: $('#location').val(),
-				cartStorage: cartStorage,
-			},
-			beforeSend: function() {
-			},
-			success: function(data){
-				console.log(cartStorage);
-				console.log(data);
-			},
-			error: function(xhr, status, error) {
-				console.log(error)
-			},
-			complete: function() {
-			}
-		});
-	}	
 
 });

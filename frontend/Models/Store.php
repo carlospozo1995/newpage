@@ -5,9 +5,9 @@
         static public function insertClient($name, $surname, $phone, $email, $password)
         {
             $sql = "SELECT * FROM users WHERE email = ?";
-            $request = $GLOBALS["db"]->auto_array($sql, array($email));     
+            $request = $GLOBALS["db"]->auto_array($sql, array($email));
             if (empty($request)) {
-                $arrData[] = array("name_user" => ucfirst($name), "surname_user" => ucfirst($surname), "phone" => $phone, "email"  => $email, "password" => $password, "rolid" => 6); 
+                $arrData[] = array("name_user" => ucfirst($name), "surname_user" => ucfirst($surname), "phone" => $phone, "email"  => $email, "password" => $password, "rolid" => 6);
                 $result = $GLOBALS["db"]->insert_multiple("users", $arrData);
             }else{
                 $result = "email_exists";
@@ -18,7 +18,7 @@
 
         // SQL PAGE CATEGORIAS
         static public function getCategories($data1, $data2, $data3)
-        {   
+        {
             $sql = "SELECT * FROM categories WHERE (url = ? AND fatherCategory IS NULL)";
 
             if (!empty($data2)) {
@@ -38,13 +38,13 @@
         }
 
         static public function getProducts($data, $brandCheck, $order, $range, $start = null, $perload = null)
-        { 
+        {
             $sql = "SELECT * FROM products WHERE category_id IN ($data) $brandCheck $range AND status = 1 $order";
 
             if ($start !== null && $perload !== null) {
                 $sql .= " LIMIT $start, $perload";
             }
-            
+
             return $GLOBALS["db"]->selectAll($sql, array());
         }
 
@@ -57,11 +57,11 @@
 
         static public function getCategoryNames($id_product)
         {
-            $sql = "SELECT 
+            $sql = "SELECT
                 c1.name_category AS category1, c1.url AS url1,
                 c2.name_category AS category2, c2.url AS url2,
                 c3.name_category AS category3, c3.url AS url3
-            FROM 
+            FROM
                 (SELECT * FROM products WHERE id_product = ?) p
                 JOIN categories c1 ON p.category_id = c1.id_category
                 LEFT JOIN categories c2 ON c1.fatherCategory = c2.id_category
@@ -76,14 +76,14 @@
         {
             $sql_prod = "SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = ?";
             $request_prod = $GLOBALS["db"]->auto_array($sql_prod, array($data));
-            
+
             if (!empty($request_prod)) {
                 $id_product = $request_prod['id_product'];
                 $sql_img = "SELECT image FROM img_product WHERE product_id = ?";
                 $request_img = $GLOBALS["db"]->selectAll($sql_img, array($id_product));
-                
+
                 if(count($request_img) > 0){
-                    for ($i=0; $i < count($request_img); $i++) { 
+                    for ($i=0; $i < count($request_img); $i++) {
                         $request_img[$i]['url_image'] = MEDIA_ADMIN.'files/images/upload_products/'.$request_img[$i]["image"];
                     }
                 }else{
@@ -96,7 +96,7 @@
             return $request_prod;
         }
 
-        static public function getProductsStorage($data)
+        static public function getOrderedProducts($data)
         {
             $sql = "SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN ($data) AND status = 1";
             $products = $GLOBALS["db"]->selectAll($sql, array());
@@ -127,7 +127,7 @@
 
             foreach ($productIdsArr as $index => $productId) {
                 $amount = $amountProductsArr[$index];
-                $sql .= "WHEN $productId THEN stock - $amount ";
+                $sql .= "WHEN $productId THEN CASE WHEN stock > 0 THEN stock - $amount ELSE 0 END ";
             }
 
             $sql .= "ELSE stock END WHERE FIND_IN_SET(id_product, '$productsIds')";
@@ -136,12 +136,6 @@
             if($request) {$result = "ok";}
             return $result;
         }
-
-        // static public function getProductsTransaction($productsIds)
-        // {
-        //     $sql = "SELECT id_product, name_product, stock, price FROM products WHERE id_product IN ($productsIds)";
-        //     return $GLOBALS["db"]->selectAll($sql, array($productsIds));   
-        // }
 
     }
 ?>

@@ -80,7 +80,7 @@
 	<!-- <div id="confirmacion"></div> -->
 	<script src="<?= MEDIA_STORE; ?>js/vendor/jquery-3.5.1.min.js"></script>
 	<?php if ($statusCode != 2 && (strtotime(date("Y-m-d\TH:i:s.u")) < strtotime($dateTransaction) + 5)): ?>
-	<script src="<?= MEDIA_STORE; ?>js/store-transaction.js"></script>
+	<!-- <script src="<?= MEDIA_STORE; ?>js/store-transaction.js"></script> -->
 	<?php endif ?>
 </body>
 </html>

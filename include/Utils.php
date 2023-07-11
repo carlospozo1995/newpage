@@ -87,7 +87,7 @@
 		{
           	session_unset();
           	session_destroy();
-			setcookie('PHPSESSID', '', time() - 3600, '/');
+			setcookie('PHPSESSID', '', time() - 7200, '/');
 		}
 		// EMAIL FUNCTIONS - RECOVER PASSWORD
 

@@ -71,10 +71,10 @@ RewriteRule ^(carrito/|carrito|Carrito)/addCartProduct/$ %{ENV:REWRITEBASE}index
 RewriteRule ^(carrito/|carrito|Carrito)/getProducts/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=getProducts [L]
 RewriteRule ^(carrito/|carrito|Carrito)/paymentTypeValidation/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=paymentTypeValidation [L]
 RewriteRule ^(carrito/|carrito|Carrito)/checkProductStock/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=checkProductStock [L]
+
 RewriteRule ^carrito/(.+)$ %{ENV:REWRITEBASE}index.php?show=Carrito&process_payment=$1 [L]
 
 RewriteRule ^(pago/|pago|Pago)$ %{ENV:REWRITEBASE}index.php?show=Pago [L]
-#RewriteRule ^(pago/|pago|Pago)/updateTransactionProducts/$ %{ENV:REWRITEBASE}index.php?show=Pago&action=updateTransactionProducts [L]
 RewriteRule ^(cancelacion/|cancelacion|Cancelacion)$ %{ENV:REWRITEBASE}index.php?show=Cancelacion [L]
 
 
