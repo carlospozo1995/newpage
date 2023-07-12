@@ -235,15 +235,27 @@ $(document).ready(function () {
 				// $('.cart-section .content-loading').css("display", "flex");
 			},
 			success: function(data){
-				if(data.status && data.paymentType != ""){
-					console.log(data.paymentType)
-					// if (data.paymentType) {
-					// 	console.log('tarjeta');
-					// 	console.log(data);
-					// }else{
-					// 	console.log('transferencia');
-					// 	console.log(data);
-					// }
+				if (data.status) {
+					if (data.paymentType) {
+						console.log('tarjeta');
+						console.log(data.verifyProductsDb.flag_stockUpdate);
+						if (data.verifyProductsDb.flag_stockUpdate) {
+							// aqui va el ajax de payphone
+						}else{
+							// aqui abriremos el modal si hay cambios en los productos
+						}
+					}else{
+						console.log('transferencia');
+						console.log(data.verifyProductsDb.flag_stockUpdate);
+
+						if (data.verifyProductsDb.flag_stockUpdate) {
+							// aqui le brindaremos los datos para que el cliente haga la transferencia
+						}else{
+							// aqui abriremos el modal si hay cambios en los productos
+						}
+					}
+				}else{
+					console.log(data.msg);
 				}
 			},
 			error: function(xhr, status, error) {

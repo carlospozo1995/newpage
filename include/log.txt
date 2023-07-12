@@ -465,3 +465,22 @@
 [2023/07/11 12:35:21] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
 [2023/07/11 12:35:21] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
 [2023/07/11 12:35:22] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 11:17:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 11:17:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 11:17:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 11:17:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 11:17:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 11:17:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/07/11 11:17:22] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 11:17:22] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 11:17:22] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 11:17:22] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 11:17:26] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 11:17:26] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 11:17:26] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 11:17:26] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 11:18:40] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 11:18:40] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)
+[2023/07/11 11:18:40] SQL execute: UPDATE products SET stock = CASE id_product WHEN 2 THEN CASE WHEN stock > 0 THEN stock - 4 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '2')
+[2023/07/11 11:18:47] SQL Query: SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN (2) AND status = 1
+[2023/07/11 11:18:47] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (2)

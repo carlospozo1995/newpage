@@ -78,15 +78,17 @@
 						$info_client_state = filter_var($_POST['info_client_state'], FILTER_VALIDATE_BOOLEAN);
 						$check_state = filter_var($_POST['check_state'], FILTER_VALIDATE_BOOLEAN);
 
-						$payment_type = "";
-						$verifyProductsDb = self::verifyProductsDb($ordered_products, $main_town);
+						$payment_type = null;
+						$verifyProductsDb = null;
 
 						try {
 							if ($info_client_state && $check_state && $payment_method != '' && $main_town != '' && $street != '' && $addressee != '' && $ordered_products != '') {
 								if($payment_method == 'bank-transfer'){
 									$payment_type = false;
+									$verifyProductsDb = self::verifyProductsDb($ordered_products, $main_town);
 								}else if($payment_method == 'credit-card'){
 									$payment_type = true;
+									$verifyProductsDb = self::verifyProductsDb($ordered_products, $main_town);
 								}else{
 									throw new Exception("No es posible realizar el proceso intentelo mas tarde.");
 								}
@@ -97,7 +99,7 @@
 							$status = false;
 							$msg = $e->getMessage();
 						}
-						$data = array("status"=>$status, 'paymentType' => $payment_type, 'verifyProductsDb' => $verifyProductsDb, "msg"=>$msg);
+						$data = array("status"=>$status, 'paymentType' => $payment_type, "verifyProductsDb" => $verifyProductsDb, "msg"=>$msg);
 						echo json_encode($data);
 					}
 				break;
