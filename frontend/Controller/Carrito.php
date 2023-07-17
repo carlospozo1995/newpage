@@ -132,6 +132,7 @@
 			$subtotal = 0;
 			$iva = 0;
 			$total = 0;
+			$alert = "";
 
 			$productsIdsArr = array_map(function($data){return Utils::desencriptar($data['id']);}, $ordereProducts);
 			$productsAmountArr = array_map(function($data){return $data['amount_product'];}, $ordereProducts);
@@ -166,6 +167,10 @@
 						$newQuantityProduct = $orderedAmount;
 					}
 
+					if ($price != $orderedPrice && $orderedAmount == $stock) {
+						$newQuantityProduct = $orderedAmount;
+					}
+
 					$productsWithChanges[] = array('amount_product' => $newQuantityProduct, 'id' => Utils::encriptar($id), 'name' => $product['name_product'], 'price' => $price, 'stock' => $stock, 'image' => $product['images'][0]['url_image'], 'code' => intval($product['code']), 'url' => '');
 				}
 			}
@@ -179,6 +184,8 @@
 					$subtotal += $product['price'] * $product['amount_product'];
 				}
 			}else{
+				$alert = 'Estimado cliente, algunos productos han presentado cambios recientes.'; 
+
 				$indexedArray2 = array();
 				foreach ($productsWithChanges as $item2) {
 					$indexedArray2[$item2['id']] = $item2;
@@ -223,7 +230,7 @@
 				$total = $subtotal + $iva + $shipping_cost;
 			}
 
-			return array('total' =>  $total, 'flag_stockUpdate' => $stockUpdate, 'productsWithChanges' => $productsWithChanges, 'newProductsArray ' => $newProductsArray);
+			return array('subtotal' => $subtotal, 'iva' => $iva , 'envio' => $shipping_cost, 'total' =>  $total, 'flag_stockUpdate' => $stockUpdate, 'productsWithChanges' => $productsWithChanges, 'newProductsArray' => $newProductsArray, 'alert' => $alert);
 		}
 
 	}

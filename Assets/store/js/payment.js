@@ -236,22 +236,26 @@ $(document).ready(function () {
 			},
 			success: function(data){
 				if (data.status) {
+					console.log(data);
 					if (data.paymentType) {
 						console.log('tarjeta');
-						console.log(data.verifyProductsDb.flag_stockUpdate);
+						// console.log(data.verifyProductsDb.flag_stockUpdate);
 						if (data.verifyProductsDb.flag_stockUpdate) {
 							// aqui va el ajax de payphone
+							console.log(data.verifyProductsDb);
 						}else{
 							// aqui abriremos el modal si hay cambios en los productos
+							modalProductsChanges(cartStorage, data.verifyProductsDb);
 						}
 					}else{
 						console.log('transferencia');
-						console.log(data.verifyProductsDb.flag_stockUpdate);
-
+						// console.log(data.verifyProductsDb.flag_stockUpdate);
 						if (data.verifyProductsDb.flag_stockUpdate) {
 							// aqui le brindaremos los datos para que el cliente haga la transferencia
+							console.log(data.verifyProductsDb);
 						}else{
 							// aqui abriremos el modal si hay cambios en los productos
+							modalProductsChanges(cartStorage, data.verifyProductsDb);
 						}
 					}
 				}else{
@@ -266,5 +270,75 @@ $(document).ready(function () {
 			}
 		});
 	})
+
+	function modalProductsChanges(localStorage, verifyProductsDb) {
+		$('#modalProductsChanges .modal-header h4').text(verifyProductsDb.alert);
+
+		$('#modalProductsChanges .modal-body .oredererProducts').html(createProductList(localStorage, 1));
+		$('#modalProductsChanges .modal-body .productsChanges').html(createProductList(verifyProductsDb.productsWithChanges, 2));
+		$('#modalProductsChanges .modal-body .newProducts').html(createProductList(verifyProductsDb.newProductsArray, 3));
+		$('#modalProductsChanges .modal-body .modifiedTotal').html(`
+				<div class="coupon_code right mb-5" >
+				    <div class="coupon_inner">
+				        <div class="cart_subtotal">
+				            <p>Subtotal</p>
+				            <p class="cart_amount subtotal-update">$${numberFormat(verifyProductsDb.subtotal)}</p>
+				        </div>
+				        <div class="cart_subtotal">
+				            <p>IVA</p>
+				            <p class="cart_amount iva-update">$${numberFormat(verifyProductsDb.iva)}</p>
+				        </div>
+				        <div class="cart_subtotal">
+				            <p>ENVIO</p>
+				            <p class="cart_amount shipment-update">$${numberFormat(verifyProductsDb.envio)}</p>
+				        </div>
+				        <hr>
+				        <div class="cart_subtotal">
+				            <p>Total</p>
+				            <p class="cart_amount total-update">$${numberFormat(verifyProductsDb.total)}</p>
+				        </div>
+				    </div>
+				</div>
+			`);
+		$('#modalProductsChanges').modal('show');
+	}
+
+	function createProductList(products, flag) {
+	    const productList = $("<ul class='offcanvas-cart py-3 px-3'></ul>");
+
+	    products.forEach(product => {
+	        let priceFormat = typeof product.price === "string" ? parseFloat(product.price) : product.price;
+	        let liProduct = `<li class="offcanvas-cart-item-single">
+	                            <div class="offcanvas-cart-item-block">
+	                                <div class="offcanvas-cart-item-image-link">
+	                                    <img src="${product.image}" alt="" class="offcanvas-cart-image">
+	                                </div>
+	                                <div class="offcanvas-cart-item-content">
+	                                    <span class="font-weight-bold">${product.name}</span>
+	                                    <div class="offcanvas-cart-item-details">`;
+
+				        if (flag == 2) {
+				            if (product.stock == 0) {
+				                liProduct += `<span class="c-coral font-weight-bold">Lo sentimos no hay disponible.</span>`;
+				            } else {
+				                liProduct += `<span class="c-coral">Existencias: </span> <span> ${product.stock}</span>
+				                <div><span class="c-coral">Precio: </span> <span> $${numberFormat(priceFormat)}</span></div>`;
+				            }
+				        } else {
+				            liProduct += `<span class="offcanvas-cart-item-details-quantity">${product.amount_product} x </span>
+				            <span class="offcanvas-cart-item-details-price">$${numberFormat(priceFormat)}</span>`;
+				        }
+
+	        			liProduct += `</div>
+	                                </div>
+	                            </div>
+	                        </li>`;
+
+	        productList.append(liProduct);
+	    });
+
+	    return productList;
+	}
+
 
 });

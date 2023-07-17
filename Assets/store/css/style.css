@@ -5509,15 +5509,14 @@ progress {
     }
 }
 @media (min-width: 768px) {
-    .modal-lg,
-.modal-xl {
+    .modal-lg{
         max-width: 800px;
     }
+
+
 }
-@media (min-width: 1225px) {
-    .modal-xl {
-        max-width: 1140px;
-    }
+.modal-xl {
+    max-width: 1200px;
 }
 
 .modal-fullscreen {
