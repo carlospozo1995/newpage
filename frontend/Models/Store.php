@@ -96,9 +96,11 @@
             return $request_prod;
         }
 
-        static public function getOrderedProducts($data)
+        static public function getOrderedProducts($data, $flag)
         {
-            $sql = "SELECT id_product, code, name_product, stock, url, price FROM products WHERE id_product IN ($data) AND status = 1";
+            $sql = "SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN ($data)";
+            if ($flag) {$sql .= ' AND status = 1';}
+
             $products = $GLOBALS["db"]->selectAll($sql, array());
 
             $sql_img = "SELECT product_id, image FROM img_product WHERE product_id IN ($data)";
@@ -130,7 +132,7 @@
                 $sql .= "WHEN $productId THEN CASE WHEN stock > 0 THEN stock - $amount ELSE 0 END ";
             }
 
-            $sql .= "ELSE stock END WHERE FIND_IN_SET(id_product, '$productsIds')";
+            $sql .= "ELSE stock END WHERE FIND_IN_SET(id_product, '$productsIds') AND status = 1";
 
             $request =  $GLOBALS["db"]->execute($sql);
             if($request) {$result = "ok";}

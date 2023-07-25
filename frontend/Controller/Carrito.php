@@ -38,7 +38,7 @@
 				        $productIds = implode(',', array_map(function($data) {
 						    return Utils::desencriptar($data);
 						}, $_POST['productIds']));
-						$products = Models_Store::getOrderedProducts($productIds);
+						$products = Models_Store::getOrderedProducts($productIds, true);
 						if(!empty($products)){
 
 							$newArray = array();
@@ -140,8 +140,8 @@
 			
 			$productsIds = implode(',', $productsIdsArr);
 						
-			$requestProducts = Models_Store::getOrderedProducts($productsIds);
-			
+			$requestProducts = Models_Store::getOrderedProducts($productsIds, false);
+
 			$productsWithChanges = array();
 			$newQuantityProduct = null;
 			$newProductsArray = array();
@@ -156,7 +156,7 @@
 				$orderedAmount = intval($productsAmountArr[$index]);
 				$orderedPrice = floatval($productsPriceArr[$index]);
 
-				if (($stock < $orderedAmount || $stock <= 0 || $stock === null) || ($price != $orderedPrice)) {
+				if (($stock < $orderedAmount || $stock <= 0 || $stock === null) || ($price != $orderedPrice) || ($product['status'] != 1)) {
 					
 					$stockUpdate = false;
 					if ($stock < $orderedAmount || $stock <= 0 || $stock === null) {
@@ -171,7 +171,9 @@
 						$newQuantityProduct = $orderedAmount;
 					}
 
-					$productsWithChanges[] = array('amount_product' => $newQuantityProduct, 'id' => Utils::encriptar($id), 'name' => $product['name_product'], 'price' => $price, 'stock' => $stock, 'image' => $product['images'][0]['url_image'], 'code' => intval($product['code']), 'url' => '');
+					$statusProduct = $product['status'] != 1 ? false : true;
+
+					$productsWithChanges[] = array('amount_product' => $newQuantityProduct, 'id' => Utils::encriptar($id), 'name' => $product['name_product'], 'price' => $price, 'stock' => $stock, 'image' => $product['images'][0]['url_image'], 'code' => intval($product['code']), 'url' => $statusProduct);
 				}
 			}
 
@@ -190,11 +192,12 @@
 				foreach ($productsWithChanges as $item2) {
 					$indexedArray2[$item2['id']] = $item2;
 				}
+
 				foreach ($ordereProducts as $item1) {
 					if (isset($indexedArray2[$item1['id']])) {
 						$item2 = $indexedArray2[$item1['id']];
 						
-						if ($item1['stock'] != $item2['stock'] || $item1['price'] != $item2['price']) {
+						if ($item1['stock'] != $item2['stock'] || $item1['price'] != $item2['price'] || $item2['url'] == false) {
 							$newProductsArray[] = $item2;
 						}else{
 							$newProductsArray[] = $item1;
@@ -211,7 +214,9 @@
 				}
 
 				foreach ($newProductsArray as $value) {
-					$subtotal += floatval($value['price']) * intval($value['amount_product']);
+					if ($value['url'] != false) {
+						$subtotal += floatval($value['price']) * intval($value['amount_product']);
+					}
 				}
 
 			}

@@ -21,11 +21,11 @@ $(document).ready(function () {
                 const product_cartData = cartStorage[i];
                 const existsData = data.some(product => product.id === product_cartData.id);
 
-                if (!existsData) {
+                if (!existsData || data.find(product => product.id === product_cartData.id).stock === 0) {
                     cartStorage.splice(i, 1);
                 }else {
                     const productData = data.find(product => product.id === product_cartData.id);
-                    product_cartData['amount_product'] = product_cartData['amount_product'] > productData.stock ? productData.stock : product_cartData['amount_product'];
+                    product_cartData['amount_product'] = product_cartData['amount_product'] > productData.stock ? productData.stock : product_cartData['amount_product'] == 0 && productData.stock > 0 ? 1 : product_cartData['amount_product'];
                     Object.assign(product_cartData, productData);
                 }
             }
@@ -40,7 +40,7 @@ $(document).ready(function () {
 
 		    const ul = $("<ul class='offcanvas-cart py-3 px-3'></ul>");
 			JSON.parse(localStorage.getItem('shoppingCartData')).forEach(item => {
-		        subtotal += item.amount_product * item.price;
+	        	subtotal += item.amount_product * item.price;
 
 		        // Purchase Summary View
 		        let li =  `<li class="offcanvas-cart-item-single">
@@ -51,16 +51,23 @@ $(document).ready(function () {
 		                            </div>
 		                            <div class="offcanvas-cart-item-content">
 		                                <span class="font-weight-bold">${item.name}</span>
-		                                <div class="offcanvas-cart-item-details">
-		                                    <span class="offcanvas-cart-item-details-quantity">${item.amount_product} x </span>
+		                                <div class="offcanvas-cart-item-details">`
+	                                if (item.stock != 0) {
+	                                	li += `
+	                            			<span class="offcanvas-cart-item-details-quantity">${item.amount_product} x </span>
 		                                    <span class="offcanvas-cart-item-details-price">$${numberFormat(item.price)}</span>
-		                                </div>
+	                                	`;
+	                                }else{
+	                            		li += `<span class="c-coral font-weight-bold fs-12">Lo sentimos no hay disponible.</span>`;
+	                                }
+		                                    
+		                       	li +=	`</div>
 		                            </div>
 		                        </div>
 		                    </li>`;
 
 		        ul.append(li);
-		        // ---------------------- //
+		        // ---------------------- //	
 			});
 			total = subtotal + totalIva + totalEnvio;
 
@@ -236,7 +243,6 @@ $(document).ready(function () {
 			},
 			success: function(data){
 				if (data.status) {
-					console.log(data);
 					if (data.paymentType) {
 						console.log('tarjeta');
 						// console.log(data.verifyProductsDb.flag_stockUpdate);
@@ -272,6 +278,7 @@ $(document).ready(function () {
 	})
 
 	function modalProductsChanges(localStorage, verifyProductsDb) {
+		console.log(verifyProductsDb);
 		$('#modalProductsChanges .modal-header h4').text(verifyProductsDb.alert);
 
 		$('#modalProductsChanges .modal-body .oredererProducts').html(createProductList(localStorage, 1));
@@ -308,33 +315,72 @@ $(document).ready(function () {
 
 	    products.forEach(product => {
 	        let priceFormat = typeof product.price === "string" ? parseFloat(product.price) : product.price;
-	        let liProduct = `<li class="offcanvas-cart-item-single">
-	                            <div class="offcanvas-cart-item-block">
-	                                <div class="offcanvas-cart-item-image-link">
-	                                    <img src="${product.image}" alt="" class="offcanvas-cart-image">
-	                                </div>
-	                                <div class="offcanvas-cart-item-content">
-	                                    <span class="font-weight-bold">${product.name}</span>
-	                                    <div class="offcanvas-cart-item-details">`;
+	        let liProduct;
 
-				        if (flag == 2) {
-				            if (product.stock == 0) {
-				                liProduct += `<span class="c-coral font-weight-bold">Lo sentimos no hay disponible.</span>`;
+	        if (flag == 1) {
+	        	liProduct = `<li class="offcanvas-cart-item-single">
+		                        <div class="offcanvas-cart-item-block">
+		                            <div class="offcanvas-cart-item-image-link">
+		                                <img src="${product.image}" alt="" class="offcanvas-cart-image">
+		                            </div>
+		                            <div class="offcanvas-cart-item-content">
+		                                <span class="font-weight-bold">${product.name}</span>
+		                                <div class="offcanvas-cart-item-details">
+		                                	<span class="offcanvas-cart-item-details-quantity">${parseInt(product.amount_product)} x </span>
+            								<span class="offcanvas-cart-item-details-price">$${numberFormat(priceFormat)}</span>
+            							</div>
+		                            </div>
+		                        </div>
+		                    </li>`;
+	        }else if (flag ==2) {
+	        	liProduct = `<li class="offcanvas-cart-item-single">
+			                    <div class="offcanvas-cart-item-block">
+			                        <div class="offcanvas-cart-item-image-link">
+			                            <img src="${product.image}" alt="" class="offcanvas-cart-image">
+			                        </div>
+			                        <div class="offcanvas-cart-item-content">
+			                            <span class="font-weight-bold">${product.name}</span>
+			                            <div class="offcanvas-cart-item-details">`;
+
+			            if (product.url != false) {
+			            	if (parseInt(product.stock) == 0) {
+			                	liProduct += `<span class="c-coral font-weight-bold fs-12">Lo sentimos no hay disponible.</span>`;
 				            } else {
-				                liProduct += `<span class="c-coral">Existencias: </span> <span> ${product.stock}</span>
+				                liProduct += `<span class="c-coral">Existencias: </span> <span> ${parseInt(product.stock)}</span>
 				                <div><span class="c-coral">Precio: </span> <span> $${numberFormat(priceFormat)}</span></div>`;
 				            }
-				        } else {
-				            liProduct += `<span class="offcanvas-cart-item-details-quantity">${product.amount_product} x </span>
-				            <span class="offcanvas-cart-item-details-price">$${numberFormat(priceFormat)}</span>`;
-				        }
+			            }else{
+			            	liProduct += `<span class="c-coral font-weight-bold fs-12">Lo sentimos. Este producto ya no existe.</span>`;
+			            }
 
-	        			liProduct += `</div>
-	                                </div>
-	                            </div>
-	                        </li>`;
+						liProduct += `</div>
+			                        </div>
+			                    </div>
+			                </li>`;
+	        }else {
+	        	if (parseInt(product.stock) == 0 || product.url == false) {
+	        		liProduct = "";
+	        	}else{
+	        		liProduct = `<li class="offcanvas-cart-item-single">
+			                        <div class="offcanvas-cart-item-block">
+			                            <div class="offcanvas-cart-item-image-link">
+			                                <img src="${product.image}" alt="" class="offcanvas-cart-image">
+			                            </div>
+			                            <div class="offcanvas-cart-item-content">
+			                                <span class="font-weight-bold">${product.name}</span>
+			                                <div class="offcanvas-cart-item-details">
+			                                	<span class="offcanvas-cart-item-details-quantity">${parseInt(product.amount_product)} x </span>
+	            								<span class="offcanvas-cart-item-details-price">$${numberFormat(priceFormat)}</span>
+	            							</div>
+			                            </div>
+			                        </div>
+			                    </li>`;
+	        	}
+	        }
 
-	        productList.append(liProduct);
+	        if (liProduct) {
+		        productList.append(liProduct);
+		    }
 	    });
 
 	    return productList;

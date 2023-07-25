@@ -25,7 +25,7 @@ $(window).ready(function () {
                         cartData_view.splice(i, 1);
                     }else {
                         const productData = data.find(product => product.id === product_cartData.id);
-                        product_cartData['amount_product'] = product_cartData['amount_product'] > productData.stock ? productData.stock : product_cartData['amount_product'];
+                        product_cartData['amount_product'] = product_cartData['amount_product'] > productData.stock ? productData.stock : product_cartData['amount_product'] == 0 && productData.stock > 0 ? 1 : product_cartData['amount_product'];
                         Object.assign(product_cartData, productData);
                     }
                 }
@@ -271,10 +271,14 @@ $(window).ready(function () {
                                 </a>
                                 <div class="offcanvas-cart-item-content">
                                     <a href="${base_url}producto/${item.url}" class="offcanvas-cart-item-link">${item.name}</a>
-                                    <div class="offcanvas-cart-item-details">
-                                        <span class="offcanvas-cart-item-details-quantity">${item.amount_product} x </span>
-                                        <span class="offcanvas-cart-item-details-price">$${numberFormat(item.price)}</span>
-                                    </div>
+                                    <div class="offcanvas-cart-item-details">`
+                                    if (item.stock != 0) {
+                                        li += `<span class="offcanvas-cart-item-details-quantity">${item.amount_product} x </span>
+                                        <span class="offcanvas-cart-item-details-price">$${numberFormat(item.price)}</span>`;
+                                    }else{
+                                        li += `<span class="c-coral font-weight-bold fs-12">Lo sentimos no hay disponible.</span>`;
+                                    }
+                            li +=   `</div>
                                 </div>
                             </div>
                             <div class="offcanvas-cart-item-delete text-right" id="cart-item-delete" idpr="${item.id}" option="1">
@@ -305,40 +309,52 @@ $(window).ready(function () {
         let totalIva = 0;
         let tbodyContent;
         JSON.parse(localStorage.getItem("shoppingCartData")).forEach(item => {
-            let totalProduct = item.amount_product * item.price;
-            subtotal += item.amount_product * item.price;
-            // totalIva (create IVA function and add them)
+            // if (item.amount_product > 0) {
+                let totalProduct = item.amount_product * item.price;
+                subtotal += item.amount_product * item.price;
+                // totalIva (create IVA function and add them)
 
-            tbodyContent += `
-                <tr id="${item.id}">
-                    <td class="product_remove">
-                        <span class="cursor-pointer" id="cart-item-delete" idpr="${item.id}" option="2"><i class="fa fa-trash-o"></i></span>
-                    </td>
-                    <td class="product_thumb">
-                        <a href="${base_url}producto/${item.url}"><img src="${item.image}?>" alt=""></a>
-                    </td>
+                tbodyContent += `
+                    <tr id="${item.id}">
+                        <td class="product_remove">
+                            <span class="cursor-pointer" id="cart-item-delete" idpr="${item.id}" option="2"><i class="fa fa-trash-o"></i></span>
+                        </td>
+                        <td class="product_thumb">
+                            <a href="${base_url}producto/${item.url}"><img src="${item.image}?>" alt=""></a>
+                        </td>
 
-                    <td class="product_name">
-                        <a href="${base_url}producto/${item.url}">${item.name}</a>
-                    </td>
+                        <td class="product_name">
+                            <a href="${base_url}producto/${item.url}">${item.name}</a>
+                        </td>
 
-                    <td class="product_price">
-                        $${numberFormat(item.price)}
-                    </td>
+                        <td class="product_price">
+                            $${numberFormat(item.price)}
+                        </td>`;
 
-                    <td class="product_quantity">
-                        <div class="product-variable-quantity m-auto" style="width: max-content;">
-                            <i class="fa fa-minus pl-4 pr-2 btn-minus" idpr="${item.id}"></i>
-                            <input class="amount-product" type="number" min="1" max="${item.stock}" value="${item.amount_product}" idpr="${item.id}">
-                            <i class="fa fa-plus pr-4 pl-2 btn-plus" idpr="${item.id}"></i>
-                        </div>
-                    </td>
-
-                    <td class="product-total">
-                        $${numberFormat(totalProduct)}
-                    </td>
-                </tr>
-            `;
+            if (item.amount_product != 0) {
+                tbodyContent += `
+                        <td class="product_quantity">
+                            <div class="product-variable-quantity m-auto" style="width: max-content;">
+                                <i class="fa fa-minus pl-4 pr-2 btn-minus" idpr="${item.id}"></i>
+                                <input class="amount-product" type="number" min="1" max="${item.stock}" value="${item.amount_product}" idpr="${item.id}">
+                                <i class="fa fa-plus pr-4 pl-2 btn-plus" idpr="${item.id}"></i>
+                            </div>
+                        </td>`   
+            }else{
+                tbodyContent += `
+                        <td>
+                            <div>
+                                <span class="c-coral font-weight-bold fs-12">No hay disponibles</span>
+                            </div>
+                        </td>`   
+            }
+                tbodyContent += `
+                        <td class="product-total">
+                            $${numberFormat(totalProduct)}
+                        </td>
+                    </tr>
+                `;
+            // }
         });
         total = subtotal + totalIva;
 
