@@ -279,8 +279,9 @@ $(document).ready(function () {
 
 	function modalProductsChanges(localStorage, verifyProductsDb) {
 		console.log(verifyProductsDb);
-		$('#modalProductsChanges .modal-header h4').text(verifyProductsDb.alert);
+		$('#modalProductsChanges').modal('show');
 
+		$('#modalProductsChanges .modal-header h4').text(verifyProductsDb.alert);
 		$('#modalProductsChanges .modal-body .oredererProducts').html(createProductList(localStorage, 1));
 		$('#modalProductsChanges .modal-body .productsChanges').html(createProductList(verifyProductsDb.productsWithChanges, 2));
 		$('#modalProductsChanges .modal-body .newProducts').html(createProductList(verifyProductsDb.newProductsArray, 3));
@@ -307,32 +308,43 @@ $(document).ready(function () {
 				    </div>
 				</div>
 			`);
-		$('#modalProductsChanges').modal('show');
+
+		$('.accept-changes').click(function () {
+			console.log(verifyProductsDb.productsWithChanges);
+			// $('#modalProductsChanges').modal('hide');
+			$.ajax({
+				url: base_url + "carrito/consoleCard/",
+				dataType: 'JSON',
+				method: 'POST',
+				data: {
+					newProductOrder: verifyProductsDb.newProductsArray,
+					main_town: $('#location').val()
+				},
+				beforeSend: function() {
+					// $('.cart-section .content-loading').css("display", "flex");
+				},
+				success: function(data){
+					console.log(data);
+				},
+				error: function(xhr, status, error) {
+					console.log(error);
+				},
+				complete: function() {
+					// $('.cart-section .content-loading').css("display", "none");
+				}
+			});
+
+		});
 	}
 
 	function createProductList(products, flag) {
 	    const productList = $("<ul class='offcanvas-cart py-3 px-3'></ul>");
-
+		
 	    products.forEach(product => {
 	        let priceFormat = typeof product.price === "string" ? parseFloat(product.price) : product.price;
 	        let liProduct;
 
-	        if (flag == 1) {
-	        	liProduct = `<li class="offcanvas-cart-item-single">
-		                        <div class="offcanvas-cart-item-block">
-		                            <div class="offcanvas-cart-item-image-link">
-		                                <img src="${product.image}" alt="" class="offcanvas-cart-image">
-		                            </div>
-		                            <div class="offcanvas-cart-item-content">
-		                                <span class="font-weight-bold">${product.name}</span>
-		                                <div class="offcanvas-cart-item-details">
-		                                	<span class="offcanvas-cart-item-details-quantity">${parseInt(product.amount_product)} x </span>
-            								<span class="offcanvas-cart-item-details-price">$${numberFormat(priceFormat)}</span>
-            							</div>
-		                            </div>
-		                        </div>
-		                    </li>`;
-	        }else if (flag ==2) {
+			if (flag ==2) {
 	        	liProduct = `<li class="offcanvas-cart-item-single">
 			                    <div class="offcanvas-cart-item-block">
 			                        <div class="offcanvas-cart-item-image-link">
@@ -358,24 +370,21 @@ $(document).ready(function () {
 			                    </div>
 			                </li>`;
 	        }else {
-	        	if (parseInt(product.stock) == 0 || product.url == false) {
-	        		liProduct = "";
-	        	}else{
-	        		liProduct = `<li class="offcanvas-cart-item-single">
-			                        <div class="offcanvas-cart-item-block">
-			                            <div class="offcanvas-cart-item-image-link">
-			                                <img src="${product.image}" alt="" class="offcanvas-cart-image">
-			                            </div>
-			                            <div class="offcanvas-cart-item-content">
-			                                <span class="font-weight-bold">${product.name}</span>
-			                                <div class="offcanvas-cart-item-details">
-			                                	<span class="offcanvas-cart-item-details-quantity">${parseInt(product.amount_product)} x </span>
-	            								<span class="offcanvas-cart-item-details-price">$${numberFormat(priceFormat)}</span>
-	            							</div>
-			                            </div>
-			                        </div>
-			                    </li>`;
-	        	}
+				liProduct = `<li class="offcanvas-cart-item-single">
+								<div class="offcanvas-cart-item-block">
+									<div class="offcanvas-cart-item-image-link">
+										<img src="${product.image}" alt="" class="offcanvas-cart-image">
+									</div>
+									<div class="offcanvas-cart-item-content">
+										<span class="font-weight-bold">${product.name}</span>
+										<div class="offcanvas-cart-item-details">
+											<span class="offcanvas-cart-item-details-quantity">${parseInt(product.amount_product)} x </span>
+											<span class="offcanvas-cart-item-details-price">$${numberFormat(priceFormat)}</span>
+										</div>
+									</div>
+								</div>
+							</li>`;
+	        	
 	        }
 
 	        if (liProduct) {
@@ -385,6 +394,5 @@ $(document).ready(function () {
 
 	    return productList;
 	}
-
 
 });

@@ -10,6 +10,7 @@
 			$action = Utils::getParam("action", "");
 			$msg = "";
 			$status = true;
+
 			switch ($action) {
 				case 'addCartProduct':
 					if($_POST){
@@ -33,6 +34,7 @@
 						echo json_encode($data);
 					}
 				break;
+
 				case 'getProducts':
 					if (isset($_POST)) {
 				        $productIds = implode(',', array_map(function($data) {
@@ -103,6 +105,122 @@
 						echo json_encode($data);
 					}
 				break;
+
+				case 'consoleCard':
+
+					if (isset($_POST)) {
+						$ordereProducts = $_POST['newProductOrder'];
+						$mainTown = $_POST['main_town'];
+						$shipping_cost = 0;
+						$subtotal = 0;
+						$iva = 0;
+						$total = 0;
+						$alert = "";
+
+						$productsIdsArr = array_map(function($data){return Utils::desencriptar($data['id']);}, $ordereProducts);
+						$productsAmountArr = array_map(function($data){return $data['amount_product'];}, $ordereProducts);
+						$productsPriceArr = array_map(function($data){ return $data['price']; }, $ordereProducts);
+						
+						$productsIds = implode(',', $productsIdsArr);
+									
+						$requestProducts = Models_Store::getOrderedProducts($productsIds, false);
+
+						$productsWithChanges = array();
+						$newQuantityProduct = null;
+						$newProductsArray = array();
+						$stockUpdate = true;
+
+						foreach ($requestProducts as $product) {
+							$id  = $product['id_product'];
+							$stock = intval( $product['stock']);
+							$price = floatval($product['price']);
+
+							$index = array_search($id, $productsIdsArr);
+							$orderedAmount = intval($productsAmountArr[$index]);
+							$orderedPrice = floatval($productsPriceArr[$index]);
+
+							if (($stock < $orderedAmount || $stock <= 0 || $stock === null) || ($price != $orderedPrice) || ($product['status'] != 1)) {
+								
+								$stockUpdate = false;
+								if ($stock < $orderedAmount || $stock <= 0 || $stock === null) {
+									$newQuantityProduct = $stock;
+								}
+
+								if($orderedAmount < $stock){
+									$newQuantityProduct = $orderedAmount;
+								}
+
+								if ($price != $orderedPrice && $orderedAmount == $stock) {
+									$newQuantityProduct = $orderedAmount;
+								}
+
+								$statusProduct = $product['status'] != 1 ? false : true;
+
+								$productsWithChanges[] = array('amount_product' => $newQuantityProduct, 'id' => Utils::encriptar($id), 'name' => $product['name_product'], 'price' => $price, 'stock' => $stock, 'image' => $product['images'][0]['url_image'], 'code' => intval($product['code']), 'url' => $statusProduct);
+							}
+						}
+
+						if($stockUpdate === true){
+							Models_Store::updateStockTransaction($productsIdsArr, $productsAmountArr, $productsIds);
+						}
+						
+						if (empty($productsWithChanges)) {
+							foreach ($ordereProducts as $product) {
+								$subtotal += $product['price'] * $product['amount_product'];
+							}
+						}else{
+							$alert = 'Estimado cliente, algunos productos han presentado cambios recientes.'; 
+
+							$indexedArray2 = array();
+							foreach ($productsWithChanges as $item2) {
+								$indexedArray2[$item2['id']] = $item2;
+							}
+
+							foreach ($ordereProducts as $item1) {
+								if (isset($indexedArray2[$item1['id']])) {
+									$item2 = $indexedArray2[$item1['id']];
+
+									if ($item2['stock'] > 0 && $item2['url'] == 1) {
+										if ($item1['stock'] != $item2['stock'] || $item1['price'] != $item2['price']) {
+											$newProductsArray[] = $item2;
+										}else{
+											$newProductsArray[] = $item1;
+										}
+									}
+								}else{
+									$newProductsArray[] = $item1; 
+								}
+							};
+
+							foreach ($productsWithChanges as $item2) {
+								if(!isset($indexedArray2[$item2['id']])){
+									$newProductsArray[] = $item2;
+								}
+							}
+
+							foreach ($newProductsArray as $value) {
+								$subtotal += floatval($value['price']) * intval($value['amount_product']);
+							}
+						}
+
+						if ($subtotal < 100) {
+							if($mainTown == 1){
+								$shipping_cost = 0;
+							}else if($mainTown == 2){
+								$shipping_cost = 5;
+							}else{
+								$shipping_cost = 10;
+							}
+						}
+
+						if ($subtotal > 0) {
+							$total = $subtotal + $iva + $shipping_cost;
+						}
+
+						echo json_encode(array('subtotal' => $subtotal, 'iva' => $iva , 'envio' => $shipping_cost, 'total' =>  $total, 'flag_stockUpdate' => $stockUpdate, 'productsWithChanges' => $productsWithChanges, 'newProductsArray' => $newProductsArray, 'alert' => $alert));
+					}
+
+				break;
 			
 				default:
 					// $data["file_js"][] = "producto-store";
@@ -121,13 +239,11 @@
 					}else{
 						View::renderPage('Carrito', $data);
 					}
-
 				break;
 			}
 		}
 
 		public function verifyProductsDb($ordereProducts, $mainTown) {
-			$unique_code = Utils::uniqueCode();
 			$shipping_cost = 0;
 			$subtotal = 0;
 			$iva = 0;
@@ -196,16 +312,18 @@
 				foreach ($ordereProducts as $item1) {
 					if (isset($indexedArray2[$item1['id']])) {
 						$item2 = $indexedArray2[$item1['id']];
-						
-						if ($item1['stock'] != $item2['stock'] || $item1['price'] != $item2['price'] || $item2['url'] == false) {
-							$newProductsArray[] = $item2;
-						}else{
-							$newProductsArray[] = $item1;
+
+						if ($item2['stock'] > 0 && $item2['url'] == 1) {
+							if ($item1['stock'] != $item2['stock'] || $item1['price'] != $item2['price']) {
+								$newProductsArray[] = $item2;
+							}else{
+								$newProductsArray[] = $item1;
+							}
 						}
 					}else{
 						$newProductsArray[] = $item1; 
 					}
-				}
+				};
 
 				foreach ($productsWithChanges as $item2) {
 					if(!isset($indexedArray2[$item2['id']])){
@@ -214,11 +332,8 @@
 				}
 
 				foreach ($newProductsArray as $value) {
-					if ($value['url'] != false) {
-						$subtotal += floatval($value['price']) * intval($value['amount_product']);
-					}
+					$subtotal += floatval($value['price']) * intval($value['amount_product']);
 				}
-
 			}
 
 			if ($subtotal < 100) {
@@ -237,7 +352,6 @@
 
 			return array('subtotal' => $subtotal, 'iva' => $iva , 'envio' => $shipping_cost, 'total' =>  $total, 'flag_stockUpdate' => $stockUpdate, 'productsWithChanges' => $productsWithChanges, 'newProductsArray' => $newProductsArray, 'alert' => $alert);
 		}
-
 	}
 
 ?>
