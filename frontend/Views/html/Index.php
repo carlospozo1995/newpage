@@ -83,26 +83,6 @@
 	    </div>
 	    <!-- End Hero Slider Section-->
 
-	    <?php
-
-
-	    	function datalocal($value)
-	    	{
-	    		$local = "";
-
-	    		if($value){
-	    			$local = 'lleno';
-	    		}else{
-	    			$local = 'vacia';
-	    		}
-
-	    		return $local;
-	    	}
-
-    		print_r(datalocal(false));		
-
-	    ?>
-
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

@@ -276,11 +276,11 @@
                     </div>
                     
                 </div>
-
+                
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary accept-changes">Comprar</button>
+                    
                 </div>
+
             </div>
         </div>
     </div>
@@ -288,7 +288,6 @@
         }
     } 
     ?>
-
 
     <script> const base_url = "<?= BASE_URL; ?>"; </script>
     <script> const media_store= "<?= MEDIA_STORE; ?>"; </script>
@@ -314,15 +313,15 @@
     <script src="<?= MEDIA_STORE; ?>js/main.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/store-functions.js"></script>
     <script src="<?= MEDIA_STORE; ?>js/store-storage.js"></script>
-    
-    <?php
-    if(isset($file_js) && is_array($file_js) && !empty($file_js)){
-        foreach ($file_js as $keyjs => $valuejs) {
-            echo '<script src="'.MEDIA_STORE.'js/'.$valuejs.'.js"></script>';
-        }
-    }
+  
 
-?>
+    <?php
+        if(isset($file_js) && is_array($file_js) && !empty($file_js)){
+            foreach ($file_js as $keyjs => $valuejs) {
+                echo '<script src="'.MEDIA_STORE.'js/'.$valuejs.'.js"></script>';
+            }
+        }
+    ?>
 
 </body>
 </html>

@@ -278,7 +278,6 @@ $(document).ready(function () {
 	})
 
 	function modalProductsChanges(localStorage, verifyProductsDb) {
-		console.log(verifyProductsDb);
 		$('#modalProductsChanges').modal('show');
 
 		$('#modalProductsChanges .modal-header h4').text(verifyProductsDb.alert);
@@ -286,45 +285,76 @@ $(document).ready(function () {
 		$('#modalProductsChanges .modal-body .productsChanges').html(createProductList(verifyProductsDb.productsWithChanges, 2));
 		$('#modalProductsChanges .modal-body .newProducts').html(createProductList(verifyProductsDb.newProductsArray, 3));
 		$('#modalProductsChanges .modal-body .modifiedTotal').html(`
-				<div class="coupon_code right mb-5" >
-				    <div class="coupon_inner">
-				        <div class="cart_subtotal">
-				            <p>Subtotal</p>
-				            <p class="cart_amount subtotal-update">$${numberFormat(verifyProductsDb.subtotal)}</p>
-				        </div>
-				        <div class="cart_subtotal">
-				            <p>IVA</p>
-				            <p class="cart_amount iva-update">$${numberFormat(verifyProductsDb.iva)}</p>
-				        </div>
-				        <div class="cart_subtotal">
-				            <p>ENVIO</p>
-				            <p class="cart_amount shipment-update">$${numberFormat(verifyProductsDb.envio)}</p>
-				        </div>
-				        <hr>
-				        <div class="cart_subtotal">
-				            <p>Total</p>
-				            <p class="cart_amount total-update">$${numberFormat(verifyProductsDb.total)}</p>
-				        </div>
-				    </div>
+			<div class="coupon_code right mb-5" >
+				<div class="coupon_inner">
+					<div class="cart_subtotal">
+						<p>Subtotal</p>
+						<p class="cart_amount subtotal-update">$${numberFormat(verifyProductsDb.subtotal)}</p>
+					</div>
+					<div class="cart_subtotal">
+						<p>IVA</p>
+						<p class="cart_amount iva-update">$${numberFormat(verifyProductsDb.iva)}</p>
+					</div>
+					<div class="cart_subtotal">
+						<p>ENVIO</p>
+						<p class="cart_amount shipment-update">$${numberFormat(verifyProductsDb.envio)}</p>
+					</div>
+					<hr>
+					<div class="cart_subtotal">
+						<p>Total</p>
+						<p class="cart_amount total-update">$${numberFormat(verifyProductsDb.total)}</p>
+					</div>
 				</div>
-			`);
+			</div>
+		`);
+		$('#modalProductsChanges .modal-footer').html(`
+			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary accept-changes">Comprar</button>`
+		);
 
 		$('.accept-changes').click(function () {
-			console.log(verifyProductsDb.productsWithChanges);
-			// $('#modalProductsChanges').modal('hide');
+			$('#modalProductsChanges').modal('hide');
 			$.ajax({
-				url: base_url + "carrito/consoleCard/",
+				url: base_url + "carrito/acceptChangesPurchase/",
 				dataType: 'JSON',
 				method: 'POST',
 				data: {
 					newProductOrder: verifyProductsDb.newProductsArray,
-					main_town: $('#location').val()
+					main_town: $('#location').val(),
+					payment_method: $('.payment-selection input:checked').val()
 				},
 				beforeSend: function() {
 					// $('.cart-section .content-loading').css("display", "flex");
+					$('#modalProductsChanges').modal('hide');
 				},
-				success: function(data){
-					console.log(data);
+				success: function(dataNew){
+					if (dataNew.status) {
+						if (dataNew.paymentType) {
+							console.log('tarjeta');
+							if (dataNew.verifyProductsDb.flag_stockUpdate) {
+								// aqui va el ajax de payphone
+								console.log(dataNew.verifyProductsDb);
+								$('#modalProductsChanges').modal('hide');
+							}else{
+									// $('#modalProductsChanges').on('hidden.bs.modal', function () {
+									modalProductsChanges(verifyProductsDb.newProductsArray, dataNew.verifyProductsDb);
+									// });
+							}
+						}else{
+							console.log('transferencia');
+							if (dataNew.verifyProductsDb.flag_stockUpdate) {
+								// aqui le brindaremos los datos para que el cliente haga la transferencia
+								console.log(dataNew.verifyProductsDb);
+								$('#modalProductsChanges').modal('hide');
+							}else{
+								// $('#modalProductsChanges').on('hidden.bs.modal', function () {
+									modalProductsChanges(verifyProductsDb.newProductsArray, dataNew.verifyProductsDb);
+								// });
+							}
+						}
+					}else{
+						console.log(dataNew.msg);
+					}
 				},
 				error: function(xhr, status, error) {
 					console.log(error);
@@ -333,7 +363,6 @@ $(document).ready(function () {
 					// $('.cart-section .content-loading').css("display", "none");
 				}
 			});
-
 		});
 	}
 
@@ -394,5 +423,7 @@ $(document).ready(function () {
 
 	    return productList;
 	}
+
+	
 
 });

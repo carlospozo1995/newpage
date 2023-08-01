@@ -8,7 +8,7 @@
 	<meta name="author" content="">
 	<title><?= $title_page ?></title>
 
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+	<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"> -->
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="<?= MEDIA_ADMIN; ?>css/plugins/fontawesome/css/all.min.css">
 	<!-- SweetAlert2 -->
