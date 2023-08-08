@@ -247,15 +247,14 @@ $(document).ready(function () {
 						console.log('tarjeta');
 						// console.log(data.verifyProductsDb.flag_stockUpdate);
 						if (data.verifyProductsDb.flag_stockUpdate) {
-							// aqui va el ajax de payphone
-							console.log(data.verifyProductsDb);
+							$('#modalProductsChanges').modal('hide');
+							paymentGateway(data.verifyProductsDb.total, data.verifyProductsDb.unique_code);
 						}else{
 							// aqui abriremos el modal si hay cambios en los productos
 							modalProductsChanges(cartStorage, data.verifyProductsDb);
 						}
 					}else{
 						console.log('transferencia');
-						// console.log(data.verifyProductsDb.flag_stockUpdate);
 						if (data.verifyProductsDb.flag_stockUpdate) {
 							// aqui le brindaremos los datos para que el cliente haga la transferencia
 							console.log(data.verifyProductsDb);
@@ -280,40 +279,62 @@ $(document).ready(function () {
 	function modalProductsChanges(localStorage, verifyProductsDb) {
 		$('#modalProductsChanges').modal('show');
 
-		$('#modalProductsChanges .modal-header h4').text(verifyProductsDb.alert);
-		$('#modalProductsChanges .modal-body .oredererProducts').html(createProductList(localStorage, 1));
-		$('#modalProductsChanges .modal-body .productsChanges').html(createProductList(verifyProductsDb.productsWithChanges, 2));
-		$('#modalProductsChanges .modal-body .newProducts').html(createProductList(verifyProductsDb.newProductsArray, 3));
-		$('#modalProductsChanges .modal-body .modifiedTotal').html(`
-			<div class="coupon_code right mb-5" >
-				<div class="coupon_inner">
-					<div class="cart_subtotal">
-						<p>Subtotal</p>
-						<p class="cart_amount subtotal-update">$${numberFormat(verifyProductsDb.subtotal)}</p>
-					</div>
-					<div class="cart_subtotal">
-						<p>IVA</p>
-						<p class="cart_amount iva-update">$${numberFormat(verifyProductsDb.iva)}</p>
-					</div>
-					<div class="cart_subtotal">
-						<p>ENVIO</p>
-						<p class="cart_amount shipment-update">$${numberFormat(verifyProductsDb.envio)}</p>
-					</div>
-					<hr>
-					<div class="cart_subtotal">
-						<p>Total</p>
-						<p class="cart_amount total-update">$${numberFormat(verifyProductsDb.total)}</p>
-					</div>
-				</div>
-			</div>
+		$('#modalProductsChanges .modal-content').html(`
+			<div class="modal-header">
+                <h4 class="modal-title font-weight-bold m-auto c-p-deep-blue text-center">${verifyProductsDb.alert}</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5 class="c-coral text-center font-weight-bold">Productos pedidos</h5>
+                    	<ul class='offcanvas-cart py-3 px-3'>
+                    		${createProductList(localStorage, 1)}
+                    	</ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="c-coral text-center font-weight-bold">Presentan cambios</h5>
+                    	<ul class='offcanvas-cart py-3 px-3'>
+                    		${createProductList(verifyProductsDb.productsWithChanges, 2)}
+                    	</ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="c-coral text-center font-weight-bold">Pedido actualizado</h5>
+                    	<ul class='offcanvas-cart py-3 px-3'>
+                    		${createProductList(verifyProductsDb.newProductsArray, 3)}
+                    	</ul>
+                    	<div class="coupon_code right mb-5" >
+					 		<div class="coupon_inner">
+					 			<div class="cart_subtotal">
+					 				<p>Subtotal</p>
+					 				<p class="cart_amount subtotal-update">$${numberFormat(verifyProductsDb.subtotal)}</p>
+					 			</div>
+					 			<div class="cart_subtotal">
+					 				<p>IVA</p>
+					 				<p class="cart_amount iva-update">$${numberFormat(verifyProductsDb.iva)}</p>
+					 			</div>
+					 			<div class="cart_subtotal">
+					 				<p>ENVIO</p>
+					 				<p class="cart_amount shipment-update">$${numberFormat(verifyProductsDb.envio)}</p>
+					 			</div>
+					 			<hr>
+					 			<div class="cart_subtotal">
+					 				<p>Total</p>
+					 				<p class="cart_amount total-update">$${numberFormat(verifyProductsDb.total)}</p>
+					 			</div>
+					 		</div>
+					 	</div>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="modal-footer">
+            	<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+             	<button type="button" class="btn btn-primary accept-changes">Comprar</button>       
+            </div>
 		`);
-		$('#modalProductsChanges .modal-footer').html(`
-			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary accept-changes">Comprar</button>`
-		);
 
 		$('.accept-changes').click(function () {
-			$('#modalProductsChanges').modal('hide');
 			$.ajax({
 				url: base_url + "carrito/acceptChangesPurchase/",
 				dataType: 'JSON',
@@ -325,20 +346,19 @@ $(document).ready(function () {
 				},
 				beforeSend: function() {
 					// $('.cart-section .content-loading').css("display", "flex");
-					$('#modalProductsChanges').modal('hide');
 				},
 				success: function(dataNew){
 					if (dataNew.status) {
 						if (dataNew.paymentType) {
 							console.log('tarjeta');
 							if (dataNew.verifyProductsDb.flag_stockUpdate) {
-								// aqui va el ajax de payphone
-								console.log(dataNew.verifyProductsDb);
 								$('#modalProductsChanges').modal('hide');
+								paymentGateway(dataNew.verifyProductsDb.total, dataNew.verifyProductsDb.unique_code);
 							}else{
-									// $('#modalProductsChanges').on('hidden.bs.modal', function () {
+								$('#modalProductsChanges').modal('hide');
+								setTimeout(() => {
 									modalProductsChanges(verifyProductsDb.newProductsArray, dataNew.verifyProductsDb);
-									// });
+								}, 500);
 							}
 						}else{
 							console.log('transferencia');
@@ -346,10 +366,12 @@ $(document).ready(function () {
 								// aqui le brindaremos los datos para que el cliente haga la transferencia
 								console.log(dataNew.verifyProductsDb);
 								$('#modalProductsChanges').modal('hide');
+								// window.location.href = base_url;
 							}else{
-								// $('#modalProductsChanges').on('hidden.bs.modal', function () {
+								$('#modalProductsChanges').modal('hide');
+								setTimeout(() => {
 									modalProductsChanges(verifyProductsDb.newProductsArray, dataNew.verifyProductsDb);
-								// });
+								}, 500);
 							}
 						}
 					}else{
@@ -367,63 +389,85 @@ $(document).ready(function () {
 	}
 
 	function createProductList(products, flag) {
-	    const productList = $("<ul class='offcanvas-cart py-3 px-3'></ul>");
-		
+	    let productListHTML = "";
+
 	    products.forEach(product => {
 	        let priceFormat = typeof product.price === "string" ? parseFloat(product.price) : product.price;
 	        let liProduct;
 
-			if (flag ==2) {
-	        	liProduct = `<li class="offcanvas-cart-item-single">
-			                    <div class="offcanvas-cart-item-block">
-			                        <div class="offcanvas-cart-item-image-link">
-			                            <img src="${product.image}" alt="" class="offcanvas-cart-image">
-			                        </div>
-			                        <div class="offcanvas-cart-item-content">
-			                            <span class="font-weight-bold">${product.name}</span>
-			                            <div class="offcanvas-cart-item-details">`;
+	        if (flag == 2) {
+	            liProduct = `<li class="offcanvas-cart-item-single">
+	                            <div class="offcanvas-cart-item-block">
+	                                <div class="offcanvas-cart-item-image-link">
+	                                    <img src="${product.image}" alt="" class="offcanvas-cart-image">
+	                                </div>
+	                                <div class="offcanvas-cart-item-content">
+	                                    <span class="font-weight-bold">${product.name}</span>
+	                                    <div class="offcanvas-cart-item-details">`;
 
-			            if (product.url != false) {
-			            	if (parseInt(product.stock) == 0) {
-			                	liProduct += `<span class="c-coral font-weight-bold fs-12">Lo sentimos no hay disponible.</span>`;
-				            } else {
-				                liProduct += `<span class="c-coral">Existencias: </span> <span> ${parseInt(product.stock)}</span>
-				                <div><span class="c-coral">Precio: </span> <span> $${numberFormat(priceFormat)}</span></div>`;
-				            }
-			            }else{
-			            	liProduct += `<span class="c-coral font-weight-bold fs-12">Lo sentimos. Este producto ya no existe.</span>`;
-			            }
+	            if (product.url != false) {
+	                if (parseInt(product.stock) == 0) {
+	                    liProduct += `<span class="c-coral font-weight-bold fs-12">Lo sentimos no hay disponible.</span>`;
+	                } else {
+	                    liProduct += `<span class="c-coral">Existencias: </span> <span> ${parseInt(product.stock)}</span>
+	                    <div><span class="c-coral">Precio: </span> <span> $${numberFormat(priceFormat)}</span></div>`;
+	                }
+	            } else {
+	                liProduct += `<span class="c-coral font-weight-bold fs-12">Lo sentimos. Este producto ya no existe.</span>`;
+	            }
 
-						liProduct += `</div>
-			                        </div>
-			                    </div>
-			                </li>`;
-	        }else {
-				liProduct = `<li class="offcanvas-cart-item-single">
-								<div class="offcanvas-cart-item-block">
-									<div class="offcanvas-cart-item-image-link">
-										<img src="${product.image}" alt="" class="offcanvas-cart-image">
-									</div>
-									<div class="offcanvas-cart-item-content">
-										<span class="font-weight-bold">${product.name}</span>
-										<div class="offcanvas-cart-item-details">
-											<span class="offcanvas-cart-item-details-quantity">${parseInt(product.amount_product)} x </span>
-											<span class="offcanvas-cart-item-details-price">$${numberFormat(priceFormat)}</span>
-										</div>
-									</div>
-								</div>
-							</li>`;
-	        	
+	            liProduct += `</div>
+	                                </div>
+	                            </div>
+	                        </li>`;
+	        } else {
+	            liProduct = `<li class="offcanvas-cart-item-single">
+	                            <div class="offcanvas-cart-item-block">
+	                                <div class="offcanvas-cart-item-image-link">
+	                                    <img src="${product.image}" alt="" class="offcanvas-cart-image">
+	                                </div>
+	                                <div class="offcanvas-cart-item-content">
+	                                    <span class="font-weight-bold">${product.name}</span>
+	                                    <div class="offcanvas-cart-item-details">
+	                                        <span class="offcanvas-cart-item-details-quantity">${parseInt(product.amount_product)} x </span>
+	                                        <span class="offcanvas-cart-item-details-price">$${numberFormat(priceFormat)}</span>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </li>`;
 	        }
 
 	        if (liProduct) {
-		        productList.append(liProduct);
-		    }
+	            productListHTML += liProduct;
+	        }
 	    });
 
-	    return productList;
+	    return productListHTML;
 	}
 
-	
+	function paymentGateway(total, uniqueCode) {
+		var parametros ={
+			amount: total * 100,
+			amountWithoutTax: total * 100,
+			clientTransactionID: uniqueCode,
+			responseUrl: "http://localhost/carlos/page/pago",
+			cancellationUrl: "http://localhost/carlos/page/cancelacion"
+		};
+
+		$.ajax({
+			data: parametros,
+			url: 'https://pay.payphonetodoesposible.com/api/button/Prepare',
+			type:'POST',
+			beforeSend:function(xhr){
+				xhr.setRequestHeader ('Authorization', "Bearer H69wgPGoCNlXxD_4pm4YhDd_EY2mC7K5hK7xHx2-qFcREHkmoCYl96ObQwSg-5mwVtjksrSwdhLe8_wuvkrhS33RFMolMbw2z3xcqaWRglZqSzVTyZ4F_pQwO2R-Uo6CRoOgrgLfWdl0E8rbmFaAYKsIdeCMQqTjZ0Keh1nl-3G1IRZr5TqAf1J9gqkjEGNGdjZgZS3O91rzyymlyl5AmmDommGDDChPV7_J9I-5XnY3M4X5x4Z7GqUpoCYUdBf0whGh8p2Qa_CEPJWEFHsssbunkZrF0l3RPxXPs8I0ecUH1I0xF6IhLyqiXvWKApjjTgYL8iFC2eG5tXupeZfTT_-hue0")
+			},
+			success:function SolicitarPago(respuesta){
+				location.href = respuesta.payWithCard;
+			}, 
+			error: function(mensajeerror){
+				alert ("Error en la llamada:" + mensajeerror.Message);
+			}
+		});
+	}
 
 });

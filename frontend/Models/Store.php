@@ -139,5 +139,23 @@
             return $result;
         }
 
+        static public function updateStockTransactionSum($productIdsArr, $amountProductsArr, $productsIds)
+        {
+            $sql = "UPDATE products SET stock = CASE id_product ";
+
+            foreach ($productIdsArr as $index => $productId) {
+                $amount = $amountProductsArr[$index];
+                $sql .= "WHEN $productId THEN stock + $amount ";
+            }
+
+            $sql .= "ELSE stock END WHERE FIND_IN_SET(id_product, '$productsIds') AND status = 1";
+
+            $request =  $GLOBALS["db"]->execute($sql);
+            if ($request) {
+                $result = "ok";
+            }
+            return $result;
+        }
+
     }
 ?>

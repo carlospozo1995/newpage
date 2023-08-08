@@ -254,7 +254,7 @@
     <div class="modal fade" id="modalProductsChanges" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog  modal-xl" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <!-- <div class="modal-header">
                     <h4 class="modal-title font-weight-bold m-auto c-p-deep-blue text-center"></h4>
                 </div>
 
@@ -273,13 +273,12 @@
                             <div class="newProducts"></div>
                             <div class="modifiedTotal"></div>
                         </div>
-                    </div>
-                    
+                    </div>  
                 </div>
                 
                 <div class="modal-footer">
                     
-                </div>
+                </div> -->
 
             </div>
         </div>
