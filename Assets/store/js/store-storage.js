@@ -1,6 +1,6 @@
 
 $(window).ready(function () {
-    if (localStorage.getItem("shoppingCartData")) {
+    if (localStorage.getItem("shoppingCartData") && Array.isArray(JSON.parse(localStorage.getItem("shoppingCartData")))) {
         let cartData_view = JSON.parse(localStorage.getItem("shoppingCartData"));
         let cartData_productIds = $.map(cartData_view, function(product) {
             return product.id;
@@ -110,6 +110,7 @@ $(window).ready(function () {
             }
         });
     }else{
+        localStorage.removeItem("shoppingCartData");
         $("#modal-shopping-cart-container").html('<h1 class="text-center c-p-deep-blue">Vacio</h1>');
         $('#view-shopping-cart-container').html(`
             <div class="empty-cart-section section-fluid">

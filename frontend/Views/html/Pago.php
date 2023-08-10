@@ -57,6 +57,9 @@
 	<title></title>
 </head>
 <body>
+	<?php
+	Utils::dep($_SESSION['productsIdsArr']);
+	?>
 	<div>
 	<?php
 
@@ -65,6 +68,10 @@
 	$dateTransaction = $data_transaction['date'];
 
 	if($statusCode == 2){
+		if (isset($_SESSION['productsIdsArr'], $_SESSION['productsAmountArr'], $_SESSION['productsIds'])) {
+			Models_Store::updatStockByCancellation($_SESSION['productsIdsArr'], $_SESSION['productsAmountArr'], $_SESSION['productsIds']);
+			unset($_SESSION['productsIdsArr'], $_SESSION['productsAmountArr'], $_SESSION['productsIds']);
+		}
 	?>
 		<h1><?= $data_transaction['message']; ?></h1>
 	<?php
@@ -79,8 +86,11 @@
     <script> const media_store= "<?= MEDIA_STORE; ?>"; </script>
 	<!-- <div id="confirmacion"></div> -->
 	<script src="<?= MEDIA_STORE; ?>js/vendor/jquery-3.5.1.min.js"></script>
-	<?php if ($statusCode != 2 && (strtotime(date("Y-m-d\TH:i:s.u")) < strtotime($dateTransaction) + 5)): ?>
+	<?php if ($statusCode != 2 && isset($_SESSION['productsIdsArr'], $_SESSION['productsAmountArr'], $_SESSION['productsIds'])): ?>
 	<!-- <script src="<?= MEDIA_STORE; ?>js/store-transaction.js"></script> -->
-	<?php endif ?>
+	<script>
+		localStorage.removeItem("shoppingCartData");
+	</script>
+	<?php unset($_SESSION['productsIdsArr'], $_SESSION['productsAmountArr'], $_SESSION['productsIds']); endif ?>
 </body>
 </html>

@@ -139,7 +139,7 @@
             return $result;
         }
 
-        static public function updateStockTransactionSum($productIdsArr, $amountProductsArr, $productsIds)
+        static public function updatStockByCancellation($productIdsArr, $amountProductsArr, $productsIds)
         {
             $sql = "UPDATE products SET stock = CASE id_product ";
 

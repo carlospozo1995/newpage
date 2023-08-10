@@ -7,24 +7,6 @@
 
 			$action = Utils::getParam("action", "");
 			switch ($action) {
-				// case 'updateTransactionProducts':
-				// 	return false;
-				// 	// if(isset($_POST)){
-				// 	// 	$productIdsArr = array_map(function($data) {
-				// 	// 	    return Utils::desencriptar($data);
-				// 	// 	}, $_POST['productsIds']);
-				// 	// 	$amountProductsArr = $_POST['amountProducts'];
-				// 	// 	$productsIds = implode(',', array_map(function($data) {
-				// 	// 	    return Utils::desencriptar($data);
-				// 	// 	}, $_POST['productsIds']));
-
-
-				// 	// 	if (count($productIdsArr) == count($amountProductsArr)) {
-				// 	// 	    $updateStock = Models_Store::updateStockTransaction($productIdsArr, $amountProductsArr, $productsIds);
-				// 	// 	}
-				// 	// 	echo json_encode($updateStock);
-				// 	// }
-				// break;
 				case ' ':
 					return false;
 				break;

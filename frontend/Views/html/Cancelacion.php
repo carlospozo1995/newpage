@@ -10,13 +10,6 @@
 		<h1 style="color: blue; font-size: 40px;">¡HA CANCELADO EL PROCESO DE COMPRA!</h1>
 	</div>
 
-	<?php
-		if (isset($_SESSION['local'])) {
-			echo "cabron"; 
-		}
-
-		unset($_SESSION['local']);
-	?>
 </body>
 </html>
 

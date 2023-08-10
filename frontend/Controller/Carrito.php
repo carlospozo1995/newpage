@@ -12,7 +12,7 @@
 			$msg = "";
 			$status = true;
 
-			function verifyProductsDb($ordereProducts, $mainTown, $card_payment = "") {
+			function verifyProductsDb($ordereProducts, $mainTown, $card_payment) {
 				$shipping_cost = 0;
 				$subtotal = 0;
 				$iva = 0;
@@ -68,13 +68,17 @@
 				}
 				
 				if (empty($productsWithChanges)) {
+					$unique_code = Utils::uniqueCode();
+					
 					foreach ($ordereProducts as $product) {
 						$subtotal += $product['price'] * $product['amount_product'];
 					}
+
 					if($card_payment == true){
-						$_SESSION['local'] = "existe local";
+						$_SESSION['productsIdsArr'] = $productsIdsArr;
+						$_SESSION['productsAmountArr'] = $productsAmountArr;
+						$_SESSION['productsIds'] = $productsIds;
 					}
-					$unique_code = Utils::uniqueCode();
 				}else{
 					$alert = 'Estimado cliente, algunos productos han presentado cambios recientes.'; 
 					
@@ -203,7 +207,7 @@
 							if ($info_client_state && $check_state && $payment_method != '' && $main_town != '' && $street != '' && $addressee != '' && $ordered_products != '') {
 								if($payment_method == 'bank-transfer'){
 									$payment_type = false;
-									$verifyProductsDb = verifyProductsDb($ordered_products, $main_town);
+									$verifyProductsDb = verifyProductsDb($ordered_products, $main_town, false);
 								}else if($payment_method == 'credit-card'){
 									$payment_type = true;
 									$verifyProductsDb = verifyProductsDb($ordered_products, $main_town, true);
@@ -234,7 +238,7 @@
 						try {
 							if($payment_method == 'bank-transfer'){
 								$payment_type = false;
-								$verifyProductsDb = verifyProductsDb($newOrder, $mainTwon);
+								$verifyProductsDb = verifyProductsDb($newOrder, $mainTwon, false);
 							}else if($payment_method == 'credit-card'){
 								$payment_type = true;
 								$verifyProductsDb = verifyProductsDb($newOrder, $mainTwon, true);
