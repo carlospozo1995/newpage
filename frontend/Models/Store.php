@@ -96,6 +96,12 @@
             return $request_prod;
         }
 
+        static public function paymentType() {
+            $sql = "SELECT * FROM payment_type";
+            $request = $GLOBALS["db"]->selectAll($sql, array());
+            return $request;
+        }
+
         static public function getOrderedProducts($data, $flag)
         {
             $sql = "SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN ($data)";

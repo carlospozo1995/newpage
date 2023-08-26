@@ -188,16 +188,12 @@ $(document).ready(function () {
 	});
 
 	if($('.process-payment').length){
-		$('.collapse_method-buy-card').slideUp();
-		let methodBuy = $('.payment-selection .form-check-input');
-		methodBuy.click(function () {
-			if ($(this).val() == 'bank-transfer') {
-				$('.collapse_method-buy-transfer').slideDown();
-				$('.collapse_method-buy-card').slideUp();
-			  } else {
-				$('.collapse_method-buy-transfer').slideUp();
-				$('.collapse_method-buy-card').slideDown();
-			  }
+		$('.collapse_method-buy:first').show();
+
+		$('.payment-selection .form-check-input').on('click', function() {
+			const thisCollapse = $(this).parent().parent().find('.collapse_method-buy');
+			$('.collapse_method-buy').not(thisCollapse).slideUp();
+			thisCollapse.slideDown();
 		});
 	}
 
@@ -462,7 +458,7 @@ $(document).ready(function () {
 				xhr.setRequestHeader ('Authorization', "Bearer H69wgPGoCNlXxD_4pm4YhDd_EY2mC7K5hK7xHx2-qFcREHkmoCYl96ObQwSg-5mwVtjksrSwdhLe8_wuvkrhS33RFMolMbw2z3xcqaWRglZqSzVTyZ4F_pQwO2R-Uo6CRoOgrgLfWdl0E8rbmFaAYKsIdeCMQqTjZ0Keh1nl-3G1IRZr5TqAf1J9gqkjEGNGdjZgZS3O91rzyymlyl5AmmDommGDDChPV7_J9I-5XnY3M4X5x4Z7GqUpoCYUdBf0whGh8p2Qa_CEPJWEFHsssbunkZrF0l3RPxXPs8I0ecUH1I0xF6IhLyqiXvWKApjjTgYL8iFC2eG5tXupeZfTT_-hue0")
 			},
 			success:function SolicitarPago(respuesta){
-				location.href = respuesta.payWithCard;
+				location.href = respuesta.payWithPayPhone;
 			}, 
 			error: function(mensajeerror){
 				alert ("Error en la llamada:" + mensajeerror.Message);

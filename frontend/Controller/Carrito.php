@@ -205,12 +205,12 @@
 
 						try {
 							if ($info_client_state && $check_state && $payment_method != '' && $main_town != '' && $street != '' && $addressee != '' && $ordered_products != '') {
-								if($payment_method == 'bank-transfer'){
-									$payment_type = false;
-									$verifyProductsDb = verifyProductsDb($ordered_products, $main_town, false);
-								}else if($payment_method == 'credit-card'){
+								if($payment_method == 1){
 									$payment_type = true;
 									$verifyProductsDb = verifyProductsDb($ordered_products, $main_town, true);
+								}else if($payment_method == 2){
+									$payment_type = false;
+									$verifyProductsDb = verifyProductsDb($ordered_products, $main_town, false);
 								}else{
 									throw new Exception("No es posible realizar el proceso intentelo mas tarde.");
 								}

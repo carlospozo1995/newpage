@@ -254,32 +254,6 @@
     <div class="modal fade" id="modalProductsChanges" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog  modal-xl" role="document">
             <div class="modal-content">
-                <!-- <div class="modal-header">
-                    <h4 class="modal-title font-weight-bold m-auto c-p-deep-blue text-center"></h4>
-                </div>
-
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h5 class="c-coral text-center font-weight-bold">Productos pedidos</h5>
-                            <div class="oredererProducts"></div>
-                        </div>
-                        <div class="col-md-4">
-                            <h5 class="c-coral text-center font-weight-bold">Presentan cambios</h5>
-                            <div class="productsChanges"></div>
-                        </div>
-                        <div class="col-md-4">
-                            <h5 class="c-coral text-center font-weight-bold">Pedido actualizado</h5>
-                            <div class="newProducts"></div>
-                            <div class="modifiedTotal"></div>
-                        </div>
-                    </div>  
-                </div>
-                
-                <div class="modal-footer">
-                    
-                </div> -->
-
             </div>
         </div>
     </div>

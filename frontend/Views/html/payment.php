@@ -142,27 +142,23 @@
 
                             <div class="process-payment collapse px-5 py-5">
                                 <div class="payment-selection">
-                                    <div class="buy_bank-transfer">
+                            <?php 
+                                $pt = Models_Store::paymentType();
+                                for ($i=0; $i < count($pt); $i++) { 
+                            ?>
+                                    <div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" id="bank-transfer" name="flexRadioDefault" value="bank-transfer" checked>
-                                            <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="bank-transfer">Transferencia bancaria directa</label>
+                                            <input class="form-check-input" type="radio" id="<?= str_replace(" ", "-", $pt[$i]['payment_type']) ?>" name="flexRadioDefault" value="<?= $pt[$i]['id_payment_type'] ?>" <?= ($i === 0) ? 'checked' : ''; ?>>
+                                            <label for="<?= str_replace(" ", "-", $pt[$i]['payment_type']) ?>" class="ml-2 form-check-label text-dark font-weight-bold fs-15"><?= ($i === 0) ? '<img src="'.MEDIA_STORE.'images/img-payphone.png" alt="">' : 'Transferencia bancaria directa' ; ?></label>
                                         </div>
-                                        <div class="collapse_method-buy-transfer">
-                                            <p class="text-dark">Realiza tu pago directamente en nuestra cuenta bancaria.</p>
-                                            <p class="text-dark">Por favor, incluya el número de pedido en los detalles de la transferencia o también al concluir el depósito enviar una foto del comprobante y el número de pedido al correo <a href="mailto:ejemplo@gmail.com" class="text-primary font-weight-bold">ejemplo@gmail.com</a> o a nuestro whatsapp <span class="text-primary font-weight-bold">0987654321</span>. 
-                                            </p>
+                                        <div class="collapse_method-buy" style="display: none;">
+                                        <?= ($i === 0) ? '<p class="text-dark">Payphone es la solución completa para pagos en línea. Segura, fácil y rápida.</p>' : ' <p class="text-dark">Realiza tu pago directamente en nuestra cuenta bancaria.</p>
+                                            <p class="text-dark">Por favor, incluya el número de pedido en los detalles de la transferencia o también al concluir el depósito enviar una foto del comprobante y el número de pedido al correo <a href="mailto:ejemplo@gmail.com" class="text-primary font-weight-bold">ejemplo@gmail.com</a> o a nuestro whatsapp <span class="text-primary font-weight-bold">0987654321</span>.'; ?>
                                         </div>
                                     </div>
-                                    
-                                    <div class="buy-test-example">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" id="credit-card" name="flexRadioDefault" value="credit-card">
-                                            <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="credit-card"><img src="<?= MEDIA_STORE; ?>images/img-payphone.png" alt=""></label>
-                                        </div>
-                                        <div class="collapse_method-buy-card" style="display: none;">
-                                            <p class="text-dark">Payphone es la solución completa para pagos en línea. Segura, fácil y rápida.</p>
-                                        </div>
-                                    </div>
+                            <?php        
+                                }
+                            ?>
                                 </div>
 
                                 <div class="accept-terms mt-4 mb-5">
