@@ -6210,3 +6210,12 @@
 [2023/08/31 09:07:38] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
 [2023/08/31 09:07:38] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (1) AND status = 1
 [2023/08/31 09:07:38] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1)
+[2023/08/31 09:08:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/08/31 09:08:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/08/31 09:08:49] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/08/31 09:08:49] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/08/31 09:08:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/08/31 09:08:49] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/08/31 09:08:49] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/08/31 09:08:50] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (1) AND status = 1
+[2023/08/31 09:08:50] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1)
