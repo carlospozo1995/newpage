@@ -6095,3 +6095,46 @@
 [2023/08/31 07:07:53] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (1)
 [2023/08/31 07:07:53] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1)
 [2023/08/31 07:07:53] SQL execute: UPDATE products SET stock = CASE id_product WHEN 1 THEN CASE WHEN stock > 0 THEN stock - 1 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '1') AND status = 1
+[2023/08/31 07:27:08] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/08/31 07:27:08] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/08/31 07:27:08] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/08/31 07:27:09] SQL Query: SELECT * FROM payment_type
+[2023/08/31 07:27:09] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (1) AND status = 1
+[2023/08/31 07:27:09] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1)
+[2023/08/31 07:27:09] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (1) AND status = 1
+[2023/08/31 07:27:09] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1)
+[2023/08/31 07:27:16] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (1)
+[2023/08/31 07:27:16] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1)
+[2023/08/31 07:27:16] SQL execute: UPDATE products SET stock = CASE id_product WHEN 1 THEN CASE WHEN stock > 0 THEN stock - 1 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '1') AND status = 1
+[2023/08/31 07:35:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/08/31 07:35:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/08/31 07:35:19] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/08/31 07:35:19] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/08/31 07:35:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/08/31 07:35:19] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/08/31 07:35:19] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/08/31 07:35:19] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (1) AND status = 1
+[2023/08/31 07:35:19] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1)
+[2023/08/31 07:35:23] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/08/31 07:35:23] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/08/31 07:35:23] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/08/31 07:35:23] SQL Query: SELECT * FROM payment_type
+[2023/08/31 07:35:23] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (1) AND status = 1
+[2023/08/31 07:35:23] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1)
+[2023/08/31 07:35:23] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (1) AND status = 1
+[2023/08/31 07:35:23] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1)
+[2023/08/31 07:35:28] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/08/31 07:35:28] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/08/31 07:35:28] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/08/31 07:35:36] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (1)
+[2023/08/31 07:35:36] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1)
+[2023/08/31 07:35:36] SQL execute: UPDATE products SET stock = CASE id_product WHEN 1 THEN CASE WHEN stock > 0 THEN stock - 1 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '1') AND status = 1
+[2023/08/31 07:38:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/08/31 07:38:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/08/31 07:38:13] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/08/31 07:38:13] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/08/31 07:38:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/08/31 07:38:13] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/08/31 07:38:13] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/08/31 07:38:14] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (1) AND status = 1
+[2023/08/31 07:38:14] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (1)
