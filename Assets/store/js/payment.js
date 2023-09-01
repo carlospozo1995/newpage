@@ -246,6 +246,7 @@ $(document).ready(function () {
 							$('#modalProductsChanges').modal('hide');
 							paymentGateway(data.verifyProductsDb.total, data.verifyProductsDb.unique_code);
 						}else{
+							console.log(data.verifyProductsDb.total);
 							// aqui abriremos el modal si hay cambios en los productos
 							modalProductsChanges(cartStorage, data.verifyProductsDb);
 						}
@@ -443,9 +444,8 @@ $(document).ready(function () {
 
 	function paymentGateway(total, uniqueCode) {
 		var parametros ={
-			amount: total * 100,
-			amountWithoutTax: total * 100,
-			email: "",
+			amount: parseFloat(total.toFixed(2)) * 100,
+			amountWithoutTax: parseFloat(total.toFixed(2)) * 100,
 			clientTransactionID: uniqueCode,
 			responseUrl: "http://localhost/carlos/page/pago",
 			cancellationUrl: "http://localhost/carlos/page/cancelacion"
