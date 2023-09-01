@@ -74,11 +74,11 @@
 						$subtotal += $product['price'] * $product['amount_product'];
 					}
 
-					if($card_payment == true){
-						$_SESSION['productsIdsArr'] = $productsIdsArr;
-						$_SESSION['productsAmountArr'] = $productsAmountArr;
-						$_SESSION['productsIds'] = $productsIds;
-					}
+					// if($card_payment == true){
+					// 	$_SESSION['productsIdsArr'] = $productsIdsArr;
+					// 	$_SESSION['productsAmountArr'] = $productsAmountArr;
+					// 	$_SESSION['productsIds'] = $productsIds;
+					// }
 				}else{
 					$alert = 'Estimado cliente, algunos productos han presentado cambios recientes.'; 
 					
@@ -236,12 +236,12 @@
 						$verifyProductsDb = null;
 
 						try {
-							if($payment_method == 'bank-transfer'){
-								$payment_type = false;
-								$verifyProductsDb = verifyProductsDb($newOrder, $mainTwon, false);
-							}else if($payment_method == 'credit-card'){
+							if($payment_method == 1){
 								$payment_type = true;
 								$verifyProductsDb = verifyProductsDb($newOrder, $mainTwon, true);
+							}else if($payment_method == 2){
+								$payment_type = false;
+								$verifyProductsDb = verifyProductsDb($newOrder, $mainTwon, false);
 							}else{
 								throw new Exception("No es posible realizar el proceso intentelo mas tarde.");
 							}

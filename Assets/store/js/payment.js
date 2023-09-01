@@ -445,6 +445,7 @@ $(document).ready(function () {
 		var parametros ={
 			amount: total * 100,
 			amountWithoutTax: total * 100,
+			email: "",
 			clientTransactionID: uniqueCode,
 			responseUrl: "http://localhost/carlos/page/pago",
 			cancellationUrl: "http://localhost/carlos/page/cancelacion"
@@ -462,6 +463,7 @@ $(document).ready(function () {
 			}, 
 			error: function(mensajeerror){
 				alert ("Error en la llamada:" + mensajeerror.Message);
+				console.log(mensajeerror);
 			}
 		});
 	}

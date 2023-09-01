@@ -82,9 +82,9 @@
 	        </div>
 	    </div>
 	    <!-- End Hero Slider Section-->
+
 		<?php
-		
-			Utils::dep($_SESSION['login']);				
+			echo date("d-m-Y h:i:s");
 		?>
 		
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

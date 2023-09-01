@@ -31,10 +31,10 @@
 	$dateTransaction = $data_transaction['date'];
 
 	if($statusCode == 2){
-		if (isset($_SESSION['productsIdsArr'], $_SESSION['productsAmountArr'], $_SESSION['productsIds'])) {
-			Models_Store::updatStockByCancellation($_SESSION['productsIdsArr'], $_SESSION['productsAmountArr'], $_SESSION['productsIds']);
-			unset($_SESSION['productsIdsArr'], $_SESSION['productsAmountArr'], $_SESSION['productsIds']);
-		}
+		// if (isset($_SESSION['productsIdsArr'], $_SESSION['productsAmountArr'], $_SESSION['productsIds'])) {
+		// 	Models_Store::updatStockByCancellation($_SESSION['productsIdsArr'], $_SESSION['productsAmountArr'], $_SESSION['productsIds']);
+		// 	unset($_SESSION['productsIdsArr'], $_SESSION['productsAmountArr'], $_SESSION['productsIds']);
+		// }
 	?>
 		<h1><?= $data_transaction['message']; ?></h1>
 	<?php
