@@ -141,8 +141,7 @@
             $sql .= "ELSE stock END WHERE FIND_IN_SET(id_product, '$productsIds') AND status = 1";
 
             $request =  $GLOBALS["db"]->execute($sql);
-            if($request) {$result = "ok";}
-            return $result;
+            return $request;
         }
 
         static public function updatStockByCancellation($productIdsArr, $amountProductsArr, $productsIds)

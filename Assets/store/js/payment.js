@@ -327,9 +327,10 @@ $(document).ready(function () {
 
             <div class="modal-footer">
             	<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-             	<button type="button" class="btn btn-primary accept-changes">Comprar</button>       
+				${verifyProductsDb.total > 0 ? '<button type="button" class="btn btn-primary accept-changes">Comprar</button>' : ''}
             </div>
 		`);
+		// console.log(verifyProductsDb.total);
 
 		$('.accept-changes').click(function () {
 			$.ajax({

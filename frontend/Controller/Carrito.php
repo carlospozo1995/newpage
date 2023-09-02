@@ -5,7 +5,6 @@
 		public function buildPage()
 		{
 			Utils::sessionStartStore();
-			// session_start();
 			
 			$data = array();
 			$action = Utils::getParam("action", "");
@@ -31,8 +30,8 @@
 				$productsWithChanges = array();
 				$newQuantityProduct = null;
 				$newProductsArray = array();
-				$stockUpdate = true;
-	
+				$stockUpdate = false;
+				// $stockUpdate = true;
 				foreach ($requestProducts as $product) {
 					$id  = $product['id_product'];
 					$stock = intval( $product['stock']);
@@ -44,7 +43,7 @@
 	
 					if (($stock < $orderedAmount || $stock <= 0 || $stock === null) || ($price != $orderedPrice) || ($product['status'] != 1)) {
 						
-						$stockUpdate = false;
+						// $stockUpdate = false;
 						if ($stock < $orderedAmount || $stock <= 0 || $stock === null) {
 							$newQuantityProduct = $stock;
 						}
@@ -63,12 +62,13 @@
 					}
 				}
 	
-				if($stockUpdate === true){
-					Models_Store::updateStockTransaction($productsIdsArr, $productsAmountArr, $productsIds);
-				}
+				// if($stockUpdate === true){
+				// 	$data = Models_Store::updateStockTransaction($productsIdsArr, $productsAmountArr, $productsIds);
+				// }
 				
 				if (empty($productsWithChanges)) {
 					$unique_code = Utils::uniqueCode();
+					$stockUpdate = Models_Store::updateStockTransaction($productsIdsArr, $productsAmountArr, $productsIds);
 					
 					foreach ($ordereProducts as $product) {
 						$subtotal += $product['price'] * $product['amount_product'];
