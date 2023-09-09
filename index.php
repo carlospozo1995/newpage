@@ -75,8 +75,8 @@
 				return "Carrito";
 			break;
 
-			case 'pago':
-				return "Pago";
+			case 'confirmarcompra':
+				return "Confirmarcompra";
 			break;
 
 			case 'cancelacion':

@@ -231,7 +231,7 @@ $(window).ready(function () {
                                     <li>
                                         <div class="modal-add-cart-product-cart-buttons font-weight-bold">
                                             <a href="${base_url}carrito">Ver carrito</a>
-                                            <a href="${base_url}carrito/comprar">Procesar pago</a>
+                                            <a href="${base_url}carrito/procesarCompra">Procesar pago</a>
                                         </div>
                                     </li>
                                     <li class="modal-continue-button"><a href="#" data-bs-dismiss="modal">CONTINUAR COMPRANDO</a></li>
@@ -296,7 +296,7 @@ $(window).ready(function () {
             </div>
             <ul class="offcanvas-cart-action-button">
                 <li><a href="${base_url}carrito" class="btn btn-block btn-deep-blue">Ver Carrito</a></li>
-                <li><a href="${base_url}carrito/comprar" class=" btn btn-block btn-deep-blue mt-5">Procesar Pago</a></li>
+                <li><a href="${base_url}carrito/procesarCompra" class=" btn btn-block btn-deep-blue mt-5">Procesar Pago</a></li>
             </ul>
         `;
 
@@ -404,7 +404,7 @@ $(window).ready(function () {
                                             <p class="cart_amount total-cart">$${numberFormat(total)}</p>
                                         </div>
                                         <div class="checkout_btn">
-                                            <a href="${base_url}carrito/comprar" class="btn btn-md btn-coral">Procesar pago</a>
+                                            <a href="${base_url}carrito/procesarCompra" class="btn btn-md btn-coral">Procesar pago</a>
                                         </div>
                                     </div>
                                 </div>

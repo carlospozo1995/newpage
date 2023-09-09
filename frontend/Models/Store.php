@@ -156,11 +156,18 @@
             $sql .= "ELSE stock END WHERE FIND_IN_SET(id_product, '$productsIds') AND status = 1";
 
             $request =  $GLOBALS["db"]->execute($sql);
-            if ($request) {
-                $result = "ok";
-            }
-            return $result;
+            return $request;
         }
 
+        static public function cardPurchaseValidation() {
+
+        }
+
+        static public function insertOrders($orders, $flag) {
+            $arrData[] = $orders; 
+            $table = $flag == true ? "orders" : "detail_orders";
+            $result = $GLOBALS["db"]->insert_multiple($table, $arrData);
+            return $result;
+        }
     }
 ?>

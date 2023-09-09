@@ -239,25 +239,27 @@ $(document).ready(function () {
 			},
 			success: function(data){
 				if (data.status) {
+					let verifiedProducts = data.verifyProductsDb;
+
 					if (data.paymentType) {
 						console.log('tarjeta');
-						// console.log(data.verifyProductsDb.flag_stockUpdate);
-						if (data.verifyProductsDb.flag_stockUpdate) {
+
+						if (verifiedProducts.stockUpdate) {
 							$('#modalProductsChanges').modal('hide');
-							paymentGateway(data.verifyProductsDb.total, data.verifyProductsDb.unique_code);
+							paymentGateway(cartStorage, verifiedProducts.total, verifiedProducts.unique_code, $('#email-client').val(), $('#dni-client').val());
 						}else{
-							console.log(data.verifyProductsDb.total);
 							// aqui abriremos el modal si hay cambios en los productos
-							modalProductsChanges(cartStorage, data.verifyProductsDb);
+							modalProductsChanges(cartStorage, verifiedProducts);
 						}
 					}else{
 						console.log('transferencia');
-						if (data.verifyProductsDb.flag_stockUpdate) {
+						if (verifiedProducts.stockUpdate) {
 							// aqui le brindaremos los datos para que el cliente haga la transferencia
-							console.log(data.verifyProductsDb);
+							// console.log(data)
+							console.log(verifiedProducts);
 						}else{
 							// aqui abriremos el modal si hay cambios en los productos
-							modalProductsChanges(cartStorage, data.verifyProductsDb);
+							modalProductsChanges(cartStorage, verifiedProducts);
 						}
 					}
 				}else{
@@ -339,36 +341,43 @@ $(document).ready(function () {
 				method: 'POST',
 				data: {
 					newProductOrder: verifyProductsDb.newProductsArray,
+					payment_method: $('.payment-selection input:checked').val(),
 					main_town: $('#location').val(),
-					payment_method: $('.payment-selection input:checked').val()
+					address: $('#address').val(),
+					additional_information: $('#additional-information').val(),
+					addressee: $('#addressee').val(),
+					customer_message: $('#customer-message').val()
 				},
 				beforeSend: function() {
 					// $('.cart-section .content-loading').css("display", "flex");
 				},
 				success: function(dataNew){
 					if (dataNew.status) {
+						let verifiedProductsNew = dataNew.verifyProductsDb;
+
 						if (dataNew.paymentType) {
 							console.log('tarjeta');
-							if (dataNew.verifyProductsDb.flag_stockUpdate) {
+
+							if (verifiedProductsNew.stockUpdate) {
 								$('#modalProductsChanges').modal('hide');
-								paymentGateway(dataNew.verifyProductsDb.total, dataNew.verifyProductsDb.unique_code);
+								paymentGateway(verifyProductsDb.newProductsArray, verifiedProductsNew.total, verifiedProductsNew.unique_code, $('#email-client').val(), $('#dni-client').val());
 							}else{
 								$('#modalProductsChanges').modal('hide');
 								setTimeout(() => {
-									modalProductsChanges(verifyProductsDb.newProductsArray, dataNew.verifyProductsDb);
+									modalProductsChanges(verifyProductsDb.newProductsArray, verifiedProductsNew);
 								}, 500);
 							}
 						}else{
 							console.log('transferencia');
-							if (dataNew.verifyProductsDb.flag_stockUpdate) {
+							if (verifiedProductsNew.stockUpdate) {
 								// aqui le brindaremos los datos para que el cliente haga la transferencia
-								console.log(dataNew.verifyProductsDb);
+								console.log(verifiedProductsNew);
 								$('#modalProductsChanges').modal('hide');
 								// window.location.href = base_url;
 							}else{
 								$('#modalProductsChanges').modal('hide');
 								setTimeout(() => {
-									modalProductsChanges(verifyProductsDb.newProductsArray, dataNew.verifyProductsDb);
+									modalProductsChanges(verifyProductsDb.newProductsArray, verifiedProductsNew);
 								}, 500);
 							}
 						}
@@ -443,12 +452,14 @@ $(document).ready(function () {
 	    return productListHTML;
 	}
 
-	function paymentGateway(total, uniqueCode) {
+	function paymentGateway(orderedProducts, total, uniqueCode, emailClient, dniClient) {
 		var parametros ={
-			amount: parseFloat(total.toFixed(2)) * 100,
-			amountWithoutTax: parseFloat(total.toFixed(2)) * 100,
+			amount: parseFloat((total * 100).toFixed(2)),
+			amountWithoutTax: parseFloat((total * 100).toFixed(2)),
+			email: emailClient,
+			documentId: dniClient,
 			clientTransactionID: uniqueCode,
-			responseUrl: "http://localhost/carlos/page/pago",
+			responseUrl: "http://localhost/carlos/page/confirmarcompra",
 			cancellationUrl: "http://localhost/carlos/page/cancelacion"
 		};
 
@@ -457,14 +468,26 @@ $(document).ready(function () {
 			url: 'https://pay.payphonetodoesposible.com/api/button/Prepare',
 			type:'POST',
 			beforeSend:function(xhr){
-				xhr.setRequestHeader ('Authorization', "Bearer H69wgPGoCNlXxD_4pm4YhDd_EY2mC7K5hK7xHx2-qFcREHkmoCYl96ObQwSg-5mwVtjksrSwdhLe8_wuvkrhS33RFMolMbw2z3xcqaWRglZqSzVTyZ4F_pQwO2R-Uo6CRoOgrgLfWdl0E8rbmFaAYKsIdeCMQqTjZ0Keh1nl-3G1IRZr5TqAf1J9gqkjEGNGdjZgZS3O91rzyymlyl5AmmDommGDDChPV7_J9I-5XnY3M4X5x4Z7GqUpoCYUdBf0whGh8p2Qa_CEPJWEFHsssbunkZrF0l3RPxXPs8I0ecUH1I0xF6IhLyqiXvWKApjjTgYL8iFC2eG5tXupeZfTT_-hue0")
+				xhr.setRequestHeader ('Authorization', "Bearer A9IblYZbxZFqSIlahmjnYea1CeAKEFWZoUrNtux1YOeQV-fhvTQ7ouwKqYhYK1vQIqJy165MCSGuANYVJDzdzFW1f2_5M24mlmA4iedc0Ii5h4fQkXilX-4PTxlNq7VzJdAblwueJs2RVWieA6-e8AZnB-zSu5G2dEUkVhVxt9gKdUOLYT4MWK1TVUFPayfwumHLOwhqMeuzkE9CJmSlyQjbUTXc_-ofXi4G8qV1Zfyg4ABO7e03p_e3FiK-v3bdIhQZBUom6dOXOSA7LKMgL_3I-vHkCEB-U1DQhhb4C9a0gGrMeZxysUNdbYpuqHtxQ8-ApQ")
 			},
 			success:function SolicitarPago(respuesta){
-				location.href = respuesta.payWithPayPhone;
+				location.href = respuesta.payWithCard;
 			}, 
 			error: function(mensajeerror){
-				alert ("Error en la llamada:" + mensajeerror.Message);
-				console.log(mensajeerror);
+				$.ajax({
+					url: base_url + "carrito/payphoneCallError/",
+					dataType: 'JSON',
+					method: 'POST',
+					data: {
+						orderedProducts: orderedProducts
+					},
+					success: function(data){
+						console.log(data)
+					},
+					error: function(xhr, status, error) {
+						
+					},
+				});
 			}
 		});
 	}

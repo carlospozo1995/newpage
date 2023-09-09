@@ -72,10 +72,13 @@ RewriteRule ^(carrito/|carrito|Carrito)/getProducts/$ %{ENV:REWRITEBASE}index.ph
 RewriteRule ^(carrito/|carrito|Carrito)/paymentTypeValidation/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=paymentTypeValidation [L]
 RewriteRule ^(carrito/|carrito|Carrito)/checkProductStock/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=checkProductStock [L]
 RewriteRule ^(carrito/|carrito|Carrito)/acceptChangesPurchase/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=acceptChangesPurchase [L]
+RewriteRule ^(carrito/|carrito|Carrito)/payphoneCallError/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=payphoneCallError [L]
 
 RewriteRule ^carrito/(.+)$ %{ENV:REWRITEBASE}index.php?show=Carrito&process_payment=$1 [L]
 
-RewriteRule ^(pago/|pago|Pago)$ %{ENV:REWRITEBASE}index.php?show=Pago [L]
+RewriteRule ^(confirmarcompra/|confirmarcompra|Confirmarcompra)$ %{ENV:REWRITEBASE}index.php?show=Confirmarcompra [L]
+RewriteRule ^(confirmarcompra/|confirmarcompra|Confirmarcompra)/testlocal/$ %{ENV:REWRITEBASE}index.php?show=Confirmarcompra&action=testlocal [L]
+
 RewriteRule ^(cancelacion/|cancelacion|Cancelacion)$ %{ENV:REWRITEBASE}index.php?show=Cancelacion [L]
 
 

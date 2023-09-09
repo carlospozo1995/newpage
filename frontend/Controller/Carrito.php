@@ -11,7 +11,7 @@
 			$msg = "";
 			$status = true;
 
-			function verifyProductsDb($ordereProducts, $mainTown, $card_payment) {
+			function verifyProductsDb($ordereProducts, $payment_method, $mainTown, $street, $add_info, $addressee, $messageClient) {
 				$shipping_cost = 0;
 				$subtotal = 0;
 				$iva = 0;
@@ -31,7 +31,7 @@
 				$newQuantityProduct = null;
 				$newProductsArray = array();
 				$stockUpdate = false;
-				// $stockUpdate = true;
+
 				foreach ($requestProducts as $product) {
 					$id  = $product['id_product'];
 					$stock = intval( $product['stock']);
@@ -43,7 +43,6 @@
 	
 					if (($stock < $orderedAmount || $stock <= 0 || $stock === null) || ($price != $orderedPrice) || ($product['status'] != 1)) {
 						
-						// $stockUpdate = false;
 						if ($stock < $orderedAmount || $stock <= 0 || $stock === null) {
 							$newQuantityProduct = $stock;
 						}
@@ -61,10 +60,6 @@
 						$productsWithChanges[] = array('amount_product' => $newQuantityProduct, 'id' => Utils::encriptar($id), 'name' => $product['name_product'], 'price' => $price, 'stock' => $stock, 'image' => $product['images'][0]['url_image'], 'code' => intval($product['code']), 'url' => $statusProduct);
 					}
 				}
-	
-				// if($stockUpdate === true){
-				// 	$data = Models_Store::updateStockTransaction($productsIdsArr, $productsAmountArr, $productsIds);
-				// }
 				
 				if (empty($productsWithChanges)) {
 					$unique_code = Utils::uniqueCode();
@@ -74,11 +69,7 @@
 						$subtotal += $product['price'] * $product['amount_product'];
 					}
 
-					// if($card_payment == true){
-					// 	$_SESSION['productsIdsArr'] = $productsIdsArr;
-					// 	$_SESSION['productsAmountArr'] = $productsAmountArr;
-					// 	$_SESSION['productsIds'] = $productsIds;
-					// }
+					$_SESSION['paymentProcessData'] = array("uniqueCode" => $unique_code, "orderedProducts" => $ordereProducts, "idClient" => $_SESSION['idUser'], "paymentType" => $payment_method, "mainTown" => $mainTown, "street" => $street, "addInfo" => $add_info, "addressee" => $addressee, "messageClient" => $messageClient);
 				}else{
 					$alert = 'Estimado cliente, algunos productos han presentado cambios recientes.'; 
 					
@@ -128,7 +119,7 @@
 					$total = $subtotal + $iva + $shipping_cost;
 				}
 	
-				return array('subtotal' => $subtotal, 'iva' => $iva , 'envio' => $shipping_cost, 'total' =>  $total, 'flag_stockUpdate' => $stockUpdate, 'productsWithChanges' => $productsWithChanges, 'newProductsArray' => $newProductsArray, 'alert' => $alert, 'unique_code'  => $unique_code);
+				return array('subtotal' => $subtotal, 'iva' => $iva , 'envio' => $shipping_cost, 'total' =>  $total, 'stockUpdate' => $stockUpdate, 'productsWithChanges' => $productsWithChanges, 'newProductsArray' => $newProductsArray, 'alert' => $alert, 'unique_code'  => $unique_code);
 			}
 
 			switch ($action) {
@@ -204,13 +195,13 @@
 						$verifyProductsDb = null;
 
 						try {
-							if ($info_client_state && $check_state && $payment_method != '' && $main_town != '' && $street != '' && $addressee != '' && $ordered_products != '') {
+							if ($info_client_state && $check_state && $payment_method != '' && $main_town != '' && $street != '' && $addressee != '' &&  !empty($ordered_products) && is_array($ordered_products)) {
 								if($payment_method == 1){
 									$payment_type = true;
-									$verifyProductsDb = verifyProductsDb($ordered_products, $main_town, true);
+									$verifyProductsDb = verifyProductsDb($ordered_products, $payment_method, $main_town, $street, $add_info, $addressee, $customer_message);
 								}else if($payment_method == 2){
 									$payment_type = false;
-									$verifyProductsDb = verifyProductsDb($ordered_products, $main_town, false);
+									$verifyProductsDb = verifyProductsDb($ordered_products, $payment_method, $main_town, $street, $add_info, $addressee, $customer_message);
 								}else{
 									throw new Exception("No es posible realizar el proceso intentelo mas tarde.");
 								}
@@ -230,18 +221,22 @@
 					if (isset($_POST)) {
 						$newOrder = $_POST['newProductOrder'];
 						$mainTwon = $_POST['main_town'];
+						$street = $_POST['address'];
+						$add_info = $_POST['additional_information'];
+						$addressee = $_POST['addressee'];
 						$payment_method = isset($_POST['payment_method']) ? $_POST['payment_method'] : '';
-						
+						$customer_message = $_POST['customer_message'];
+
 						$payment_type = null;	
 						$verifyProductsDb = null;
 
 						try {
 							if($payment_method == 1){
 								$payment_type = true;
-								$verifyProductsDb = verifyProductsDb($newOrder, $mainTwon, true);
+								$verifyProductsDb = verifyProductsDb($newOrder, $payment_method, $mainTwon, $street, $add_info, $addressee, $customer_message);
 							}else if($payment_method == 2){
 								$payment_type = false;
-								$verifyProductsDb = verifyProductsDb($newOrder, $mainTwon, false);
+								$verifyProductsDb = verifyProductsDb($newOrder, $payment_method, $mainTwon, $street, $add_info, $addressee, $customer_message);
 							}else{
 								throw new Exception("No es posible realizar el proceso intentelo mas tarde.");
 							}
@@ -254,11 +249,35 @@
 						echo json_encode($data);
 					}
 				break;
+
+				case 'payphoneCallError':
+					if (isset($_POST)) {
+						$products = $_POST['orderedProducts'];
+
+						$IdsArr = array_map(function($data){return Utils::desencriptar($data['id']);}, $products);
+						$AmountArr = array_map(function($data){return $data['amount_product'];}, $products);
+						$Ids = implode(',', $IdsArr);
+						$updateByCancellation = Models_Store::updatStockByCancellation($IdsArr, $AmountArr, $Ids);
+
+						if ($updateByCancellation) {
+							$msg = "Lamentablemente, no podemos procesar su pago mediante el método seleccionado. Le invitamos a intentarlo utilizando otro medio de pago disponible o a ponerse en contacto con nuestro equipo de atención al cliente para que podamos ayudarle en el proceso.";
+						}else{
+							// aqui el email a enviar si exite algun error enviado el array de los productos pedidos
+						}
+
+						if (isset($_SESSION['paymentProcessData'])) {
+							unset($_SESSION['paymentProcessData']);
+						}
+							
+						$data = array("msg"=>$msg);
+						echo json_encode($data);
+					}
+				break;
 				
 				default:
 					if (isset($_GET['process_payment'])) {
 
-						if ($_GET['process_payment'] == 'comprar') {
+						if ($_GET['process_payment'] == 'procesarCompra') {
 							$data["file_js"][] = "payment";
 							View::renderPage('Payment', $data);
 						}else{
