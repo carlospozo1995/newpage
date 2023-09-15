@@ -310,6 +310,14 @@
 		    return $decodedTime;
 		}
 
+		static public function updateStockByCancelation($orderedProducts) {
+			$IdsArr = array_map(function($data){return Utils::desencriptar($data['id']);}, $orderedProducts);
+			$AmountArr = array_map(function($data){return $data['amount_product'];}, $orderedProducts);
+			$Ids = implode(',', $IdsArr);
+			$updateByCancellation = Models_Store::updatStockByCancellation($IdsArr, $AmountArr, $Ids);
+			return $updateByCancellation;
+		}
+
 	}
 
 ?>

@@ -69,6 +69,10 @@
 						$subtotal += $product['price'] * $product['amount_product'];
 					}
 
+					if ($payment_method == 1) {
+						
+					}
+
 					$_SESSION['paymentProcessData'] = array("uniqueCode" => $unique_code, "orderedProducts" => $ordereProducts, "idClient" => $_SESSION['idUser'], "paymentType" => $payment_method, "mainTown" => $mainTown, "street" => $street, "addInfo" => $add_info, "addressee" => $addressee, "messageClient" => $messageClient);
 				}else{
 					$alert = 'Estimado cliente, algunos productos han presentado cambios recientes.'; 
@@ -252,17 +256,14 @@
 
 				case 'payphoneCallError':
 					if (isset($_POST)) {
-						$products = $_POST['orderedProducts'];
+						$orderedProducts = $_POST['orderedProducts'];
 
-						$IdsArr = array_map(function($data){return Utils::desencriptar($data['id']);}, $products);
-						$AmountArr = array_map(function($data){return $data['amount_product'];}, $products);
-						$Ids = implode(',', $IdsArr);
-						$updateByCancellation = Models_Store::updatStockByCancellation($IdsArr, $AmountArr, $Ids);
+						$updateByCancellation = Utils::updateStockByCancelation($orderedProducts);
 
 						if ($updateByCancellation) {
 							$msg = "Lamentablemente, no podemos procesar su pago mediante el método seleccionado. Le invitamos a intentarlo utilizando otro medio de pago disponible o a ponerse en contacto con nuestro equipo de atención al cliente para que podamos ayudarle en el proceso.";
 						}else{
-							// aqui el email a enviar si exite algun error enviado el array de los productos pedidos
+							// enviar mensaje al administrador sobre los productos no actualizados si existe un error(enviando $_POST['orderedProducts'])
 						}
 
 						if (isset($_SESSION['paymentProcessData'])) {

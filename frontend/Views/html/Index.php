@@ -82,10 +82,6 @@
 	        </div>
 	    </div>
 	    <!-- End Hero Slider Section-->
-
-		<?php
-			echo date("d-m-Y h:i:s");
-		?>
 		
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

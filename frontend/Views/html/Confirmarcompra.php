@@ -11,8 +11,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Confirmación de compra</title>
 </head>
-<body>	
+<body>
 	<button><a href="<?= BASE_URL; ?>">Seguir comprando</a></button>
+	<?php
+		// Utils::dep(json_encode($transationData)); 
+		// Utils::dep(Models_Store::selectOrders($transationData['clientTransactionId'], $_SESSION['idUser']));
+	?>
 
 	<script> const base_url = "<?= BASE_URL; ?>"; </script>
     <script> const media_store= "<?= MEDIA_STORE; ?>"; </script>

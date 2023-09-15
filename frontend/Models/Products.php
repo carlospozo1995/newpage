@@ -22,7 +22,7 @@
 
             if (empty($request)) {
                 $arrData[] = array("category_id" => $option_list, "code" => $code, "name_product" => utf8_decode($name), "desMain" => utf8_decode($desMain), "desGeneral" => $desGeneral, "sliderMbl" => $sliderMbl, "sliderDst" => $sliderDst, "sliderDes" => utf8_decode($sliderDes), "brand" => $brand, "price" => $price , "stock" => $stock, "prevPrice" => $prevPrice, "discount" => $discount, "cantDues" => $cantDues, "priceDues" => $priceDues, "url" => preg_replace('/[^a-z0-9]+/', '-', strtolower($urlVowel)), "status" => $status); 
-                return $GLOBALS["db"]->insert_multiple("products", $arrData);
+                return $GLOBALS["db"]->insert_multiple("products", $arrData, true);
             }else{
                 return "exist";
             }

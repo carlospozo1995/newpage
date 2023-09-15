@@ -164,10 +164,22 @@
         }
 
         static public function insertOrders($orders, $flag) {
-            $arrData[] = $orders; 
-            $table = $flag == true ? "orders" : "detail_orders";
-            $result = $GLOBALS["db"]->insert_multiple($table, $arrData);
+            $arrData[] = $orders;
+            $result = $flag === true ? $GLOBALS["db"]->insert_multiple("orders", $arrData) : $GLOBALS["db"]->insert_multiple("detail_orders", $arrData, true);
             return $result;
         }
+
+        // static public function selectOrders($transactionCode, $idClient) {
+        //     $sql = "SELECT products FROM orders WHERE transaction_uniqueCode = ? AND user_id = ?";
+        //     $request = $GLOBALS["db"]->auto_array($sql, array($transactionCode, $idClient));
+        //     return $request;
+        //     // $sql2 = "SELECT product_id FROM detail_orders WHERE order_id = ?";
+        //     // $request2 = $GLOBALS["db"]->selectAll($sql2, array($request));
+
+        //     // $product_ids = array_column($request2, "product_id");
+        //     // $resultado = implode(",", $product_ids); 
+        //     // return self::getOrderedProducts($resultado, false);
+        //     // return $request2;
+        // }
     }
 ?>

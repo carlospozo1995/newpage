@@ -42,39 +42,26 @@
 					curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 					$result = curl_exec($curl);
 					curl_close($curl);
-
 					if(isset($_SESSION['login']) && isset($transaction) && isset($client)){
 						$result = json_decode($result, true);
 
 						if (isset($_SESSION['paymentProcessData'])){
 							$orderData = $_SESSION['paymentProcessData'];
-							Utils::dep($orderData);
-							$shipping_cost = 0;
+							$shipping_costs = [
+								1 => ['cost' => 0, 'name' => 'Balao'],
+								2 => ['cost' => 5, 'name' => 'Santa Rita'],
+								3 => ['cost' => 10, 'name' => 'San Carlos'],
+							];
+							$mainTown = isset($shipping_costs[$orderData['mainTown']]) ? $shipping_costs[$orderData['mainTown']]['name'] : '';
 							$subtotal = 0;
 							$iva = 0;
 							$total = 0;
-							$mainTown = "";
+
 							foreach ($orderData['orderedProducts'] as $order) {
 								$subtotal += $order['price'] * $order['amount_product'];
 							}
 
-							if ($subtotal < 100) {
-								if($orderData['mainTown'] == 1){
-									$shipping_cost = 0;
-								}else if($orderData['mainTown'] == 2){
-									$shipping_cost = 5;
-								}else{
-									$shipping_cost = 10;
-								}
-							}
-
-							if($orderData['mainTown'] == 1){
-								$mainTown = 'Balao';
-							}else if($orderData['mainTown'] == 2){
-								$mainTown = 'Santa Rita';
-							}else{
-								$mainTown = 'San Carlos';
-							}
+							$shipping_cost = $subtotal < 100 ? $shipping_costs[$orderData['mainTown']]['cost'] : 0;
 				
 							if ($subtotal > 0) {
 								$total = $subtotal + $iva + $shipping_cost;
@@ -83,7 +70,7 @@
 							$addInfo = !empty($orderData['addInfo']) ? '-'.$orderData['addInfo'] : "";
 							$message = !empty($orderData['messageClient']) ? $orderData['messageClient'] : null;
 
-							$insertedData = array("id_transactionCard" => $result['transactionId'], "cardData" => json_encode($result), "user_id" => $orderData['idClient'], "shipping_cost" => $shipping_cost, "total" => $total, "payment_type_id" => $orderData['paymentType'], "shipping_address" => $mainTown .'-'. $orderData['street'] .$addInfo, "message" => $message, "status" => $result['transactionStatus']);
+							$insertedData = array("transaction_uniqueCode" => $orderData['uniqueCode'], "id_transactionCard" => $result['transactionId'], "cardData" => json_encode($result), "user_id" => $orderData['idClient'], "shipping_cost" => $shipping_cost, "total" => $total, "payment_type_id" => $orderData['paymentType'], "shipping_address" => $mainTown .'-'. $orderData['street'] .$addInfo, "message" => $message, "status" => $result['transactionStatus']);
 
 							$insertOrders = Models_Store::insertOrders($insertedData, true);
 							
@@ -91,7 +78,7 @@
 								$arrDetailProducts = array();
 								// enviar correo al cliente sobre su compra
 								foreach ($orderData['orderedProducts'] as $order) {
-									$insertOrdersDetails = array("order_id" => $insertOrders, "product_id" => Utils::descryptStore($order['id']), "price" => $order['price'], "quantityOrdered" => $order['amount_product']);
+									$insertOrdersDetails = array("order_id" => $insertOrders, "product_id" => Utils::descryptStore($order['id']), "name_product" => $order['name'], "price" => $order['price'], "quantityOrdered" => $order['amount_product']);
 
 									$insertDetails = Models_Store::insertOrders($insertOrdersDetails, false);
 									$arrDetailProducts[] = $insertDetails;
@@ -104,6 +91,13 @@
 								}
 							}else{
 								// enviar mensaje al administrador sobre los productos no insertados en la tabla pedido mandando el array $insertedData
+							}
+
+							if ($result['statusCode'] != 3) {
+								$updateByCancellation = Utils::updateStockByCancelation($orderData['orderedProducts']);
+								if ($updateByCancellation == false) {
+									// enviar mensaje al administrador sobre los productos no actualizados si existe un error(enviando $orderData['orderedProducts'])
+								}
 							}
 							
 							unset($_SESSION['paymentProcessData']);

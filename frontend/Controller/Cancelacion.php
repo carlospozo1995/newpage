@@ -4,13 +4,19 @@
 		public function buildPage()
 		{	
 			Utils::sessionStartStore();
-			// if (isset($_SESSION['productsIdsArr'], $_SESSION['productsAmountArr'], $_SESSION['productsIds']) ) {
-			// 	Models_Store::updatStockByCancellation($_SESSION['productsIdsArr'], $_SESSION['productsAmountArr'], $_SESSION['productsIds']);
+			if (isset($_SESSION['paymentProcessData'])) {
+				$orderData = $_SESSION['paymentProcessData'];
+
+				$updateByCancellation = Utils::updateStockByCancelation($orderData['orderedProducts']);
+				if ($updateByCancellation == false) {
+					// enviar mensaje al administrador sobre los productos no actualizados si existe un error(enviando $orderData['orderedProducts'])
+				}
+				
 				View::renderPage('Cancelacion');
-			// 	unset($_SESSION['productsIdsArr'], $_SESSION['productsAmountArr'], $_SESSION['productsIds']);
-			// }else{
-			// 	header("Location: ".BASE_URL);
-			// }
+				unset($_SESSION['paymentProcessData']);
+			}else{
+				header("Location: ".BASE_URL);
+			}
 		}
 	}
 

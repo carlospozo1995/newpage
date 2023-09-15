@@ -170,10 +170,6 @@
             return $this->execute( $query );    
         }
 
-        // function updateSimpleString( $query ) {  
-        //     return $this->execute( $query );    
-        // }
-
         function delete( $table, $where ) {
             $query  = 'DELETE FROM ';
             $query .= $table;
@@ -183,7 +179,7 @@
             return $this->execute( $query );
         }
 
-        function insert_multiple($table, $data) {   
+        function insert_multiple($table, $data, $flag = "") {   
             $valores = '';
             $campos = '';
             $dataarr = array();
@@ -203,7 +199,7 @@
                     if($value1 === 'null' || (!is_numeric($value1) && $value1 == "")){
                         $valor = "NULL";
                     }else if(is_string($value1)){
-                        $valor = "'".$value1."'";
+                        $valor = empty($flag) ? "'".$value1."'" : '"'.$value1.'"';
                     }else{
                         $valor = $value1;
                     }
