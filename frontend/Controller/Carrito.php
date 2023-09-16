@@ -70,7 +70,7 @@
 					}
 
 					if ($payment_method == 1) {
-						
+						Models_Store::insertCardPurchaseValidationData($unique_code, $productsIdsArr, $productsAmountArr);
 					}
 
 					$_SESSION['paymentProcessData'] = array("uniqueCode" => $unique_code, "orderedProducts" => $ordereProducts, "idClient" => $_SESSION['idUser'], "paymentType" => $payment_method, "mainTown" => $mainTown, "street" => $street, "addInfo" => $add_info, "addressee" => $addressee, "messageClient" => $messageClient);

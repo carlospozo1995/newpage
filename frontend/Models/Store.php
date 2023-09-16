@@ -159,8 +159,10 @@
             return $request;
         }
 
-        static public function cardPurchaseValidation() {
-
+        static public function insertCardPurchaseValidationData($unique_code, $productsIdsArr, $productsAmountArr) {
+            $arrData[] = array("code_unique" => $unique_code, "products_id" => implode("," ,$productsIdsArr), "products_amount" => implode("," ,$productsAmountArr));
+            $result = $GLOBALS["db"]->insert_multiple("card_transaction", $arrData);
+            return $result;
         }
 
         static public function insertOrders($orders, $flag) {

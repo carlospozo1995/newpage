@@ -44,6 +44,8 @@
 					curl_close($curl);
 					if(isset($_SESSION['login']) && isset($transaction) && isset($client)){
 						$result = json_decode($result, true);
+						
+						View::renderPage('Confirmarcompra', $result);
 
 						if (isset($_SESSION['paymentProcessData'])){
 							$orderData = $_SESSION['paymentProcessData'];
@@ -103,7 +105,6 @@
 							unset($_SESSION['paymentProcessData']);
 						}
 						
-						View::renderPage('Confirmarcompra', $result);
 					}else{
 						header("Location: ".BASE_URL);
 					}

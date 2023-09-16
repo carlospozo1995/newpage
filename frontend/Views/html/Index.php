@@ -82,6 +82,15 @@
 	        </div>
 	    </div>
 	    <!-- End Hero Slider Section-->
+		<?php
+			// Utils::dep($_SESSION['paymentProcessData']);
+			// $productsAmountArr = [3, 2, 5];
+			// Utils::dep($productsAmountArr);
+			// $combinedString = implode(', ', $productsAmountArr);
+			// echo $combinedString;
+			// $result = explode("," ,$combinedString);
+			// Utils::dep($result);
+		?>
 		
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
