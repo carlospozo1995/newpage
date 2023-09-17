@@ -42,6 +42,7 @@
 					curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 					$result = curl_exec($curl);
 					curl_close($curl);
+					// Utils::dep($result);
 					if(isset($_SESSION['login']) && isset($transaction) && isset($client)){
 						$result = json_decode($result, true);
 						

@@ -1,7 +1,7 @@
 	
 <?php
 	$transationData = $template_vars;
-	// Utils::dep($transationData);
+	Utils::dep($transationData);
 ?>
 
 <!DOCTYPE html>
@@ -26,8 +26,8 @@
 	<?php
 		if (isset($_SESSION['paymentProcessData']) && $transationData['statusCode'] != 2) {
 	?>
-		<script>localStorage.removeItem("shoppingCartData");</script>
-	<?php		# code...
+		<!-- <script>localStorage.removeItem(shoppingCartData");</script> -->
+	<?php
 		}
 	?>
 </body>
