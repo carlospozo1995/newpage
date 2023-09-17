@@ -1,6 +1,7 @@
 <?php
 
 	class Controller_Carrito{
+		
 
 		public function buildPage()
 		{
