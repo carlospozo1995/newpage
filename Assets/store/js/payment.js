@@ -451,7 +451,7 @@ $(document).ready(function () {
 
 	    return productListHTML;
 	}
-	// 
+	
 	function paymentGateway(orderedProducts, total, uniqueCode, emailClient, dniClient) {
 		var parametros ={
 			amount: parseFloat((total * 100).toFixed(2)),
