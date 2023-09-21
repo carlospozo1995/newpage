@@ -171,17 +171,23 @@
             return $result;
         }
 
-        // static public function selectOrders($transactionCode, $idClient) {
-        //     $sql = "SELECT products FROM orders WHERE transaction_uniqueCode = ? AND user_id = ?";
-        //     $request = $GLOBALS["db"]->auto_array($sql, array($transactionCode, $idClient));
-        //     return $request;
-        //     // $sql2 = "SELECT product_id FROM detail_orders WHERE order_id = ?";
-        //     // $request2 = $GLOBALS["db"]->selectAll($sql2, array($request));
+        static public function selectOrders($transactionCode, $idClient) {
+            $sql = "SELECT products FROM orders WHERE transaction_uniqueCode = ? AND user_id = ?";
+            $request = $GLOBALS["db"]->auto_array($sql, array($transactionCode, $idClient));
+            return $request;
+            // $sql2 = "SELECT product_id FROM detail_orders WHERE order_id = ?";
+            // $request2 = $GLOBALS["db"]->selectAll($sql2, array($request));
 
-        //     // $product_ids = array_column($request2, "product_id");
-        //     // $resultado = implode(",", $product_ids); 
-        //     // return self::getOrderedProducts($resultado, false);
-        //     // return $request2;
-        // }
+            // $product_ids = array_column($request2, "product_id");
+            // $resultado = implode(",", $product_ids); 
+            // return self::getOrderedProducts($resultado, false);
+            // return $request2;
+        }
+
+        static public function testeo () {
+            $sql = "SELECT * FROM card_transaction";
+            $request = $GLOBALS["db"]->selectAll($sql, array());
+            return $request;
+        }
     }
 ?>

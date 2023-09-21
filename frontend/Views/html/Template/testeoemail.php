@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>ERROR EN CIERTAS VALIDACIONES</h1>
+    <h1>envio de correo desde la pagina principal</h1>
 </body>
 </html>
