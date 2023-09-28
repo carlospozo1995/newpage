@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 26-08-2023 a las 19:01:18
--- Versión del servidor: 5.7.33
+-- Tiempo de generación: 28-09-2023 a las 03:14:40
+-- Versión del servidor: 8.0.30
 -- Versión de PHP: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -24,11 +24,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `card_transaction`
+--
+
+CREATE TABLE `card_transaction` (
+  `id_transaccion` bigint NOT NULL,
+  `code_unique` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_swedish_ci NOT NULL,
+  `products_id` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_swedish_ci NOT NULL,
+  `products_amount` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_swedish_ci NOT NULL,
+  `date_create` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_swedish_ci;
+
+--
+-- Volcado de datos para la tabla `card_transaction`
+--
+
+INSERT INTO `card_transaction` (`id_transaccion`, `code_unique`, `products_id`, `products_amount`, `date_create`) VALUES
+(122, '440fc02583f3318f3626fa53a9acdeb4', '2', '1', '2023-09-27 21:45:33'),
+(123, '7891efa27867437251c5659c978f0a69', '1', '1', '2023-09-27 21:51:15');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `categories`
 --
 
 CREATE TABLE `categories` (
-  `id_category` bigint(20) NOT NULL,
+  `id_category` bigint NOT NULL,
   `name_category` varchar(100) NOT NULL,
   `photo` varchar(100) DEFAULT NULL,
   `icon` varchar(100) DEFAULT NULL,
@@ -37,9 +59,9 @@ CREATE TABLE `categories` (
   `sliderDesOne` varchar(120) DEFAULT NULL,
   `sliderDesTwo` varchar(120) DEFAULT NULL,
   `datecreate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `fatherCategory` bigint(20) DEFAULT NULL,
+  `fatherCategory` bigint DEFAULT NULL,
   `url` varchar(100) DEFAULT NULL,
-  `status` int(11) NOT NULL DEFAULT '1'
+  `status` int NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -129,16 +151,25 @@ INSERT INTO `categories` (`id_category`, `name_category`, `photo`, `icon`, `slid
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `detail_pedido`
+-- Estructura de tabla para la tabla `detail_orders`
 --
 
-CREATE TABLE `detail_pedido` (
-  `id_detail` bigint(20) NOT NULL,
-  `pedido_id` bigint(20) NOT NULL,
-  `product_id` bigint(20) NOT NULL,
+CREATE TABLE `detail_orders` (
+  `id_detail` bigint NOT NULL,
+  `order_id` bigint NOT NULL,
+  `product_id` bigint NOT NULL,
+  `name_product` varchar(100) NOT NULL,
   `price` decimal(11,2) NOT NULL,
-  `quantityOrdered` int(11) NOT NULL
+  `quantityOrdered` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `detail_orders`
+--
+
+INSERT INTO `detail_orders` (`id_detail`, `order_id`, `product_id`, `name_product`, `price`, `quantityOrdered`) VALUES
+(50, 27, 2, 'Minicomponente 1 cuerpo JBLPARTYBOX710AM', 4.00, 1),
+(51, 28, 1, 'Cocina A Gas 4 Quemadores Em5100eb0', 5.20, 1);
 
 -- --------------------------------------------------------
 
@@ -147,8 +178,8 @@ CREATE TABLE `detail_pedido` (
 --
 
 CREATE TABLE `img_product` (
-  `id_img` bigint(20) NOT NULL,
-  `product_id` bigint(20) NOT NULL,
+  `id_img` bigint NOT NULL,
+  `product_id` bigint NOT NULL,
   `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -177,10 +208,10 @@ INSERT INTO `img_product` (`id_img`, `product_id`, `image`) VALUES
 --
 
 CREATE TABLE `modules` (
-  `id_module` bigint(20) NOT NULL,
+  `id_module` bigint NOT NULL,
   `name_module` varchar(100) NOT NULL,
   `description_module` varchar(100) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT '1'
+  `status` int NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -196,11 +227,40 @@ INSERT INTO `modules` (`id_module`, `name_module`, `description_module`, `status
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `orders`
+--
+
+CREATE TABLE `orders` (
+  `id_order` bigint NOT NULL,
+  `transaction_uniqueCode` varchar(50) NOT NULL,
+  `id_transactionCard` varchar(255) DEFAULT NULL,
+  `cardData` text,
+  `user_id` bigint NOT NULL,
+  `dateCreate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `shipping_cost` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `total` decimal(11,2) NOT NULL,
+  `payment_type_id` bigint NOT NULL,
+  `shipping_address` text NOT NULL,
+  `message` text,
+  `status` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `orders`
+--
+
+INSERT INTO `orders` (`id_order`, `transaction_uniqueCode`, `id_transactionCard`, `cardData`, `user_id`, `dateCreate`, `shipping_cost`, `total`, `payment_type_id`, `shipping_address`, `message`, `status`) VALUES
+(27, '440fc02583f3318f3626fa53a9acdeb4', '20916963', '{\"email\":\"carlosandrespozo95@gmail.com\",\"cardType\":\"Debit\",\"bin\":\"459424\",\"lastDigits\":\"3321\",\"deferredCode\":\"00000000\",\"deferred\":false,\"cardBrandCode\":\"50\",\"cardBrand\":\"Visa Pichincha\",\"amount\":400,\"clientTransactionId\":\"440fc02583f3318f3626fa53a9acdeb4\",\"phoneNumber\":\"5930994603678\",\"statusCode\":3,\"transactionStatus\":\"Approved\",\"authorizationCode\":\"W20916963\",\"messageCode\":0,\"transactionId\":20916963,\"document\":\"0706715661\",\"currency\":\"USD\",\"optionalParameter1\":\"5930994603678\",\"optionalParameter2\":\"carlosandrespozo95@gmail.com\",\"optionalParameter3\":\"+5930994603678-carlosandrespozo95@gmail.com-\",\"optionalParameter4\":\"CARLOS ANDRES POZO RAMIREZ\",\"storeName\":\"Tienda Virtual\",\"date\":\"2023-09-27T21:45:54.49\",\"regionIso\":\"EC\",\"transactionType\":\"Classic\"}', 27, '2023-09-27 21:45:55', 0.00, 4.00, 1, 'Balao-santa Clara 1', NULL, 'Approved'),
+(28, '7891efa27867437251c5659c978f0a69', '20917121', '{\"email\":\"carlosandrespozo95@gmail.com\",\"cardType\":\"Debit\",\"bin\":\"459424\",\"lastDigits\":\"3321\",\"deferredCode\":\"00000000\",\"deferred\":false,\"cardBrandCode\":\"50\",\"cardBrand\":\"Visa Pichincha\",\"amount\":1020,\"clientTransactionId\":\"7891efa27867437251c5659c978f0a69\",\"phoneNumber\":\"5930994603678\",\"statusCode\":3,\"transactionStatus\":\"Approved\",\"authorizationCode\":\"W20917121\",\"messageCode\":0,\"transactionId\":20917121,\"document\":\"0804512789\",\"currency\":\"USD\",\"optionalParameter1\":\"5930994603678\",\"optionalParameter2\":\"carlosandrespozo95@gmail.com\",\"optionalParameter3\":\"+5930994603678-carlosandrespozo95@gmail.com-\",\"optionalParameter4\":\"CARLOS ANDRES POZO RAMIREZ\",\"storeName\":\"Tienda Virtual\",\"date\":\"2023-09-27T21:51:32.153\",\"regionIso\":\"EC\",\"transactionType\":\"Classic\"}', 27, '2023-09-27 21:51:33', 5.00, 10.20, 1, 'Santa Rita-por la carretera', NULL, 'Approved');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `payment_type`
 --
 
 CREATE TABLE `payment_type` (
-  `id_payment_type` bigint(20) NOT NULL,
+  `id_payment_type` bigint NOT NULL,
   `payment_type` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -215,36 +275,17 @@ INSERT INTO `payment_type` (`id_payment_type`, `payment_type`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pedido`
---
-
-CREATE TABLE `pedido` (
-  `id_pedido` bigint(20) NOT NULL,
-  `id_transactionCard` varchar(255) DEFAULT NULL,
-  `cardData` text,
-  `user_id` bigint(20) NOT NULL,
-  `dateCreate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `shipping_cost` decimal(10,2) NOT NULL DEFAULT '0.00',
-  `monto` decimal(11,2) NOT NULL,
-  `payment_type_id` bigint(20) NOT NULL,
-  `shipping_address` text NOT NULL,
-  `status` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `permissions`
 --
 
 CREATE TABLE `permissions` (
-  `id_permissions` bigint(20) NOT NULL,
-  `rol_id` bigint(20) NOT NULL,
-  `module_id` bigint(20) NOT NULL,
-  `ver` int(11) NOT NULL DEFAULT '0',
-  `crear` int(11) NOT NULL DEFAULT '0',
-  `actualizar` int(11) NOT NULL DEFAULT '0',
-  `eliminar` int(11) NOT NULL DEFAULT '0'
+  `id_permissions` bigint NOT NULL,
+  `rol_id` bigint NOT NULL,
+  `module_id` bigint NOT NULL,
+  `ver` int NOT NULL DEFAULT '0',
+  `crear` int NOT NULL DEFAULT '0',
+  `actualizar` int NOT NULL DEFAULT '0',
+  `eliminar` int NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -272,9 +313,9 @@ INSERT INTO `permissions` (`id_permissions`, `rol_id`, `module_id`, `ver`, `crea
 --
 
 CREATE TABLE `products` (
-  `id_product` bigint(20) NOT NULL,
-  `category_id` bigint(20) NOT NULL,
-  `code` bigint(20) NOT NULL,
+  `id_product` bigint NOT NULL,
+  `category_id` bigint NOT NULL,
+  `code` bigint NOT NULL,
   `name_product` varchar(100) NOT NULL,
   `desMain` text NOT NULL,
   `desGeneral` text,
@@ -283,14 +324,14 @@ CREATE TABLE `products` (
   `sliderDes` varchar(150) DEFAULT NULL,
   `brand` varchar(50) NOT NULL,
   `price` decimal(11,2) NOT NULL,
-  `stock` int(11) DEFAULT NULL,
+  `stock` int DEFAULT NULL,
   `prevPrice` decimal(11,2) DEFAULT NULL,
-  `discount` int(11) DEFAULT NULL,
-  `cantDues` int(20) DEFAULT NULL,
+  `discount` int DEFAULT NULL,
+  `cantDues` int DEFAULT NULL,
   `priceDues` decimal(11,2) DEFAULT NULL,
   `datacreate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `url` varchar(150) DEFAULT NULL,
-  `status` int(11) NOT NULL DEFAULT '1'
+  `status` int NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -298,14 +339,14 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `desMain`, `desGeneral`, `sliderDst`, `sliderMbl`, `sliderDes`, `brand`, `price`, `stock`, `prevPrice`, `discount`, `cantDues`, `priceDues`, `datacreate`, `url`, `status`) VALUES
-(1, 186, 133644000, 'Cocina A Gas 4 Quemadores Em5100eb0', 'Cocinas que potencian tu vida. Descubre nuevas destrezas, que encienden gratas conversaciones, uniéndolo todo, para crear momento exquisitos.', '<p><strong>Caracter&iacute;sticas</strong></p>\r\n<p>-Acabado Easy Clean Pro<br />Recubrimiento de esmalte porcenalizado en horno, que permite limpiar la superficie de manera f&aacute;cil como un vidrio.<br /><br />-Quemadores Semi-r&aacute;pidos.<br />Quemadores estandar que regulan la intensidad de la flama adapt&aacute;ndose a todas tus necesidades<br /><br />-Doble vidrio en la puerta del horno.<br />Tu cocina Mabe es m&aacute;s segura, ya que su doble vidrio panor&aacute;mico en la puerta del horno te expone menos al calor.<br /><br />-Perillas erg&oacute;nomicas<br />Nuevo dise&ntilde;o que evita el ingreso de residuos de comida al interior<br /><br /><strong>Especificaciones</strong></p>\r\n<ul>\r\n<li>Ancho sin empaque: 52cm</li>\r\n<li>Ancho con empaque: 59cm</li>\r\n<li>Alto sin empaque: 92.5cm</li>\r\n<li>Alto con empaque: 93cm</li>\r\n<li>Profundo con empaque: 59cm</li>\r\n<li>Profundo sin empaque: 58.6cm</li>\r\n<li>Peso (kg) con empaque: 29.18</li>\r\n<li>Peso (kg) sin empaque: 26.2</li>\r\n<li>Tipo de control en el horno :termo control</li>\r\n<li>Tipo de instalaci&oacute;n: Piso</li>\r\n<li>N&uacute;mero de Quemadores: 4</li>\r\n<li>Parrillas superiores: 2 alambr&oacute;n</li>\r\n<li>Parrillas en el horno: 1 parilla fija</li>\r\n</ul>', 'sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg', 'sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_ff937cd43dcb5283c7b4292ae7606ed7.jpg', NULL, 'MABE', '5.20', 10, '4.00', 34, NULL, NULL, '2023-04-04 18:04:56', 'cocina-a-gas-4-quemadores-em5100eb0', 1),
-(2, 198, 39220, 'Minicomponente 1 cuerpo JBLPARTYBOX710AM', 'Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas', NULL, 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg', 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg', 'LLEVA LA FIESTA A TODAS PARTES', 'JBL', '4.00', 9, '5.00', 9, 24, '86.00', '2023-04-04 21:48:19', 'minicomponente-1-cuerpo-jblpartybox710am', 1),
-(3, 203, 134899000, 'Televisor 65\' Android 11 Uhd', 'Última tecnología High Dynamic Range (HDR), que permite disfrutar de un increíble brillo, color, contraste, detalle y dimensionalidad', '<div><strong>Caracter&iacute;sticas:</strong></div>\r\n<ul>\r\n<li>\r\n<div>Chromecast Incorporado</div>\r\n</li>\r\n<li>\r\n<div>Resoluci&oacute;n 3840x2160</div>\r\n</li>\r\n<li>\r\n<div>CPU ARM Cortex Quad Core</div>\r\n</li>\r\n<li>\r\n<div>Memoria 2 GB DDR</div>\r\n</li>\r\n<li>\r\n<div>Flash 8G</div>\r\n</li>\r\n<li>\r\n<div>Dolby Audio: Audio Power 8W+8W.</div>\r\n</li>\r\n<li>\r\n<div>Sonido Envolvente Simulado</div>\r\n</li>\r\n<li>\r\n<div>1 Puerto Ethernet / LAN</div>\r\n</li>\r\n<li>\r\n<div>Apto Para Red</div>\r\n</li>\r\n<li>\r\n<div>Frecuencia de Refresco de Pantalla 60HZ</div>\r\n</li>\r\n<li>\r\n<div>Se&ntilde;al de Video Soportada PAL M/N; NTSC M</div>\r\n</li>\r\n<li>\r\n<div>3 Puertos HDMI</div>\r\n</li>\r\n<li>\r\n<div>Potencia de Salida de Bocina 8 Ohm- 10w X2</div>\r\n</li>\r\n</ul>\r\n<div><strong>Incluye:</strong></div>\r\n<ul>\r\n<li>\r\n<div>Procesador Quad Core</div>\r\n</li>\r\n<li>\r\n<div>Control Remoto controlado por voz</div>\r\n</li>\r\n<li>\r\n<div>Google Assistant</div>\r\n</li>\r\n<li>\r\n<div>App Store: Google Play</div>\r\n</li>\r\n<li>\r\n<div>Apps Predefinidas: Netflix, Youtube,</div>\r\n</li>\r\n<li>\r\n<div>Prime Video y Play Store</div>\r\n</li>\r\n<li>\r\n<div>Bluetooth&reg;</div>\r\n</li>\r\n<li>\r\n<div>Chromecast / DLNA</div>\r\n</li>\r\n<li>\r\n<div>Surround Stereo</div>\r\n</li>\r\n<li>\r\n<div>Sound Mode</div>\r\n</li>\r\n<li>\r\n<div>Entradas 2USB / 3HDMI</div>\r\n</li>\r\n<li>\r\n<div>Manual de usuario</div>\r\n</li>\r\n<li>\r\n<div>Bases de patas</div>\r\n</li>\r\n</ul>\r\n<div><strong>Garant&iacute;a:&nbsp;</strong>24 meses</div>', NULL, NULL, NULL, 'DIGGIO', '2.00', 4, '749.00', 1, NULL, NULL, '2023-04-07 09:33:17', 'televisor-65-android-11-uhd', 1),
-(4, 190, 137126000, 'Lavadora automatica 13 KG blanco', 'Lavado inteligente One Touch, inicia tu lavado con un solo clic y ahorra utilizando el nivel exacto de agua.', '<ul>\r\n<li>Capacidad de lavado 13 kg - Panel de control digital con luz LED</li>\r\n<li>Tapa de vidrio transparente con cerrado suave</li>\r\n<li>8 programas de lavado</li>\r\n<li>Temporizador/apagado autom&aacute;tico</li>\r\n<li>Funciones: Water Flow Technology</li>\r\n<li>Poderosas corrientes de agua para eliminar las manchas m&aacute;s dif&iacute;ciles.</li>\r\n<li>Eco Clean System: Ahorra hasta un 40% de tiempo y energ&iacute;a en cada lavado.</li>\r\n</ul>\r\n<p><strong>Garant&iacute;a:&nbsp;</strong>12 meses</p>', NULL, NULL, NULL, 'SMC', '360.00', 2, '399.00', 10, NULL, NULL, '2023-04-07 09:38:55', 'lavadora-automatica-13-kg-blanco', 1),
-(5, 200, 15252000556, 'Audifonos C/microfono negro  H200', 'Auriculares estéreo con micrófono H200. Micrófono de alta sensibilidad, comunicación clara y fluida con sus compañeros de equipo.', '<ul>\r\n<li>Controla f&aacute;cilmente el volumen en juegos, pel&iacute;culas, m&uacute;sica.</li>\r\n<li>Control en cable.</li>\r\n<li>Compatibilidad: PCs, port&aacute;tiles, smartphones y otros dispositivos con salida de audio de 3.5 mm.</li>\r\n<li>USB para luz led azul.</li>\r\n<li>Bot&oacute;n de encendido / apagado de luz en orejera.</li>\r\n</ul>', NULL, NULL, NULL, 'HP', '25.01', 4, NULL, NULL, NULL, NULL, '2023-04-07 09:44:49', 'audifonos-c-microfono-negro-h200', 1),
-(6, 204, 45800015274, 'Soporte P/tv De 37\' A 70\' Space', 'Soporte de pared para TV de 37 y hasta 70 pulgadas.', NULL, NULL, NULL, NULL, 'SPACE', '9.00', 3, '15.00', NULL, NULL, '1.00', '2023-04-07 09:46:39', 'soporte-p-tv-de-37-a-70-space', 1),
-(7, 199, 145700055, 'Barra de sonido sl4 300w', 'Barra de sonido sl4 300w Lg', NULL, NULL, NULL, NULL, 'LG', '239.25', 2, NULL, NULL, NULL, NULL, '2023-04-07 09:50:32', 'barra-de-sonido-sl4-300w', 1),
-(8, 215, 10052546521, 'Proyector galaxias smarth NHA-G100', 'Lo mejor para tu hogar que lo vuelvas Smart', '<ul>\r\n<li>Proyector de galaxias y estrellas inteligente con conexi&oacute;n Wi-Fi&nbsp;</li>\r\n<li>Emparejamiento f&aacute;cil</li>\r\n<li>Configura diferentes colores y escenas desde tu dispositivo m&oacute;vil; proyecta galaxias y estrellas</li>\r\n<li>Col&oacute;calo donde quieras con m&uacute;ltiples ajustes de &aacute;ngulo</li>\r\n<li>Aplicaci&oacute;n compatible con iOS y Android&trade;</li>\r\n<li>Gesti&oacute;n remota desde cualquier lugar en el mundo con la app m&oacute;vil</li>\r\n<li>Horarios programables y temporizador para &oacute;ptima automatizaci&oacute;n</li>\r\n<li>Regula la intensidad de la luz y controla la rotaci&oacute;n de acuerdo con tu estado de &aacute;nimo</li>\r\n<li>Comparte el acceso</li>\r\n<li>Cable de 1,7m ofrece flexibilidad en la ubicaci&oacute;n</li>\r\n</ul>', NULL, NULL, NULL, 'NEXXT', '2.00', 2, '107.74', NULL, 8, '10.00', '2023-04-08 09:41:23', 'proyector-galaxias-smarth-nha-g100', 1);
+(1, 186, 133644000, 'Cocina A Gas 4 Quemadores Em5100eb0', 'Cocinas que potencian tu vida. Descubre nuevas destrezas, que encienden gratas conversaciones, uniéndolo todo, para crear momento exquisitos.', '<p><strong>Caracter&iacute;sticas</strong></p>\r\n<p>-Acabado Easy Clean Pro<br />Recubrimiento de esmalte porcenalizado en horno, que permite limpiar la superficie de manera f&aacute;cil como un vidrio.<br /><br />-Quemadores Semi-r&aacute;pidos.<br />Quemadores estandar que regulan la intensidad de la flama adapt&aacute;ndose a todas tus necesidades<br /><br />-Doble vidrio en la puerta del horno.<br />Tu cocina Mabe es m&aacute;s segura, ya que su doble vidrio panor&aacute;mico en la puerta del horno te expone menos al calor.<br /><br />-Perillas erg&oacute;nomicas<br />Nuevo dise&ntilde;o que evita el ingreso de residuos de comida al interior<br /><br /><strong>Especificaciones</strong></p>\r\n<ul>\r\n<li>Ancho sin empaque: 52cm</li>\r\n<li>Ancho con empaque: 59cm</li>\r\n<li>Alto sin empaque: 92.5cm</li>\r\n<li>Alto con empaque: 93cm</li>\r\n<li>Profundo con empaque: 59cm</li>\r\n<li>Profundo sin empaque: 58.6cm</li>\r\n<li>Peso (kg) con empaque: 29.18</li>\r\n<li>Peso (kg) sin empaque: 26.2</li>\r\n<li>Tipo de control en el horno :termo control</li>\r\n<li>Tipo de instalaci&oacute;n: Piso</li>\r\n<li>N&uacute;mero de Quemadores: 4</li>\r\n<li>Parrillas superiores: 2 alambr&oacute;n</li>\r\n<li>Parrillas en el horno: 1 parilla fija</li>\r\n</ul>', 'sliderDst_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_bd5a6a28b71c7939d63f9325bbe51c4b.jpg', 'sliderMbl_cocina-a-gas-4-quemadores-blanca-mabe-em5100eb0_ff937cd43dcb5283c7b4292ae7606ed7.jpg', NULL, 'MABE', 5.20, 29, 4.00, 34, NULL, NULL, '2023-04-04 18:04:56', 'cocina-a-gas-4-quemadores-em5100eb0', 1),
+(2, 198, 39220, 'Minicomponente 1 cuerpo JBLPARTYBOX710AM', 'Altavoz de fiesta con sonido potente, luces integradas y graves extra profundos, a prueba de salpicaduras IPX4, conectividad aplicación/Bluetooth, hecho para todas partes con un asa y ruedas integradas', NULL, 'sliderDst_minicomponente-1-cuerpo-jblpartybox710am_1df83af9d0cf399ff5eddc8b213486d3.jpg', 'sliderMbl_minicomponente-1-cuerpo-jblpartybox710am_ed205aebb547b1cbda8287fb3639d4f7.jpg', 'LLEVA LA FIESTA A TODAS PARTES', 'JBL', 4.00, 29, 5.00, 9, 24, 86.00, '2023-04-04 21:48:19', 'minicomponente-1-cuerpo-jblpartybox710am', 1),
+(3, 203, 134899000, 'Televisor 65\' Android 11 Uhd', 'Última tecnología High Dynamic Range (HDR), que permite disfrutar de un increíble brillo, color, contraste, detalle y dimensionalidad', '<div><strong>Caracter&iacute;sticas:</strong></div>\r\n<ul>\r\n<li>\r\n<div>Chromecast Incorporado</div>\r\n</li>\r\n<li>\r\n<div>Resoluci&oacute;n 3840x2160</div>\r\n</li>\r\n<li>\r\n<div>CPU ARM Cortex Quad Core</div>\r\n</li>\r\n<li>\r\n<div>Memoria 2 GB DDR</div>\r\n</li>\r\n<li>\r\n<div>Flash 8G</div>\r\n</li>\r\n<li>\r\n<div>Dolby Audio: Audio Power 8W+8W.</div>\r\n</li>\r\n<li>\r\n<div>Sonido Envolvente Simulado</div>\r\n</li>\r\n<li>\r\n<div>1 Puerto Ethernet / LAN</div>\r\n</li>\r\n<li>\r\n<div>Apto Para Red</div>\r\n</li>\r\n<li>\r\n<div>Frecuencia de Refresco de Pantalla 60HZ</div>\r\n</li>\r\n<li>\r\n<div>Se&ntilde;al de Video Soportada PAL M/N; NTSC M</div>\r\n</li>\r\n<li>\r\n<div>3 Puertos HDMI</div>\r\n</li>\r\n<li>\r\n<div>Potencia de Salida de Bocina 8 Ohm- 10w X2</div>\r\n</li>\r\n</ul>\r\n<div><strong>Incluye:</strong></div>\r\n<ul>\r\n<li>\r\n<div>Procesador Quad Core</div>\r\n</li>\r\n<li>\r\n<div>Control Remoto controlado por voz</div>\r\n</li>\r\n<li>\r\n<div>Google Assistant</div>\r\n</li>\r\n<li>\r\n<div>App Store: Google Play</div>\r\n</li>\r\n<li>\r\n<div>Apps Predefinidas: Netflix, Youtube,</div>\r\n</li>\r\n<li>\r\n<div>Prime Video y Play Store</div>\r\n</li>\r\n<li>\r\n<div>Bluetooth&reg;</div>\r\n</li>\r\n<li>\r\n<div>Chromecast / DLNA</div>\r\n</li>\r\n<li>\r\n<div>Surround Stereo</div>\r\n</li>\r\n<li>\r\n<div>Sound Mode</div>\r\n</li>\r\n<li>\r\n<div>Entradas 2USB / 3HDMI</div>\r\n</li>\r\n<li>\r\n<div>Manual de usuario</div>\r\n</li>\r\n<li>\r\n<div>Bases de patas</div>\r\n</li>\r\n</ul>\r\n<div><strong>Garant&iacute;a:&nbsp;</strong>24 meses</div>', NULL, NULL, NULL, 'DIGGIO', 2.00, 14, 749.00, 1, NULL, NULL, '2023-04-07 09:33:17', 'televisor-65-android-11-uhd', 1),
+(4, 190, 137126000, 'Lavadora automatica 13 KG blanco', 'Lavado inteligente One Touch, inicia tu lavado con un solo clic y ahorra utilizando el nivel exacto de agua.', '<ul>\r\n<li>Capacidad de lavado 13 kg - Panel de control digital con luz LED</li>\r\n<li>Tapa de vidrio transparente con cerrado suave</li>\r\n<li>8 programas de lavado</li>\r\n<li>Temporizador/apagado autom&aacute;tico</li>\r\n<li>Funciones: Water Flow Technology</li>\r\n<li>Poderosas corrientes de agua para eliminar las manchas m&aacute;s dif&iacute;ciles.</li>\r\n<li>Eco Clean System: Ahorra hasta un 40% de tiempo y energ&iacute;a en cada lavado.</li>\r\n</ul>\r\n<p><strong>Garant&iacute;a:&nbsp;</strong>12 meses</p>', NULL, NULL, NULL, 'SMC', 360.00, 9, 399.00, 10, NULL, NULL, '2023-04-07 09:38:55', 'lavadora-automatica-13-kg-blanco', 1),
+(5, 200, 15252000556, 'Audifonos C/microfono negro  H200', 'Auriculares estéreo con micrófono H200. Micrófono de alta sensibilidad, comunicación clara y fluida con sus compañeros de equipo.', '<ul>\r\n<li>Controla f&aacute;cilmente el volumen en juegos, pel&iacute;culas, m&uacute;sica.</li>\r\n<li>Control en cable.</li>\r\n<li>Compatibilidad: PCs, port&aacute;tiles, smartphones y otros dispositivos con salida de audio de 3.5 mm.</li>\r\n<li>USB para luz led azul.</li>\r\n<li>Bot&oacute;n de encendido / apagado de luz en orejera.</li>\r\n</ul>', NULL, NULL, NULL, 'HP', 25.01, 20, NULL, NULL, NULL, NULL, '2023-04-07 09:44:49', 'audifonos-c-microfono-negro-h200', 1),
+(6, 204, 45800015274, 'Soporte P/tv De 37\' A 70\' Space', 'Soporte de pared para TV de 37 y hasta 70 pulgadas.', NULL, NULL, NULL, NULL, 'SPACE', 9.00, 8, 15.00, NULL, NULL, NULL, '2023-04-07 09:46:39', 'soporte-p-tv-de-37-a-70-space', 1),
+(7, 199, 145700055, 'Barra de sonido sl4 300w', 'Barra de sonido sl4 300w Lg', NULL, NULL, NULL, NULL, 'LG', 239.25, 13, NULL, NULL, NULL, NULL, '2023-04-07 09:50:32', 'barra-de-sonido-sl4-300w', 1),
+(8, 215, 10052546521, 'Proyector galaxias smarth NHA-G100', 'Lo mejor para tu hogar que lo vuelvas Smart', '<ul>\r\n<li>Proyector de galaxias y estrellas inteligente con conexi&oacute;n Wi-Fi&nbsp;</li>\r\n<li>Emparejamiento f&aacute;cil</li>\r\n<li>Configura diferentes colores y escenas desde tu dispositivo m&oacute;vil; proyecta galaxias y estrellas</li>\r\n<li>Col&oacute;calo donde quieras con m&uacute;ltiples ajustes de &aacute;ngulo</li>\r\n<li>Aplicaci&oacute;n compatible con iOS y Android&trade;</li>\r\n<li>Gesti&oacute;n remota desde cualquier lugar en el mundo con la app m&oacute;vil</li>\r\n<li>Horarios programables y temporizador para &oacute;ptima automatizaci&oacute;n</li>\r\n<li>Regula la intensidad de la luz y controla la rotaci&oacute;n de acuerdo con tu estado de &aacute;nimo</li>\r\n<li>Comparte el acceso</li>\r\n<li>Cable de 1,7m ofrece flexibilidad en la ubicaci&oacute;n</li>\r\n</ul>', NULL, NULL, NULL, 'NEXXT', 2.00, 5, 107.74, NULL, 8, 5.00, '2023-04-08 09:41:23', 'proyector-galaxias-smarth-nha-g100', 1);
 
 -- --------------------------------------------------------
 
@@ -314,11 +355,11 @@ INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `de
 --
 
 CREATE TABLE `roles` (
-  `id_rol` bigint(20) NOT NULL,
-  `name_rol` varchar(100) COLLATE utf8_swedish_ci NOT NULL,
-  `description_rol` varchar(100) COLLATE utf8_swedish_ci NOT NULL,
-  `status` int(11) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
+  `id_rol` bigint NOT NULL,
+  `name_rol` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_swedish_ci NOT NULL,
+  `description_rol` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_swedish_ci NOT NULL,
+  `status` int NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `roles`
@@ -336,18 +377,18 @@ INSERT INTO `roles` (`id_rol`, `name_rol`, `description_rol`, `status`) VALUES
 --
 
 CREATE TABLE `users` (
-  `id_user` bigint(20) NOT NULL,
-  `dni` varchar(30) COLLATE utf8_swedish_ci DEFAULT NULL,
-  `name_user` varchar(100) COLLATE utf8_swedish_ci NOT NULL,
-  `surname_user` varchar(100) COLLATE utf8_swedish_ci NOT NULL,
-  `phone` varchar(20) COLLATE utf8_swedish_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8_swedish_ci NOT NULL,
-  `password` varchar(100) COLLATE utf8_swedish_ci NOT NULL,
-  `update_status` int(11) NOT NULL DEFAULT '1',
-  `rolid` bigint(20) NOT NULL,
+  `id_user` bigint NOT NULL,
+  `dni` varchar(30) CHARACTER SET utf8mb3 COLLATE utf8mb3_swedish_ci DEFAULT NULL,
+  `name_user` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_swedish_ci NOT NULL,
+  `surname_user` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_swedish_ci NOT NULL,
+  `phone` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_swedish_ci NOT NULL,
+  `email` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_swedish_ci NOT NULL,
+  `password` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_swedish_ci NOT NULL,
+  `update_status` int NOT NULL DEFAULT '1',
+  `rolid` bigint NOT NULL,
   `datecreate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `status` int(11) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
+  `status` int NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `users`
@@ -356,13 +397,21 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id_user`, `dni`, `name_user`, `surname_user`, `phone`, `email`, `password`, `update_status`, `rolid`, `datecreate`, `status`) VALUES
 (1, '0706715653', 'Carlos', 'Pozo', '0994603678', 'carlospozo95@gmail.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 1, '2023-01-04 02:16:48', 1),
 (2, '1234567891', 'Andres', 'Ramirez', '994603678', 'carlos.pfloger@yahoo.com', '5bbe8ae0595ae2af0168d6ace893831b49e65b0a', 1, 2, '2022-12-04 21:37:17', 1),
-(3, '12345', 'Carlos', 'Ramirez', '42746942', 'carlos.pflogger@hotmail.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 6, '2022-12-17 02:36:16', 1),
-(27, NULL, 'Charles', 'Manson', '2746942', 'carlosandrespozo95@gmail.com', '23b1c07727ebb1e01bcee636877b6641a5fe1ced', 1, 6, '2023-05-27 14:45:24', 1),
-(28, NULL, 'Andres', 'Pozo', '0994603678', 'carlosandrespozoramirez95@gmail.com', 'd71ca0985a07bb2203c4877ebdaa706a980451a5', 1, 6, '2023-05-27 15:13:48', 1);
+(27, '7564564', 'Charles', 'Manson', '0994603678', 'carlosandrespozo95@gmail.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 6, '2023-05-27 14:45:24', 1),
+(28, NULL, 'Andres', 'Pozo', '0994603678', 'carlosandrespozoramirez95@gmail.com', 'd71ca0985a07bb2203c4877ebdaa706a980451a5', 1, 6, '2023-05-27 15:13:48', 1),
+(29, '095514', 'Qwerty', 'Wewqr', '0994603678', 'qwyg@jyasg.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 6, '2023-09-03 15:42:08', 1),
+(30, '0451521545', 'Camila', 'Hernandez', '0994603678', 'cami@cami.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 6, '2023-09-25 18:58:01', 1),
+(31, '3216554651', 'Luigy', 'Cagua', '0994603678', 'l@l.com', 'ff0edd646698f65fa2c8680d00391e368b6d4315', 1, 6, '2023-09-25 19:00:24', 0);
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `card_transaction`
+--
+ALTER TABLE `card_transaction`
+  ADD PRIMARY KEY (`id_transaccion`);
 
 --
 -- Indices de la tabla `categories`
@@ -372,11 +421,11 @@ ALTER TABLE `categories`
   ADD KEY `fatherCategory` (`fatherCategory`);
 
 --
--- Indices de la tabla `detail_pedido`
+-- Indices de la tabla `detail_orders`
 --
-ALTER TABLE `detail_pedido`
+ALTER TABLE `detail_orders`
   ADD PRIMARY KEY (`id_detail`),
-  ADD KEY `pedido_id` (`pedido_id`),
+  ADD KEY `pedido_id` (`order_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
@@ -393,18 +442,18 @@ ALTER TABLE `modules`
   ADD PRIMARY KEY (`id_module`);
 
 --
+-- Indices de la tabla `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id_order`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `payment_type_id` (`payment_type_id`);
+
+--
 -- Indices de la tabla `payment_type`
 --
 ALTER TABLE `payment_type`
   ADD PRIMARY KEY (`id_payment_type`);
-
---
--- Indices de la tabla `pedido`
---
-ALTER TABLE `pedido`
-  ADD PRIMARY KEY (`id_pedido`),
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `payment_type_id` (`payment_type_id`);
 
 --
 -- Indices de la tabla `permissions`
@@ -439,64 +488,70 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `card_transaction`
+--
+ALTER TABLE `card_transaction`
+  MODIFY `id_transaccion` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
+
+--
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id_category` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=259;
+  MODIFY `id_category` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=259;
 
 --
--- AUTO_INCREMENT de la tabla `detail_pedido`
+-- AUTO_INCREMENT de la tabla `detail_orders`
 --
-ALTER TABLE `detail_pedido`
-  MODIFY `id_detail` bigint(20) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `detail_orders`
+  MODIFY `id_detail` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT de la tabla `img_product`
 --
 ALTER TABLE `img_product`
-  MODIFY `id_img` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_img` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `modules`
 --
 ALTER TABLE `modules`
-  MODIFY `id_module` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_module` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id_order` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `payment_type`
 --
 ALTER TABLE `payment_type`
-  MODIFY `id_payment_type` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `pedido`
---
-ALTER TABLE `pedido`
-  MODIFY `id_pedido` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_payment_type` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id_permissions` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
+  MODIFY `id_permissions` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_product` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id_rol` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_rol` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_user` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- Restricciones para tablas volcadas
@@ -509,11 +564,11 @@ ALTER TABLE `categories`
   ADD CONSTRAINT `categories_ibfk_1` FOREIGN KEY (`fatherCategory`) REFERENCES `categories` (`id_category`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `detail_pedido`
+-- Filtros para la tabla `detail_orders`
 --
-ALTER TABLE `detail_pedido`
-  ADD CONSTRAINT `detail_pedido_ibfk_1` FOREIGN KEY (`pedido_id`) REFERENCES `pedido` (`id_pedido`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `detail_pedido_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id_product`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `detail_orders`
+  ADD CONSTRAINT `detail_orders_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id_order`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `detail_orders_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id_product`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `img_product`
@@ -522,11 +577,11 @@ ALTER TABLE `img_product`
   ADD CONSTRAINT `img_product_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id_product`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `pedido`
+-- Filtros para la tabla `orders`
 --
-ALTER TABLE `pedido`
-  ADD CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `pedido_ibfk_2` FOREIGN KEY (`payment_type_id`) REFERENCES `payment_type` (`id_payment_type`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`payment_type_id`) REFERENCES `payment_type` (`id_payment_type`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `permissions`
