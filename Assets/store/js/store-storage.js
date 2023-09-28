@@ -404,7 +404,7 @@ $(window).ready(function () {
                                             <p class="cart_amount total-cart">$${numberFormat(total)}</p>
                                         </div>
                                         <div class="checkout_btn">
-                                            <a href="${base_url}carrito/procesarCompra" class="btn btn-md btn-coral">Procesar pago</a>
+                                            <a href="${base_url}carrito/procesarCompra" class="btn btn-coral">Procesar pago</a>
                                         </div>
                                     </div>
                                 </div>

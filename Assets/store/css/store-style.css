@@ -8,28 +8,34 @@
 
 /* ----- COLOURS ----- */
 .c-p-deep-blue{
-    color: #4431DE;
+    color: #4431DE !important;
 }
 .c-coral{
-    color: #F15555;
+    color: #F15555 !important;
 }
 .c-intense-gold{
-    color: #fbbb01;
+    color: #fbbb01 !important;
 }
 .c-bright-blue{
-    color: #007bff;
+    color: #007bff !important;
 }
 .c-baby-blue{
-    color: #7ebcff;
+    color: #7ebcff !important;
 }
 .c-gray{
-    color: #777;
+    color: #777 !important;
+}
+.c-charcoal{
+    color: #454545 !important;
+}
+.c-black{
+    color: #000 !important;
 }
 .bg-mist-white{
     background: #f6f6f6 !important;
 }
 .bg-p-deep-blue{
-    background: #4431DE;
+    background: #4431DE !important;
 }
 
 /* ----- Z-INDEX ------ */
@@ -598,6 +604,9 @@
 @media (max-width: 576px) {
     .content-value-product{
         margin-top: 20px;
+    }
+    .width-100-rp{
+        width: 100% !important;
     }
 }
 @media (max-width: 650px) {

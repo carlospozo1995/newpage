@@ -114,8 +114,7 @@
 											echo (!empty($data_product['prevPrice'])) ? '<del>'.SMONEY. Utils::formatMoney($data_product['prevPrice']).'</del>' : '';
                                         	echo '<span>'.SMONEY.Utils::formatMoney($data_product['price']).'</span>';
 										echo '</div>';
-
-											echo (!empty($data_product['cantDues'])) ? '<span class="ml-2 text-left text-secondary">'.$data_product['cantDues'].' cuotas '.SMONEY. Utils::formatMoney($data_product['priceDues']).'</span>' : '';
+											echo (!empty($data_product['cantDues'])) ? '<span class="ml-2 text-left text-secondary">'.$data_product['cantDues'].' cuotas '.SMONEY. Utils::formatMoney($data_product['priceDues']).'</span>'.'<span class="fs-14 mx-2">Más información, visíte nuestra tienda.</span>': '';	
 									echo '</div>';
 								?>
 								</div>

@@ -10,7 +10,7 @@
                     <div class="row mb-n6">
                         <div class="col-lg-3 col-sm-6 mb-6">
                             <!-- Start Footer Single Item -->
-                            <div class="footer-widget-single-item footer-widget-color--aqua" data-aos="fade-up"
+                            <div class="footer-widget-single-item footer-widget-color--pink" data-aos="fade-up"
                                 data-aos-delay="0">
                                 <h5 class="title">INFORMATION</h5>
                                 <ul class="footer-nav">
@@ -24,7 +24,7 @@
                         </div>
                         <div class="col-lg-3 col-sm-6 mb-6">
                             <!-- Start Footer Single Item -->
-                            <div class="footer-widget-single-item footer-widget-color--aqua" data-aos="fade-up"
+                            <div class="footer-widget-single-item footer-widget-color--pink" data-aos="fade-up"
                                 data-aos-delay="200">
                                 <h5 class="title">MY ACCOUNT</h5>
                                 <ul class="footer-nav">
@@ -39,7 +39,7 @@
                         </div>
                         <div class="col-lg-3 col-sm-6 mb-6">
                             <!-- Start Footer Single Item -->
-                            <div class="footer-widget-single-item footer-widget-color--aqua" data-aos="fade-up"
+                            <div class="footer-widget-single-item footer-widget-color--pink" data-aos="fade-up"
                                 data-aos-delay="400">
                                 <h5 class="title">CATEGORIES</h5>
                                 <ul class="footer-nav">
@@ -54,7 +54,7 @@
                         </div>
                         <div class="col-lg-3 col-sm-6 mb-6">
                             <!-- Start Footer Single Item -->
-                            <div class="footer-widget-single-item footer-widget-color--aqua" data-aos="fade-up"
+                            <div class="footer-widget-single-item footer-widget-color--pink" data-aos="fade-up"
                                 data-aos-delay="600">
                                 <h5 class="title">ABOUT US</h5>
                                 <div class="footer-about">
@@ -94,7 +94,7 @@
                                 <h4 class="title">DON'T MISS OUT ON THE LATEST</h4>
                                 <div class="form-newsletter">
                                     <form action="#" method="post">
-                                        <div class="form-fild-newsletter-single-item input-color--aqua">
+                                        <div class="form-fild-newsletter-single-item input-color--pink">
                                             <input type="email" placeholder="Your email address..." required>
                                             <button type="submit">SUBSCRIBE!</button>
                                         </div>
@@ -133,7 +133,7 @@
             <!-- Start Footer Bottom -->
         </div>
     </footer>
-    <!-- End Footer Section -->    
+    <!-- End Footer Section -->   
     <!-- material-scrolltop button -->
     <button class="material-scrolltop" type="button"><i class="fa fa-chevron-up text-light"></i></button>
 
@@ -293,7 +293,14 @@
                 echo '<script src="'.MEDIA_STORE.'js/'.$valuejs.'.js"></script>';
             }
         }
+        
+        if (isset($_SESSION['paymentProcessData']) && isset($template_vars['statusCode']) && $template_vars['statusCode'] != 2) {
     ?>
+            <script>localStorage.removeItem("shoppingCartData");</script>
+    <?php
+        }
+    ?>
+
 
 </body>
 </html>

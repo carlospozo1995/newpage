@@ -181,11 +181,16 @@
 				case 'paymentTypeValidation':
 					if(isset($_POST)){
 						$ordered_products = $_POST['ordered_products'];
-						$dni_client = $_POST['dni'];
-						$name_client = $_POST['name'];
-						$surname_client = $_POST['surname'];
-						$email_client = $_POST['email'];
-						$phone_client = $_POST['phone'];
+						$dni_client = "";
+
+						if (!empty($_POST['dni'])) {
+							$dni_client = $_POST['dni'];
+							Models_Store::updateDniClient($dni_client, $_SESSION['idUser']);
+
+						}else{
+							$dni_client = $_SESSION['data_user']['dni'];
+						}
+
 						$main_town = $_POST['main_town'];
 						$street = $_POST['address'];
 						$add_info = $_POST['additional_information'];
@@ -216,7 +221,48 @@
 							$status = false;
 							$msg = $e->getMessage();
 						}
-						$data = array("status"=>$status, 'paymentType' => $payment_type, "verifyProductsDb" => $verifyProductsDb, "msg"=>$msg);
+						$data = array("status"=>$status, 'paymentType' => $payment_type, "verifyProductsDb" => $verifyProductsDb, "dni_client" => $dni_client, "email_client" => $_SESSION['data_user']['email'], "phone_client" => $_SESSION['data_user']['phone'], "msg"=>$msg);
+						echo json_encode($data);
+					}
+				break;
+
+				case 'getDni':
+					if (isset($_POST)) {
+						$dniClient = Models_Store::getDniClient($_SESSION['idUser']);
+						echo json_encode($dniClient);
+					}
+				break;
+
+				case 'verifyDni':
+					if (isset($_POST)) {
+						$dni_entered = $_POST['dni'];
+
+						try {
+							if (empty($dni_entered)) {
+								throw new Exception("Por favor asegúrese de no tener los campos requeridos en rojo o vacios.");
+								die();
+							}else{
+								$test_dni = "/^\d{6,}$/";
+
+								if (!preg_match($test_dni, $dni_entered)) {
+									throw new Exception("Por favor asegúrese de no tener los campos requeridos en rojo o vacios.");
+									die();
+								}else{
+									$sql ="SELECT * FROM users WHERE (dni = ? AND id_user != ?)";
+									$request = $GLOBALS["db"]->selectAll($sql, array($dni_entered, $_SESSION['data_user']['dni']));
+									
+									if (!empty($request)) {
+										throw new Exception("Cédula/RUC ingresado ya está en uso. Por favor, intente nuevamente.");
+										die();
+									}
+								}
+							}
+						} catch (Exception $e) {
+							$status = false;
+							$msg = $e->getMessage();
+						}
+
+						$data = array('status' => $status, "msg" => $msg);
 						echo json_encode($data);
 					}
 				break;

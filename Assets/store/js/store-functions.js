@@ -2,7 +2,6 @@
 if(localStorage.getItem("shoppingCartData") == null && window.location.pathname.split("/").pop() == "procesarCompra"){
     window.location.href = base_url + "carrito";
 }
-
 /*****************************
  * Alert Login-Register(Store)
  *****************************/
@@ -144,7 +143,7 @@ $(document).ready(function () {
                         expresion = testExpression(inputValue, /^([a-zA-ZÑñÁáÉéÍíÓóÚú\s])*$/);
                         break;
                     case $(this).hasClass('valid_phone'):
-                        expresion = testExpression(inputValue, /^\d{7}(?:\d{3})?$/);
+                        expresion = testExpression(inputValue, /^09\d{8}$/);
                         break;
                     case $(this).hasClass('valid_email'):
                         expresion = testExpression(inputValue, /^(([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9])+\.)+([a-zA-Z0-9]{2,4}))*$/);
@@ -154,6 +153,9 @@ $(document).ready(function () {
                         break;
                     case $(this).hasClass('valid_empty'):
                             expresion = testExpression(inputValue, /^\s*.*\S.*\s*$/);
+                    break;
+                    case $(this).hasClass('valid_empty-number'):
+                        expresion = testExpression(inputValue, /^\d{6,}$/);
                     break;
                     default:
                         return false;

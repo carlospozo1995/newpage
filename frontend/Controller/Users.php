@@ -34,7 +34,7 @@
 						}else{
 							$test_email = "/^(([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9])+\.)+([a-zA-Z0-9]{2,4}))*$/";
 							$test_pass = "/^(?=.*\d)(?=.*[a-z]).{8,}$/";
-							$test_number = "/^([0-9]{7,10})$/";
+							$test_number = "/^09\d{8}$/";
 							$test_text = "/^([a-zA-ZÑñÁáÉéÍíÓóÚú\s])*$/";
 
 							if (!preg_match($test_text, $name) || !preg_match($test_text, $surname) || !preg_match($test_number, $phone) || !preg_match($test_email, $email)) {

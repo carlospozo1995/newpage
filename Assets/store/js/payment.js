@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+	
 	let cartStorage = JSON.parse(localStorage.getItem('shoppingCartData'));
 
 	let cartStorage_productIds = $.map(cartStorage, function(product) {
@@ -99,21 +99,82 @@ $(document).ready(function () {
         }
 	});
 
-	function dataFormValidation() {
-		let flag = true;
-		$('.form-client_data input').each(function () {
-			if ($(this).val() === "") {
-				flag = false;
+	
+	if ($('#content-data_buy').length) {
+		$.ajax({
+			url: base_url + "carrito/getDni/",
+			dataType: 'JSON',
+			method: 'POST',
+			beforeSend: function() {
+			},
+			success: function(data){
+				if (data.dni != null) {
+					$('.form-client_data').prepend('<div><button>Editarloco</button></div>');
+					$('#cont-dni-client').html(`
+						<span class="font-weight-bold">Cédula o RUC</span>
+                        <p>${data.dni}</p>
+					`);
+				}else{
+					$('#cont-dni-client').html(`
+						<div class="alert-client-data"></div>
+						<div class="default-form-box ">
+							<span class="font-weight-bold">Cédula o RUC <span class="text-danger">*</span></span>
+							<div class="box-session">
+								<input type="text" id="dni-client" value="">
+							</div>
+							<span class="d-none text-danger">Por favor llenar este campo. Ejemplo: 1234567890.</span>
+						</div>
+					`);
+				}
+				$('#dni-client').on('keyup', function () {
+					const inputValue = $('#dni-client').val();
+					const regex = /^\d{6,}$/;
+
+					if (inputValue != "") {
+						if (regex.test(inputValue)) {
+							$(this).parent().removeClass('invalid-content');
+							$(this).parent().addClass('valid-content');
+							$(this).parent().next().addClass('d-none');
+							// $('.alert-client-data').html("");
+						} else {
+							$(this).parent().addClass('invalid-content');
+							$(this).parent().removeClass('valid-content');
+							$(this).parent().next().removeClass('d-none');
+						}
+					}else{
+						$(this).parent().removeClass('invalid-content');
+						$(this).parent().removeClass('valid-content');
+						$(this).parent().next().addClass('d-none');
+						$('.alert-client-data').html("");
+					}
+					
+				})
+				collapseForm();
+			},
+			error: function(xhr, status, error) {
+				console.log(error);
+			},
+			complete: function() {
 			}
 		});
-		return flag;
+	}
+
+	function dataFormValidation() {
+		let flag = true;
+
+		if($('.form-client_data #dni-client').length){
+			if($('.form-client_data #dni-client').val() == ""){
+				flag = false;
+			}
+
+		}
+		return flag
 	}
 	function dataInputValidation() {
 		let flag = true;
 		$('.form-client_data .box-session').each(function () {
 			if ($(this).hasClass('invalid-content')) {
 				flag = false;
-				return false;
 			}
 		});
 		return flag;
@@ -137,33 +198,64 @@ $(document).ready(function () {
 		}
 	}
 
-	if(dataFormValidation()){
-		$('#dataCollapse').collapse('hide');
-		$('#shippingCollapse').slideDown();
-		$('.btn-collapse-data').removeClass('d-block');
-		$('.btn-collapse-shipping').addClass('d-none');
-	}else{
-		$('#dataCollapse').collapse('show');
-		$('#shippingCollapse').slideUp();
-		$('.btn-collapse-data').addClass('d-none');
-		$('.btn-collapse-shipping').removeClass('d-block');
+	function collapseForm() {
+		if(dataFormValidation()){
+			$('#dataCollapse').collapse('hide');
+			$('#shippingCollapse').slideDown();
+			$('.btn-collapse-data').removeClass('d-block');
+			$('.btn-collapse-shipping').addClass('d-none');
+		}else{
+			$('#dataCollapse').collapse('show');
+			$('#shippingCollapse').slideUp();
+			$('.btn-collapse-data').addClass('d-none');
+			$('.btn-collapse-shipping').removeClass('d-block');
+		}
+	
+		$('.btn-collapse-data').click(function () {
+			if(!$('#dataCollapse').hasClass('show')){
+				$('.btn-collapse-data').addClass('d-none');
+				$('.btn-collapse-data').removeClass('d-block');
+				$('.btn-collapse-shipping').addClass('d-block');
+				$('.btn-collapse-shipping').removeClass('d-none');
+				$('.process-payment').slideUp();
+			}
+			$('#dataCollapse').collapse('toggle');
+			$('#shippingCollapse').slideUp();
+		})
 	}
 
-	$('.btn-collapse-data').click(function () {
-		if(!$('#dataCollapse').hasClass('show')){
-			$('.btn-collapse-data').addClass('d-none');
-			$('.btn-collapse-data').removeClass('d-block');
-			$('.btn-collapse-shipping').addClass('d-block');
-			$('.btn-collapse-shipping').removeClass('d-none');
-			$('.process-payment').slideUp();
-		}
-		$('#dataCollapse').collapse('toggle');
-		$('#shippingCollapse').slideUp();
-	})
+	collapseForm();
 
 	$('.form-client_data').submit(function (e) {
 		e.preventDefault();
-		processForm();
+		if ($('#dni-client').length) {
+			$.ajax({
+				url: base_url + "carrito/verifyDni/",
+				dataType: 'JSON',
+				method: 'POST',
+				data: {
+					dni: $('#dni-client').val(),
+				},
+				beforeSend: function() {
+				},
+				success: function(data){
+					if (data.status) {
+						processForm();
+					}else{
+						msgAlert('.alert-client-data', data.msg);
+					}
+				},
+				error: function(xhr, status, error) {
+					console.log(error);
+				},
+				complete: function() {
+				}
+			});
+		}else{
+			processForm();
+		}
+
+		
 	});
 
 	$('.btn-collapse-shipping').click(function () {
@@ -219,12 +311,8 @@ $(document).ready(function () {
 			dataType: 'JSON',
 			method: 'POST',
 			data: {
-				dni: $('#dni-client').val(),
+				dni: $('.form-client_data #dni-client').length ? $('#dni-client').val() : "",
 				ordered_products: cartStorage,
-				name: $('#name-client').val(),
-				surname: $('#surname-client').val(),
-				email: $('#email-client').val(),
-				phone: $('#phone-client').val(),
 				main_town: $('#location').val(),
 				address: $('#address').val(),
 				additional_information: $('#additional-information').val(),
@@ -246,7 +334,7 @@ $(document).ready(function () {
 
 						if (verifiedProducts.stockUpdate) {
 							$('#modalProductsChanges').modal('hide');
-							paymentGateway(cartStorage, verifiedProducts.total, verifiedProducts.unique_code, $('#email-client').val(), $('#dni-client').val());
+							paymentGateway(cartStorage, verifiedProducts.total, verifiedProducts.unique_code, data.email_client, data.dni_client, data.phone_client);
 						}else{
 							// aqui abriremos el modal si hay cambios en los productos
 							modalProductsChanges(cartStorage, verifiedProducts);
@@ -360,7 +448,7 @@ $(document).ready(function () {
 
 							if (verifiedProductsNew.stockUpdate) {
 								$('#modalProductsChanges').modal('hide');
-								paymentGateway(verifyProductsDb.newProductsArray, verifiedProductsNew.total, verifiedProductsNew.unique_code, $('#email-client').val(), $('#dni-client').val());
+								paymentGateway(verifyProductsDb.newProductsArray, verifiedProductsNew.total, verifiedProductsNew.unique_code, dataNew.email_client, dataNew.dni_client, dataNew.phone_client);
 							}else{
 								$('#modalProductsChanges').modal('hide');
 								setTimeout(() => {
@@ -452,13 +540,14 @@ $(document).ready(function () {
 	    return productListHTML;
 	}
 	
-	function paymentGateway(orderedProducts, total, uniqueCode, emailClient, dniClient) {
+	function paymentGateway(orderedProducts, total, uniqueCode, emailClient, dniClient, phoneClient) {
 		var parametros ={
 			amount: parseFloat((total * 100).toFixed(2)),
 			amountWithoutTax: parseFloat((total * 100).toFixed(2)),
 			email: emailClient,
 			documentId: dniClient,
 			clientTransactionID: uniqueCode,
+			phoneNumber: '+593'+ phoneClient,
 			responseUrl: "http://localhost/carlos/page/confirmarcompra",
 			cancellationUrl: "http://localhost/carlos/page/cancelacion"
 		};

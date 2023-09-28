@@ -2,33 +2,33 @@
 <?php
 	$transationData = $template_vars;
 	Utils::dep($transationData);
+	$get_order = Models_Store::getOrderClient($transationData['transactionId']);
 ?>
+<div data-aos="fade-up" data-aos-delay="0" class="mb-lg-10">
+	<section class="mt-10 container px-8">
+		<div class="text-center d-block">
+			<img class="width-100-rp" src="<?= MEDIA_STORE; ?>images/thanks-buy.png" alt="">
+			<p class="mt-5 mb-8 fs-16">En hasta 5 minutos, recibirá un correo electrónico en <span class="font-weight-bold"><?= $_SESSION['data_user']['email']; ?></span> con todos los detalles de su compra.
+		</div>
+		<button class="btn btn-deep-blue font-weight-bold d-flex mx-auto">IMPRIMIR</button>
+	</section>
 
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Confirmación de compra</title>
-</head>
-<body>
-	<button><a href="<?= BASE_URL; ?>">Seguir comprando</a></button>
-	<?php
-		// Utils::dep(json_encode($transationData)); 
-		// Utils::dep(Models_Store::selectOrders($transationData['clientTransactionId'], $_SESSION['idUser']));
-		
-	?>
+	<section class="my-10 pt-5">
+		<div class="bg-mist-white">
+			<ul class="c-charcoal text-center container px-8">
+				<li class="py-5 fs-18 border-bottom border-charcoal">Dentro de poco, uno de nuestros empleados se pondrá en contacto con usted para verificar su compra y proceder a su entrega.</li>
+				<li class="py-5 fs-18">El período de entrega comienza a contar desde el momento en que se confirma el pago.</li>
+			</ul>
+		</div>
+	</section>
 
-	<script> const base_url = "<?= BASE_URL; ?>"; </script>
-    <script> const media_store= "<?= MEDIA_STORE; ?>"; </script>
-	<script src="<?= MEDIA_STORE; ?>js/vendor/jquery-3.5.1.min.js"></script>
-	<script src="<?= MEDIA_STORE; ?>js/transaction-complete.js"></script>
-	<?php
-		if (isset($_SESSION['paymentProcessData']) && $transationData['statusCode'] != 2) {
-	?>
-		<!-- <script>localStorage.removeItem(shoppingCartData");</script> -->
-	<?php
-		}
-	?>
-</body>
-</html>
+	<section class="pt-5 container px-8">
+		<?php
+			// Utils::dep($get_order);
+		?>
+	</section>
+</div>
+
+
+
+

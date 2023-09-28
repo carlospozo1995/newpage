@@ -6558,6 +6558,10 @@ progress {
     border-color: #F8F9FA !important;
 }
 
+.border-charcoal{
+    border-color: #d7d7d7 !important;
+}
+
 .border-dark {
     border-color: #343A40 !important;
 }
@@ -14482,7 +14486,7 @@ input {
 /***********************
 * Components - Button
 ************************/
-.btn {
+.btn .btn-lg .btn-pink {
     outline: none;
     color: #24262b;
     text-transform: uppercase;

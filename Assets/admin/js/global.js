@@ -79,7 +79,7 @@ function validateExpresion() {
                     expresion = testExpression(inputValue, /^([a-zA-ZÑñÁáÉéÍíÓóÚú\s])*$/);
                 break;
                 case this.classList.contains('valid_phone'):
-                    expresion = testExpression(inputValue, /^([0-9]{7,10})$/);
+                    expresion = testExpression(inputValue, /^09\d{8}$/);
                 break;
                 case this.classList.contains('valid_number'):
                     expresion = testExpression(inputValue, /^\d+$/);

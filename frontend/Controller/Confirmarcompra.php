@@ -42,11 +42,9 @@
 					curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 					$result = curl_exec($curl);
 					curl_close($curl);
-					// Utils::dep($result);
+					
 					if(isset($_SESSION['login']) && isset($transaction) && isset($client)){
 						$result = json_decode($result, true);
-						
-						View::renderPage('Confirmarcompra', $result);
 
 						if (isset($_SESSION['paymentProcessData'])){
 							$orderData = $_SESSION['paymentProcessData'];
@@ -88,7 +86,7 @@
 								}
 								
 								if (count($arrDetailProducts) > 0){
-									echo count($arrDetailProducts);
+									// echo count($arrDetailProducts);
 								}else{
 									// enviar mensaje al administrador sobre los detalles de los productos no insertados en la tabla detallePedidos mandando el array $insertOrdersDetails
 								}
@@ -102,10 +100,21 @@
 									// enviar mensaje al administrador sobre los productos no actualizados si existe un error(enviando $orderData['orderedProducts'])
 								}
 							}
-							
-							unset($_SESSION['paymentProcessData']);
 						}
-						
+
+						if (!isset($result['errorCode'])) {
+							$idClient_transaction = Models_Store::getIdClient($result['clientTransactionId']);
+							if (!empty($idClient_transaction) && $idClient_transaction['user_id'] == $_SESSION['idUser']) {
+								View::renderPage('Confirmarcompra', $result);
+							}else{
+								header("Location: ".BASE_URL);
+							}
+						}else{
+							header("Location: ".BASE_URL);
+						}
+
+						unset($_SESSION['paymentProcessData']);
+
 					}else{
 						header("Location: ".BASE_URL);
 					}

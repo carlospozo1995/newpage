@@ -44,45 +44,44 @@
                             
                             <div class="px-5 py-5 collapse" id="dataCollapse">
                                 <form class="form-client_data">
-                                    <div class="alert-client-data"></div>
-                                    <div class="default-form-box">
-                                        <span class="font-weight-bold">Cédula o RUC <span class="text-danger">*</span></span>
-                                        <div class="box-session">
-                                            <input type="text" id="dni-client" class="valid valid_empty" value="<?= $_SESSION['data_user']['dni']; ?>" required>
+                                    <?php
+                                    if (!empty($_SESSION['data_user']['dni'])){
+                                        echo "<div><button>Editarloco</button></div>";
+                                    }                                    
+                                    ?>
+                                    <div id="cont-dni-client">
+                                        <?php
+                                            if (empty($_SESSION['data_user']['dni'])){
+                                        ?>
+                                        <div class="alert-client-data"></div>
+                                        <div class="default-form-box">
+                                            <span class="font-weight-bold">Cédula o RUC <span class="text-danger">*</span></span>
+                                            <div class="box-session">
+                                                <input type="text" id="dni-client" class="valid valid_empty-number" value="">
+                                            </div>
+                                            <span class="d-none text-danger">Por favor llenar este campo. Ejemplo: 1234567890.</span>
                                         </div>
-                                        <span class="d-none text-danger">Por favor llenar este campo.</span>
+                                        <?php        
+                                            }else{
+                                        ?>
+                                        <span class="font-weight-bold">Cédula o RUC</span>
+                                        <p><?=$_SESSION['data_user']['dni'];?></p>
+                                        <?php
+                                            }
+                                        ?>
                                     </div>
-                                    <div class="default-form-box">
-                                        <span class="font-weight-bold">Nombre <span class="text-danger">*</span></span>
-                                        <div class="box-session">
-                                            <input type="text" class="valid valid_text" id="name-client" value="<?= $_SESSION['data_user']['name_user']; ?>" required>
-                                        </div>
-                                        <span class="d-none text-danger">Este campo solo debe contener letras y espacios.</span>
-                                    </div>
-                                    <div class="default-form-box">
-                                        <span class="font-weight-bold">Apellido <span class="text-danger">*</span></span>
-                                        <div class="box-session">
-                                            <input type="text" class="valid valid_text" id="surname-client" value="<?= $_SESSION['data_user']['surname_user']; ?>" required>
-                                        </div>
-                                        <span class="d-none text-danger">Este campo solo debe contener letras y espacios.</span>
-                                    </div>
-                                    <div class="default-form-box">
-                                        <span class="font-weight-bold">Correo <span class="text-danger">*</span></span>
-                                        <div class="box-session">
-                                            <input type="text" class="valid valid_email" id="email-client" value="<?= $_SESSION['data_user']['email']; ?>" required>
-                                        </div>
-                                        <span class="d-none text-danger">Este campo debe tener un correo existente.</span>
-                                    </div>
-                                    <div class="default-form-box">
-                                        <span class="font-weight-bold">Teléfono / celular <span class="text-danger">*</span></span>
-                                        <div class="box-session">
-                                            <input type="text" class="valid valid_phone" id="phone-client" value="<?= $_SESSION['data_user']['phone']; ?>" required>
-                                        </div>
-                                        <span class="d-none text-danger">Este campo solo debe contener números de 7 o 10 dígitos.</span>
-                                    </div>
-
+                                    
+                                    <span class="font-weight-bold">Nombre</span>
+                                    <p><?= $_SESSION['data_user']['name_user']; ?></p>
+                                    <span class="font-weight-bold">Apellido</span>
+                                    <p><?= $_SESSION['data_user']['surname_user']; ?></p>
+                                    <span class="font-weight-bold">Correo</span>
+                                    <p><?= $_SESSION['data_user']['email']; ?></p>
+                                    <span class="font-weight-bold">Teléfono movil</span>
+                                    <p><?= $_SESSION['data_user']['phone']; ?></p>
+                                    
                                     <div class="text-center">
-                                        <button class="btn btn-md btn-black-default-hover m-auto" type="submit">IR AL ENVIO</button>
+                                        <button class="btn btn-black-default-hover m-auto" type="submit">IR AL ENVIO</button>
                                     </div>
                                 </form>
                             </div>
@@ -129,7 +128,7 @@
                                         <textarea class="form-control textarea" name="" id="customer-message" placeholder="Escribe tu mensaje aquí"></textarea>
                                     </div>
                                     <div class="text-center">
-                                        <button class="btn btn-md btn-black-default-hover m-auto" type="submit">IR AL PAGO</button>
+                                        <button class="btn btn-black-default-hover m-auto" type="submit">IR AL PAGO</button>
                                     </div>
                                 </form>
                             </div>
@@ -210,7 +209,7 @@
                                     </div>
                                     <div class="login_submit">
                                         <a class="mb-4 text-right" href="#">Olvidé mi contraseña</a>
-                                        <button class="btn btn-md btn-black-default-hover m-auto" type="submit">ENTRAR</button>
+                                        <button class="btn btn-black-default-hover m-auto" type="submit">ENTRAR</button>
                                     </div>
                                 </form>
                             </div>
@@ -239,7 +238,7 @@
                                             <i class="icon-phone"></i>
                                             <input type="text" class="client-phone valid valid_phone" placeholder="Teléfono / celular" required>
                                         </div>
-                                        <span class="d-none text-danger">Este campo solo debe contener números de 7 o 10 dígitos.</span>
+                                        <span class="d-none text-danger">Ingrese un número de celular válido. Ej: 0912345678.</span>
                                     </div>
                                     <div class="default-form-box">
                                         <div class="box-session">
@@ -257,7 +256,7 @@
                                         <span class="d-none text-danger">La contraseña por lo mínimo debe tener 8 caracteres entre numeros, letras minusculas y mayusculas.</span>
                                     </div>
                                     <div class="login_submit">
-                                        <button class="btn btn-md btn-black-default-hover m-auto" type="submit">CREAR CUENTA</button>
+                                        <button class="btn btn-black-default-hover m-auto" type="submit">CREAR CUENTA</button>
                                     </div>
                                 </form>
                             </div>
