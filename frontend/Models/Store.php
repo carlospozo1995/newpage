@@ -176,9 +176,9 @@
             return $GLOBALS["db"]->auto_array($sql, array($data));
         }
 
-        static public function getDniClient($data)
+        static public function getDataClient($data)
         {
-            $sql = "SELECT dni FROM users WHERE id_user = ?";
+            $sql = "SELECT dni, name_user, surname_user, phone, email FROM users WHERE id_user = ?";
             return $GLOBALS["db"]->auto_array($sql, array($data));
         }
 

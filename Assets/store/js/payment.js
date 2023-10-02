@@ -99,8 +99,8 @@ $(document).ready(function () {
         }
 	});
 
-	
-	if ($('#content-data_buy').length) {
+	// ------------------------------------------------
+	if ($('.cont-client_data').length) {
 		$.ajax({
 			url: base_url + "carrito/getDni/",
 			dataType: 'JSON',
@@ -109,10 +109,14 @@ $(document).ready(function () {
 			},
 			success: function(data){
 				if (data.dni != null) {
-					$('.form-client_data').prepend('<div><button>Editarloco</button></div>');
+					$('.edit-dataClient').html(`
+					<div class="max-content m-auto mb-3">
+						<a href="http://localhost/carlos/page" class="btn btn-outline-black"> <i class="icon-note"></i> Editar</a>
+					</div>
+					`);
 					$('#cont-dni-client').html(`
 						<span class="font-weight-bold">Cédula o RUC</span>
-                        <p>${data.dni}</p>
+						<p>${data.dni}</p>
 					`);
 				}else{
 					$('#cont-dni-client').html(`
@@ -126,154 +130,136 @@ $(document).ready(function () {
 						</div>
 					`);
 				}
-				$('#dni-client').on('keyup', function () {
-					const inputValue = $('#dni-client').val();
-					const regex = /^\d{6,}$/;
 
-					if (inputValue != "") {
-						if (regex.test(inputValue)) {
-							$(this).parent().removeClass('invalid-content');
-							$(this).parent().addClass('valid-content');
-							$(this).parent().next().addClass('d-none');
-							// $('.alert-client-data').html("");
-						} else {
-							$(this).parent().addClass('invalid-content');
-							$(this).parent().removeClass('valid-content');
-							$(this).parent().next().removeClass('d-none');
-						}
-					}else{
-						$(this).parent().removeClass('invalid-content');
-						$(this).parent().removeClass('valid-content');
-						$(this).parent().next().addClass('d-none');
-						$('.alert-client-data').html("");
-					}
-					
-				})
-				collapseForm();
+				$('.name_client').text(`${data.name_user}`);
+				$('.surname_client').text(`${data.surname_user}`);
+				$('.email_client').text(`${data.email}`);
+				$('.phone_client').text(`${data.phone}`);
 			},
 			error: function(xhr, status, error) {
 				console.log(error);
 			},
 			complete: function() {
+				if($('#dni-client').length){
+					$('#dni-client').on('keyup', function () {
+						const inputValue = $('#dni-client').val();
+						const regex = /^\d{6,}$/;
+	
+						if (inputValue != "") {
+							if (regex.test(inputValue)) {
+								$(this).parent().removeClass('invalid-content');
+								$(this).parent().addClass('valid-content');
+								$(this).parent().next().addClass('d-none');
+							} else {
+								$(this).parent().addClass('invalid-content');
+								$(this).parent().removeClass('valid-content');
+								$(this).parent().next().removeClass('d-none');
+							}
+						}else{
+							$(this).parent().removeClass('invalid-content');
+							$(this).parent().removeClass('valid-content');
+							$(this).parent().next().addClass('d-none');
+							$('.alert-client-data').html("");
+						}
+						
+					})
+				}
 			}
 		});
 	}
+	// ------------------------------------------------
 
-	function dataFormValidation() {
-		let flag = true;
+	var globalFlag = true;
 
-		if($('.form-client_data #dni-client').length){
-			if($('.form-client_data #dni-client').val() == ""){
-				flag = false;
+	function collapseContainer() {
+		$('#dataCollapse').collapse('show');
+		$('.btn-collapse-data').addClass('d-none');
+
+		$('.btn-collapse-data').click(function () {
+			if(!$('#dataCollapse').hasClass('show')){
+				$('.btn-collapse-data').addClass('d-none');
+				$('.btn-collapse-data').removeClass('d-block');
+				$('.btn-collapse-shipping').addClass('d-block');
+				$('.btn-collapse-shipping').removeClass('d-none');	
+				$('.process-payment').collapse('hide');
 			}
+			$('#shippingCollapse').collapse('hide');
+		})
+	}
+	collapseContainer();
 
+	function clientDataValidation() {
+		if ($('#dni-client').length) {
+			if ($('#dni-client').val() == "" || $('.cont-client_data .box-session').hasClass('invalid-content')) {
+				globalFlag = false;
+			}
 		}
-		return flag
+		return globalFlag;
 	}
-	function dataInputValidation() {
-		let flag = true;
-		$('.form-client_data .box-session').each(function () {
-			if ($(this).hasClass('invalid-content')) {
-				flag = false;
-			}
-		});
-		return flag;
-	}
-	function processForm() {
-		if (dataFormValidation() && dataInputValidation()) {
+	
+	function validationProcess() {
+		if (clientDataValidation()) {
 			$('#dataCollapse').collapse('hide');
-			$('#shippingCollapse').slideDown();
+			$('#shippingCollapse').collapse('show');
 			$('.btn-collapse-data').addClass('d-block');
 			$('.btn-collapse-data').removeClass('d-none');
 			$('.btn-collapse-shipping').addClass('d-none');
-			$('.btn-collapse-shipping').removeClass('d-block');
 
-			$('.alert-client-data').html("");
-			$('.form-client_data .box-session').each(function () {
-				$(this).removeClass('valid-content');
-			});
+			if ($('.cont-client_data #dni-client').length) {
+				$('.alert-client-data').html("");
+				$('.cont-client_data .box-session').removeClass('valid-content');
+			}
+			
 		}else{
 			msgAlert('.alert-client-data', 'Por favor asegúrese de no tener los campos requeridos en rojo o vacios.');
 			return false;
 		}
 	}
 
-	function collapseForm() {
-		if(dataFormValidation()){
-			$('#dataCollapse').collapse('hide');
-			$('#shippingCollapse').slideDown();
-			$('.btn-collapse-data').removeClass('d-block');
-			$('.btn-collapse-shipping').addClass('d-none');
-		}else{
-			$('#dataCollapse').collapse('show');
-			$('#shippingCollapse').slideUp();
-			$('.btn-collapse-data').addClass('d-none');
-			$('.btn-collapse-shipping').removeClass('d-block');
-		}
-	
-		$('.btn-collapse-data').click(function () {
-			if(!$('#dataCollapse').hasClass('show')){
-				$('.btn-collapse-data').addClass('d-none');
-				$('.btn-collapse-data').removeClass('d-block');
-				$('.btn-collapse-shipping').addClass('d-block');
-				$('.btn-collapse-shipping').removeClass('d-none');
-				$('.process-payment').slideUp();
+	function inputValidationVerification() {
+	if ($('#dni-client').length) {
+		$.ajax({
+			url: base_url + "carrito/verifyDni/",
+			dataType: 'JSON',
+			method: 'POST',
+			data: {
+				dni: $('#dni-client').val(),
+			},
+			success: function(data){
+				if (data.status) {
+					validationProcess();
+				}else{
+					msgAlert('.alert-client-data', data.msg);
+				}
+			},
+			error: function(xhr, status, error) {
+				console.log(error);
 			}
-			$('#dataCollapse').collapse('toggle');
-			$('#shippingCollapse').slideUp();
-		})
+		});
+	}else{
+		validationProcess();
+	}		
 	}
 
-	collapseForm();
-
-	$('.form-client_data').submit(function (e) {
-		e.preventDefault();
-		if ($('#dni-client').length) {
-			$.ajax({
-				url: base_url + "carrito/verifyDni/",
-				dataType: 'JSON',
-				method: 'POST',
-				data: {
-					dni: $('#dni-client').val(),
-				},
-				beforeSend: function() {
-				},
-				success: function(data){
-					if (data.status) {
-						processForm();
-					}else{
-						msgAlert('.alert-client-data', data.msg);
-					}
-				},
-				error: function(xhr, status, error) {
-					console.log(error);
-				},
-				complete: function() {
-				}
-			});
-		}else{
-			processForm();
-		}
-
-		
-	});
+	$('#confirmedDataClient').click(function () {
+		inputValidationVerification();
+	})
 
 	$('.btn-collapse-shipping').click(function () {
-		$('.process-payment').slideUp();
-		processForm();
+		inputValidationVerification();
+		$('.process-payment').collapse('hide');
 	});
 
-	$('.form-shipping_information').submit(function (e) {
-		e.preventDefault();
+	$('#confirmedLocationClient').click(function () {
 		if($('#location').val() != "" && $('#address').val() != "" && $('#addressee').val() != ""){
 			$('.btn-collapse-shipping').removeClass('d-none');
 			$('.btn-collapse-shipping').addClass('d-block');
-			$('#shippingCollapse').slideUp();
+			$('#shippingCollapse').collapse('hide');
 			$('.alert-shipping_information').html("");
-			$('.form-shipping_information .box-session').each(function () {
+			$('.cont-shipping_information .box-session').each(function () {
 				$(this).removeClass('valid-content');
 			});
-			$('.process-payment').slideDown();
+			$('.process-payment').collapse('show');
 		}else{
 			msgAlert('.alert-shipping_information', 'Por favor asegúrese de no tener los campos requeridos en rojo o vacios.');
 		}
@@ -305,21 +291,21 @@ $(document).ready(function () {
 		$('#finalize-purchase button').prop('disabled', !(checkButtonState()));
 	});
 
-	$('#finalize-purchase button').click(function () {
+	function purchaseProcessAndValidation(ordersProducts) {
 		$.ajax({
 			url: base_url + "carrito/paymentTypeValidation/",
 			dataType: 'JSON',
 			method: 'POST',
 			data: {
-				dni: $('.form-client_data #dni-client').length ? $('#dni-client').val() : "",
-				ordered_products: cartStorage,
+				dni: $('#dni-client').length ? $('#dni-client').val() : "",
+				ordered_products: ordersProducts,
 				main_town: $('#location').val(),
 				address: $('#address').val(),
 				additional_information: $('#additional-information').val(),
 				addressee: $('#addressee').val(),
 				customer_message: $('#customer-message').val(),
 				payment_method: $('.payment-selection input:checked').val(),
-				info_client_state: dataFormValidation(),
+				info_client_state: clientDataValidation(),
 				check_state : checkButtonState()
 			},
 			beforeSend: function() {
@@ -334,20 +320,35 @@ $(document).ready(function () {
 
 						if (verifiedProducts.stockUpdate) {
 							$('#modalProductsChanges').modal('hide');
-							paymentGateway(cartStorage, verifiedProducts.total, verifiedProducts.unique_code, data.email_client, data.dni_client, data.phone_client);
+							paymentGateway(ordersProducts, verifiedProducts.total, verifiedProducts.unique_code, data.email_client, data.dni_client, data.phone_client);
 						}else{
 							// aqui abriremos el modal si hay cambios en los productos
-							modalProductsChanges(cartStorage, verifiedProducts);
+							if ($('#modalProductsChanges').hasClass('show')) {
+								$('#modalProductsChanges').modal('hide');
+								setTimeout(() => {
+									modalProductsChanges(ordersProducts, verifiedProducts);
+								}, 500);
+							}else{
+								modalProductsChanges(ordersProducts, verifiedProducts);
+							}
+							
 						}
 					}else{
 						console.log('transferencia');
 						if (verifiedProducts.stockUpdate) {
 							// aqui le brindaremos los datos para que el cliente haga la transferencia
-							// console.log(data)
 							console.log(verifiedProducts);
 						}else{
 							// aqui abriremos el modal si hay cambios en los productos
-							modalProductsChanges(cartStorage, verifiedProducts);
+							if ($('#modalProductsChanges').hasClass('show')) {
+								$('#modalProductsChanges').modal('hide');
+								setTimeout(() => {
+									modalProductsChanges(ordersProducts, verifiedProducts);
+								}, 500);
+							}else{
+								modalProductsChanges(ordersProducts, verifiedProducts);
+							}
+							
 						}
 					}
 				}else{
@@ -361,6 +362,11 @@ $(document).ready(function () {
 				// $('.cart-section .content-loading').css("display", "none");
 			}
 		});
+	}
+
+	$('#customer-data_form').submit(function (e) {
+		e.preventDefault();
+		purchaseProcessAndValidation(cartStorage);
 	})
 
 	function modalProductsChanges(localStorage, verifyProductsDb) {
@@ -420,66 +426,9 @@ $(document).ready(function () {
 				${verifyProductsDb.total > 0 ? '<button type="button" class="btn btn-primary accept-changes">Comprar</button>' : ''}
             </div>
 		`);
-		// console.log(verifyProductsDb.total);
 
 		$('.accept-changes').click(function () {
-			$.ajax({
-				url: base_url + "carrito/acceptChangesPurchase/",
-				dataType: 'JSON',
-				method: 'POST',
-				data: {
-					newProductOrder: verifyProductsDb.newProductsArray,
-					payment_method: $('.payment-selection input:checked').val(),
-					main_town: $('#location').val(),
-					address: $('#address').val(),
-					additional_information: $('#additional-information').val(),
-					addressee: $('#addressee').val(),
-					customer_message: $('#customer-message').val()
-				},
-				beforeSend: function() {
-					// $('.cart-section .content-loading').css("display", "flex");
-				},
-				success: function(dataNew){
-					if (dataNew.status) {
-						let verifiedProductsNew = dataNew.verifyProductsDb;
-
-						if (dataNew.paymentType) {
-							console.log('tarjeta');
-
-							if (verifiedProductsNew.stockUpdate) {
-								$('#modalProductsChanges').modal('hide');
-								paymentGateway(verifyProductsDb.newProductsArray, verifiedProductsNew.total, verifiedProductsNew.unique_code, dataNew.email_client, dataNew.dni_client, dataNew.phone_client);
-							}else{
-								$('#modalProductsChanges').modal('hide');
-								setTimeout(() => {
-									modalProductsChanges(verifyProductsDb.newProductsArray, verifiedProductsNew);
-								}, 500);
-							}
-						}else{
-							console.log('transferencia');
-							if (verifiedProductsNew.stockUpdate) {
-								// aqui le brindaremos los datos para que el cliente haga la transferencia
-								console.log(verifiedProductsNew);
-								$('#modalProductsChanges').modal('hide');
-								// window.location.href = base_url;
-							}else{
-								$('#modalProductsChanges').modal('hide');
-								setTimeout(() => {
-									modalProductsChanges(verifyProductsDb.newProductsArray, verifiedProductsNew);
-								}, 500);
-							}
-						}
-					}else{
-						console.log(dataNew.msg);
-					}
-				},
-				error: function(xhr, status, error) {
-					console.log(error);
-				},
-				complete: function() {
-					// $('.cart-section .content-loading').css("display", "none");
-				}
-			});
+			purchaseProcessAndValidation(verifyProductsDb.newProductsArray);
 		});
 	}
 

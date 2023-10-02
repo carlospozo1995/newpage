@@ -37,144 +37,152 @@
                 <p class="font-weight-bold">CAMPOS REQUERIDOS (<span class="text-danger">*</span>)</p>
                 <div class="col-lg-7 col-md-7">
                     <div id="content-data_buy" data-aos="fade-up" data-aos-delay="400">
-                        <div class="checkout-data_buy mb-4">
-                            <div class="title-data_buy">
-                                <h3>1. DATOS <i class="icon-note btn-collapse-data" role="button" data-bs-toggle="collapse" data-bs-target="#dataCollapse" aria-expanded="false"></i></h3>
-                            </div>
-                            
-                            <div class="px-5 py-5 collapse" id="dataCollapse">
-                                <form class="form-client_data">
-                                    <?php
-                                    if (!empty($_SESSION['data_user']['dni'])){
-                                        echo "<div><button>Editarloco</button></div>";
-                                    }                                    
-                                    ?>
-                                    <div id="cont-dni-client">
+                        <form id="customer-data_form">
+                            <div class="checkout-data_buy mb-4">
+                                <div class="title-data_buy">
+                                    <h3>1. DATOS <i class="icon-note btn-collapse-data" role="button" data-bs-toggle="collapse" data-bs-target="#dataCollapse" aria-expanded="false"></i></h3>
+                                </div>
+                                
+                                <div class="px-5 py-5 collapse" id="dataCollapse">
+                                    <div class="cont-client_data">
+                                        <div class="edit-dataClient">
                                         <?php
-                                            if (empty($_SESSION['data_user']['dni'])){
+                                        if (!empty($_SESSION['data_user']['dni'])){
                                         ?>
-                                        <div class="alert-client-data"></div>
-                                        <div class="default-form-box">
-                                            <span class="font-weight-bold">Cédula o RUC <span class="text-danger">*</span></span>
-                                            <div class="box-session">
-                                                <input type="text" id="dni-client" class="valid valid_empty-number" value="">
+                                        <div class="max-content m-auto mb-3">
+                                            <a href="http://localhost/carlos/page" class="btn btn-outline-black"> <i class="icon-note"></i> Editar</a>
+                                        </div>
+                                        <?php    
+                                        }
+                                        ?>
+                                        </div>
+                                        <div id="cont-dni-client">
+                                            <?php
+                                                if (empty($_SESSION['data_user']['dni'])){
+                                            ?>
+                                            <div class="alert-client-data"></div>
+                                            <div class="default-form-box">
+                                                <span class="font-weight-bold">Cédula o RUC <span class="text-danger">*</span></span>
+                                                <div class="box-session">
+                                                    <input type="text" id="dni-client" class="valid valid_empty-number" value="">
+                                                </div>
+                                                <span class="d-none text-danger">Por favor llenar este campo. Ejemplo: 1234567890.</span>
                                             </div>
-                                            <span class="d-none text-danger">Por favor llenar este campo. Ejemplo: 1234567890.</span>
+                                            <?php        
+                                                }else{
+                                            ?>
+                                            <span class="font-weight-bold">Cédula o RUC</span>
+                                            <p><?=$_SESSION['data_user']['dni'];?></p>
+                                            <?php
+                                                }
+                                            ?>
                                         </div>
-                                        <?php        
-                                            }else{
-                                        ?>
-                                        <span class="font-weight-bold">Cédula o RUC</span>
-                                        <p><?=$_SESSION['data_user']['dni'];?></p>
-                                        <?php
-                                            }
-                                        ?>
+                                        
+                                        <span class="font-weight-bold">Nombre</span>
+                                        <p class="name_client"><?= $_SESSION['data_user']['name_user']; ?></p>
+                                        <span class="font-weight-bold">Apellido</span>
+                                        <p class="surname_client"><?= $_SESSION['data_user']['surname_user']; ?></p>
+                                        <span class="font-weight-bold">Correo</span>
+                                        <p class="email_client"><?= $_SESSION['data_user']['email']; ?></p>
+                                        <span class="font-weight-bold">Teléfono movil</span>
+                                        <p class="phone_client"><?= $_SESSION['data_user']['phone']; ?></p>
+                                        
+                                        <div class="text-center">
+                                            <div class="btn btn-black-default-hover m-auto" id="confirmedDataClient">IR AL ENVIO</div>
+                                        </div>
                                     </div>
-                                    
-                                    <span class="font-weight-bold">Nombre</span>
-                                    <p><?= $_SESSION['data_user']['name_user']; ?></p>
-                                    <span class="font-weight-bold">Apellido</span>
-                                    <p><?= $_SESSION['data_user']['surname_user']; ?></p>
-                                    <span class="font-weight-bold">Correo</span>
-                                    <p><?= $_SESSION['data_user']['email']; ?></p>
-                                    <span class="font-weight-bold">Teléfono movil</span>
-                                    <p><?= $_SESSION['data_user']['phone']; ?></p>
-                                    
-                                    <div class="text-center">
-                                        <button class="btn btn-black-default-hover m-auto" type="submit">IR AL ENVIO</button>
-                                    </div>
-                                </form>
+                                </div>
                             </div>
-                        </div>
-                                    
-                        <div class="checkout-data_buy mb-4">
-                            <div class="title-data_buy">
-                                <h3>2. ENVIO<i class="icon-note btn-collapse-shipping" role="button"></i></h3>
+                                        
+                            <div class="checkout-data_buy mb-4">
+                                <div class="title-data_buy">
+                                    <h3>2. ENVIO<i class="icon-note btn-collapse-shipping"></i></h3>
+                                </div>
+
+                                <div class="px-5 py-5 collapse" id="shippingCollapse" >
+                                    <div class="cont-shipping_information">
+                                        <div class="alert-shipping_information"></div>
+                                        <div class="default-form-box">
+                                            <label class="font-weight-bold" for="localidad">Localidad <span class="text-danger">*</span></label>
+                                            <select class="country_option mb-3 nice-select wide" name="country" id="location">
+                                                <option value="1">Balao</option>
+                                                <option value="2">Santa Rita</option>
+                                                <option value="3">San Carlos</option>
+                                            </select>
+                                        </div>
+                                        <div class="default-form-box">
+                                            <span class="font-weight-bold">Dirección <span class="text-danger">*</span></span>
+                                            <div class="box-session">
+                                                <input type="text" class="valid valid_empty" id="address" required>
+                                            </div>
+                                            <span class="d-none text-danger">Por favor llenar este campo.</span>
+                                        </div> 
+                                        <div class="default-form-box">
+                                            <span class="font-weight-bold">Información adicional (Opcional)</span>
+                                            <div class="box-session">
+                                                <input type="text" placeholder="Cerca de..." id="additional-information">
+                                            </div>
+                                        </div> 
+                                        <div class="default-form-box">
+                                            <span class="font-weight-bold">Destinatario <span class="text-danger">*</span></span>
+                                            <div class="box-session">
+                                                <input type="text" class="valid valid_empty" placeholder="Persona a recibir" id="addressee" required>
+                                            </div>
+                                            <span class="d-none text-danger">Por favor llenar este campo.</span>
+                                        </div>
+                                        <div class="mb-3">
+                                            <span class="font-weight-bold">Mensaje (Opcional)</span>
+                                            <textarea class="form-control textarea" name="" id="customer-message" placeholder="Escribe tu mensaje aquí"></textarea>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="btn btn-black-default-hover m-auto" id="confirmedLocationClient">IR AL PAGO</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="px-5 py-5" id="shippingCollapse" >
-                                <form class="form-shipping_information">
-                                    <div class="alert-shipping_information"></div>
-                                    <div class="default-form-box">
-                                        <label class="font-weight-bold" for="localidad">Localidad <span class="text-danger">*</span></label>
-                                        <select class="country_option mb-3 nice-select wide" name="country" id="location">
-                                            <option value="1">Balao</option>
-                                            <option value="2">Santa Rita</option>
-                                            <option value="3">San Carlos</option>
-                                        </select>
-                                    </div>
-                                    <div class="default-form-box">
-                                        <span class="font-weight-bold">Dirección <span class="text-danger">*</span></span>
-                                        <div class="box-session">
-                                            <input type="text" class="valid valid_empty" id="address" required>
-                                        </div>
-                                        <span class="d-none text-danger">Por favor llenar este campo.</span>
-                                    </div> 
-                                    <div class="default-form-box">
-                                        <span class="font-weight-bold">Información adicional (Opcional)</span>
-                                        <div class="box-session">
-                                            <input type="text" placeholder="Cerca de..." id="additional-information">
-                                        </div>
-                                    </div> 
-                                    <div class="default-form-box">
-                                        <span class="font-weight-bold">Destinatario <span class="text-danger">*</span></span>
-                                        <div class="box-session">
-                                            <input type="text" class="valid valid_empty" placeholder="Persona a recibir" id="addressee" required>
-                                        </div>
-                                        <span class="d-none text-danger">Por favor llenar este campo.</span>
-                                    </div>
-                                    <div class="mb-3">
-                                        <span class="font-weight-bold">Mensaje (Opcional)</span>
-                                        <textarea class="form-control textarea" name="" id="customer-message" placeholder="Escribe tu mensaje aquí"></textarea>
-                                    </div>
-                                    <div class="text-center">
-                                        <button class="btn btn-black-default-hover m-auto" type="submit">IR AL PAGO</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                            <div class="checkout-data_buy">
+                                <div class="title-data_buy">
+                                    <h3>3. MÉTODO DE PAGO</h3>
+                                </div>
 
-                        <div class="checkout-data_buy">
-                            <div class="title-data_buy">
-                                <h3>3. MÉTODO DE PAGO</h3>
-                            </div>
+                                <div class="process-payment collapse px-5 py-5">
+                                    <div class="payment-selection">
+                                <?php 
+                                    $pt = Models_Store::paymentType();
+                                    for ($i=0; $i < count($pt); $i++) { 
+                                ?>
+                                        <div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="<?= str_replace(" ", "-", $pt[$i]['payment_type']) ?>" name="flexRadioDefault" value="<?= $pt[$i]['id_payment_type'] ?>" <?= ($i === 0) ? 'checked' : ''; ?>>
+                                                <label for="<?= str_replace(" ", "-", $pt[$i]['payment_type']) ?>" class="ml-2 form-check-label text-dark font-weight-bold fs-15"><?= ($i === 0) ? '<img src="'.MEDIA_STORE.'images/img-payphone.png" alt="">' : 'Transferencia bancaria directa' ; ?></label>
+                                            </div>
+                                            <div class="collapse_method-buy" style="display: none;">
+                                            <?= ($i === 0) ? '<p class="text-dark">Payphone es la solución completa para pagos en línea. Segura, fácil y rápida.</p>' : ' <p class="text-dark">Realiza tu pago directamente en nuestra cuenta bancaria.</p>
+                                                <p class="text-dark">Por favor, incluya el número de pedido en los detalles de la transferencia o también al concluir el depósito enviar una foto del comprobante y el número de pedido al correo <a href="mailto:ejemplo@gmail.com" class="text-primary font-weight-bold">ejemplo@gmail.com</a> o a nuestro whatsapp <span class="text-primary font-weight-bold">0987654321</span>.'; ?>
+                                            </div>
+                                        </div>
+                                <?php        
+                                    }
+                                ?>
+                                    </div>
 
-                            <div class="process-payment collapse px-5 py-5">
-                                <div class="payment-selection">
-                            <?php 
-                                $pt = Models_Store::paymentType();
-                                for ($i=0; $i < count($pt); $i++) { 
-                            ?>
-                                    <div>
+                                    <div class="accept-terms mt-4 mb-5">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" id="<?= str_replace(" ", "-", $pt[$i]['payment_type']) ?>" name="flexRadioDefault" value="<?= $pt[$i]['id_payment_type'] ?>" <?= ($i === 0) ? 'checked' : ''; ?>>
-                                            <label for="<?= str_replace(" ", "-", $pt[$i]['payment_type']) ?>" class="ml-2 form-check-label text-dark font-weight-bold fs-15"><?= ($i === 0) ? '<img src="'.MEDIA_STORE.'images/img-payphone.png" alt="">' : 'Transferencia bancaria directa' ; ?></label>
-                                        </div>
-                                        <div class="collapse_method-buy" style="display: none;">
-                                        <?= ($i === 0) ? '<p class="text-dark">Payphone es la solución completa para pagos en línea. Segura, fácil y rápida.</p>' : ' <p class="text-dark">Realiza tu pago directamente en nuestra cuenta bancaria.</p>
-                                            <p class="text-dark">Por favor, incluya el número de pedido en los detalles de la transferencia o también al concluir el depósito enviar una foto del comprobante y el número de pedido al correo <a href="mailto:ejemplo@gmail.com" class="text-primary font-weight-bold">ejemplo@gmail.com</a> o a nuestro whatsapp <span class="text-primary font-weight-bold">0987654321</span>.'; ?>
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                            <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="flexCheckDefault">
+                                            Acepto los <a href="" class="text-primary">Términos y Condiciones</a> <span class="text-danger fs-12">* Obligatorio</span>
+                                            </label>
                                         </div>
                                     </div>
-                            <?php        
-                                }
-                            ?>
-                                </div>
 
-                                <div class="accept-terms mt-4 mb-5">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="ml-2 form-check-label text-dark font-weight-bold fs-15" for="flexCheckDefault">
-                                        Acepto los <a href="" class="text-primary">Términos y Condiciones</a> <span class="text-danger fs-12">* Obligatorio</span>
-                                        </label>
+                                    <div id="finalize-purchase">
+                                        <button class="btn btn-block btn-deep-blue m-auto max-content" type="submit" disabled>REALIZAR PEDIDO</button>
                                     </div>
-                                </div>
 
-                                <div id="finalize-purchase">
-                                    <button class="btn btn-block btn-deep-blue m-auto max-content" disabled>REALIZAR PEDIDO</button>
                                 </div>
-
                             </div>
-                        </div>
+                        </form>
                     </div>
                 <?php
                 }else{

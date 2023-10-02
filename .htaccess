@@ -73,7 +73,6 @@ RewriteRule ^(carrito/|carrito|Carrito)/paymentTypeValidation/$ %{ENV:REWRITEBAS
 RewriteRule ^(carrito/|carrito|Carrito)/checkProductStock/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=checkProductStock [L]
 RewriteRule ^(carrito/|carrito|Carrito)/getDni/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=getDni [L]
 RewriteRule ^(carrito/|carrito|Carrito)/verifyDni/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=verifyDni [L]
-RewriteRule ^(carrito/|carrito|Carrito)/acceptChangesPurchase/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=acceptChangesPurchase [L]
 RewriteRule ^(carrito/|carrito|Carrito)/payphoneCallError/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=payphoneCallError [L]
 
 RewriteRule ^carrito/(.+)$ %{ENV:REWRITEBASE}index.php?show=Carrito&process_payment=$1 [L]

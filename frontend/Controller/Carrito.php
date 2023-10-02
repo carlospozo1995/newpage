@@ -11,7 +11,7 @@
 			$msg = "";
 			$status = true;
 
-			function verifyProductsDb($ordereProducts, $payment_method, $mainTown, $street, $add_info, $addressee, $messageClient) {
+			function verifyProductsDb($ordereProducts, $payment_method, $mainTown, $street, $add_info, $addressee, $messageClient, $p_dni) {
 				$shipping_cost = 0;
 				$subtotal = 0;
 				$iva = 0;
@@ -62,6 +62,10 @@
 				}
 				
 				if (empty($productsWithChanges)) {
+					if (!empty($p_dni)) {
+						Models_Store::updateDniClient($p_dni, $_SESSION['idUser']);
+					}
+
 					$unique_code = Utils::uniqueCode();
 					$stockUpdate = Models_Store::updateStockTransaction($productsIdsArr, $productsAmountArr, $productsIds);
 					
@@ -185,10 +189,8 @@
 
 						if (!empty($_POST['dni'])) {
 							$dni_client = $_POST['dni'];
-							Models_Store::updateDniClient($dni_client, $_SESSION['idUser']);
-
 						}else{
-							$dni_client = $_SESSION['data_user']['dni'];
+							$dni_client = Models_Store::getDataClient($_SESSION['idUser'])['dni'];
 						}
 
 						$main_town = $_POST['main_town'];
@@ -204,13 +206,13 @@
 						$verifyProductsDb = null;
 
 						try {
-							if ($info_client_state && $check_state && $payment_method != '' && $main_town != '' && $street != '' && $addressee != '' &&  !empty($ordered_products) && is_array($ordered_products)) {
+							if ($dni_client != "" && $info_client_state && $check_state && $payment_method != '' && $main_town != '' && $street != '' && $addressee != '' &&  !empty($ordered_products) && is_array($ordered_products)) {
 								if($payment_method == 1){
 									$payment_type = true;
-									$verifyProductsDb = verifyProductsDb($ordered_products, $payment_method, $main_town, $street, $add_info, $addressee, $customer_message);
+									$verifyProductsDb = verifyProductsDb($ordered_products, $payment_method, $main_town, $street, $add_info, $addressee, $customer_message, $_POST['dni']);
 								}else if($payment_method == 2){
 									$payment_type = false;
-									$verifyProductsDb = verifyProductsDb($ordered_products, $payment_method, $main_town, $street, $add_info, $addressee, $customer_message);
+									$verifyProductsDb = verifyProductsDb($ordered_products, $payment_method, $main_town, $street, $add_info, $addressee, $customer_message, $_POST['dni']);
 								}else{
 									throw new Exception("No es posible realizar el proceso intentelo mas tarde.");
 								}
@@ -228,7 +230,7 @@
 
 				case 'getDni':
 					if (isset($_POST)) {
-						$dniClient = Models_Store::getDniClient($_SESSION['idUser']);
+						$dniClient = Models_Store::getDataClient($_SESSION['idUser']);
 						echo json_encode($dniClient);
 					}
 				break;
@@ -263,39 +265,6 @@
 						}
 
 						$data = array('status' => $status, "msg" => $msg);
-						echo json_encode($data);
-					}
-				break;
-
-				case 'acceptChangesPurchase':
-					if (isset($_POST)) {
-						$newOrder = $_POST['newProductOrder'];
-						$mainTwon = $_POST['main_town'];
-						$street = $_POST['address'];
-						$add_info = $_POST['additional_information'];
-						$addressee = $_POST['addressee'];
-						$payment_method = isset($_POST['payment_method']) ? $_POST['payment_method'] : '';
-						$customer_message = $_POST['customer_message'];
-
-						$payment_type = null;	
-						$verifyProductsDb = null;
-
-						try {
-							if($payment_method == 1){
-								$payment_type = true;
-								$verifyProductsDb = verifyProductsDb($newOrder, $payment_method, $mainTwon, $street, $add_info, $addressee, $customer_message);
-							}else if($payment_method == 2){
-								$payment_type = false;
-								$verifyProductsDb = verifyProductsDb($newOrder, $payment_method, $mainTwon, $street, $add_info, $addressee, $customer_message);
-							}else{
-								throw new Exception("No es posible realizar el proceso intentelo mas tarde.");
-							}
-							
-						} catch (Exception $e) {
-							$status = false;
-							$msg = $e->getMessage();
-						}
-						$data = array("status"=>$status, 'paymentType' => $payment_type, "verifyProductsDb" => $verifyProductsDb, "msg"=>$msg);
 						echo json_encode($data);
 					}
 				break;
