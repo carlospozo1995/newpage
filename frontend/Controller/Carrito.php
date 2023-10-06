@@ -186,13 +186,14 @@
 					if(isset($_POST)){
 						$ordered_products = $_POST['ordered_products'];
 						$dni_client = "";
+						$data_client = Models_Store::getDataClient($_SESSION['idUser']);
 
 						if (!empty($_POST['dni'])) {
 							$dni_client = $_POST['dni'];
 						}else{
-							$dni_client = Models_Store::getDataClient($_SESSION['idUser'])['dni'];
+							$dni_client = $data_client['dni'];
 						}
-
+						
 						$main_town = $_POST['main_town'];
 						$street = $_POST['address'];
 						$add_info = $_POST['additional_information'];
@@ -223,15 +224,8 @@
 							$status = false;
 							$msg = $e->getMessage();
 						}
-						$data = array("status"=>$status, 'paymentType' => $payment_type, "verifyProductsDb" => $verifyProductsDb, "dni_client" => $dni_client, "email_client" => $_SESSION['data_user']['email'], "phone_client" => $_SESSION['data_user']['phone'], "msg"=>$msg);
+						$data = array("status"=>$status, 'paymentType' => $payment_type, "verifyProductsDb" => $verifyProductsDb, "dni_client" => $dni_client, "email_client" => $data_client['email'], "phone_client" => $data_client['phone'], "msg"=>$msg);
 						echo json_encode($data);
-					}
-				break;
-
-				case 'getDni':
-					if (isset($_POST)) {
-						$dniClient = Models_Store::getDataClient($_SESSION['idUser']);
-						echo json_encode($dniClient);
 					}
 				break;
 

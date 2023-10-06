@@ -79,7 +79,7 @@
 								$arrDetailProducts = array();
 								// enviar correo al cliente sobre su compra
 								foreach ($orderData['orderedProducts'] as $order) {
-									$insertOrdersDetails = array("order_id" => $insertOrders, "product_id" => Utils::descryptStore($order['id']), "name_product" => $order['name'], "price" => $order['price'], "quantityOrdered" => $order['amount_product']);
+									$insertOrdersDetails = array("order_id" => $insertOrders, "product_id" => Utils::descryptStore($order['id']), "name_product" => $order['name'], "price" => $order['price'], "quantityOrdered" => $order['amount_product'], "url_product" => $order['url']);
 
 									$insertDetails = Models_Store::insertOrders($insertOrdersDetails, false);
 									$arrDetailProducts[] = $insertDetails;

@@ -188,66 +188,36 @@
             return $result;
         }
 
-        static public function getOrderClient($data) {
-            // $sql_order = "SELECT id_order, user_id, datecreate, shipping_cost, total, payment_type_id, shipping_address, message, status FROM orders WHERE id_transactionCard = ?";
-            // $request = $GLOBALS["db"]->auto_array($sql_order, array($data));
-            // return $request;
-            $sql_order = "SELECT o.id_order, o.total, dt.name_product FROM orders o INNER JOIN detail_orders dt ON dt.order_id = o.id_order WHERE o.id_transactionCard = ?";
-            $request = $GLOBALS["db"]->selectAll($sql_order, array($data));
-            
-            
-            // $result = array();
+        static public function showOrderClient($data) {
+            $sql_order = "SELECT o.id_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = ?";
+            $request_o = $GLOBALS["db"]->auto_array($sql_order, array($data));
 
-            // foreach ($request as $row) {
-            //     $id_order = $row['id_order'];
-            //     $total = $row['total'];
-            //     $name_product = $row['name_product'];
+            $sql_products = "SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = ?";
+            $request_p = $GLOBALS["db"]->selectAll($sql_products, array($request_o['id_order']));
+           
+            $productIds = implode(',', array_map(function($data) {
+                return $data['product_id'];
+            }, $request_p));
 
-            //     if (!isset($result['id_order'])) {
-            //         $result = array(
-            //             'id_order' => $id_order,
-            //             'total' => $total,
-            //             'name_product' => array($name_product)
-            //         );
-            //     } else {
-            //         $result['name_product'][] = $name_product;
-            //     }
-            // }
+            $sql_img = "SELECT product_id, image FROM img_product WHERE product_id IN ($productIds)";
+            $request_img = $GLOBALS["db"]->selectAll($sql_img, array());
 
-            // return $result;
+            foreach ($request_p as &$product) {
+                $images = array_filter($request_img, function ($img) use ($product) {
+                    return $img['product_id'] == $product['product_id'];
+                });
+                if (count($images) > 0) {
+                    $firstImage = reset($images);
+                    $product['images'] = $firstImage['image'];
+                } else {
+                    $product['images'] = MEDIA_ADMIN . 'files/images/upload_products/empty_img.png';
+                }
+            }
+
+            $request_o['ordered_products'] = $request_p;
+            return $request_o;
+
         }
-
-        // $sql_prod = "SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = ?";
-        //     $request_prod = $GLOBALS["db"]->auto_array($sql_prod, array($data));
-
-
-
-
-
-
-
-
-
-
-
-
-        // static public function selectOrders($transactionCode, $idClient) {
-        //     $sql = "SELECT products FROM orders WHERE transaction_uniqueCode = ? AND user_id = ?";
-        //     $request = $GLOBALS["db"]->auto_array($sql, array($transactionCode, $idClient));
-        //     return $request;
-        //     // $sql2 = "SELECT product_id FROM detail_orders WHERE order_id = ?";
-        //     // $request2 = $GLOBALS["db"]->selectAll($sql2, array($request));
-
-        //     // $product_ids = array_column($request2, "product_id");
-        //     // $resultado = implode(",", $product_ids); 
-        //     // return self::getOrderedProducts($resultado, false);
-        //     // return $request2;
-        // }
-
-        // static public function testeo () {
-        //     $sql = "SELECT * FROM card_transaction";
-        //     $request = $GLOBALS["db"]->selectAll($sql, array());
-        //     return $request;
-        // }
     }
 ?>
+

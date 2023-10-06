@@ -2722,7 +2722,7 @@ progress {
     margin-right: 16px;
 }
 
-.btn-check {
+.BLACKcheck {
     position: absolute;
     clip: rect(0, 0, 0, 0);
     pointer-events: none;
@@ -6559,7 +6559,7 @@ progress {
 }
 
 .border-charcoal{
-    border-color: #d7d7d7 !important;
+    border-color: #e3e4e6 !important;
 }
 
 .border-dark {
@@ -14608,11 +14608,18 @@ input {
     border-color: #66cec4;
 }
 .btn-outline-pink {
-    border-color: #24262b;
+    border-color: #777;
 }
 .btn-outline-pink:hover {
     color: #ff365d;
     border-color: #ff365d;
+}
+.btn-outline-deep-blue {
+    border-color: #777;
+}
+.btn-outline-deep-blue:hover {
+    color: #4431DE;
+    border-color: #4431DE;
 }
 .btn-outline-black {
     border-color: #24262b;

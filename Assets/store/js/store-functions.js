@@ -173,15 +173,15 @@ $(document).ready(function () {
                         $(this).parent().next().addClass('d-none');
                     }
                 } else {
-                    if ($("#content-data_buy").length) {
-                        $(this).parent().addClass('invalid-content');
-                        $(this).parent().removeClass('valid-content');
-                        $(this).parent().next().removeClass('d-none');
-                    }else{
+                    // if ($("#content-data_buy").length) {
+                    //     $(this).parent().addClass('invalid-content');
+                    //     $(this).parent().removeClass('valid-content');
+                    //     $(this).parent().next().removeClass('d-none');
+                    // }else{
                         $(this).parent().removeClass('invalid-content');
                         $(this).parent().removeClass('valid-content');
                         $(this).parent().next().addClass('d-none');
-                    }
+                    // }
                 }
             });
         });

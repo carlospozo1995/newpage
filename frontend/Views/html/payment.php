@@ -33,6 +33,7 @@
             <div class="row position-relative">
                 <?php
                 if (isset($_SESSION['login'])) {
+                    $data_client = Models_Store::getDataClient($_SESSION['idUser']);
                 ?>
                 <p class="font-weight-bold">CAMPOS REQUERIDOS (<span class="text-danger">*</span>)</p>
                 <div class="col-lg-7 col-md-7">
@@ -45,47 +46,38 @@
                                 
                                 <div class="px-5 py-5 collapse" id="dataCollapse">
                                     <div class="cont-client_data">
-                                        <div class="edit-dataClient">
+                                        
                                         <?php
-                                        if (!empty($_SESSION['data_user']['dni'])){
+                                            if (empty($data_client['dni'])){
+                                        ?>
+                                        <div class="alert-client-data"></div>
+                                        <div class="default-form-box">
+                                            <span class="font-weight-bold">Cédula o RUC <span class="text-danger">*</span></span>
+                                            <div class="box-session">
+                                                <input type="text" id="dni-client" class="valid valid_empty-number" value="">
+                                            </div>
+                                            <span class="d-none text-danger">Por favor llenar este campo. Ejemplo: 1234567890.</span>
+                                        </div>
+                                        <?php        
+                                            }else{
                                         ?>
                                         <div class="max-content m-auto mb-3">
                                             <a href="http://localhost/carlos/page" class="btn btn-outline-black"> <i class="icon-note"></i> Editar</a>
                                         </div>
-                                        <?php    
-                                        }
+                                        <span class="font-weight-bold">Cédula o RUC</span>
+                                        <p><?=$data_client['dni'];?></p>
+                                        <?php
+                                            }
                                         ?>
-                                        </div>
-                                        <div id="cont-dni-client">
-                                            <?php
-                                                if (empty($_SESSION['data_user']['dni'])){
-                                            ?>
-                                            <div class="alert-client-data"></div>
-                                            <div class="default-form-box">
-                                                <span class="font-weight-bold">Cédula o RUC <span class="text-danger">*</span></span>
-                                                <div class="box-session">
-                                                    <input type="text" id="dni-client" class="valid valid_empty-number" value="">
-                                                </div>
-                                                <span class="d-none text-danger">Por favor llenar este campo. Ejemplo: 1234567890.</span>
-                                            </div>
-                                            <?php        
-                                                }else{
-                                            ?>
-                                            <span class="font-weight-bold">Cédula o RUC</span>
-                                            <p><?=$_SESSION['data_user']['dni'];?></p>
-                                            <?php
-                                                }
-                                            ?>
-                                        </div>
                                         
                                         <span class="font-weight-bold">Nombre</span>
-                                        <p class="name_client"><?= $_SESSION['data_user']['name_user']; ?></p>
+                                        <p class="name_client"><?= $data_client['name_user']; ?></p>
                                         <span class="font-weight-bold">Apellido</span>
-                                        <p class="surname_client"><?= $_SESSION['data_user']['surname_user']; ?></p>
+                                        <p class="surname_client"><?= $data_client['surname_user']; ?></p>
                                         <span class="font-weight-bold">Correo</span>
-                                        <p class="email_client"><?= $_SESSION['data_user']['email']; ?></p>
+                                        <p class="email_client"><?= $data_client['email']; ?></p>
                                         <span class="font-weight-bold">Teléfono movil</span>
-                                        <p class="phone_client"><?= $_SESSION['data_user']['phone']; ?></p>
+                                        <p class="phone_client"><?= $data_client['phone']; ?></p>
                                         
                                         <div class="text-center">
                                             <div class="btn btn-black-default-hover m-auto" id="confirmedDataClient">IR AL ENVIO</div>

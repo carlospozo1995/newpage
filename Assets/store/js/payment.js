@@ -99,76 +99,7 @@ $(document).ready(function () {
         }
 	});
 
-	// ------------------------------------------------
-	if ($('.cont-client_data').length) {
-		$.ajax({
-			url: base_url + "carrito/getDni/",
-			dataType: 'JSON',
-			method: 'POST',
-			beforeSend: function() {
-			},
-			success: function(data){
-				if (data.dni != null) {
-					$('.edit-dataClient').html(`
-					<div class="max-content m-auto mb-3">
-						<a href="http://localhost/carlos/page" class="btn btn-outline-black"> <i class="icon-note"></i> Editar</a>
-					</div>
-					`);
-					$('#cont-dni-client').html(`
-						<span class="font-weight-bold">Cédula o RUC</span>
-						<p>${data.dni}</p>
-					`);
-				}else{
-					$('#cont-dni-client').html(`
-						<div class="alert-client-data"></div>
-						<div class="default-form-box ">
-							<span class="font-weight-bold">Cédula o RUC <span class="text-danger">*</span></span>
-							<div class="box-session">
-								<input type="text" id="dni-client" value="">
-							</div>
-							<span class="d-none text-danger">Por favor llenar este campo. Ejemplo: 1234567890.</span>
-						</div>
-					`);
-				}
-
-				$('.name_client').text(`${data.name_user}`);
-				$('.surname_client').text(`${data.surname_user}`);
-				$('.email_client').text(`${data.email}`);
-				$('.phone_client').text(`${data.phone}`);
-			},
-			error: function(xhr, status, error) {
-				console.log(error);
-			},
-			complete: function() {
-				if($('#dni-client').length){
-					$('#dni-client').on('keyup', function () {
-						const inputValue = $('#dni-client').val();
-						const regex = /^\d{6,}$/;
-	
-						if (inputValue != "") {
-							if (regex.test(inputValue)) {
-								$(this).parent().removeClass('invalid-content');
-								$(this).parent().addClass('valid-content');
-								$(this).parent().next().addClass('d-none');
-							} else {
-								$(this).parent().addClass('invalid-content');
-								$(this).parent().removeClass('valid-content');
-								$(this).parent().next().removeClass('d-none');
-							}
-						}else{
-							$(this).parent().removeClass('invalid-content');
-							$(this).parent().removeClass('valid-content');
-							$(this).parent().next().addClass('d-none');
-							$('.alert-client-data').html("");
-						}
-						
-					})
-				}
-			}
-		});
-	}
-	// ------------------------------------------------
-
+	// ---------------------------------------------------
 	var globalFlag = true;
 
 	function collapseContainer() {
@@ -217,28 +148,28 @@ $(document).ready(function () {
 	}
 
 	function inputValidationVerification() {
-	if ($('#dni-client').length) {
-		$.ajax({
-			url: base_url + "carrito/verifyDni/",
-			dataType: 'JSON',
-			method: 'POST',
-			data: {
-				dni: $('#dni-client').val(),
-			},
-			success: function(data){
-				if (data.status) {
-					validationProcess();
-				}else{
-					msgAlert('.alert-client-data', data.msg);
+		if ($('#dni-client').length) {
+			$.ajax({
+				url: base_url + "carrito/verifyDni/",
+				dataType: 'JSON',
+				method: 'POST',
+				data: {
+					dni: $('#dni-client').val(),
+				},
+				success: function(data){
+					if (data.status) {
+						validationProcess();
+					}else{
+						msgAlert('.alert-client-data', data.msg);
+					}
+				},
+				error: function(xhr, status, error) {
+					console.log(error);
 				}
-			},
-			error: function(xhr, status, error) {
-				console.log(error);
-			}
-		});
-	}else{
-		validationProcess();
-	}		
+			});
+		}else{
+			validationProcess();
+		}		
 	}
 
 	$('#confirmedDataClient').click(function () {
