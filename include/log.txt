@@ -2659,3 +2659,526 @@
 [2023/10/18 11:35:05] SQL Query: SELECT * FROM categories WHERE  status = 1
 [2023/10/18 11:35:05] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
 [2023/10/18 11:35:05] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:05:20] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/10/19 12:05:20] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/10/19 12:05:20] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/10/19 12:05:34] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:05:34] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:05:34] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:05:34] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:05:34] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:05:34] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:05:34] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:05:36] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlosandrespozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2023/10/19 12:05:36] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '27'
+[2023/10/19 12:05:36] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:05:36] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:05:36] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:05:36] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:05:36] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:05:36] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:05:36] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:05:44] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:05:44] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:05:44] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:05:44] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:05:44] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:05:44] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:05:44] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:05:49] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = 'f7ce1620de00caeafa6ada56ac688054'
+[2023/10/19 12:05:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:05:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:05:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:05:49] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = 'f7ce1620de00caeafa6ada56ac688054'
+[2023/10/19 12:05:49] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '105'
+[2023/10/19 12:05:49] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (3,2)
+[2023/10/19 12:06:06] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = 'e461e8b8c1ff3df4077cde39307ba19d'
+[2023/10/19 12:06:06] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:06:06] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:06:06] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:06:06] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:06:06] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:06:06] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:06:06] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:06:51] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:06:51] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:06:51] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:06:51] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:06:51] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:06:51] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:06:51] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:08:05] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '6c9b9af6260fe8b3eb45366cf9d994ac'
+[2023/10/19 12:08:05] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:08:05] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:08:05] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:08:05] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '6c9b9af6260fe8b3eb45366cf9d994ac'
+[2023/10/19 12:08:05] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '106'
+[2023/10/19 12:08:05] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (7,8)
+[2023/10/19 12:08:33] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '518d4905353a7e07914066b8459aa8fe'
+[2023/10/19 12:08:33] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '518d4905353a7e07914066b8459aa8fe'
+[2023/10/19 12:08:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:08:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:08:33] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:08:33] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:08:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:08:33] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:08:33] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:09:13] SQL Query: SELECT * FROM card_transaction WHERE code_unique = 'f7ce1620de00caeafa6ada56ac688054'
+[2023/10/19 12:09:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:09:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:09:13] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:09:13] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:09:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:09:13] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:09:13] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:09:40] SQL Query: SELECT * FROM card_transaction WHERE code_unique = 'f7ce1620de00caeafa6ada56ac688054'
+[2023/10/19 12:09:40] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:09:40] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:09:40] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:09:40] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:09:40] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:09:40] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:09:40] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:09:44] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:09:44] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:09:44] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:09:44] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2023/10/19 12:09:44] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2023/10/19 12:09:44] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/10/19 12:09:44] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1  LIMIT 0, 10
+[2023/10/19 12:09:44] SQL Query: SELECT * FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND status = 1 
+[2023/10/19 12:09:44] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2023/10/19 12:09:44] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/10/19 12:09:44] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/10/19 12:09:44] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/10/19 12:09:44] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/10/19 12:09:44] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:09:48] SQL Query: SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = '5'
+[2023/10/19 12:09:48] SQL Query: SELECT image FROM img_product WHERE product_id = '5'
+[2023/10/19 12:09:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:09:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:09:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:09:49] SQL Query: SELECT dni, name_user, surname_user, phone, email FROM users WHERE id_user = '27'
+[2023/10/19 12:09:49] SQL Query: SELECT * FROM payment_type
+[2023/10/19 12:09:49] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (5) AND status = 1
+[2023/10/19 12:09:49] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (5)
+[2023/10/19 12:09:49] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (5) AND status = 1
+[2023/10/19 12:09:49] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (5)
+[2023/10/19 12:09:57] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '6'
+[2023/10/19 12:09:57] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/10/19 12:10:01] SQL Query: SELECT * FROM products WHERE code = '45800015274' AND id_product != 6
+[2023/10/19 12:10:01] SQL execute: UPDATE products SET category_id="204",code="45800015274",name_product="Soporte P/tv De 37' A 70' Space",desMain="Soporte de pared para TV de 37 y hasta 70 pulgadas.",desGeneral= NULL,sliderMbl= NULL,sliderDst= NULL,sliderDes= NULL,brand="SPACE",price="9.00",stock="30",prevPrice="15.00",discount= NULL,cantDues= NULL,priceDues= NULL,url="soporte-p-tv-de-37-a-70-space",status="1" WHERE id_product='6'
+[2023/10/19 12:10:16] SQL Query: SELECT  table_p.*, DATE_FORMAT(table_p.datacreate, '%d-%m-%Y') AS date_create, table_c.name_category AS category FROM products table_p INNER JOIN categories table_c ON table_p.category_id = table_c.id_category WHERE table_p.id_product = '5'
+[2023/10/19 12:10:16] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2023/10/19 12:10:18] SQL Query: SELECT * FROM products WHERE code = '15252000556' AND id_product != 5
+[2023/10/19 12:10:18] SQL execute: UPDATE products SET category_id="200",code="15252000556",name_product="Audifonos C/microfono negro  H200",desMain="Auriculares estéreo con micrófono H200. Micrófono de alta sensibilidad, comunicación clara y fluida con sus compañeros de equipo.",desGeneral="<ul>
+<li>Controla f&aacute;cilmente el volumen en juegos, pel&iacute;culas, m&uacute;sica.</li>
+<li>Control en cable.</li>
+<li>Compatibilidad: PCs, port&aacute;tiles, smartphones y otros dispositivos con salida de audio de 3.5 mm.</li>
+<li>USB para luz led azul.</li>
+<li>Bot&oacute;n de encendido / apagado de luz en orejera.</li>
+</ul>",sliderMbl= NULL,sliderDst= NULL,sliderDes= NULL,brand="HP",price="25.01",stock="30",prevPrice= NULL,discount= NULL,cantDues= NULL,priceDues= NULL,url="audifonos-c-microfono-negro-h200",status="1" WHERE id_product='5'
+[2023/10/19 12:10:25] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:10:25] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:10:25] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:11:14] SQL Query: SELECT dni, name_user, surname_user, phone, email FROM users WHERE id_user = '27'
+[2023/10/19 12:11:14] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (5)
+[2023/10/19 12:11:14] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (5)
+[2023/10/19 12:11:14] SQL execute: UPDATE products SET stock = CASE id_product WHEN 5 THEN CASE WHEN stock > 0 THEN stock - 1 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '5') AND status = 1
+[2023/10/19 12:11:14] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:11:14] SQL execute: INSERT INTO orders (num_order,transaction_uniqueCode,user_id,shipping_cost,total,payment_type_id,addressee,shipping_address,message,status) VALUES(675189757,'0912b9eda9b7b126ffde2cd0c9a36195','27',10,38.01,'2','charles manson dos','San Carlos-via panamericana',NULL,'Progress');
+[2023/10/19 12:11:14] SQL execute: INSERT INTO detail_orders (order_id,product_id,name_product,price,quantityOrdered,url_product) VALUES(110,"5","Audifonos C/microfono negro  H200","25.01","1","audifonos-c-microfono-negro-h200");
+[2023/10/19 12:11:14] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:11:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:11:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:11:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:11:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:11:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:11:19] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:11:19] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:11:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:11:19] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:11:19] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:11:43] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/10/19 12:11:43] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/10/19 12:11:43] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/10/19 12:12:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:12:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:12:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:12:19] SQL Query: SELECT * FROM categories WHERE (url = 'tecnologia' AND fatherCategory IS NULL)
+[2023/10/19 12:12:19] SQL Query: SELECT id_category FROM categories WHERE url = 'tecnologia'
+[2023/10/19 12:12:19] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/10/19 12:12:19] SQL Query: SELECT * FROM products WHERE category_id IN (207,212,215,208,209,210,211,213,214)   AND status = 1  LIMIT 0, 10
+[2023/10/19 12:12:19] SQL Query: SELECT * FROM products WHERE category_id IN (207,212,215,208,209,210,211,213,214)   AND status = 1 
+[2023/10/19 12:12:19] SQL Query: SELECT * FROM img_product WHERE product_id = '8'
+[2023/10/19 12:12:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:12:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:12:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:12:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:12:33] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL) OR (url = 'tv-y-video' AND fatherCategory = (SELECT id_category FROM categories WHERE url = 'audio-y-video')) OR (url = 'soportes-de-pared' AND fatherCategory = (SELECT id_category FROM categories WHERE url = 'tv-y-video'))
+[2023/10/19 12:12:33] SQL Query: SELECT id_category FROM categories WHERE url = 'soportes-de-pared'
+[2023/10/19 12:12:33] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/10/19 12:12:33] SQL Query: SELECT * FROM products WHERE category_id IN (204)   AND status = 1  LIMIT 0, 10
+[2023/10/19 12:12:33] SQL Query: SELECT * FROM products WHERE category_id IN (204)   AND status = 1 
+[2023/10/19 12:12:33] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2023/10/19 12:12:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:12:34] SQL Query: SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = '6'
+[2023/10/19 12:12:34] SQL Query: SELECT image FROM img_product WHERE product_id = '6'
+[2023/10/19 12:12:36] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:12:36] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:12:36] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:12:36] SQL Query: SELECT dni, name_user, surname_user, phone, email FROM users WHERE id_user = '27'
+[2023/10/19 12:12:36] SQL Query: SELECT * FROM payment_type
+[2023/10/19 12:12:36] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2023/10/19 12:12:36] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:12:36] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2023/10/19 12:12:36] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:12:43] SQL Query: SELECT dni, name_user, surname_user, phone, email FROM users WHERE id_user = '27'
+[2023/10/19 12:12:43] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6)
+[2023/10/19 12:12:43] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:12:43] SQL execute: UPDATE products SET stock = CASE id_product WHEN 6 THEN CASE WHEN stock > 0 THEN stock - 1 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '6') AND status = 1
+[2023/10/19 12:12:44] SQL execute: INSERT INTO card_transaction (code_unique,products_id,products_amount) VALUES('7e784479be9149032b1c97b5a2544431','6','1');
+[2023/10/19 12:12:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:12:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:12:46] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:12:46] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:12:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:12:46] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:12:46] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:12:47] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2023/10/19 12:12:47] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:13:01] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:13:01] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:13:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:13:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:13:01] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:13:02] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2023/10/19 12:13:02] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:13:19] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/10/19 12:13:19] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/10/19 12:13:19] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/10/19 12:13:33] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '7e784479be9149032b1c97b5a2544431'
+[2023/10/19 12:13:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:13:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:13:33] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:13:33] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:13:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:13:33] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:13:33] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:13:34] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2023/10/19 12:13:34] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:13:57] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/10/19 12:13:57] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/10/19 12:13:57] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/10/19 12:14:14] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:14:14] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:14:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:14] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:14] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2023/10/19 12:14:14] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:14:26] SQL Query: SELECT * FROM card_transaction WHERE code_unique = 'f7ce1620de00caeafa6ada56ac688054'
+[2023/10/19 12:14:26] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:26] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:26] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:14:26] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:14:26] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:26] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:14:26] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:14:26] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2023/10/19 12:14:26] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:14:28] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:14:28] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:14:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:28] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2023/10/19 12:14:28] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:14:39] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:14:39] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:14:39] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:39] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:39] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:39] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2023/10/19 12:14:39] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:14:44] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = 'f7ce1620de00caeafa6ada56ac688054'
+[2023/10/19 12:14:44] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:44] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:44] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:44] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = 'f7ce1620de00caeafa6ada56ac688054'
+[2023/10/19 12:14:44] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '105'
+[2023/10/19 12:14:44] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (3,2)
+[2023/10/19 12:14:45] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2023/10/19 12:14:45] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:14:46] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '6c9b9af6260fe8b3eb45366cf9d994ac'
+[2023/10/19 12:14:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:46] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '6c9b9af6260fe8b3eb45366cf9d994ac'
+[2023/10/19 12:14:46] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '106'
+[2023/10/19 12:14:46] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (7,8)
+[2023/10/19 12:14:46] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2023/10/19 12:14:46] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:14:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:55] SQL Query: SELECT dni, name_user, surname_user, phone, email FROM users WHERE id_user = '27'
+[2023/10/19 12:14:55] SQL Query: SELECT * FROM payment_type
+[2023/10/19 12:14:56] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2023/10/19 12:14:56] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:14:56] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2023/10/19 12:14:56] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:14:59] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = 'f7ce1620de00caeafa6ada56ac688054'
+[2023/10/19 12:14:59] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:59] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:59] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:14:59] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = 'f7ce1620de00caeafa6ada56ac688054'
+[2023/10/19 12:14:59] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '105'
+[2023/10/19 12:14:59] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (3,2)
+[2023/10/19 12:14:59] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2023/10/19 12:14:59] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:15:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:15:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:15:03] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:15:03] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:15:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:15:03] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:15:03] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:15:04] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2023/10/19 12:15:04] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:15:11] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:15:11] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:15:11] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:15:11] SQL Query: SELECT dni, name_user, surname_user, phone, email FROM users WHERE id_user = '27'
+[2023/10/19 12:15:11] SQL Query: SELECT * FROM payment_type
+[2023/10/19 12:15:11] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2023/10/19 12:15:11] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:15:11] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2023/10/19 12:15:11] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:15:14] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/10/19 12:15:14] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/10/19 12:15:14] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/10/19 12:16:06] SQL Query: SELECT dni, name_user, surname_user, phone, email FROM users WHERE id_user = '27'
+[2023/10/19 12:16:06] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6)
+[2023/10/19 12:16:06] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:16:06] SQL execute: UPDATE products SET stock = CASE id_product WHEN 6 THEN CASE WHEN stock > 0 THEN stock - 1 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '6') AND status = 1
+[2023/10/19 12:16:06] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:16:06] SQL execute: INSERT INTO orders (num_order,transaction_uniqueCode,user_id,shipping_cost,total,payment_type_id,addressee,shipping_address,message,status) VALUES(1123875625,'8770b99fe5195b6cfc205486190d3ac8','27',5,15.08,'2','charles manson tres','Santa Rita-17 de noviembre',NULL,'Progress');
+[2023/10/19 12:16:06] SQL execute: INSERT INTO detail_orders (order_id,product_id,name_product,price,quantityOrdered,url_product) VALUES(111,"6","Soporte P/tv De 37' A 70' Space","9","1","soporte-p-tv-de-37-a-70-space");
+[2023/10/19 12:16:06] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:16:06] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:16:06] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:16:06] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:16:10] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:16:10] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:16:10] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:16:10] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:16:10] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:16:10] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:16:10] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:16:35] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/10/19 12:16:35] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/10/19 12:16:35] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/10/19 12:16:46] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = 'f7ce1620de00caeafa6ada56ac688054'
+[2023/10/19 12:16:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:16:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:16:46] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:16:46] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = 'f7ce1620de00caeafa6ada56ac688054'
+[2023/10/19 12:16:46] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '105'
+[2023/10/19 12:16:46] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (3,2)
+[2023/10/19 12:16:47] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '6c9b9af6260fe8b3eb45366cf9d994ac'
+[2023/10/19 12:16:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:16:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:16:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:16:47] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '6c9b9af6260fe8b3eb45366cf9d994ac'
+[2023/10/19 12:16:47] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '106'
+[2023/10/19 12:16:47] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (7,8)
+[2023/10/19 12:29:48] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '6c9b9af6260fe8b3eb45366cf9d994ac'
+[2023/10/19 12:29:48] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:29:48] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:29:48] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:29:48] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '6c9b9af6260fe8b3eb45366cf9d994ac'
+[2023/10/19 12:29:48] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '106'
+[2023/10/19 12:29:48] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (7,8)
+[2023/10/19 12:30:20] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2023/10/19 12:30:20] SQL Query: SELECT table1.*, table2.name_category AS fatherName FROM categories table1 LEFT JOIN categories table2 ON table1.fatherCategory = table2.id_category where table1.id_category not in (select table3.fatherCategory from categories table3 where table3.fatherCategory is not null AND table3.status = 1 ORDER BY table3.name_category ASC) AND table1.status = 1 ORDER BY table1.name_category ASC
+[2023/10/19 12:30:20] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2023/10/19 12:30:45] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:30:45] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:30:45] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:30:45] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:30:45] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:30:45] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:30:45] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '110'
+[2023/10/19 12:30:45] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (5)
+[2023/10/19 12:31:27] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:31:27] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:31:27] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:31:27] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:31:27] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:31:27] SQL Query: SELECT sliderDst, sliderMbl, sliderDesOne, sliderDesTwo FROM categories WHERE status = 1 AND sliderDst != '' AND sliderMbl != '' AND id_category IN (181, 208)
+[2023/10/19 12:31:27] SQL Query: SELECT sliderDst, sliderMbl, sliderDes FROM products WHERE status = 1 AND sliderDst != '' AND id_product IN (1,2)
+[2023/10/19 12:31:32] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:31:32] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:31:32] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:31:32] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:31:32] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:31:32] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:31:32] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '111'
+[2023/10/19 12:31:32] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:33:18] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:33:18] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:33:18] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:33:18] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:33:18] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:33:18] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:33:18] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '110'
+[2023/10/19 12:33:18] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (5)
+[2023/10/19 12:33:38] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:33:38] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:33:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:33:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:33:38] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:33:38] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:33:38] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '111'
+[2023/10/19 12:33:38] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:35:13] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:35:13] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:35:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:35:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:35:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:35:13] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:35:13] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '110'
+[2023/10/19 12:35:13] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (5)
+[2023/10/19 12:35:24] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:35:24] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:35:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:35:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:35:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:35:24] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:35:24] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '110'
+[2023/10/19 12:35:24] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (5)
+[2023/10/19 12:35:32] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:35:32] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:35:32] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:35:32] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:35:32] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:35:32] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:35:32] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '111'
+[2023/10/19 12:35:32] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:37:51] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:37:51] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:37:51] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:37:51] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:37:51] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:37:51] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:37:51] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '111'
+[2023/10/19 12:37:51] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:44:54] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:44:54] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:44:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:44:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:44:55] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:44:55] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:44:55] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '110'
+[2023/10/19 12:44:55] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (5)
+[2023/10/19 12:44:58] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = 'f7ce1620de00caeafa6ada56ac688054'
+[2023/10/19 12:44:58] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:44:58] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:44:58] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:44:58] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = 'f7ce1620de00caeafa6ada56ac688054'
+[2023/10/19 12:44:58] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '105'
+[2023/10/19 12:44:58] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (3,2)
+[2023/10/19 12:46:28] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:46:28] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:46:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:46:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:46:28] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:46:28] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:46:28] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '111'
+[2023/10/19 12:46:28] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:46:32] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:46:32] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:46:32] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:46:32] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:46:32] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:46:32] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:46:32] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '110'
+[2023/10/19 12:46:32] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (5)
+[2023/10/19 12:46:39] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = 'f7ce1620de00caeafa6ada56ac688054'
+[2023/10/19 12:46:39] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:46:39] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:46:39] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:46:39] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = 'f7ce1620de00caeafa6ada56ac688054'
+[2023/10/19 12:46:39] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '105'
+[2023/10/19 12:46:39] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (3,2)
+[2023/10/19 12:48:24] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:48:24] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:48:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:48:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:48:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:48:24] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:48:24] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '111'
+[2023/10/19 12:48:24] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:51:36] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:51:36] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:51:36] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:51:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:51:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:51:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:53:18] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:53:18] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:53:18] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:53:18] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:53:18] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:53:18] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:53:18] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '111'
+[2023/10/19 12:53:18] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:53:23] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:53:23] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:53:23] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:53:23] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:53:23] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:53:23] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:53:23] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '111'
+[2023/10/19 12:53:23] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:53:30] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:53:30] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:53:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:53:30] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:53:31] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:53:31] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:53:31] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '110'
+[2023/10/19 12:53:31] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (5)
+[2023/10/19 12:56:35] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:56:35] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:56:35] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:56:35] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:56:35] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:56:35] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:56:35] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '111'
+[2023/10/19 12:56:35] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:59:17] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:59:17] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:59:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:59:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:59:17] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:59:17] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '8770b99fe5195b6cfc205486190d3ac8'
+[2023/10/19 12:59:17] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '111'
+[2023/10/19 12:59:17] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2023/10/19 12:59:24] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:59:24] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:59:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:59:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:59:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 12:59:24] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 12:59:24] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '110'
+[2023/10/19 12:59:24] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (5)
+[2023/10/19 01:11:24] SQL Query: SELECT * FROM card_transaction WHERE code_unique = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 01:11:24] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 01:11:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 01:11:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 01:11:24] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/10/19 01:11:24] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = '0912b9eda9b7b126ffde2cd0c9a36195'
+[2023/10/19 01:11:24] SQL Query: SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = '110'
+[2023/10/19 01:11:24] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (5)

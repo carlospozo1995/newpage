@@ -7,8 +7,8 @@
             <!-- Start Footer Top -->
             <div class="footer-top">
                 <div class="container">
-                    <div class="row mb-n6">
-                        <div class="col-lg-3 col-sm-6 mb-6">
+                    <div class="row mb-n6 justify-content-center ">
+                        <div class="col-lg-3 col-sm-6-1 mb-6">
                             <!-- Start Footer Single Item -->
                             <div class="footer-widget-single-item footer-widget-color--pink" data-aos="fade-up"
                                 data-aos-delay="0">
@@ -22,7 +22,7 @@
                             </div>
                             <!-- End Footer Single Item -->
                         </div>
-                        <div class="col-lg-3 col-sm-6 mb-6">
+                        <div class="col-lg-3 col-sm-6-1 mb-6">
                             <!-- Start Footer Single Item -->
                             <div class="footer-widget-single-item footer-widget-color--pink" data-aos="fade-up"
                                 data-aos-delay="200">
@@ -37,7 +37,7 @@
                             </div>
                             <!-- End Footer Single Item -->
                         </div>
-                        <div class="col-lg-3 col-sm-6 mb-6">
+                        <div class="col-lg-3 col-sm-6-1 mb-6">
                             <!-- Start Footer Single Item -->
                             <div class="footer-widget-single-item footer-widget-color--pink" data-aos="fade-up"
                                 data-aos-delay="400">
@@ -52,7 +52,7 @@
                             </div>
                             <!-- End Footer Single Item -->
                         </div>
-                        <div class="col-lg-3 col-sm-6 mb-6">
+                        <div class="col-lg-3 col-sm-6-1 mb-6">
                             <!-- Start Footer Single Item -->
                             <div class="footer-widget-single-item footer-widget-color--pink" data-aos="fade-up"
                                 data-aos-delay="600">
@@ -77,7 +77,7 @@
             <!-- Start Footer Center -->
             <div class="footer-center">
                 <div class="container">
-                    <div class="row mb-n6">
+                    <div class="row mb-n6 justify-content-center ">
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-6">
                             <div class="footer-social" data-aos="fade-up" data-aos-delay="0">
                                 <h4 class="title">FOLLOW US</h4>
@@ -123,7 +123,7 @@
                         <div class="col-auto mb-6">
                             <div class="footer-payment">
                                 <div class="image">
-                                    <img src="" alt="">
+                                    <img src="<?= MEDIA_STORE; ?>images/payment.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -300,7 +300,7 @@
     <?php
         }
 
-        if (isset($template_vars['orderClient']) && $_SESSION['paymentProcessData']['uniqueCode'] == $template_vars['orderClient'] && isset($_SESSION['paymentProcessData'])) {
+        if (isset($template_vars['orderClient']) && isset($_SESSION['paymentProcessData']) && $_SESSION['paymentProcessData']['uniqueCode'] == $template_vars['orderClient']) {
     ?>
             <script>localStorage.removeItem("shoppingCartData");</script>
     <?php
