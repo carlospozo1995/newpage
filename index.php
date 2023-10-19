@@ -82,6 +82,10 @@
 			case 'cancelacion':
 				return "Cancelacion";
 			break;
+
+			case 'confirmarpedido':
+				return "Confirmarpedido";
+			break;
 		}
 
 		return ucfirst($name);

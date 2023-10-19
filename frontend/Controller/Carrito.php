@@ -73,10 +73,6 @@
 						$subtotal += $product['price'] * $product['amount_product'];
 					}
 
-					if ($payment_method == 1) {
-						Models_Store::insertCardPurchaseValidationData($unique_code, $productsIdsArr, $productsAmountArr);
-					}
-
 					$_SESSION['paymentProcessData'] = array("uniqueCode" => $unique_code, "orderedProducts" => $ordereProducts, "idClient" => $_SESSION['idUser'], "paymentType" => $payment_method, "mainTown" => $mainTown, "street" => $street, "addInfo" => $add_info, "addressee" => $addressee, "messageClient" => $messageClient);
 				}else{
 					$alert = 'Estimado cliente, algunos productos han presentado cambios recientes.'; 
@@ -112,7 +108,10 @@
 						$subtotal += floatval($value['price']) * intval($value['amount_product']);
 					}
 				}
-	
+				
+				$iva = $subtotal * 0.12;
+				// iva function
+
 				if ($subtotal < 100) {
 					if($mainTown == 1){
 						$shipping_cost = 0;
@@ -124,7 +123,7 @@
 				}
 	
 				if ($subtotal > 0) {
-					$total = $subtotal + $iva + $shipping_cost;
+					$total = $subtotal + number_format($iva, 2) + $shipping_cost;
 				}
 	
 				return array('subtotal' => $subtotal, 'iva' => $iva , 'envio' => $shipping_cost, 'total' =>  $total, 'stockUpdate' => $stockUpdate, 'productsWithChanges' => $productsWithChanges, 'newProductsArray' => $newProductsArray, 'alert' => $alert, 'unique_code'  => $unique_code);
@@ -252,6 +251,36 @@
 										die();
 									}
 								}
+							}
+						} catch (Exception $e) {
+							$status = false;
+							$msg = $e->getMessage();
+						}
+
+						$data = array('status' => $status, "msg" => $msg);
+						echo json_encode($data);
+					}
+				break;
+
+				case 'insertCardPurchaseValidation':
+					if (isset($_POST)) {
+						$orderedProducts = $_POST['orderedProducts'];
+						$uniqueCode = $_POST['uniqueCode'];
+						$paymentMethod = isset($_POST['paymentMethod']) ? $_POST['paymentMethod'] : '';
+					
+						$productsIdsArr = array_map(function($data){return Utils::desencriptar($data['id']);}, $orderedProducts);
+						$productsAmountArr = array_map(function($data){return $data['amount_product'];}, $orderedProducts);
+						
+						$insertData = "";
+
+						try {
+							if ($paymentMethod == 1) {
+								$insertData = Models_Store::insertCardPurchaseValidationData($uniqueCode, $productsIdsArr, $productsAmountArr);
+							}
+
+							if ($insertData == "") {
+								throw new Exception("No es posible realizar el proceso intentelo mas tarde.");
+								die();
 							}
 						} catch (Exception $e) {
 							$status = false;

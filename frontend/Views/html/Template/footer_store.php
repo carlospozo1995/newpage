@@ -294,12 +294,19 @@
             }
         }
         
-        if (isset($_SESSION['paymentProcessData']) && isset($template_vars['statusCode']) && $template_vars['statusCode'] != 2) {
+        if (isset($template_vars['clientTransactionId']) && isset($_SESSION['paymentProcessData']) && isset($template_vars['statusCode']) && $template_vars['statusCode'] != 2 && $_SESSION['paymentProcessData']['uniqueCode'] == $template_vars['clientTransactionId']) {
+    ?>
+            <script>localStorage.removeItem("shoppingCartData");</script>
+    <?php
+        }
+
+        if (isset($template_vars['orderClient']) && $_SESSION['paymentProcessData']['uniqueCode'] == $template_vars['orderClient'] && isset($_SESSION['paymentProcessData'])) {
     ?>
             <script>localStorage.removeItem("shoppingCartData");</script>
     <?php
         }
     ?>
+    
 
 
 </body>

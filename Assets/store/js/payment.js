@@ -69,8 +69,10 @@ $(document).ready(function () {
 		        ul.append(li);
 		        // ---------------------- //	
 			});
+			totalIva = subtotal * 0.12;
+			// iva function
 			total = subtotal + totalIva + totalEnvio;
-
+			
 			if(total < 100){
 				$(selectLocality).change(() => {
 					if ($(selectLocality).val() == 1) {
@@ -251,7 +253,7 @@ $(document).ready(function () {
 
 						if (verifiedProducts.stockUpdate) {
 							$('#modalProductsChanges').modal('hide');
-							paymentGateway(ordersProducts, verifiedProducts.total, verifiedProducts.unique_code, data.email_client, data.dni_client, data.phone_client);
+							paymentGateway(ordersProducts, verifiedProducts.total, verifiedProducts.unique_code, data.email_client, data.dni_client, data.phone_client, $('.payment-selection input:checked').val());
 						}else{
 							// aqui abriremos el modal si hay cambios en los productos
 							if ($('#modalProductsChanges').hasClass('show')) {
@@ -267,8 +269,11 @@ $(document).ready(function () {
 					}else{
 						console.log('transferencia');
 						if (verifiedProducts.stockUpdate) {
+							$('#modalProductsChanges').modal('hide');
 							// aqui le brindaremos los datos para que el cliente haga la transferencia
 							console.log(verifiedProducts);
+							// console.log(verifiedProducts.unique_code)
+							window.location.href = base_url + "confirmarpedido?order=" + verifiedProducts.unique_code;
 						}else{
 							// aqui abriremos el modal si hay cambios en los productos
 							if ($('#modalProductsChanges').hasClass('show')) {
@@ -420,7 +425,7 @@ $(document).ready(function () {
 	    return productListHTML;
 	}
 	
-	function paymentGateway(orderedProducts, total, uniqueCode, emailClient, dniClient, phoneClient) {
+	function paymentGateway(orderedProducts, total, uniqueCode, emailClient, dniClient, phoneClient, payment_method) {
 		var parametros ={
 			amount: parseFloat((total * 100).toFixed(2)),
 			amountWithoutTax: parseFloat((total * 100).toFixed(2)),
@@ -440,7 +445,26 @@ $(document).ready(function () {
 				xhr.setRequestHeader ('Authorization', "Bearer A9IblYZbxZFqSIlahmjnYea1CeAKEFWZoUrNtux1YOeQV-fhvTQ7ouwKqYhYK1vQIqJy165MCSGuANYVJDzdzFW1f2_5M24mlmA4iedc0Ii5h4fQkXilX-4PTxlNq7VzJdAblwueJs2RVWieA6-e8AZnB-zSu5G2dEUkVhVxt9gKdUOLYT4MWK1TVUFPayfwumHLOwhqMeuzkE9CJmSlyQjbUTXc_-ofXi4G8qV1Zfyg4ABO7e03p_e3FiK-v3bdIhQZBUom6dOXOSA7LKMgL_3I-vHkCEB-U1DQhhb4C9a0gGrMeZxysUNdbYpuqHtxQ8-ApQ")
 			},
 			success:function SolicitarPago(respuesta){
-				location.href = respuesta.payWithCard;
+				$.ajax({
+					url: base_url + "carrito/insertCardPurchaseValidation/",
+					dataType: 'JSON',
+					method: 'POST',
+					data: {
+						orderedProducts: orderedProducts,
+						uniqueCode : uniqueCode,
+						paymentMethod: payment_method
+					},
+					success: function(data){
+						if (data.status) {
+							location.href = respuesta.payWithCard;
+						}else{
+							console.log(data.msg);
+						}
+					},
+					error: function(xhr, status, error) {
+						console.log(error)
+					},
+				});
 			}, 
 			error: function(mensajeerror){
 				$.ajax({

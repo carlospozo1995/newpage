@@ -84,12 +84,33 @@
 	    <!-- End Hero Slider Section-->
 		<?php
 			Utils::dep($_SESSION['paymentProcessData']);
-			// $productsAmountArr = [3, 2, 5];
-			// Utils::dep($productsAmountArr);
-			// $combinedString = implode(', ', $productsAmountArr);
-			// echo $combinedString;
-			// $result = explode("," ,$combinedString);
-			// Utils::dep($result);
+
+			// $url = 'https://pokeapi.co/api/v2/pokemon/300/';
+			// $ch = curl_init();
+
+			// curl_setopt($ch, CURLOPT_URL, $url);
+			// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			// curl_setopt($ch, CURLOPT_HTTPGET, true);
+
+			// $response = curl_exec($ch);
+
+			// $pokemon = json_decode($response);
+
+			// echo $pokemon->name;
+
+			// -------
+			// -------
+
+			// $url2 = 'http://localhost/carlos/page/confirmarcompra?id=21566109&clientTransactionId=555e07e25a1dbfe5ca5bc9f59c6e86c9';
+			// $queryString2 = parse_url($url2, PHP_URL_QUERY);
+			// Utils::dep($queryString2);
+			// // parse_str($queryString, $params);
+			// // Utils::dep($params);
+
+			// $url = 'https://www.w3schools.com/php/func_string_parse_str.asp';
+			// // var_dump(parse_url($url));
+			// $queryString = parse_url($url, PHP_URL_PATH);
+			// Utils::dep(parse_url($queryString));
 		?>
 		
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

@@ -72,15 +72,17 @@ RewriteRule ^(carrito/|carrito|Carrito)/getProducts/$ %{ENV:REWRITEBASE}index.ph
 RewriteRule ^(carrito/|carrito|Carrito)/paymentTypeValidation/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=paymentTypeValidation [L]
 RewriteRule ^(carrito/|carrito|Carrito)/checkProductStock/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=checkProductStock [L]
 RewriteRule ^(carrito/|carrito|Carrito)/verifyDni/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=verifyDni [L]
+RewriteRule ^(carrito/|carrito|Carrito)/insertCardPurchaseValidation/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=insertCardPurchaseValidation [L]
 RewriteRule ^(carrito/|carrito|Carrito)/payphoneCallError/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=payphoneCallError [L]
 
 RewriteRule ^carrito/(.+)$ %{ENV:REWRITEBASE}index.php?show=Carrito&process_payment=$1 [L]
 
+#RewriteRule ^(confirmarcompra/|confirmarcompra|Confirmarcompra)$ %{ENV:REWRITEBASE}index.php?show=Confirmarcompra&id=$1&clientTransactionId=$2 [QSA,L]
 RewriteRule ^(confirmarcompra/|confirmarcompra|Confirmarcompra)$ %{ENV:REWRITEBASE}index.php?show=Confirmarcompra [L]
 RewriteRule ^(confirmarcompra/|confirmarcompra|Confirmarcompra)/testlocal/$ %{ENV:REWRITEBASE}index.php?show=Confirmarcompra&action=testlocal [L]
-
 RewriteRule ^(cancelacion/|cancelacion|Cancelacion)$ %{ENV:REWRITEBASE}index.php?show=Cancelacion [L]
 
+RewriteRule ^confirmarpedido$ %{ENV:REWRITEBASE}index.php?show=Confirmarpedido&order=$1 [QSA,L]
 
 #EXAMPLES
 #RewriteRule ^(resetPassword)/ajaxSetPass$ %{ENV:REWRITEBASE}index.php?show=ResetPassword [L]

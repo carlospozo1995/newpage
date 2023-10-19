@@ -357,6 +357,8 @@ $(window).ready(function () {
                 `;
             // }
         });
+        totalIva = subtotal * 0.12;
+        // iva function
         total = subtotal + totalIva;
 
         $('#view-shopping-cart-container').html(`
@@ -438,6 +440,8 @@ $(window).ready(function () {
                     subtotal += item.price * item.amount_product;
                     // totalIva (create IVA function and add them
                 });
+                totalIva = subtotal * 0.12;
+                // iva function
                 total = subtotal + totalIva;
 
                 let row_product = $(`#${id}`);
@@ -494,6 +498,8 @@ $(window).ready(function () {
                                 subtotal += item.amount_product * item.price;
                                  // totalIva (create IVA function and add them)
                             });
+                            totalIva = subtotal * 0.12;
+                            // iva function
                             total = subtotal + totalIva;
                             $(this).parent().parent().remove();
 

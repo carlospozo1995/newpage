@@ -8,6 +8,9 @@
 				$orderData = $_SESSION['paymentProcessData'];
 
 				$updateByCancellation = Utils::updateStockByCancelation($orderData['orderedProducts']);
+				$uniqueCode = $orderData['uniqueCode'];
+				$delCardTransaction = Models_Store::deleteData($uniqueCode);
+				
 				if ($updateByCancellation == false) {
 					// enviar mensaje al administrador sobre los productos no actualizados si existe un error(enviando $orderData['orderedProducts'])
 				}

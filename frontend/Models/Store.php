@@ -172,7 +172,7 @@
         }
 
         static public function getIdClient($data) {
-            $sql = "SELECT user_id FROM orders WHERE transaction_uniqueCode = '$data'";
+            $sql = "SELECT user_id FROM orders WHERE transaction_uniqueCode = ?";
             return $GLOBALS["db"]->auto_array($sql, array($data));
         }
 
@@ -189,7 +189,7 @@
         }
 
         static public function showOrderClient($data) {
-            $sql_order = "SELECT o.id_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = ?";
+            $sql_order = "SELECT o.id_order, o.num_order, o.dateCreate, o.shipping_cost, o.total, o.payment_type_id, o.addressee, o.shipping_address, o.status, u.dni, u.name_user, u.surname_user, u.phone, u.email FROM orders o INNER JOIN users u ON o.user_id = u.id_user WHERE o.transaction_uniqueCode = ?";
             $request_o = $GLOBALS["db"]->auto_array($sql_order, array($data));
 
             $sql_products = "SELECT product_id, name_product, price, quantityOrdered, url_product FROM detail_orders WHERE order_id = ?";
@@ -208,7 +208,7 @@
                 });
                 if (count($images) > 0) {
                     $firstImage = reset($images);
-                    $product['images'] = $firstImage['image'];
+                    $product['images'] = MEDIA_ADMIN . 'files/images/upload_products/' . $firstImage['image'];
                 } else {
                     $product['images'] = MEDIA_ADMIN . 'files/images/upload_products/empty_img.png';
                 }
@@ -217,6 +217,17 @@
             $request_o['ordered_products'] = $request_p;
             return $request_o;
 
+        }
+
+        static public function deleteData($data) {
+            $sql = "DELETE FROM card_transaction WHERE code_unique = '$data'";
+            $request =  $GLOBALS["db"]->execute($sql);
+            return $request;
+        }
+
+        static public function verifyOrder($data) {
+            $sql = "SELECT * FROM card_transaction WHERE code_unique = ?";
+            return $GLOBALS["db"]->auto_array($sql, array($data));
         }
     }
 ?>
