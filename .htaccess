@@ -79,7 +79,6 @@ RewriteRule ^carrito/(.+)$ %{ENV:REWRITEBASE}index.php?show=Carrito&process_paym
 
 #RewriteRule ^(confirmarcompra/|confirmarcompra|Confirmarcompra)$ %{ENV:REWRITEBASE}index.php?show=Confirmarcompra&id=$1&clientTransactionId=$2 [QSA,L]
 RewriteRule ^(confirmarcompra/|confirmarcompra|Confirmarcompra)$ %{ENV:REWRITEBASE}index.php?show=Confirmarcompra [L]
-RewriteRule ^(confirmarcompra/|confirmarcompra|Confirmarcompra)/testlocal/$ %{ENV:REWRITEBASE}index.php?show=Confirmarcompra&action=testlocal [L]
 RewriteRule ^(cancelacion/|cancelacion|Cancelacion)$ %{ENV:REWRITEBASE}index.php?show=Cancelacion [L]
 
 RewriteRule ^confirmarpedido$ %{ENV:REWRITEBASE}index.php?show=Confirmarpedido&order=$1 [QSA,L]

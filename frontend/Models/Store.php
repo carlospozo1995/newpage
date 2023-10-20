@@ -40,9 +40,12 @@
         static public function getProducts($data, $brandCheck, $order, $range, $start = null, $perload = null)
         {
             $sql = "SELECT * FROM products WHERE category_id IN ($data) $brandCheck $range AND status = 1 $order";
-
+            $orderMain = "";
             if ($start !== null && $perload !== null) {
-                $sql .= " LIMIT $start, $perload";
+                if (empty($order)) {
+                    $orderMain = "ORDER BY dataCreate ASC";
+                }
+                $sql .= " $orderMain LIMIT $start, $perload ";
             }
 
             return $GLOBALS["db"]->selectAll($sql, array());

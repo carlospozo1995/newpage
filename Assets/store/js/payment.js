@@ -271,8 +271,6 @@ $(document).ready(function () {
 						if (verifiedProducts.stockUpdate) {
 							$('#modalProductsChanges').modal('hide');
 							// aqui le brindaremos los datos para que el cliente haga la transferencia
-							console.log(verifiedProducts);
-							// console.log(verifiedProducts.unique_code)
 							window.location.href = base_url + "confirmarpedido?order=" + verifiedProducts.unique_code;
 						}else{
 							// aqui abriremos el modal si hay cambios en los productos
