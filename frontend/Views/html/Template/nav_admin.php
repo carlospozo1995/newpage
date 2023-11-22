@@ -65,7 +65,7 @@
 			              	</a>
 			            </li> -->
 			          	
-						<?php if(!empty($_SESSION['permissions'][MCATEGORIAS]['ver']) || !empty($_SESSION['permissions'][MPRODUCTOS]['ver'])){ ?>
+						<?php if(!empty($_SESSION['permissions'][MCATEGORIAS]['ver']) || !empty($_SESSION['permissions'][MPRODUCTOS]['ver']) || !empty($_SESSION['permissions'][MBANNERS]['ver'])){ ?>
 			          	<li class="nav-item">
 				            <a href="#" class="nav-link">
 				              	<i class="nav-icon fas fa-store"></i>
@@ -90,6 +90,15 @@
 					                <a href="<?= BASE_URL ?>products" class="nav-link">
 					                  	<i class="far fa-circle nav-icon"></i>
 					                  	<p>Productos</p>
+					                </a>
+				              	</li>
+				              	<?php } ?>
+
+								<?php if (!empty($_SESSION['permissions'][MBANNERS]['ver'])) { ?>
+				              	<li class="nav-item">
+					                <a href="<?= BASE_URL ?>banners" class="nav-link">
+					                  	<i class="far fa-circle nav-icon"></i>
+					                  	<p>Banners</p>
 					                </a>
 				              	</li>
 				              	<?php } ?>

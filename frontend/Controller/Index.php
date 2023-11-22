@@ -61,6 +61,38 @@
 					}
 				break;
 
+				case 'testEmail':
+					if ($_POST) {
+						// $producto = array(
+						// 	"name" => "producto 1",
+						// 	"price" => 15.00,
+						// 	"data" => array(
+						// 		array(
+						// 			"image" => 'imagen.jpg'
+						// 		),
+						// 		array(
+						// 			"testeo" => "testo"
+						// 		)
+						// 	),
+						// 	"quantity" => 9
+						// ); 
+
+						$dataEmailTest = array( "name" => 'ron y moly',
+												"email" => 'carlosandrespozo95@gmail.com',
+												"asunto" => 'Testeo de mensaje '.NAME_EMPRESA,
+											); 
+						
+						$sendEmail = Utils::sendEmail($dataEmailTest, 'email_buyConfirm');
+						if ($sendEmail) {
+							$status = true;
+						}else{
+							$status = false;
+						}
+						$data = array("status" => $status);
+						echo json_encode($data);
+					}
+				break;
+
 				default:
 					$data["file_css"][] = "index-store";
 					$data["file_js"][] = "index-store"; 

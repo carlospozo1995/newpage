@@ -15097,7 +15097,7 @@ input {
     align-items: flex-start;
 }
 .banner-style-4 .content .title {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
     line-height: 1;
@@ -15124,6 +15124,13 @@ input {
     line-height: 38px;
     font-size: 24px;
     transition: all 0.5s ease;
+}
+.banner-style-4.banner-color--deep-blue:hover .content .title {
+    color: #4431DE;
+}
+.banner-style-4.banner-color--deep-blue:hover .content .round-btn {
+    color: #FFF;
+    background: #4431DE;
 }
 .banner-style-4.banner-color--golden:hover .content .title {
     color: #b19361;

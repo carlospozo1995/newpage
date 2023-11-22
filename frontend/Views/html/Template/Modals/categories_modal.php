@@ -56,10 +56,11 @@
                                                 <input type="hidden" class="image_actual" name="photo_actual" id="photo_actual" value="">
                                                 <input type="hidden" class="image_remove" name="photo_remove" id="photo_remove" value="0">
 
-                                                <label>Imagen categoria (150x150)</label>
-                                                <p class="text-info text-center errorImage"></p>
+                                                <label>Banner small (285x140)</label>
+                                                <!-- <p class="text-info text-center errorImage"></p> -->
 
-                                                <div class="contImage">
+                                                <!-- <div class="contImage"> -->
+                                                <div class="">
                                                     <div class="prevImgUpload prevPhoto">
                                                         <span class="delImgUpload notBlock delPhoto">X</span>
                                                         <label for="photo"></label>
@@ -68,10 +69,35 @@
                                                     <div class="upimg">
                                                         <input type="file" name="photo" id="photo" class="imagen">
                                                     </div>
-                                                    <div class="alertImgUpload alertErrorImg"></div>
+                                                    <!-- <div class="alertImgUpload alertErrorImg"></div> -->
+                                                    <div class="alertImgUpload"></div>
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <!-- ---------------------- -->
+                                        <div class="form-group">
+                                            <div class="contImgUpload">
+                                                <input type="hidden" class="image_actual" name="lgbanner_actual" id="lgbanner_actual" value="">
+                                                <input type="hidden" class="image_remove" name="lgbanner_remove" id="lgbanner_remove" value="0">
+
+                                                <label>Banner large (480x670)</label>
+
+                                                <div class="">
+                                                    <div class="prevImgUpload prev_lgbanner">
+                                                        <span class="delImgUpload notBlock del_lgbanner">X</span>
+                                                        <label for="lgbanner"></label>
+                                                        <div></div>
+                                                    </div>
+                                                    <div class="upimg">
+                                                        <input type="file" name="lgbanner" id="lgbanner" class="imagen">
+                                                    </div>
+                                                    
+                                                    <div class="alertImgUpload"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- ---------------------- -->
                                     </div>
                                     
                                     <div class="col-sm-6">

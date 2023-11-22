@@ -9,7 +9,6 @@
 		$subtotal += floatval($value['price']) * intval($value['quantityOrdered']);
 	}
 	$iva = $subtotal * 0.12;
-
 ?>
 <div data-aos="fade-up" data-aos-delay="0" class="mb-lg-10">
 <?php

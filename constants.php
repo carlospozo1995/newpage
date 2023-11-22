@@ -33,6 +33,7 @@
     define("MUSUARIOS", 2);
     define("MCATEGORIAS", 3);
     define("MPRODUCTOS", 4);
+    define("MBANNERS", 5);
 
     // DECIMAL AND THOUSAND DELIMITERS
     define("SPD", ",");

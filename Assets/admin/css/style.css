@@ -152,24 +152,40 @@
     width: 64px;
     height: 64px;
     background: url(../../admin/files/images/icon.png);
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 .prevPhoto {
-    width: 150px;
-    height: 150px;
-    background: url(../../admin/files/images/undefine-ctg.png);
+    width: 170px;
+    height: 90px;
+    background: url(../../admin/files/images/banner-small.png);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.prev_lgbanner{
+    width: 130px;
+    height: 180px;
+    background: url(../../admin/files/images/banner-large.png);
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 .prevSliderMbl {
-    width: 140px;
-    height: 90px;
+    width: 160px;
+    height: 110px;
     background: url(../../admin/files/images/slider-mobile.png);
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 .prevSliderDst {
-    width: 200px;
-    height: 100px;
+    width: 250px;
+    height: 130px;
     background: url(../../admin/files/images/slider-desktop.png);
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 /* UPLOAD IMAGES PRODUCT */

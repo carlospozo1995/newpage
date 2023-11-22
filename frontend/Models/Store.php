@@ -232,6 +232,7 @@
             $sql = "SELECT * FROM card_transaction WHERE code_unique = ?";
             return $GLOBALS["db"]->auto_array($sql, array($data));
         }
+ 
     }
 ?>
 

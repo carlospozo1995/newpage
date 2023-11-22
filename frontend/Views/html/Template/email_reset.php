@@ -92,16 +92,16 @@
 			<tr>
 				<td>
 					<div class="x_sgwrap">
-						<p>Hola <?=$nameUser?></p>
+						<p>Hola <?=$sendData['name'];?></p>
 					</div>
-					<p>Solicitud de acceso para el usuario: <strong><?=$mailUser?></strong></p>
+					<p>Solicitud de acceso para el usuario: <strong><?=$sendData['email'];?></strong></p>
 					<p>Has solicitado los datos de tu usuario, accede al enlace de abajo para confirmar tu <?= utf8_decode("contraseña") ?>. </p>
 					<p class="x_text_white">
-					<a href="<?= $recovery; ?>" target="_blank" class="x_button_link x_link_blue">Confirmar datos</a>
+					<a href="<?= $sendData['url_recovery']; ?>" target="_blank" class="x_button_link x_link_blue">Confirmar datos</a>
 					</p>
 					<br>
 					<p>Si no te funciona el <?= utf8_decode("botón") ?> puedes copiar y pegar la siguiente <?= utf8_decode("dirección") ?> en tu navegador.</p>
-					<span><a href="<?= $recovery; ?>"><?= $recovery; ?></a></span>
+					<span><a href="<?= $sendData['url_recovery']; ?>"><?= $sendData['url_recovery']; ?></a></span>
 					<p><strong>** VALIDOR POR UNA HORA **</strong></p>
 					<p class="x_title_gray"><a href="<?= BASE_URL ?>" target="_blanck"><?= BASE_URL ?></a></p>
 				</td>

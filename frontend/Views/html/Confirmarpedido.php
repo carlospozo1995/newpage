@@ -2,14 +2,13 @@
 
     $transationData = $template_vars;
     $show_order = Models_Store::showOrderClient($transationData['orderClient']);
- 
+	
     $subtotal = 0;
     $iva = 0;
     foreach ($show_order['ordered_products'] as $value) {
         $subtotal += floatval($value['price']) * intval($value['quantityOrdered']);
     }
     $iva = $subtotal * 0.12;
-
 ?>
 
 <div data-aos="fade-up" data-aos-delay="0" class="mb-lg-10">

@@ -14,6 +14,7 @@ ErrorDocument 404 "Lo siento, la página que estás buscando no existe."
 RewriteRule ^$ %{ENV:REWRITEBASE}index.php?show=Index [L]	
 RewriteRule ^index/logout/$ %{ENV:REWRITEBASE}index.php?show=Index&action=logout [L]
 RewriteRule ^index/registerClient/$ %{ENV:REWRITEBASE}index.php?show=Index&action=registerClient [L]
+RewriteRule ^index/testEmail/$ %{ENV:REWRITEBASE}index.php?show=Index&action=testEmail [L]
 
 #LOGIN
 RewriteRule ^(login/|login|Login|LOGIN)$ %{ENV:REWRITEBASE}index.php?show=login [L]
@@ -54,6 +55,11 @@ RewriteRule ^(products/|products|Products)/getProduct/$ %{ENV:REWRITEBASE}index.
 RewriteRule ^(products/|products|Products)/setImage/$ %{ENV:REWRITEBASE}index.php?show=products&action=setImage [L]
 RewriteRule ^(products/|products|Products)/delFile/$ %{ENV:REWRITEBASE}index.php?show=products&action=delFile [L]
 RewriteRule ^(products/|products|Products)/delProduct/$ %{ENV:REWRITEBASE}index.php?show=products&action=delProduct [L]
+
+RewriteRule ^(banners/|banners|Banners)$ %{ENV:REWRITEBASE}index.php?show=banners [L]
+RewriteRule ^(banners/|banners|Banners)/insertBannerCtg/$ %{ENV:REWRITEBASE}index.php?show=banners&action=insertBannerCtg [L]
+RewriteRule ^(banners/|banners|Banners)/insertBannerProd/$ %{ENV:REWRITEBASE}index.php?show=banners&action=insertBannerProd [L]
+RewriteRule ^(banners/|banners|Banners)/delBannerCtg/$ %{ENV:REWRITEBASE}index.php?show=banners&action=delBannerCtg [L]
 
 #PAGES-STORE
 RewriteRule ^(test/|test|Test|TEST)$ %{ENV:REWRITEBASE}index.php?show=test [L]

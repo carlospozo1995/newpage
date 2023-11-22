@@ -82,9 +82,42 @@
 	        </div>
 	    </div>
 	    <!-- End Hero Slider Section-->
+		<br>
+		
+		<?php
+		$bannersCtgLarge = Models_Banners::getBanners("banners_category", "banner_name, banner_large, redirect", 2);
+		if (count($bannersCtgLarge) == 4) {
+		echo '<div class="banner-section">';
+			echo '<div class="banner-wrapper clearfix">';
+				foreach ($bannersCtgLarge as $key => $value) {
+		?>
+					<div class="banner-single-item banner-style-4 banner-animation banner-color--deep-blue float-left img-responsive"
+						data-aos="fade-up" data-aos-delay="0">
+						<div class="image">
+							<img class="img-fluid" src="<?= MEDIA_ADMIN; ?>files/images/uploads/<?=$value['banner_large'];?>" alt="">
+						</div>
+						<a href="<?=BASE_URL .'categoria/'. $value['redirect'];?>" class="content">
+							<div class="inner">
+								<h4 class="title"><?=$value['banner_name'];?></h4>
+							</div>
+							<span class="round-btn"><i class="ion-ios-arrow-thin-right"></i></span>
+						</a>
+					</div>
+		<?php
+				}
+			echo '</div>';
+		echo '</div>';
+		} 
+		?>
+
+
+		<!-- <img style="border-radius:0px 15px 0px 15px" src="<?= MEDIA_ADMIN; ?>files/images/uploads/photo_Celulares_53423db66ce81161c49beed88c844f0c.jpg" alt="">
+		<img style="border-radius:0px 15px 0px 15px" src="<?= MEDIA_ADMIN; ?>files/images/uploads/photo_Cocinas_da76fc98a1d254f89c11b9a4218a702e.jpg" alt="">
+		<img style="border-radius:0px 15px 0px 15px" src="<?= MEDIA_ADMIN; ?>files/images/uploads/photo_Motos_e058e37dbea0753c838a83e3e2d3674a.jpg" alt="">
+		<img style="border-radius:0px 15px 0px 15px" src="<?= MEDIA_ADMIN; ?>files/images/uploads/photo_Muebles-de-sala_6f86c82e91b118269b9ba4fec4ce4444.jpg" alt="">
+		<img style="border-radius:0px 15px 0px 15px" src="<?= MEDIA_ADMIN; ?>files/images/uploads/photo_Audio-y-video_2e9df534ce27d9d5f86e527a81dbf6e2.jpg" alt=""> -->
 		<?php
 			Utils::dep($_SESSION['paymentProcessData']);
-
 			// $url = 'https://pokeapi.co/api/v2/pokemon/300/';
 			// $ch = curl_init();
 
@@ -111,7 +144,15 @@
 			// // var_dump(parse_url($url));
 			// $queryString = parse_url($url, PHP_URL_PATH);
 			// Utils::dep(parse_url($queryString));
+			
+
+			// $nombre = "Televisor 65' Android 11 Uhd";
+			// $palabras = explode(' ', $nombre);
+			// $nuevoNombre = (count($palabras) > 1) ? $palabras[0] . ' ' . substr($palabras[1], 0, strlen($palabras[1]) / 2) . '...' : $nombre;
+			// echo $nuevoNombre;
 		?>
+
+		<button id="sendMail">EnvioMsm</button>
 		
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

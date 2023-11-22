@@ -76,7 +76,22 @@
 							}
 							
 							if (count($arrDetailProducts) > 0){
-								// echo count($arrDetailProducts);
+								// if ($result['statusCode'] == 3) {
+								// 	$sendData = Models_Store::showOrderClient($client);
+								// 	$asunto = "¡Su pedido fue realizado con éxito!";
+									
+								// 	if (count($sendData['ordered_products']) == 1) {
+								// 		$palabras = explode(' ', $sendData['ordered_products'][0]['name_product']);
+								// 		$nuevoNombre = (count($palabras) > 1) ? $palabras[0] . ' ' . substr($palabras[1], 0, strlen($palabras[1]) / 2) . '...' : $sendData['ordered_products'][0]['name_product'];
+								// 		$asunto = "Su pedido de " .$nuevoNombre." ¡fue realizado con éxito!";
+								// 	}
+								// 	$dataEmailTest = array( "name" => $sendData['name_user'] ." ". $sendData['surname_user'],
+								// 							"email" => $sendData['email'],
+								// 							"asunto" => $asunto,
+								// 						); 
+							
+								// 	$sendEmail = Utils::sendEmail($dataEmailTest, 'email_buyConfirm', $sendData);
+								// }
 							}else{
 								// enviar mensaje al administrador sobre los detalles de los productos no insertados en la tabla detallePedidos mandando el array $insertOrdersDetails
 							}

@@ -58,6 +58,10 @@
 				return "Products";
 			break;
 
+			case 'banners':
+				return "Banners";
+			break;
+
 			// PAGES-STORE
 			case 'test':
 				return "Test";

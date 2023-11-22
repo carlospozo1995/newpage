@@ -11,7 +11,7 @@
 
 	class Utils{
 
-		 static public function log($msg,$bypass=false){
+		static public function log($msg,$bypass=false){
           	$filename = dirname(__FILE__). "/log.txt";
           	$fd = fopen($filename, "a");
           	date_default_timezone_set(TIMEZONE);
@@ -137,13 +137,10 @@
 			$decrypted = $objaes->decrypt(hex2bin($text));
 			return $decrypted;
 		}
-		
-		static public function sendEmail($data, $template)
+
+		static public function sendEmail($sendData, $template, $otherData = "")
 		{	
-        	$nameUser = $data['name'];
-	        $mailUser = $data['email'];
-	        $recovery = $data['url_recovery'];
-	        $asunto = utf8_decode($data['asunto']);
+			$variousData = empty($otherData) ? "" : $otherData;
         
 	        ob_start();
 	        require_once(RUTA_VIEW."html/Template/".$template.".php");
@@ -164,7 +161,7 @@
 
 	            //Recipients
 	            $mail->setFrom(MAIL_USERNAME);
-	            $mail->addAddress($mailUser, $nameUser);
+	            $mail->addAddress($sendData['email'], $sendData['name']);
 
 	            //Attachments
 	            // $mail->addAttachment('/var/tmp/file.tar.gz');         
@@ -172,7 +169,7 @@
 
 	            //Content
 	            $mail->isHTML(true);                                  
-	            $mail->Subject = $asunto;
+	            $mail->Subject = utf8_decode($sendData['asunto']);
 	            $mail->Body    = $message;
 	            // $mail->AltBody = strip_tags();
 

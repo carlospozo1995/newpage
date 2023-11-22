@@ -52,6 +52,7 @@
 
 								$icon = $_FILES['icon'];
 								$photo = $_FILES['photo'];	
+								$bannerLarge = $_FILES['lgbanner'];
 								$sliderMbl = $_FILES['sliderMbl'];
 								$sliderDst = $_FILES['sliderDst'];		
 												
@@ -64,19 +65,34 @@
 									$option = 1;
 									if ($option_list != null){
 										$undef_icon = null;
-										$undef_photo = null;
+										// $undef_photo = null;
 									}else{
-										if (empty($icon['name']) || empty($photo['name'])) {
-											throw new Exception("Las categorias superiores deben tener icono y foto referencial.");
+										// if (empty($icon['name']) || empty($photo['name'])) {
+										if (empty($icon['name'])) {
+											throw new Exception("Las categorias superiores deben tener icono.");
 											die();
 										}else{
 											$undef_icon = "icon_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-											$undef_photo = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+											// $undef_photo = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 											$icon["name_upload"] = "icon_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-											$photo["name_upload"] = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+											// $photo["name_upload"] = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 										}
 									}
 
+									if (empty($photo['name'])) {
+										$undef_photo = null;
+									}else{
+										$undef_photo = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$photo["name_upload"] = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+									}
+
+									if (empty($bannerLarge['name'])) {
+										$undef_bannerlg = null;
+									}else{
+										$undef_bannerlg = "bannerlg_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$bannerLarge["name_upload"] = "bannerlg_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+									}
+									
 									if ((empty($sliderDst['name']) && !empty($sliderMbl['name'])) || (!empty($sliderDst['name']) && empty($sliderMbl['name']))) {
 										throw new Exception("Si desea agregar sliders, debe agregar ambos.");
 										die();
@@ -92,18 +108,19 @@
 										$undef_sliderMbl = null;
 									}
 									
-									$request = Models_Categories::insertCategory($name, $undef_photo, $undef_icon, $undef_sliderDst, $undef_sliderMbl, $sliderDesOne, $sliderDesTwo, $option_list, $status);
+									$request = Models_Categories::insertCategory($name, $undef_photo, $undef_bannerlg, $undef_icon, $undef_sliderDst, $undef_sliderMbl, $sliderDesOne, $sliderDesTwo, $option_list, $status);
 								}else{
 									$option = 2;
-
+									
 									// UPDATE PHOTO- ICON
 									if ($option_list != null){
 										$undef_icon = null;
-										$undef_photo = null;
+										// $undef_photo = null;
 									}else{
-										$data_images = Models_Categories::selectImages("categories", "icon", "photo", $_POST['icon_actual'], $_POST['photo_actual']);
+										// $exist_icon = Models_Categories::selectImages("categories", "icon", "photo", $_POST['icon_actual'], $_POST['photo_actual']);
+										$exist_icon = Models_Categories::selectImg("categories", "icon", $_POST['icon_actual']);
 
-										if(empty($data_images)){
+										if(empty($exist_icon)){
 											throw new Exception("Error de imagenes. Intentelo mas tarde.");
 											die();
 										}
@@ -120,18 +137,60 @@
 											$icon["name_upload"] = "icon_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 										}
 
-										if (empty($photo['name'])) {
-											if($_POST['photo_remove'] >= 1 || empty($_POST['photo_actual']) && $_POST['photo_remove'] <= 0){
-												throw new Exception("Las categorias superiores deben tener una foto referencial.");
-												die();	
-											}else{
-												$undef_photo = $_POST['photo_actual'];
-											} 
-										}else{
-											$undef_photo = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-											$photo["name_upload"] = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-										} 
+										// if (empty($photo['name'])) {
+										// 	if($_POST['photo_remove'] >= 1 || empty($_POST['photo_actual']) && $_POST['photo_remove'] <= 0){
+										// 		throw new Exception("Las categorias superiores deben tener una foto referencial.");
+										// 		die();	
+										// 	}else{
+										// 		$undef_photo = $_POST['photo_actual'];
+										// 	} 
+										// }else{
+										// 	$undef_photo = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										// 	$photo["name_upload"] = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										// } 
 									}
+									// ----------------------
+									if(!empty($_POST['photo_actual'])){
+										$data_photo = Models_Categories::selectImg("categories", "photo", $_POST['photo_actual']);
+										if (empty($data_photo)) {
+											throw new Exception("Error de imagenes. Intentelo mas tarde.");
+											die();	
+										}
+									}
+
+									if (empty($photo['name'])) {
+
+										if(!empty($_POST['photo_actual'])){
+											$_POST['photo_remove'] <= 0 ? $undef_photo = $_POST['photo_actual'] : $undef_photo = null;
+										}else{
+											$undef_photo = null;
+										}
+									}else{
+										$undef_photo = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$photo["name_upload"] = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+									}
+									// ----------------------
+									if(!empty($_POST['lgbanner_actual'])){
+										$data_bannerlg = Models_Categories::selectImg("categories", "banner_large", $_POST['lgbanner_actual']);
+										if (empty($data_bannerlg)) {
+											throw new Exception("Error de imagenes. Intentelo mas tarde.");
+											die();	
+										}
+									}
+
+									if (empty($bannerLarge['name'])) {
+
+										if(!empty($_POST['lgbanner_actual'])){
+											$_POST['lgbanner_remove'] <= 0 ? $undef_bannerlg = $_POST['lgbanner_actual'] : $undef_bannerlg = null;
+										}else{
+											$undef_bannerlg = null;
+										}
+									}else{
+										$undef_bannerlg = "bannerlg_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$bannerLarge["name_upload"] = "bannerlg_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
+									}
+
+									// ----------------------
 
 									// UPDATE SLIDERS (MOBILE - DESKTOP)
 									if(!empty($_POST['sliderMbl_actual']) && !empty($_POST['sliderDst_actual'])){
@@ -169,7 +228,7 @@
 										die();
 									}
 									
-									$request = Models_Categories::updateCategory(Utils::desencriptar($id), $name, $undef_photo, $undef_icon, $undef_sliderDst, $undef_sliderMbl, $sliderDesOne, $sliderDesTwo, $option_list, $status);	
+									$request = Models_Categories::updateCategory(Utils::desencriptar($id), $name, $undef_photo, $undef_bannerlg, $undef_icon, $undef_sliderDst, $undef_sliderMbl, $sliderDesOne, $sliderDesTwo, $option_list, $status);	
 								}
 
 								if ($request > 0) {
@@ -181,12 +240,12 @@
 										$status = true;
 										$msg = "Datos ingresados correctamente.";
 										$data_request = array("id_encrypt" => Utils::encriptar(strval($request)), "sliderDst" => $data_dst, "sliderMbl" => $data_mbl, "module" => $_SESSION['module'], "id_user" => $_SESSION['idUser']);
-										Utils::uploadImage(array($icon, $photo, $sliderDst, $sliderMbl));
+										Utils::uploadImage(array($icon, $photo, $bannerLarge, $sliderDst, $sliderMbl));
 									}else{
 										$status = true;
 										$msg = "Datos actualizados correctamente.";
 										$data_request = array("data_sons" => Models_Categories::dataSons(Utils::desencriptar($id)), "sliderDst" => $data_dst, "sliderMbl" => $data_mbl,);
-										Utils::uploadImage(array($icon, $photo,  $sliderDst, $sliderMbl));
+										Utils::uploadImage(array($icon, $photo, $bannerLarge, $sliderDst, $sliderMbl));
 									}
 								}else if($request == "exist"){
 									throw new Exception("Al parecer el nombre insertado pertenece a una categoria superior. Intentelo de nuevo.");
@@ -222,11 +281,20 @@
 						 	}else{
 						 		$data_category['option_encrypt'] = Utils::encriptar($data_category['fatherCategory']);
 						 		
-						 		if (!empty($data_category['photo']) && !empty($data_category['icon'])) {
-		                            $data_category['url_photo'] = MEDIA_ADMIN.'files/images/uploads/'.$data_category['photo'];
+						 		// if (!empty($data_category['photo']) && !empty($data_category['icon'])) {
+								if (!empty($data_category['icon'])) {
+		                            // $data_category['url_photo'] = MEDIA_ADMIN.'files/images/uploads/'.$data_category['photo'];
 		                            $data_category['url_icon'] = MEDIA_ADMIN.'files/images/uploads/'.$data_category['icon']; 
 		                        }
-
+								// ---------------
+								if (!empty($data_category['photo'])) {
+									$data_category['url_photo'] = MEDIA_ADMIN.'files/images/uploads/'.$data_category['photo'];
+								}
+								// ---------------
+								if (!empty($data_category['banner_large'])) {
+									$data_category['url_lgbanner'] = MEDIA_ADMIN.'files/images/uploads/'.$data_category['banner_large'];
+								}
+								// ---------------
 		                        if (!empty($data_category['sliderDst']) && !empty($data_category['sliderMbl'])) {
 		                            $data_category['url_sliderDst'] = MEDIA_ADMIN.'files/images/uploads/'.$data_category['sliderDst'];
 		                            $data_category['url_sliderMbl'] = MEDIA_ADMIN.'files/images/uploads/'.$data_category['sliderMbl'];

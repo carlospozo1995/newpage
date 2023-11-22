@@ -218,6 +218,7 @@ function edit(element, data_request){
                     $("#listStatus").val(data_category.status);
                     $("#icon_actual").val(data_category.icon);
                     $("#photo_actual").val(data_category.photo);
+                    $("#lgbanner_actual").val(data_category.banner_large)
                     $("#sliderMbl_actual").val(data_category.sliderMbl);
                     $("#sliderDst_actual").val(data_category.sliderDst);
 
@@ -240,9 +241,10 @@ function edit(element, data_request){
                     if (data_category.fatherCategory == null) {
                         ctgListOptions(data_request, 0);
 
-                        $(".prevPhoto div").html('<img class="imgUpload" src="'+data_category.url_photo+'">');
+                        // $(".prevPhoto div").html('<img class="imgUpload" src="'+data_category.url_photo+'">');
                         $(".prevIcon div").html('<img class="imgUpload" src="'+data_category.url_icon+'">');
-                        $(".delPhoto, .delIcon").removeClass("notBlock");
+                        // $(".delPhoto, .delIcon").removeClass("notBlock");
+                        $(".delIcon").removeClass("notBlock");
 
                         $(".contImgUpload").each((index, item)=>{
                             $(item).find(".contImage").removeClass("notBlock");
@@ -251,13 +253,32 @@ function edit(element, data_request){
                     }else{
                         ctgListOptions(data_request, data_category.option_encrypt);
 
-                        $(".prevPhoto div, .prevIcon div").html('');
-                        $(".delPhoto, .delIcon").addClass("notBlock");
+                        // $(".prevPhoto div, .prevIcon div").html('');
+                        // $(".delPhoto, .delIcon").addClass("notBlock");
+
+                        $(".prevIcon div").html('');
+                        $(".delIcon").addClass("notBlock");
 
                         $(".contImgUpload").each((index, item)=>{
                             $(item).find(".contImage").addClass("notBlock");
                             $(item).find(".errorImage").html('<span><i class="fa-solid fa-circle-info"></i> Las categorias superiores solo pueden contener una imagen.</span>');
                         });
+                    }
+                    
+                    if(data_category.url_photo != null){
+                        $(".prevPhoto div").html('<img class="imgUpload" src="'+data_category.url_photo+'">');
+                        $(".delPhoto").removeClass("notBlock");
+                    }else{
+                        $(".prevPhoto div").html('');
+                        $(".delPhoto").addClass("notBlock");
+                    }
+
+                    if(data_category.url_lgbanner != null){
+                        $(".prev_lgbanner div").html('<img class="imgUpload" src="'+data_category.url_lgbanner+'">');
+                        $(".del_lgbanner").removeClass("notBlock");
+                    }else{
+                        $(".prev_lgbanner div").html('');
+                        $(".del_lgbanner").addClass("notBlock");
                     }
 
                 }else{
@@ -275,7 +296,7 @@ function watch(data){
     if (!data) {
         return false;
     }else{
-         let url_ajax = base_url + "categories/getCategory/";
+        let url_ajax = base_url + "categories/getCategory/";
                 
         $.ajax({
             url: url_ajax,
