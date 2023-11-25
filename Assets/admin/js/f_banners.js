@@ -48,7 +48,7 @@ function addBannerCtg(e, typeB, selectB, table) {
                     let id_user = data.request.id_user;
 
                     if (id_user == 1 && module_data.eliminar == 1){
-                        btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="deleteData(this, '+"'"+id_banner+"'"+', '+"'"+table+"'"+', '+typeB+')" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
+                        btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="delBannerCtg(this, '+"'"+id_banner+"'"+', '+"'"+table+"'"+', '+typeB+')" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
                     }
 
                     if (typeB == 1) {
@@ -121,7 +121,7 @@ function addBannerProd(e, typeB, selectB, table) {
                     let id_user = data.request.id_user;
 
                     if (id_user == 1 && module_data.eliminar == 1){
-                        btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="deleteData(this, '+"'"+id_banner+"'"+', '+"'"+table+"'"+', '+typeB+')" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
+                        btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="delBannerProd(this, '+"'"+id_banner+"'"+', '+"'"+table+"'"+', '+typeB+')" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
                     }
 
                     if (typeB == 1) {
@@ -167,7 +167,7 @@ function addBannerProd(e, typeB, selectB, table) {
     e.preventDefault();
 }
 
-function deleteData(element, data, tname, type) {
+function delBannerCtg(element, data, tname, type) {
     Swal.fire({
         title: 'Eliminar Banner',
         text: "Realmente quiere eliminar el banner!",
@@ -183,6 +183,63 @@ function deleteData(element, data, tname, type) {
             }else{
                 loading.css("display","flex");
                 let url_ajax = base_url + "banners/delBannerCtg/";
+                        
+                $.ajax({
+                    url: url_ajax,
+                    dataType: 'JSON',
+                    method: 'POST',
+                    data: {
+                        id: data,
+                        typeBanner: type
+                    },  
+                    success: function(data){
+                        if (data.status) {
+                            let row_closest = $(element).closest("tr");
+                            if(row_closest.length){
+                                let ischild = $(row_closest).hasClass("child");
+                                if(ischild){
+                                    let prevtr = row_closest.prev();
+                                    if(prevtr.length){
+                                        $("#"+tname+"").DataTable().row(prevtr[0]).remove().draw(false);
+                                    }
+                                }
+                                else{
+                                    $("#"+tname+"").DataTable().row(row_closest[0]).remove().draw(false);
+                                }
+                            }
+
+                            // Reset the id column
+                            resetIdTable($("#"+tname+""));
+                            
+                            msgShow(1, 'Eliminado', data.msg);
+                        }else{
+                            msgShow(3, 'Error', data.msg);
+                        }
+                        loading.css("display","none");
+                    },
+                });
+                
+            }
+        }
+    });
+}
+
+function delBannerProd(element, data, tname, type) {
+    Swal.fire({
+        title: 'Eliminar Banner',
+        text: "Realmente quiere eliminar el banner!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminar!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            if (!data) {
+                return false;
+            }else{
+                loading.css("display","flex");
+                let url_ajax = base_url + "banners/delBannerProd/";
                         
                 $.ajax({
                     url: url_ajax,

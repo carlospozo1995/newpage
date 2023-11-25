@@ -1,6 +1,11 @@
 <?php
 
     class Models_Store{
+        static public function getSpecificData($table, $get, $column, $moreSql = "") {
+            $sql = "SELECT $get FROM $table  WHERE $column = ? $moreSql";
+            return $GLOBALS["db"]->selectAll($sql, array(1));
+        }
+
         // SQL INSERT CLIENT
         static public function insertClient($name, $surname, $phone, $email, $password)
         {

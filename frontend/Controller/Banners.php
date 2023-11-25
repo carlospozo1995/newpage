@@ -31,7 +31,7 @@
 								throw new Exception("Ha ocurrido un error. Inténtelo de nuevo.");
 								die();
 							}else{
-								$verifyData = Models_Banners::getData("categories", "id_category", "name_category, photo, banner_large, sliderDst, sliderMbl, fatherCategory, url", $idCtg);
+								$verifyData = Models_Banners::getData("categories", "id_category", "name_category, photo, banner_large, sliderDst, sliderMbl, sliderDesOne, sliderDesTwo, fatherCategory, url", $idCtg);
 								
 								if (empty($verifyData)) {
 									throw new Exception("Ha ocurrido un error. Inténtelo de nuevo.");
@@ -79,7 +79,7 @@
 								throw new Exception("Ha ocurrido un error. Inténtelo de nuevo.");
 								die();
 							}else{
-								$verifyData = Models_Banners::getData("products", "id_product", "name_product, sliderDst, sliderMbl, url", $idProd);
+								$verifyData = Models_Banners::getData("products", "id_product", "name_product, sliderDst, sliderMbl, sliderDes, url", $idProd);
 								
 								if (empty($verifyData)) {
 									throw new Exception("Ha ocurrido un error. Inténtelo de nuevo.");
@@ -121,7 +121,38 @@
 							$dataBanner = Models_Banners::getData("banners_category", "id_banner", "*", $idBanner);
 
 							if (!empty($dataBanner)) {
-								$delBanner = Models_Banners::deleteBanner($idBanner, $typeBanner);
+								$delBanner = Models_Banners::deleteBanner("banners_category", $idBanner, $typeBanner);
+								if ($delBanner == 1) {
+									$msg = "El elemento fue eliminado exitosamente.";
+								}else{
+									throw new Exception("Ha ocurrido un error. Inténtelo de nuevo.");
+									die();
+								}
+							}else{
+								throw new Exception("Ha ocurrido un error. Inténtelo de nuevo.");
+								die();
+							}
+							
+						} catch (Exception $e) {
+							$status = false;
+							$msg = $e->getMessage();
+						}
+
+						$data = array("status" => $status, "msg" => $msg);
+						echo json_encode($data);
+					}
+				break;
+				
+				case "delBannerProd":
+					if (isset($_POST)) {
+						try {
+							$idBanner = Utils::desencriptar($_POST['id']);
+							$typeBanner = $_POST['typeBanner'];
+
+							$dataBanner = Models_Banners::getData("banners_product", "id_banner", "*", $idBanner);
+
+							if (!empty($dataBanner)) {
+								$delBanner = Models_Banners::deleteBanner("banners_product", $idBanner, $typeBanner);
 								if ($delBanner == 1) {
 									$msg = "El elemento fue eliminado exitosamente.";
 								}else{

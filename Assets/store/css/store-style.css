@@ -13,6 +13,12 @@
 .c-coral{
     color: #F15555 !important;
 }
+.c-red{
+    color: red;
+}
+.c-blue-page{
+    color: #1000c3;
+}
 .c-intense-gold{
     color: #fbbb01 !important;
 }
@@ -103,6 +109,14 @@
 }
 .fs-20{
     font-size: 20px !important;
+}
+
+.border-product{
+    box-shadow: 0 1px 3px rgba(68,49,222,0.5);
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    height: auto;
 }
 
 .textarea{

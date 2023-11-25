@@ -32,7 +32,7 @@
                     }
 
                     if ($typeBanner == 1) {
-                        $arrData[] = array("category_id" => $id, "banner_name" => $moreData['name_category'], "sliderDst" => $moreData['sliderDst'], "sliderMbl" => $moreData['sliderMbl'], "redirect" => $redirect, "banner_type" => $typeBanner); 
+                        $arrData[] = array("category_id" => $id, "banner_name" => $moreData['name_category'], "sliderDst" => $moreData['sliderDst'], "sliderMbl" => $moreData['sliderMbl'], "sliderDesOne" => $moreData['sliderDesOne'], "sliderDesTwo" => $moreData['sliderDesTwo'], "redirect" => $redirect, "banner_type" => $typeBanner); 
                     }else if ($typeBanner == 2) {
                         $arrData[] = array("category_id" => $id, "banner_name" => $moreData['name_category'], "banner_large" => $moreData['banner_large'], "redirect" => $redirect, "banner_type" => $typeBanner);
                     }else{
@@ -66,7 +66,7 @@
                 if (empty($exists)) {
 
                     if ($typeBanner == 1) {
-                        $arrData[] = array("product_id" => $id, "banner_name" => $moreData['name_product'], "sliderDst" => $moreData['sliderDst'], "sliderMbl" => $moreData['sliderMbl'], "redirect" => $moreData['url'], "banner_type" => $typeBanner); 
+                        $arrData[] = array("product_id" => $id, "banner_name" => $moreData['name_product'], "sliderDst" => $moreData['sliderDst'], "sliderMbl" => $moreData['sliderMbl'], "sliderDes" => $moreData['sliderDes'], "redirect" => $moreData['url'], "banner_type" => $typeBanner); 
                     }
                     // else if ($typeBanner == 2) {
                     //     $arrData[] = array("category_id" => $id, "banner_name" => $moreData['name_category'], "banner_large" => $moreData['banner_large'], "redirect" => $redirect, "banner_type" => $typeBanner);
@@ -89,13 +89,18 @@
             return $request;
         }
 
-        static public function modifyTBanners($data, $type) {
-            return $GLOBALS["db"]->delete("banners_category", "category_id NOT IN ($data) AND banner_type = '$type'");
+        static public function modifyTBanners($table, $column, $data, $type) {
+            return $GLOBALS["db"]->delete($table, "$column NOT IN ($data) AND banner_type = '$type'");
         }
 
-        static public function deleteBanner($data, $type)
+        static public function deleteBanner($table, $data, $type)
         {   
-            return $GLOBALS["db"]->delete("banners_category", "id_banner = '$data' AND banner_type = '$type'");
+            return $GLOBALS["db"]->delete($table, "id_banner = '$data' AND banner_type = '$type'");
         }
+
+        // static public function deleteBannerProd($data, $type)
+        // {   
+        //     return $GLOBALS["db"]->delete("banners_product", "id_banner = '$data' AND banner_type = '$type'");
+        // }
     }
 ?>

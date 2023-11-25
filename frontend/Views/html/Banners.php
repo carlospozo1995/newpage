@@ -58,8 +58,8 @@
                                                 $idsCtgSM = array_map(function($element) {
                                                     return $element['id_category'];
                                                 }, $sliderMCtg);
-                                                $concatIdsCTgSM = implode(', ', $idsCtgSM);
-                                                Models_Banners::modifyTBanners($concatIdsCTgSM, 1);
+                                                $concatIdsCtgSM = implode(', ', $idsCtgSM);
+                                                Models_Banners::modifyTBanners("banners_category", "category_id", $concatIdsCtgSM, 1);
 
                                                 $dataSliderMCtg = Models_Banners::getBanners("banners_category", "id_banner, banner_name, sliderDst, sliderMbl", 1);
                                                 $id_row = 1;
@@ -69,7 +69,7 @@
                                                     $id_banner = Utils::encriptar($value["id_banner"]);
 
                                                     if (!empty($_SESSION['module']['eliminar']) && $_SESSION['idUser'] == 1) {
-                                                        $btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="deleteData(this, \''.$id_banner.'\', \'tableSliderMCtg\', 1)" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
+                                                        $btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="delBannerCtg(this, \''.$id_banner.'\', \'tableSliderMCtg\', 1)" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
                                                     }
 
                                                     echo'<tr id="'.$id_banner.'">';
@@ -151,8 +151,8 @@
                                                 $idsCtgBL = array_map(function($element) {
                                                     return $element['id_category'];
                                                 }, $bannerLCtg);
-                                                $concatIdsCTgBL = implode(', ', $idsCtgBL);
-                                                Models_Banners::modifyTBanners($concatIdsCTgBL, 2);
+                                                $concatIdsCtgBL = implode(', ', $idsCtgBL);
+                                                Models_Banners::modifyTBanners("banners_category", "category_id", $concatIdsCtgBL, 2);
 
                                                 $dataBannerLCtg = Models_Banners::getBanners("banners_category", "id_banner, banner_name, banner_large", 2);
                                                 $id_row = 1;
@@ -162,7 +162,7 @@
                                                     $id_banner = Utils::encriptar($value["id_banner"]);
 
                                                     if (!empty($_SESSION['module']['eliminar']) && $_SESSION['idUser'] == 1) {
-                                                        $btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="deleteData(this, \''.$id_banner.'\', \'tableBannerLCtg\', 2)" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
+                                                        $btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="delBannerCtg(this, \''.$id_banner.'\', \'tableBannerLCtg\', 2)" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
                                                     }
 
                                                     echo'<tr id="'.$id_banner.'">';
@@ -241,8 +241,8 @@
                                                 $idsCtgBS = array_map(function($element) {
                                                     return $element['id_category'];
                                                 }, $bannerSCtg);
-                                                $concatIdsCTgBS = implode(', ', $idsCtgBS);
-                                                Models_Banners::modifyTBanners($concatIdsCTgBS, 3);
+                                                $concatIdsCtgBS = implode(', ', $idsCtgBS);
+                                                Models_Banners::modifyTBanners("banners_category", "category_id", $concatIdsCtgBS, 3);
 
                                                 $dataBannerSCtg = Models_Banners::getBanners("banners_category", "id_banner, banner_name, banner_small", 3);
                                                 $id_row = 1;
@@ -252,7 +252,7 @@
                                                     $id_banner = Utils::encriptar($value["id_banner"]);
 
                                                     if (!empty($_SESSION['module']['eliminar']) && $_SESSION['idUser'] == 1) {
-                                                        $btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="deleteData(this, \''.$id_banner.'\', \'tableBannerSCtg\', 3)" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
+                                                        $btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="delBannerCtg(this, \''.$id_banner.'\', \'tableBannerSCtg\', 3)" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
                                                     }
 
                                                     echo'<tr id="'.$id_banner.'">';
@@ -335,6 +335,39 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                            <?php
+                                                $idsProdSM = array_map(function($element) {
+                                                    return $element['id_product'];
+                                                }, $sliderMProd);
+                                                $concatIdsProdSM = implode(', ', $idsProdSM);
+                                                Models_Banners::modifyTBanners("banners_product", "product_id", $concatIdsProdSM, 1);
+
+                                                $dataSliderMProd = Models_Banners::getBanners("banners_product", "id_banner, banner_name, sliderDst, sliderMbl", 1);
+                                                $id_row = 1;
+
+                                                foreach ($dataSliderMProd as $key => $value) {
+                                                    $btnDelete = '';
+                                                    $id_banner = Utils::encriptar($value["id_banner"]);
+
+                                                    if (!empty($_SESSION['module']['eliminar']) && $_SESSION['idUser'] == 1) {
+                                                        $btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="delBannerProd(this, \''.$id_banner.'\', \'tableSliderMProd\', 1)" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
+                                                    }
+
+                                                    echo'<tr id="'.$id_banner.'">';
+                                                        echo '<td>'.$id_row.'</td>';
+                                                        echo '<td>'.$value['banner_name'].'</td>';
+                                                        echo '<td class="text-center">';
+                                                            echo '<img style="width:60px" src="'.MEDIA_ADMIN.'files/images/upload_products/'.$value['sliderDst'].'">';
+                                                        echo '</td>';
+                                                        echo '<td class="text-center">';
+                                                            echo '<img style="width:40px" src="'.MEDIA_ADMIN.'files/images/upload_products/'.$value['sliderMbl'].'">';
+                                                        echo '</td>';
+                                                        echo '<td><div class="text-center">'.$btnDelete.'</div></td>';
+                                                    echo'</tr>';
+
+                                                    $id_row++;
+                                                } 
+                                            ?> 
                                             </tbody>
                                         </table>
                                     <?php

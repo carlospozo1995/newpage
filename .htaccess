@@ -60,6 +60,7 @@ RewriteRule ^(banners/|banners|Banners)$ %{ENV:REWRITEBASE}index.php?show=banner
 RewriteRule ^(banners/|banners|Banners)/insertBannerCtg/$ %{ENV:REWRITEBASE}index.php?show=banners&action=insertBannerCtg [L]
 RewriteRule ^(banners/|banners|Banners)/insertBannerProd/$ %{ENV:REWRITEBASE}index.php?show=banners&action=insertBannerProd [L]
 RewriteRule ^(banners/|banners|Banners)/delBannerCtg/$ %{ENV:REWRITEBASE}index.php?show=banners&action=delBannerCtg [L]
+RewriteRule ^(banners/|banners|Banners)/delBannerProd/$ %{ENV:REWRITEBASE}index.php?show=banners&action=delBannerProd [L]
 
 #PAGES-STORE
 RewriteRule ^(test/|test|Test|TEST)$ %{ENV:REWRITEBASE}index.php?show=test [L]

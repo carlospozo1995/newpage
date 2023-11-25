@@ -56,7 +56,7 @@
                                                 <input type="hidden" class="image_actual" name="photo_actual" id="photo_actual" value="">
                                                 <input type="hidden" class="image_remove" name="photo_remove" id="photo_remove" value="0">
 
-                                                <label>Banner small (285x140)</label>
+                                                <label>Banner small (450x250)</label>
                                                 <!-- <p class="text-info text-center errorImage"></p> -->
 
                                                 <!-- <div class="contImage"> -->

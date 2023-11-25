@@ -183,8 +183,8 @@
     /*********************************************
      *   Product Slider Active - 4 Grid Single Rows
      **********************************************/
-    var productSlider4grid1row = new Swiper('.product-default-slider-4grid-1row.swiper-container', {
-        slidesPerView: 4,
+    var productSlider4grid1row = new Swiper('.product-default-slider-5grid-1row.swiper-container', {
+        slidesPerView: 5,
         spaceBetween: 30,
         speed: 1500,
 
@@ -209,6 +209,9 @@
             },
             1200: {
                 slidesPerView: 4,
+            },
+            1500: {
+                slidesPerView: 5,
             }
         }
     });

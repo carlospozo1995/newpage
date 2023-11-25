@@ -53,7 +53,7 @@
                         <div class="z-20 header-top-left">
                             <div class="header-logo">
                                 <div class="logo">
-                                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/logo_text.png" alt=""></a>
+                                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/no-test/logo_text.png" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -157,7 +157,7 @@
                 </div>
             </div> 
 
-            <div class="z-20 sticky-header sticky-color--white section-fluid seperate-sticky-bar">
+            <div class="z-100 sticky-header sticky-color--white section-fluid seperate-sticky-bar">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12 d-flex align-items-center justify-content-center">
@@ -212,73 +212,71 @@
                 <div class="hero-slider-section">
                     <div class="hero-slider-active swiper-container">
                         <div class="swiper-wrapper">
-                            <?php
-                            $slider_category = Models_Sliders::sliderCategory(CATEGORIES_SLIDERS);
-                            for ($i=0; $i < count($slider_category) ; $i++) { 
-                            ?>  
-                            <div class="hero-single-slider-item swiper-slide">
-                                <div class="hero-slider-bg">
-                                    <a href="#">
-                                        <img src="<?= $slider_category[$i]['sliderDst'] ?>">
-                                    </a>
-                                </div>
+                        <?php
+                        $sliderDstCtg = Models_Banners::getBanners("banners_category", "sliderDst, sliderDesOne, sliderDesTwo, redirect", 1);
+                        $sliderDstProd = Models_Banners::getBanners("banners_product", "sliderDst, sliderDes, redirect", 1);
 
-                                <div class="hero-slider-wrapper">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-auto">
-                                                <div class="hero-slider-content">
-                                                <?php 
-                                                if (!empty($slider_category[$i]['sliderDesOne'])) {
-                                                    if (!empty($slider_category[$i]['sliderDesTwo'])) {
-                                                        echo '<h4 class="subtitle">'.$slider_category[$i]['sliderDesTwo'].'</h4>';
-                                                        echo '<h1 class="title">'.$slider_category[$i]['sliderDesOne'].'</h1>';
-                                                        
-                                                    }else{
-                                                        echo '<h1 class="title title-time-one">'.$slider_category[$i]['sliderDesOne'].'</h1>';
+                        if (empty($sliderDstCtg) && empty($sliderDstProd)) {
+                            echo '<div class="hero-single-slider-item swiper-slide">';
+                                echo '<div class="hero-slider-bg">';
+                                    echo '<img src="'.MEDIA_ADMIN.'files/images/slider-test-dst.png">';
+                                echo '</div>';
+                            echo '</div>';
+                        }else{
+                            foreach ($sliderDstCtg as $key => $value) {
+                                echo '<div class="hero-single-slider-item swiper-slide">';
+                                    echo '<div class="hero-slider-bg">';
+                                        echo '<a href="'.BASE_URL.'categoria/'.$value['redirect'].'">';
+                                            echo '<img src="'.MEDIA_ADMIN.'files/images/uploads/'.$value['sliderDst'].'">';
+                                        echo '</a>';
+                                    echo '</div>';
+
+                                    echo '<div class="hero-slider-wrapper">';
+                                        echo '<div class="container">';
+                                            echo '<div class="row">';
+                                                echo '<div class="col-auto">';
+                                                    echo '<div class="hero-slider-content">';
+                                                    if (!empty($value['sliderDesOne'])) {
+                                                        if (!empty($value['sliderDesTwo'])) {
+                                                            echo '<h4 class="subtitle">'.$value['sliderDesTwo'].'</h4>';
+                                                            echo '<h1 class="title">'.$value['sliderDesOne'].'</h1>';
+                                                        }else{
+                                                            echo '<h1 class="title title-time-one">'.$value['sliderDesOne'].'</h1>';
+                                                        }
                                                     }
-                                                }
-                                                ?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php
+                                                    echo '</div>';
+                                                echo '</div>';
+                                            echo '</div>';
+                                        echo '</div>';
+                                    echo '</div>';
+                                echo '</div>';
                             }
-                            ?>
 
-                            <?php
-                            $slider_product = Models_Sliders::sliderProduct(PRODUCTS_SLIDERS);
-                            for ($i=0; $i < count($slider_product) ; $i++) { 
-                            ?>
-                            <div class="hero-single-slider-item swiper-slide">
-                                <div class="hero-slider-bg">
-                                    <a href="#">
-                                        <img src="<?= $slider_product[$i]['sliderDst'] ?>">
-                                    </a>
-                                </div>
+                            foreach ($sliderDstProd as $key => $value) {
+                                echo '<div class="hero-single-slider-item swiper-slide">';
+                                    echo '<div class="hero-slider-bg">';
+                                        echo '<a href="'.BASE_URL.'producto/'.$value['redirect'].'">';
+                                            echo '<img src="'.MEDIA_ADMIN.'files/images/upload_products/'.$value['sliderDst'].'">';
+                                        echo '</a>';
+                                    echo '</div>';
 
-                                <div class="hero-slider-wrapper">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-auto">
-                                                <div class="hero-slider-content">
-                                                    <?php   
-                                                    if (!empty($slider_product[$i]['sliderDes'])){
-                                                        echo '<h1 style="margin-top:-125px" class="title title-time-one">'.$slider_product[$i]['sliderDes'].'</h1>';
-                                                    }
-                                                    ?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php
+                                    echo '<div class="hero-slider-wrapper">';
+                                        echo '<div class="container">';
+                                            echo '<div class="row">';
+                                                echo '<div class="col-auto">';
+                                                    echo '<div class="hero-slider-content">';
+                                                        if (!empty($value['sliderDes'])){
+                                                            echo '<h1 style="margin-top:-125px" class="title title-time-one">'.$value['sliderDes'].'</h1>';
+                                                        }
+                                                    echo '</div>';
+                                                echo '</div>';
+                                            echo '</div>';
+                                        echo '</div>';
+                                    echo '</div>';
+                                echo '</div>';
                             }
-                            ?>
+                        }
+                        ?>
                         </div>
 
                         <!-- If we need pagination -->
@@ -307,7 +305,7 @@
                             <li>
                                 <a href="<?= BASE_URL; ?>">
                                     <div class="logo">
-                                        <img src="<?= MEDIA_STORE ?>images/logo/logo_text.png" alt="">
+                                        <img src="<?= MEDIA_STORE ?>images/logo/no-test/logo_text.png" alt="">
                                     </div>
                                 </a>
                             </li>
@@ -429,7 +427,7 @@
             <!-- Start Mobile contact Info -->
             <div class="mobile-contact-info">
                 <div class="logo">
-                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/logo.png" alt=""></a>
+                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/no-test/logo.png" alt=""></a>
                 </div>
 
                 <address class="address">

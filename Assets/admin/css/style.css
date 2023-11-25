@@ -157,8 +157,8 @@
 }
 
 .prevPhoto {
-    width: 170px;
-    height: 90px;
+    width: 140px;
+    height: 80px;
     background: url(../../admin/files/images/banner-small.png);
     background-size: cover;
     background-position: 50% 50%;

@@ -1,90 +1,179 @@
 	
 	<div class="container-section">
-		<!-- Start Hero Slider Section-->
 	    <div class="hero-slider-section sliders-container-mbl">
 	        <div class="hero-slider-active swiper-container">
 	            <div class="swiper-wrapper">
-	            	<?php
-						$slider_category = Models_Sliders::sliderCategory(CATEGORIES_SLIDERS);
-						for ($i=0; $i < count($slider_category) ; $i++) { 
-					?>	
-	                <div class="hero-single-slider-item swiper-slide">
-	                    <div class="hero-slider-bg">
-							<a href="#">
-								<img src="<?= $slider_category[$i]['sliderMbl'] ?>">
-							</a>
-	                    </div>
+				<?php
+					$sliderMblCtg = Models_Banners::getBanners("banners_category", "sliderMbl, sliderDesOne, sliderDesTwo, redirect", 1);
+					$sliderMblProd = Models_Banners::getBanners("banners_product", "sliderMbl, sliderDes, redirect", 1);
 
-	                    <div class="hero-slider-wrapper">
-	                        <div class="container">
-	                            <div class="row">
-	                                <div class="col-auto">
-	                                    <div class="hero-slider-content">
-	                                        <?php 
-                                            if (!empty($slider_category[$i]['sliderDesOne'])) {
-                                                if (!empty($slider_category[$i]['sliderDesTwo'])) {
-                                                    echo '<h4 class="subtitle">'.$slider_category[$i]['sliderDesTwo'].'</h4>';
-                                                    echo '<h1 class="title">'.$slider_category[$i]['sliderDesOne'].'</h1>';
-                                                    
-                                                }else{
-                                                    echo '<h1 class="title title-time-one">'.$slider_category[$i]['sliderDesOne'].'</h1>';
-                                                }
-                                            }
-                                            ?>
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </div>
-	                <?php
+					if (empty($sliderMblCtg) && empty($sliderMblProd)) {
+						echo '<div class="hero-single-slider-item swiper-slide">';
+							echo '<div class="hero-slider-bg">';
+								echo '<img src="'.MEDIA_ADMIN.'files/images/slider-test-mbl.png">';
+							echo '</div>';
+						echo '</div>';
+					}else{
+						foreach ($sliderMblCtg as $key => $value) {
+							echo '<div class="hero-single-slider-item swiper-slide">';
+								echo '<div class="hero-slider-bg">';
+									echo '<a href="'.BASE_URL.'categoria/'.$value['redirect'].'">';
+										echo '<img src="'.MEDIA_ADMIN.'files/images/uploads/'.$value['sliderMbl'].'">';
+									echo '</a>';
+								echo '</div>';
+
+								echo '<div class="hero-slider-wrapper">';
+									echo '<div class="container">';
+										echo '<div class="row">';
+											echo '<div class="col-auto">';
+												echo '<div class="hero-slider-content">';
+												if (!empty($value['sliderDesOne'])) {
+													if (!empty($value['sliderDesTwo'])) {
+														echo '<h4 class="subtitle">'.$value['sliderDesTwo'].'</h4>';
+														echo '<h1 class="title">'.$value['sliderDesOne'].'</h1>';
+													}else{
+														echo '<h1 class="title title-time-one">'.$value['sliderDesOne'].'</h1>';
+													}
+												}
+												echo '</div>';
+											echo '</div>';
+										echo '</div>';
+									echo '</div>';
+								echo '</div>';
+							echo '</div>';
 						}
-					?>
 
-					<?php
-						$slider_product = Models_Sliders::sliderProduct(PRODUCTS_SLIDERS);
-						for ($i=0; $i < count($slider_product) ; $i++) { 
-					?>	
-	                <div class="hero-single-slider-item swiper-slide">
-	                    <div class="hero-slider-bg">
-	                    	<a href="#">
-								<img src="<?= $slider_product[$i]['sliderMbl'] ?>">
-	            			</a>
-	                    </div>
+						foreach ($sliderMblProd as $key => $value) {
+							echo '<div class="hero-single-slider-item swiper-slide">';
+								echo '<div class="hero-slider-bg">';
+									echo '<a href="'.BASE_URL.'producto/'.$value['redirect'].'">';
+										echo '<img src="'.MEDIA_ADMIN.'files/images/upload_products/'.$value['sliderMbl'].'">';
+									echo '</a>';
+								echo '</div>';
 
-	                    <div class="hero-slider-wrapper">
-	                        <div class="container">
-	                            <div class="row">
-	                                <div class="col-auto">
-	                                    <div class="hero-slider-content">
-	                                        <?php   
-                                            if (!empty($slider_product[$i]['sliderDes'])){
-                                                echo '<h1 class="title title-time-one">'.$slider_product[$i]['sliderDes'].'</h1>';
-                                            }
-                                            ?>
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </div>
-	                <?php
+								echo '<div class="hero-slider-wrapper">';
+									echo '<div class="container">';
+										echo '<div class="row">';
+											echo '<div class="col-auto">';
+												echo '<div class="hero-slider-content">';
+													if (!empty($value['sliderDes'])){
+														echo '<h1 style="margin-top:-125px" class="title title-time-one">'.$value['sliderDes'].'</h1>';
+													}
+												echo '</div>';
+											echo '</div>';
+										echo '</div>';
+									echo '</div>';
+								echo '</div>';
+							echo '</div>';
 						}
-					?>
+					}
+				?>
 	            </div>
 
-	            <!-- If we need pagination -->
 	            <div class="swiper-pagination active-color-store"></div>
 
-	            <!-- If we need navigation buttons -->
 	            <div class="swiper-button-prev d-none d-lg-block"></div>
 	            <div class="swiper-button-next d-none d-lg-block"></div>
 	        </div>
 	    </div>
-	    <!-- End Hero Slider Section-->
-		<br>
-		
+
 		<?php
+	
+		$recentProducts = Models_Store::getSpecificData("products", "id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url", "status", "ORDER BY id_product DESC LIMIT 8");
+
+		if (!empty($recentProducts)) {
+			$product_images = array();
+            foreach ($recentProducts as $product) {
+                $img_product = Models_Products::selectImages($product['id_product']);
+                if (!empty($img_product)) {
+                    $r_indexes = array_rand($img_product, 2);
+                    foreach ($r_indexes as $index) {
+                        $r_element = $img_product[$index];
+                        $product_images[$product['id_product']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/'.$r_element['image'].'" alt="">';
+                    }
+                }else{
+                    $product_images[$product['id_product']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/empty_img.png" alt="">';
+                }
+            }
+		?>
+		<div class="product-default-slider-section section-fluid section-inner-bg">
+			<div class="section-title-wrapper" data-aos="fade-up" data-aos-delay="0">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="section-content-gap">
+								<div class="secton-content">
+									<h3 class="section-title text-center c-blue-page">RECIEN AGREGADOS</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="product-wrapper" data-aos="fade-up" data-aos-delay="0">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="product-slider-default-1row default-slider-nav-arrow">
+								<div class="swiper-container product-default-slider-5grid-1row">
+									<div class="swiper-wrapper my-2">
+									<?php
+									foreach ($recentProducts as $product) {
+										echo '<div class="product-default-single-item product-color--pink swiper-slide border-product">';
+											echo '<div class="image-box">';
+												echo '<a href="'.BASE_URL."producto/".$product["url"].'" class="image-link' . (!empty($product['discount']) ? ' content-off" data-discount="'.$product['discount'].'% off"' : '"') . '>';
+													echo implode('', $product_images[$product['id_product']]);
+												echo '</a>';
+												echo '<div class="action-link">';
+													echo '<div class="action-link-right mx-auto">';
+														echo '<a href="" data-bs-toggle="modal" data-bs-target="#modalQuickview"><i class="icon-eye" title="Vista rápida"></i></a>';
+														echo '<a href=""><i class="icon-heart" title="Añadir a favoritos"></i></a>';
+													if (!empty($product['stock']) && $product['stock'] > 0) {
+														echo '<a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="addToCart" id="'.Utils::encriptar($product['id_product']).'"><i class="icon-basket" title="Añadir al carrito"></i></a>';
+													}
+													echo '</div>';
+												echo '</div>';
+											echo '</div>';
+											
+											echo '<div class="content">';
+												echo '<div class="text-center">';
+													echo '<h6><a class="title-product" href="'.BASE_URL."producto/".$product["url"].'">'.$product['name_product'].'</a></h6>';
+													echo '<p>'.$product['brand'].'</p>';
+
+													if (!empty($product['cantDues'])) {
+													echo '<div class="content-data-product no-empty">'; 
+														echo '<div class="price-product no-empty">';
+													}else{
+													echo '<div class="content-data-product empty">'; 
+														echo '<div class="price-product empty">';
+													}
+															echo (!empty($product['prevPrice'])) ? '<del>'.SMONEY. Utils::formatMoney($product['prevPrice']).'</del>' : '';
+															echo '<span>'.SMONEY.Utils::formatMoney($product['price']).'</span>';
+														echo '</div>';
+
+														echo (!empty($product['cantDues'])) ? '<span class="ml-2 text-left">'.$product['cantDues'].' cuotas '.SMONEY. Utils::formatMoney($product['priceDues']).'</span>' : '';
+													echo '</div>';
+
+												echo '</div>';
+											echo '</div>';
+										echo '</div>';
+									}
+									?>
+									</div>
+								</div>
+
+								<div class="swiper-button-prev"></div>
+								<div class="swiper-button-next"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<?php
+		}
+
 		$bannersCtgLarge = Models_Banners::getBanners("banners_category", "banner_name, banner_large, redirect", 2);
 		if (count($bannersCtgLarge) == 4) {
 		echo '<div class="banner-section">';
@@ -107,16 +196,38 @@
 				}
 			echo '</div>';
 		echo '</div>';
-		} 
+		}
+
+		$bannersCtgSmall = Models_Banners::getBanners("banners_category", "banner_small, redirect", 3);
+		if (count($bannersCtgSmall) == 5) {
+			$delayCtgSmall = 0;
+			echo '<div class="banner-section section-top-gap-100">';
+				echo '<div class="banner-wrapper">';
+					echo '<div class="container">';
+						echo '<div class="row mb-n6 section-fluid">';
+						foreach ($bannersCtgSmall as $key => $value) {
+							echo '<div class="col-md-2-5 col-12 mb-6">';
+								echo '<div class="banner-single-item banner-style-5 img-responsive" data-aos="fade-up" data-aos-delay="'.$delayCtgSmall.'">';
+									echo '<a href="'.BASE_URL.'categoria/'.$value['redirect'].'" class="image banner-animation">';
+										echo '<img style="border-radius: 12px" src="'.MEDIA_ADMIN.'files/images/uploads/'.$value['banner_small'].'" alt="">';
+									echo '</a>';
+								echo '</div>';
+							echo '</div>';
+							$delayCtgSmall += 200;
+						}
+						echo '</div>';
+					echo '</div>';
+				echo '</div>';
+			echo '</div>';
+		}
+
 		?>
 
-
-		<!-- <img style="border-radius:0px 15px 0px 15px" src="<?= MEDIA_ADMIN; ?>files/images/uploads/photo_Celulares_53423db66ce81161c49beed88c844f0c.jpg" alt="">
-		<img style="border-radius:0px 15px 0px 15px" src="<?= MEDIA_ADMIN; ?>files/images/uploads/photo_Cocinas_da76fc98a1d254f89c11b9a4218a702e.jpg" alt="">
-		<img style="border-radius:0px 15px 0px 15px" src="<?= MEDIA_ADMIN; ?>files/images/uploads/photo_Motos_e058e37dbea0753c838a83e3e2d3674a.jpg" alt="">
-		<img style="border-radius:0px 15px 0px 15px" src="<?= MEDIA_ADMIN; ?>files/images/uploads/photo_Muebles-de-sala_6f86c82e91b118269b9ba4fec4ce4444.jpg" alt="">
-		<img style="border-radius:0px 15px 0px 15px" src="<?= MEDIA_ADMIN; ?>files/images/uploads/photo_Audio-y-video_2e9df534ce27d9d5f86e527a81dbf6e2.jpg" alt=""> -->
 		<?php
+		$fechaHoraActual = date("Y-m-d H:i:s");
+
+		// Imprimir la fecha y hora actual en el formato deseado
+		echo gettype($fechaHoraActual);
 			Utils::dep($_SESSION['paymentProcessData']);
 			// $url = 'https://pokeapi.co/api/v2/pokemon/300/';
 			// $ch = curl_init();
@@ -151,97 +262,5 @@
 			// $nuevoNombre = (count($palabras) > 1) ? $palabras[0] . ' ' . substr($palabras[1], 0, strlen($palabras[1]) / 2) . '...' : $nombre;
 			// echo $nuevoNombre;
 		?>
-
-		<button id="sendMail">EnvioMsm</button>
-		
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-		<br><br><br><br><br><br><br><br><br>
-		
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-		<br><br><br><br><br><br><br><br><br>
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-		<br><br><br><br><br><br><br><br><br>
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-		<br><br><br><br><br><br><br><br><br>
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-		<br><br><br><br><br><br><br><br><br>
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-		<br><br><br><br><br><br><br><br><br>
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-		<br><br><br><br><br><br><br><br><br>
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-		<br><br><br><br><br><br><br><br><br>
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-		<br><br><br><br><br><br><br><br><br>
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-		<br><br><br><br><br><br><br><br><br>
 
 	</div>
