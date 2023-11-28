@@ -60,7 +60,7 @@
                                                 <!-- <p class="text-info text-center errorImage"></p> -->
 
                                                 <!-- <div class="contImage"> -->
-                                                <div class="">
+                                                <div>
                                                     <div class="prevImgUpload prevPhoto">
                                                         <span class="delImgUpload notBlock delPhoto">X</span>
                                                         <label for="photo"></label>
@@ -83,7 +83,7 @@
 
                                                 <label>Banner large (480x670)</label>
 
-                                                <div class="">
+                                                <div>
                                                     <div class="prevImgUpload prev_lgbanner">
                                                         <span class="delImgUpload notBlock del_lgbanner">X</span>
                                                         <label for="lgbanner"></label>

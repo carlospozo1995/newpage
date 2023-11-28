@@ -172,6 +172,22 @@
     background-position: 50% 50%;
 }
 
+.prev_lgbannerP{
+    width: 60px;
+    height: 100px;
+    background: url(../../admin/files/images/banner-large-p.png);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.prevWidthBanner {
+    width: 155px;
+    height: 90px;
+    background: url(../../admin/files/images/banner-width.png);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
 .prevSliderMbl {
     width: 160px;
     height: 110px;

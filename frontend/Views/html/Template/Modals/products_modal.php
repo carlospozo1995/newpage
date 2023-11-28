@@ -74,13 +74,57 @@
                                                     <div class="alertImgUpload"></div>
                                                 </div>
                                             </div>
+                                        </div>  
+                                        
+                    					<div class="form-group">
+                                            <label>Título slider</label>
+                                            <textarea class="form-control m-hgt-txarea" name="sliderDes" id="sliderDes"></textarea>
                                         </div>
                     				</div>
 
                     				<div class="col-sm-6">
-                    					<div class="form-group">
-                                            <label>Título slider</label>
-                                            <textarea class="form-control m-hgt-txarea" name="sliderDes" id="sliderDes"></textarea>
+                                        <div class="form-group">
+                                            <div class="contImgUpload">
+                                                <input type="hidden" class="image_actual" name="lgbannerP_actual" id="lgbannerP_actual" value="">
+                                                <input type="hidden" class="image_remove" name="lgbannerP_remove" id="lgbannerP_remove" value="0">
+
+                                                <label>Banner large (320X500)</label>
+
+                                                <div>
+                                                    <div class="prevImgUpload prev_lgbannerP">
+                                                        <span class="delImgUpload notBlock del_lgbannerP">X</span>
+                                                        <label for="lgbannerP"></label>
+                                                        <div></div>
+                                                    </div>
+                                                    <div class="upimg">
+                                                        <input type="file" name="lgbannerP" id="lgbannerP" class="imagen">
+                                                    </div>
+                                                    
+                                                    <div class="alertImgUpload"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="contImgUpload">
+                                                <input type="hidden" class="image_actual" name="wbanner_actual" id="wbanner_actual" value="">
+                                                <input type="hidden" class="image_remove" name="wbanner_remove" id="wbanner_remove" value="0">
+
+                                                <label>Banner width (960x540)</label>
+                                               
+                                                <div>
+                                                    <div class="prevImgUpload prevWidthBanner">
+                                                        <span class="delImgUpload notBlock delwbanner">X</span>
+                                                        <label for="widthBanner"></label>
+                                                        <div></div>
+                                                    </div>
+                                                    <div class="upimg">
+                                                        <input type="file" name="widthBanner" id="widthBanner" class="imagen">
+                                                    </div>
+                                                    
+                                                    <div class="alertImgUpload"></div>
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <div class="form-group">

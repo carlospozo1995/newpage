@@ -39,7 +39,7 @@
             // PRICE MIN AND PRICE MAX COLUMN
             $price_column = array_column($total_products, 'price');
             $price_min = intval(min($price_column));
-            $price_max = intval(max($price_column));
+            $price_max = intval(max($price_column)) + 1;
 
             // STORAGE OF PRODUCT IMAGES
             $product_images = array();
@@ -93,7 +93,7 @@
                 <div class="container">
                     <input type="hidden" id="data-store" value="<?= Utils::encryptStore($id_sons); ?>">
                     <div class="row flex-column-reverse flex-lg-row">
-                        <div class="col-lg-3">
+                        <div class="col-lg-2-1">
 
                             <!-- START SIDEBAR AREA -->
                             <div class="siderbar-section" data-aos="fade-up" data-aos-delay="0">
@@ -199,7 +199,7 @@
 
                         </div>
 
-                        <div class="col-lg-9 position-relative pb-16">
+                        <div class="col-lg-9-1 position-relative pb-16">
                             <div class="content-loading">
                                 <span class="loader-store"></span>
                             </div>

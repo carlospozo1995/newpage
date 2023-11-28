@@ -47,7 +47,9 @@
 								$status = $_POST['listStatus'];
 
 								$sliderMbl = $_FILES['sliderMbl'];
-								$sliderDst = $_FILES['sliderDst'];		
+								$sliderDst = $_FILES['sliderDst'];	
+								$bannerLargeP = $_FILES['lgbannerP'];
+								$bannerWidth = $_FILES['widthBanner'];	
 												
 								$sliderDes = empty($_POST['sliderDes']) ? null : utf8_encode($_POST['sliderDes']);
 
@@ -86,8 +88,24 @@
 										$undef_sliderDst = null;
 										$undef_sliderMbl = null;
 									}
+
+									if (empty($bannerWidth['name'])) {
+										$undef_bannerWidth = null;
+									}else{
+										$undef_bannerWidth = "bannerWidth_".preg_replace('/[^a-z0-9]+/', '-', strtolower($nameNotSpace)).'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$bannerWidth["name_upload"] = "bannerWidth_".preg_replace('/[^a-z0-9]+/', '-', strtolower($nameNotSpace)).'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$bannerWidth["file_product"] = "";
+									}
+
+									if (empty($bannerLargeP['name'])) {
+										$undef_bannerlgP = null;
+									}else{
+										$undef_bannerlgP = "bannerlgP_".preg_replace('/[^a-z0-9]+/', '-', strtolower($nameNotSpace)).'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$bannerLargeP["name_upload"] = "bannerlgP_".preg_replace('/[^a-z0-9]+/', '-', strtolower($nameNotSpace)).'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$bannerLargeP["file_product"] = "";
+									}
 									
-									$request = Models_Products::insertProduct($name, $desMain, $desGeneral, $undef_sliderDst, $undef_sliderMbl, $sliderDes, $option_list, $brand, $code, $price, $stock, $prevPrice, $discount, $cantDues, $priceDues, $status);
+									$request = Models_Products::insertProduct($name, $desMain, $desGeneral, $undef_sliderDst, $undef_sliderMbl, $sliderDes, $undef_bannerlgP, $undef_bannerWidth, $option_list, $brand, $code, $price, $stock, $prevPrice, $discount, $cantDues, $priceDues, $status);
 								}else{
 									$option = 2;
 									// UPDATE SLIDERS (MOBILE - DESKTOP)
@@ -127,8 +145,53 @@
 										throw new Exception("Si desea agregar sliders, debe agregar ambos.");
 										die();
 									}
+
+									// ----------------------
+									if(!empty($_POST['wbanner_actual'])){
+										$data_bannerWidth = Models_Categories::selectImg("products", "banner_width", $_POST['wbanner_actual']);
+										if (empty($data_bannerWidth)) {
+											throw new Exception("Error de imagenes. Intentelo mas tarde.");
+											die();	
+										}
+									}
+
+									if (empty($bannerWidth['name'])) {
+
+										if(!empty($_POST['wbanner_actual'])){
+											$_POST['wbanner_remove'] <= 0 ? $undef_bannerWidth = $_POST['wbanner_actual'] : $undef_bannerWidth = null;
+										}else{
+											$undef_bannerWidth = null;
+										}
+									}else{
+										$undef_bannerWidth = "bannerWidth_".preg_replace('/[^a-z0-9]+/', '-', strtolower($nameNotSpace)).'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$bannerWidth["name_upload"] = "bannerWidth_".preg_replace('/[^a-z0-9]+/', '-', strtolower($nameNotSpace)).'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$bannerWidth["file_product"] = "";
+									}
+									// ----------------------
+									if(!empty($_POST['lgbannerP_actual'])){
+										$data_bannerlgP = Models_Categories::selectImg("products", "banner_large", $_POST['lgbannerP_actual']);
+										if (empty($data_bannerlgP)) {
+											throw new Exception("Error de imagenes. Intentelo mas tarde.");
+											die();	
+										}
+									}
+
+									if (empty($bannerLargeP['name'])) {
+
+										if(!empty($_POST['lgbannerP_actual'])){
+											$_POST['lgbannerP_remove'] <= 0 ? $undef_bannerlgP = $_POST['lgbannerP_actual'] : $undef_bannerlgP = null;
+										}else{
+											$undef_bannerlgP = null;
+										}
+									}else{
+										$undef_bannerlgP = "bannerlgP_".preg_replace('/[^a-z0-9]+/', '-', strtolower($nameNotSpace)).'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$bannerLargeP["name_upload"] = "bannerlgP_".preg_replace('/[^a-z0-9]+/', '-', strtolower($nameNotSpace)).'_'.md5(date("d-m-Y H:m:s")).".jpg";
+										$bannerLargeP["file_product"] = "";
+									}
+
+									// ----------------------
 									
-									$request = Models_Products::updateProduct(Utils::desencriptar($id), $name, $desMain, $desGeneral, $undef_sliderDst, $undef_sliderMbl, $sliderDes, $option_list, $brand, $code, $price, $stock, $prevPrice, $discount, $cantDues, $priceDues, $status);	
+									$request = Models_Products::updateProduct(Utils::desencriptar($id), $name, $desMain, $desGeneral, $undef_sliderDst, $undef_sliderMbl, $sliderDes, $undef_bannerlgP, $undef_bannerWidth, $option_list, $brand, $code, $price, $stock, $prevPrice, $discount, $cantDues, $priceDues, $status);	
 								}
 
 								if ($request > 0) {
@@ -140,12 +203,12 @@
 										$status = true;
 										$msg = "Datos ingresados correctamente.";
 										$data_request = array("id_encrypt" => Utils::encriptar(strval($request)), "sliderDst" => $data_dst, "sliderMbl" => $data_mbl, "module" => $_SESSION['module'], "id_user" => $_SESSION['idUser']);
-										Utils::uploadImage(array($sliderDst, $sliderMbl));
+										Utils::uploadImage(array($sliderDst, $sliderMbl, $bannerLargeP, $bannerWidth));
 									}else{
 										$status = true;
 										$msg = "Datos actualizados correctamente.";
 										$data_request = array("sliderDst" => $data_dst, "sliderMbl" => $data_mbl,);
-										Utils::uploadImage(array($sliderDst, $sliderMbl));
+										Utils::uploadImage(array($sliderDst, $sliderMbl, $bannerLargeP, $bannerWidth));
 									}
 								}else if($request == "exist"){	
 									throw new Exception("El código del producto ingresado ya existe. Inténtelo de nuevo.");
@@ -192,6 +255,14 @@
 		                        		$img_product[$key]['url_image'] = MEDIA_ADMIN.'files/images/upload_products/'.$value['image'];
 		                        	}
 		                        }
+								// ---------------
+								if (!empty($data_product['banner_width'])) {
+									$data_product['url_bannerWidth'] = MEDIA_ADMIN.'files/images/upload_products/'.$data_product['banner_width'];
+								}
+								// ---------------
+								if (!empty($data_product['banner_large'])) {
+									$data_product['url_lgbannerP'] = MEDIA_ADMIN.'files/images/upload_products/'.$data_product['banner_large'];
+								}
 
 		                        $data_product["images_product"] = $img_product;
 

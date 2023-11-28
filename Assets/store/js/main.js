@@ -181,7 +181,7 @@
 
 
     /*********************************************
-     *   Product Slider Active - 4 Grid Single Rows
+     *   Product Slider Active - 5 Grid Single Rows
      **********************************************/
     var productSlider4grid1row = new Swiper('.product-default-slider-5grid-1row.swiper-container', {
         slidesPerView: 5,
@@ -212,6 +212,39 @@
             },
             1500: {
                 slidesPerView: 5,
+            }
+        }
+    });
+    
+    /*********************************************
+     *   Product Slider Active - 4 Grid Single Rows
+     **********************************************/
+    var productSlider4grid1row = new Swiper('.product-default-slider-4grid-1row.swiper-container', {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        speed: 1500,
+
+        navigation: {
+            nextEl: '.product-slider-default-1row .swiper-button-next',
+            prevEl: '.product-slider-default-1row .swiper-button-prev',
+        },
+
+        breakpoints: {
+
+            0: {
+                slidesPerView: 1,
+            },
+            576: {
+                slidesPerView: 2,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            992: {
+                slidesPerView: 3,
+            },
+            1200: {
+                slidesPerView: 4,
             }
         }
     });

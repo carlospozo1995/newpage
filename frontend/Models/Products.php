@@ -14,14 +14,14 @@
             return $GLOBALS["db"]->selectAll($sql, array(0));
         }
 
-        static public function insertProduct($name, $desMain, $desGeneral, $sliderDst, $sliderMbl, $sliderDes, $option_list, $brand, $code, $price, $stock, $prevPrice, $discount, $cantDues, $priceDues, $status)
+        static public function insertProduct($name, $desMain, $desGeneral, $sliderDst, $sliderMbl, $sliderDes, $bannerlgP, $bannerWidth, $option_list, $brand, $code, $price, $stock, $prevPrice, $discount, $cantDues, $priceDues, $status)
         {
             $urlVowel = Utils::replaceVowel(utf8_decode($name));
             $sql = "SELECT * FROM products WHERE code = ?";
             $request = $GLOBALS["db"]->auto_array($sql, array($code));
 
             if (empty($request)) {
-                $arrData[] = array("category_id" => $option_list, "code" => $code, "name_product" => utf8_decode($name), "desMain" => utf8_decode($desMain), "desGeneral" => $desGeneral, "sliderMbl" => $sliderMbl, "sliderDst" => $sliderDst, "sliderDes" => utf8_decode($sliderDes), "brand" => $brand, "price" => $price , "stock" => $stock, "prevPrice" => $prevPrice, "discount" => $discount, "cantDues" => $cantDues, "priceDues" => $priceDues, "url" => preg_replace('/[^a-z0-9]+/', '-', strtolower($urlVowel)), "status" => $status); 
+                $arrData[] = array("category_id" => $option_list, "code" => $code, "name_product" => utf8_decode($name), "desMain" => utf8_decode($desMain), "desGeneral" => $desGeneral, "sliderMbl" => $sliderMbl, "sliderDst" => $sliderDst, "sliderDes" => utf8_decode($sliderDes),  "banner_large" => $bannerlgP, "banner_width" => $bannerWidth, "brand" => $brand, "price" => $price , "stock" => $stock, "prevPrice" => $prevPrice, "discount" => $discount, "cantDues" => $cantDues, "priceDues" => $priceDues, "url" => preg_replace('/[^a-z0-9]+/', '-', strtolower($urlVowel)), "status" => $status); 
                 return $GLOBALS["db"]->insert_multiple("products", $arrData, true);
             }else{
                 return "exist";
@@ -51,7 +51,7 @@
             return $GLOBALS["db"]->delete("img_product", "product_id = '$id' AND image = '$img_name'");
         }
 
-        static public function updateProduct($id, $name, $desMain, $desGeneral, $sliderDst, $sliderMbl, $sliderDes, $option_list, $brand, $code, $price, $stock, $prevPrice, $discount, $cantDues, $priceDues, $status)
+        static public function updateProduct($id, $name, $desMain, $desGeneral, $sliderDst, $sliderMbl, $sliderDes, $bannerlgP, $bannerWidth, $option_list, $brand, $code, $price, $stock, $prevPrice, $discount, $cantDues, $priceDues, $status)
         {
 
             $sql = "SELECT * FROM products WHERE code = ? AND id_product != $id";
@@ -59,7 +59,7 @@
             
             if (empty($request)) {
                 $urlVowel = Utils::replaceVowel(utf8_decode($name));
-                $arrData = array("category_id" => $option_list, "code" => $code, "name_product" => $name, "desMain" => $desMain, "desGeneral" => $desGeneral, "sliderMbl" => $sliderMbl, "sliderDst" => $sliderDst, "sliderDes" => $sliderDes, "brand" => $brand, "price" => $price , "stock" => $stock, "prevPrice" => $prevPrice, "discount" => $discount, "cantDues" => $cantDues, "priceDues" => $priceDues, "url" => preg_replace('/[^a-z0-9]+/', '-', strtolower($urlVowel)), "status" => $status); 
+                $arrData = array("category_id" => $option_list, "code" => $code, "name_product" => $name, "desMain" => $desMain, "desGeneral" => $desGeneral, "sliderMbl" => $sliderMbl, "sliderDst" => $sliderDst, "sliderDes" => $sliderDes, "banner_large" => $bannerlgP, "banner_width" => $bannerWidth, "brand" => $brand, "price" => $price , "stock" => $stock, "prevPrice" => $prevPrice, "discount" => $discount, "cantDues" => $cantDues, "priceDues" => $priceDues, "url" => preg_replace('/[^a-z0-9]+/', '-', strtolower($urlVowel)), "status" => $status); 
                 $result = $GLOBALS["db"]->update("products", $arrData, "id_product='".$id."'");
             }else{
                 $result = "exist";

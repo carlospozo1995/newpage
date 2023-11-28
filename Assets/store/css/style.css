@@ -1531,11 +1531,15 @@ progress {
         width: 16.6666666667%;
     }
 
-    .col-lg-3 {
+    .col-lg-2-1 {
         flex: 0 0 auto;
         width: 18%;
         padding-bottom: 50px;
         padding-top: 20px;
+    }
+    .col-lg-3 {
+        flex: 0 0 auto;
+        width: 25%;
     }
 
     .col-lg-4 {
@@ -1564,6 +1568,11 @@ progress {
     }
 
     .col-lg-9 {
+        flex: 0 0 auto;
+        width: 75%;
+    }
+
+    .col-lg-9-1 {
         flex: 0 0 auto;
         width: 82%;
     }

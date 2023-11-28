@@ -65,17 +65,13 @@
 									$option = 1;
 									if ($option_list != null){
 										$undef_icon = null;
-										// $undef_photo = null;
 									}else{
-										// if (empty($icon['name']) || empty($photo['name'])) {
 										if (empty($icon['name'])) {
 											throw new Exception("Las categorias superiores deben tener icono.");
 											die();
 										}else{
 											$undef_icon = "icon_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-											// $undef_photo = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 											$icon["name_upload"] = "icon_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-											// $photo["name_upload"] = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 										}
 									}
 
@@ -115,9 +111,7 @@
 									// UPDATE PHOTO- ICON
 									if ($option_list != null){
 										$undef_icon = null;
-										// $undef_photo = null;
 									}else{
-										// $exist_icon = Models_Categories::selectImages("categories", "icon", "photo", $_POST['icon_actual'], $_POST['photo_actual']);
 										$exist_icon = Models_Categories::selectImg("categories", "icon", $_POST['icon_actual']);
 
 										if(empty($exist_icon)){
@@ -136,18 +130,6 @@
 											$undef_icon = "icon_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 											$icon["name_upload"] = "icon_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
 										}
-
-										// if (empty($photo['name'])) {
-										// 	if($_POST['photo_remove'] >= 1 || empty($_POST['photo_actual']) && $_POST['photo_remove'] <= 0){
-										// 		throw new Exception("Las categorias superiores deben tener una foto referencial.");
-										// 		die();	
-										// 	}else{
-										// 		$undef_photo = $_POST['photo_actual'];
-										// 	} 
-										// }else{
-										// 	$undef_photo = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-										// 	$photo["name_upload"] = "photo_".$nameNotSpace.'_'.md5(date("d-m-Y H:m:s")).".jpg";
-										// } 
 									}
 									// ----------------------
 									if(!empty($_POST['photo_actual'])){

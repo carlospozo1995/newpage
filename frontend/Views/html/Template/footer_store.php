@@ -8,7 +8,7 @@
             <div class="footer-top">
                 <div class="container">
                     <div class="row mb-n6 justify-content-center ">
-                        <div class="col-lg-3 col-sm-6-1 mb-6">
+                        <div class="col-lg-2-1 col-sm-6-1 mb-6">
                             <!-- Start Footer Single Item -->
                             <div class="footer-widget-single-item footer-widget-color--pink" data-aos="fade-up"
                                 data-aos-delay="0">
@@ -22,7 +22,7 @@
                             </div>
                             <!-- End Footer Single Item -->
                         </div>
-                        <div class="col-lg-3 col-sm-6-1 mb-6">
+                        <div class="col-lg-2-1 col-sm-6-1 mb-6">
                             <!-- Start Footer Single Item -->
                             <div class="footer-widget-single-item footer-widget-color--pink" data-aos="fade-up"
                                 data-aos-delay="200">
@@ -37,7 +37,7 @@
                             </div>
                             <!-- End Footer Single Item -->
                         </div>
-                        <div class="col-lg-3 col-sm-6-1 mb-6">
+                        <div class="col-lg-2-1 col-sm-6-1 mb-6">
                             <!-- Start Footer Single Item -->
                             <div class="footer-widget-single-item footer-widget-color--pink" data-aos="fade-up"
                                 data-aos-delay="400">
@@ -52,7 +52,7 @@
                             </div>
                             <!-- End Footer Single Item -->
                         </div>
-                        <div class="col-lg-3 col-sm-6-1 mb-6">
+                        <div class="col-lg-2-1 col-sm-6-1 mb-6">
                             <!-- Start Footer Single Item -->
                             <div class="footer-widget-single-item footer-widget-color--pink" data-aos="fade-up"
                                 data-aos-delay="600">
