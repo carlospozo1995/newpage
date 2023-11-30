@@ -857,3 +857,34 @@
 [2023/11/30 12:58:56] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM `products` WHERE category_id = '203' AND id_product != '16' ORDER BY id_product DESC LIMIT 8
 [2023/11/30 12:58:56] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
 [2023/11/30 12:58:56] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/11/30 01:00:41] SQL Query: SELECT sliderDst, sliderDesOne, sliderDesTwo, redirect FROM banners_category WHERE banner_type = '1'
+[2023/11/30 01:00:41] SQL Query: SELECT sliderDst, sliderDes, redirect FROM banners_product WHERE banner_type = '1'
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/11/30 01:00:41] SQL Query: SELECT product_id, category_id, banner_large, redirect FROM banners_product WHERE banner_type = '2'
+[2023/11/30 01:00:41] SQL Query: SELECT sliderMbl, sliderDesOne, sliderDesTwo, redirect FROM banners_category WHERE banner_type = '1'
+[2023/11/30 01:00:41] SQL Query: SELECT sliderMbl, sliderDes, redirect FROM banners_product WHERE banner_type = '1'
+[2023/11/30 01:00:41] SQL Query: SELECT banner_name, banner_large, redirect FROM banners_category WHERE banner_type = '2'
+[2023/11/30 01:00:41] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products  WHERE status = '1' ORDER BY id_product DESC LIMIT 8
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM img_product WHERE product_id = '33'
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM img_product WHERE product_id = '32'
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM img_product WHERE product_id = '31'
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM img_product WHERE product_id = '30'
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM img_product WHERE product_id = '29'
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM img_product WHERE product_id = '28'
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM img_product WHERE product_id = '27'
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM img_product WHERE product_id = '26'
+[2023/11/30 01:00:41] SQL Query: SELECT banner_small, redirect FROM banners_category WHERE banner_type = '3'
+[2023/11/30 01:00:41] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM `products` WHERE category_id = '213' AND id_product != '33' ORDER BY id_product DESC LIMIT 8
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM img_product WHERE product_id = '32'
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM img_product WHERE product_id = '31'
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM img_product WHERE product_id = '30'
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM img_product WHERE product_id = '29'
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM img_product WHERE product_id = '28'
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM img_product WHERE product_id = '27'
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM img_product WHERE product_id = '26'
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM img_product WHERE product_id = '25'
+[2023/11/30 01:00:41] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM `products` WHERE category_id = '203' AND id_product != '16' ORDER BY id_product DESC LIMIT 8
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/11/30 01:00:41] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
