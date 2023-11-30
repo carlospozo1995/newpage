@@ -427,7 +427,7 @@
             <!-- Start Mobile contact Info -->
             <div class="mobile-contact-info">
                 <div class="logo">
-                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/no-test/logo.png" alt=""></a>
+                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/logo.png" alt=""></a>
                 </div>
 
                 <address class="address">

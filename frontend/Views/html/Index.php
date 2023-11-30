@@ -1,4 +1,7 @@
-	
+	<?php
+		$bannersProdLarge = Models_Banners::getBanners("banners_product", "product_id, category_id, banner_large, redirect", 2);
+	?>
+
 	<div class="container-section">
 	    <div class="hero-slider-section sliders-container-mbl">
 	        <div class="hero-slider-active swiper-container">
@@ -255,6 +258,42 @@
 		<?php
 		}
 		?>
+
+		<?php
+		$bannersCtgSmall = Models_Banners::getBanners("banners_category", "banner_small, redirect", 3);
+		if (count($bannersCtgSmall) == 5) {
+			$delayCtgSmall = 0;
+			echo '<div class="banner-section section-top-gap-100">';
+				echo '<div class="banner-wrapper">';
+					echo '<div class="container">';
+
+						echo '<div class="row"  data-aos="fade-up" data-aos-delay="0">';
+							echo '<div class="col-12">';
+								echo '<div class="section-content-gap">';
+									echo '<div class="secton-content">';
+										echo '<h3 class="section-title text-center c-blue-page">CATEGORÍAS POPULARES</h3>';
+									echo '</div>';
+								echo '</div>';
+							echo '</div>';
+						echo '</div>';
+
+						echo '<div class="row mb-n6 section-fluid">';							
+						foreach ($bannersCtgSmall as $key => $value) {
+							echo '<div class="col-md-2-5 col-12 mb-6">';
+								echo '<div class="banner-single-item banner-style-5 img-responsive" data-aos="fade-up" data-aos-delay="'.$delayCtgSmall.'">';
+									echo '<a href="'.BASE_URL.'categoria/'.$value['redirect'].'" class="image banner-animation">';
+										echo '<img style="border-radius: 12px" src="'.MEDIA_ADMIN.'files/images/uploads/'.$value['banner_small'].'" alt="">';
+									echo '</a>';
+								echo '</div>';
+							echo '</div>';
+							$delayCtgSmall += 200;
+						}
+						echo '</div>';
+					echo '</div>';
+				echo '</div>';
+			echo '</div>';
+		}
+		?>
 		
 		<!-- Start Banner Section -->
 		<div class="banner-section section-top-gap-100">
@@ -284,127 +323,257 @@
 		<!-- End Banner Section -->
 
 		<?php
-		$bannersCtgSmall = Models_Banners::getBanners("banners_category", "banner_small, redirect", 3);
-		if (count($bannersCtgSmall) == 5) {
-			$delayCtgSmall = 0;
-			echo '<div class="banner-section section-top-gap-100">';
-				echo '<div class="banner-wrapper">';
-					echo '<div class="container">';
-						echo '<div class="row mb-n6 section-fluid">';							
-						foreach ($bannersCtgSmall as $key => $value) {
-							echo '<div class="col-md-2-5 col-12 mb-6">';
-								echo '<div class="banner-single-item banner-style-5 img-responsive" data-aos="fade-up" data-aos-delay="'.$delayCtgSmall.'">';
-									echo '<a href="'.BASE_URL.'categoria/'.$value['redirect'].'" class="image banner-animation">';
-										echo '<img style="border-radius: 12px" src="'.MEDIA_ADMIN.'files/images/uploads/'.$value['banner_small'].'" alt="">';
-									echo '</a>';
-								echo '</div>';
-							echo '</div>';
-							$delayCtgSmall += 200;
-						}
-						echo '</div>';
-					echo '</div>';
-				echo '</div>';
-			echo '</div>';
-		}
-		
-		// echo '<div class="banner-section section-inner-bg">';
-		// 	echo '<div class="col-12" data-aos="fade-up" data-aos-delay="0">';
-		// 		// echo '<div class="section-content-gap">';
-		// 		echo '<div>';
-		// 			echo '<div class="secton-content">';
-		// 				echo '<h3 class="section-title text-center c-blue-page">TEST</h3>';
-		// 			echo '</div>';
-		// 		echo '</div>';
-		// 	echo '</div>';
-		// echo '</div>';
+		if (!empty($bannersProdLarge)) {
 		?>
-			<div class="banner-section section-top-gap-100">
-				<div class="container">
-					<div class="row flex-lg-row align-items-center">
-						
-						<div class="col-lg-3 px-1">
-							<div class="banner-wrapper d-flex justify-content-center">
-								<a href="product-details-default.html">
-									<div class="banner-single-item banner-animation banner-color--green float-left"
-										data-aos="fade-up" data-aos-delay="0">
-										<div class="image">
-											<img class="w-100" style="border-radius: 15px;" src="<?=MEDIA_ADMIN;?>files/images/upload_products/bannerlgP_xiaomi-redmi-note-11-pro-dual-sim-128-gb-blanco-polar-8-gb-ram_ba05c02a897dabc88da9156abbf4ef2f.jpg" alt="">
-										</div>
+		<div class="banner-section section-top-gap-100">
+			<div class="container">
+				<div class="row flex-lg-row align-items-center">
+					
+					<div class="col-lg-3 px-1">
+						<div class="banner-wrapper d-flex justify-content-center">
+							<a href="product-details-default.html">
+								<div class="banner-single-item banner-animation banner-color--green float-left"
+									data-aos="fade-up" data-aos-delay="0">
+									<div class="image">
+										<img class="w-100" style="border-radius: 15px;" src="<?=MEDIA_ADMIN;?>files/images/upload_products/<?=$bannersProdLarge[0]['banner_large']?>" alt="">
 									</div>
-								</a>
-							</div>
+								</div>
+							</a>
 						</div>
+					</div>
 
-						<div class="col-lg-9">
-							<!--  -->
-							<div class="section-title-wrapper pt-5" data-aos="fade-up" data-aos-delay="0">
-								<div class="container">
-									<div class="row">
-										<div class="col-12">
-											<div>
-												<div class="secton-content">
-													<h3 class="section-title c-blue-page">PRODUCTOS RELACIONADOS</h3>
-												</div>
+					<div class="col-lg-9">
+						<!--  -->
+						<div class="section-title-wrapper pt-5" data-aos="fade-up" data-aos-delay="0">
+							<div class="container">
+								<div class="row">
+									<div class="col-12">
+										<div>
+											<div class="secton-content">
+												<h3 class="section-title c-blue-page pb-5">PRODUCTOS RELACIONADOS</h3>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="product-wrapper" data-aos="fade-up" data-aos-delay="0">
-								<div class="container">
-									<div class="row">
-										<div class="col-12">
-											<div class="product-slider-default-1row default-slider-nav-arrow">
-												<div class="swiper-container product-default-slider-4grid-1row">
-													<div class="swiper-wrapper my-2">
+						</div>
+						<div class="product-wrapper" data-aos="fade-up" data-aos-delay="0">
+							<div class="container">
+								<div class="row">
+									<div class="col-12">
+										<div class="product-slider-default-1row default-slider-nav-arrow">
+											<div class="swiper-container product-default-slider-4grid-1row">
+												<div class="swiper-wrapper my-2">
+												<?php
+												$relatedproductsOne = Models_Banners::getRelatedProducts($bannersProdLarge[0]['category_id'], $bannersProdLarge[0]['product_id']);
+												if (!empty($relatedproductsOne)) {
+													$imgProd_relatedOne = array();
+													foreach ($relatedproductsOne as $product) {
+														$img_product = Models_Products::selectImages($product['id_product']);
+														if (!empty($img_product)) {
+															$r_indexes = array_rand($img_product, 2);
+															foreach ($r_indexes as $index) {
+																$r_element = $img_product[$index];
+																$imgProd_relatedOne[$product['id_product']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/'.$r_element['image'].'" alt="">';
+															}
+														}else{
+															$imgProd_relatedOne[$product['id_product']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/empty_img.png" alt="">';
+														}
+													}
+												}
+												
+												foreach ($relatedproductsOne as $product) {
+													echo '<div class="product-default-single-item product-color--pink swiper-slide border-product">';
+														echo '<div class="image-box">';
+															echo '<a href="'.BASE_URL."producto/".$product["url"].'" class="image-link' . (!empty($product['discount']) ? ' content-off" data-discount="'.$product['discount'].'% off"' : '"') . '>';
+																echo implode('', $imgProd_relatedOne[$product['id_product']]);
+															echo '</a>';
+															echo '<div class="action-link">';
+																echo '<div class="action-link-right mx-auto">';
+																	echo '<a href="" data-bs-toggle="modal" data-bs-target="#modalQuickview"><i class="icon-eye" title="Vista rápida"></i></a>';
+																	echo '<a href=""><i class="icon-heart" title="Añadir a favoritos"></i></a>';
+																if (!empty($product['stock']) && $product['stock'] > 0) {
+																	echo '<a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="addToCart" id="'.Utils::encriptar($product['id_product']).'"><i class="icon-basket" title="Añadir al carrito"></i></a>';
+																}
+																echo '</div>';
+															echo '</div>';
+														echo '</div>';
 														
-														<div class="product-default-single-item product-color--pink swiper-slide border-product swiper-slide-next" style="width: 255.5px; margin-right: 30px;" role="group" aria-label="2 / 8"><div class="image-box"><a href="http://localhost/carlos/page/producto/televisor-lg-83-4k-oled-oled83c3psa-awp" class="image-link"><img src="http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_19_a1d44fcaa792c06f148ab69b347cc62c.jpg" alt=""><img src="http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_19_40e5bbc4cb938706fbcafbdc27e6db7f.jpg" alt=""></a><div class="action-link"><div class="action-link-right mx-auto"><a href="" data-bs-toggle="modal" data-bs-target="#modalQuickview"><i class="icon-eye" title="Vista rápida"></i></a><a href=""><i class="icon-heart" title="Añadir a favoritos"></i></a><a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="addToCart" id="1d90e634b98cd8fe4483bfef86908715"><i class="icon-basket" title="Añadir al carrito"></i></a></div></div></div><div class="content"><div class="text-center"><h6><a class="title-product" href="http://localhost/carlos/page/producto/televisor-lg-83-4k-oled-oled83c3psa-awp">TELEVISOR LG 83' 4K OLED OLED83C3PSA.AWP</a></h6><p>LG</p><div class="content-data-product no-empty"><div class="price-product no-empty"><del>$1.000,00</del><span>$900,00</span></div><span class="ml-2 text-left">24 cuotas $100,00</span></div></div></div></div>
-
-														<div class="product-default-single-item product-color--pink swiper-slide border-product swiper-slide-next" style="width: 255.5px; margin-right: 30px;" role="group" aria-label="2 / 8"><div class="image-box"><a href="http://localhost/carlos/page/producto/televisor-lg-83-4k-oled-oled83c3psa-awp" class="image-link"><img src="http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_19_a1d44fcaa792c06f148ab69b347cc62c.jpg" alt=""><img src="http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_19_40e5bbc4cb938706fbcafbdc27e6db7f.jpg" alt=""></a><div class="action-link"><div class="action-link-right mx-auto"><a href="" data-bs-toggle="modal" data-bs-target="#modalQuickview"><i class="icon-eye" title="Vista rápida"></i></a><a href=""><i class="icon-heart" title="Añadir a favoritos"></i></a><a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="addToCart" id="1d90e634b98cd8fe4483bfef86908715"><i class="icon-basket" title="Añadir al carrito"></i></a></div></div></div><div class="content"><div class="text-center"><h6><a class="title-product" href="http://localhost/carlos/page/producto/televisor-lg-83-4k-oled-oled83c3psa-awp">TELEVISOR LG 83' 4K OLED OLED83C3PSA.AWP</a></h6><p>LG</p><div class="content-data-product no-empty"><div class="price-product no-empty"><del>$1.000,00</del><span>$900,00</span></div><span class="ml-2 text-left">24 cuotas $100,00</span></div></div></div></div>
-
-														<div class="product-default-single-item product-color--pink swiper-slide border-product swiper-slide-next" style="width: 255.5px; margin-right: 30px;" role="group" aria-label="2 / 8"><div class="image-box"><a href="http://localhost/carlos/page/producto/televisor-lg-83-4k-oled-oled83c3psa-awp" class="image-link"><img src="http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_19_a1d44fcaa792c06f148ab69b347cc62c.jpg" alt=""><img src="http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_19_40e5bbc4cb938706fbcafbdc27e6db7f.jpg" alt=""></a><div class="action-link"><div class="action-link-right mx-auto"><a href="" data-bs-toggle="modal" data-bs-target="#modalQuickview"><i class="icon-eye" title="Vista rápida"></i></a><a href=""><i class="icon-heart" title="Añadir a favoritos"></i></a><a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="addToCart" id="1d90e634b98cd8fe4483bfef86908715"><i class="icon-basket" title="Añadir al carrito"></i></a></div></div></div><div class="content"><div class="text-center"><h6><a class="title-product" href="http://localhost/carlos/page/producto/televisor-lg-83-4k-oled-oled83c3psa-awp">TELEVISOR LG 83' 4K OLED OLED83C3PSA.AWP</a></h6><p>LG</p><div class="content-data-product no-empty"><div class="price-product no-empty"><del>$1.000,00</del><span>$900,00</span></div><span class="ml-2 text-left">24 cuotas $100,00</span></div></div></div></div>
-
-														<div class="product-default-single-item product-color--pink swiper-slide border-product swiper-slide-next" style="width: 255.5px; margin-right: 30px;" role="group" aria-label="2 / 8"><div class="image-box"><a href="http://localhost/carlos/page/producto/televisor-lg-83-4k-oled-oled83c3psa-awp" class="image-link"><img src="http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_19_a1d44fcaa792c06f148ab69b347cc62c.jpg" alt=""><img src="http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_19_40e5bbc4cb938706fbcafbdc27e6db7f.jpg" alt=""></a><div class="action-link"><div class="action-link-right mx-auto"><a href="" data-bs-toggle="modal" data-bs-target="#modalQuickview"><i class="icon-eye" title="Vista rápida"></i></a><a href=""><i class="icon-heart" title="Añadir a favoritos"></i></a><a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="addToCart" id="1d90e634b98cd8fe4483bfef86908715"><i class="icon-basket" title="Añadir al carrito"></i></a></div></div></div><div class="content"><div class="text-center"><h6><a class="title-product" href="http://localhost/carlos/page/producto/televisor-lg-83-4k-oled-oled83c3psa-awp">TELEVISOR LG 83' 4K OLED OLED83C3PSA.AWP</a></h6><p>LG</p><div class="content-data-product no-empty"><div class="price-product no-empty"><del>$1.000,00</del><span>$900,00</span></div><span class="ml-2 text-left">24 cuotas $100,00</span></div></div></div></div>
-
-														<div class="product-default-single-item product-color--pink swiper-slide border-product swiper-slide-next" style="width: 255.5px; margin-right: 30px;" role="group" aria-label="2 / 8"><div class="image-box"><a href="http://localhost/carlos/page/producto/televisor-lg-83-4k-oled-oled83c3psa-awp" class="image-link"><img src="http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_19_a1d44fcaa792c06f148ab69b347cc62c.jpg" alt=""><img src="http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_19_40e5bbc4cb938706fbcafbdc27e6db7f.jpg" alt=""></a><div class="action-link"><div class="action-link-right mx-auto"><a href="" data-bs-toggle="modal" data-bs-target="#modalQuickview"><i class="icon-eye" title="Vista rápida"></i></a><a href=""><i class="icon-heart" title="Añadir a favoritos"></i></a><a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="addToCart" id="1d90e634b98cd8fe4483bfef86908715"><i class="icon-basket" title="Añadir al carrito"></i></a></div></div></div><div class="content"><div class="text-center"><h6><a class="title-product" href="http://localhost/carlos/page/producto/televisor-lg-83-4k-oled-oled83c3psa-awp">TELEVISOR LG 83' 4K OLED OLED83C3PSA.AWP</a></h6><p>LG</p><div class="content-data-product no-empty"><div class="price-product no-empty"><del>$1.000,00</del><span>$900,00</span></div><span class="ml-2 text-left">24 cuotas $100,00</span></div></div></div></div>
-
-														<div class="product-default-single-item product-color--pink swiper-slide border-product swiper-slide-next" style="width: 255.5px; margin-right: 30px;" role="group" aria-label="2 / 8"><div class="image-box"><a href="http://localhost/carlos/page/producto/televisor-lg-83-4k-oled-oled83c3psa-awp" class="image-link"><img src="http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_19_a1d44fcaa792c06f148ab69b347cc62c.jpg" alt=""><img src="http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_19_40e5bbc4cb938706fbcafbdc27e6db7f.jpg" alt=""></a><div class="action-link"><div class="action-link-right mx-auto"><a href="" data-bs-toggle="modal" data-bs-target="#modalQuickview"><i class="icon-eye" title="Vista rápida"></i></a><a href=""><i class="icon-heart" title="Añadir a favoritos"></i></a><a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="addToCart" id="1d90e634b98cd8fe4483bfef86908715"><i class="icon-basket" title="Añadir al carrito"></i></a></div></div></div><div class="content"><div class="text-center"><h6><a class="title-product" href="http://localhost/carlos/page/producto/televisor-lg-83-4k-oled-oled83c3psa-awp">TELEVISOR LG 83' 4K OLED OLED83C3PSA.AWP</a></h6><p>LG</p><div class="content-data-product no-empty"><div class="price-product no-empty"><del>$1.000,00</del><span>$900,00</span></div><span class="ml-2 text-left">24 cuotas $100,00</span></div></div></div></div>
-
-														<div class="product-default-single-item product-color--pink swiper-slide border-product swiper-slide-next" style="width: 255.5px; margin-right: 30px;" role="group" aria-label="2 / 8"><div class="image-box"><a href="http://localhost/carlos/page/producto/televisor-lg-83-4k-oled-oled83c3psa-awp" class="image-link"><img src="http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_19_a1d44fcaa792c06f148ab69b347cc62c.jpg" alt=""><img src="http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_19_40e5bbc4cb938706fbcafbdc27e6db7f.jpg" alt=""></a><div class="action-link"><div class="action-link-right mx-auto"><a href="" data-bs-toggle="modal" data-bs-target="#modalQuickview"><i class="icon-eye" title="Vista rápida"></i></a><a href=""><i class="icon-heart" title="Añadir a favoritos"></i></a><a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="addToCart" id="1d90e634b98cd8fe4483bfef86908715"><i class="icon-basket" title="Añadir al carrito"></i></a></div></div></div><div class="content"><div class="text-center"><h6><a class="title-product" href="http://localhost/carlos/page/producto/televisor-lg-83-4k-oled-oled83c3psa-awp">TELEVISOR LG 83' 4K OLED OLED83C3PSA.AWP</a></h6><p>LG</p><div class="content-data-product no-empty"><div class="price-product no-empty"><del>$1.000,00</del><span>$900,00</span></div><span class="ml-2 text-left">24 cuotas $100,00</span></div></div></div></div>
-
-														<div class="product-default-single-item product-color--pink swiper-slide border-product swiper-slide-next" style="width: 255.5px; margin-right: 30px;" role="group" aria-label="2 / 8"><div class="image-box"><a href="http://localhost/carlos/page/producto/televisor-lg-83-4k-oled-oled83c3psa-awp" class="image-link"><img src="http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_19_a1d44fcaa792c06f148ab69b347cc62c.jpg" alt=""><img src="http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_19_40e5bbc4cb938706fbcafbdc27e6db7f.jpg" alt=""></a><div class="action-link"><div class="action-link-right mx-auto"><a href="" data-bs-toggle="modal" data-bs-target="#modalQuickview"><i class="icon-eye" title="Vista rápida"></i></a><a href=""><i class="icon-heart" title="Añadir a favoritos"></i></a><a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="addToCart" id="1d90e634b98cd8fe4483bfef86908715"><i class="icon-basket" title="Añadir al carrito"></i></a></div></div></div><div class="content"><div class="text-center"><h6><a class="title-product" href="http://localhost/carlos/page/producto/televisor-lg-83-4k-oled-oled83c3psa-awp">TELEVISOR LG 83' 4K OLED OLED83C3PSA.AWP</a></h6><p>LG</p><div class="content-data-product no-empty"><div class="price-product no-empty"><del>$1.000,00</del><span>$900,00</span></div><span class="ml-2 text-left">24 cuotas $100,00</span></div></div></div></div>
-
-														<div class="product-default-single-item product-color--pink swiper-slide border-product swiper-slide-next" style="width: 255.5px; margin-right: 30px;" role="group" aria-label="2 / 8"><div class="image-box"><a href="http://localhost/carlos/page/producto/televisor-lg-83-4k-oled-oled83c3psa-awp" class="image-link"><img src="http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_19_a1d44fcaa792c06f148ab69b347cc62c.jpg" alt=""><img src="http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_19_40e5bbc4cb938706fbcafbdc27e6db7f.jpg" alt=""></a><div class="action-link"><div class="action-link-right mx-auto"><a href="" data-bs-toggle="modal" data-bs-target="#modalQuickview"><i class="icon-eye" title="Vista rápida"></i></a><a href=""><i class="icon-heart" title="Añadir a favoritos"></i></a><a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="addToCart" id="1d90e634b98cd8fe4483bfef86908715"><i class="icon-basket" title="Añadir al carrito"></i></a></div></div></div><div class="content"><div class="text-center"><h6><a class="title-product" href="http://localhost/carlos/page/producto/televisor-lg-83-4k-oled-oled83c3psa-awp">TELEVISOR LG 83' 4K OLED OLED83C3PSA.AWP</a></h6><p>LG</p><div class="content-data-product no-empty"><div class="price-product no-empty"><del>$1.000,00</del><span>$900,00</span></div><span class="ml-2 text-left">24 cuotas $100,00</span></div></div></div></div>
-
-														<div class="product-default-single-item product-color--pink swiper-slide border-product swiper-slide-next" style="width: 255.5px; margin-right: 30px;" role="group" aria-label="2 / 8"><div class="image-box"><a href="http://localhost/carlos/page/producto/televisor-lg-83-4k-oled-oled83c3psa-awp" class="image-link"><img src="http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_19_a1d44fcaa792c06f148ab69b347cc62c.jpg" alt=""><img src="http://localhost/carlos/page/Assets/admin/files/images/upload_products/imgRef_19_40e5bbc4cb938706fbcafbdc27e6db7f.jpg" alt=""></a><div class="action-link"><div class="action-link-right mx-auto"><a href="" data-bs-toggle="modal" data-bs-target="#modalQuickview"><i class="icon-eye" title="Vista rápida"></i></a><a href=""><i class="icon-heart" title="Añadir a favoritos"></i></a><a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="addToCart" id="1d90e634b98cd8fe4483bfef86908715"><i class="icon-basket" title="Añadir al carrito"></i></a></div></div></div><div class="content"><div class="text-center"><h6><a class="title-product" href="http://localhost/carlos/page/producto/televisor-lg-83-4k-oled-oled83c3psa-awp">TELEVISOR LG 83' 4K OLED OLED83C3PSA.AWP</a></h6><p>LG</p><div class="content-data-product no-empty"><div class="price-product no-empty"><del>$1.000,00</del><span>$900,00</span></div><span class="ml-2 text-left">24 cuotas $100,00</span></div></div></div></div>
-
-													</div>
+														echo '<div class="content">';
+															echo '<div class="text-center">';
+																echo '<h6><a class="title-product" href="'.BASE_URL."producto/".$product["url"].'">'.$product['name_product'].'</a></h6>';
+																echo '<p>'.$product['brand'].'</p>';
+			
+																if (!empty($product['cantDues'])) {
+																echo '<div class="content-data-product no-empty">'; 
+																	echo '<div class="price-product no-empty">';
+																}else{
+																echo '<div class="content-data-product empty">'; 
+																	echo '<div class="price-product empty">';
+																}
+																		echo (!empty($product['prevPrice'])) ? '<del>'.SMONEY. Utils::formatMoney($product['prevPrice']).'</del>' : '';
+																		echo '<span>'.SMONEY.Utils::formatMoney($product['price']).'</span>';
+																	echo '</div>';
+			
+																	echo (!empty($product['cantDues'])) ? '<span class="ml-2 text-left">'.$product['cantDues'].' cuotas '.SMONEY. Utils::formatMoney($product['priceDues']).'</span>' : '';
+																echo '</div>';
+			
+															echo '</div>';
+														echo '</div>';
+													echo '</div>';
+												}
+												?>
 												</div>
-
-												<div class="swiper-button-prev"></div>
-												<div class="swiper-button-next"></div>
 											</div>
+
+											<div class="swiper-button-prev"></div>
+											<div class="swiper-button-next"></div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!--  -->
 						</div>
+						<!--  -->
 					</div>
 				</div>
 			</div>
-
-			<div class="banner-section section-inner-bg">
-				<div class="col-12" data-aos="fade-up" data-aos-delay="0">
-					<div>
-						<div class="secton-content">
-							<h3 class="section-title text-center c-blue-page">TEST</h3>
-						</div>
-					</div>
-				</div>
-			</div>
+		</div>
+		<?php
+		}
+		?>
 
 		<?php
+		if (!empty($bannersProdLarge) && count($bannersProdLarge) == 2) {
+		?>
+		<div class="banner-section section-top-gap-100">
+			<div class="container">
+				<div class="row flex-lg-row align-items-center">
+
+					<div class="col-lg-9">
+						<!--  -->
+						<div class="section-title-wrapper pt-5" data-aos="fade-up" data-aos-delay="0">
+							<div class="container">
+								<div class="row">
+									<div class="col-12">
+										<div>
+											<div class="secton-content">
+												<h3 class="section-title c-blue-page pb-5">PRODUCTOS RELACIONADOS</h3>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="product-wrapper" data-aos="fade-up" data-aos-delay="0">
+							<div class="container">
+								<div class="row">
+									<div class="col-12">
+										<div class="product-slider-default-1row default-slider-nav-arrow">
+											<div class="swiper-container product-default-slider-4grid-1row">
+												<div class="swiper-wrapper my-2">
+												<?php
+												$relatedproductsTwo = Models_Banners::getRelatedProducts($bannersProdLarge[1]['category_id'], $bannersProdLarge[1]['product_id']);
+												if (!empty($relatedproductsTwo)) {
+													$imgProd_relatedTwo = array();
+													foreach ($relatedproductsTwo as $product) {
+														$img_product = Models_Products::selectImages($product['id_product']);
+														if (!empty($img_product)) {
+															$r_indexes = array_rand($img_product, 2);
+															foreach ($r_indexes as $index) {
+																$r_element = $img_product[$index];
+																$imgProd_relatedTwo[$product['id_product']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/'.$r_element['image'].'" alt="">';
+															}
+														}else{
+															$imgProd_relatedTwo[$product['id_product']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/empty_img.png" alt="">';
+														}
+													}
+												}
+												
+												foreach ($relatedproductsTwo as $product) {
+													echo '<div class="product-default-single-item product-color--pink swiper-slide border-product">';
+														echo '<div class="image-box">';
+															echo '<a href="'.BASE_URL."producto/".$product["url"].'" class="image-link' . (!empty($product['discount']) ? ' content-off" data-discount="'.$product['discount'].'% off"' : '"') . '>';
+																echo implode('', $imgProd_relatedTwo[$product['id_product']]);
+															echo '</a>';
+															echo '<div class="action-link">';
+																echo '<div class="action-link-right mx-auto">';
+																	echo '<a href="" data-bs-toggle="modal" data-bs-target="#modalQuickview"><i class="icon-eye" title="Vista rápida"></i></a>';
+																	echo '<a href=""><i class="icon-heart" title="Añadir a favoritos"></i></a>';
+																if (!empty($product['stock']) && $product['stock'] > 0) {
+																	echo '<a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="addToCart" id="'.Utils::encriptar($product['id_product']).'"><i class="icon-basket" title="Añadir al carrito"></i></a>';
+																}
+																echo '</div>';
+															echo '</div>';
+														echo '</div>';
+														
+														echo '<div class="content">';
+															echo '<div class="text-center">';
+																echo '<h6><a class="title-product" href="'.BASE_URL."producto/".$product["url"].'">'.$product['name_product'].'</a></h6>';
+																echo '<p>'.$product['brand'].'</p>';
+			
+																if (!empty($product['cantDues'])) {
+																echo '<div class="content-data-product no-empty">'; 
+																	echo '<div class="price-product no-empty">';
+																}else{
+																echo '<div class="content-data-product empty">'; 
+																	echo '<div class="price-product empty">';
+																}
+																		echo (!empty($product['prevPrice'])) ? '<del>'.SMONEY. Utils::formatMoney($product['prevPrice']).'</del>' : '';
+																		echo '<span>'.SMONEY.Utils::formatMoney($product['price']).'</span>';
+																	echo '</div>';
+			
+																	echo (!empty($product['cantDues'])) ? '<span class="ml-2 text-left">'.$product['cantDues'].' cuotas '.SMONEY. Utils::formatMoney($product['priceDues']).'</span>' : '';
+																echo '</div>';
+			
+															echo '</div>';
+														echo '</div>';
+													echo '</div>';
+												}
+												?>
+												</div>
+											</div>
+
+											<div class="swiper-button-prev"></div>
+											<div class="swiper-button-next"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--  -->
+					</div>
+
+					<div class="col-lg-3 px-1">
+						<div class="banner-wrapper d-flex justify-content-center">
+							<a href="product-details-default.html">
+								<div class="banner-single-item banner-animation banner-color--green float-left"
+									data-aos="fade-up" data-aos-delay="0">
+									<div class="image">
+										<img class="w-100" style="border-radius: 15px;" src="<?=MEDIA_ADMIN;?>files/images/upload_products/<?=$bannersProdLarge[1]['banner_large']?>" alt="">
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+		<?php
+		}
+		?>
+
+		<div class="banner-section section-inner-bg">
+			<div class="col-12" data-aos="fade-up" data-aos-delay="0">
+				<div>
+					<div class="secton-content">
+						<h3 class="section-title text-center c-blue-page">TEST</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<?php
+
 			// $fechaHoraActual = date("Y-m-d H:i:s");
 		// print_r(intval);
 

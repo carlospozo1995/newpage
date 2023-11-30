@@ -64,15 +64,15 @@
                 });
 
                 if (empty($exists)) {
-
+                    $name = str_replace("'", "", $moreData['name_product']);
                     if ($typeBanner == 1) {
-                        $arrData[] = array("product_id" => $id, "banner_name" => $moreData['name_product'], "sliderDst" => $moreData['sliderDst'], "sliderMbl" => $moreData['sliderMbl'], "sliderDes" => $moreData['sliderDes'], "redirect" => $moreData['url'], "banner_type" => $typeBanner); 
+                        $arrData[] = array("product_id" => $id, "banner_name" => $name, "sliderDst" => $moreData['sliderDst'], "sliderMbl" => $moreData['sliderMbl'], "sliderDes" => $moreData['sliderDes'], "redirect" => $moreData['url'], "banner_type" => $typeBanner); 
+                    }else if ($typeBanner == 2) {
+                        $arrData[] = array("product_id" => $id, "category_id" => $moreData['category_id'], "banner_name" => $name, "banner_large" => $moreData['banner_large'], "redirect" => $moreData['url'], "banner_type" => $typeBanner);
                     }
-                    // else if ($typeBanner == 2) {
-                    //     $arrData[] = array("category_id" => $id, "banner_name" => $moreData['name_category'], "banner_large" => $moreData['banner_large'], "redirect" => $redirect, "banner_type" => $typeBanner);
-                    // }else{
+                    else{
                     //     $arrData[] = array("category_id" => $id, "banner_name" => $moreData['name_category'], "banner_small" => $moreData['photo'], "redirect" => $redirect, "banner_type" => $typeBanner);
-                    // }
+                    }
 
                     return $GLOBALS["db"]->insert_multiple("banners_product", $arrData);
                 }else{
@@ -98,9 +98,10 @@
             return $GLOBALS["db"]->delete($table, "id_banner = '$data' AND banner_type = '$type'");
         }
 
-        // static public function deleteBannerProd($data, $type)
-        // {   
-        //     return $GLOBALS["db"]->delete("banners_product", "id_banner = '$data' AND banner_type = '$type'");
-        // }
+        static public function getRelatedProducts($category_id, $id)
+        {   
+            $sql = "SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM `products` WHERE category_id = ? AND id_product != ? AND status = ? ORDER BY id_product DESC LIMIT 8";
+            return $GLOBALS["db"]->selectAll($sql, array($category_id, $id));
+        }
     }
 ?>

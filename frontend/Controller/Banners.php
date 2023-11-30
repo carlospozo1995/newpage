@@ -71,7 +71,7 @@
 							$typeBanner = $_POST['type'];
 							$amount = array(
 								1 => 3,
-								// 2 => 4,
+								2 => 2,
 								// 3 => 5
 							);
 
@@ -79,7 +79,7 @@
 								throw new Exception("Ha ocurrido un error. Inténtelo de nuevo.");
 								die();
 							}else{
-								$verifyData = Models_Banners::getData("products", "id_product", "name_product, sliderDst, sliderMbl, sliderDes, url", $idProd);
+								$verifyData = Models_Banners::getData("products", "id_product", "category_id, name_product, sliderDst, sliderMbl, sliderDes, banner_large, banner_width, url", $idProd);
 								
 								if (empty($verifyData)) {
 									throw new Exception("Ha ocurrido un error. Inténtelo de nuevo.");
@@ -88,7 +88,7 @@
 									$insertBanner = Models_Banners::insertBannerProd($idProd, $verifyData, $typeBanner, $amount[$typeBanner]);
 									
 									if ($insertBanner > 0) {
-										$request = array("id" => Utils::encriptar(strval($insertBanner)), "name" => $verifyData['name_product'], "sliderDst" => MEDIA_ADMIN.'files/images/upload_products/'.$verifyData['sliderDst'], "sliderMbl" => MEDIA_ADMIN.'files/images/upload_products/'.$verifyData['sliderMbl'], "module" => $_SESSION['module'] , "id_user" => $_SESSION['idUser']);
+										$request = array("id" => Utils::encriptar(strval($insertBanner)), "name" => $verifyData['name_product'], "sliderDst" => MEDIA_ADMIN.'files/images/upload_products/'.$verifyData['sliderDst'], "sliderMbl" => MEDIA_ADMIN.'files/images/upload_products/'.$verifyData['sliderMbl'], "bLarge" => MEDIA_ADMIN.'files/images/upload_products/'.$verifyData['banner_large'], "module" => $_SESSION['module'] , "id_user" => $_SESSION['idUser']);
 										$msg = "Datos ingresados correctamente.";
 									}else if ($insertBanner == "exists") {
 										throw new Exception("Al parecer el elemento insertado ya existe. Intentelo de nuevo.");

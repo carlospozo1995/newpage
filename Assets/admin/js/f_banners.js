@@ -16,6 +16,10 @@ $(document).ready(function () {
         addBannerProd(e, $(this).find(".type-imageProd").val(), $(this).find(".select_options").val(), "tableSliderMProd");
     });
 
+    $("#formBannerLProd").submit(function (e) {
+        addBannerProd(e, $(this).find(".type-imageProd").val(), $(this).find(".select_options").val(), "tableBannerLProd");
+    });
+
     $(".select_options").select2();
 
 })
@@ -132,22 +136,21 @@ function addBannerProd(e, typeB, selectB, table) {
                             '<img class="text-center" style="display:flex; margin:auto; width:40px" src="' + data.request.sliderMbl + '">',
                             '<div class="text-center"> '+btnDelete+'</div>',
                         ]).draw(false).node();
+                    } else if (typeB == 2) {
+                        var newRow = $("#"+table+"").DataTable().row.add([
+                            id_row,
+                            data.request.name,
+                            '<img class="text-center" style="display:flex; margin:auto; width:40px" src="'+data.request.bLarge+'">',
+                            '<div class="text-center"> '+btnDelete+'</div>',
+                        ]).draw(false).node();
+                    }else{
+                        // var newRow = $("#"+table+"").DataTable().row.add([
+                        //     id_row,
+                        //     data.request.name,
+                        //     '<img class="text-center" style="display:flex; margin:auto; width:60px" src="'+data.request.bSmall+'">',
+                        //     '<div class="text-center"> '+btnDelete+'</div>',
+                        // ]).draw(false).node();
                     }
-                    // else if (typeB == 2) {
-                    //     var newRow = $("#"+table+"").DataTable().row.add([
-                    //         id_row,
-                    //         data.request.name,
-                    //         '<img class="text-center" style="display:flex; margin:auto; width:40px" src="'+data.request.bLarge+'">',
-                    //         '<div class="text-center"> '+btnDelete+'</div>',
-                    //     ]).draw(false).node();
-                    // }else{
-                    //     var newRow = $("#"+table+"").DataTable().row.add([
-                    //         id_row,
-                    //         data.request.name,
-                    //         '<img class="text-center" style="display:flex; margin:auto; width:60px" src="'+data.request.bSmall+'">',
-                    //         '<div class="text-center"> '+btnDelete+'</div>',
-                    //     ]).draw(false).node();
-                    // }
                     $(newRow).attr("id", id_banner);
 
                     msgShow(1, 'Banners Product', data.msg);

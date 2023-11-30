@@ -387,4 +387,94 @@
     </section>
     <br>
 
+    <section class="content">
+      	<div class="container-fluid">
+        	<div class="row">
+          		<div class="col-12">
+            		<div class="card">
+              			<div class="card-body">
+                            <div class="col-md-12">
+                                <div class="tile">
+                                    <h4 class="tile-title">Banner large (producto)</h4>
+                                    <div class="tile-body">
+                                        
+                                    <?php
+                                    $bannerLProd = Models_Banners::searchData("products", "banner_large", "id_product, name_product");
+                                    if (!empty($bannerLProd)) {
+                                    ?>
+                                        <form class="row" id="formBannerLProd">
+                                            <input type="hidden" class="type-imageProd" value="2">
+                                            <div class="form-group col-md-3">
+                                                <select class="form-control select_options" name="bannerLProd" id="bannerLProd">
+                                    <?php
+                                                foreach ($bannerLProd as $key => $value) {
+                                                    echo '<option value="'.Utils::encriptar($value['id_product']).'">'.$value['name_product'].'</option>';
+                                                }
+                                    ?>
+                                                </select> 
+                                            </div>
+                                        
+                                            <div class="form-group col-md-4 align-self-end">
+                                                <button class="btn btn-primary" type="submit">Agregar</button>
+                                            </div>
+                                        </form>
+
+                                        <table id="tableBannerLProd" class="table_order table table-bordered table-striped table_data">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Nombre</th>
+                                                    <th>Imagen</th>
+                                                    <th>Acciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            <?php
+                                                $idsProdBL = array_map(function($element) {
+                                                    return $element['id_product'];
+                                                }, $bannerLProd);
+                                                $concatIdsProdBL = implode(', ', $idsProdBL);
+                                                Models_Banners::modifyTBanners("banners_product", "product_id", $concatIdsProdBL, 2);
+
+                                                $dataBannerLProd = Models_Banners::getBanners("banners_product", "id_banner, banner_name, sliderDst, sliderMbl, banner_large", 2);
+                                                $id_row = 1;
+
+                                                foreach ($dataBannerLProd as $key => $value) {
+                                                    $btnDelete = '';
+                                                    $id_banner = Utils::encriptar($value["id_banner"]);
+
+                                                    if (!empty($_SESSION['module']['eliminar']) && $_SESSION['idUser'] == 1) {
+                                                        $btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="delBannerProd(this, \''.$id_banner.'\', \'tableBannerLProd\', 2)" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
+                                                    }
+
+                                                    echo'<tr id="'.$id_banner.'">';
+                                                        echo '<td>'.$id_row.'</td>';
+                                                        echo '<td>'.$value['banner_name'].'</td>';
+                                                        echo '<td class="text-center">';
+                                                            echo '<img style="width:40px" src="'.MEDIA_ADMIN.'files/images/upload_products/'.$value['banner_large'].'">';
+                                                        echo '</td>';
+                                                        echo '<td><div class="text-center">'.$btnDelete.'</div></td>';
+                                                    echo'</tr>';
+
+                                                    $id_row++;
+                                                } 
+                                            ?> 
+                                            </tbody>
+                                        </table>
+                                    <?php
+                                    }else{
+                                        echo "<p>Debe tener por lo menos 1 banner large agregado en la seccion de productos.</p>";
+                                    }
+                                    ?>  
+
+                                    </div>
+                                </div>
+                            </div>     
+                        </div>
+	        		</div>
+        		</div>
+    		</div>
+    	</div>
+    </section>
+
 </div>
