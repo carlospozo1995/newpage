@@ -15,6 +15,8 @@ RewriteRule ^$ %{ENV:REWRITEBASE}index.php?show=Index [L]
 RewriteRule ^index/logout/$ %{ENV:REWRITEBASE}index.php?show=Index&action=logout [L]
 RewriteRule ^index/registerClient/$ %{ENV:REWRITEBASE}index.php?show=Index&action=registerClient [L]
 RewriteRule ^index/testEmail/$ %{ENV:REWRITEBASE}index.php?show=Index&action=testEmail [L]
+RewriteRule ^index/searchData/$ %{ENV:REWRITEBASE}index.php?show=Index&action=searchData [L]
+
 
 #LOGIN
 RewriteRule ^(login/|login|Login|LOGIN)$ %{ENV:REWRITEBASE}index.php?show=login [L]

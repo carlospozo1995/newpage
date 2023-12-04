@@ -60,6 +60,19 @@
 						echo json_encode($data);
 					}
 				break;
+				
+				case 'searchData':
+					if (isset($_POST)) {
+						$search_value = $_POST['search'];
+
+						if (!empty($search_value) && strlen($search_value) > 3) {
+							$search_data = Models_Store::searchData($search_value);
+							$count_search_data = Models_Store::countSearchData($search_value);
+							$data = array("data" => $search_data, "amount" => $count_search_data[0]['amount']);
+							echo json_encode($data);
+						}
+					}	
+				break;
 
 				case 'testEmail':
 					if ($_POST) {

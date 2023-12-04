@@ -139,46 +139,22 @@
 		</div>
 
 		<?php
-		$bannersCtgLarge = Models_Banners::getBanners("banners_category", "banner_name, banner_large, redirect", 2);
-		if (count($bannersCtgLarge) == 4) {
-		echo '<div class="banner-section section-top-gap-100">';
-			echo '<div class="banner-wrapper clearfix">';
-				foreach ($bannersCtgLarge as $key => $value) {
-		?>
-					<div class="banner-single-item banner-style-4 banner-animation banner-color--deep-blue float-left img-responsive"
-						data-aos="fade-up" data-aos-delay="0">
-						<div class="image">
-							<img class="img-fluid" src="<?= MEDIA_ADMIN; ?>files/images/uploads/<?=$value['banner_large'];?>" alt="">
-						</div>
-						<a href="<?=BASE_URL .'categoria/'. $value['redirect'];?>" class="content">
-							<div class="inner">
-								<h4 class="title"><?=$value['banner_name'];?></h4>
-							</div>
-							<span class="round-btn"><i class="ion-ios-arrow-thin-right"></i></span>
-						</a>
-					</div>
-		<?php
-				}
-			echo '</div>';
-		echo '</div>';
-		}
-
 		$recentProducts = Models_Store::getSpecificData("products", "id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url", "status", "ORDER BY id_product DESC LIMIT 8");
 
 		if (!empty($recentProducts)) {
 			$product_images = array();
-            foreach ($recentProducts as $product) {
-                $img_product = Models_Products::selectImages($product['id_product']);
-                if (!empty($img_product)) {
-                    $r_indexes = array_rand($img_product, 2);
-                    foreach ($r_indexes as $index) {
-                        $r_element = $img_product[$index];
-                        $product_images[$product['id_product']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/'.$r_element['image'].'" alt="">';
-                    }
-                }else{
-                    $product_images[$product['id_product']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/empty_img.png" alt="">';
-                }
-            }
+			foreach ($recentProducts as $product) {
+				$img_product = Models_Products::selectImages($product['id_product']);
+				if (!empty($img_product)) {
+					$r_indexes = array_rand($img_product, 2);
+					foreach ($r_indexes as $index) {
+						$r_element = $img_product[$index];
+						$product_images[$product['id_product']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/'.$r_element['image'].'" alt="">';
+					}
+				}else{
+					$product_images[$product['id_product']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/empty_img.png" alt="">';
+				}
+			}
 		?>
 		<div class="product-default-slider-section section-fluid section-top-gap-100">
 			<div class="section-title-wrapper" data-aos="fade-up" data-aos-delay="0">
@@ -198,7 +174,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-12">
-							<div class="product-slider-default-1row default-slider-nav-arrow">
+							<div class="new-products-slider-default-1row default-slider-nav-arrow">
 								<div class="swiper-container product-default-slider-5grid-1row">
 									<div class="swiper-wrapper my-2">
 									<?php
@@ -260,6 +236,33 @@
 		?>
 
 		<?php
+		$bannersCtgLarge = Models_Banners::getBanners("banners_category", "banner_name, banner_large, redirect", 2);
+		if (count($bannersCtgLarge) == 4) {
+		echo '<div class="banner-section section-top-gap-100">';
+			echo '<div class="banner-wrapper clearfix">';
+				foreach ($bannersCtgLarge as $key => $value) {
+		?>
+					<div class="banner-single-item banner-style-4 banner-animation banner-color--deep-blue float-left img-responsive"
+						data-aos="fade-up" data-aos-delay="0">
+						<div class="image">
+							<img class="img-fluid" src="<?= MEDIA_ADMIN; ?>files/images/uploads/<?=$value['banner_large'];?>" alt="">
+						</div>
+						<a href="<?=BASE_URL .'categoria/'. $value['redirect'];?>" class="content">
+							<div class="inner">
+								<h4 class="title"><?=$value['banner_name'];?></h4>
+							</div>
+							<span class="round-btn"><i class="ion-ios-arrow-thin-right"></i></span>
+						</a>
+					</div>
+		<?php
+				}
+			echo '</div>';
+		echo '</div>';
+		}
+
+		?>
+
+		<?php
 		$bannersCtgSmall = Models_Banners::getBanners("banners_category", "banner_small, redirect", 3);
 		if (count($bannersCtgSmall) == 5) {
 			$delayCtgSmall = 0;
@@ -267,7 +270,7 @@
 				echo '<div class="banner-wrapper">';
 					echo '<div class="container">';
 
-						echo '<div class="row"  data-aos="fade-up" data-aos-delay="0">';
+						echo '<div class="row" data-aos="fade-up" data-aos-delay="0">';
 							echo '<div class="col-12">';
 								echo '<div class="section-content-gap">';
 									echo '<div class="secton-content">';
@@ -277,7 +280,7 @@
 							echo '</div>';
 						echo '</div>';
 
-						echo '<div class="row mb-n6 section-fluid">';							
+						echo '<div class="row mb-n6 section-fluid d-none d-lg-flex">';							
 						foreach ($bannersCtgSmall as $key => $value) {
 							echo '<div class="col-md-2-5 col-12 mb-6">';
 								echo '<div class="banner-single-item banner-style-5 img-responsive" data-aos="fade-up" data-aos-delay="'.$delayCtgSmall.'">';
@@ -289,6 +292,30 @@
 							$delayCtgSmall += 200;
 						}
 						echo '</div>';
+
+						echo '<div class="row d-lg-none" data-aos="fade-up" data-aos-delay="0">';
+							echo '<div class="col-12">';
+								echo '<div class="blog-default-slider default-slider-nav-arrow">';
+									echo '<div class="swiper-container blog-slider">';
+										echo '<div class="swiper-wrapper">';
+										foreach ($bannersCtgSmall as $key => $value) {
+											echo '<div class="blog-default-single-item swiper-slide">';
+												echo '<div class="image-box d-flex justify-content-center">';
+													echo '<a href="'.BASE_URL.'categoria/'.$value['redirect'].'">';
+														echo '<img class="img-fluid" src="'.MEDIA_ADMIN.'files/images/uploads/'.$value['banner_small'].'" alt="">';
+													echo '</a>';
+												echo '</div>';
+											echo '</div>';
+										}
+										echo '</div>';
+									echo '</div>';
+									
+									echo '<div class="swiper-button-prev"></div>';
+									echo '<div class="swiper-button-next"></div>';
+								echo '</div>';
+							echo '</div>';
+						echo '</div>';
+
 					echo '</div>';
 				echo '</div>';
 			echo '</div>';
@@ -331,7 +358,7 @@
 					
 					<div class="col-lg-3 px-1">
 						<div class="banner-wrapper d-flex justify-content-center">
-							<a href="product-details-default.html">
+							<a href="<?=BASE_URL .'producto/'. $bannersProdLarge[0]['redirect'];?>">
 								<div class="banner-single-item banner-animation banner-color--green float-left"
 									data-aos="fade-up" data-aos-delay="0">
 									<div class="image">
@@ -343,14 +370,14 @@
 					</div>
 
 					<div class="col-lg-9">
-						<!--  -->
 						<div class="section-title-wrapper pt-5" data-aos="fade-up" data-aos-delay="0">
 							<div class="container">
 								<div class="row">
 									<div class="col-12">
 										<div>
 											<div class="secton-content">
-												<h3 class="section-title c-blue-page pb-5">PRODUCTOS RELACIONADOS</h3>
+												<h3 class="section-title c-blue-page pb-5 text-center d-lg-none">PRODUCTOS RECOMENDADOS</h3>
+												<h3 class="section-title c-blue-page pb-5 d-none d-lg-block">PRODUCTOS RELACIONADOS</h3>
 											</div>
 										</div>
 									</div>
@@ -361,7 +388,7 @@
 							<div class="container">
 								<div class="row">
 									<div class="col-12">
-										<div class="product-slider-default-1row default-slider-nav-arrow">
+										<div class="relatedOne-product-slider-default-1row default-slider-nav-arrow">
 											<div class="swiper-container product-default-slider-4grid-1row">
 												<div class="swiper-wrapper my-2">
 												<?php
@@ -433,7 +460,6 @@
 								</div>
 							</div>
 						</div>
-						<!--  -->
 					</div>
 				</div>
 			</div>
@@ -445,19 +471,19 @@
 		<?php
 		if (!empty($bannersProdLarge) && count($bannersProdLarge) == 2) {
 		?>
-		<div class="banner-section section-top-gap-100">
+		<!-- <div class="banner-section section-top-gap-100">
 			<div class="container">
 				<div class="row flex-lg-row align-items-center">
 
 					<div class="col-lg-9">
-						<!--  -->
 						<div class="section-title-wrapper pt-5" data-aos="fade-up" data-aos-delay="0">
 							<div class="container">
 								<div class="row">
 									<div class="col-12">
 										<div>
 											<div class="secton-content">
-												<h3 class="section-title c-blue-page pb-5">PRODUCTOS RELACIONADOS</h3>
+												<h3 class="section-title c-blue-page pb-5 text-center d-lg-none">PRODUCTOS RECOMENDADOS</h3>
+												<h3 class="section-title c-blue-page pb-5 d-none d-lg-block">PRODUCTOS RELACIONADOS</h3>
 											</div>
 										</div>
 									</div>
@@ -468,7 +494,7 @@
 							<div class="container">
 								<div class="row">
 									<div class="col-12">
-										<div class="product-slider-default-1row default-slider-nav-arrow">
+										<div class="relatedTwo-product-slider-default-1row default-slider-nav-arrow" >
 											<div class="swiper-container product-default-slider-4grid-1row">
 												<div class="swiper-wrapper my-2">
 												<?php
@@ -540,12 +566,11 @@
 								</div>
 							</div>
 						</div>
-						<!--  -->
 					</div>
 
 					<div class="col-lg-3 px-1">
 						<div class="banner-wrapper d-flex justify-content-center">
-							<a href="product-details-default.html">
+							<a href="<?=BASE_URL .'producto/'. $bannersProdLarge[1]['redirect'];?>">
 								<div class="banner-single-item banner-animation banner-color--green float-left"
 									data-aos="fade-up" data-aos-delay="0">
 									<div class="image">
@@ -557,12 +582,12 @@
 					</div>	
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<?php
 		}
 		?>
 
-		<div class="banner-section section-inner-bg">
+		<!-- <div class="banner-section section-inner-bg">
 			<div class="col-12" data-aos="fade-up" data-aos-delay="0">
 				<div>
 					<div class="secton-content">
@@ -570,48 +595,8 @@
 					</div>
 				</div>
 			</div>
+		</div> -->
+		<div class="banner-section section-top-gap-100">
 		</div>
-
-		<?php
-
-			// $fechaHoraActual = date("Y-m-d H:i:s");
-		// print_r(intval);
-
-		// Imprimir la fecha y hora actual en el formato deseado
-			// echo gettype($fechaHoraActual);
-			// Utils::dep($_SESSION['paymentProcessData']);
-			// $url = 'https://pokeapi.co/api/v2/pokemon/300/';
-			// $ch = curl_init();
-
-			// curl_setopt($ch, CURLOPT_URL, $url);
-			// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			// curl_setopt($ch, CURLOPT_HTTPGET, true);
-
-			// $response = curl_exec($ch);
-
-			// $pokemon = json_decode($response);
-
-			// echo $pokemon->name;
-
-			// -------
-			// -------
-
-			// $url2 = 'http://localhost/carlos/page/confirmarcompra?id=21566109&clientTransactionId=555e07e25a1dbfe5ca5bc9f59c6e86c9';
-			// $queryString2 = parse_url($url2, PHP_URL_QUERY);
-			// Utils::dep($queryString2);
-			// // parse_str($queryString, $params);
-			// // Utils::dep($params);
-
-			// $url = 'https://www.w3schools.com/php/func_string_parse_str.asp';
-			// // var_dump(parse_url($url));
-			// $queryString = parse_url($url, PHP_URL_PATH);
-			// Utils::dep(parse_url($queryString));
-			
-
-			// $nombre = "Televisor 65' Android 11 Uhd";
-			// $palabras = explode(' ', $nombre);
-			// $nuevoNombre = (count($palabras) > 1) ? $palabras[0] . ' ' . substr($palabras[1], 0, strlen($palabras[1]) / 2) . '...' : $nombre;
-			// echo $nuevoNombre;
-		?>
 
 	</div>

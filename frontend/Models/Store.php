@@ -6,6 +6,16 @@
             return $GLOBALS["db"]->selectAll($sql, array(1));
         }
 
+        static public function searchData($data) {
+            $sql = "SELECT p.name_product, p.brand, p.url FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%$data%' OR p.brand LIKE '%$data%' OR c.name_category LIKE '%$data%') AND p.status = 1 LIMIT 4";
+            return $GLOBALS["db"]->selectAll($sql, array(1));
+        }
+
+        static public function countSearchData ($data) {
+            $sql = "SELECT COUNT(*) AS amount FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%$data%' OR p.brand LIKE '%$data%' OR c.name_category LIKE '%$data%') AND p.status = 1";
+            return $GLOBALS["db"]->selectAll($sql, array(1));
+        }
+
         // SQL INSERT CLIENT
         static public function insertClient($name, $surname, $phone, $email, $password)
         {

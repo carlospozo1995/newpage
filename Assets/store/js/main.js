@@ -46,6 +46,30 @@
         }
     });
 
+    $('#search form input').on('keyup', function() {
+        let search_value = $('#search form input').val();
+        if (search_value.length > 3) {
+            $.ajax({
+                url: base_url + "index/searchData/",
+                dataType: 'JSON',
+                method: 'POST',
+                data: {
+                    search: search_value,
+                },
+                beforeSend: function() {
+                },
+                success: function(data){
+                    console.log(data)
+                },
+                error: function(xhr, status, error) {
+                },
+                complete: function() {
+                    $('.content-loading').css("display","none");
+                }
+            });
+        }
+    });
+
     /*****************************
      * Off Canvas Function
      *****************************/
@@ -183,20 +207,20 @@
     /*********************************************
      *   Product Slider Active - 5 Grid Single Rows
      **********************************************/
-    var productSlider4grid1row = new Swiper('.product-default-slider-5grid-1row.swiper-container', {
+    var productSlider5grid1row = new Swiper('.product-default-slider-5grid-1row.swiper-container', {
         slidesPerView: 5,
         spaceBetween: 30,
         speed: 1500,
 
         navigation: {
-            nextEl: '.product-slider-default-1row .swiper-button-next',
-            prevEl: '.product-slider-default-1row .swiper-button-prev',
+            nextEl: '.new-products-slider-default-1row .swiper-button-next',
+            prevEl: '.new-products-slider-default-1row .swiper-button-prev',
         },
 
         breakpoints: {
 
             0: {
-                slidesPerView: 1,
+                slidesPerView: 2,
             },
             576: {
                 slidesPerView: 2,
@@ -219,35 +243,41 @@
     /*********************************************
      *   Product Slider Active - 4 Grid Single Rows
      **********************************************/
-    var productSlider4grid1row = new Swiper('.product-default-slider-4grid-1row.swiper-container', {
-        slidesPerView: 4,
-        spaceBetween: 30,
-        speed: 1500,
 
-        navigation: {
-            nextEl: '.product-slider-default-1row .swiper-button-next',
-            prevEl: '.product-slider-default-1row .swiper-button-prev',
-        },
+    $('.swiper-container.product-default-slider-4grid-1row').each(function() {
+        let $this = $(this);
+        let parent = $this.parent()[0].classList[0];
+        new Swiper($this[0],{
+            slidesPerView: 4,
+            spaceBetween: 30,
+            speed: 1500,
 
-        breakpoints: {
+            navigation: {
+                nextEl: '.'+parent+' .swiper-button-next',
+                prevEl: '.'+parent+' .swiper-button-prev',
+            },
 
-            0: {
-                slidesPerView: 1,
-            },
-            576: {
-                slidesPerView: 2,
-            },
-            768: {
-                slidesPerView: 2,
-            },
-            992: {
-                slidesPerView: 3,
-            },
-            1200: {
-                slidesPerView: 4,
+            breakpoints: {
+
+                0: {
+                    slidesPerView: 2,
+                },
+                576: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                },
+                1200: {
+                    slidesPerView: 4,
+                }
             }
-        }
+        });
     });
+    
 
     /*********************************************
      *   Product Slider Active - 4 Grid Single 3Rows

@@ -19133,7 +19133,8 @@ Pages - Contact
     border-bottom: 2px solid #FFF;
 }
 .search-modal input[type=search]:focus {
-    border-color: #b19361;
+    /* change border-color: #b19361; */
+    border-color: #4431DE;
 }
 
 .search-modal .btn {

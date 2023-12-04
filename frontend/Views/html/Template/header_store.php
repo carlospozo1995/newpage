@@ -53,7 +53,7 @@
                         <div class="z-20 header-top-left">
                             <div class="header-logo">
                                 <div class="logo">
-                                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/no-test/logo_text.png" alt=""></a>
+                                    <a href="<?= BASE_URL ?>"><img src="<?= MEDIA_STORE ?>images/logo/logo_text.png" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -305,7 +305,7 @@
                             <li>
                                 <a href="<?= BASE_URL; ?>">
                                     <div class="logo">
-                                        <img src="<?= MEDIA_STORE ?>images/logo/no-test/logo_text.png" alt="">
+                                        <img src="<?= MEDIA_STORE ?>images/logo/logo_text.png" alt="">
                                     </div>
                                 </a>
                             </li>
@@ -458,8 +458,8 @@
     <div id="search" class="search-modal">
         <button type="button" class="close">×</button>
         <form>
-            <input type="search" placeholder="type keyword(s) here" />
-            <button type="submit" class="btn btn-lg btn-aqua">Search</button>
+            <input type="search" placeholder="¡Hola! ¿Qué producto buscas?" />
+            <button type="submit" class="btn btn-lg btn-deep-blue">Buscar</button>
         </form>
     </div>
     <!-- End Offcanvas Search Bar Section -->
