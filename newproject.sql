@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 30-11-2023 a las 06:00:59
+-- Tiempo de generación: 04-12-2023 a las 05:11:38
 -- Versión del servidor: 8.0.30
 -- Versión de PHP: 7.4.19
 
@@ -331,7 +331,13 @@ INSERT INTO `img_product` (`id_img`, `product_id`, `image`) VALUES
 (85, 27, 'imgRef_27_b3d0d165f38219348e09374b648ef83b.jpg'),
 (86, 33, 'imgRef_33_3ca5455c76df1ef0974c5586bad9c389.jpg'),
 (87, 33, 'imgRef_33_984fbda788d0af205684a4030a52160e.jpg'),
-(88, 33, 'imgRef_33_dbc335435b834dd2df35e07f27c690e5.jpg');
+(88, 33, 'imgRef_33_dbc335435b834dd2df35e07f27c690e5.jpg'),
+(89, 37, 'imgRef_37_64b2565a530484a2eb61444dae08ffca.jpg'),
+(90, 37, 'imgRef_37_e7b0ca3565f7edd09492c13011f3dffc.jpg'),
+(91, 38, 'imgRef_38_6f7ecc339b8e7772d13724d4e0bffd82.jpg'),
+(92, 38, 'imgRef_38_0280e47d77bb87b3a32d639da2cc4833.jpg'),
+(93, 39, 'imgRef_39_35335e2c15b5f52300de2f87b8511451.jpg'),
+(94, 39, 'imgRef_39_5a252af0505ff98c8a1e1044548a4852.jpg');
 
 -- --------------------------------------------------------
 
@@ -509,7 +515,10 @@ INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `de
 (30, 213, 6854165156416, 'Xiaomi Redmi K50 Gaming Edition Dual SIM 256 GB blue 12 GB RAM', 'Este celular no es solo tecnología; es una extensión de tu estilo de vida. Con un rendimiento potente bajo su elegante exterior, te acompaña en cada tarea, juego o aventura digital.', NULL, NULL, NULL, NULL, NULL, NULL, 'XIAOMI', 534.96, 9, NULL, NULL, NULL, NULL, '2023-11-27 19:13:48', 'xiaomi-redmi-k50-gaming-edition-dual-sim-256-gb-blue-12-gb-ram', 1),
 (31, 213, 5616156641652, 'Infinix Note 12 G96 Dual SIM 256 GB sapphire blue 8 GB RAM', 'Este celular no es solo tecnología; es una extensión de tu estilo de vida. Con un rendimiento potente bajo su elegante exterior, te acompaña en cada tarea, juego o aventura digital.', NULL, NULL, NULL, NULL, NULL, NULL, 'INFINIX', 423.00, 9, NULL, NULL, NULL, NULL, '2023-11-27 19:19:37', 'infinix-note-12-g96-dual-sim-256-gb-sapphire-blue-8-gb-ram', 1),
 (32, 213, 95991651613456, 'Samsung Galaxy S20+ 5G 128 GB cosmic black 12 GB RAM', 'Este celular no es solo tecnología; es una extensión de tu estilo de vida. Con un rendimiento potente bajo su elegante exterior, te acompaña en cada tarea, juego o aventura digital.', NULL, NULL, NULL, NULL, NULL, NULL, 'SAMSUNG', 523.00, 5, NULL, NULL, NULL, NULL, '2023-11-27 19:22:29', 'samsung-galaxy-s20-5g-128-gb-cosmic-black-12-gb-ram', 1),
-(33, 213, 59595262, 'Xiaomi Redmi Note 11 Pro Dual SIM 128 GB blanco polar 8 GB RAM', 'Este celular no es solo tecnología; es una extensión de tu estilo de vida. Con un rendimiento potente bajo su elegante exterior, te acompaña en cada tarea, juego o aventura digital.', NULL, NULL, NULL, NULL, 'bannerlgP_xiaomi-redmi-note-11-pro-dual-sim-128-gb-blanco-polar-8-gb-ram_8b9eb14a880d4e069c7b8ec43fc8db3f.jpg', NULL, 'XIAOMI', 368.00, 8, NULL, NULL, NULL, NULL, '2023-11-27 21:34:00', 'xiaomi-redmi-note-11-pro-dual-sim-128-gb-blanco-polar-8-gb-ram', 1);
+(33, 213, 59595262, 'Xiaomi Redmi Note 11 Pro Dual SIM 128 GB blanco polar 8 GB RAM', 'Este celular no es solo tecnología; es una extensión de tu estilo de vida. Con un rendimiento potente bajo su elegante exterior, te acompaña en cada tarea, juego o aventura digital.', NULL, NULL, NULL, NULL, 'bannerlgP_xiaomi-redmi-note-11-pro-dual-sim-128-gb-blanco-polar-8-gb-ram_8b9eb14a880d4e069c7b8ec43fc8db3f.jpg', NULL, 'XIAOMI', 368.00, 8, NULL, NULL, NULL, NULL, '2023-11-27 21:34:00', 'xiaomi-redmi-note-11-pro-dual-sim-128-gb-blanco-polar-8-gb-ram', 1),
+(37, 203, 9565614654565, 'Televisor Tcl 50 Android 9.0 2021 Modelo P615', 'Pasa horas de entretenimiento viendo tu contenido favorito, con una resolución excelente.', NULL, NULL, NULL, NULL, NULL, NULL, 'TCL', 549.36, 7, NULL, NULL, NULL, NULL, '2023-12-01 09:20:29', 'televisor-tcl-50-android-9-0-2021-modelo-p615', 1),
+(38, 203, 91166156459, 'Smart TV Hyundai Android TV Series HYLED4321AiM Android TV Full HD 43\' 100V/200V', 'Pasa horas de entretenimiento viendo tu contenido favorito, con una resolución excelente.', NULL, NULL, NULL, NULL, NULL, NULL, 'HYUNDAI', 549.99, 5, NULL, NULL, NULL, NULL, '2023-12-01 09:41:34', 'smart-tv-hyundai-android-tv-series-hyled4321aim-android-tv-full-hd-43-100v-200v', 1),
+(39, 203, 41564615, 'Televisor Smart Uhd 4k LG 50 Led 50ur8750 Mex 2023', 'Pasa horas de entretenimiento viendo tu contenido favorito, con una resolución excelente.', NULL, NULL, NULL, NULL, NULL, NULL, 'LG', 499.99, 5, 550.00, 9, NULL, NULL, '2023-12-01 09:45:45', 'televisor-smart-uhd-4k-lg-50-led-50ur8750-mex-2023', 1);
 
 -- --------------------------------------------------------
 
@@ -698,7 +707,7 @@ ALTER TABLE `detail_orders`
 -- AUTO_INCREMENT de la tabla `img_product`
 --
 ALTER TABLE `img_product`
-  MODIFY `id_img` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `id_img` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 
 --
 -- AUTO_INCREMENT de la tabla `modules`
@@ -728,7 +737,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_product` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
