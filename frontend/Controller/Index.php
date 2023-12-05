@@ -64,11 +64,87 @@
 				case 'searchData':
 					if (isset($_POST)) {
 						$search_value = $_POST['search'];
+						$html_products = "";
 
 						if (!empty($search_value) && strlen($search_value) > 3) {
 							$search_data = Models_Store::searchData($search_value);
-							$count_search_data = Models_Store::countSearchData($search_value);
-							$data = array("data" => $search_data, "amount" => $count_search_data[0]['amount']);
+
+							if (!empty($search_data)) {
+								$product_images = array();
+								foreach ($search_data as $product) {
+									$img_product = Models_Products::selectImages($product['id_product']);
+									if (!empty($img_product)) {
+										$r_indexes = array_rand($img_product, 2);
+										foreach ($r_indexes as $index) {
+											$r_element = $img_product[$index];
+											$product_images[$product['id_product']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/'.$r_element['image'].'" alt="">';
+										}
+									}else{
+										$product_images[$product['id_product']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/empty_img.png" alt="">';
+									}
+								}
+
+								$html_products = '	<div class="search-product-slider-default-1row default-slider-nav-arrow">
+														<div class="swiper-container product-default-slider-4grid-1row">
+															<div class="swiper-wrapper my-2">';
+
+
+															foreach ($search_data as $product) {
+																$html_products.= '<div class="product-default-single-item product-color--pink swiper-slide border-product">';
+																	$html_products.= '<div class="image-box">';
+																		$html_products.= '<a href="'.BASE_URL."producto/".$product["url"].'" class="image-link' . (!empty($product['discount']) ? ' content-off" data-discount="'.$product['discount'].'% off"' : '"') . '>';
+																			$html_products.= implode('', $product_images[$product['id_product']]);
+																		$html_products.= '</a>';
+																		$html_products.= '<div class="action-link">';
+																			$html_products.= '<div class="action-link-right mx-auto">';
+																				$html_products.= '<a href="" data-bs-toggle="modal" data-bs-target="#modalQuickview"><i class="icon-eye" title="Vista rápida"></i></a>';
+																				$html_products.= '<a href=""><i class="icon-heart" title="Añadir a favoritos"></i></a>';
+																			if (!empty($product['stock']) && $product['stock'] > 0) {
+																				$html_products.= '<a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="addToCart" id="'.Utils::encriptar($product['id_product']).'"><i class="icon-basket" title="Añadir al carrito"></i></a>';
+																			}
+																			$html_products.= '</div>';
+																		$html_products.= '</div>';
+																	$html_products.= '</div>';
+																	
+																	$html_products.= '<div class="content">';
+																		$html_products.= '<div class="text-center">';
+																			$html_products.= '<h6><a class="title-product" href="'.BASE_URL."producto/".$product["url"].'">'.$product['name_product'].'</a></h6>';
+																			$html_products.= '<p>'.$product['brand'].'</p>';
+						
+																			if (!empty($product['cantDues'])) {
+																			$html_products.= '<div class="content-data-product no-empty">'; 
+																				$html_products.= '<div class="price-product no-empty">';
+																			}else{
+																			$html_products.= '<div class="content-data-product empty">'; 
+																				$html_products.= '<div class="price-product empty">';
+																			}
+																					$html_products.= (!empty($product['prevPrice'])) ? '<del>'.SMONEY. Utils::formatMoney($product['prevPrice']).'</del>' : '';
+																					$html_products.= '<span>'.SMONEY.Utils::formatMoney($product['price']).'</span>';
+																				$html_products.= '</div>';
+						
+																				$html_products.= (!empty($product['cantDues'])) ? '<span class="ml-2 text-left">'.$product['cantDues'].' cuotas '.SMONEY. Utils::formatMoney($product['priceDues']).'</span>' : '';
+																			$html_products.= '</div>';
+						
+																		$html_products.= '</div>';
+																	$html_products.= '</div>';
+																$html_products.= '</div>';
+															}
+
+
+								$html_products .= '			</div>
+														</div>
+
+														<div class="swiper-button-prev"></div>
+														<div class="swiper-button-next"></div>
+													</div>';
+							}
+
+
+							// $count_search_data = Models_Store::countSearchData($search_value);
+
+							// $data = array("data" => $search_data, "amount" => $count_search_data[0]['amount']);
+							// sleep(3);
+							$data = array("htmlContent" => $html_products);
 							echo json_encode($data);
 						}
 					}	

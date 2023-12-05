@@ -7,7 +7,7 @@
         }
 
         static public function searchData($data) {
-            $sql = "SELECT p.name_product, p.brand, p.url FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%$data%' OR p.brand LIKE '%$data%' OR c.name_category LIKE '%$data%') AND p.status = 1 LIMIT 4";
+            $sql = "SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%$data%' OR p.brand LIKE '%$data%' OR c.name_category LIKE '%$data%') AND p.status = 1 LIMIT 5";
             return $GLOBALS["db"]->selectAll($sql, array(1));
         }
 

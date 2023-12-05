@@ -458,8 +458,36 @@
     <div id="search" class="search-modal">
         <button type="button" class="close">×</button>
         <form>
-            <input type="search" placeholder="¡Hola! ¿Qué producto buscas?" />
-            <button type="submit" class="btn btn-lg btn-deep-blue">Buscar</button>
+            <div class="search-content">
+                <input type="text" placeholder="¡Hola! ¿Qué producto buscas?">
+                <button type="submit" class="btn btn-lg btn-deep-blue"><i class="icon-magnifier font-weight-bold"></i></button>
+            </div>
+
+            <div class="search-data d-none">
+                <div class="row">
+                    <div class="col-lg-4 position-relative">
+                        <p>SUGERENCIAS</p>
+                    </div>
+
+                    <div class="col-lg-8 border-left position-relative">
+                        <div class="searched-product-content">
+                            <div class="product-default-slider-section section-fluid">
+                                <div class="product-wrapper"">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-12 content-products">
+                                                <!-- contenido de productos mediante busqueda (4) -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cont-load-search"><span class="loader-search"></span></div>
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
     <!-- End Offcanvas Search Bar Section -->

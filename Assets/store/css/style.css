@@ -19113,12 +19113,17 @@ Pages - Contact
     opacity: 1;
 }
 
-.search-modal input[type=search] {
+.search-modal .search-content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.search-modal .search-content input {
     color: white;
     background: rgba(0, 0, 0, 0);
     font-size: 21px;
@@ -19132,17 +19137,30 @@ Pages - Contact
     outline: none;
     border-bottom: 2px solid #FFF;
 }
-.search-modal input[type=search]:focus {
-    /* change border-color: #b19361; */
+
+.search-modal .search-content input:focus {
     border-color: #4431DE;
 }
 
-.search-modal .btn {
+.search-modal .search-content .btn{
+    margin-left: 10px;
+    margin-top: -6%;
+}
+
+.search-modal .search-data{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 20px;
+    margin-top: 10px;
+    width: 80%;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    background-color: #FFF;
+    padding: 20px;
 }
 
 .search-modal .close {
