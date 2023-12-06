@@ -68,8 +68,6 @@
 
 						if (!empty($search_value) && strlen($search_value) > 3) {
 							$search_data = Models_Store::searchData($search_value);
-							Utils::dep($search_data);
-							die();
 							// $count_search_data = Models_Store::countSearchData($search_value);
 
 							if (!empty($search_data)) {

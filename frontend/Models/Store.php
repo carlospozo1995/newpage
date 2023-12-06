@@ -7,39 +7,47 @@
         }
 
         static public function searchData($data) {
-            $sql = "SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%$data%' OR p.brand LIKE '%$data%' OR c.name_category LIKE '%$data%') AND p.status = 1 LIMIT 5";
-            $request = $GLOBALS["db"]->selectAll($sql, array());
+            $request = "";
+            $getProdSearch = "SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE (name_product LIKE ? OR brand LIKE ?) AND status = ? LIMIT 5";
+            $arrProd = $GLOBALS["db"]->selectAll($getProdSearch, array('%'.$data.'%', '%'.$data.'%', 1));
 
-            if (empty($request)) {
-                $sql_optional = "SELECT url AS '0' FROM categories WHERE name_category LIKE '%$data%' AND status = 1";
-                $request_optional = $GLOBALS["db"]->auto_array($sql_optional, array());
-                // return $request_optional;
-                if (!empty($request_optional)) {
+            if (empty($arrProd)) {
+                $getUrlCtg = "SELECT url FROM categories WHERE name_category LIKE ? AND status = ?";
+                $arrUrl = $GLOBALS["db"]->auto_array($getUrlCtg, array('%'.$data.'%', 1));
+                if (!empty($arrUrl)) {
+                    $getCategories = "  WITH RECURSIVE category_path AS (
+                                            SELECT id_category, fatherCategory, url
+                                            FROM categories
+                                            WHERE url = ?
+                                            UNION
+                                            SELECT c.id_category, c.fatherCategory, c.url
+                                            FROM categories c
+                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
+                                        )
+                                        SELECT url
+                                        FROM category_path
+                                        ORDER BY id_category";
+                    $arrCategories =  $GLOBALS["db"]->selectAll($getCategories, array($arrUrl['url']));
+                    if (!empty($arrCategories)) {
+                        $url_reference = array_column($arrCategories, 'url');
+                        $end_path_id = self::getIdCategory(end($url_reference));
+                        $sons_end_path = Models_Categories::dataSons(end($end_path_id));
+                        $id_sons = "";
 
-                    WITH RECURSIVE category_path AS (
-                        SELECT id_category, name_category, fatherCategory, url
-                        FROM categories
-                        WHERE url = 'barras-de-sonido'
-                        UNION
-                        SELECT c.id_category, c.name_category, c.fatherCategory, c.url
-                        FROM categories c
-                        JOIN category_path cp ON c.id_category = cp.fatherCategory
-                      )
-                      SELECT url
-                      FROM category_path
-                      ORDER BY id_category;
+                        foreach ($sons_end_path as $data) {
+                            $id_sons .= Utils::desencriptar($data["id_son"]).",";
+                        }
+                        $id_sons = rtrim($id_sons, ",");
 
-                    // list($data1, $data2, $data3) = array_pad(array_map(function($x) { return "$x"; }, $request_optional), 3, "");
-
-                    // $data_categories = Models_Store::getCategories($data1, $data2, $data3);
-                    // return $data_categories;    
-
-                    // $sqltwo = "SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE category_id = '$dataid' AND status = 1 LIMIT 5";
-                    // return $GLOBALS["db"]->selectAll($sqltwo, array());
+                        $id_sons = !empty($id_sons) ? $id_sons : end($end_path_id);
+                        $products = self::getProducts($id_sons, "", "", "", 0, 5);
+                        $request = $products;
+                    }
                 }
             }else{
-                return $request;
+                $request = $arrProd;
             }
+            return $request;
         }
 
         static public function countSearchData ($data) {
@@ -85,7 +93,7 @@
 
         static public function getProducts($data, $brandCheck, $order, $range, $start = null, $perload = null)
         {
-            $sql = "SELECT * FROM products WHERE category_id IN ($data) $brandCheck $range AND status = 1 $order";
+            $sql = "SELECT id_product, name_product, desMain, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE category_id IN ($data) $brandCheck $range AND status = 1 $order";
             $orderMain = "";
             if ($start !== null && $perload !== null) {
                 if (empty($order)) {
