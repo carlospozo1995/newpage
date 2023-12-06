@@ -45,11 +45,13 @@
             $(this).removeClass('open');
             $('#search form input').val("");
             $(".search-modal .search-data").addClass('d-none');
-
+            $('.search-modal .search-content').css('top', '50%');
+            $('.search-modal .search-data').css('top', '50%');
         }
     });
 
     $('#search form input').on('keyup', function() {
+        $('.searched-product-content .content-products').html("");
         let search_value = $('#search form input').val();
         if (search_value.length > 3) {
             $(".search-modal .search-data").removeClass('d-none');
@@ -64,39 +66,48 @@
                     $('.search-data .cont-load-search').css("display", "flex");
                 },
                 success: function(data){
-                    console.log(data)
-                    $('.searched-product-content .content-products').html(data.htmlContent);
+                    if (data.htmlContent != "") {
+                        console.log(data);
+                        $('.searched-product-content .content-products').html(data.htmlContent);
 
-                    new Swiper('.swiper-container.product-default-slider-4grid-1row', {
-                        slidesPerView: 3,
-                        spaceBetween: 20,
-                        speed: 1500,
-                
-                        navigation: {
-                            nextEl: '.search-product-slider-default-1row .swiper-button-next',
-                            prevEl: '.search-product-slider-default-1row .swiper-button-prev',
-                        },
-                
-                        breakpoints: {
-                
-                            0: {
-                                slidesPerView: 1,
+                        new Swiper('.swiper-container.product-default-slider-4grid-1row', {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                            speed: 1500,
+                    
+                            navigation: {
+                                nextEl: '.search-product-slider-default-1row .swiper-button-next',
+                                prevEl: '.search-product-slider-default-1row .swiper-button-prev',
                             },
-                            576: {
-                                slidesPerView: 1,
-                            },
-                            768: {
-                                slidesPerView: 2,
-                            },
-                            1400: {
-                                slidesPerView: 3,
-                            },
-                            1800: {
-                                slidesPerView: 4,
+                    
+                            breakpoints: {
+                    
+                                0: {
+                                    slidesPerView: 1,
+                                },
+                                576: {
+                                    slidesPerView: 1,
+                                },
+                                768: {
+                                    slidesPerView: 2,
+                                },
+                                1400: {
+                                    slidesPerView: 3,
+                                },
+                                1800: {
+                                    slidesPerView: 4,
+                                }
                             }
-                        }
-                    });
-                    // sliderProducts();
+                        });
+
+                        $('.search-modal .search-content').css('top', '30%');
+                        $('.search-modal .search-data').css('top', '30%');
+
+                    }else{
+                        $('.searched-product-content .content-products').html('No se encontraron produtos con ese termino.');
+                        $('.search-modal .search-content').css('top', '50%');
+                        $('.search-modal .search-data').css('top', '50%');
+                    }
                 },
                 error: function(xhr, status, error) {
                 },
@@ -106,6 +117,8 @@
             });
         }else{
             $(".search-modal .search-data").addClass('d-none');
+            $('.search-modal .search-content').css('top', '50%');
+            $('.search-modal .search-data').css('top', '50%');
         }
     });
 
@@ -282,43 +295,40 @@
     /*********************************************
      *   Product Slider Active - 4 Grid Single Rows
      **********************************************/
+    
+    $('.swiper-container.product-default-slider-4grid-1row').each(function() {
+        let $this = $(this);
+        let parent = $this.parent()[0].classList[0];
+        new Swiper($this[0],{
+            slidesPerView: 4,
+            spaceBetween: 30,
+            speed: 1500,
 
-    function sliderProducts() {
-        $('.swiper-container.product-default-slider-4grid-1row').each(function() {
-            let $this = $(this);
-            let parent = $this.parent()[0].classList[0];
-            new Swiper($this[0],{
-                slidesPerView: 4,
-                spaceBetween: 30,
-                speed: 1500,
-    
-                navigation: {
-                    nextEl: '.'+parent+' .swiper-button-next',
-                    prevEl: '.'+parent+' .swiper-button-prev',
+            navigation: {
+                nextEl: '.'+parent+' .swiper-button-next',
+                prevEl: '.'+parent+' .swiper-button-prev',
+            },
+
+            breakpoints: {
+
+                0: {
+                    slidesPerView: 2,
                 },
-    
-                breakpoints: {
-    
-                    0: {
-                        slidesPerView: 2,
-                    },
-                    576: {
-                        slidesPerView: 2,
-                    },
-                    768: {
-                        slidesPerView: 2,
-                    },
-                    992: {
-                        slidesPerView: 3,
-                    },
-                    1200: {
-                        slidesPerView: 4,
-                    }
+                576: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                },
+                1200: {
+                    slidesPerView: 4,
                 }
-            });
+            }
         });
-    }
-    sliderProducts();
+    });
     
 
     /*********************************************

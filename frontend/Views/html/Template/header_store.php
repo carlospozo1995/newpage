@@ -476,7 +476,6 @@
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-12 content-products">
-                                                <!-- contenido de productos mediante busqueda (4) -->
                                             </div>
                                         </div>
                                     </div>

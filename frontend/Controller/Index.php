@@ -68,6 +68,9 @@
 
 						if (!empty($search_value) && strlen($search_value) > 3) {
 							$search_data = Models_Store::searchData($search_value);
+							Utils::dep($search_data);
+							die();
+							// $count_search_data = Models_Store::countSearchData($search_value);
 
 							if (!empty($search_data)) {
 								$product_images = array();
@@ -88,7 +91,6 @@
 														<div class="swiper-container product-default-slider-4grid-1row">
 															<div class="swiper-wrapper my-2">';
 
-
 															foreach ($search_data as $product) {
 																$html_products.= '<div class="product-default-single-item product-color--pink swiper-slide border-product">';
 																	$html_products.= '<div class="image-box">';
@@ -97,8 +99,6 @@
 																		$html_products.= '</a>';
 																		$html_products.= '<div class="action-link">';
 																			$html_products.= '<div class="action-link-right mx-auto">';
-																				$html_products.= '<a href="" data-bs-toggle="modal" data-bs-target="#modalQuickview"><i class="icon-eye" title="Vista rápida"></i></a>';
-																				$html_products.= '<a href=""><i class="icon-heart" title="Añadir a favoritos"></i></a>';
 																			if (!empty($product['stock']) && $product['stock'] > 0) {
 																				$html_products.= '<a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="addToCart" id="'.Utils::encriptar($product['id_product']).'"><i class="icon-basket" title="Añadir al carrito"></i></a>';
 																			}
@@ -130,6 +130,15 @@
 																$html_products.= '</div>';
 															}
 
+															// if ($count_search_data[0]['amount'] > 5) {
+															// 	$html_products .= '	<div class="product-default-single-item swiper-slide my-auto fs-16">
+															// 							<div class="content p-0">
+															// 								<a class="text-center" href="#">Ver todos los '.$count_search_data[0]['amount'].' productos</a>
+															// 							</div>
+															// 					   	</div>
+															// 	';
+															// }
+
 
 								$html_products .= '			</div>
 														</div>
@@ -139,11 +148,7 @@
 													</div>';
 							}
 
-
-							// $count_search_data = Models_Store::countSearchData($search_value);
-
-							// $data = array("data" => $search_data, "amount" => $count_search_data[0]['amount']);
-							// sleep(3);
+							// $data = array("htmlContent" => $html_products, "amount" => $count_search_data);
 							$data = array("htmlContent" => $html_products);
 							echo json_encode($data);
 						}

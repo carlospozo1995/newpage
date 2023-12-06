@@ -1,7 +1,7 @@
 <?php
     $cat_path = explode("/", $_GET['cat_path']);
     list($data1, $data2, $data3) = array_pad(array_map(function($x) { return "$x"; }, $cat_path), 3, "");
-
+    Utils::dep($cat_path);
     $data_categories = Models_Store::getCategories($data1, $data2, $data3);
     
     if(count($cat_path) != count($data_categories)){

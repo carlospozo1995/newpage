@@ -8,7 +8,38 @@
 
         static public function searchData($data) {
             $sql = "SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%$data%' OR p.brand LIKE '%$data%' OR c.name_category LIKE '%$data%') AND p.status = 1 LIMIT 5";
-            return $GLOBALS["db"]->selectAll($sql, array(1));
+            $request = $GLOBALS["db"]->selectAll($sql, array());
+
+            if (empty($request)) {
+                $sql_optional = "SELECT url AS '0' FROM categories WHERE name_category LIKE '%$data%' AND status = 1";
+                $request_optional = $GLOBALS["db"]->auto_array($sql_optional, array());
+                // return $request_optional;
+                if (!empty($request_optional)) {
+
+                    WITH RECURSIVE category_path AS (
+                        SELECT id_category, name_category, fatherCategory, url
+                        FROM categories
+                        WHERE url = 'barras-de-sonido'
+                        UNION
+                        SELECT c.id_category, c.name_category, c.fatherCategory, c.url
+                        FROM categories c
+                        JOIN category_path cp ON c.id_category = cp.fatherCategory
+                      )
+                      SELECT url
+                      FROM category_path
+                      ORDER BY id_category;
+
+                    // list($data1, $data2, $data3) = array_pad(array_map(function($x) { return "$x"; }, $request_optional), 3, "");
+
+                    // $data_categories = Models_Store::getCategories($data1, $data2, $data3);
+                    // return $data_categories;    
+
+                    // $sqltwo = "SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE category_id = '$dataid' AND status = 1 LIMIT 5";
+                    // return $GLOBALS["db"]->selectAll($sqltwo, array());
+                }
+            }else{
+                return $request;
+            }
         }
 
         static public function countSearchData ($data) {
