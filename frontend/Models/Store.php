@@ -7,7 +7,7 @@
         }
 
         static public function searchData($data) {
-            $request = "";
+            $request = array();
             $getProdSearch = "SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE (name_product LIKE ? OR brand LIKE ?) AND status = ? LIMIT 5";
             $arrProd = $GLOBALS["db"]->selectAll($getProdSearch, array('%'.$data.'%', '%'.$data.'%', 1));
 
@@ -41,18 +41,20 @@
 
                         $id_sons = !empty($id_sons) ? $id_sons : end($end_path_id);
                         $products = self::getProducts($id_sons, "", "", "", 0, 5);
-                        $request = $products;
+                        $amount = "SELECT COUNT(*) AS amount FROM products WHERE category_id IN ($id_sons) AND status = 1";
+                        $request = array("products" => $products);
                     }
                 }
             }else{
-                $request = $arrProd;
+                $amount = "SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE ? OR brand LIKE ?) AND status = ?";
+                $request = array("products" => $arrProd, "amount" => $GLOBALS["db"]->selectAll($amount, array('%'.$data.'%', '%'.$data.'%', 1)));
             }
             return $request;
         }
 
         static public function countSearchData ($data) {
-            $sql = "SELECT COUNT(*) AS amount FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%$data%' OR p.brand LIKE '%$data%' OR c.name_category LIKE '%$data%') AND p.status = 1";
-            return $GLOBALS["db"]->selectAll($sql, array(1));
+            $sql = "SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE ? OR brand LIKE ?) AND status = ?";
+            return $GLOBALS["db"]->selectAll($sql, array('%'.$data.'%', '%'.$data.'%', 1));
         }
 
         // SQL INSERT CLIENT

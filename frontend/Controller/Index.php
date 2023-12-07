@@ -70,9 +70,9 @@
 							$search_data = Models_Store::searchData($search_value);
 							// $count_search_data = Models_Store::countSearchData($search_value);
 
-							if (!empty($search_data)) {
+							if (!empty($search_data['products'])) {
 								$product_images = array();
-								foreach ($search_data as $product) {
+								foreach ($search_data['products'] as $product) {
 									$img_product = Models_Products::selectImages($product['id_product']);
 									if (!empty($img_product)) {
 										$r_indexes = array_rand($img_product, 2);
@@ -89,7 +89,7 @@
 														<div class="swiper-container product-default-slider-4grid-1row">
 															<div class="swiper-wrapper my-2">';
 
-															foreach ($search_data as $product) {
+															foreach ($search_data['products'] as $product) {
 																$html_products.= '<div class="product-default-single-item product-color--pink swiper-slide border-product">';
 																	$html_products.= '<div class="image-box">';
 																		$html_products.= '<a href="'.BASE_URL."producto/".$product["url"].'" class="image-link' . (!empty($product['discount']) ? ' content-off" data-discount="'.$product['discount'].'% off"' : '"') . '>';
