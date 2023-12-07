@@ -483,6 +483,8 @@
                             </div>
                         </div>
 
+                        <div class="content-amount-products"></div>
+
                         <div class="cont-load-search"><span class="loader-search"></span></div>
                     </div>
                 </div>

@@ -41,8 +41,9 @@
 
                         $id_sons = !empty($id_sons) ? $id_sons : end($end_path_id);
                         $products = self::getProducts($id_sons, "", "", "", 0, 5);
-                        $amount = "SELECT COUNT(*) AS amount FROM products WHERE category_id IN ($id_sons) AND status = 1";
-                        $request = array("products" => $products);
+                        
+                        $amount = "SELECT COUNT(*) AS amount FROM products WHERE category_id IN ($id_sons) AND status = ?";
+                        $request = array("products" => $products,  "amount" => $GLOBALS["db"]->selectAll($amount, array(1)));
                     }
                 }
             }else{
@@ -50,11 +51,6 @@
                 $request = array("products" => $arrProd, "amount" => $GLOBALS["db"]->selectAll($amount, array('%'.$data.'%', '%'.$data.'%', 1)));
             }
             return $request;
-        }
-
-        static public function countSearchData ($data) {
-            $sql = "SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE ? OR brand LIKE ?) AND status = ?";
-            return $GLOBALS["db"]->selectAll($sql, array('%'.$data.'%', '%'.$data.'%', 1));
         }
 
         // SQL INSERT CLIENT

@@ -52,6 +52,7 @@
 
     $('#search form input').on('keyup', function() {
         $('.searched-product-content .content-products').html("");
+        $('.content-amount-products').html("");
         let search_value = $('#search form input').val();
         if (search_value.length > 3) {
             $(".search-modal .search-data").removeClass('d-none');
@@ -67,8 +68,17 @@
                 },
                 success: function(data){
                     if (data.htmlContent != "") {
-                        console.log(data);
+                        let amountText = data.amountProducts < 6 ? 'Ver productos' : `Ver todos los ${data.amountProducts} productos`;
                         $('.searched-product-content .content-products').html(data.htmlContent);
+                        $('.content-amount-products').html(`
+                            <div class="container fs-16 pt-4 text-center">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <a href="#">${amountText}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        `);
 
                         new Swiper('.swiper-container.product-default-slider-4grid-1row', {
                             slidesPerView: 3,

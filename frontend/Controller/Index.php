@@ -65,12 +65,13 @@
 					if (isset($_POST)) {
 						$search_value = $_POST['search'];
 						$html_products = "";
+						$amount_products = "";
 
 						if (!empty($search_value) && strlen($search_value) > 3) {
 							$search_data = Models_Store::searchData($search_value);
-							// $count_search_data = Models_Store::countSearchData($search_value);
 
 							if (!empty($search_data['products'])) {
+								$amount_products = $search_data['amount'][0]['amount'];
 								$product_images = array();
 								foreach ($search_data['products'] as $product) {
 									$img_product = Models_Products::selectImages($product['id_product']);
@@ -128,14 +129,14 @@
 																$html_products.= '</div>';
 															}
 
-															// if ($count_search_data[0]['amount'] > 5) {
-															// 	$html_products .= '	<div class="product-default-single-item swiper-slide my-auto fs-16">
-															// 							<div class="content p-0">
-															// 								<a class="text-center" href="#">Ver todos los '.$count_search_data[0]['amount'].' productos</a>
-															// 							</div>
-															// 					   	</div>
-															// 	';
-															// }
+															if ($amount_products > 5) {
+																$html_products .= '	<div class="product-default-single-item swiper-slide my-auto fs-16">
+																						<div class="content p-0">
+																							<a class="text-center" href="#">Ver todos los '.$amount_products.' productos</a>
+																						</div>
+																				   	</div>
+																';
+															}
 
 
 								$html_products .= '			</div>
@@ -145,9 +146,7 @@
 														<div class="swiper-button-next"></div>
 													</div>';
 							}
-
-							// $data = array("htmlContent" => $html_products, "amount" => $count_search_data);
-							$data = array("htmlContent" => $html_products);
+							$data = array("htmlContent" => $html_products, "amountProducts" => $amount_products);
 							echo json_encode($data);
 						}
 					}	
