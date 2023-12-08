@@ -8,7 +8,7 @@
 
         static public function searchData($data) {
             $request = array();
-            $getProdSearch = "SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE (name_product LIKE ? OR brand LIKE ?) AND status = ? LIMIT 5";
+            $getProdSearch = "SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE ? OR p.brand LIKE ?) AND p.status = ? LIMIT 5";
             $arrProd = $GLOBALS["db"]->selectAll($getProdSearch, array('%'.$data.'%', '%'.$data.'%', 1));
 
             if (empty($arrProd)) {
@@ -91,11 +91,11 @@
 
         static public function getProducts($data, $brandCheck, $order, $range, $start = null, $perload = null)
         {
-            $sql = "SELECT id_product, name_product, desMain, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE category_id IN ($data) $brandCheck $range AND status = 1 $order";
+            $sql = " SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN ($data) $brandCheck $range AND p.status = 1 $order";
             $orderMain = "";
             if ($start !== null && $perload !== null) {
                 if (empty($order)) {
-                    $orderMain = "ORDER BY dataCreate ASC";
+                    $orderMain = "ORDER BY p.dataCreate ASC";
                 }
                 $sql .= " $orderMain LIMIT $start, $perload ";
             }

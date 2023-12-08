@@ -51,8 +51,6 @@
     });
 
     $('#search form input').on('keyup', function() {
-        $('.searched-product-content .content-products').html("");
-        $('.content-amount-products').html("");
         let search_value = $('#search form input').val();
         if (search_value.length > 3) {
             $(".search-modal .search-data").removeClass('d-none');
@@ -64,11 +62,19 @@
                     search: search_value,
                 },
                 beforeSend: function() {
+                    $('.content-suggestions').html("");
+                    $('.searched-product-content .content-products').html("");
+                    $('.content-amount-products').html("");
                     $('.search-data .cont-load-search').css("display", "flex");
                 },
                 success: function(data){
                     if (data.htmlContent != "") {
                         let amountText = data.amountProducts < 6 ? 'Ver productos' : `Ver todos los ${data.amountProducts} productos`;
+                        // $('.content-suggestions').html(`
+                        //     ${data.suggestions.forEach(element => {
+                        //         `<li><a href="#">${element['name_category']} ${element['brand']}</a></li>`
+                        //     })}
+                        // `);
                         $('.searched-product-content .content-products').html(data.htmlContent);
                         $('.content-amount-products').html(`
                             <div class="container fs-16 pt-4 text-center">

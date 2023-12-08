@@ -467,6 +467,9 @@
                 <div class="row">
                     <div class="col-lg-4 position-relative">
                         <p>SUGERENCIAS</p>
+                        <ul class="content-suggestions">
+                        
+                        </ul>
                     </div>
 
                     <div class="col-lg-8 border-left position-relative">
