@@ -66,7 +66,7 @@
 						$search_value = $_POST['search'];
 						$html_products = "";
 						$amount_products = "";
-						$suggestions = "";
+						$suggestions = array();
 
 						if (!empty($search_value) && strlen($search_value) > 3) {
 							$search_data = Models_Store::searchData($search_value);
@@ -147,29 +147,23 @@
 														<div class="swiper-button-next"></div>
 													</div>';
 
-								
-								$newArrProd = array();
-								foreach ($search_data['products'] as $product) {
-									$newArrProd[] = array(
-										"brand" => $product["brand"],
-										"url" => $product["url"],
-										"name_category" => $product["name_category"]
-									);
-								}
 
-								$uniqueBrands = array();
-
-								foreach ($newArrProd as $item) {
+								$suggestions = array_reduce($search_data['products'], function ($carry, $item) {
 									$brand = $item['brand'];
+									$nameCtg = $item['name_category'];
 
-									if (!isset($uniqueBrands[$brand])) {
-										$resultArray[] = $item;
-										$uniqueBrands[$brand] = true;
+									if (!isset($carry[$brand])) {
+										$carry[$brand] = array(
+											"brand" => $item["brand"],
+											"url" => $item["url"],
+											"name_category" => $item["name_category"]
+										);
 									}
-								}
-								$suggestions = $resultArray;
+									
+									return $carry;
+								}, []);
 							}
-							$data = array("htmlContent" => $html_products, "amountProducts" => $amount_products, "suggestions" => $suggestions);
+							$data = array("htmlContent" => $html_products, "amountProducts" => $amount_products, "suggestions" => array_values($suggestions));
 							echo json_encode($data);
 						}
 					}	

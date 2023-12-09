@@ -466,7 +466,7 @@
             <div class="search-data d-none">
                 <div class="row">
                     <div class="col-lg-4 position-relative">
-                        <p>SUGERENCIAS</p>
+                        <p class="fs-16 c-blue-page font-weight-bold">SUGERENCIAS</p>
                         <ul class="content-suggestions">
                         
                         </ul>

@@ -51,6 +51,7 @@
     });
 
     $('#search form input').on('keyup', function() {
+        let suggestions = "";
         let search_value = $('#search form input').val();
         if (search_value.length > 3) {
             $(".search-modal .search-data").removeClass('d-none');
@@ -68,13 +69,13 @@
                     $('.search-data .cont-load-search').css("display", "flex");
                 },
                 success: function(data){
+                    console.log(data)
                     if (data.htmlContent != "") {
                         let amountText = data.amountProducts < 6 ? 'Ver productos' : `Ver todos los ${data.amountProducts} productos`;
-                        // $('.content-suggestions').html(`
-                        //     ${data.suggestions.forEach(element => {
-                        //         `<li><a href="#">${element['name_category']} ${element['brand']}</a></li>`
-                        //     })}
-                        // `);
+                        data.suggestions.forEach(element => {
+                            suggestions += '<li class="has-dropdown xtranslate-5 time-trans-txt"><a href="#" class="link-store lh-lg">'+element['name_category']+' '+element['brand'].toLowerCase()+'</a></li>';
+                        });
+                        $('.content-suggestions').html(suggestions);
                         $('.searched-product-content .content-products').html(data.htmlContent);
                         $('.content-amount-products').html(`
                             <div class="container fs-16 pt-4 text-center">
@@ -120,7 +121,8 @@
                         $('.search-modal .search-data').css('top', '30%');
 
                     }else{
-                        $('.searched-product-content .content-products').html('No se encontraron produtos con ese termino.');
+                        $('.searched-product-content .content-products').html('<p class="text-center pt-5">No se encontraron produtos con ese termino.</p>');
+                        $('.content-suggestions').html('<p>No se encontraron sugerencias.</p>');
                         $('.search-modal .search-content').css('top', '50%');
                         $('.search-modal .search-data').css('top', '50%');
                     }

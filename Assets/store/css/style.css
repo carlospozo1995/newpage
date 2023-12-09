@@ -6166,6 +6166,13 @@ progress {
     color: #024dbc;
 }
 
+.link-store{
+    color: #000;
+}
+.link-store:hover, .link-store:focus {
+    color: #024dbc;
+}
+
 .link-secondary {
     color: #6C757D;
 }

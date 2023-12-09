@@ -111,6 +111,14 @@
     font-size: 20px !important;
 }
 
+.xtranslate-5:hover{
+    transform: translateX(5px);
+    -webkit-transform: translateX(5px);
+    -moz-transform: translateX(5px);
+    -ms-transform: translateX(5px);
+    -o-transform: translateX(5px);
+}
+
 .border-product{
     box-shadow: 0 1px 3px rgba(68,49,222,0.5);
     border: none;
