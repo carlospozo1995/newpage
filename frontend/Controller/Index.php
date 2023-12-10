@@ -133,7 +133,7 @@
 															if ($amount_products > 5) {
 																$html_products .= '	<div class="product-default-single-item swiper-slide my-auto fs-16">
 																						<div class="content p-0">
-																							<a class="text-center" href="#">Ver todos los '.$amount_products.' productos</a>
+																							<a class="text-center" href="'.BASE_URL.'buscar/'.$search_value.'">Ver todos los '.$amount_products.' productos</a>
 																						</div>
 																				   	</div>
 																';
@@ -146,22 +146,25 @@
 														<div class="swiper-button-prev"></div>
 														<div class="swiper-button-next"></div>
 													</div>';
-
-
+								
 								$suggestions = array_reduce($search_data['products'], function ($carry, $item) {
 									$brand = $item['brand'];
-									$nameCtg = $item['name_category'];
-
-									if (!isset($carry[$brand])) {
-										$carry[$brand] = array(
-											"brand" => $item["brand"],
-											"url" => $item["url"],
-											"name_category" => $item["name_category"]
-										);
+									$nameCategory = $item['name_category'];
+								
+									$existingKey = array_search([$brand, $nameCategory], array_column($carry, 'key'));
+								
+									if ($existingKey === false) {
+										$carry[] = [
+											'brand' => $brand,
+											'url' => $item['url'],
+											'name_category' => $nameCategory,
+											'key' => [$brand, $nameCategory],
+										];
 									}
-									
+								
 									return $carry;
 								}, []);
+								
 							}
 							$data = array("htmlContent" => $html_products, "amountProducts" => $amount_products, "suggestions" => array_values($suggestions));
 							echo json_encode($data);

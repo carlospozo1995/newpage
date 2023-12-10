@@ -73,7 +73,7 @@
                     if (data.htmlContent != "") {
                         let amountText = data.amountProducts < 6 ? 'Ver productos' : `Ver todos los ${data.amountProducts} productos`;
                         data.suggestions.forEach(element => {
-                            suggestions += '<li class="has-dropdown xtranslate-5 time-trans-txt"><a href="#" class="link-store lh-lg">'+element['name_category']+' '+element['brand'].toLowerCase()+'</a></li>';
+                            suggestions += '<li class="has-dropdown xtranslate-5 time-trans-txt"><a href="'+base_url+'buscar/'+element['name_category'].toLowerCase()+'-'+element['brand'].toLowerCase()+'" class="link-store lh-lg">'+element['name_category']+' - '+element['brand']+'</a></li>';
                         });
                         $('.content-suggestions').html(suggestions);
                         $('.searched-product-content .content-products').html(data.htmlContent);
@@ -81,7 +81,7 @@
                             <div class="container fs-16 pt-4 text-center">
                                 <div class="row">
                                     <div class="col-12">
-                                        <a href="#">${amountText}</a>
+                                        <a href="${base_url}buscar/${search_value}">${amountText}</a>
                                     </div>
                                 </div>
                             </div>

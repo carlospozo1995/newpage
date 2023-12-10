@@ -79,6 +79,10 @@
 				return "Carrito";
 			break;
 
+			case 'buscar':
+				return "Buscar";
+			break;
+
 			case 'confirmarcompra':
 				return "Confirmarcompra";
 			break;
