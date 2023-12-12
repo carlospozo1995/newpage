@@ -17,6 +17,7 @@
 					if (!empty($_GET['search'])) {
 								View::renderPage('Resultado');
 						// $regexString = '/^(?:\w+-\w+|\w+)$/';
+						// $regexString  = '/^(\w+(\+\w+)*(-\w+(\+\w+)*)*|\w+)$/';
 						// if (preg_match($regexString, $_GET['search'])) {	
 						// 	$search = explode('-', $_GET['search']);
 						// 	View::renderPage('Resultado', $search);
