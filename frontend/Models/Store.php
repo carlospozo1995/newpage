@@ -53,6 +53,11 @@
             return $request;
         }
 
+        static public function showSearchData($data) {
+            $sql = "SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (c.name_category LIKE ? AND p.brand LIKE ?) AND p.status = ?";
+            return $GLOBALS["db"]->selectAll($sql, array('%'.$data[0].'%', '%'.$data[1].'%', 1));
+        }
+
         // SQL INSERT CLIENT
         static public function insertClient($name, $surname, $phone, $email, $password)
         {

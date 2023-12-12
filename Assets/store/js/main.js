@@ -69,11 +69,22 @@
                     $('.search-data .cont-load-search').css("display", "flex");
                 },
                 success: function(data){
-                    console.log(data)
                     if (data.htmlContent != "") {
                         let amountText = data.amountProducts < 6 ? 'Ver productos' : `Ver todos los ${data.amountProducts} productos`;
                         data.suggestions.forEach(element => {
-                            suggestions += '<li class="has-dropdown xtranslate-5 time-trans-txt"><a href="'+base_url+'buscar/'+element['name_category'].toLowerCase()+'-'+element['brand'].toLowerCase()+'" class="link-store lh-lg">'+element['name_category']+' - '+element['brand']+'</a></li>';
+
+                            let textConcatOne = element['name_category'];
+                            let textConcatTwo = element['brand'];
+
+                            if (textConcatOne.indexOf(' ') !== -1) {
+                                textConcatOne = textConcatOne.replace(/ /g, '+');
+                            }
+
+                            if (textConcatTwo.indexOf(' ') !== -1) {
+                                textConcatTwo = textConcatTwo.replace(/ /g, '+');
+                            }
+
+                            suggestions += '<li class="has-dropdown xtranslate-5 time-trans-txt"><a href="'+base_url+'resultado/'+textConcatOne.toLowerCase()+'-'+textConcatTwo.toLowerCase()+'" class="link-store lh-lg">'+element['name_category']+' - '+element['brand']+'</a></li>';
                         });
                         $('.content-suggestions').html(suggestions);
                         $('.searched-product-content .content-products').html(data.htmlContent);
@@ -81,7 +92,7 @@
                             <div class="container fs-16 pt-4 text-center">
                                 <div class="row">
                                     <div class="col-12">
-                                        <a href="${base_url}buscar/${search_value}">${amountText}</a>
+                                        <a href="${base_url}resultado/${search_value}">${amountText}</a>
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +107,9 @@
                                 nextEl: '.search-product-slider-default-1row .swiper-button-next',
                                 prevEl: '.search-product-slider-default-1row .swiper-button-prev',
                             },
-                    
+
+                            centerInsufficientSlides: true,
+
                             breakpoints: {
                     
                                 0: {

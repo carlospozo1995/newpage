@@ -133,7 +133,7 @@
 															if ($amount_products > 5) {
 																$html_products .= '	<div class="product-default-single-item swiper-slide my-auto fs-16">
 																						<div class="content p-0">
-																							<a class="text-center" href="'.BASE_URL.'buscar/'.$search_value.'">Ver todos los '.$amount_products.' productos</a>
+																							<a class="text-center" href="'.BASE_URL.'resultado/'.$search_value.'">Ver todos los '.$amount_products.' productos</a>
 																						</div>
 																				   	</div>
 																';

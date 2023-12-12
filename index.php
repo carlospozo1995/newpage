@@ -79,8 +79,8 @@
 				return "Carrito";
 			break;
 
-			case 'buscar':
-				return "Buscar";
+			case 'resultado':
+				return "Resultado";
 			break;
 
 			case 'confirmarcompra':

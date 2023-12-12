@@ -84,7 +84,7 @@ RewriteRule ^(carrito/|carrito|Carrito)/insertCardPurchaseValidation/$ %{ENV:REW
 RewriteRule ^(carrito/|carrito|Carrito)/payphoneCallError/$ %{ENV:REWRITEBASE}index.php?show=Carrito&action=payphoneCallError [L]
 RewriteRule ^carrito/(.+)$ %{ENV:REWRITEBASE}index.php?show=Carrito&process_payment=$1 [L]
 
-RewriteRule ^buscar/(.+)$ %{ENV:REWRITEBASE}index.php?show=Buscar&data=$1 [L]
+RewriteRule ^resultado/(.+)$ %{ENV:REWRITEBASE}index.php?show=Resultado&search=$1 [L]
 
 #RewriteRule ^(confirmarcompra/|confirmarcompra|Confirmarcompra)$ %{ENV:REWRITEBASE}index.php?show=Confirmarcompra&id=$1&clientTransactionId=$2 [QSA,L]
 RewriteRule ^(confirmarcompra/|confirmarcompra|Confirmarcompra)$ %{ENV:REWRITEBASE}index.php?show=Confirmarcompra [L]
