@@ -23,10 +23,12 @@
 				        $id_sons = !empty($id_sons) ? $id_sons : end($id_category);
 
 				        $products = Models_Store::getProducts($id_sons, "", "", "", 0, 10);
-        				$total_products = Models_Store::getProducts($id_sons, "", "", "");
-
+						$productsSummary = "";
+						$amount_brands = "";
         				$content = "";
         				if(!empty($products)){
+							$productsSummary = Models_Store::getProductsCategorias("MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products", $id_sons);
+            				$amount_brands = Models_Store::getProductsCategorias("brand, COUNT(*) as amount", $id_sons, "GROUP BY brand");
         					$product_images = self::productImages($products);
         					$content = self::printContentProducts($products, $product_images);
         				}else{
@@ -42,7 +44,7 @@
 							                </div>
 							            </div>';
         				}
-        				$data = array("content" => $content, "sons" => Utils::encryptStore($id_sons), "total_products" =>  $total_products);
+        				$data = array("content" => $content, "sons" => Utils::encryptStore($id_sons), "products_summary" => $productsSummary, "amount_brands" => $amount_brands);
 						echo json_encode($data);
 					}
 				break;

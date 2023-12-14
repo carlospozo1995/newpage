@@ -16438,9 +16438,10 @@ input {
 }
 .filter-type-price label {
     display: inline-block;
+    width: 100%;
 }
 .filter-type-price input {
-    width: 100px;
+    width: 100%;
     display: inline-block;
     text-align: right;
 }

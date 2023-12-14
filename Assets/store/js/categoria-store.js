@@ -48,16 +48,17 @@ $(document).ready(function () {
                 $('.content-loading').css("display","flex");
                 $('.sidebar-content .cont-load-more').css("display", "flex");
             },
-            success: function(data){               
+            success: function(data){       
                 window.history.replaceState({}, '', element.attr('href'));
-                if(data.total_products.length > 0){
+                
+                if(data.products_summary != "" && Array.isArray(data.products_summary)){
                     // Reset data store
                     $('#data-store').val(data.sons);
                     // Reset navigation page
                     $('.navigation-page').html(html_nav);
                     // Reset total products displayed
-                    $('.page-amount').html(data.total_products.length+' Productos');
-
+                    $('.page-amount').html(data.products_summary[0]['amount_products']+' Productos');
+                   
                     // Reset order products
                     $("#products-order").val('default');
                     $("#products-order").niceSelect('update');
@@ -67,7 +68,7 @@ $(document).ready(function () {
                     $('#container-products-single').html(data.content.single);
 
                     // Add button load more products
-                    if (data.total_products.length > 10) {
+                    if (data.products_summary[0]['amount_products'] > 10) {
                         start = 10;
                         $('.container-pagination-btn').html(`<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
                                             <button id="load-more" class="load-more time-trans-txt">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
@@ -77,35 +78,23 @@ $(document).ready(function () {
                     }
 
                     // Price filter products range
-                    let price_column = data.total_products.map(function(product) {
-                        return product.price;
-                    });
-                    let price_min = parseInt(Math.min.apply(null, price_column));
-                    let price_max = parseInt(Math.max.apply(null, price_column));
+                    let price_min = parseInt(data.products_summary[0]['price_min']);
+                    let price_max = parseInt(data.products_summary[0]['price_max']) + 1;
 
                     $('#slider-range').attr('data-min', price_min);
                     $('#slider-range').attr('data-max', price_max);
                     priceRange(price_min, price_max);
-
+                    
                     // Add marks products
-                    const countBrand = {};
-                    for (const product of data.total_products){
-                        if(countBrand[product.brand]){
-                            countBrand[product.brand]++;
-                        }else{
-                            countBrand[product.brand] = 1;
-                        }
-                    }
-
                     let contentList = "";
-                    for (const brand in countBrand){
-                        const checkbox = `<label class="checkbox-default" for="${brand.toLowerCase()}">
-                                              <input type="checkbox" id="${brand.toLowerCase()}">
-                                              <span>${brand} (${countBrand[brand]})</span>
+                    data.amount_brands.forEach(element => {
+                        const checkbox = `<label class="checkbox-default" for="${element.brand.toLowerCase()}">
+                                              <input type="checkbox" id="${element.brand.toLowerCase()}">
+                                              <span>${element.brand} (${element.amount})</span>
                                           </label>`;
                         const li = $('<li></li>').append(checkbox);
                         contentList += li.prop('outerHTML');
-                    }
+                    });
                     $(".content-check-brand").html(contentList);
 
                 }else{
@@ -156,6 +145,7 @@ $(document).ready(function () {
             },
             success: function(data){
                 // Reset total products displayed
+                console.log(data.total_products)
                 $('.page-amount').html(data.total_products.length+' Productos');
 
                 $('#container-products-grid').html(data.content.grid);
@@ -229,7 +219,7 @@ $(document).ready(function () {
                     return product.price;
                 });
                 let price_min = parseInt(Math.min.apply(null, price_column));
-                let price_max = parseInt(Math.max.apply(null, price_column));
+                let price_max = parseInt(Math.max.apply(null, price_column)) + 1;
 
                 $('#slider-range').attr('data-min', price_min);
                 $('#slider-range').attr('data-max', price_max);
@@ -287,6 +277,7 @@ $(document).ready(function () {
                 $('.load-more .cont-load-more').css("display", "flex");
             },
             success: function(data){   
+                console.log(data);
                 // Print remaining products - different container
                 $('#container-products-grid').append(data.content.grid);
                 $('#container-products-single').append(data.content.single);
@@ -310,6 +301,7 @@ $(document).ready(function () {
     /************************************************
     * Price Slider
     ***********************************************/
+   
     let price_min = parseInt($('#slider-range').attr('data-min'));
     let price_max = parseInt($('#slider-range').attr('data-max'));
 

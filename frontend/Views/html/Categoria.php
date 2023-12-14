@@ -31,14 +31,15 @@
 
         $id_sons = !empty($id_sons) ? $id_sons : end($end_path_id);
         $products = Models_Store::getProducts($id_sons, "", "", "", 0, 10);
-        $total_products = Models_Store::getProducts($id_sons, "", "", "");
-        
-        if (!empty($products)) {
 
-            // PRICE MIN AND PRICE MAX COLUMN
-            $price_column = array_column($total_products, 'price');
-            $price_min = intval(min($price_column));
-            $price_max = intval(max($price_column)) + 1;
+        if (!empty($products)) {
+            
+            $productsSummary = Models_Store::getProductsCategorias("MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products", $id_sons);
+            $amount_brands = Models_Store::getProductsCategorias("brand, COUNT(*) as amount", $id_sons, "GROUP BY brand");
+
+            // PRICE MIN AND PRICE MAX 
+            $price_min = intval($productsSummary[0]['price_min']);
+            $price_max = intval($productsSummary[0]['price_max']) + 1;
 
             // STORAGE OF PRODUCT IMAGES
             $product_images = array();
@@ -168,21 +169,12 @@
                                         <div class="filter-type-select">
                                         <?php
                                         echo '<ul class="content-check-brand">';
-                                            $countBrand = array();
-                                            foreach ($total_products as $product) {
-                                                if(isset($countBrand[$product['brand']])){
-                                                    $countBrand[$product['brand']]++;
-                                                }else{
-                                                    $countBrand[$product['brand']] = 1;
-                                                }
-                                            }
-
-                                            foreach ($countBrand as $brand => $amount) {
-                                        ?>
+                                            foreach ($amount_brands as $item) {
+                                        ?>      
                                                 <li>
-                                                    <label class="checkbox-default" for="<?= strtolower($brand); ?>">
-                                                        <input type="checkbox" id="<?= strtolower($brand);?>">
-                                                        <span><?= $brand." "."(".($amount).")"; ?></span>
+                                                    <label class="checkbox-default" for="<?= strtolower($item['brand']); ?>">
+                                                        <input type="checkbox" id="<?= strtolower($item['brand']);?>">
+                                                        <span><?= $item['brand']." "."(".($item['amount']).")"; ?></span>
                                                     </label>
                                                 </li>
                                         <?php
@@ -221,7 +213,7 @@
 
                                                 <!-- Start Page Amount -->
                                                 <div class="page-amount ml-2">
-                                                    <span><?= count($total_products); ?> Productos</span>
+                                                    <span><?= $productsSummary[0]['amount_products']; ?> Productos</span>
                                                 </div> <!-- End Page Amount -->
                                             </div> <!-- End Sort tab Button -->
 
@@ -390,7 +382,7 @@
                             <!-- START PAGINACTION -->
                             <?php
                                 echo '<div class="container-pagination-btn">';
-                                if (count($total_products) > 10) {
+                                if ($productsSummary[0]['amount_products'] > 10) {
                                     echo '<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
                                             <button id="load-more" class="load-more time-trans-txt  position-relative">VER MÁS <div class="cont-load-more"><span class="loader-more-data"></span></div></button>
                                          </div>';

@@ -73,18 +73,7 @@
                         let amountText = data.amountProducts < 6 ? 'Ver productos' : `Ver todos los ${data.amountProducts} productos`;
                         data.suggestions.forEach(element => {
 
-                            let textConcatOne = element['name_category'];
-                            let textConcatTwo = element['brand'];
-
-                            if (textConcatOne.indexOf(' ') !== -1) {
-                                textConcatOne = textConcatOne.replace(/ /g, '+');
-                            }
-
-                            if (textConcatTwo.indexOf(' ') !== -1) {
-                                textConcatTwo = textConcatTwo.replace(/ /g, '+');
-                            }
-
-                            suggestions += '<li class="has-dropdown xtranslate-5 time-trans-txt"><a href="'+base_url+'resultado/'+textConcatOne.toLowerCase()+'-'+textConcatTwo.toLowerCase()+'" class="link-store lh-lg">'+element['name_category']+' - '+element['brand']+'</a></li>';
+                            suggestions += '<li class="has-dropdown xtranslate-5 time-trans-txt"><a href="'+base_url+'resultado/'+(element['name_category'].indexOf(' ') !== -1 ? element['name_category'].replace(/ /g, '+') : element['name_category']).toLowerCase()+'-'+(element['brand'].indexOf(' ') !== -1 ? element['brand'].replace(/ /g, '+') : element['brand']).toLowerCase()+'" class="link-store lh-lg">'+element['name_category']+' - '+element['brand']+'</a></li>';
                         });
                         $('.content-suggestions').html(suggestions);
                         $('.searched-product-content .content-products').html(data.htmlContent);

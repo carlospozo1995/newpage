@@ -6,6 +6,11 @@
             return $GLOBALS["db"]->selectAll($sql, array(1));
         }
 
+        static public function getProductsCategorias($get, $data, $more = "") {
+            $sql = "SELECT $get FROM products WHERE category_id IN ($data) AND status = ? $more";
+            return $GLOBALS["db"]->selectAll($sql, array(1));
+        }
+
         static public function searchData($data) {
             $request = array();
             $getProdSearch = "SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE ? OR p.brand LIKE ?) AND p.status = ? LIMIT 5";
@@ -46,6 +51,11 @@
                         $request = array("products" => $products,  "amount" => $GLOBALS["db"]->selectAll($amount, array(1)));
                     }
                 }
+
+                // $getAllProd = "SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE c.name_category LIKE ? AND p.status = ? LIMIT 5";
+                // $arrAllProd = $GLOBALS["db"]->selectAll($getAllProd, array('%'.$data.'%', 1));
+                // $amount = "SELECT COUNT(*) AS amount FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE c.name_category LIKE ? AND p.status = ?";
+                // $request = array("products" => $arrAllProd,  "amount" => $GLOBALS["db"]->selectAll($amount, array('%'.$data.'%', 1)));
             }else{
                 $amount = "SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE ? OR brand LIKE ?) AND status = ?";
                 $request = array("products" => $arrProd, "amount" => $GLOBALS["db"]->selectAll($amount, array('%'.$data.'%', '%'.$data.'%', 1)));
@@ -54,8 +64,15 @@
         }
 
         static public function showSearchData($data) {
-            $sql = "SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (c.name_category LIKE ? AND p.brand LIKE ?) AND p.status = ?";
-            return $GLOBALS["db"]->selectAll($sql, array('%'.$data[0].'%', '%'.$data[1].'%', 1));
+            if (count($data) < 2) {
+               $changeSql = "p.name_product LIKE ? OR p.brand LIKE ?";
+               $changeArr = array('%'.$data[0].'%', '%'.$data[0].'%', 1);
+            }else{
+                $changeSql = "c.name_category LIKE ? AND p.brand LIKE ?";
+                $changeArr = array('%'.$data[0].'%', '%'.$data[1].'%', 1);
+            }
+            $sql = "SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE ($changeSql) AND p.status = ?";
+            return $GLOBALS["db"]->selectAll($sql, $changeArr);
         }
 
         // SQL INSERT CLIENT
