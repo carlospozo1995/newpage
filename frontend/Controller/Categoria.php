@@ -148,12 +148,15 @@
 							$sql_checked = " AND brand IN ($dataChecked)";
 						}
 
+						
+
 						$products = Models_Store::getProducts($sons, $sql_checked, $sql_order, $sql_range, 0, 10);
-        				$total_products = Models_Store::getProducts($sons, $sql_checked, $sql_order, $sql_range);
         				$product_images = self::productImages($products);
         				$content = self::printContentProducts($products, $product_images);
 
-						$data = array("content" => $content, "total_products" =>  $total_products);
+						$productsSummary = Models_Store::getProductsFiltered("MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products", $sons, $sql_checked, $sql_order, $sql_range);
+
+						$data = array("content" => $content, "products_summary" => $productsSummary);
 						echo json_encode($data);
 					}
 				break;
@@ -198,11 +201,12 @@
 						}
 
 						$products = Models_Store::getProducts($sons, $sql_checked, $sql_order, $sql_range, 0, 10);
-        				$total_products = Models_Store::getProducts($sons, $sql_checked, $sql_order, $sql_range);
         				$product_images = self::productImages($products);
         				$content = self::printContentProducts($products, $product_images);
 
-						$data = array("content" => $content, "total_products" =>  $total_products);
+						$productsSummary = Models_Store::getProductsFiltered("MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products", $sons, $sql_checked, $sql_order, $sql_range);
+
+						$data = array("content" => $content, "products_summary" => $productsSummary);
 						echo json_encode($data);
 					}
 				break;

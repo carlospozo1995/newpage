@@ -145,13 +145,12 @@ $(document).ready(function () {
             },
             success: function(data){
                 // Reset total products displayed
-                console.log(data.total_products)
-                $('.page-amount').html(data.total_products.length+' Productos');
+                $('.page-amount').html(data.products_summary[0]['amount_products']+' Productos');
 
                 $('#container-products-grid').html(data.content.grid);
                 $('#container-products-single').html(data.content.single);
 
-                if (data.total_products.length > 10) {
+                if (data.products_summary[0]['amount_products'] > 10) {
                         start = 10;
                         $('.container-pagination-btn').html(`<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
                                             <button id="load-more" class="load-more time-trans-txt">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
@@ -200,12 +199,12 @@ $(document).ready(function () {
             },
             success: function(data){  
                 // Reset total products displayed
-                $('.page-amount').html(data.total_products.length+' Productos');
+                $('.page-amount').html(data.products_summary[0]['amount_products']+' Productos');
 
                 $('#container-products-grid').html(data.content.grid);
                 $('#container-products-single').html(data.content.single);
 
-                if (data.total_products.length > 10) {
+                if (data.products_summary[0]['amount_products'] > 10) {
                         start = 10;
                         $('.container-pagination-btn').html(`<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
                                             <button id="load-more" class="load-more time-trans-txt">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
@@ -215,11 +214,8 @@ $(document).ready(function () {
                 }
 
                 // Price filter products range (no ajax function)
-                let price_column = data.total_products.map(function(product) {
-                    return product.price;
-                });
-                let price_min = parseInt(Math.min.apply(null, price_column));
-                let price_max = parseInt(Math.max.apply(null, price_column)) + 1;
+                let price_min = parseInt(data.products_summary[0]['price_min']);
+                let price_max = parseInt(data.products_summary[0]['price_max']) + 1;
 
                 $('#slider-range').attr('data-min', price_min);
                 $('#slider-range').attr('data-max', price_max);
@@ -302,8 +298,8 @@ $(document).ready(function () {
     * Price Slider
     ***********************************************/
    
-    let price_min = parseInt($('#slider-range').attr('data-min'));
-    let price_max = parseInt($('#slider-range').attr('data-max'));
+    let price_min = parseFloat($('#slider-range').attr('data-min'));
+    let price_max = parseFloat($('#slider-range').attr('data-max'));
 
     function priceRange(price_min, price_max) {
         let points_range =  $('#slider-range span');
@@ -332,7 +328,6 @@ $(document).ready(function () {
 
                 // Value order by
                 let order_value = $("#products-order").val();
-
                 $.ajax({
                     url: base_url + "categoria/rangePriceProducts/",
                     dataType: 'JSON',
@@ -348,12 +343,12 @@ $(document).ready(function () {
                         $('.content-loading').css("display","flex");
                     },
                     success: function(data){
-                        $('.page-amount').html(data.total_products.length+' Productos');
+                        $('.page-amount').html(data.products_summary[0]['amount_products']+' Productos');
 
                         $('#container-products-grid').html(data.content.grid);
                         $('#container-products-single').html(data.content.single);
 
-                        if (data.total_products.length > 10) {
+                        if (data.products_summary[0]['amount_products'] > 10) {
                             start = 10;
                             $('.container-pagination-btn').html(`<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
                                                 <button id="load-more" class="load-more time-trans-txt">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>

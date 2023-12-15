@@ -125,6 +125,11 @@
             return $GLOBALS["db"]->selectAll($sql, array());
         }
 
+        static public function getProductsFiltered($get, $data, $brandCheck, $order, $range) {
+            $sql = " SELECT $get FROM products WHERE category_id IN ($data) $brandCheck $range AND status = ? $order";
+            return $GLOBALS["db"]->selectAll($sql, array(1));
+        }
+
         // SQL PAGE PRODUCTO
         static public function getProduct($data)
         {
