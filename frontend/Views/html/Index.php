@@ -597,6 +597,11 @@
 			</div>
 		</div> -->
 		<div class="banner-section section-top-gap-100">
+			<p>
+				<label for="test-amount">Price range:</label>
+				<input type="text" id="test-amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+			</p>
+			<div id="slider-range-test"></div>
 		</div>
 
 	</div>

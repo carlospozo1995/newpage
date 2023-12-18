@@ -78,8 +78,8 @@ $(document).ready(function () {
                     }
 
                     // Price filter products range
-                    let price_min = parseInt(data.products_summary[0]['price_min']);
-                    let price_max = parseInt(data.products_summary[0]['price_max']) + 1;
+                    let price_min = parseFloat(data.products_summary[0]['price_min'] * 100);
+                    let price_max = parseFloat(data.products_summary[0]['price_max'] * 100);
 
                     $('#slider-range').attr('data-min', price_min);
                     $('#slider-range').attr('data-max', price_max);
@@ -113,6 +113,7 @@ $(document).ready(function () {
 
     // ORDER BY PRODUCTS
     $("#products-order").change(function () {
+        console.log('..')
         let sons_category = $('#data-store').val();
         let this_val = $(this).val();
 
@@ -214,8 +215,8 @@ $(document).ready(function () {
                 }
 
                 // Price filter products range (no ajax function)
-                let price_min = parseInt(data.products_summary[0]['price_min']);
-                let price_max = parseInt(data.products_summary[0]['price_max']) + 1;
+                let price_min =parseFloat(data.products_summary[0]['price_min'] * 100);
+                let price_max =parseFloat(data.products_summary[0]['price_max'] * 100);
 
                 $('#slider-range').attr('data-min', price_min);
                 $('#slider-range').attr('data-max', price_max);
@@ -298,8 +299,8 @@ $(document).ready(function () {
     * Price Slider
     ***********************************************/
    
-    let price_min = parseFloat($('#slider-range').attr('data-min'));
-    let price_max = parseFloat($('#slider-range').attr('data-max'));
+    let price_min = parseFloat($('#slider-range').attr('data-min') * 100);
+    let price_max = parseFloat($('#slider-range').attr('data-max') * 100);
 
     function priceRange(price_min, price_max) {
         let points_range =  $('#slider-range span');
@@ -311,11 +312,11 @@ $(document).ready(function () {
             max: price_max,
             values: [price_min, price_max],
             slide: function(event, ui) {
-                $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                $( "#amount" ).val( "$" + ui.values[ 0 ] / 100 + " - $" + ui.values[ 1 ] / 100 );
             },
             stop: function(event, ui) {
-                $('#slider-range').attr('data-min', ui.values[0])
-                $('#slider-range').attr('data-max', ui.values[1])
+                $('#slider-range').attr('data-min', ui.values[0] / 100)
+                $('#slider-range').attr('data-max', ui.values[1] / 100)
 
                 let sons_category = $('#data-store').val();
 
@@ -336,8 +337,8 @@ $(document).ready(function () {
                         selectVal : order_value,
                         checkedVal : ids_check,
                         sons: sons_category,
-                        price_min: ui.values[0],
-                        price_max: ui.values[1],
+                        price_min: ui.values[0] / 100,
+                        price_max: ui.values[1] / 100,
                     },
                     beforeSend: function() {
                         $('.content-loading').css("display","flex");
@@ -366,7 +367,7 @@ $(document).ready(function () {
             }
         });
 
-        $("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
+        $("#amount").val("$" + $("#slider-range").slider("values", 0) / 100 + " - $" + $("#slider-range").slider("values", 1) / 100);
 
         points_range.eq(0).css('left', '0%');
         if (price_min === price_max) {

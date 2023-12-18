@@ -37,13 +37,13 @@
             $productsSummary = Models_Store::getProductsCategorias("MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products", $id_sons);
             $amount_brands = Models_Store::getProductsCategorias("brand, COUNT(*) as amount", $id_sons, "GROUP BY brand");
 
-            // PRICE MIN AND PRICE MAX 
-            // $price_min = intval($productsSummary[0]['price_min']);
-            // $price_max = intval($productsSummary[0]['price_max']) + 1;
-            $price_min = floatval($productsSummary[0]['price_min']) ;
+            // PRICE MIN AND PRICE MAX
+            // print_r($productsSummary[0]['price_min']); 
+            // var_dump(floatval($productsSummary[0]['price_min']));
+            $price_min = floatval($productsSummary[0]['price_min']);
             $price_max = floatval($productsSummary[0]['price_max']);
-            print_r($price_max);
-            // print_r($price_max);
+            // $price_min = floatval($productsSummary[0]['price_min']) ;
+            // $price_max = floatval($productsSummary[0]['price_max']);
 
             // STORAGE OF PRODUCT IMAGES
             $product_images = array();
