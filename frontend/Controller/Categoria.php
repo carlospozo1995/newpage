@@ -117,6 +117,8 @@
 						$sql_order = "";
 						$sql_checked = "";
 
+						$content = "";
+
 						if (!empty($price_min) && !empty($price_max)) {
 							$sql_range = " AND price BETWEEN $price_min AND $price_max";
 						}
@@ -151,8 +153,11 @@
 						
 
 						$products = Models_Store::getProducts($sons, $sql_checked, $sql_order, $sql_range, 0, 10);
-        				$product_images = self::productImages($products);
-        				$content = self::printContentProducts($products, $product_images);
+
+						if (!empty($products)) {
+							$product_images = self::productImages($products);
+        					$content = self::printContentProducts($products, $product_images);
+						}
 
 						$productsSummary = Models_Store::getProductsFiltered("MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products", $sons, $sql_checked, $sql_order, $sql_range);
 
@@ -172,6 +177,8 @@
 						$sql_order = "";
 						$sql_checked = "";
 						$sql_range = " AND price BETWEEN $price_min AND $price_max";
+
+						$content = "";
 
 						switch ($order_val) {
 							case 'discount':
@@ -201,8 +208,10 @@
 						}
 
 						$products = Models_Store::getProducts($sons, $sql_checked, $sql_order, $sql_range, 0, 10);
-        				$product_images = self::productImages($products);
-        				$content = self::printContentProducts($products, $product_images);
+        				if (!empty($products)) {
+							$product_images = self::productImages($products);
+        					$content = self::printContentProducts($products, $product_images);
+						}
 
 						$productsSummary = Models_Store::getProductsFiltered("MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products", $sons, $sql_checked, $sql_order, $sql_range);
 

@@ -50,7 +50,6 @@ $(document).ready(function () {
             },
             success: function(data){       
                 window.history.replaceState({}, '', element.attr('href'));
-                
                 if(data.products_summary != "" && Array.isArray(data.products_summary)){
                     // Reset data store
                     $('#data-store').val(data.sons);
@@ -146,18 +145,41 @@ $(document).ready(function () {
             },
             success: function(data){
                 // Reset total products displayed
-                $('.page-amount').html(data.products_summary[0]['amount_products']+' Productos');
+                if (data.content != "") {
+                    $('#container-products-grid').html(data.content.grid);
+                    $('#container-products-single').html(data.content.single);
 
-                $('#container-products-grid').html(data.content.grid);
-                $('#container-products-single').html(data.content.single);
-
-                if (data.products_summary[0]['amount_products'] > 10) {
+                    if (data.products_summary[0]['amount_products'] > 10) {
                         start = 10;
                         $('.container-pagination-btn').html(`<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
                                             <button id="load-more" class="load-more time-trans-txt">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
-                                         </div>`);
+                                        </div>`);
+                    }else{
+                        $('.container-pagination-btn').html("");
+                    }
                 }else{
-                    $('.container-pagination-btn').html("");
+                    $('#container-products-grid').html(`<div class="error-section">
+                                                            <div class="container">
+                                                                <div class="row">
+                                                                    <div class="error-form">
+                                                                        <div style="margin-top: 50px; margin-bottom: 50px" data-aos="fade-up" data-aos-delay="0">
+                                                                            <img style="width: 100%" src="${base_url}assets/store/images/not-product.png">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>`);
+                    $('#container-products-single').html(`<div class="error-section">
+                                                            <div class="container">
+                                                                <div class="row">
+                                                                    <div class="error-form">
+                                                                        <div style="margin-top: 50px; margin-bottom: 50px" data-aos="fade-up" data-aos-delay="0">
+                                                                            <img style="width: 100%" src="${base_url}assets/store/images/not-product.png">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>`);
                 }
 
             },
@@ -215,11 +237,11 @@ $(document).ready(function () {
                 }
 
                 // Price filter products range (no ajax function)
-                let price_min =parseFloat(data.products_summary[0]['price_min'] * 100);
-                let price_max =parseFloat(data.products_summary[0]['price_max'] * 100);
+                let price_min =parseFloat(data.products_summary[0]['price_min']) * 100;
+                let price_max =parseFloat(data.products_summary[0]['price_max']) * 100;
 
-                $('#slider-range').attr('data-min', price_min);
-                $('#slider-range').attr('data-max', price_max);
+                $('#slider-range').attr('data-min', price_min / 100);
+                $('#slider-range').attr('data-max', price_max / 100);
                 priceRange(price_min, price_max);
 
             },
@@ -274,7 +296,6 @@ $(document).ready(function () {
                 $('.load-more .cont-load-more').css("display", "flex");
             },
             success: function(data){   
-                console.log(data);
                 // Print remaining products - different container
                 $('#container-products-grid').append(data.content.grid);
                 $('#container-products-single').append(data.content.single);
@@ -346,17 +367,43 @@ $(document).ready(function () {
                     success: function(data){
                         $('.page-amount').html(data.products_summary[0]['amount_products']+' Productos');
 
-                        $('#container-products-grid').html(data.content.grid);
-                        $('#container-products-single').html(data.content.single);
+                        if (data.content != "") {
+                            $('#container-products-grid').html(data.content.grid);
+                            $('#container-products-single').html(data.content.single);
 
-                        if (data.products_summary[0]['amount_products'] > 10) {
-                            start = 10;
-                            $('.container-pagination-btn').html(`<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
-                                                <button id="load-more" class="load-more time-trans-txt">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
-                                             </div>`);
+                            if (data.products_summary[0]['amount_products'] > 10) {
+                                start = 10;
+                                $('.container-pagination-btn').html(`<div class="page-pagination text-center" data-aos="fade-up" data-aos-delay="0">
+                                                    <button id="load-more" class="load-more time-trans-txt">VER MÁS<div class="cont-load-more"><span class="loader-more-data"></span></div></button>
+                                                </div>`);
+                            }else{
+                                $('.container-pagination-btn').html("");
+                            }
                         }else{
-                            $('.container-pagination-btn').html("");
+                            $('#container-products-grid').html(`<div class="error-section">
+                                                                    <div class="container">
+                                                                        <div class="row">
+                                                                            <div class="error-form">
+                                                                                <div style="margin-top: 50px; margin-bottom: 50px" data-aos="fade-up" data-aos-delay="0">
+                                                                                    <img style="width: 100%" src="${base_url}assets/store/images/not-product.png">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>`);
+                            $('#container-products-single').html(`<div class="error-section">
+                                                                    <div class="container">
+                                                                        <div class="row">
+                                                                            <div class="error-form">
+                                                                                <div style="margin-top: 50px; margin-bottom: 50px" data-aos="fade-up" data-aos-delay="0">
+                                                                                    <img style="width: 100%" src="${base_url}assets/store/images/not-product.png">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>`);
                         }
+                       
                     },
                     error: function(xhr, status, error) {
                     },

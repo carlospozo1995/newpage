@@ -38,12 +38,8 @@
             $amount_brands = Models_Store::getProductsCategorias("brand, COUNT(*) as amount", $id_sons, "GROUP BY brand");
 
             // PRICE MIN AND PRICE MAX
-            // print_r($productsSummary[0]['price_min']); 
-            // var_dump(floatval($productsSummary[0]['price_min']));
             $price_min = floatval($productsSummary[0]['price_min']);
             $price_max = floatval($productsSummary[0]['price_max']);
-            // $price_min = floatval($productsSummary[0]['price_min']) ;
-            // $price_max = floatval($productsSummary[0]['price_max']);
 
             // STORAGE OF PRODUCT IMAGES
             $product_images = array();
@@ -161,7 +157,7 @@
                                         <div id="slider-range" data-min="<?= $price_min; ?>" data-max="<?= $price_max; ?>"></div>
                                         <div class="filter-type-price">
                                             <label for="amount">Price range:</label>
-                                            <input type="text" id="amount">
+                                            <input type="text" id="amount" disabled>
                                         </div>
                                     </div>
                                 </div> 
