@@ -1,127 +1,115 @@
-[2023/12/18 02:52:47] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/12/18 02:52:47] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/12/18 02:52:47] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/12/18 02:52:47] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
-[2023/12/18 02:52:47] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/12/18 02:52:47] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 02:52:47] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 10 
-[2023/12/18 02:52:47] SQL Query: SELECT MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205) AND status = '1' 
-[2023/12/18 02:52:47] SQL Query: SELECT brand, COUNT(*) as amount FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205) AND status = '1' GROUP BY brand
-[2023/12/18 02:52:47] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 02:52:47] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/12/18 02:52:47] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 02:52:47] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/12/18 02:52:47] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 02:52:47] SQL Query: SELECT * FROM img_product WHERE product_id = '14'
-[2023/12/18 02:52:47] SQL Query: SELECT * FROM img_product WHERE product_id = '15'
-[2023/12/18 02:52:47] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
-[2023/12/18 02:52:47] SQL Query: SELECT * FROM img_product WHERE product_id = '17'
-[2023/12/18 02:52:47] SQL Query: SELECT * FROM img_product WHERE product_id = '18'
-[2023/12/18 02:52:47] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/12/18 02:52:53] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)   AND price BETWEEN 394.39 AND 855.89 AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 10 
-[2023/12/18 02:52:53] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
-[2023/12/18 02:52:53] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
-[2023/12/18 02:52:53] SQL Query: SELECT * FROM img_product WHERE product_id = '20'
-[2023/12/18 02:52:53] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
-[2023/12/18 02:52:53] SQL Query: SELECT * FROM img_product WHERE product_id = '38'
-[2023/12/18 02:52:53] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
-[2023/12/18 02:52:53] SQL Query:  SELECT MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND price BETWEEN 394.39 AND 855.89 AND status = '1' 
-[2023/12/18 02:52:55] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)   AND price BETWEEN 394.39 AND 473.02 AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 10 
-[2023/12/18 02:52:55] SQL Query: SELECT * FROM img_product WHERE product_id = '20'
-[2023/12/18 02:52:55] SQL Query:  SELECT MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND price BETWEEN 394.39 AND 473.02 AND status = '1' 
-[2023/12/18 02:52:57] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)   AND price BETWEEN 394.39 AND 446.88 AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 10 
-[2023/12/18 02:52:57] SQL Query: SELECT * FROM img_product WHERE product_id = '20'
-[2023/12/18 02:52:57] SQL Query:  SELECT MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND price BETWEEN 394.39 AND 446.88 AND status = '1' 
-[2023/12/18 02:53:02] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)   AND price BETWEEN 394.39 AND 413.89 AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 10 
-[2023/12/18 02:53:02] SQL Query:  SELECT MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND price BETWEEN 394.39 AND 413.89 AND status = '1' 
-[2023/12/18 02:53:06] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)   AND price BETWEEN 394.39 AND 413.89 AND p.status = 1  ORDER BY price ASC  LIMIT 0, 10 
-[2023/12/18 02:53:06] SQL Query:  SELECT MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)   AND price BETWEEN 394.39 AND 413.89 AND status = '1'  ORDER BY price ASC
-[2023/12/18 02:53:09] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)  AND brand IN ("JBL")  AND p.status = 1  ORDER BY price ASC  LIMIT 0, 10 
-[2023/12/18 02:53:09] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 02:53:09] SQL Query: SELECT * FROM img_product WHERE product_id = '20'
-[2023/12/18 02:53:09] SQL Query:  SELECT MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)  AND brand IN ("JBL")  AND status = '1'  ORDER BY price ASC
-[2023/12/18 02:53:13] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)  AND brand IN ("JBL")  AND price BETWEEN 4 AND 299.29 AND p.status = 1  ORDER BY price ASC  LIMIT 0, 10 
-[2023/12/18 02:53:13] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 02:53:13] SQL Query:  SELECT MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)  AND brand IN ("JBL")  AND price BETWEEN 4 AND 299.29 AND status = '1'  ORDER BY price ASC
-[2023/12/18 02:53:19] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)  AND brand IN ("JBL")  AND price BETWEEN 252.39 AND 299.29 AND p.status = 1  ORDER BY price ASC  LIMIT 0, 10 
-[2023/12/18 02:53:19] SQL Query:  SELECT MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)  AND brand IN ("JBL")  AND price BETWEEN 252.39 AND 299.29 AND status = '1'  ORDER BY price ASC
-[2023/12/18 02:53:23] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)  AND brand IN ("JBL")  AND price BETWEEN 252.39 AND 299.29 AND p.status = 1  ORDER BY price DESC  LIMIT 0, 10 
-[2023/12/18 02:53:23] SQL Query:  SELECT MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205)  AND brand IN ("JBL")  AND price BETWEEN 252.39 AND 299.29 AND status = '1'  ORDER BY price DESC
-[2023/12/18 02:53:24] SQL Query: SELECT id_category FROM categories WHERE url = 'cuidado-personal'
-[2023/12/18 02:53:24] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 02:53:24] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (255,256,257,258)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 10 
-[2023/12/18 02:53:27] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/12/18 02:53:27] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/12/18 02:53:27] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/12/18 02:53:27] SQL Query: SELECT * FROM categories WHERE (url = 'electrodomesticos' AND fatherCategory IS NULL)
-[2023/12/18 02:53:27] SQL Query: SELECT id_category FROM categories WHERE url = 'electrodomesticos'
-[2023/12/18 02:53:27] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 02:53:27] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 10 
-[2023/12/18 02:53:27] SQL Query: SELECT MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194) AND status = '1' 
-[2023/12/18 02:53:27] SQL Query: SELECT brand, COUNT(*) as amount FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194) AND status = '1' GROUP BY brand
-[2023/12/18 02:53:27] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
-[2023/12/18 02:53:27] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/12/18 02:53:27] SQL Query: SELECT * FROM img_product WHERE product_id = '40'
-[2023/12/18 02:53:27] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/12/18 02:53:53] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/12/18 02:53:53] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/12/18 02:53:53] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/12/18 02:53:53] SQL Query: SELECT * FROM categories WHERE (url = 'electrodomesticos' AND fatherCategory IS NULL)
-[2023/12/18 02:53:53] SQL Query: SELECT id_category FROM categories WHERE url = 'electrodomesticos'
-[2023/12/18 02:53:53] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 02:53:53] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 10 
-[2023/12/18 02:53:53] SQL Query: SELECT MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194) AND status = '1' 
-[2023/12/18 02:53:53] SQL Query: SELECT brand, COUNT(*) as amount FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194) AND status = '1' GROUP BY brand
-[2023/12/18 02:53:53] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
-[2023/12/18 02:53:53] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/12/18 02:53:53] SQL Query: SELECT * FROM img_product WHERE product_id = '40'
-[2023/12/18 02:53:53] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/12/18 03:17:34] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/12/18 03:17:34] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/12/18 03:17:34] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/12/18 03:17:34] SQL Query: SELECT * FROM categories WHERE (url = 'electrodomesticos' AND fatherCategory IS NULL)
-[2023/12/18 03:17:34] SQL Query: SELECT id_category FROM categories WHERE url = 'electrodomesticos'
-[2023/12/18 03:17:34] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:17:34] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 10 
-[2023/12/18 03:17:34] SQL Query: SELECT MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194) AND status = '1' 
-[2023/12/18 03:17:34] SQL Query: SELECT brand, COUNT(*) as amount FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194) AND status = '1' GROUP BY brand
-[2023/12/18 03:17:34] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
-[2023/12/18 03:17:34] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/12/18 03:17:34] SQL Query: SELECT * FROM img_product WHERE product_id = '40'
-[2023/12/18 03:17:34] SQL Query: SELECT * FROM categories WHERE  status = 1
-[2023/12/18 03:17:40] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%lava%' OR p.brand LIKE '%lava%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:17:40] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%lava%' OR brand LIKE '%lava%') AND status = '1'
-[2023/12/18 03:17:40] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/12/18 03:17:40] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%lavad%' OR p.brand LIKE '%lavad%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:17:40] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%lavad%' OR brand LIKE '%lavad%') AND status = '1'
-[2023/12/18 03:17:40] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/12/18 03:17:40] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%lavado%' OR p.brand LIKE '%lavado%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:17:40] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%lavado%' OR brand LIKE '%lavado%') AND status = '1'
-[2023/12/18 03:17:40] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/12/18 03:17:40] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%lavador%' OR p.brand LIKE '%lavador%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:17:40] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%lavador%' OR brand LIKE '%lavador%') AND status = '1'
-[2023/12/18 03:17:40] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/12/18 03:17:41] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%lavadora%' OR p.brand LIKE '%lavadora%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:17:41] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%lavadora%' OR brand LIKE '%lavadora%') AND status = '1'
-[2023/12/18 03:17:41] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/12/18 03:17:42] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%lavador%' OR p.brand LIKE '%lavador%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:17:42] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%lavador%' OR brand LIKE '%lavador%') AND status = '1'
-[2023/12/18 03:17:42] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/12/18 03:17:42] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%lavado%' OR p.brand LIKE '%lavado%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:17:42] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%lavado%' OR brand LIKE '%lavado%') AND status = '1'
-[2023/12/18 03:17:42] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/12/18 03:17:42] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%lavad%' OR p.brand LIKE '%lavad%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:17:42] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%lavad%' OR brand LIKE '%lavad%') AND status = '1'
-[2023/12/18 03:17:42] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/12/18 03:17:43] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%lava%' OR p.brand LIKE '%lava%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:17:43] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%lava%' OR brand LIKE '%lava%') AND status = '1'
-[2023/12/18 03:17:43] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/12/18 03:17:49] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%elec%' OR p.brand LIKE '%elec%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:17:49] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%elec%' AND status = '1'
-[2023/12/18 03:17:49] SQL Query:   WITH RECURSIVE category_path AS (
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:37:05] SQL Query: SELECT sliderDst, sliderDesOne, sliderDesTwo, redirect FROM banners_category WHERE banner_type = '1'
+[2023/12/18 06:37:05] SQL Query: SELECT sliderDst, sliderDes, redirect FROM banners_product WHERE banner_type = '1'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:37:05] SQL Query: SELECT product_id, category_id, banner_large, redirect FROM banners_product WHERE banner_type = '2'
+[2023/12/18 06:37:05] SQL Query: SELECT sliderMbl, sliderDesOne, sliderDesTwo, redirect FROM banners_category WHERE banner_type = '1'
+[2023/12/18 06:37:05] SQL Query: SELECT sliderMbl, sliderDes, redirect FROM banners_product WHERE banner_type = '1'
+[2023/12/18 06:37:05] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products  WHERE status = '1' ORDER BY id_product DESC LIMIT 8
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '46'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '45'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '44'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '43'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '42'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '41'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '40'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 06:37:05] SQL Query: SELECT banner_name, banner_large, redirect FROM banners_category WHERE banner_type = '2'
+[2023/12/18 06:37:05] SQL Query: SELECT banner_small, redirect FROM banners_category WHERE banner_type = '3'
+[2023/12/18 06:37:05] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM `products` WHERE category_id = '213' AND id_product != '33' ORDER BY id_product DESC LIMIT 8
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '32'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '31'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '30'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '29'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '28'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '27'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '26'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '25'
+[2023/12/18 06:37:05] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM `products` WHERE category_id = '203' AND id_product != '16' ORDER BY id_product DESC LIMIT 8
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '44'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '43'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '38'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 06:37:05] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 06:37:15] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%tele%' OR p.brand LIKE '%tele%') AND p.status = '1' LIMIT 5
+[2023/12/18 06:37:15] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%tele%' OR brand LIKE '%tele%') AND status = '1'
+[2023/12/18 06:37:15] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 06:37:15] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 06:37:15] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 06:37:15] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 06:37:15] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 06:37:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:37:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:37:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:37:21] SQL Query: SELECT id_product, name_product, desMain, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE name_product LIKE '%tele%' || brand LIKE '%tele%' AND status = '1'
+[2023/12/18 06:37:21] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%tele%' OR brand LIKE '%tele%') AND status = '1'
+[2023/12/18 06:37:41] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:37:41] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:37:41] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:37:41] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL) OR (url = 'tv-y-video' AND fatherCategory = (SELECT id_category FROM categories WHERE url = 'audio-y-video')) OR (url = 'televisores' AND fatherCategory = (SELECT id_category FROM categories WHERE url = 'tv-y-video'))
+[2023/12/18 06:37:41] SQL Query: SELECT id_category FROM categories WHERE url = 'televisores'
+[2023/12/18 06:37:41] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/12/18 06:37:41] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (203)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 10 
+[2023/12/18 06:37:41] SQL Query: SELECT MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products FROM products WHERE category_id IN (203) AND status = '1' 
+[2023/12/18 06:37:41] SQL Query: SELECT brand, COUNT(*) as amount FROM products WHERE category_id IN (203) AND status = '1' GROUP BY brand
+[2023/12/18 06:37:41] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 06:37:41] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 06:37:41] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 06:37:41] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 06:37:41] SQL Query: SELECT * FROM img_product WHERE product_id = '38'
+[2023/12/18 06:37:41] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 06:37:41] SQL Query: SELECT * FROM img_product WHERE product_id = '43'
+[2023/12/18 06:37:41] SQL Query: SELECT * FROM img_product WHERE product_id = '44'
+[2023/12/18 06:37:41] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:37:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:37:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:37:49] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:37:49] SQL Query: SELECT id_product, name_product, desMain, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE name_product LIKE '%tele%' || brand LIKE '%tele%' AND status = '1'
+[2023/12/18 06:37:49] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%tele%' OR brand LIKE '%tele%') AND status = '1'
+[2023/12/18 06:38:01] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%tele%' OR p.brand LIKE '%tele%') AND p.status = '1' LIMIT 5
+[2023/12/18 06:38:01] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%tele%' OR brand LIKE '%tele%') AND status = '1'
+[2023/12/18 06:38:01] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 06:38:01] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 06:38:01] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 06:38:01] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 06:38:01] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 06:38:05] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%telev%' OR p.brand LIKE '%telev%') AND p.status = '1' LIMIT 5
+[2023/12/18 06:38:05] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%telev%' OR brand LIKE '%telev%') AND status = '1'
+[2023/12/18 06:38:05] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 06:38:05] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 06:38:05] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 06:38:05] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 06:38:05] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 06:38:05] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televi%' OR p.brand LIKE '%televi%') AND p.status = '1' LIMIT 5
+[2023/12/18 06:38:05] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%televi%' OR brand LIKE '%televi%') AND status = '1'
+[2023/12/18 06:38:05] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 06:38:05] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 06:38:05] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 06:38:05] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 06:38:05] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 06:38:05] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televis%' OR p.brand LIKE '%televis%') AND p.status = '1' LIMIT 5
+[2023/12/18 06:38:05] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%televis%' OR brand LIKE '%televis%') AND status = '1'
+[2023/12/18 06:38:05] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 06:38:05] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 06:38:05] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 06:38:05] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 06:38:05] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 06:38:05] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televiso%' OR p.brand LIKE '%televiso%') AND p.status = '1' LIMIT 5
+[2023/12/18 06:38:05] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%televiso%' OR brand LIKE '%televiso%') AND status = '1'
+[2023/12/18 06:38:05] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 06:38:05] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 06:38:05] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 06:38:05] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 06:38:05] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 06:38:06] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televisore%' OR p.brand LIKE '%televisore%') AND p.status = '1' LIMIT 5
+[2023/12/18 06:38:06] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televisore%' AND status = '1'
+[2023/12/18 06:38:06] SQL Query:   WITH RECURSIVE category_path AS (
                                             SELECT id_category, fatherCategory, url
                                             FROM categories
-                                            WHERE url = 'electrodomesticos'
+                                            WHERE url = 'televisores'
                                             UNION
                                             SELECT c.id_category, c.fatherCategory, c.url
                                             FROM categories c
@@ -130,27 +118,21 @@
                                         SELECT url
                                         FROM category_path
                                         ORDER BY id_category
-[2023/12/18 03:17:49] SQL Query: SELECT id_category FROM categories WHERE url = 'electrodomesticos'
-[2023/12/18 03:17:49] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:17:49] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:17:49] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194) AND status = '1'
-[2023/12/18 03:17:49] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
-[2023/12/18 03:17:49] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/12/18 03:17:49] SQL Query: SELECT * FROM img_product WHERE product_id = '40'
-[2023/12/18 03:17:49] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%electy%' OR p.brand LIKE '%electy%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:17:49] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%electy%' AND status = '1'
-[2023/12/18 03:17:49] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%electy%' OR p.brand LIKE '%electy%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:17:49] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%electy%' AND status = '1'
-[2023/12/18 03:17:49] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%electyr%' OR p.brand LIKE '%electyr%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:17:49] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%electyr%' AND status = '1'
-[2023/12/18 03:17:49] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%electy%' OR p.brand LIKE '%electy%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:17:49] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%electy%' AND status = '1'
-[2023/12/18 03:17:50] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%elect%' OR p.brand LIKE '%elect%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:17:50] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%elect%' AND status = '1'
-[2023/12/18 03:17:50] SQL Query:   WITH RECURSIVE category_path AS (
+[2023/12/18 06:38:06] SQL Query: SELECT id_category FROM categories WHERE url = 'televisores'
+[2023/12/18 06:38:06] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/12/18 06:38:06] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (203)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
+[2023/12/18 06:38:06] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (203) AND status = '1'
+[2023/12/18 06:38:06] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 06:38:06] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 06:38:06] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 06:38:06] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 06:38:06] SQL Query: SELECT * FROM img_product WHERE product_id = '38'
+[2023/12/18 06:38:06] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televisore%' OR p.brand LIKE '%televisore%') AND p.status = '1' LIMIT 5
+[2023/12/18 06:38:06] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televisore%' AND status = '1'
+[2023/12/18 06:38:06] SQL Query:   WITH RECURSIVE category_path AS (
                                             SELECT id_category, fatherCategory, url
                                             FROM categories
-                                            WHERE url = 'electrodomesticos'
+                                            WHERE url = 'televisores'
                                             UNION
                                             SELECT c.id_category, c.fatherCategory, c.url
                                             FROM categories c
@@ -159,19 +141,21 @@
                                         SELECT url
                                         FROM category_path
                                         ORDER BY id_category
-[2023/12/18 03:17:50] SQL Query: SELECT id_category FROM categories WHERE url = 'electrodomesticos'
-[2023/12/18 03:17:50] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:17:50] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:17:50] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194) AND status = '1'
-[2023/12/18 03:17:50] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
-[2023/12/18 03:17:50] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/12/18 03:17:50] SQL Query: SELECT * FROM img_product WHERE product_id = '40'
-[2023/12/18 03:17:51] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%electr%' OR p.brand LIKE '%electr%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:17:51] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%electr%' AND status = '1'
-[2023/12/18 03:17:51] SQL Query:   WITH RECURSIVE category_path AS (
+[2023/12/18 06:38:06] SQL Query: SELECT id_category FROM categories WHERE url = 'televisores'
+[2023/12/18 06:38:06] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/12/18 06:38:06] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (203)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
+[2023/12/18 06:38:06] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (203) AND status = '1'
+[2023/12/18 06:38:06] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 06:38:06] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 06:38:06] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 06:38:06] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 06:38:06] SQL Query: SELECT * FROM img_product WHERE product_id = '38'
+[2023/12/18 06:38:06] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televisores%' OR p.brand LIKE '%televisores%') AND p.status = '1' LIMIT 5
+[2023/12/18 06:38:06] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televisores%' AND status = '1'
+[2023/12/18 06:38:06] SQL Query:   WITH RECURSIVE category_path AS (
                                             SELECT id_category, fatherCategory, url
                                             FROM categories
-                                            WHERE url = 'electrodomesticos'
+                                            WHERE url = 'televisores'
                                             UNION
                                             SELECT c.id_category, c.fatherCategory, c.url
                                             FROM categories c
@@ -180,19 +164,165 @@
                                         SELECT url
                                         FROM category_path
                                         ORDER BY id_category
-[2023/12/18 03:17:51] SQL Query: SELECT id_category FROM categories WHERE url = 'electrodomesticos'
-[2023/12/18 03:17:51] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:17:51] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:17:51] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194) AND status = '1'
-[2023/12/18 03:17:51] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
-[2023/12/18 03:17:51] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/12/18 03:17:51] SQL Query: SELECT * FROM img_product WHERE product_id = '40'
-[2023/12/18 03:17:51] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%electro%' OR p.brand LIKE '%electro%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:17:51] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%electro%' AND status = '1'
-[2023/12/18 03:17:51] SQL Query:   WITH RECURSIVE category_path AS (
+[2023/12/18 06:38:06] SQL Query: SELECT id_category FROM categories WHERE url = 'televisores'
+[2023/12/18 06:38:06] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/12/18 06:38:06] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (203)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
+[2023/12/18 06:38:06] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (203) AND status = '1'
+[2023/12/18 06:38:06] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 06:38:06] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 06:38:06] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 06:38:06] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 06:38:06] SQL Query: SELECT * FROM img_product WHERE product_id = '38'
+[2023/12/18 06:38:16] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%tele%' OR p.brand LIKE '%tele%') AND p.status = '1' LIMIT 5
+[2023/12/18 06:38:16] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%tele%' OR brand LIKE '%tele%') AND status = '1'
+[2023/12/18 06:38:16] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 06:38:16] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 06:38:16] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 06:38:16] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 06:38:16] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 06:38:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:38:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:38:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:38:19] SQL Query: SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE c.name_category LIKE '%televisores%' AND p.brand LIKE '%lg%' AND p.status = '1'
+[2023/12/18 06:38:19] SQL Query: SELECT COUNT(*) AS amount FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (c.name_category LIKE '%televisores%' AND p.brand LIKE '%lg%') AND status = '1'
+[2023/12/18 06:38:19] SQL ERROR: 0: 
+[2023/12/18 06:39:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:39:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:39:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:39:21] SQL Query: SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE c.name_category LIKE '%televisores%' AND p.brand LIKE '%lg%' AND p.status = '1'
+[2023/12/18 06:39:21] SQL Query: SELECT COUNT(*) AS amount FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (c.name_category LIKE '%televisores%' AND p.brand LIKE '%lg%') AND p.status = '1'
+[2023/12/18 06:39:58] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:39:58] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:39:58] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:39:58] SQL Query: SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE c.name_category LIKE '%televisores%' AND p.brand LIKE '%lg%' AND p.status = '1'
+[2023/12/18 06:39:58] SQL Query: SELECT COUNT(*) FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (c.name_category LIKE '%televisores%' AND p.brand LIKE '%lg%') AND p.status = '1'
+[2023/12/18 06:40:05] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:40:05] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:40:05] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:40:05] SQL Query: SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE c.name_category LIKE '%televisores%' AND p.brand LIKE '%lg%' AND p.status = '1'
+[2023/12/18 06:40:05] SQL Query: SELECT COUNT(*) AS amount FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (c.name_category LIKE '%televisores%' AND p.brand LIKE '%lg%') AND p.status = '1'
+[2023/12/18 06:40:17] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%tele%' OR p.brand LIKE '%tele%') AND p.status = '1' LIMIT 5
+[2023/12/18 06:40:17] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%tele%' OR brand LIKE '%tele%') AND status = '1'
+[2023/12/18 06:40:17] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 06:40:17] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 06:40:17] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 06:40:17] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 06:40:17] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 06:40:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:40:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:40:19] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:40:19] SQL Query: SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE c.name_category LIKE '%televisores%' AND p.brand LIKE '%tcl%' AND p.status = '1'
+[2023/12/18 06:40:19] SQL Query: SELECT COUNT(*) AS amount FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (c.name_category LIKE '%televisores%' AND p.brand LIKE '%tcl%') AND p.status = '1'
+[2023/12/18 06:40:42] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%sams%' OR p.brand LIKE '%sams%') AND p.status = '1' LIMIT 5
+[2023/12/18 06:40:42] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%sams%' OR brand LIKE '%sams%') AND status = '1'
+[2023/12/18 06:40:42] SQL Query: SELECT * FROM img_product WHERE product_id = '24'
+[2023/12/18 06:40:42] SQL Query: SELECT * FROM img_product WHERE product_id = '27'
+[2023/12/18 06:40:42] SQL Query: SELECT * FROM img_product WHERE product_id = '32'
+[2023/12/18 06:40:42] SQL Query: SELECT * FROM img_product WHERE product_id = '40'
+[2023/12/18 06:41:16] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:41:16] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:41:16] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:41:16] SQL Query: SELECT id_product, name_product, desMain, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE name_product LIKE '%sams%' || brand LIKE '%sams%' AND status = '1'
+[2023/12/18 06:41:16] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%sams%' OR brand LIKE '%sams%') AND status = '1'
+[2023/12/18 06:41:32] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%sams%' OR p.brand LIKE '%sams%') AND p.status = '1' LIMIT 5
+[2023/12/18 06:41:32] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%sams%' OR brand LIKE '%sams%') AND status = '1'
+[2023/12/18 06:41:32] SQL Query: SELECT * FROM img_product WHERE product_id = '24'
+[2023/12/18 06:41:32] SQL Query: SELECT * FROM img_product WHERE product_id = '27'
+[2023/12/18 06:41:32] SQL Query: SELECT * FROM img_product WHERE product_id = '32'
+[2023/12/18 06:41:32] SQL Query: SELECT * FROM img_product WHERE product_id = '40'
+[2023/12/18 06:41:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:41:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:41:42] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:41:42] SQL Query: SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE c.name_category LIKE '%celulares%' AND p.brand LIKE '%samsung%' AND p.status = '1'
+[2023/12/18 06:41:42] SQL Query: SELECT COUNT(*) AS amount FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (c.name_category LIKE '%celulares%' AND p.brand LIKE '%samsung%') AND p.status = '1'
+[2023/12/18 06:42:39] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:42:39] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:42:39] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 06:42:39] SQL Query: SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE c.name_category LIKE '%celulares%' AND p.brand LIKE '%samsung%' AND p.status = '1'
+[2023/12/18 06:42:39] SQL Query: SELECT COUNT(*) AS amount FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (c.name_category LIKE '%celulares%' AND p.brand LIKE '%samsung%') AND p.status = '1'
+[2023/12/18 07:00:24] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%tele%' OR p.brand LIKE '%tele%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:24] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%tele%' OR brand LIKE '%tele%') AND status = '1'
+[2023/12/18 07:00:24] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 07:00:24] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 07:00:24] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 07:00:24] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 07:00:24] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 07:00:24] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%telev%' OR p.brand LIKE '%telev%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:24] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%telev%' OR brand LIKE '%telev%') AND status = '1'
+[2023/12/18 07:00:24] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 07:00:24] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 07:00:24] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 07:00:24] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 07:00:24] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 07:00:24] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televi%' OR p.brand LIKE '%televi%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:24] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%televi%' OR brand LIKE '%televi%') AND status = '1'
+[2023/12/18 07:00:24] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 07:00:24] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 07:00:24] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 07:00:24] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 07:00:24] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 07:00:24] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televid%' OR p.brand LIKE '%televid%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:24] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televid%' AND status = '1'
+[2023/12/18 07:00:25] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televido%' OR p.brand LIKE '%televido%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:25] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televido%' AND status = '1'
+[2023/12/18 07:00:25] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televidore%' OR p.brand LIKE '%televidore%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:25] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televidore%' AND status = '1'
+[2023/12/18 07:00:25] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televidore%' OR p.brand LIKE '%televidore%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:25] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televidore%' AND status = '1'
+[2023/12/18 07:00:25] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televidores%' OR p.brand LIKE '%televidores%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:25] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televidores%' AND status = '1'
+[2023/12/18 07:00:26] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televidore%' OR p.brand LIKE '%televidore%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:26] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televidore%' AND status = '1'
+[2023/12/18 07:00:27] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televidor%' OR p.brand LIKE '%televidor%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:27] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televidor%' AND status = '1'
+[2023/12/18 07:00:27] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televido%' OR p.brand LIKE '%televido%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:27] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televido%' AND status = '1'
+[2023/12/18 07:00:27] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televid%' OR p.brand LIKE '%televid%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:27] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televid%' AND status = '1'
+[2023/12/18 07:00:27] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televi%' OR p.brand LIKE '%televi%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:27] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%televi%' OR brand LIKE '%televi%') AND status = '1'
+[2023/12/18 07:00:27] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 07:00:27] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 07:00:27] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 07:00:27] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 07:00:27] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 07:00:28] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televis%' OR p.brand LIKE '%televis%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:28] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%televis%' OR brand LIKE '%televis%') AND status = '1'
+[2023/12/18 07:00:28] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 07:00:28] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 07:00:28] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 07:00:28] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 07:00:28] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 07:00:28] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televiso%' OR p.brand LIKE '%televiso%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:28] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%televiso%' OR brand LIKE '%televiso%') AND status = '1'
+[2023/12/18 07:00:28] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 07:00:28] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 07:00:28] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 07:00:28] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 07:00:28] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 07:00:28] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televisotre%' OR p.brand LIKE '%televisotre%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:28] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televisotre%' AND status = '1'
+[2023/12/18 07:00:28] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televisotr%' OR p.brand LIKE '%televisotr%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:28] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televisotr%' AND status = '1'
+[2023/12/18 07:00:28] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televisotre%' OR p.brand LIKE '%televisotre%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:28] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televisotre%' AND status = '1'
+[2023/12/18 07:00:29] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televisotr%' OR p.brand LIKE '%televisotr%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:29] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televisotr%' AND status = '1'
+[2023/12/18 07:00:29] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televisot%' OR p.brand LIKE '%televisot%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:29] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televisot%' AND status = '1'
+[2023/12/18 07:00:30] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televiso%' OR p.brand LIKE '%televiso%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:30] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%televiso%' OR brand LIKE '%televiso%') AND status = '1'
+[2023/12/18 07:00:30] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 07:00:30] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 07:00:30] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 07:00:30] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 07:00:30] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 07:00:30] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televisore%' OR p.brand LIKE '%televisore%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:30] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televisore%' AND status = '1'
+[2023/12/18 07:00:30] SQL Query:   WITH RECURSIVE category_path AS (
                                             SELECT id_category, fatherCategory, url
                                             FROM categories
-                                            WHERE url = 'electrodomesticos'
+                                            WHERE url = 'televisores'
                                             UNION
                                             SELECT c.id_category, c.fatherCategory, c.url
                                             FROM categories c
@@ -201,19 +331,21 @@
                                         SELECT url
                                         FROM category_path
                                         ORDER BY id_category
-[2023/12/18 03:17:51] SQL Query: SELECT id_category FROM categories WHERE url = 'electrodomesticos'
-[2023/12/18 03:17:51] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:17:51] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:17:51] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194) AND status = '1'
-[2023/12/18 03:17:51] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
-[2023/12/18 03:17:51] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/12/18 03:17:51] SQL Query: SELECT * FROM img_product WHERE product_id = '40'
-[2023/12/18 03:18:00] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%electr%' OR p.brand LIKE '%electr%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:00] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%electr%' AND status = '1'
-[2023/12/18 03:18:00] SQL Query:   WITH RECURSIVE category_path AS (
+[2023/12/18 07:00:30] SQL Query: SELECT id_category FROM categories WHERE url = 'televisores'
+[2023/12/18 07:00:30] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/12/18 07:00:30] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (203)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
+[2023/12/18 07:00:30] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (203) AND status = '1'
+[2023/12/18 07:00:30] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 07:00:30] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 07:00:30] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 07:00:30] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 07:00:30] SQL Query: SELECT * FROM img_product WHERE product_id = '38'
+[2023/12/18 07:00:30] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televisore%' OR p.brand LIKE '%televisore%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:30] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televisore%' AND status = '1'
+[2023/12/18 07:00:30] SQL Query:   WITH RECURSIVE category_path AS (
                                             SELECT id_category, fatherCategory, url
                                             FROM categories
-                                            WHERE url = 'electrodomesticos'
+                                            WHERE url = 'televisores'
                                             UNION
                                             SELECT c.id_category, c.fatherCategory, c.url
                                             FROM categories c
@@ -222,19 +354,21 @@
                                         SELECT url
                                         FROM category_path
                                         ORDER BY id_category
-[2023/12/18 03:18:00] SQL Query: SELECT id_category FROM categories WHERE url = 'electrodomesticos'
-[2023/12/18 03:18:00] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:00] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:00] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194) AND status = '1'
-[2023/12/18 03:18:00] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
-[2023/12/18 03:18:00] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/12/18 03:18:00] SQL Query: SELECT * FROM img_product WHERE product_id = '40'
-[2023/12/18 03:18:00] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%elect%' OR p.brand LIKE '%elect%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:00] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%elect%' AND status = '1'
-[2023/12/18 03:18:00] SQL Query:   WITH RECURSIVE category_path AS (
+[2023/12/18 07:00:30] SQL Query: SELECT id_category FROM categories WHERE url = 'televisores'
+[2023/12/18 07:00:30] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/12/18 07:00:30] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (203)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
+[2023/12/18 07:00:30] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (203) AND status = '1'
+[2023/12/18 07:00:30] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 07:00:30] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 07:00:30] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 07:00:30] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 07:00:30] SQL Query: SELECT * FROM img_product WHERE product_id = '38'
+[2023/12/18 07:00:31] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televisores%' OR p.brand LIKE '%televisores%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:31] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televisores%' AND status = '1'
+[2023/12/18 07:00:31] SQL Query:   WITH RECURSIVE category_path AS (
                                             SELECT id_category, fatherCategory, url
                                             FROM categories
-                                            WHERE url = 'electrodomesticos'
+                                            WHERE url = 'televisores'
                                             UNION
                                             SELECT c.id_category, c.fatherCategory, c.url
                                             FROM categories c
@@ -243,19 +377,60 @@
                                         SELECT url
                                         FROM category_path
                                         ORDER BY id_category
-[2023/12/18 03:18:00] SQL Query: SELECT id_category FROM categories WHERE url = 'electrodomesticos'
-[2023/12/18 03:18:00] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:00] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:00] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194) AND status = '1'
-[2023/12/18 03:18:00] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
-[2023/12/18 03:18:00] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/12/18 03:18:00] SQL Query: SELECT * FROM img_product WHERE product_id = '40'
-[2023/12/18 03:18:01] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%elec%' OR p.brand LIKE '%elec%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:01] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%elec%' AND status = '1'
-[2023/12/18 03:18:01] SQL Query:   WITH RECURSIVE category_path AS (
+[2023/12/18 07:00:31] SQL Query: SELECT id_category FROM categories WHERE url = 'televisores'
+[2023/12/18 07:00:31] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/12/18 07:00:31] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (203)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
+[2023/12/18 07:00:31] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (203) AND status = '1'
+[2023/12/18 07:00:31] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 07:00:31] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 07:00:31] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 07:00:31] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 07:00:31] SQL Query: SELECT * FROM img_product WHERE product_id = '38'
+[2023/12/18 07:00:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 07:00:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 07:00:33] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 07:00:33] SQL Query: SELECT id_product, name_product, desMain, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE name_product LIKE '%televisores%' || brand LIKE '%televisores%' AND status = '1'
+[2023/12/18 07:00:38] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%tele%' OR p.brand LIKE '%tele%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:38] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%tele%' OR brand LIKE '%tele%') AND status = '1'
+[2023/12/18 07:00:38] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 07:00:38] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 07:00:38] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 07:00:38] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 07:00:38] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 07:00:39] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%telev%' OR p.brand LIKE '%telev%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:39] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%telev%' OR brand LIKE '%telev%') AND status = '1'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 07:00:39] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televi%' OR p.brand LIKE '%televi%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:39] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%televi%' OR brand LIKE '%televi%') AND status = '1'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 07:00:39] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televis%' OR p.brand LIKE '%televis%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:39] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%televis%' OR brand LIKE '%televis%') AND status = '1'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 07:00:39] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televiso%' OR p.brand LIKE '%televiso%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:39] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%televiso%' OR brand LIKE '%televiso%') AND status = '1'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2023/12/18 07:00:39] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televisore%' OR p.brand LIKE '%televisore%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:39] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televisore%' AND status = '1'
+[2023/12/18 07:00:39] SQL Query:   WITH RECURSIVE category_path AS (
                                             SELECT id_category, fatherCategory, url
                                             FROM categories
-                                            WHERE url = 'electrodomesticos'
+                                            WHERE url = 'televisores'
                                             UNION
                                             SELECT c.id_category, c.fatherCategory, c.url
                                             FROM categories c
@@ -264,22 +439,21 @@
                                         SELECT url
                                         FROM category_path
                                         ORDER BY id_category
-[2023/12/18 03:18:01] SQL Query: SELECT id_category FROM categories WHERE url = 'electrodomesticos'
-[2023/12/18 03:18:01] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:01] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:01] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (182,185,189,192,183,184,186,187,188,190,191,193,194) AND status = '1'
-[2023/12/18 03:18:01] SQL Query: SELECT * FROM img_product WHERE product_id = '1'
-[2023/12/18 03:18:01] SQL Query: SELECT * FROM img_product WHERE product_id = '4'
-[2023/12/18 03:18:01] SQL Query: SELECT * FROM img_product WHERE product_id = '40'
-[2023/12/18 03:18:09] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audi%' OR p.brand LIKE '%audi%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:09] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE (name_product LIKE '%audi%' OR brand LIKE '%audi%') AND status = '1'
-[2023/12/18 03:18:09] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:10] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio%' OR p.brand LIKE '%audio%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:10] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio%' AND status = '1'
-[2023/12/18 03:18:10] SQL Query:   WITH RECURSIVE category_path AS (
+[2023/12/18 07:00:39] SQL Query: SELECT id_category FROM categories WHERE url = 'televisores'
+[2023/12/18 07:00:39] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/12/18 07:00:39] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (203)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
+[2023/12/18 07:00:39] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (203) AND status = '1'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '38'
+[2023/12/18 07:00:39] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televisore%' OR p.brand LIKE '%televisore%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:39] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televisore%' AND status = '1'
+[2023/12/18 07:00:39] SQL Query:   WITH RECURSIVE category_path AS (
                                             SELECT id_category, fatherCategory, url
                                             FROM categories
-                                            WHERE url = 'audio-y-video'
+                                            WHERE url = 'televisores'
                                             UNION
                                             SELECT c.id_category, c.fatherCategory, c.url
                                             FROM categories c
@@ -288,21 +462,21 @@
                                         SELECT url
                                         FROM category_path
                                         ORDER BY id_category
-[2023/12/18 03:18:10] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/12/18 03:18:10] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:10] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:10] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205) AND status = '1'
-[2023/12/18 03:18:10] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:10] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/12/18 03:18:10] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:10] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/12/18 03:18:10] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:12] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio %' OR p.brand LIKE '%audio %') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:12] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio %' AND status = '1'
-[2023/12/18 03:18:12] SQL Query:   WITH RECURSIVE category_path AS (
+[2023/12/18 07:00:39] SQL Query: SELECT id_category FROM categories WHERE url = 'televisores'
+[2023/12/18 07:00:39] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/12/18 07:00:39] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (203)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
+[2023/12/18 07:00:39] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (203) AND status = '1'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 07:00:39] SQL Query: SELECT * FROM img_product WHERE product_id = '38'
+[2023/12/18 07:00:40] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televisores%' OR p.brand LIKE '%televisores%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:40] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televisores%' AND status = '1'
+[2023/12/18 07:00:40] SQL Query:   WITH RECURSIVE category_path AS (
                                             SELECT id_category, fatherCategory, url
                                             FROM categories
-                                            WHERE url = 'audio-y-video'
+                                            WHERE url = 'televisores'
                                             UNION
                                             SELECT c.id_category, c.fatherCategory, c.url
                                             FROM categories c
@@ -311,21 +485,23 @@
                                         SELECT url
                                         FROM category_path
                                         ORDER BY id_category
-[2023/12/18 03:18:12] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/12/18 03:18:12] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:12] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:12] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205) AND status = '1'
-[2023/12/18 03:18:12] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:12] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/12/18 03:18:12] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:12] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/12/18 03:18:12] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:12] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y%' OR p.brand LIKE '%audio y%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:12] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y%' AND status = '1'
-[2023/12/18 03:18:12] SQL Query:   WITH RECURSIVE category_path AS (
+[2023/12/18 07:00:40] SQL Query: SELECT id_category FROM categories WHERE url = 'televisores'
+[2023/12/18 07:00:40] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/12/18 07:00:40] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (203)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
+[2023/12/18 07:00:40] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (203) AND status = '1'
+[2023/12/18 07:00:40] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 07:00:40] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 07:00:40] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 07:00:40] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 07:00:40] SQL Query: SELECT * FROM img_product WHERE product_id = '38'
+[2023/12/18 07:00:40] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televisoresd%' OR p.brand LIKE '%televisoresd%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:40] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televisoresd%' AND status = '1'
+[2023/12/18 07:00:44] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%televisores%' OR p.brand LIKE '%televisores%') AND p.status = '1' LIMIT 5
+[2023/12/18 07:00:44] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televisores%' AND status = '1'
+[2023/12/18 07:00:44] SQL Query:   WITH RECURSIVE category_path AS (
                                             SELECT id_category, fatherCategory, url
                                             FROM categories
-                                            WHERE url = 'audio-y-video'
+                                            WHERE url = 'televisores'
                                             UNION
                                             SELECT c.id_category, c.fatherCategory, c.url
                                             FROM categories c
@@ -334,472 +510,26 @@
                                         SELECT url
                                         FROM category_path
                                         ORDER BY id_category
-[2023/12/18 03:18:12] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/12/18 03:18:12] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:12] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:12] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205) AND status = '1'
-[2023/12/18 03:18:12] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:12] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/12/18 03:18:12] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:12] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/12/18 03:18:12] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:12] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y %' OR p.brand LIKE '%audio y %') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:12] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y %' AND status = '1'
-[2023/12/18 03:18:12] SQL Query:   WITH RECURSIVE category_path AS (
-                                            SELECT id_category, fatherCategory, url
-                                            FROM categories
-                                            WHERE url = 'audio-y-video'
-                                            UNION
-                                            SELECT c.id_category, c.fatherCategory, c.url
-                                            FROM categories c
-                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
-                                        )
-                                        SELECT url
-                                        FROM category_path
-                                        ORDER BY id_category
-[2023/12/18 03:18:12] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/12/18 03:18:12] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:12] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:12] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205) AND status = '1'
-[2023/12/18 03:18:12] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:12] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/12/18 03:18:12] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:12] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/12/18 03:18:12] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:13] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y s%' OR p.brand LIKE '%audio y s%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:13] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y s%' AND status = '1'
-[2023/12/18 03:18:13] SQL Query:   WITH RECURSIVE category_path AS (
-                                            SELECT id_category, fatherCategory, url
-                                            FROM categories
-                                            WHERE url = 'audio-y-sonido'
-                                            UNION
-                                            SELECT c.id_category, c.fatherCategory, c.url
-                                            FROM categories c
-                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
-                                        )
-                                        SELECT url
-                                        FROM category_path
-                                        ORDER BY id_category
-[2023/12/18 03:18:13] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-sonido'
-[2023/12/18 03:18:13] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:13] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (197,198,199,200,201)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:13] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (197,198,199,200,201) AND status = '1'
-[2023/12/18 03:18:13] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:13] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:13] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:13] SQL Query: SELECT * FROM img_product WHERE product_id = '15'
-[2023/12/18 03:18:13] SQL Query: SELECT * FROM img_product WHERE product_id = '18'
-[2023/12/18 03:18:13] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y so%' OR p.brand LIKE '%audio y so%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:13] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y so%' AND status = '1'
-[2023/12/18 03:18:13] SQL Query:   WITH RECURSIVE category_path AS (
-                                            SELECT id_category, fatherCategory, url
-                                            FROM categories
-                                            WHERE url = 'audio-y-sonido'
-                                            UNION
-                                            SELECT c.id_category, c.fatherCategory, c.url
-                                            FROM categories c
-                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
-                                        )
-                                        SELECT url
-                                        FROM category_path
-                                        ORDER BY id_category
-[2023/12/18 03:18:13] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-sonido'
-[2023/12/18 03:18:13] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:13] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (197,198,199,200,201)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:13] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (197,198,199,200,201) AND status = '1'
-[2023/12/18 03:18:13] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:13] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:13] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:13] SQL Query: SELECT * FROM img_product WHERE product_id = '15'
-[2023/12/18 03:18:13] SQL Query: SELECT * FROM img_product WHERE product_id = '18'
-[2023/12/18 03:18:14] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y soni%' OR p.brand LIKE '%audio y soni%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:14] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y soni%' AND status = '1'
-[2023/12/18 03:18:14] SQL Query:   WITH RECURSIVE category_path AS (
-                                            SELECT id_category, fatherCategory, url
-                                            FROM categories
-                                            WHERE url = 'audio-y-sonido'
-                                            UNION
-                                            SELECT c.id_category, c.fatherCategory, c.url
-                                            FROM categories c
-                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
-                                        )
-                                        SELECT url
-                                        FROM category_path
-                                        ORDER BY id_category
-[2023/12/18 03:18:14] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-sonido'
-[2023/12/18 03:18:14] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:14] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (197,198,199,200,201)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:14] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (197,198,199,200,201) AND status = '1'
-[2023/12/18 03:18:14] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:14] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:14] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:14] SQL Query: SELECT * FROM img_product WHERE product_id = '15'
-[2023/12/18 03:18:14] SQL Query: SELECT * FROM img_product WHERE product_id = '18'
-[2023/12/18 03:18:14] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y soni%' OR p.brand LIKE '%audio y soni%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:14] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y soni%' AND status = '1'
-[2023/12/18 03:18:14] SQL Query:   WITH RECURSIVE category_path AS (
-                                            SELECT id_category, fatherCategory, url
-                                            FROM categories
-                                            WHERE url = 'audio-y-sonido'
-                                            UNION
-                                            SELECT c.id_category, c.fatherCategory, c.url
-                                            FROM categories c
-                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
-                                        )
-                                        SELECT url
-                                        FROM category_path
-                                        ORDER BY id_category
-[2023/12/18 03:18:14] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-sonido'
-[2023/12/18 03:18:14] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:14] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (197,198,199,200,201)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:14] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (197,198,199,200,201) AND status = '1'
-[2023/12/18 03:18:14] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:14] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:14] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:14] SQL Query: SELECT * FROM img_product WHERE product_id = '15'
-[2023/12/18 03:18:14] SQL Query: SELECT * FROM img_product WHERE product_id = '18'
-[2023/12/18 03:18:14] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y sonid%' OR p.brand LIKE '%audio y sonid%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:14] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y sonid%' AND status = '1'
-[2023/12/18 03:18:14] SQL Query:   WITH RECURSIVE category_path AS (
-                                            SELECT id_category, fatherCategory, url
-                                            FROM categories
-                                            WHERE url = 'audio-y-sonido'
-                                            UNION
-                                            SELECT c.id_category, c.fatherCategory, c.url
-                                            FROM categories c
-                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
-                                        )
-                                        SELECT url
-                                        FROM category_path
-                                        ORDER BY id_category
-[2023/12/18 03:18:14] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-sonido'
-[2023/12/18 03:18:14] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:14] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (197,198,199,200,201)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:14] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (197,198,199,200,201) AND status = '1'
-[2023/12/18 03:18:14] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:14] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:14] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:14] SQL Query: SELECT * FROM img_product WHERE product_id = '15'
-[2023/12/18 03:18:14] SQL Query: SELECT * FROM img_product WHERE product_id = '18'
-[2023/12/18 03:18:14] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y sonido%' OR p.brand LIKE '%audio y sonido%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:14] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y sonido%' AND status = '1'
-[2023/12/18 03:18:14] SQL Query:   WITH RECURSIVE category_path AS (
-                                            SELECT id_category, fatherCategory, url
-                                            FROM categories
-                                            WHERE url = 'audio-y-sonido'
-                                            UNION
-                                            SELECT c.id_category, c.fatherCategory, c.url
-                                            FROM categories c
-                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
-                                        )
-                                        SELECT url
-                                        FROM category_path
-                                        ORDER BY id_category
-[2023/12/18 03:18:14] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-sonido'
-[2023/12/18 03:18:14] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:14] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (197,198,199,200,201)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:14] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (197,198,199,200,201) AND status = '1'
-[2023/12/18 03:18:14] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:14] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:14] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:14] SQL Query: SELECT * FROM img_product WHERE product_id = '15'
-[2023/12/18 03:18:14] SQL Query: SELECT * FROM img_product WHERE product_id = '18'
-[2023/12/18 03:18:23] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y sonid%' OR p.brand LIKE '%audio y sonid%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:23] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y sonid%' AND status = '1'
-[2023/12/18 03:18:23] SQL Query:   WITH RECURSIVE category_path AS (
-                                            SELECT id_category, fatherCategory, url
-                                            FROM categories
-                                            WHERE url = 'audio-y-sonido'
-                                            UNION
-                                            SELECT c.id_category, c.fatherCategory, c.url
-                                            FROM categories c
-                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
-                                        )
-                                        SELECT url
-                                        FROM category_path
-                                        ORDER BY id_category
-[2023/12/18 03:18:23] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-sonido'
-[2023/12/18 03:18:23] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:23] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (197,198,199,200,201)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:23] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (197,198,199,200,201) AND status = '1'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '15'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '18'
-[2023/12/18 03:18:23] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y soni%' OR p.brand LIKE '%audio y soni%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:23] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y soni%' AND status = '1'
-[2023/12/18 03:18:23] SQL Query:   WITH RECURSIVE category_path AS (
-                                            SELECT id_category, fatherCategory, url
-                                            FROM categories
-                                            WHERE url = 'audio-y-sonido'
-                                            UNION
-                                            SELECT c.id_category, c.fatherCategory, c.url
-                                            FROM categories c
-                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
-                                        )
-                                        SELECT url
-                                        FROM category_path
-                                        ORDER BY id_category
-[2023/12/18 03:18:23] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-sonido'
-[2023/12/18 03:18:23] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:23] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (197,198,199,200,201)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:23] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (197,198,199,200,201) AND status = '1'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '15'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '18'
-[2023/12/18 03:18:23] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y son%' OR p.brand LIKE '%audio y son%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:23] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y son%' AND status = '1'
-[2023/12/18 03:18:23] SQL Query:   WITH RECURSIVE category_path AS (
-                                            SELECT id_category, fatherCategory, url
-                                            FROM categories
-                                            WHERE url = 'audio-y-sonido'
-                                            UNION
-                                            SELECT c.id_category, c.fatherCategory, c.url
-                                            FROM categories c
-                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
-                                        )
-                                        SELECT url
-                                        FROM category_path
-                                        ORDER BY id_category
-[2023/12/18 03:18:23] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-sonido'
-[2023/12/18 03:18:23] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:23] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (197,198,199,200,201)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:23] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (197,198,199,200,201) AND status = '1'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '15'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '18'
-[2023/12/18 03:18:23] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y so%' OR p.brand LIKE '%audio y so%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:23] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y so%' AND status = '1'
-[2023/12/18 03:18:23] SQL Query:   WITH RECURSIVE category_path AS (
-                                            SELECT id_category, fatherCategory, url
-                                            FROM categories
-                                            WHERE url = 'audio-y-sonido'
-                                            UNION
-                                            SELECT c.id_category, c.fatherCategory, c.url
-                                            FROM categories c
-                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
-                                        )
-                                        SELECT url
-                                        FROM category_path
-                                        ORDER BY id_category
-[2023/12/18 03:18:23] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-sonido'
-[2023/12/18 03:18:23] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:23] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (197,198,199,200,201)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:23] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (197,198,199,200,201) AND status = '1'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '15'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '18'
-[2023/12/18 03:18:23] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y s%' OR p.brand LIKE '%audio y s%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:23] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y s%' AND status = '1'
-[2023/12/18 03:18:23] SQL Query:   WITH RECURSIVE category_path AS (
-                                            SELECT id_category, fatherCategory, url
-                                            FROM categories
-                                            WHERE url = 'audio-y-sonido'
-                                            UNION
-                                            SELECT c.id_category, c.fatherCategory, c.url
-                                            FROM categories c
-                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
-                                        )
-                                        SELECT url
-                                        FROM category_path
-                                        ORDER BY id_category
-[2023/12/18 03:18:23] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-sonido'
-[2023/12/18 03:18:23] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:23] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (197,198,199,200,201)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:23] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (197,198,199,200,201) AND status = '1'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '15'
-[2023/12/18 03:18:23] SQL Query: SELECT * FROM img_product WHERE product_id = '18'
-[2023/12/18 03:18:24] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y %' OR p.brand LIKE '%audio y %') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:24] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y %' AND status = '1'
-[2023/12/18 03:18:24] SQL Query:   WITH RECURSIVE category_path AS (
-                                            SELECT id_category, fatherCategory, url
-                                            FROM categories
-                                            WHERE url = 'audio-y-video'
-                                            UNION
-                                            SELECT c.id_category, c.fatherCategory, c.url
-                                            FROM categories c
-                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
-                                        )
-                                        SELECT url
-                                        FROM category_path
-                                        ORDER BY id_category
-[2023/12/18 03:18:24] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/12/18 03:18:24] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:24] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:24] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205) AND status = '1'
-[2023/12/18 03:18:24] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:24] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/12/18 03:18:24] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:24] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/12/18 03:18:24] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:24] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y v%' OR p.brand LIKE '%audio y v%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:24] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y v%' AND status = '1'
-[2023/12/18 03:18:24] SQL Query:   WITH RECURSIVE category_path AS (
-                                            SELECT id_category, fatherCategory, url
-                                            FROM categories
-                                            WHERE url = 'audio-y-video'
-                                            UNION
-                                            SELECT c.id_category, c.fatherCategory, c.url
-                                            FROM categories c
-                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
-                                        )
-                                        SELECT url
-                                        FROM category_path
-                                        ORDER BY id_category
-[2023/12/18 03:18:24] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/12/18 03:18:24] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:24] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:24] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205) AND status = '1'
-[2023/12/18 03:18:24] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:24] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/12/18 03:18:24] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:24] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/12/18 03:18:24] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:24] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y vi%' OR p.brand LIKE '%audio y vi%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:24] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y vi%' AND status = '1'
-[2023/12/18 03:18:24] SQL Query:   WITH RECURSIVE category_path AS (
-                                            SELECT id_category, fatherCategory, url
-                                            FROM categories
-                                            WHERE url = 'audio-y-video'
-                                            UNION
-                                            SELECT c.id_category, c.fatherCategory, c.url
-                                            FROM categories c
-                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
-                                        )
-                                        SELECT url
-                                        FROM category_path
-                                        ORDER BY id_category
-[2023/12/18 03:18:24] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/12/18 03:18:24] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:24] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:24] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205) AND status = '1'
-[2023/12/18 03:18:24] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:24] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/12/18 03:18:24] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:24] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/12/18 03:18:24] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:24] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y vide%' OR p.brand LIKE '%audio y vide%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:24] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y vide%' AND status = '1'
-[2023/12/18 03:18:24] SQL Query:   WITH RECURSIVE category_path AS (
-                                            SELECT id_category, fatherCategory, url
-                                            FROM categories
-                                            WHERE url = 'audio-y-video'
-                                            UNION
-                                            SELECT c.id_category, c.fatherCategory, c.url
-                                            FROM categories c
-                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
-                                        )
-                                        SELECT url
-                                        FROM category_path
-                                        ORDER BY id_category
-[2023/12/18 03:18:24] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/12/18 03:18:24] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:24] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:24] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205) AND status = '1'
-[2023/12/18 03:18:24] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:24] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/12/18 03:18:24] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:24] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/12/18 03:18:24] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:25] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y vide%' OR p.brand LIKE '%audio y vide%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:25] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y vide%' AND status = '1'
-[2023/12/18 03:18:25] SQL Query:   WITH RECURSIVE category_path AS (
-                                            SELECT id_category, fatherCategory, url
-                                            FROM categories
-                                            WHERE url = 'audio-y-video'
-                                            UNION
-                                            SELECT c.id_category, c.fatherCategory, c.url
-                                            FROM categories c
-                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
-                                        )
-                                        SELECT url
-                                        FROM category_path
-                                        ORDER BY id_category
-[2023/12/18 03:18:25] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/12/18 03:18:25] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:25] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:25] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205) AND status = '1'
-[2023/12/18 03:18:25] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:25] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/12/18 03:18:25] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:25] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/12/18 03:18:25] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:25] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y video%' OR p.brand LIKE '%audio y video%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:25] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y video%' AND status = '1'
-[2023/12/18 03:18:25] SQL Query:   WITH RECURSIVE category_path AS (
-                                            SELECT id_category, fatherCategory, url
-                                            FROM categories
-                                            WHERE url = 'audio-y-video'
-                                            UNION
-                                            SELECT c.id_category, c.fatherCategory, c.url
-                                            FROM categories c
-                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
-                                        )
-                                        SELECT url
-                                        FROM category_path
-                                        ORDER BY id_category
-[2023/12/18 03:18:25] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/12/18 03:18:25] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:25] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:25] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205) AND status = '1'
-[2023/12/18 03:18:25] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:25] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/12/18 03:18:25] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:25] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/12/18 03:18:25] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:35] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y video%' OR p.brand LIKE '%audio y video%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:35] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y video%' AND status = '1'
-[2023/12/18 03:18:35] SQL Query:   WITH RECURSIVE category_path AS (
-                                            SELECT id_category, fatherCategory, url
-                                            FROM categories
-                                            WHERE url = 'audio-y-video'
-                                            UNION
-                                            SELECT c.id_category, c.fatherCategory, c.url
-                                            FROM categories c
-                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
-                                        )
-                                        SELECT url
-                                        FROM category_path
-                                        ORDER BY id_category
-[2023/12/18 03:18:35] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/12/18 03:18:35] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:35] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:35] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205) AND status = '1'
-[2023/12/18 03:18:35] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:35] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/12/18 03:18:35] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:35] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/12/18 03:18:35] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
-[2023/12/18 03:18:39] SQL Query: SELECT p.id_product, p.name_product, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (p.name_product LIKE '%audio y video%' OR p.brand LIKE '%audio y video%') AND p.status = '1' LIMIT 5
-[2023/12/18 03:18:39] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%audio y video%' AND status = '1'
-[2023/12/18 03:18:39] SQL Query:   WITH RECURSIVE category_path AS (
-                                            SELECT id_category, fatherCategory, url
-                                            FROM categories
-                                            WHERE url = 'audio-y-video'
-                                            UNION
-                                            SELECT c.id_category, c.fatherCategory, c.url
-                                            FROM categories c
-                                            JOIN category_path cp ON c.id_category = cp.fatherCategory
-                                        )
-                                        SELECT url
-                                        FROM category_path
-                                        ORDER BY id_category
-[2023/12/18 03:18:39] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
-[2023/12/18 03:18:39] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
-[2023/12/18 03:18:39] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
-[2023/12/18 03:18:39] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205) AND status = '1'
-[2023/12/18 03:18:39] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
-[2023/12/18 03:18:39] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
-[2023/12/18 03:18:39] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
-[2023/12/18 03:18:39] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
-[2023/12/18 03:18:39] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2023/12/18 07:00:44] SQL Query: SELECT id_category FROM categories WHERE url = 'televisores'
+[2023/12/18 07:00:44] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2023/12/18 07:00:44] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (203)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 5 
+[2023/12/18 07:00:44] SQL Query: SELECT COUNT(*) AS amount FROM products WHERE category_id IN (203) AND status = '1'
+[2023/12/18 07:00:44] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2023/12/18 07:00:44] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2023/12/18 07:00:44] SQL Query: SELECT * FROM img_product WHERE product_id = '19'
+[2023/12/18 07:00:44] SQL Query: SELECT * FROM img_product WHERE product_id = '37'
+[2023/12/18 07:00:44] SQL Query: SELECT * FROM img_product WHERE product_id = '38'
+[2023/12/18 07:00:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 07:00:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 07:00:47] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 07:00:47] SQL Query: SELECT id_product, name_product, desMain, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE name_product LIKE '%televisores%' || brand LIKE '%televisores%' AND status = '1'
+[2023/12/18 07:02:44] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 07:02:44] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 07:02:44] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 07:02:44] SQL Query: SELECT id_product, name_product, desMain, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE name_product LIKE '%televisores%' || brand LIKE '%televisores%' AND status = '1'
+[2023/12/18 07:02:44] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televisores%' AND status = '1'
+[2023/12/18 07:03:02] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 07:03:02] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 07:03:02] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/18 07:03:02] SQL Query: SELECT id_product, name_product, desMain, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE name_product LIKE '%televisores%' || brand LIKE '%televisores%' AND status = '1'
+[2023/12/18 07:03:02] SQL Query: SELECT url FROM categories WHERE name_category LIKE '%televisores%' AND status = '1'
