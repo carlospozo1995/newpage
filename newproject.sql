@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 19-12-2023 a las 05:43:48
+-- Tiempo de generación: 19-12-2023 a las 22:10:57
 -- Versión del servidor: 8.0.30
 -- Versión de PHP: 7.4.19
 
@@ -359,7 +359,27 @@ INSERT INTO `img_product` (`id_img`, `product_id`, `image`) VALUES
 (113, 49, 'imgRef_49_847dddf2ecf995c173c4353d8f585efa.jpg'),
 (114, 49, 'imgRef_49_defe0c53b2d55b36eb836f1f7b3a5a81.jpg'),
 (115, 50, 'imgRef_50_5887b158c40c44d365d1162356079eaa.jpg'),
-(116, 50, 'imgRef_50_58ea39e4228f89573af82fff708c56eb.jpg');
+(116, 50, 'imgRef_50_58ea39e4228f89573af82fff708c56eb.jpg'),
+(117, 51, 'imgRef_51_50d2c77882aeef91e33e83cb8071f4d6.jpg'),
+(118, 51, 'imgRef_51_decd875744ddbae0f0d1b4ed6092bc32.jpg'),
+(119, 52, 'imgRef_52_344343acce8c0665f89917d37a6f749a.jpg'),
+(120, 52, 'imgRef_52_2dc213d9df336dc1b248cabe220a40c3.jpg'),
+(121, 53, 'imgRef_53_d49ededd2df0093a1f079d75967735e5.jpg'),
+(122, 53, 'imgRef_53_efbdeca88d8cd6227623070efbe99e57.jpg'),
+(123, 54, 'imgRef_54_98fe88fed7ba0861a799ea426033064f.jpg'),
+(124, 54, 'imgRef_54_3b5fb6094391e3ea54483b66338d78d6.jpg'),
+(125, 55, 'imgRef_55_220c30284db4747655ad511a2cbdfe37.jpg'),
+(126, 55, 'imgRef_55_20a7a788a7d135b05dd34755b7ce6f46.jpg'),
+(127, 56, 'imgRef_56_a46016c0009c5d7e7779161c24947869.jpg'),
+(128, 56, 'imgRef_56_9283f745a458abdcf6d4c8a053303db8.jpg'),
+(129, 57, 'imgRef_57_bc2a67fdf19ee5f9097cc54142e62e21.jpg'),
+(130, 57, 'imgRef_57_161792007dd79f27b2faf0b49815219c.jpg'),
+(131, 58, 'imgRef_58_57d299f58dd0f896abcb9691b7bb3308.jpg'),
+(132, 58, 'imgRef_58_c8b8c7f15b521f765eaa0c33d0122a30.jpg'),
+(133, 59, 'imgRef_59_1d762a7c23a1f0897e01fcbd84604d2b.jpg'),
+(134, 59, 'imgRef_59_aae73f990092f539fb6be788ba947990.jpg'),
+(135, 60, 'imgRef_60_56ca2aa6e6b720be179003160fd574f9.jpg'),
+(136, 60, 'imgRef_60_85542c4076d5f54123cba642723545a9.jpg');
 
 -- --------------------------------------------------------
 
@@ -551,7 +571,17 @@ INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `de
 (47, 203, 3121987451, 'Televisor LG 43 Pulgadas 4k Uhd Smart Tv Webos', 'LG es innovación y eso se ve en cada uno de su productos tecnológicos, pensados especialmente para que toda la familia disfrute más de la vida. ', NULL, NULL, NULL, NULL, NULL, NULL, 'LG', 349.23, 41, NULL, NULL, NULL, NULL, '2023-12-19 00:16:03', 'televisor-lg-43-pulgadas-4k-uhd-smart-tv-webos', 1),
 (48, 203, 794131638, 'Televisor Samsung 50 Pulgadas Cu8200 Cromada', 'SAMSUNG es innovación y eso se ve en cada uno de su productos tecnológicos, pensados especialmente para que toda la familia disfrute más de la vida. ', NULL, NULL, NULL, NULL, NULL, NULL, 'SAMSUNG', 519.99, 8, NULL, NULL, NULL, NULL, '2023-12-19 00:21:32', 'televisor-samsung-50-pulgadas-cu8200-cromada', 1),
 (49, 203, 6378461, 'Televisor Tcl 43 43p635 Full Hd 4k', 'TCL es innovación y eso se ve en cada uno de su productos tecnológicos, pensados especialmente para que toda la familia disfrute más de la vida. ', NULL, NULL, NULL, NULL, NULL, NULL, 'TCL', 500.23, 29, NULL, NULL, NULL, NULL, '2023-12-19 00:27:09', 'televisor-tcl-43-43p635-full-hd-4k', 1),
-(50, 203, 98321646, 'Ltc Televisor Daewoo 43 Led Smart 4k Android', 'DAEWOO es innovación y eso se ve en cada uno de su productos tecnológicos, pensados especialmente para que toda la familia disfrute más de la vida. ', NULL, NULL, NULL, NULL, NULL, NULL, 'DAEWOO', 500.55, 23, NULL, NULL, NULL, NULL, '2023-12-19 00:32:39', 'ltc-televisor-daewoo-43-led-smart-4k-android', 1);
+(50, 203, 98321646, 'Ltc Televisor Daewoo 43 Led Smart 4k Android', 'DAEWOO es innovación y eso se ve en cada uno de su productos tecnológicos, pensados especialmente para que toda la familia disfrute más de la vida. ', NULL, NULL, NULL, NULL, NULL, NULL, 'DAEWOO', 500.55, 23, NULL, NULL, NULL, NULL, '2023-12-19 00:32:39', 'ltc-televisor-daewoo-43-led-smart-4k-android', 1),
+(51, 203, 7841263455, 'Smart TV TCL S60A-Series L32S60A LED Android Oreo HD 32\'', 'TCL es innovación y eso se ve en cada uno de su productos tecnológicos, pensados especialmente para que toda la familia disfrute más de la vida. ', NULL, NULL, NULL, NULL, NULL, NULL, 'TCL', 789.58, 36, NULL, NULL, NULL, NULL, '2023-12-19 16:03:28', 'smart-tv-tcl-s60a-series-l32s60a-led-android-oreo-hd-32-', 1),
+(52, 213, 36741224596, 'Samsung Galaxy S22 Ultra 5g (snapdragon) 5g 512gb 12 Gb Ram', '¡Bienvenidos a la revolución de la comunicación! En Sonustek, estamos emocionados de darles la bienvenida a una experiencia telefónica como nunca antes la han experimentado.', NULL, NULL, NULL, NULL, NULL, NULL, 'SAMSUNG', 929.00, 17, NULL, NULL, NULL, NULL, '2023-12-19 16:12:34', 'samsung-galaxy-s22-ultra-5g-snapdragon-5g-512gb-12-gb-ram', 1),
+(53, 213, 647451132, 'Samsung Galaxy S20 Fe 5g 5g 128 Gb Cloud Navy 8 Gb', '¡Bienvenidos a la revolución de la comunicación! En Sonustek, estamos emocionados de darles la bienvenida a una experiencia telefónica como nunca antes la han experimentado.', NULL, NULL, NULL, NULL, NULL, NULL, 'SAMSUNG', 900.31, 19, NULL, NULL, NULL, NULL, '2023-12-19 16:19:26', 'samsung-galaxy-s20-fe-5g-5g-128-gb-cloud-navy-8-gb', 1),
+(54, 213, 8921320411, 'Samsung Galaxy A04e 64 GB azul claro 3 GB RAM', '¡Bienvenidos a la revolución de la comunicación! En Sonustek, estamos emocionados de darles la bienvenida a una experiencia telefónica como nunca antes la han experimentado.', NULL, NULL, NULL, NULL, NULL, NULL, 'SAMSUNG', 501.10, 33, NULL, NULL, NULL, NULL, '2023-12-19 16:26:58', 'samsung-galaxy-a04e-64-gb-azul-claro-3-gb-ram', 1),
+(55, 213, 93661232441, 'Celular Samsung A03 64gb', '¡Bienvenidos a la revolución de la comunicación! En Sonustek, estamos emocionados de darles la bienvenida a una experiencia telefónica como nunca antes la han experimentado.', NULL, NULL, NULL, NULL, NULL, NULL, 'SAMSUNG', 150.55, 15, NULL, NULL, NULL, NULL, '2023-12-19 16:36:24', 'celular-samsung-a03-64gb', 1),
+(56, 213, 8912231115, 'Samsung Galaxy Note10 Aura Blue', '¡Bienvenidos a la revolución de la comunicación! En Sonustek, estamos emocionados de darles la bienvenida a una experiencia telefónica como nunca antes la han experimentado.', NULL, NULL, NULL, NULL, NULL, NULL, 'SAMSUNG', 320.58, 13, NULL, NULL, NULL, NULL, '2023-12-19 16:40:51', 'samsung-galaxy-note10-aura-blue', 1),
+(57, 213, 68733311222, 'Samsung Galaxy A53 5g Dual Sim 128 Gb 6 Gb Detpc', '¡Bienvenidos a la revolución de la comunicación! En Sonustek, estamos emocionados de darles la bienvenida a una experiencia telefónica como nunca antes la han experimentado.', NULL, NULL, NULL, NULL, NULL, NULL, 'SAMSUNG', 258.96, 16, NULL, NULL, NULL, NULL, '2023-12-19 16:45:39', 'samsung-galaxy-a53-5g-dual-sim-128-gb-6-gb-detpc', 1),
+(58, 213, 1124788556, 'Samsung Galaxy A73 5g 256 Gb Awesome White 8 Gb Ram', '¡Bienvenidos a la revolución de la comunicación! En Sonustek, estamos emocionados de darles la bienvenida a una experiencia telefónica como nunca antes la han experimentado.', NULL, NULL, NULL, NULL, NULL, NULL, 'SAMSUNG', 350.69, 6, NULL, NULL, NULL, NULL, '2023-12-19 16:50:52', 'samsung-galaxy-a73-5g-256-gb-awesome-white-8-gb-ram', 1),
+(59, 213, 61461541313, 'Samsung Galaxy Note 20 Ultra', '¡Bienvenidos a la revolución de la comunicación! En Sonustek, estamos emocionados de darles la bienvenida a una experiencia telefónica como nunca antes la han experimentado.', NULL, NULL, NULL, NULL, NULL, NULL, 'SAMSUNG', 700.58, 57, NULL, NULL, NULL, NULL, '2023-12-19 17:01:53', 'samsung-galaxy-note-20-ultra', 1),
+(60, 213, 487132311, 'Samsung Galaxy A10s', '¡Bienvenidos a la revolución de la comunicación! En Sonustek, estamos emocionados de darles la bienvenida a una experiencia telefónica como nunca antes la han experimentado.', NULL, NULL, NULL, NULL, NULL, NULL, 'SAMSUNG', 800.96, 51, NULL, NULL, NULL, NULL, '2023-12-19 17:05:11', 'samsung-galaxy-a10s', 1);
 
 -- --------------------------------------------------------
 
@@ -740,7 +770,7 @@ ALTER TABLE `detail_orders`
 -- AUTO_INCREMENT de la tabla `img_product`
 --
 ALTER TABLE `img_product`
-  MODIFY `id_img` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `id_img` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=137;
 
 --
 -- AUTO_INCREMENT de la tabla `modules`
@@ -770,7 +800,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id_product` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
