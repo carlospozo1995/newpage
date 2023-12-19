@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 19-12-2023 a las 00:14:20
+-- Tiempo de generación: 19-12-2023 a las 05:43:48
 -- Versión del servidor: 8.0.30
 -- Versión de PHP: 7.4.19
 
@@ -351,7 +351,15 @@ INSERT INTO `img_product` (`id_img`, `product_id`, `image`) VALUES
 (105, 45, 'imgRef_45_fa6abe2f3a528c4538e8d3e66f824dae.jpg'),
 (106, 45, 'imgRef_45_3999468baa804c54b7d3fb3acc5c1565.jpg'),
 (107, 46, 'imgRef_46_419f40c13312d514ac333a689b1e44cd.jpg'),
-(108, 46, 'imgRef_46_61dfa7a3bc4f7112da403eea8d626c0b.jpg');
+(108, 46, 'imgRef_46_61dfa7a3bc4f7112da403eea8d626c0b.jpg'),
+(109, 47, 'imgRef_47_8922d92ac58e73c07afa98e3d638b779.jpg'),
+(110, 47, 'imgRef_47_c690217c5c4a28092ec529f3b08c7082.jpg'),
+(111, 48, 'imgRef_48_306a67740e361fb49057ec3169e64730.jpg'),
+(112, 48, 'imgRef_48_20f8066939d4699fa933188fddb5e613.jpg'),
+(113, 49, 'imgRef_49_847dddf2ecf995c173c4353d8f585efa.jpg'),
+(114, 49, 'imgRef_49_defe0c53b2d55b36eb836f1f7b3a5a81.jpg'),
+(115, 50, 'imgRef_50_5887b158c40c44d365d1162356079eaa.jpg'),
+(116, 50, 'imgRef_50_58ea39e4228f89573af82fff708c56eb.jpg');
 
 -- --------------------------------------------------------
 
@@ -539,7 +547,11 @@ INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `de
 (43, 203, 61646412121854, 'Televisor Qled 50 Tcl 4k Hdr Smart Tv Google', 'TCL es una de las empresas líderes en la industria global de televisores, dedicada a la investigación y desarrollo de productos electrónicos. ', NULL, NULL, NULL, NULL, NULL, NULL, 'TCL', 499.00, 7, NULL, NULL, NULL, NULL, '2023-12-18 15:55:51', 'televisor-qled-50-tcl-4k-hdr-smart-tv-google', 1),
 (44, 203, 8746131651, 'Televisor LG 32 Pulgadas Led Hd Smart Tv', 'Tener un televisor LG es aprovechar la más alta calidad del mercado.', NULL, NULL, NULL, NULL, NULL, NULL, 'LG', 245.56, 23, NULL, NULL, NULL, NULL, '2023-12-18 16:00:49', 'televisor-lg-32-pulgadas-led-hd-smart-tv', 1),
 (45, 200, 988223566, 'Audífonos gamer inalámbricos JBL Live 500BT ', '¡Experimenta la adrenalina de sumergirte en la escena de otra manera! Tener auriculares específicos para jugar cambia completamente tu experiencia en cada partida. ', NULL, NULL, NULL, NULL, NULL, NULL, 'JBL', 146.89, 72, NULL, NULL, NULL, NULL, '2023-12-18 16:05:00', 'audifonos-gamer-inalambricos-jbl-live-500bt-', 1),
-(46, 200, 133455786545, 'Audífonos Logitech H390', 'En la calle, en el colectivo o en la oficina, ten siempre a mano tus audífonos Logitech y ¡escápate de la rutina por un rato!', NULL, NULL, NULL, NULL, NULL, NULL, 'LOGITECH', 900.00, 56, 71.00, NULL, NULL, NULL, '2023-12-18 16:08:22', 'audifonos-logitech-h390', 1);
+(46, 200, 133455786545, 'Audífonos Logitech H390', 'En la calle, en el colectivo o en la oficina, ten siempre a mano tus audífonos Logitech y ¡escápate de la rutina por un rato!', NULL, NULL, NULL, NULL, NULL, NULL, 'LOGITECH', 900.00, 56, 71.00, NULL, NULL, NULL, '2023-12-18 16:08:22', 'audifonos-logitech-h390', 1),
+(47, 203, 3121987451, 'Televisor LG 43 Pulgadas 4k Uhd Smart Tv Webos', 'LG es innovación y eso se ve en cada uno de su productos tecnológicos, pensados especialmente para que toda la familia disfrute más de la vida. ', NULL, NULL, NULL, NULL, NULL, NULL, 'LG', 349.23, 41, NULL, NULL, NULL, NULL, '2023-12-19 00:16:03', 'televisor-lg-43-pulgadas-4k-uhd-smart-tv-webos', 1),
+(48, 203, 794131638, 'Televisor Samsung 50 Pulgadas Cu8200 Cromada', 'SAMSUNG es innovación y eso se ve en cada uno de su productos tecnológicos, pensados especialmente para que toda la familia disfrute más de la vida. ', NULL, NULL, NULL, NULL, NULL, NULL, 'SAMSUNG', 519.99, 8, NULL, NULL, NULL, NULL, '2023-12-19 00:21:32', 'televisor-samsung-50-pulgadas-cu8200-cromada', 1),
+(49, 203, 6378461, 'Televisor Tcl 43 43p635 Full Hd 4k', 'TCL es innovación y eso se ve en cada uno de su productos tecnológicos, pensados especialmente para que toda la familia disfrute más de la vida. ', NULL, NULL, NULL, NULL, NULL, NULL, 'TCL', 500.23, 29, NULL, NULL, NULL, NULL, '2023-12-19 00:27:09', 'televisor-tcl-43-43p635-full-hd-4k', 1),
+(50, 203, 98321646, 'Ltc Televisor Daewoo 43 Led Smart 4k Android', 'DAEWOO es innovación y eso se ve en cada uno de su productos tecnológicos, pensados especialmente para que toda la familia disfrute más de la vida. ', NULL, NULL, NULL, NULL, NULL, NULL, 'DAEWOO', 500.55, 23, NULL, NULL, NULL, NULL, '2023-12-19 00:32:39', 'ltc-televisor-daewoo-43-led-smart-4k-android', 1);
 
 -- --------------------------------------------------------
 
@@ -728,7 +740,7 @@ ALTER TABLE `detail_orders`
 -- AUTO_INCREMENT de la tabla `img_product`
 --
 ALTER TABLE `img_product`
-  MODIFY `id_img` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+  MODIFY `id_img` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 
 --
 -- AUTO_INCREMENT de la tabla `modules`
@@ -758,7 +770,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id_product` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
