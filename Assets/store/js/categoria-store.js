@@ -80,8 +80,8 @@ $(document).ready(function () {
                     let price_min = parseFloat(data.products_summary[0]['price_min'] * 100);
                     let price_max = parseFloat(data.products_summary[0]['price_max'] * 100);
 
-                    $('#slider-range').attr('data-min', price_min);
-                    $('#slider-range').attr('data-max', price_max);
+                    $('#slider-range').attr('data-min', price_min / 100);
+                    $('#slider-range').attr('data-max', price_max / 100);
                     priceRange(price_min, price_max);
                     
                     // Add marks products
