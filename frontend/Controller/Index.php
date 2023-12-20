@@ -69,7 +69,7 @@
 						$suggestions = array();
 
 						if (!empty($search_value) && strlen($search_value) > 3) {
-							$search_data = Models_Store::searchData($search_value);
+							$search_data = Models_Resultado::searchData($search_value);
 
 							if (!empty($search_data['products'])) {
 								$amount_products = $search_data['amount'][0]['amount'];

@@ -15,14 +15,9 @@
 				default:
 					// $data["file_js"][] = "categoria-store";
 					if (!empty($_GET['search'])) {
-						// print_r(var_dump($_GET['search']));
-						// View::renderPage('Resultado');
-						// // $regexString = '/^(?:\w+-\w+|\w+)$/';
 						$regexString  = '/^\w+(?:-\w+)*(?:\s\w+(?:-\w+)*)*$/';
 						
 						if (preg_match($regexString, $_GET['search'])) {
-							
-							// View::renderPage('Resultado');
 							$search = explode('-', $_GET['search']);
 							if (count($search) < 3) {
 								View::renderPage('Resultado', $search);
