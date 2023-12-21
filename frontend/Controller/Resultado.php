@@ -13,14 +13,14 @@
                     return false;
                 break;
 				default:
-					// $data["file_js"][] = "categoria-store";
+					$data["file_js"][] = "resultado";
 					if (!empty($_GET['search'])) {
 						$regexString  = '/^\w+(?:-\w+)*(?:\s\w+(?:-\w+)*)*$/';
 						
 						if (preg_match($regexString, $_GET['search'])) {
-							$search = explode('-', $_GET['search']);
-							if (count($search) < 3) {
-								View::renderPage('Resultado', $search);
+							$data["search"] = explode('-', $_GET['search']);
+							if (count($data["search"]) < 3) {
+								View::renderPage('Resultado',  $data);
 							}else{
 								header('Location: '.BASE_URL);
 							}

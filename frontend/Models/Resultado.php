@@ -87,20 +87,20 @@ class Models_Resultado{
                         $products = Models_Store::getProducts($id_sons, "", "", "", 0, 10);
                         
                         $dataSummary = self::dataSummary($id_sons);
-                        $request = array("products" => $products, "number_data" => $id_sons, "dataSummary" => $dataSummary);
+                        $request = array("products" => $products, "data" => $id_sons, "dataSummary" => $dataSummary);
                     }
                 }
             }else{
                 $dataSummary = self::dataSummary($data);
-                $request = array("products" => $arrData, "text_data" => $data, "dataSummary" => $dataSummary);
+                $request = array("products" => $arrData, "data" => $data, "dataSummary" => $dataSummary);
             }
         }else{
             $sql = "SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE c.name_category LIKE ? AND p.brand LIKE ? AND p.status = ? ORDER BY p.dataCreate ASC LIMIT 0, 10";
             $products = $GLOBALS["db"]->selectAll($sql, array('%'.$data[0].'%', '%'.$data[1].'%', 1));
-            
+
             if (!empty($products)) {
                 $dataSummary = self::dataSummary($data);
-                $request = array("products" => $products, "text_data" => $data, "dataSummary" => $dataSummary);
+                $request = array("products" => $products, "data" => $data, "dataSummary" => $dataSummary);
             }
         }
         return $request;
@@ -132,30 +132,6 @@ class Models_Resultado{
         $dataBrand = $GLOBALS["db"]->selectAll($sqlBrand, $arraySql);
         
         return array("dataPriceAmount" => $dataPriceAmount, "dataBrand" => $dataBrand);
-        
-        // CANTIDAD DE PRODUCTOS SEGUN LO PEDIDO Y PRECIO MAX Y MIN DE ESTOS
-
-        // SELECT MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205) AND status = ?
-        // array(1)
-
-        // SELECT MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products FROM products WHERE (name_product LIKE ? OR brand LIKE ?) AND status = ?
-        // array('%'.$data[0].'%', '%'.$data[0].'%', 1)
-
-        // SELECT MIN(price) AS p.price_min, MAX(price) AS p.price_max, COUNT(*) AS amount_products FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (c.name_category LIKE ? AND brand LIKE ?) AND p.status = ?
-        // array('%'.$data[0].'%', '%'.$data[1].'%', 1)
-
-
-        // -----------------------------------------
-        // CANTIDAD DE MARCAS DE PRODUCTOS SEGUN LO PEDIDO  
-
-        // SELECT brand, COUNT(*) as amount FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205) AND status = ? GROUP BY brand
-        // array(1)
-
-        // SELECT brand, COUNT(*) as amount FROM products WHERE (name_product LIKE ? OR brand LIKE ?) AND status = ? GROUP BY brand;
-        // array('%'.$data[0].'%', '%'.$data[0].'%', 1)
-        
-        // SELECT p.brand, COUNT(*) as amount FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE (c.name_category LIKE ? AND brand LIKE ?) AND p.status = ? GROUP BY brand;
-        // array('%'.$data[0].'%', '%'.$data[1].'%', 1)
     }
 
     static public function getProductsCategorias($get, $data, $more = "") {

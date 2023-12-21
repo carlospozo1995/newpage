@@ -112,7 +112,6 @@ $(document).ready(function () {
 
     // ORDER BY PRODUCTS
     $("#products-order").change(function () {
-        console.log('..')
         let sons_category = $('#data-store').val();
         let this_val = $(this).val();
 

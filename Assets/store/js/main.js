@@ -50,6 +50,15 @@
         }
     });
 
+    // $('#search form').on('submit', function (e) {
+    //     e.preventDefault(e);
+    //     let valInput = $('#search form input').val();
+
+    //     if (valInput != "" && valInput.length > 3) {
+    //         window.location.href = base_url + "resultado/" + valInput;
+    //     }
+    // });
+
     $('#search form input').on('keyup', function() {
         let suggestions = "";
         let search_value = $('#search form input').val();
