@@ -80,6 +80,13 @@
                                             <label>Título slider</label>
                                             <textarea class="form-control m-hgt-txarea" name="sliderDes" id="sliderDes"></textarea>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label>Tags</label>
+                                            <div class="u-tagsinput">
+                                                <input type="text" data-role="tagsinput" name="tagsProduct" id="tagsProduct">
+                                            </div>
+                                        </div>
                     				</div>
 
                     				<div class="col-sm-6">

@@ -596,8 +596,12 @@
 				</div>
 			</div>
 		</div> -->
+
+		<div class="u-tagsinput">
+			<input type="text" data-role="tagsinput">
+		</div>
 		<div class="banner-section section-top-gap-100">
 			
 		</div>
-
+		
 	</div>

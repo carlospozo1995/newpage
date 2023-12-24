@@ -239,6 +239,12 @@ function edit(element, data_request){
    					$("#name_product").val(data_product.name_product);
    					$('#desMainProd').val(data_product.desMain);
    					data_product.desGeneral != null ? tinymce.activeEditor.setContent(data_product.desGeneral) : tinymce.activeEditor.setContent("");
+                    if (data_product.tags != null) {
+                        $("#tagsProduct").tagsinput('removeAll'); 
+                        $("#tagsProduct").tagsinput('add', data_product.tags)
+                    }else{
+                        $("#tagsProduct").tagsinput('removeAll'); 
+                    }
    					$("#sliderMbl_actual").val(data_product.sliderMbl);
                     $("#sliderDst_actual").val(data_product.sliderDst);
                     $("#wbanner_actual").val(data_product.banner_width);

@@ -134,11 +134,6 @@ class Models_Resultado{
         return array("dataPriceAmount" => $dataPriceAmount, "dataBrand" => $dataBrand);
     }
 
-    static public function getProductsCategorias($get, $data, $more = "") {
-        $sql = "SELECT $get FROM products WHERE category_id IN ($data) AND status = ? $more";
-        return $GLOBALS["db"]->selectAll($sql, array(1));
-    }
-
 }
 
 ?>

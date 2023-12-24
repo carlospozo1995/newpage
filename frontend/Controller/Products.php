@@ -50,6 +50,7 @@
 								$sliderDst = $_FILES['sliderDst'];	
 								$bannerLargeP = $_FILES['lgbannerP'];
 								$bannerWidth = $_FILES['widthBanner'];	
+								$tags = empty($_POST['tagsProduct']) ? null : $_POST['tagsProduct'];
 												
 								$sliderDes = empty($_POST['sliderDes']) ? null : utf8_encode($_POST['sliderDes']);
 
@@ -105,7 +106,7 @@
 										$bannerLargeP["file_product"] = "";
 									}
 									
-									$request = Models_Products::insertProduct($name, $desMain, $desGeneral, $undef_sliderDst, $undef_sliderMbl, $sliderDes, $undef_bannerlgP, $undef_bannerWidth, $option_list, $brand, $code, $price, $stock, $prevPrice, $discount, $cantDues, $priceDues, $status);
+									$request = Models_Products::insertProduct($name, $desMain, $desGeneral, $tags, $undef_sliderDst, $undef_sliderMbl, $sliderDes, $undef_bannerlgP, $undef_bannerWidth, $option_list, $brand, $code, $price, $stock, $prevPrice, $discount, $cantDues, $priceDues, $status);
 								}else{
 									$option = 2;
 									// UPDATE SLIDERS (MOBILE - DESKTOP)
@@ -191,7 +192,7 @@
 
 									// ----------------------
 									
-									$request = Models_Products::updateProduct(Utils::desencriptar($id), $name, $desMain, $desGeneral, $undef_sliderDst, $undef_sliderMbl, $sliderDes, $undef_bannerlgP, $undef_bannerWidth, $option_list, $brand, $code, $price, $stock, $prevPrice, $discount, $cantDues, $priceDues, $status);	
+									$request = Models_Products::updateProduct(Utils::desencriptar($id), $name, $desMain, $desGeneral, $tags, $undef_sliderDst, $undef_sliderMbl, $sliderDes, $undef_bannerlgP, $undef_bannerWidth, $option_list, $brand, $code, $price, $stock, $prevPrice, $discount, $cantDues, $priceDues, $status);	
 								}
 
 								if ($request > 0) {
@@ -383,8 +384,9 @@
 						header('Location: '.BASE_URL.'Dashboard');	
 					}
 
-					// $variable["file_css"][] = "c_roles";
+					$variable["file_css"][] = "c_tagsinput";
 		            $variable["file_js"][] = "f_products";
+					$variable["file_js"][] = "f_tagsinput";
 					View::renderPage('Products', $variable);
 				break;
 			}
