@@ -378,3 +378,40 @@
 [2023/12/24 06:24:06] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
 [2023/12/24 06:24:30] SQL Query: SELECT * FROM products WHERE code = '145700055' AND id_product != 7
 [2023/12/24 06:24:30] SQL execute: UPDATE products SET category_id="199",code="145700055",name_product="Barra de sonido sl4 300w",desMain="Barra de sonido sl4 300w Lg",desGeneral= NULL,tags="barra de sonido",sliderMbl= NULL,sliderDst= NULL,sliderDes= NULL,banner_large= NULL,banner_width= NULL,brand="LG",price="239.25",stock="10",prevPrice= NULL,discount= NULL,cantDues= NULL,priceDues= NULL,url="barra-de-sonido-sl4-300w",status="1" WHERE id_product='7'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/24 06:26:11] SQL Query: SELECT sliderDst, sliderDesOne, sliderDesTwo, redirect FROM banners_category WHERE banner_type = '1'
+[2023/12/24 06:26:11] SQL Query: SELECT sliderDst, sliderDes, redirect FROM banners_product WHERE banner_type = '1'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2023/12/24 06:26:11] SQL Query: SELECT product_id, category_id, banner_large, redirect FROM banners_product WHERE banner_type = '2'
+[2023/12/24 06:26:11] SQL Query: SELECT sliderMbl, sliderDesOne, sliderDesTwo, redirect FROM banners_category WHERE banner_type = '1'
+[2023/12/24 06:26:11] SQL Query: SELECT sliderMbl, sliderDes, redirect FROM banners_product WHERE banner_type = '1'
+[2023/12/24 06:26:11] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products  WHERE status = '1' ORDER BY id_product DESC LIMIT 8
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '60'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '59'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '58'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '57'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '56'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '55'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '54'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '53'
+[2023/12/24 06:26:11] SQL Query: SELECT banner_name, banner_large, redirect FROM banners_category WHERE banner_type = '2'
+[2023/12/24 06:26:11] SQL Query: SELECT banner_small, redirect FROM banners_category WHERE banner_type = '3'
+[2023/12/24 06:26:11] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM `products` WHERE category_id = '213' AND id_product != '33' ORDER BY id_product DESC LIMIT 8
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '60'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '59'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '58'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '57'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '56'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '55'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '54'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '53'
+[2023/12/24 06:26:11] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM `products` WHERE category_id = '203' AND id_product != '16' ORDER BY id_product DESC LIMIT 8
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '51'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '50'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '49'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '48'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '47'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '44'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '43'
+[2023/12/24 06:26:11] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
