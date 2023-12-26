@@ -134,6 +134,14 @@ class Models_Resultado{
         return array("dataPriceAmount" => $dataPriceAmount, "dataBrand" => $dataBrand);
     }
 
-}
 
+    static public function testSearch($data) {
+        // $sql = "SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE tags LIKE ? AND status = ? ORDER BY dataCreate ASC LIMIT 0, 10";
+        $sql = "SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE LEVENSHTEIN(tags, ?) AND status = ? ORDER BY dataCreate ASC LIMIT 0, 10";
+        // $request = $GLOBALS["db"]->selectAll($sql, array('%'.$data.'%', 1));
+        $request = $GLOBALS["db"]->selectAll($sql, array($data, 1));
+        return $request;
+    }
+}
+// LEVENSHTEIN(nombre, '$consultaUsuario') < $maxDistancia"
 ?>
