@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 26-12-2023 a las 04:03:52
+-- Tiempo de generación: 03-01-2024 a las 22:16:21
 -- Versión del servidor: 8.0.30
 -- Versión de PHP: 7.4.19
 
@@ -26,6 +26,50 @@ DELIMITER $$
 -- Funciones
 --
 CREATE DEFINER=`root`@`localhost` FUNCTION `levenshtein` (`s1` VARCHAR(255), `s2` VARCHAR(255)) RETURNS INT DETERMINISTIC BEGIN
+   DECLARE s1_len, s2_len, i, j, c, c_temp, cost INT;
+   DECLARE s1_char CHAR;
+   DECLARE cv0, cv1 VARBINARY(256);
+
+   SET s1_len = CHAR_LENGTH(s1);
+   SET s2_len = CHAR_LENGTH(s2);
+   SET cv1 = 0x00;
+   SET j = 1;
+   SET i = 1;
+
+   WHILE j <= s2_len DO
+      SET cv1 = CONCAT(cv1, UNHEX(HEX(j))), j = j + 1;
+   END WHILE;
+
+   WHILE i <= s1_len DO
+      SET s1_char = SUBSTRING(s1, i, 1);
+      SET c = i;
+      SET cv0 = UNHEX(HEX(i));
+
+      WHILE j <= s2_len DO
+         SET c = c + 1;
+         SET cost = IF(s1_char = SUBSTRING(s2, j, 1), 0, 1);
+         SET c_temp = CONV(HEX(SUBSTRING(cv1, j, 1)), 16, 10) + cost;
+
+         IF c > c_temp THEN
+            SET c = c_temp;
+         END IF;
+
+         SET c_temp = CONV(HEX(SUBSTRING(cv1, j + 1, 1)), 16, 10) + 1;
+
+         IF c > c_temp THEN
+            SET c = c_temp;
+         END IF;
+
+         SET cv0 = CONCAT(cv0, UNHEX(HEX(c))), j = j + 1;
+      END WHILE;
+
+      SET cv1 = cv0, i = i + 1;
+   END WHILE;
+
+   RETURN c;
+END$$
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `levenshteinlocal` (`s1` VARCHAR(255), `s2` VARCHAR(255)) RETURNS INT DETERMINISTIC BEGIN
         DECLARE s1_len, s2_len, i, j, c, c_temp, cost INT;
         DECLARE s1_char CHAR;
         -- max strlen=255
@@ -622,7 +666,7 @@ INSERT INTO `products` (`id_product`, `category_id`, `code`, `name_product`, `de
 (52, 213, 36741224596, 'Samsung Galaxy S22 Ultra 5g (snapdragon) 5g 512gb 12 Gb Ram', '¡Bienvenidos a la revolución de la comunicación! En Sonustek, estamos emocionados de darles la bienvenida a una experiencia telefónica como nunca antes la han experimentado.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'SAMSUNG', 929.00, 17, NULL, NULL, NULL, NULL, '2023-12-19 16:12:34', 'samsung-galaxy-s22-ultra-5g-snapdragon-5g-512gb-12-gb-ram', 1),
 (53, 213, 647451132, 'Samsung Galaxy S20 Fe 5g 5g 128 Gb Cloud Navy 8 Gb', '¡Bienvenidos a la revolución de la comunicación! En Sonustek, estamos emocionados de darles la bienvenida a una experiencia telefónica como nunca antes la han experimentado.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'SAMSUNG', 900.31, 19, NULL, NULL, NULL, NULL, '2023-12-19 16:19:26', 'samsung-galaxy-s20-fe-5g-5g-128-gb-cloud-navy-8-gb', 1),
 (54, 213, 8921320411, 'Samsung Galaxy A04e 64 GB azul claro 3 GB RAM', '¡Bienvenidos a la revolución de la comunicación! En Sonustek, estamos emocionados de darles la bienvenida a una experiencia telefónica como nunca antes la han experimentado.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'SAMSUNG', 501.10, 33, NULL, NULL, NULL, NULL, '2023-12-19 16:26:58', 'samsung-galaxy-a04e-64-gb-azul-claro-3-gb-ram', 1),
-(55, 213, 93661232441, 'Celular Samsung A03 64gb', '¡Bienvenidos a la revolución de la comunicación! En Sonustek, estamos emocionados de darles la bienvenida a una experiencia telefónica como nunca antes la han experimentado.', NULL, 'celular chino,celular local,celular note.', NULL, NULL, NULL, NULL, NULL, 'SAMSUNG', 150.55, 15, NULL, NULL, NULL, NULL, '2023-12-19 16:36:24', 'celular-samsung-a03-64gb', 1),
+(55, 213, 93661232441, 'Celular Samsung A03 64gb', '¡Bienvenidos a la revolución de la comunicación! En Sonustek, estamos emocionados de darles la bienvenida a una experiencia telefónica como nunca antes la han experimentado.', NULL, 'celular chino,celular local,celular note', NULL, NULL, NULL, NULL, NULL, 'SAMSUNG', 150.55, 15, NULL, NULL, NULL, NULL, '2023-12-19 16:36:24', 'celular-samsung-a03-64gb', 1),
 (56, 213, 8912231115, 'Samsung Galaxy Note10 Aura Blue', '¡Bienvenidos a la revolución de la comunicación! En Sonustek, estamos emocionados de darles la bienvenida a una experiencia telefónica como nunca antes la han experimentado.', NULL, 'celular,celulares,smartphone,samsung,celular samsung,celulares samsung', NULL, NULL, NULL, NULL, NULL, 'SAMSUNG', 320.58, 13, NULL, NULL, NULL, NULL, '2023-12-19 16:40:51', 'samsung-galaxy-note10-aura-blue', 1),
 (57, 213, 68733311222, 'Samsung Galaxy A53 5g Dual Sim 128 Gb 6 Gb Detpc', '¡Bienvenidos a la revolución de la comunicación! En Sonustek, estamos emocionados de darles la bienvenida a una experiencia telefónica como nunca antes la han experimentado.', NULL, 'celular,celulares,smartphone,samsung,celular samsung,celulares samsung', NULL, NULL, NULL, NULL, NULL, 'SAMSUNG', 258.96, 16, NULL, NULL, NULL, NULL, '2023-12-19 16:45:39', 'samsung-galaxy-a53-5g-dual-sim-128-gb-6-gb-detpc', 1),
 (58, 213, 1124788556, 'Samsung Galaxy A73 5g 256 Gb Awesome White 8 Gb Ram', '¡Bienvenidos a la revolución de la comunicación! En Sonustek, estamos emocionados de darles la bienvenida a una experiencia telefónica como nunca antes la han experimentado.', NULL, 'celular,celulares,smartphone,samsung,celular samsung,celulares samsung', NULL, NULL, NULL, NULL, NULL, 'SAMSUNG', 350.69, 6, NULL, NULL, NULL, NULL, '2023-12-19 16:50:52', 'samsung-galaxy-a73-5g-256-gb-awesome-white-8-gb-ram', 1),
