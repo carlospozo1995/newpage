@@ -364,3 +364,8 @@
 [2023/12/31 07:02:10] SQL Query: SELECT * FROM img_product WHERE product_id = '44'
 [2023/12/31 07:02:10] SQL Query: SELECT * FROM img_product WHERE product_id = '43'
 [2023/12/31 07:02:10] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2024/01/08 04:35:45] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
+[2024/01/08 04:35:45] SQL Query: SELECT table1.*, table2.name_category AS nameCategory FROM products table1 LEFT JOIN categories table2 ON table1.category_id = table2.id_category WHERE table1.status != '0'
+[2024/01/08 04:35:46] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
+[2024/01/08 04:36:07] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2024/01/08 04:36:07] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
