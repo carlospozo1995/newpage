@@ -178,7 +178,7 @@
                                                     </label>
                                                 </li>
                                         <?php
-                                                }
+                                            }
                                         echo '</ul>';
                                         ?>
                                         </div>

@@ -1,5 +1,11 @@
 <?php
 
+    require __DIR__ . '/vendor/autoload.php';
+
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    $dotenv->load();
+
+
 	define("BASE_URL", "http://localhost/carlos/page/");
 	define("URL_LOCAL", "C:/laragon/www/carlos/page/");
 	define("RUTA_FRONTEND", URL_LOCAL."frontend/");
@@ -12,21 +18,21 @@
 	define("KEY_ENCRIPTAR","carlos1995101010");
 
 	// VARIABLES A CONEXION BD
-    define("DB_HOST", "localhost");
-    define("DB_USER", "root");
-    define("DB_PASSWORD", "");
-    define("DB_NAME", "newproject");
+    define("DB_HOST", $_ENV['HOST']);
+    define("DB_USER", $_ENV['USER']);
+    define("DB_PASSWORD", $_ENV['PASSWORD']);
+    define("DB_NAME", $_ENV['DATABASE']);
     // define("DB_PORT", 3306);
-    define("DB_CHARSET", "utf8");
+    define("DB_CHARSET", $_ENV['CHARSET']);
 
     
     // DATA EMPRESA
     define("NAME_EMPRESA", "EMPRESA");
 
     // VARIABLES SEND EMAIL - PHP MAILER
-    define("MAIL_HOST", "smtp.gmail.com");
-    define("MAIL_USERNAME", "carlospozo95@gmail.com");
-    define("MAIL_PASSWORD", "cmcwuhevpctvhaxn");
+    define("MAIL_HOST", $_ENV['MAIL_HOST']);
+    define("MAIL_USERNAME", $_ENV['MAIL_USER']);
+    define("MAIL_PASSWORD", $_ENV['MAIL_PASSWORD']);
 
     // MODULES PERMISSIONS
     define("MDASHBOARD", 1);
@@ -43,6 +49,6 @@
     define("SMONEY", "$");
 
     // ADD SLIDERS STORE VIEW
-    define("CATEGORIES_SLIDERS", "181, 208");
-    define("PRODUCTS_SLIDERS", "1,2");
+    // define("CATEGORIES_SLIDERS", "181, 208");
+    // define("PRODUCTS_SLIDERS", "1,2");
 ?>

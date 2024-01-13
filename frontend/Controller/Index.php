@@ -12,6 +12,7 @@
 				case 'logout':
 					Utils::sessionEndStore();
 				break;
+				
 				case 'registerClient':
 					if($_POST){
 						$name = $_POST['name_client'];

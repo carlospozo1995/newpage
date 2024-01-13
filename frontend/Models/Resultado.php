@@ -134,20 +134,20 @@ class Models_Resultado{
         return array("dataPriceAmount" => $dataPriceAmount, "dataBrand" => $dataBrand);
     }
 
+    static public function searchProducts($data, $brandCheck, $order, $range, $start = null, $perload = null) {
+        $sql = " SELECT id_product, name_product, desMain, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE name_product LIKE ? $brandCheck OR tags LIKE ? $brandCheck $range AND status = ? $order";
+            $orderMain = "";
+            if ($start !== null && $perload !== null) {
+                if (empty($order)) {
+                    $orderMain = "ORDER BY dataCreate ASC";
+                }
+                $sql .= " $orderMain LIMIT $start, $perload ";
+            }
 
-    static public function testSearch($data) {
-        $sql = "SELECT id_product, name_product, tags, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE tags LIKE ? AND status = ? ORDER BY dataCreate ASC LIMIT 0, 10";
-        $request = $GLOBALS["db"]->selectAll($sql, array('%'.$data.'%', 1));
-
-        // $sql = "SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE LEVENSHTEIN(tags, ?) AND status = ? ORDER BY dataCreate ASC LIMIT 0, 10";
-        // $request = $GLOBALS["db"]->selectAll($sql, array($data, 1));
-
-        return $request;
+            return $GLOBALS["db"]->selectAll($sql, array('%'.$data.'%', '%'.$data.'%', 1));
     }
+
 }
-// SELECT *
-// FROM products
-// WHERE levenshtein('celular cjino', tags) <= 2;
 
 ?>
 

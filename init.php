@@ -9,7 +9,7 @@
 			// print_r($nameFile);
 			require_once($nameFile);
 		}
-	}, false);
+	});
 
 	//---------------------------------------------------
 
@@ -21,7 +21,7 @@
 		if (file_exists($nameFile)) {
 			require_once($nameFile);
 		}
-	}, false);
+	});
 
 	$GLOBALS['db'] = new Database(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_CHARSET);
 	$GLOBALS['db']->connectDb();

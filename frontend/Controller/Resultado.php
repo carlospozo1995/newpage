@@ -29,8 +29,14 @@
 					// 	}
 						
 					// }
+					if (isset($_GET['search']) && !empty($_GET['search']) ) {
+						// $data["search"] = explode('-', $_GET['search']);
+						View::renderPage('Resultado', $data);	
+					}else{
+						header('Location: '.BASE_URL);
+					}
 
-					View::renderPage('Resultado');
+					
 				break;
 			}
 		}
