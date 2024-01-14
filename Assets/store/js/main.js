@@ -59,97 +59,93 @@
         }
     });
 
-    // $('#search form input').on('keyup', function() {
-    //     let suggestions = "";
-    //     let search_value = $('#search form input').val();
-    //     if (search_value.length > 3) {
-    //         $(".search-modal .search-data").removeClass('d-none');
-    //         $.ajax({
-    //             url: base_url + "index/searchData/",
-    //             dataType: 'JSON',
-    //             method: 'POST',
-    //             data: {
-    //                 search: search_value,
-    //             },
-    //             beforeSend: function() {
-    //                 $('.content-suggestions').html("");
-    //                 $('.searched-product-content .content-products').html("");
-    //                 $('.content-amount-products').html("");
-    //                 $('.search-data .cont-load-search').css("display", "flex");
-    //             },
-    //             success: function(data){
-    //                 if (data.htmlContent != "") {
-    //                     let amountText = data.amountProducts < 6 ? 'Ver productos' : `Ver todos los ${data.amountProducts} productos`;
-    //                     data.suggestions.forEach(element => {
+    $("#search form input").on('keyup', function () {
+        let value = $("#search form input").val();
 
-    //                         suggestions += '<li class="has-dropdown xtranslate-5 time-trans-txt"><a href="'+base_url+'resultado/'+(element['name_category'].indexOf(' ') !== -1 ? element['name_category'].replace(/ /g, '+') : element['name_category']).toLowerCase()+'-'+(element['brand'].indexOf(' ') !== -1 ? element['brand'].replace(/ /g, '+') : element['brand']).toLowerCase()+'" class="link-store lh-lg">'+element['name_category']+' - '+element['brand']+'</a></li>';
-    //                     });
-    //                     $('.content-suggestions').html(suggestions);
-    //                     $('.searched-product-content .content-products').html(data.htmlContent);
-    //                     $('.content-amount-products').html(`
-    //                         <div class="container fs-16 pt-4 text-center">
-    //                             <div class="row">
-    //                                 <div class="col-12">
-    //                                     <a href="${base_url}resultado/${search_value}">${amountText}</a>
-    //                                 </div>
-    //                             </div>
-    //                         </div>
-    //                     `);
+        if (value.length > 1) {
+            $(".search-modal .search-data").removeClass('d-none');
+            $.ajax({
+                url: base_url + "index/searchData/",
+                dataType: 'JSON',
+                method: 'POST',
+                data: {
+                    data_value: value 
+                },
+                beforeSend: function () {
+                    $('.searched-product-content .content-products').html("");
+                    $('.content-amount-products').html("");
+                    $('.search-data .cont-load-search').css("display", "flex");
+                },
+                success: function (data) {
+                    console.log(data);
+                    if (data.html != "") {
+                        let amountText = data.amount < 6 ? 'Ver productos' : `Ver todos los ${data.amount} productos`;
+                        $('.searched-product-content .content-products').html(data.html);
+                        $('.content-amount-products').html(`
+                            <div class="container fs-16 pt-4 text-center">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <a href="${base_url}resultado/${value}">${amountText}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        `);
 
-    //                     new Swiper('.swiper-container.product-default-slider-4grid-1row', {
-    //                         slidesPerView: 3,
-    //                         spaceBetween: 20,
-    //                         speed: 1500,
+                        new Swiper('.swiper-container.product-default-slider-4grid-1row', {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                            speed: 1500,
                     
-    //                         navigation: {
-    //                             nextEl: '.search-product-slider-default-1row .swiper-button-next',
-    //                             prevEl: '.search-product-slider-default-1row .swiper-button-prev',
-    //                         },
+                            navigation: {
+                                nextEl: '.search-product-slider-default-1row .swiper-button-next',
+                                prevEl: '.search-product-slider-default-1row .swiper-button-prev',
+                            },
 
-    //                         centerInsufficientSlides: true,
+                            centerInsufficientSlides: true,
 
-    //                         breakpoints: {
+                            breakpoints: {
                     
-    //                             0: {
-    //                                 slidesPerView: 1,
-    //                             },
-    //                             576: {
-    //                                 slidesPerView: 1,
-    //                             },
-    //                             768: {
-    //                                 slidesPerView: 2,
-    //                             },
-    //                             1400: {
-    //                                 slidesPerView: 3,
-    //                             },
-    //                             1800: {
-    //                                 slidesPerView: 4,
-    //                             }
-    //                         }
-    //                     });
+                                0: {
+                                    slidesPerView: 1,
+                                },
+                                576: {
+                                    slidesPerView: 1,
+                                },
+                                768: {
+                                    slidesPerView: 2,
+                                },
+                                1400: {
+                                    slidesPerView: 3,
+                                },
+                                1800: {
+                                    slidesPerView: 4,
+                                }
+                            }
+                        });
 
-    //                     $('.search-modal .search-content').css('top', '30%');
-    //                     $('.search-modal .search-data').css('top', '30%');
+                        $('.search-modal .search-content').css('top', '30%');
+                        $('.search-modal .search-data').css('top', '30%');
 
-    //                 }else{
-    //                     $('.searched-product-content .content-products').html('<p class="text-center pt-5">No se encontraron produtos con ese termino.</p>');
-    //                     $('.content-suggestions').html('<p>No se encontraron sugerencias.</p>');
-    //                     $('.search-modal .search-content').css('top', '50%');
-    //                     $('.search-modal .search-data').css('top', '50%');
-    //                 }
-    //             },
-    //             error: function(xhr, status, error) {
-    //             },
-    //             complete: function() {
-    //                 $('.search-data .cont-load-search').css("display", "none");
-    //             }
-    //         });
-    //     }else{
-    //         $(".search-modal .search-data").addClass('d-none');
-    //         $('.search-modal .search-content').css('top', '50%');
-    //         $('.search-modal .search-data').css('top', '50%');
-    //     }
-    // });
+                    }else{
+                        $('.searched-product-content .content-products').html('<p class="text-center pt-5">No se encontraron produtos con ese termino.</p>');
+                        $('.search-modal .search-content').css('top', '50%');
+                        $('.search-modal .search-data').css('top', '50%');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.log(error)
+                },
+                complete: function() {
+                    $('.search-data .cont-load-search').css("display", "none");
+                }
+            });
+        }else{
+            $(".search-modal .search-data").addClass('d-none');
+            $('.search-modal .search-content').css('top', '50%');
+            $('.search-modal .search-data').css('top', '50%');
+        }
+    });
+
 
     /*****************************
      * Off Canvas Function

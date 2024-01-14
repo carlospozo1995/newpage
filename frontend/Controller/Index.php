@@ -1,5 +1,7 @@
 <?php
 
+	require URL_LOCAL . 'vendor/autoload.php';
+
 	class Controller_Index{
 		public function buildPage()
 		{	
@@ -61,116 +63,125 @@
 						echo json_encode($data);
 					}
 				break;
-				
+
 				case 'searchData':
 					if (isset($_POST)) {
-						$search_value = $_POST['search'];
-						$html_products = "";
-						$amount_products = "";
-						$suggestions = array();
+						$value = $_POST['data_value'];
+						if (strlen($value) > 1) {
+							$client = \Algolia\AlgoliaSearch\SearchClient::create(
+								$_ENV['ALGOLIA_APP_ID'],
+								$_ENV['ALGOLIA_ADMIN_API_KEY']
+							);
 
-						if (!empty($search_value) && strlen($search_value) > 3) {
-							$search_data = Models_Resultado::searchData($search_value);
+							$index_p = $client->initIndex('index_products');
+							$results_p = $index_p->search($value,[
+								'length' => 5,
+								'offset' => 0
+							]);
 
-							if (!empty($search_data['products'])) {
-								$amount_products = $search_data['amount'][0]['amount'];
-								$product_images = array();
-								foreach ($search_data['products'] as $product) {
-									$img_product = Models_Products::selectImages($product['id_product']);
-									if (!empty($img_product)) {
-										$r_indexes = array_rand($img_product, 2);
+							$products = $results_p['hits'];
+							$amount = $results_p['nbHits'];
+							$html = "";
+
+							if (!empty($products)) {
+
+								$index_i = $client->initIndex('index_images');
+								$products_img = array();
+
+								foreach ($products as $product) {
+									// $results_i = $index_i->search($product['objectID'], [
+									// 	'filters' => $product['objectID']
+									// ]);
+									// $images =  $results_i['hits'];
+									// if (!empty($images)) {
+									// 	$r_indexes = array_rand($images, 2);
+									// 	foreach ($r_indexes as $index) {
+									// 		$r_element = $images[$index];
+									// 		$products_img[$product['objectID']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/'.$r_element['image'].'" alt="">';
+									// 	}
+									// }else{
+									// 	$products_img[$product['objectID']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/empty_img.png" alt="">';
+									// }
+									
+									// ----------------------------------------------------
+
+									$images = Models_Products::selectImages($product['objectID']);
+									if (!empty($images)) {
+										$r_indexes = array_rand($images, 2);
 										foreach ($r_indexes as $index) {
-											$r_element = $img_product[$index];
-											$product_images[$product['id_product']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/'.$r_element['image'].'" alt="">';
+											$r_element = $images[$index];
+											$products_img[$product['objectID']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/'.$r_element['image'].'" alt="">';
 										}
 									}else{
-										$product_images[$product['id_product']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/empty_img.png" alt="">';
+										$products_img[$product['objectID']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/empty_img.png" alt="">';
 									}
 								}
 
-								$html_products = '	<div class="search-product-slider-default-1row default-slider-nav-arrow">
-														<div class="swiper-container product-default-slider-4grid-1row">
-															<div class="swiper-wrapper my-2">';
+								$html = '<div class="search-product-slider-default-1row default-slider-nav-arrow">
+											<div class="swiper-container product-default-slider-4grid-1row">
+												<div class="swiper-wrapper my-2">';
 
-															foreach ($search_data['products'] as $product) {
-																$html_products.= '<div class="product-default-single-item product-color--pink swiper-slide border-product">';
-																	$html_products.= '<div class="image-box">';
-																		$html_products.= '<a href="'.BASE_URL."producto/".$product["url"].'" class="image-link' . (!empty($product['discount']) ? ' content-off" data-discount="'.$product['discount'].'% off"' : '"') . '>';
-																			$html_products.= implode('', $product_images[$product['id_product']]);
-																		$html_products.= '</a>';
-																		$html_products.= '<div class="action-link">';
-																			$html_products.= '<div class="action-link-right mx-auto">';
-																			if (!empty($product['stock']) && $product['stock'] > 0) {
-																				$html_products.= '<a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="addToCart" id="'.Utils::encriptar($product['id_product']).'"><i class="icon-basket" title="Añadir al carrito"></i></a>';
-																			}
-																			$html_products.= '</div>';
-																		$html_products.= '</div>';
-																	$html_products.= '</div>';
-																	
-																	$html_products.= '<div class="content">';
-																		$html_products.= '<div class="text-center">';
-																			$html_products.= '<h6><a class="title-product" href="'.BASE_URL."producto/".$product["url"].'">'.$product['name_product'].'</a></h6>';
-																			$html_products.= '<p>'.$product['brand'].'</p>';
-						
-																			if (!empty($product['cantDues'])) {
-																			$html_products.= '<div class="content-data-product no-empty">'; 
-																				$html_products.= '<div class="price-product no-empty">';
-																			}else{
-																			$html_products.= '<div class="content-data-product empty">'; 
-																				$html_products.= '<div class="price-product empty">';
-																			}
-																					$html_products.= (!empty($product['prevPrice'])) ? '<del>'.SMONEY. Utils::formatMoney($product['prevPrice']).'</del>' : '';
-																					$html_products.= '<span>'.SMONEY.Utils::formatMoney($product['price']).'</span>';
-																				$html_products.= '</div>';
-						
-																				$html_products.= (!empty($product['cantDues'])) ? '<span class="ml-2 text-left">'.$product['cantDues'].' cuotas '.SMONEY. Utils::formatMoney($product['priceDues']).'</span>' : '';
-																			$html_products.= '</div>';
-						
-																		$html_products.= '</div>';
-																	$html_products.= '</div>';
-																$html_products.= '</div>';
-															}
+												foreach ($products as $product) {
+													$html.= '<div class="product-default-single-item product-color--pink swiper-slide border-product">';
+														$html.= '<div class="image-box">';
+															$html.= '<a href="'.BASE_URL."producto/".$product["url"].'" class="image-link' . (!empty($product['discount']) ? ' content-off" data-discount="'.$product['discount'].'% off"' : '"') . '>';
+																$html.= implode('', $products_img[$product['objectID']]);
+															$html.= '</a>';
+															$html.= '<div class="action-link">';
+																$html.= '<div class="action-link-right mx-auto">';
+																if (!empty($product['stock']) && $product['stock'] > 0) {
+																	$html.= '<a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" class="addToCart" id="'.Utils::encriptar($product['objectID'	]).'"><i class="icon-basket" title="Añadir al carrito"></i></a>';
+																}
+																$html.= '</div>';
+															$html.= '</div>';
+														$html.= '</div>';
+														
+														$html.= '<div class="content">';
+															$html.= '<div class="text-center">';
+																$html.= '<h6><a class="title-product" href="'.BASE_URL."producto/".$product["url"].'">'.$product['name_product'].'</a></h6>';
+																$html.= '<p>'.$product['brand'].'</p>';
+			
+																if (!empty($product['cantDues'])) {
+																$html.= '<div class="content-data-product no-empty">'; 
+																	$html.= '<div class="price-product no-empty">';
+																}else{
+																$html.= '<div class="content-data-product empty">'; 
+																	$html.= '<div class="price-product empty">';
+																}
+																		$html.= (!empty($product['prevPrice'])) ? '<del>'.SMONEY. Utils::formatMoney($product['prevPrice']).'</del>' : '';
+																		$html.= '<span>'.SMONEY.Utils::formatMoney($product['price']).'</span>';
+																	$html.= '</div>';
+			
+																	$html.= (!empty($product['cantDues'])) ? '<span class="ml-2 text-left">'.$product['cantDues'].' cuotas '.SMONEY. Utils::formatMoney($product['priceDues']).'</span>' : '';
+																$html.= '</div>';
+			
+															$html.= '</div>';
+														$html.= '</div>';
+													$html.= '</div>';
+												}
+	
+												if ($amount > 5) {
+													$html .= '	<div class="product-default-single-item swiper-slide my-auto fs-16">
+																			<div class="content p-0">
+																				<a class="text-center" href="'.BASE_URL.'resultado/'.$value.'">Ver todos los '.$amount.' productos</a>
+																			</div>
+																		   </div>
+													';
+												}
 
-															if ($amount_products > 5) {
-																$html_products .= '	<div class="product-default-single-item swiper-slide my-auto fs-16">
-																						<div class="content p-0">
-																							<a class="text-center" href="'.BASE_URL.'resultado/'.$search_value.'">Ver todos los '.$amount_products.' productos</a>
-																						</div>
-																				   	</div>
-																';
-															}
+								$html .= '		</div>
+											</div>
 
-
-								$html_products .= '			</div>
-														</div>
-
-														<div class="swiper-button-prev"></div>
-														<div class="swiper-button-next"></div>
-													</div>';
-								
-								$suggestions = array_reduce($search_data['products'], function ($carry, $item) {
-									$brand = $item['brand'];
-									$nameCategory = $item['name_category'];
-								
-									$existingKey = array_search([$brand, $nameCategory], array_column($carry, 'key'));
-								
-									if ($existingKey === false) {
-										$carry[] = [
-											'brand' => $brand,
-											'url' => $item['url'],
-											'name_category' => $nameCategory,
-											'key' => [$brand, $nameCategory],
-										];
-									}
-								
-									return $carry;
-								}, []);
+											<div class="swiper-button-prev"></div>
+											<div class="swiper-button-next"></div>
+										</div>';
 								
 							}
-							$data = array("htmlContent" => $html_products, "amountProducts" => $amount_products, "suggestions" => array_values($suggestions));
+
+							$data = array("html" => $html, "amount" => $amount);
 							echo json_encode($data);
 						}
-					}	
+					}
 				break;
 
 				case 'testEmail':
