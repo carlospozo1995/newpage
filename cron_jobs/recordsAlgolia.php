@@ -24,7 +24,7 @@
         die("Error de conexión a MySQL: " . $mysqli->connect_error);
     }
 
-    $sql_products = "SELECT id_product, name_product, desMain, tags, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE status = 1";
+    $sql_products = "SELECT id_product, name_category, name_product, desMain, tags, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE status = 1";
     $result_products = $mysqli->query($sql_products);
 
     if ($result_products->num_rows > 0) {

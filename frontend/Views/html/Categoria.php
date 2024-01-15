@@ -49,7 +49,13 @@
                     $r_indexes = array_rand($img_product, 2);
                     foreach ($r_indexes as $index) {
                         $r_element = $img_product[$index];
-                        $product_images[$product['id_product']][] = '<img class="img-fluid" src="'.MEDIA_ADMIN.'files/images/upload_products/'.$r_element['image'].'" alt="">';
+                        $image_path = URL_LOCAL."Assets/admin/files/images/upload_products/".$r_element['image'];
+
+                        if (file_exists($image_path)) {
+                            $product_images[$product['id_product']][] = '<img class="img-fluid" src="'.MEDIA_ADMIN.'files/images/upload_products/'.$r_element['image'].'" alt="">';
+                        } else {
+                            $product_images[$product['id_product']][] = '<img class="img-fluid" src="'.MEDIA_ADMIN.'files/images/upload_products/empty_img.png" alt="">';
+                        }
                     }
                 }else{
                     $product_images[$product['id_product']][] = '<img class="img-fluid" src="'.MEDIA_ADMIN.'files/images/upload_products/empty_img.png" alt="">';

@@ -73,44 +73,34 @@
 								$_ENV['ALGOLIA_ADMIN_API_KEY']
 							);
 
-							$index_p = $client->initIndex('index_products');
-							$results_p = $index_p->search($value,[
+							$index = $client->initIndex('index_products');
+							$results = $index->search($value,[
 								'length' => 5,
 								'offset' => 0
 							]);
 
-							$products = $results_p['hits'];
-							$amount = $results_p['nbHits'];
+							$products = $results['hits'];
+							$amount = $results['nbHits'];
 							$html = "";
+							$suggestions = "";
 
 							if (!empty($products)) {
 
-								$index_i = $client->initIndex('index_images');
 								$products_img = array();
 
 								foreach ($products as $product) {
-									// $results_i = $index_i->search($product['objectID'], [
-									// 	'filters' => $product['objectID']
-									// ]);
-									// $images =  $results_i['hits'];
-									// if (!empty($images)) {
-									// 	$r_indexes = array_rand($images, 2);
-									// 	foreach ($r_indexes as $index) {
-									// 		$r_element = $images[$index];
-									// 		$products_img[$product['objectID']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/'.$r_element['image'].'" alt="">';
-									// 	}
-									// }else{
-									// 	$products_img[$product['objectID']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/empty_img.png" alt="">';
-									// }
-									
-									// ----------------------------------------------------
-
 									$images = Models_Products::selectImages($product['objectID']);
 									if (!empty($images)) {
 										$r_indexes = array_rand($images, 2);
 										foreach ($r_indexes as $index) {
 											$r_element = $images[$index];
-											$products_img[$product['objectID']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/'.$r_element['image'].'" alt="">';
+											$image_path = URL_LOCAL."Assets/admin/files/images/upload_products/".$r_element['image'];
+
+											if (file_exists($image_path)) {
+												$products_img[$product['objectID']][] = '<img class="img-fluid" src="'.MEDIA_ADMIN.'files/images/upload_products/'.$r_element['image'].'" alt="">';
+											} else {
+												$products_img[$product['objectID']][] = '<img class="img-fluid" src="'.MEDIA_ADMIN.'files/images/upload_products/empty_img.png" alt="">';
+											}
 										}
 									}else{
 										$products_img[$product['objectID']][] = '<img src="'.MEDIA_ADMIN.'files/images/upload_products/empty_img.png" alt="">';
@@ -175,10 +165,27 @@
 											<div class="swiper-button-prev"></div>
 											<div class="swiper-button-next"></div>
 										</div>';
+
+								$suggestions = array_reduce($products, function ($carry, $item) {
+									$brand = $item['brand'];
+									$nameCategory = $item['name_category'];
+								
+									$existingKey = array_search([$brand, $nameCategory], array_column($carry, 'key'));
+								
+									if ($existingKey === false) {
+										$carry[] = [
+											'brand' => $brand,
+											'name_category' => $nameCategory,
+											'key' => [$brand, $nameCategory],
+										];
+									}
+								
+									return $carry;
+								}, []);
 								
 							}
 
-							$data = array("html" => $html, "amount" => $amount);
+							$data = array("html" => $html, "amount" => $amount, "suggestions" => $suggestions);
 							echo json_encode($data);
 						}
 					}
