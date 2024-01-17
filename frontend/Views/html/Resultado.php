@@ -55,7 +55,7 @@
 
     <div class="shop-section">
         <div class="container">
-            <input type="hidden" id="data-store" value="<?= Utils::encryptStore($id_sons); ?>">
+            <input type="hidden" id="data-search" value="<?= $search; ?>">
             <div class="row flex-column-reverse flex-lg-row">
                 <div class="col-lg-2-1">
 

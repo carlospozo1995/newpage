@@ -1,6 +1,10 @@
 $(document).ready(function () {
+    var page = 1;
+    var loading = false;
+
     $('.content-section-page .container-pagination-btn').on('click', '#load-more', function () {
-    
+        let search = $('#data-search').val();
+
         // Data brand checked
         let brand_check = $('.content-check-brand input[type="checkbox"]:checked');
         let ids_check = [];
@@ -15,6 +19,39 @@ $(document).ready(function () {
         let price_min = $('#slider-range').attr('data-min');
         let price_max = $('#slider-range').attr('data-max');
         
+        if(loading){
+            return;
+        }
+
+        loading = true;
+
+        $.ajax({
+            url: base_url + "resultado/loadMoreProducts/",
+            dataType: 'JSON',
+            method: 'POST',
+            data: {
+                search: search,
+                page: page
+            },
+            beforeSend: function() {
+                $('.load-more .cont-load-more').css("display", "flex");
+            },
+            success: function(data){  
+                page++;
+
+                $('#container-products-grid').append(data.content.grid);
+                $('#container-products-single').append(data.content.single);
+                console.log(data.result)
+                loading = false;
+            },
+            error: function(xhr, status, error) {
+                console.log(error)
+            },
+            complete: function() {
+                $('.load-more .cont-load-more').css("display", "none");
+            }
+        });
+
     });
 
     /************************************************
