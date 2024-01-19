@@ -1,19 +1,24 @@
 $(document).ready(function () {
     var page = 1;
     var loading = false;
+    var search = $('#data-search').val();
+    var order_val = $("#products-order").val();
 
+    // let brand_check = $('.content-check-brand input[type="checkbox"]:checked');
+    // let ids_check = [];
+    // for (var i = 0; i < brand_check.length; i++) {
+    //     ids_check.push(brand_check[i].id);
+    // }
+
+    // LOAD MORE PRODUCTS (BUTTON)
     $('.content-section-page .container-pagination-btn').on('click', '#load-more', function () {
-        let search = $('#data-search').val();
 
         // Data brand checked
-        let brand_check = $('.content-check-brand input[type="checkbox"]:checked');
-        let ids_check = [];
-        for (var i = 0; i < brand_check.length; i++) {
-            ids_check.push(brand_check[i].id);
-        }
-
-        // Value order by
-        let order_value = $("#products-order").val();
+        // let brand_check = $('.content-check-brand input[type="checkbox"]:checked');
+        // let ids_check = [];
+        // for (var i = 0; i < brand_check.length; i++) {
+        //     ids_check.push(brand_check[i].id);
+        // }
 
         // Data range price
         let price_min = $('#slider-range').attr('data-min');
@@ -41,7 +46,11 @@ $(document).ready(function () {
 
                 $('#container-products-grid').append(data.content.grid);
                 $('#container-products-single').append(data.content.single);
-                console.log(data.result)
+                
+                if (page === data.nbPage) {
+                    $(".page-pagination").remove();
+                }
+
                 loading = false;
             },
             error: function(xhr, status, error) {
@@ -72,6 +81,42 @@ $(document).ready(function () {
             values: [price_min, price_max],
             slide: function(event, ui) {
                 $( "#amount" ).val( "$" + ui.values[ 0 ] / 100 + " - $" + ui.values[ 1 ] / 100 );
+            },
+            stop: function (event, ui) {
+                $('#slider-range').attr('data-min', ui.values[0] / 100);
+                $('#slider-range').attr('data-max', ui.values[1] / 100);
+                
+                let brand_check = $('.content-check-brand input[type="checkbox"]:checked');
+                let ids_check = [];
+                for (var i = 0; i < brand_check.length; i++) {
+                    ids_check.push(brand_check[i].id);
+                }
+                console.log(ids_check);
+
+                $.ajax({
+                    url: base_url + "resultado/rangePriceProducts/",
+                    dataType: 'JSON',
+                    method: 'POST',
+                    data: {
+                        search: search,
+                        selectOrder: order_val,
+                        selectBrands: ids_check,
+                        price_min: ui.values[0] / 100,
+                        price_max: ui.values[1] / 100
+                    }, 
+                    beforeSend: function() {
+                        // $('.content-loading').css("display","flex");
+                    },
+                    success: function (data) {
+                        console.log(data);
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(error);
+                    },
+                    complete: function () {
+                        // $('.content-loading').css("display", "none");
+                    }
+                });
             }
         });
 

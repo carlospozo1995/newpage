@@ -34,10 +34,82 @@
 						$products_img = self::productImages($products);
         				$content = self::printContentProducts($products, $products_img);
 
-						$data = array("content" => $content, "result" => $results);
+						$data = array("content" => $content, "nbPage" => $results['nbPages']);
 						echo json_encode($data);
 					}
                 break;
+
+				case 'rangePriceProducts':
+					if (isset($_POST)) {
+						$search_value = $_POST['search'];
+						$order = $_POST['selectOrder'];
+						$filter_brand = !empty($_POST['selectBrands']) ? $_POST['selectBrands'] : '';
+						$price_min = $_POST['price_min'];
+						$price_max = $_POST['price_max'];
+						
+						$replica_index = $client->initIndex(('replica_products')); 
+
+						// switch ($order) {
+						// 	case 'discount':
+						// 		self::settingsAlgolia($replica, 'desc(discount)');
+						// 	break;
+
+						// 	case 'recent':
+						// 		self::settingsAlgolia($replica, 'desc(datacreate)');
+						// 	break;
+
+						// 	case 'price_asc':
+						// 		self::settingsAlgolia($replica, 'asc(price)');
+						// 	break;
+
+						// 	case 'price_desc':
+						// 		self::settingsAlgolia($replica, 'desc(price)');
+						// 	break;
+						// }
+
+						// $results = $replica->search($search_value, [
+						// 	'page' => 0,
+						// 	'hitsPerPage' => 10,
+						// 	'facets' => ["brand", "price"],
+						// 	'numericFilters' => 'price: '.$price_min. ' TO '.$price_max,
+						// ]);
+
+						$replica_index->setSettings([
+							'ranking' => [
+							  'asc(price)',
+							  'typo',
+							  'geo',
+							  'words',
+							  'filters',
+							  'proximity',
+							  'attribute',
+							  'exact',
+							  'custom'
+							]
+						]);
+
+						$results = $replica_index->search($search_value);
+						
+						// ------------------------------------------------
+
+						// $results = $replica_index->search($search_value);
+
+						// $results = $index->search($search_value, [
+							// 'filters' => 'brand:' . implode(' OR brand:', $filter_brand),
+							// 'filters' => '',
+						// ]);
+
+						// -----------------------------------------------
+			
+						// $results = $index->search($search_value, [
+						// 	'numericFilters' => 'price: '.$price_min.' TO '.$price_max,
+						// ]);
+
+						echo json_encode($results['hits']);
+
+
+					}
+				break;
 
 				default:
 					$search_value = $_GET['search'];
@@ -185,6 +257,22 @@
 			return array("grid" => $content_grid, "single" => $content_single);
 		}
 		
+
+		static public function settingsAlgolia($replica, $order) {
+			$replica->setSettings([
+				'ranking' => [
+					$order,
+					'typo',
+					'geo',
+					'words',
+					'filters',
+					'proximity',
+					'attribute',
+					'exact',
+					'custom'
+				]
+			]);
+		}
 	}
 
 ?>

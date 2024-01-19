@@ -10,8 +10,7 @@
         $_ENV['ALGOLIA_ADMIN_API_KEY']
     );
 
-    $index_products = $client->initIndex('index_products');
-    $index_images = $client->initIndex('index_images');
+    $index = $client->initIndex('index_products');
 
     $host = $_ENV['HOST'];
     $username = $_ENV['USER'];
@@ -24,41 +23,30 @@
         die("Error de conexión a MySQL: " . $mysqli->connect_error);
     }
 
-    $sql_products = "SELECT id_product, name_category, name_product, desMain, tags, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products WHERE status = 1";
-    $result_products = $mysqli->query($sql_products);
+    $sql = "SELECT id_product, name_category, name_product, desMain, tags, brand, price, stock, prevPrice, discount, cantDues, priceDues, datacreate, url FROM products WHERE status = 1";
+    $result = $mysqli->query($sql);
 
-    if ($result_products->num_rows > 0) {
-        $records_products = [];
+    if ($result->num_rows > 0) {
+        $records = [];
 
-        while ($row = $result_products->fetch_assoc()) {
+        while ($row = $result->fetch_assoc()) {
             $row['objectID'] = $row['id_product'];
-
+            $row['price'] = floatval($row['price']);
+            $row['stock'] = intval($row['stock']); 
+            $row['discount'] = $row['discount'] != null ? intval($row['discount']) : $row['discount'];   
+            $row['prevPrice'] = $row['prevPrice'] != null ? floatval($row['prevPrice']) : $row['prevPrice'];  
+            $row['cantDues'] = $row['cantDues'] != null ? intval($row['cantDues']) : $row['cantDues'];  
+            $row['priceDues'] = $row['priceDues'] != null ? floatval($row['priceDues']) : $row['priceDues']; 
+                    
 
             unset($row['id_product']);
-            $records_products[] = $row;
+            $records[] = $row;
         }
-
-        $index_products->replaceAllObjects($records_products, ['autoGenerateObjectIDIfNotExist' => true]);
+        
+        $index->replaceAllObjects($records, ['autoGenerateObjectIDIfNotExist' => true]);
     }
 
-    $sql_img = "SELECT * FROM img_product";
-    $result_img = $mysqli->query($sql_img);
 
-    if ($result_img->num_rows > 0) {
-        $records_img = [];
-
-        while ($row_img = $result_img->fetch_assoc()) {
-            $row_img['objectID'] = $row_img['id_img'];
-
-
-            unset($row_img['id_img']);
-            $records_img[] = $row_img;
-        }
-
-        $index_images->replaceAllObjects($records_img, ['autoGenerateObjectIDIfNotExist' => true]);
-    }
-
-    $result_products->free();
-    $result_img->free();
+    $result->free();
     $mysqli->close();
 ?>
