@@ -16,17 +16,95 @@
 				$_ENV['ALGOLIA_ADMIN_API_KEY']
 			);
 
-			$index = $client->initIndex('index_products');
+			$indexChange = 'index_products';
 
 			switch ($action) {
+				case 'orderProducts':
+					if (isset($_POST)) {
+						$search_value = $_POST['search'];
+						$filter_brand = !empty($_POST['selectBrands']) ? 'brand:' . implode(' OR brand:', array_map(function($brand) {
+							return '"' . $brand . '"';
+						}, $_POST['selectBrands'])) : '';
+						
+						$order = $_POST['selectOrder'];
+						$price_min = isset($_POST['price_min']) ? $_POST['price_min'] : "";
+						$price_max = isset($_POST['price_max']) ? $_POST['price_max'] : "";
+
+						switch ($order) {
+							case 'discount':
+								$indexChange = 'replica_products_discount_desc';
+							break;
+
+							case 'recent':
+								$indexChange = 'replica_products_datacreate_desc';
+							break;
+
+							case 'price_asc':
+								$indexChange = 'replica_products_price_asc';
+							break;
+
+							case 'price_desc':
+								$indexChange = 'replica_products_price_desc';
+							break;
+						}
+						
+						$index = $client->initIndex($indexChange);
+
+						$results = $index->search($search_value, [
+							'page' => 0,
+							'hitsPerPage' => 10,
+							'filters' => $filter_brand,
+							'numericFilters' => !empty($price_min) && !empty($price_max) ? 'price: '.$price_min. ' TO '.$price_max : '',		
+							'facets' => ["brand", "price"],
+						]);
+
+						$products = $results['hits'];
+
+						$products_img = self::productImages($products);
+        				$content = self::printContentProducts($products, $products_img);
+
+						$data = array("content" => $content, "total_p" => $results['nbHits'], "price" => isset($results['facets_stats']['price']) ? $results['facets_stats']['price'] : "");
+						echo json_encode($data);
+					}
+				break;
+
 				case 'loadMoreProducts':
                     if (isset($_POST)) {
 						$search_value = $_POST['search'];
 						$page = $_POST['page'];
 
+						$order = $_POST['selectOrder'];
+						$filter_brand = !empty($_POST['selectBrands']) ? 'brand:' . implode(' OR brand:', array_map(function($brand) {
+							return '"' . $brand . '"';
+						}, $_POST['selectBrands'])) : '';
+						$price_min = $_POST['price_min'];
+						$price_max = $_POST['price_max'];
+
+						switch ($order) {
+							case 'discount':
+								$indexChange = 'replica_products_discount_desc';
+							break;
+
+							case 'recent':
+								$indexChange = 'replica_products_datacreate_desc';
+							break;
+
+							case 'price_asc':
+								$indexChange = 'replica_products_price_asc';
+							break;
+
+							case 'price_desc':
+								$indexChange = 'replica_products_price_desc';
+							break;
+						}
+
+						$index = $client->initIndex($indexChange);
 						$results = $index->search($search_value, [
 							'page' => $page,
 							'hitsPerPage' => 10,
+							'filters' => $filter_brand,
+							'numericFilters' => 'price: '.$price_min. ' TO '.$price_max,		
+							'facets' => ["brand", "price"],
 						]);
 
 						$products = $results['hits'];
@@ -43,76 +121,54 @@
 					if (isset($_POST)) {
 						$search_value = $_POST['search'];
 						$order = $_POST['selectOrder'];
-						$filter_brand = !empty($_POST['selectBrands']) ? $_POST['selectBrands'] : '';
+						$filter_brand = !empty($_POST['selectBrands']) ? 'brand:' . implode(' OR brand:', array_map(function($brand) {
+							return '"' . $brand . '"';
+						}, $_POST['selectBrands'])) : '';
 						$price_min = $_POST['price_min'];
 						$price_max = $_POST['price_max'];
+
+						switch ($order) {
+							case 'discount':
+								$indexChange = 'replica_products_discount_desc';
+							break;
+
+							case 'recent':
+								$indexChange = 'replica_products_datacreate_desc';
+							break;
+
+							case 'price_asc':
+								$indexChange = 'replica_products_price_asc';
+							break;
+
+							case 'price_desc':
+								$indexChange = 'replica_products_price_desc';
+							break;
+						}
 						
-						$replica_index = $client->initIndex(('replica_products')); 
+						$index = $client->initIndex($indexChange);
 
-						// switch ($order) {
-						// 	case 'discount':
-						// 		self::settingsAlgolia($replica, 'desc(discount)');
-						// 	break;
-
-						// 	case 'recent':
-						// 		self::settingsAlgolia($replica, 'desc(datacreate)');
-						// 	break;
-
-						// 	case 'price_asc':
-						// 		self::settingsAlgolia($replica, 'asc(price)');
-						// 	break;
-
-						// 	case 'price_desc':
-						// 		self::settingsAlgolia($replica, 'desc(price)');
-						// 	break;
-						// }
-
-						// $results = $replica->search($search_value, [
-						// 	'page' => 0,
-						// 	'hitsPerPage' => 10,
-						// 	'facets' => ["brand", "price"],
-						// 	'numericFilters' => 'price: '.$price_min. ' TO '.$price_max,
-						// ]);
-
-						$replica_index->setSettings([
-							'ranking' => [
-							  'asc(price)',
-							  'typo',
-							  'geo',
-							  'words',
-							  'filters',
-							  'proximity',
-							  'attribute',
-							  'exact',
-							  'custom'
-							]
+						$results = $index->search($search_value, [
+							'page' => 0,
+							'hitsPerPage' => 10,
+							'filters' => $filter_brand,
+							'numericFilters' => 'price: '.$price_min. ' TO '.$price_max,		
+							'facets' => ["brand", "price"],
 						]);
 
-						$results = $replica_index->search($search_value);
-						
-						// ------------------------------------------------
+						$products = $results['hits'];
 
-						// $results = $replica_index->search($search_value);
+						$products_img = self::productImages($products);
+        				$content = self::printContentProducts($products, $products_img);
 
-						// $results = $index->search($search_value, [
-							// 'filters' => 'brand:' . implode(' OR brand:', $filter_brand),
-							// 'filters' => '',
-						// ]);
-
-						// -----------------------------------------------
-			
-						// $results = $index->search($search_value, [
-						// 	'numericFilters' => 'price: '.$price_min.' TO '.$price_max,
-						// ]);
-
-						echo json_encode($results['hits']);
-
-
+						$data = array("content" => $content, "total_p" => $results['nbHits']);
+						echo json_encode($data);
 					}
 				break;
 
 				default:
 					$search_value = $_GET['search'];
+					
+					$index = $client->initIndex($indexChange);
 					$results = $index->search($search_value, [
 						'page' => 0,
 						'hitsPerPage' => 10,
