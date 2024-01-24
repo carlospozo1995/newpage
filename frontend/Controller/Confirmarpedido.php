@@ -1,4 +1,7 @@
 <?php
+
+use Solarium\Support\Utility;
+
 	class Controller_Confirmarpedido{
 		
 		public function buildPage()
@@ -42,7 +45,6 @@
                         if ($insertOrders > 0) {
                             $arrDetailProducts = array();
                             // enviar correo al cliente sobre su compra
-                            Utils::sendEmail_buyConfirm();
                             foreach ($orderData['orderedProducts'] as $order) {
                                 $insertOrdersDetails = array("order_id" => $insertOrders, "product_id" => Utils::descryptStore($order['id']), "name_product" => $order['name'], "price" => $order['price'], "quantityOrdered" => $order['amount_product'], "url_product" => $order['url']);
 
@@ -51,7 +53,21 @@
                             }
                             
                             if (count($arrDetailProducts) > 0){
-                                // echo count($arrDetailProducts);
+									$sendData = Models_Store::showOrderClient($orderClient);
+									$asunto = "¡Su pedido fue realizado con éxito!";
+									
+									if (count($sendData['ordered_products']) == 1) {
+										$palabras = explode(' ', $sendData['ordered_products'][0]['name_product']);
+										$nuevoNombre = (count($palabras) > 1) ? $palabras[0] . ' ' . substr($palabras[1], 0, strlen($palabras[1]) / 2) . '...' : $sendData['ordered_products'][0]['name_product'];
+										$asunto = "Su pedido de " .$nuevoNombre." ¡fue realizado con éxito!";
+									}
+									$dataEmailTest = array( "name" => $sendData['name_user'] ." ". $sendData['surname_user'],
+															"email" => $sendData['email'],
+															"asunto" => $asunto,
+														); 
+							
+									Utils::sendEmail($dataEmailTest, 'email_buyConfirm', $sendData);
+								
                             }else{
                                 // enviar mensaje al administrador sobre los detalles de los productos no insertados en la tabla detallePedidos mandando el array $insertOrdersDetails
                             }

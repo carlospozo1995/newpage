@@ -226,9 +226,11 @@
                 });
                 if (count($images) > 0) {
                     $firstImage = reset($images);
-                    $product['images'] = MEDIA_ADMIN . 'files/images/upload_products/' . $firstImage['image'];
+                    // $product['images'] = MEDIA_ADMIN . 'files/images/upload_products/' . $firstImage['image'];
+                    $product['images'] = 'http://tiendavirtual.000.pe/Assets/admin/files/images/upload_products/empty_img.png';
                 } else {
-                    $product['images'] = MEDIA_ADMIN . 'files/images/upload_products/empty_img.png';
+                    // $product['images'] = MEDIA_ADMIN . 'files/images/upload_products/empty_img.png';
+                    $product['images'] = 'http://tiendavirtual.000.pe/Assets/admin/files/images/upload_products/empty_img.png';
                 }
             }
 

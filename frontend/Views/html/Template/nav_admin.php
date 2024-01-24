@@ -58,13 +58,6 @@
 			          	</li>
 			          	<?php } ?>
 			          	
-			            <!-- <li class="nav-item">
-			              	<a href="" class="nav-link">
-			                	<i class="nav-icon fas fa-user"></i>
-			                	<p>Clientes</p>
-			              	</a>
-			            </li> -->
-			          	
 						<?php if(!empty($_SESSION['permissions'][MCATEGORIAS]['ver']) || !empty($_SESSION['permissions'][MPRODUCTOS]['ver']) || !empty($_SESSION['permissions'][MBANNERS]['ver'])){ ?>
 			          	<li class="nav-item">
 				            <a href="#" class="nav-link">
@@ -104,6 +97,15 @@
 				              	<?php } ?>
 				            </ul>
 			          	</li>
+						<?php } ?>
+
+						<?php if(!empty($_SESSION['permissions'][MPEDIDOS]['ver'])){ ?>
+							<li class="nav-item">
+								<a href="<?= BASE_URL ?>pedidos" class="nav-link">
+									<i class="nav-icon fas fa-box"></i>
+									<p>Pedidos</p>
+								</a>
+							</li>
 						<?php } ?>
 
 			        </ul>

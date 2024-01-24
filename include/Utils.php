@@ -139,9 +139,7 @@
 		}
 
 		static public function sendEmail($sendData, $template, $otherData = "")
-		{	
-			$variousData = empty($otherData) ? "" : $otherData;
-        
+		{
 	        ob_start();
 	        require_once(RUTA_VIEW."html/Template/".$template.".php");
 	        $message = ob_get_clean();

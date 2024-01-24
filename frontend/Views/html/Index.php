@@ -601,7 +601,18 @@
 			<input type="text" data-role="tagsinput">
 		</div>
 		<div class="banner-section section-top-gap-100">
+			<button id="sendMail">send email</button>
+
+			<?php
 			
+				$string = 'Cocina A Gas 4 Quemadores Em5100eb0'; 
+
+				$palabras = explode(' ', $string);
+				$nuevoNombre = (count($palabras) > 1) ? $palabras[0] . ' ' . substr($palabras[1], 0, (int)(strlen($palabras[1]) / 2)) . '...' : $string;
+				$asunto = "Su pedido de " . $nuevoNombre . " ¡fue realizado con éxito!";
+				Utils::dep($asunto);
+				
+			?>
 		</div>
 		
 	</div>

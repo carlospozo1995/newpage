@@ -129,14 +129,27 @@
 <body>
     <div class="container pt-2 pb-2">
         <div class="container_context m-auto">
-            <figure class="d-flex mb-6"><a class="m-auto" href="<?=BASE_URL;?>"><img src="https://project-cg.000webhostapp.com/Assets/store/images/logo/no-test/logo_text.png" alt=""></a></figure>
-            <h3 class="txt-center">!GRACIAS POR TU COMPRA <?= strtoupper($variousData['name_user']) ." ". strtoupper($variousData['surname_user']); ?>!</h3>
-            <p class="txt-center mt-1">Hemos recibido exitosamente tu pedido de compra. Número pedido <span class="font-wht-bold"><?=$variousData['num_order'];?></span>.</p>
-            <p class="txt-center mt-1">Pedido realizado el <span class="font-wht-bold"><?=$variousData['dateCreate'];?></span>.</p>
+            <figure class="d-flex mb-6"><a class="m-auto" href="<?=BASE_URL;?>"><img src="http://tiendavirtual.000.pe/Assets/store/images/logo/logo_text.png" alt=""></a></figure>
+            <h3 class="txt-center">!GRACIAS POR TU COMPRA <?= strtoupper($otherData['name_user']) ." ". strtoupper($otherData['surname_user']); ?>!</h3>
+            <p class="txt-center mt-1">Hemos recibido exitosamente tu pedido de compra. Número pedido <span class="font-wht-bold"><?=$otherData['num_order'];?></span>.</p>
+            <p class="txt-center mt-1">Pedido realizado el <span class="font-wht-bold"><?=$otherData['dateCreate'];?></span>.</p>
             <?php
-                Utils::dep($variousData);
+                Utils::dep($otherData);
             ?>
+
+<div>
+            <?php
+            foreach ($otherData['ordered_products'] as $key => $value) {
+            ?>
+                <img src="<?=$value['images'];?>" alt="" class="offcanvas-cart-image">
+                <p><?=$value['name_product'];?></p>
+                <p><?=$value['url_product'];?></p>
+            <?php
+            }
+            ?>
+            </div>
         </div>
+        
     </div>
 </body>
 </html>

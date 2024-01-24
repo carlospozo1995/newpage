@@ -220,6 +220,7 @@
 						}
 						$data = array("status" => $status);
 						echo json_encode($data);
+
 					}
 				break;
 

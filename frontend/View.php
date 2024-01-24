@@ -58,7 +58,7 @@
 
 			$ruta_page = RUTA_VIEW . 'html/' . $namePage .'.php';	
 
-			if ($namePage == 'Dashboard' || $namePage == 'Roles' || $namePage == 'Users' || $namePage == 'Categories' || $namePage == 'Products' || $namePage == 'Banners') {
+			if ($namePage == 'Dashboard' || $namePage == 'Roles' || $namePage == 'Users' || $namePage == 'Categories' || $namePage == 'Products' || $namePage == 'Banners' || $namePage == 'Pedidos' || $namePage == "Orden") {
 				require_once(RUTA_VIEW . 'html/Template/header_admin.php');
 			}
 
@@ -74,7 +74,7 @@
 				require_once $ruta_page;
 			}
 
-			if ($namePage == 'Dashboard' || $namePage == 'Roles' || $namePage == 'Users' || $namePage == 'Categories' || $namePage == 'Products' || $namePage == 'Banners') {
+			if ($namePage == 'Dashboard' || $namePage == 'Roles' || $namePage == 'Users' || $namePage == 'Categories' || $namePage == 'Products' || $namePage == 'Banners' || $namePage == 'Pedidos' || $namePage == "Orden") {
 				require_once(RUTA_VIEW . 'html/Template/footer_admin.php');
 			}
 

@@ -312,23 +312,7 @@
 			}
 			return array("grid" => $content_grid, "single" => $content_single);
 		}
-		
 
-		static public function settingsAlgolia($replica, $order) {
-			$replica->setSettings([
-				'ranking' => [
-					$order,
-					'typo',
-					'geo',
-					'words',
-					'filters',
-					'proximity',
-					'attribute',
-					'exact',
-					'custom'
-				]
-			]);
-		}
 	}
 
 ?>

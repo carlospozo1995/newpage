@@ -40,6 +40,7 @@
     define("MCATEGORIAS", 3);
     define("MPRODUCTOS", 4);
     define("MBANNERS", 5);
+    define("MPEDIDOS", 6);
 
     // DECIMAL AND THOUSAND DELIMITERS
     define("SPD", ",");
@@ -48,7 +49,4 @@
     // CURRENCY SYMBOL
     define("SMONEY", "$");
 
-    // ADD SLIDERS STORE VIEW
-    // define("CATEGORIES_SLIDERS", "181, 208");
-    // define("PRODUCTS_SLIDERS", "1,2");
 ?>

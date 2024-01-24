@@ -62,6 +62,14 @@
 				return "Banners";
 			break;
 
+			case 'pedidos':
+				return "Pedidos";
+			break;
+
+			case 'orden':
+				return "Orden";
+			break;
+
 			// PAGES-STORE
 			case 'test':
 				return "Test";
