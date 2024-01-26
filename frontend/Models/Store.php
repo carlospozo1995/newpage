@@ -183,9 +183,10 @@
             return $result;
         }
 
-        static public function insertOrders($orders, $flag) {
+        static public function insertOrders($orders, $table, $flag) {
             $arrData[] = $orders;
-            $result = $flag === true ? $GLOBALS["db"]->insert_multiple("orders", $arrData) : $GLOBALS["db"]->insert_multiple("detail_orders", $arrData, true);
+            // $result = $flag === true ? $GLOBALS["db"]->insert_multiple("orders", $arrData) : $GLOBALS["db"]->insert_multiple("detail_orders", $arrData, true);
+            $result = $GLOBALS["db"]->insert_multiple($table, $arrData, $flag);
             return $result;
         }
 

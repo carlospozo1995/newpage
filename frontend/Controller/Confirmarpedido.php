@@ -40,15 +40,16 @@ use Solarium\Support\Utility;
 
                         $insertedData = array("num_order" => crc32(date("Y-m-d h:i:s")), "transaction_uniqueCode" => $orderData['uniqueCode'], "user_id" => $orderData['idClient'], "shipping_cost" => $shipping_cost, "total" => $total, "payment_type_id" => $orderData['paymentType'], "addressee" => $orderData['addressee'], "shipping_address" => $mainTown .'-'. $orderData['street'] .$addInfo, "message" => $message, "status" => 'Progress');
 
-                        $insertOrders = Models_Store::insertOrders($insertedData, true);
+                        $insertOrders = Models_Store::insertOrders($insertedData, "orders", true);
                         
                         if ($insertOrders > 0) {
+                            Models_store::insertOrders(array("order_id" => $insertOrders), 'order_status', true);
                             $arrDetailProducts = array();
                             // enviar correo al cliente sobre su compra
                             foreach ($orderData['orderedProducts'] as $order) {
                                 $insertOrdersDetails = array("order_id" => $insertOrders, "product_id" => Utils::descryptStore($order['id']), "name_product" => $order['name'], "price" => $order['price'], "quantityOrdered" => $order['amount_product'], "url_product" => $order['url']);
 
-                                $insertDetails = Models_Store::insertOrders($insertOrdersDetails, false);
+                                $insertDetails = Models_Store::insertOrders($insertOrdersDetails, "detail_orders", true);
                                 $arrDetailProducts[] = $insertDetails;
                             }
                             

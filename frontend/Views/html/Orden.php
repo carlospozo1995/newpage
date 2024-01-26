@@ -33,22 +33,22 @@
                                 <div class="col-4">
                                     <address>
                                         <strong><h5><?=$order['name_user']." ".$order['surname_user'];?></h5></strong>
-                                        <span>Envio: <?=$order['shipping_address'];?></span>
+                                        <span><strong>Envio:</strong> <?=$order['shipping_address'];?></span>
                                         <br>
-                                        <span>Tel: <?=$order['phone'];?></span>
+                                        <span><strong>Tel:</strong> <?=$order['phone'];?></span>
                                         <br>
-                                        <span>Email: <?=$order['email'];?></span>
+                                        <span><strong>Email:</strong> <?=$order['email'];?></span>
                                     </address>
                                 </div>
                                 <div class="col-4">
                                     <address>
-                                        <span>Pago: <?= $order['payment_type_id'] ==1 ? "Tarjeta" : "Transferencia"; ?></span>
+                                        <span><strong>Pago:</strong> <?= $order['payment_type_id'] ==1 ? "Tarjeta" : "Transferencia"; ?></span>
                                         <br>
-                                        <span>Estado-pago: <?=$order['status'];?></span>
+                                        <span><strong>Estado-pago:</strong> <?=$order['status'];?></span>
                                         <br>
-                                        <span>Estado-envio: <?=$order['process'];?></span>
-                                        <br>
-                                        <span>Total: <?=SMONEY." ".Utils::formatMoney($order['total']);?></span>
+                                        <!-- <span><strong>Estado-envio:</strong> <?=$order['process'];?></span> -->
+                                        <!-- <br> -->
+                                        <span><strong>Total:</strong> <?=SMONEY." ".Utils::formatMoney($order['total']);?></span>
                                     </address>
                                 </div>
                             </div>
@@ -61,21 +61,43 @@
                                             <th>Producto</th>
                                             <th>Precio</th>
                                             <th>Cantidad</th>
-                                            <th>Total</th>
+                                            <th>Importe</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <?php
-                                        foreach ($order['ordered_products'] as $key => $value) {
-                                            echo '<tr>';
-                                                echo '<td>'.$value['name_product'].'</td>';
-                                                echo '<td>'.SMONEY." ".Utils::formatMoney($value['price']).'</td>';
-                                                echo '<td>'.$value['quantityOrdered'].'</td>';
-                                                echo '<td>l</td>';
-                                            echo '</tr>';
-                                        }
+                                    $subtotal = 0;
+                                    $iva = 0;
+                                    foreach ($order['ordered_products'] as $key => $value) {
+                                        $subtotal += $value['price'] * $value['quantityOrdered'];
+                                        $iva = $subtotal * 0.12;
+                                        echo '<tr>';
+                                            echo '<td>'.$value['name_product'].'</td>';
+                                            echo '<td>'.SMONEY." ".Utils::formatMoney($value['price']).'</td>';
+                                            echo '<td>'.$value['quantityOrdered'].'</td>';
+                                            echo '<td>'.SMONEY." ".Utils::formatMoney($value['price'] * $value['quantityOrdered']).'</td>';
+                                        echo '</tr>';
+                                    }
                                     ?>
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th colspan="3" class="text-right">Sub-Total:</th>
+                                            <td class="text-right"><?= SMONEY." ".Utils::formatMoney($subtotal); ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="3" class="text-right">Envio:</th>
+                                            <td class="text-right"><?= SMONEY." ".Utils::formatMoney($order['shipping_cost']); ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="3" class="text-right">Iva:</th>
+                                            <td class="text-right"><?=SMONEY." ".Utils::formatMoney($iva);?></td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="3" class="text-right">Total:</th>
+                                            <td class="text-right"><?=SMONEY." ".Utils::formatMoney($subtotal + $iva);?></td>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                                 </div>
                             </div>
