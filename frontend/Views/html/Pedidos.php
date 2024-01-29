@@ -1,3 +1,8 @@
+    
+<?php   
+    Utils::loadModalFile("pedido", ""); 
+?>
+
 <div class="content-wrapper">
     
     <section class="content-header">
@@ -31,7 +36,7 @@
                                         <th>Tipo de pago</th>
                                             <th>Dirección</th>
                                             <th>Estado de compra</th>
-                                            <!-- <th>Proceso de entrega</th> -->
+                                            <th>Proceso de entrega</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
@@ -63,20 +68,47 @@
                                     echo '</td>';
                                     echo '<td>'.$value['shipping_address'].'</td>';
                                     echo '<td>'.$value['status'].'</td>';
-                                    // echo '<td>';
+                                    echo '<td>';
+                                        $output = '';
+
+                                        if (!empty($value['reviewed_date'])) {
+                                            $output .= '<li class="pl-5 ml-5">';
+                                            $output .= '<h5>' . date('d/m/Y', strtotime($value['reviewed_date'])) . '</h5>';
+                                            $output .= '<p class="font-weight-bold text-success">Revisado <i class="nav-icon fas fa-check"></i></p>';
+                                            $output .= '<p>'. ($value['reviewed_comment'] != null ? $value['reviewed_comment'] : "Hemos recibido su pedido, iniciamos proceso de entrega.") .'</p>';
+                                            $output .= '</li>';
+
+                                            if (!empty($value['shipping_date'])) {
+                                                $output .= '<li class="pl-5 ml-5">';
+                                                $output .= '<h5>' . date('d/m/Y', strtotime($value['shipping_date'])) . '</h5>';
+                                                $output .= '<p class="font-weight-bold text-success">Enviado <i class="nav-icon fas fa-check"></i></p>';
+                                                $output .= '<p>'. ($value['shipping_comment'] != null ? $value['shipping_comment'] : "Su pedido ha sido despachado y está en ruta hacia tu destino.") .'</p>';
+                                                $output .= '</li>';
+
+                                                if (!empty($value['delivery_date'])) {
+                                                    $output .= '<li class="pl-5 ml-5">';
+                                                    $output .= '<h5>' . date('d/m/Y', strtotime($value['delivery_date'])) . '</h5>';
+                                                    $output .= '<p class="font-weight-bold text-success">Entregado <i class="nav-icon fas fa-check"></i></p>';
+                                                    $output .= '<p>'. ($value['delivery_comment'] != null ? $value['delivery_comment'] : "¡Felicidades! Su pedido ha sido entregado satisfactoriamente.") .'</p>';
+                                                    $output .= '</li>';
+                                                }
+                                            }
+                                            echo '<ul class="timeline">'.$output.'</ul>';
+                                        }
                                     ?>
-                                            <!-- <ul class="timeline">
-                                                <li class="pl-5 ml-5">
-                                                    <h5><?=date('d/m/Y', strtotime($value['dateCreate']));?></h5>
-                                                    <p class="font-weight-bold text-success"><?=$value['process'];?> <i class="nav-icon fas fa-check"></i></p>
-                                                </li>
-                                            </ul>                                      -->
+                                            
                                     <?php
-                                    if ($_SESSION['idUser'] == 1) {
-                                        // echo '<button type="button" class="btn btn-primary ml-2" id="btnNewProduct"><i class="fas fa-circle-chevron-right"></i> Process</button>';
-                                        // echo '<p>Comentario: Hemos recibido tu pedido, iniciamos proceso de entrega.</p>';
+
+                                    if ($_SESSION['idUser'] == 1 && $value['status'] != "Canceled") {
+                                        $btn_progress = '<button type="button" class="btn btn-primary btn-sm btn_next-process" id="'.$id_order.'">Next process</button>';
+                                        if (!empty($value['reviewed_date'])) {
+                                            echo empty($value['shipping_date']) && empty($value['delivery_date']) ? $btn_progress : (!empty($value['shipping_date']) && empty($value['delivery_date']) ? $btn_progress : (!empty($value['shipping_date']) && !empty($value['delivery_date']) ? "" : $btn_progress));
+                                        } else {
+                                            echo $btn_progress;
+                                        }
                                     }
-                                    // echo '</td>';
+                                    
+                                    echo '</td>';
                                     echo '<td><div class="text-center">'.$btnWatch.' '.$btnDelete.'</div></td>';
                                 echo'</tr>';
 

@@ -613,6 +613,24 @@
 				Utils::dep($asunto);
 				
 			?>
+
+			<!--  -->
+			<div class="form-row">
+
+				<div class="col-2 text-right">
+
+					<label class="p-3 lead">Date:</label>
+
+				</div>
+
+				<div class="col-10 p-3">
+
+					<input type="date" class="form-control" name="date" value="2021-10-25" required="">
+
+				</div>
+
+			</div>
+			<!--  -->
 		</div>
 		
 	</div>

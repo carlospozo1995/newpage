@@ -46,8 +46,15 @@
                                         <br>
                                         <span><strong>Estado-pago:</strong> <?=$order['status'];?></span>
                                         <br>
-                                        <!-- <span><strong>Estado-envio:</strong> <?=$order['process'];?></span> -->
-                                        <!-- <br> -->
+                                        <?php
+                                        if (!empty($order['reviewed_date'])) {
+                                            $status = empty($order['shipping_date']) && empty($order['delivery_date']) ? "Revisado" : (!empty($order['shipping_date']) && empty($order['delivery_date']) ? "Enviado" : (!empty($order['shipping_date']) && !empty($order['delivery_date']) ? "Entregado" : '<span class="spinner-border spinner-border-sm"></span>'));
+                                        } else {
+                                            $status = '<span class="spinner-border spinner-border-sm"></span>';
+                                        }
+                                        ?>
+                                        <span><strong>Estado-envio: </strong> <?=$status;?></span>
+                                        <br>
                                         <span><strong>Total:</strong> <?=SMONEY." ".Utils::formatMoney($order['total']);?></span>
                                     </address>
                                 </div>

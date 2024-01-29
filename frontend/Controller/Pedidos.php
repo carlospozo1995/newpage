@@ -17,8 +17,27 @@
 
 			switch ($action) {
 
-                case " ":
-                    return false;
+                case "statusOrder":
+					try {
+						if (isset($_POST)) {
+							$id_order = Utils::desencriptar($_POST['id_order']);
+
+							if (!empty($id_order)) {
+								$request = Models_Pedidos::getStatusOrder($id_order);
+							}else{
+								throw new Exception("Ha ocurrido un error. Inténtelo de nuevo.");
+								die();
+							}
+						}else{
+							throw new Exception("Ha ocurrido un error. Inténtelo de nuevo.");
+							die();
+						}
+					} catch (Exception $e) {
+						$status = false;
+						$msg = $e->getMessage();
+					}
+					$data = array("status" => $status, "msg" => $msg, "request" => $request);
+					echo json_encode($data);
                 break;
 
 				default:

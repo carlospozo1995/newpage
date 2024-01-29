@@ -14,7 +14,6 @@
             $dataOrder = Models_Pedidos::getOrder($id_order); 
             
             if (!empty($dataOrder)) {
-                // Utils::dep($dataOrder);
                 View::renderPage('Orden', $dataOrder);
             }else{
                 header('Location: '.BASE_URL.'Dashboard');

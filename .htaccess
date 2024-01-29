@@ -64,6 +64,7 @@ RewriteRule ^(banners/|banners|Banners)/delBannerCtg/$ %{ENV:REWRITEBASE}index.p
 RewriteRule ^(banners/|banners|Banners)/delBannerProd/$ %{ENV:REWRITEBASE}index.php?show=banners&action=delBannerProd [L]
 
 RewriteRule ^(pedidos/|pedidos|Pedidos)$ %{ENV:REWRITEBASE}index.php?show=pedidos [L]
+RewriteRule ^(pedidos/|pedidos|Pedidos)/statusOrder/$ %{ENV:REWRITEBASE}index.php?show=pedidos&action=statusOrder [L]
 RewriteRule ^orden/([a-zA-Z0-9]+)$ %{ENV:REWRITEBASE}index.php?show=Orden&order=$1 [L]
 
 #PAGES-STORE
