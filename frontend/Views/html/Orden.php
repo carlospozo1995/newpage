@@ -53,7 +53,7 @@
                                             $status = '<span class="spinner-border spinner-border-sm"></span>';
                                         }
                                         ?>
-                                        <span><strong>Estado-envio: </strong> <?=$status;?></span>
+                                        <span><strong>Proceso-entrega: </strong> <?=$status;?></span>
                                         <br>
                                         <span><strong>Total:</strong> <?=SMONEY." ".Utils::formatMoney($order['total']);?></span>
                                     </address>

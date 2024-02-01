@@ -1,5 +1,6 @@
 'use strict';
 var tablePedidos;
+var rowTable;
 
 $(document).ready(function () {
    
@@ -22,8 +23,9 @@ $(document).ready(function () {
     });
 
 
-    if ($(".btn_next-process").length) {
-        $(".btn_next-process").click(function name() {
+
+    if ($("#tablePedidos .btn_next-process").length) {
+        $('#tablePedidos').on('click', '.btn_next-process',function name() {
             let this_btn = $(this);
             let id_order = this_btn.attr('id');
 
@@ -68,7 +70,7 @@ $(document).ready(function () {
                             `);
                             $('#modalFormStatus').modal('show');
 
-                            fntSave();
+                            fntSave(id_order, $("#tablePedidos .btn_next-process"));
                         }else{
                             msgShow(3, 'Error', data.msg)
                         }
@@ -107,37 +109,89 @@ $(document).ready(function () {
         `;
     }
 
-    function fntSave() {
+    function fntSave(id_order, element) {
         $(".btn-save").click(function (e) {
             e.preventDefault();
-            let value_status = $(".status-type").val();
 
-            if (value_status != "") {
-                let fcont = $(".status-type").parent();
-                let dateVal = fcont.find($(".date-val")).val();
-                let commentVal = fcont.find($(".comment-val")).val();
-                
-                if (dateVal != "") {
+            if ($(".status-type").length == 1) {
+                let value_status = $(".status-type").val();
 
-                    let url = base_url + "//";
-                    $.ajax({
-                        url: url,
-                        dataType: 'JSON',
-                        method: 'POST',
-                        data: {
-                            value_status: value_status,
-                            dateVal: dateVal,
-                            commentVal: commentVal
-                        },
-                        success: function(data){}
-                    });
+                if (value_status != "") {
+                    let fcont = $(".status-type").parent();
+                    let dateVal = fcont.find($(".date-val")).val();
+                    let commentVal = fcont.find($(".comment-val")).val();
+                    
+                    if (dateVal != "") {
+    
+                        let url = base_url + "pedidos/updateStatusOrder/";
+                        $.ajax({
+                            url: url,
+                            dataType: 'JSON',
+                            method: 'POST',
+                            data: {
+                                id: id_order,
+                                amountEle: $(".status-type").length,
+                                status: value_status,
+                                date: dateVal,
+                                comment: commentVal
+                            },
+                            beforeSend: function() {
+    
+                            },
+                            success: function(data){
 
+                                if (data.status) {
+                                    let objectDate = dateVal.split("-");
+                                    let formatDate = objectDate[2] + "/" + objectDate[1] + "/" + objectDate[0];
+                                    let status, message, index;
+                                    rowTable = element.closest("tr")[0];
+
+                                    if (data.request == 1) {
+                                        index = 0
+                                        status = "Revisado";
+                                        message = commentVal != "" ? commentVal : "Hemos recibido su pedido, iniciamos proceso de entrega.";
+                                    }else if (data.request == 2) {  
+                                        index = 1
+                                        status = "Enviado";
+                                        message = commentVal != "" ? commentVal : "Su pedido ha sido despachado y está en ruta hacia su destino.";
+                                    }else{
+                                        index = 2
+                                        status = "Entregado";
+                                        message = commentVal != "" ? commentVal : "¡Felicidades! Su pedido ha sido entregado satisfactoriamente.";
+                                        element.remove();
+                                    }
+
+                                    $(rowTable).find(".timeline li").eq(index).html(`
+                                        <h5>${formatDate}</h5>
+                                        <p class="font-weight-bold text-success">${status} <i class="nav-icon fas fa-check"></i></p>
+                                        <p>${message}</p>
+                                    `);
+
+                                    $('#modalFormStatus').modal('hide');
+                                    msgShow(1, 'Progreso de entrega', data.msg);
+                                }else{
+                                    msgShow(2, 'Atención', data.msg);
+                                }
+                            },
+                            error: function(xhr, status, error) {
+                                console.log(error);
+                            },
+                            complete: function() {
+                                
+                            }
+    
+                        });
+    
+                    }else{
+                        msgShow(2, 'Atención', "Por favor ingrese un fecha.");
+                    }
                 }else{
-                    msgShow(2, 'Atención', "Por favor ingrese un fecha.");
+                    msgShow(3, 'Error', "Ha ocurrido un error. Inténtelo de nuevo.");
                 }
             }else{
                 msgShow(3, 'Error', "Ha ocurrido un error. Inténtelo de nuevo.");
             }
+            
         })
     }
 });

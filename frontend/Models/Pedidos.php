@@ -26,6 +26,26 @@
             return $GLOBALS["db"]->selectAll($sql, array($data));
         }
 
+        static public function updateStatus($id, $date, $fielDate, $comment, $fielComment) {
+            // return $fielComment;
+            if (empty($comment)) {
+                if ($fielComment == "reviewed_comment") {
+                    $comment = "Hemos recibido su pedido, iniciamos proceso de entrega.";
+                }
+
+                if ($fielComment == "shipping_comment") {
+                    $comment = "Su pedido ha sido despachado y está en ruta hacia su destino.";
+                }
+
+                if ($fielComment == "delivery_comment") {
+                    $comment = "¡Felicidades! Su pedido ha sido entregado satisfactoriamente.";
+                }
+            }
+            $arrData = array($fielDate => $date, $fielComment => utf8_encode($comment));
+            return $GLOBALS["db"]->update("order_status", $arrData, "order_id='".$id."'");
+
+        }
+
     }
 
 
