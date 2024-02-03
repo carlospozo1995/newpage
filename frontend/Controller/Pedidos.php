@@ -18,13 +18,13 @@
 
 			switch ($action) {
 
-                case "statusOrder":
+                case "orderProgress":
 					try {
 						if (isset($_POST)) {
 							$id_order = Utils::desencriptar($_POST['id_order']);
 
 							if (!empty($id_order)) {
-								$request = Models_Pedidos::getStatusOrder($id_order);
+								$request = Models_Pedidos::getOrderProgress($id_order);
 							}else{
 								throw new Exception($errorMessage);
 								die();
@@ -41,7 +41,7 @@
 					echo json_encode($data);
                 break;
 
-				case "updateStatusOrder":
+				case "updateOrderProgress":
 					try {
 						if (isset($_POST)) {
 							$id_order = Utils::desencriptar($_POST['id']);
@@ -49,6 +49,7 @@
 							$status = $_POST['status'];
 							$date = $_POST['date'];
 							$comment = $_POST['comment'];
+							$status_order = false;
 
 							if ($amountEle == 1) {
 								if (empty($id_order) || empty($status) || empty($date)) {
@@ -62,7 +63,7 @@
 									throw new Exception($errorMessage);
 								}
 							
-								$dataStatus = Models_Pedidos::getStatusOrder($id_order);
+								$dataStatus = Models_Pedidos::getOrderProgress($id_order);
 							
 								if (empty($dataStatus)) {
 									throw new Exception($errorMessage);
@@ -117,7 +118,16 @@
 									break;
 								}
 
-								$updateStatus = Models_Pedidos::updateStatus($id_order, $date, $statusFields[$status], $comment, $commentFields[$status]);
+								$updateStatus = Models_Pedidos::updateOrderProgress($id_order, $date, $statusFields[$status], $comment, $commentFields[$status]);
+
+								if ($status == 1 && $updateStatus > 0) {
+									$status_order = Models_Pedidos::getStatusOrder($id_order);
+
+									if ($status_order['status'] == "Progress") {
+										$status_order = Models_Pedidos::updateStatusOrder($id_order);
+										// Si no se cumple la actualizacion tal vez enviaar un email al administrado.
+									}
+								}
 
 								if ($updateStatus > 0) {
 									$request = $status;
@@ -137,7 +147,7 @@
 						$status = false;
 						$msg = $e->getMessage();
 					}
-					$data = array("status" => $status, "request" => $request, "msg" => $msg);
+					$data = array("status" => $status, "request" => $request, "msg" => $msg, "statusOrder" => $status_order);
 					echo json_encode($data);
 
 				break;

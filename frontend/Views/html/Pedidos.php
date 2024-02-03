@@ -29,11 +29,11 @@
                                 <table id="tablePedidos" class="table_order table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                        <th>ID</th>
-                                        <th># Pedido</th>
-                                        <th>Fecha</th>
-                                        <th>Total</th>
-                                        <th>Tipo de pago</th>
+                                            <th>ID</th>
+                                            <th># Pedido</th>
+                                            <th>Fecha</th>
+                                            <th>Total</th>
+                                            <th>Tipo de pago</th>
                                             <th>Dirección</th>
                                             <th>Estado de compra</th>
                                             <th>Proceso de entrega</th>
@@ -48,14 +48,19 @@
 
                                 $btnWatch = '';
                                 $btnDelete = '';
+                                $btnCancelled = '';
                                 $id_order =  Utils::encriptar($value["id_order"]);
 
                                 if (!empty($_SESSION['module']['ver'])) {
-                                    $btnWatch = '<a href="'.BASE_URL.'orden/'.$id_order.'" class="btn btn-secondary btn-sm"><i class="fa-solid fa-eye"></i></a>';
+                                    $btnWatch = '<a href="'.BASE_URL.'orden/'.$id_order.'" class="btn btn-secondary btn-sm" title="Ver Pedido"><i class="fa-solid fa-eye"></i></a>';
                                 }
 
                                 if (!empty($_SESSION['module']['eliminar']) && $_SESSION['idUser'] == 1) {
                                     $btnDelete = '<button type="button" class="btn btn-danger btn-sm" onclick="deleteData(this, \''.$id_order.'\')" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>';
+                                }
+
+                                if ($value['status'] == "Progress") {
+                                    $btnCancelled = '<button type="button" class="btn btn-danger btn-sm btn_order-cancelled" id="'.$id_order.'" title="Cancelar Pedido"><i class="fa-solid fa-ban"></i></button>';
                                 }
 
                                 echo'<tr id="'.$id_order.'">';
@@ -67,11 +72,7 @@
                                     echo $value['payment_type_id'] == 1 ? "Tarjeta" : "Transferencia";
                                     echo '</td>';
                                     echo '<td>'.$value['shipping_address'].'</td>';
-                                    echo '<td>';
-
-                                    echo !empty($value['reviewed_date']) ? $value['status'].' <button type="button" class="btn btn-danger btn-sm" tilte="Eliminar"><i class="fa-solid fa-trash"></i></button>' : $value['status'];
-
-                                    echo '</td>';
+                                    echo '<td class="text-center">'.$value['status'].'</td>';
                                     echo '<td>';
 
                                     if ($value['status'] != "Canceled") {
@@ -113,7 +114,7 @@
                                     }
                                     
                                     echo '</td>';
-                                    echo '<td><div class="text-center">'.$btnWatch.' '.$btnDelete.'</div></td>';
+                                    echo '<td><div class="text-center">'.$btnWatch.' '.$btnCancelled.'</div></td>';
                                 echo'</tr>';
 
                                 $id_row++;

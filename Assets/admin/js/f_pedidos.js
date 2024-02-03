@@ -29,7 +29,7 @@ $(document).ready(function () {
             let id_order = this_btn.attr('id');
 
             if (id_order != "") {
-                let url = base_url + "pedidos/statusOrder/";
+                let url = base_url + "pedidos/orderProgress/";
                 $.ajax({
                     url: url,
                     dataType: 'JSON',
@@ -122,7 +122,7 @@ $(document).ready(function () {
                     
                     if (dateVal != "") {
     
-                        let url = base_url + "pedidos/updateStatusOrder/";
+                        let url = base_url + "pedidos/updateOrderProgress/";
                         $.ajax({
                             url: url,
                             dataType: 'JSON',
@@ -177,6 +177,14 @@ $(document).ready(function () {
                                     let newContent = `<ul class="timeline list-inline">${listContent.html()}</ul> ${index != 2 ? '<button type="button" class="btn btn-primary btn-sm btn_next-process" id="'+id_order+'">Next process</button>' : ''}`;
                                     $("#tablePedidos").DataTable().cell(rowTable, 7).data(newContent).draw(false);
 
+                                    if (data.statusOrder) {
+                                        $("#tablePedidos").DataTable().cell(rowTable, 6).data("Approved").draw(false);
+                                        $("#tablePedidos").DataTable().cell(rowTable, 8).data(`
+                                        <div class="text-center">
+                                            <a href="${base_url}orden/${id_order}" class="btn btn-secondary btn-sm" title="Ver Pedido"><i class="fa-solid fa-eye"></i></a>
+                                        </div>`).draw(false);
+                                    }
+
                                     $('#modalFormStatus').modal('hide');
                                     msgShow(1, 'Progreso de entrega', data.msg);
                                 }else{
@@ -202,6 +210,17 @@ $(document).ready(function () {
                 msgShow(3, 'Error', "Ha ocurrido un error. Inténtelo de nuevo.");
             }
             
+        })
+    }
+
+    if ($("#tablePedidos .btn_order-cancelled").length) {
+        $('#tablePedidos').on('click', '.btn_order-cancelled',function name() {
+            let this_btn = $(this);
+            let id_order = this_btn.attr('id');
+
+            if (id_order != "") {
+                console.log(this_btn);
+            }
         })
     }
 });
