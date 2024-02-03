@@ -219,7 +219,20 @@ $(document).ready(function () {
             let id_order = this_btn.attr('id');
 
             if (id_order != "") {
-                console.log(this_btn);
+                let url = base_url + "pedidos/orderCancelled/";
+                $.ajax({
+                    url: url,
+                    dataType: 'JSON',
+                    method: 'POST',
+                    data: {
+                        id_order: id_order,
+                    },
+                    success: function(data){
+                        console.log(data)
+                    }
+                });
+            }else{
+                msgShow(3, 'Error', "Ha ocurrido un error. Inténtelo de nuevo.");
             }
         })
     }

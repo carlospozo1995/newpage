@@ -152,6 +152,37 @@
 
 				break;
 
+				case "orderCancelled":
+					try {
+						if (isset($_POST)) {
+							$id_order = Utils::desencriptar($_POST['id_order']);
+
+							if (!empty($id_order)) {
+								$request = Models_Pedidos::getOrder($id_order);
+
+								if (empty($request)) {
+									throw new Exception($errorMessage);
+									die();
+								}
+
+								// actualizacion del stock de cada producto
+								// actualizacion de Progress a Cancelled del status de la tabla orders
+							}else{
+								throw new Exception($errorMessage);
+								die();
+							}
+						}else{
+							throw new Exception($errorMessage);
+							die();
+						}
+					} catch (Exception $e) {
+						$status = false;
+						$msg = $e->getMessage();
+					}
+					$data = array("status" => $status, "msg" => $msg);
+					echo json_encode($data);
+                break;
+
 				default:
 					Utils::permissionsData(MPEDIDOS);
 
