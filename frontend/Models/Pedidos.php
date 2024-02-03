@@ -30,7 +30,7 @@
             // return $fielComment;
             if (empty($comment)) {
                 if ($fielComment == "reviewed_comment") {
-                    $comment = "Hemos recibido su pedido, iniciamos proceso de entrega.";
+                    $comment = "Hemos revisado su pedido, iniciamos proceso de entrega.";
                 }
 
                 if ($fielComment == "shipping_comment") {

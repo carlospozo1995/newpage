@@ -8,6 +8,7 @@ $(document).ready(function () {
     tablePedidos = $("#tablePedidos").DataTable({
         "aProcessing": true,
         "aServerSide":true,
+        "autoWidth": false,
         "language":{
             "url":"//cdn.datatables.net/plug-ins/1.12.1/i18n/es-ES.json"
         },
@@ -21,8 +22,6 @@ $(document).ready(function () {
         "order":[[0,"asc"]],
         "iDisplayLength":25,
     });
-
-
 
     if ($("#tablePedidos .btn_next-process").length) {
         $('#tablePedidos').on('click', '.btn_next-process',function name() {
@@ -70,7 +69,7 @@ $(document).ready(function () {
                             `);
                             $('#modalFormStatus').modal('show');
 
-                            fntSave(id_order, $("#tablePedidos .btn_next-process"));
+                            fntSave(id_order, this_btn);
                         }else{
                             msgShow(3, 'Error', data.msg)
                         }
@@ -145,11 +144,11 @@ $(document).ready(function () {
                                     let formatDate = objectDate[2] + "/" + objectDate[1] + "/" + objectDate[0];
                                     let status, message, index;
                                     rowTable = element.closest("tr")[0];
-
+                                    
                                     if (data.request == 1) {
                                         index = 0
                                         status = "Revisado";
-                                        message = commentVal != "" ? commentVal : "Hemos recibido su pedido, iniciamos proceso de entrega.";
+                                        message = commentVal != "" ? commentVal : "Hemos revisado su pedido, iniciamos proceso de entrega.";
                                     }else if (data.request == 2) {  
                                         index = 1
                                         status = "Enviado";
@@ -158,14 +157,25 @@ $(document).ready(function () {
                                         index = 2
                                         status = "Entregado";
                                         message = commentVal != "" ? commentVal : "¡Felicidades! Su pedido ha sido entregado satisfactoriamente.";
-                                        element.remove();
+                                    }  
+                                   
+                                    let ischild = $(rowTable).hasClass("child");
+                                    if(ischild){
+                                        rowTable = $(rowTable).prev()[0];
                                     }
 
-                                    $(rowTable).find(".timeline li").eq(index).html(`
+                                    let listContent = $(rowTable).find("ul.timeline");
+
+                                    let liElement = listContent.find("li:eq(" + index + ")");
+                                    liElement.html(`
                                         <h5>${formatDate}</h5>
                                         <p class="font-weight-bold text-success">${status} <i class="nav-icon fas fa-check"></i></p>
                                         <p>${message}</p>
                                     `);
+
+
+                                    let newContent = `<ul class="timeline list-inline">${listContent.html()}</ul> ${index != 2 ? '<button type="button" class="btn btn-primary btn-sm btn_next-process" id="'+id_order+'">Next process</button>' : ''}`;
+                                    $("#tablePedidos").DataTable().cell(rowTable, 7).data(newContent).draw(false);
 
                                     $('#modalFormStatus').modal('hide');
                                     msgShow(1, 'Progreso de entrega', data.msg);

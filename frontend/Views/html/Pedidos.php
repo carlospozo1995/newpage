@@ -74,8 +74,7 @@
                                     echo '</td>';
                                     echo '<td>';
 
-                                    if ($_SESSION['idUser'] == 1 && $value['status'] != "Canceled") {
-
+                                    if ($value['status'] != "Canceled") {
                                         echo '<ul class="timeline list-inline">';
 
                                             $stages = [
@@ -99,6 +98,11 @@
                                             }
 
                                         echo '</ul>';
+                                    }else{
+                                        echo '<span class="text-danger d-flex"><i class="fa-solid fa-xmark text-center w-100"></i></span>';
+                                    }
+
+                                    if ($_SESSION['idUser'] == 1 && $value['status'] != "Canceled") {
 
                                         $btn_progress = '<button type="button" class="btn btn-primary btn-sm btn_next-process" id="'.$id_order.'">Next process</button>';
                                         if (!empty($value['reviewed_date'])) {
