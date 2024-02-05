@@ -40,7 +40,7 @@
                     $comment = "¡Felicidades! Su pedido ha sido entregado satisfactoriamente.";
                 }
             }
-            $arrData = array($fielDate => $date, $fielComment => utf8_encode($comment));
+            $arrData = array($fielDate => $date, $fielComment => $comment);
             return $GLOBALS["db"]->update("order_progress", $arrData, "order_id='".$id."'");
         }
 

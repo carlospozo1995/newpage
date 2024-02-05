@@ -152,14 +152,15 @@
                 if ( $i != 1 ) {
                     $query .= ",";
                 }
+                
                 if($value === null){
                     $query .= $col . '= NULL';
                 }else if(substr_count($value, '"') > 0){ 
-                    $query .= $col . "='" . utf8_decode($value) . "'";
+                    $query .= $col . "='" . $value . "'";
                 }else if(is_int($value)){
-                    $query .= $col . '=' . utf8_decode($value);
+                    $query .= $col . '=' . $value;
                 }else{
-                    $query .= $col . '="' . utf8_decode($value) . '"';
+                    $query .= $col . "='" . $value . "'";
                 }
                 $i++;
             }
@@ -191,7 +192,7 @@
 
                 foreach ($data[$key] as $key1 => $value1) {
                     $valor = '';
-
+                    
                     if(!isset($data[($key - 1)])){
                       $campos .= $key1.',';
                     }

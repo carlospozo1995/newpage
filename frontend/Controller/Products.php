@@ -32,8 +32,8 @@
 								}
 
 								$id = $_POST['id_product'];
-								$name = utf8_encode($_POST['name_product']);
-								$desMain = utf8_encode($_POST['desMainProd']);
+								$name = $_POST['name_product'];
+								$desMain = $_POST['desMainProd'];
 								$desGeneral = empty($_POST['desGeneralProd']) ? null : $_POST['desGeneralProd'];
 								$option_list = Utils::desencriptar($_POST['listCategories']);
 								$brand = strtoupper($_POST['brand']);
@@ -52,9 +52,9 @@
 								$bannerWidth = $_FILES['widthBanner'];	
 								$tags = empty($_POST['tagsProduct']) ? null : $_POST['tagsProduct'];
 												
-								$sliderDes = empty($_POST['sliderDes']) ? null : utf8_encode($_POST['sliderDes']);
+								$sliderDes = empty($_POST['sliderDes']) ? null : $_POST['sliderDes'];
 
-								$nameNotSpace = str_replace(' ', '-', Utils::replaceVowel(utf8_decode($name)));
+								$nameNotSpace = str_replace(' ', '-', Utils::replaceVowel($name));
 
 								if((!empty($_POST['cantDues']) && empty($_POST['priceDues'])) || (empty($_POST['cantDues']) && !empty($_POST['priceDues']))){
 									throw new Exception("Si va agregar cuotas asegúrese de llenar los campos requeridos.");
@@ -107,6 +107,7 @@
 									}
 									
 									$request = Models_Products::insertProduct($name, $desMain, $desGeneral, $tags, $undef_sliderDst, $undef_sliderMbl, $sliderDes, $undef_bannerlgP, $undef_bannerWidth, $option_list, $brand, $code, $price, $stock, $prevPrice, $discount, $cantDues, $priceDues, $status);
+
 								}else{
 									$option = 2;
 									// UPDATE SLIDERS (MOBILE - DESKTOP)

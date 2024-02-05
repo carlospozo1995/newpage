@@ -16,7 +16,7 @@
 
         static public function insertProduct($name, $desMain, $desGeneral, $tags, $sliderDst, $sliderMbl, $sliderDes, $bannerlgP, $bannerWidth, $option_list, $brand, $code, $price, $stock, $prevPrice, $discount, $cantDues, $priceDues, $status)
         {   
-            $urlVowel = Utils::replaceVowel(utf8_decode($name));
+            $urlVowel = Utils::replaceVowel($name);
             $sql = "SELECT * FROM products WHERE code = ?";
             $request = $GLOBALS["db"]->auto_array($sql, array($code));
 
@@ -24,8 +24,8 @@
             $r_nameCtg = $GLOBALS["db"]->auto_array($sql_nameCtg, array($option_list));
 
             if (empty($request)) {
-                $arrData[] = array("category_id" => $option_list, "name_category" => utf8_encode($r_nameCtg['name_category']), "code" => $code, "name_product" => utf8_decode($name), "desMain" => utf8_decode($desMain), "desGeneral" => $desGeneral, "tags" => $tags, "sliderMbl" => $sliderMbl, "sliderDst" => $sliderDst, "sliderDes" => utf8_decode($sliderDes),  "banner_large" => $bannerlgP, "banner_width" => $bannerWidth, "brand" => $brand, "price" => $price , "stock" => $stock, "prevPrice" => $prevPrice, "discount" => $discount, "cantDues" => $cantDues, "priceDues" => $priceDues, "url" => preg_replace('/[^a-z0-9]+/', '-', strtolower($urlVowel)), "status" => $status); 
-                return $GLOBALS["db"]->insert_multiple("products", $arrData, true);
+                $arrData[] = array("category_id" => $option_list, "name_category" =>$r_nameCtg['name_category'], "code" => $code, "name_product" =>$name, "desMain" =>$desMain, "desGeneral" => $desGeneral, "tags" => $tags, "sliderMbl" => $sliderMbl, "sliderDst" => $sliderDst, "sliderDes" =>$sliderDes,  "banner_large" => $bannerlgP, "banner_width" => $bannerWidth, "brand" => $brand, "price" => $price , "stock" => $stock, "prevPrice" => $prevPrice, "discount" => $discount, "cantDues" => $cantDues, "priceDues" => $priceDues, "url" => preg_replace('/[^a-z0-9]+/', '-', strtolower($urlVowel)), "status" => $status); 
+                return $GLOBALS["db"]->insert_multiple("products", $arrData);
             }else{
                 return "exist";
             }
@@ -65,8 +65,8 @@
 
             
             if (empty($request)) {
-                $urlVowel = Utils::replaceVowel(utf8_decode($name));
-                $arrData = array("category_id" => $option_list, "name_category" => utf8_encode($r_nameCtg['name_category']), "code" => $code, "name_product" => $name, "desMain" => $desMain, "desGeneral" => $desGeneral, "tags" => $tags, "sliderMbl" => $sliderMbl, "sliderDst" => $sliderDst, "sliderDes" => $sliderDes, "banner_large" => $bannerlgP, "banner_width" => $bannerWidth, "brand" => $brand, "price" => $price , "stock" => $stock, "prevPrice" => $prevPrice, "discount" => $discount, "cantDues" => $cantDues, "priceDues" => $priceDues, "url" => preg_replace('/[^a-z0-9]+/', '-', strtolower($urlVowel)), "status" => $status); 
+                $urlVowel = Utils::replaceVowel($name);
+                $arrData = array("category_id" => $option_list, "name_category" => $r_nameCtg['name_category'], "code" => $code, "name_product" => $name, "desMain" => $desMain, "desGeneral" => $desGeneral, "tags" => $tags, "sliderMbl" => $sliderMbl, "sliderDst" => $sliderDst, "sliderDes" => $sliderDes, "banner_large" => $bannerlgP, "banner_width" => $bannerWidth, "brand" => $brand, "price" => $price , "stock" => $stock, "prevPrice" => $prevPrice, "discount" => $discount, "cantDues" => $cantDues, "priceDues" => $priceDues, "url" => preg_replace('/[^a-z0-9]+/', '-', strtolower($urlVowel)), "status" => $status); 
                 $result = $GLOBALS["db"]->update("products", $arrData, "id_product='".$id."'");
             }else{
                 $result = "exist";

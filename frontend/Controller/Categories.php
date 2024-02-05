@@ -46,7 +46,7 @@
 								die();
 							}else{
 								$id = $_POST['id_category'];
-								$name = utf8_encode($_POST['name_category']);
+								$name = $_POST['name_category'];
 								$option_list = $_POST['listCategories'] == 0 && is_numeric($_POST['listCategories']) ? null : Utils::desencriptar($_POST['listCategories']);
 								$status = $_POST['listStatus'];
 
@@ -56,10 +56,10 @@
 								$sliderMbl = $_FILES['sliderMbl'];
 								$sliderDst = $_FILES['sliderDst'];		
 												
-								$sliderDesOne = empty($_POST['sliderDesOne']) ? null : utf8_encode($_POST['sliderDesOne']);
-								$sliderDesTwo = empty($_POST['sliderDesTwo']) ? null : utf8_encode($_POST['sliderDesTwo']);
+								$sliderDesOne = empty($_POST['sliderDesOne']) ? null : $_POST['sliderDesOne'];
+								$sliderDesTwo = empty($_POST['sliderDesTwo']) ? null : $_POST['sliderDesTwo'];
 
-								$nameNotSpace = str_replace(' ', '-', Utils::replaceVowel(utf8_decode($name)));
+								$nameNotSpace = str_replace(' ', '-', Utils::replaceVowel($name));
 							
 								if (empty($id)) {
 									$option = 1;

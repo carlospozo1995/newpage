@@ -23,12 +23,12 @@
 
         static public function insertCategory($name, $photo, $bannerlg, $icon, $sliderDst, $sliderMbl, $sliderDesOne, $sliderDesTwo, $option_list, $status)
         {
-            $urlVowel = Utils::replaceVowel(utf8_decode($name));
+            $urlVowel = Utils::replaceVowel($name);
             $sql = "SELECT * FROM categories WHERE name_category = ? AND fatherCategory is null";
             $request = $GLOBALS["db"]->auto_array($sql, array($name));
 
             if (empty($request)) {
-                $arrData[] = array("name_category" => utf8_decode($name), "photo" => $photo, "banner_large" => $bannerlg, "icon" => $icon, "sliderDst" => $sliderDst, "sliderMbl" => $sliderMbl, "sliderDesOne" => utf8_decode($sliderDesOne), "sliderDesTwo" => utf8_decode($sliderDesTwo), "fatherCategory" => $option_list, "url" => preg_replace('/[^a-z0-9]+/', '-', strtolower($urlVowel)), "status" => $status); 
+                $arrData[] = array("name_category" => $name, "photo" => $photo, "banner_large" => $bannerlg, "icon" => $icon, "sliderDst" => $sliderDst, "sliderMbl" => $sliderMbl, "sliderDesOne" => $sliderDesOne, "sliderDesTwo" => $sliderDesTwo, "fatherCategory" => $option_list, "url" => preg_replace('/[^a-z0-9]+/', '-', strtolower($urlVowel)), "status" => $status); 
                 return $GLOBALS["db"]->insert_multiple("categories", $arrData);
             }else{
                 return "exist";
@@ -63,7 +63,7 @@
             $request = $GLOBALS["db"]->auto_array($sql, array($name, $id));
             
             if(empty($request)){
-                $urlVowel = Utils::replaceVowel(utf8_decode($name));
+                $urlVowel = Utils::replaceVowel($name);
                 $arrData = array("name_category" => $name, "photo" => $photo, "banner_large" => $bannerlg, "icon" => $icon, "sliderDst" => $sliderDst, "sliderMbl" => $sliderMbl, "sliderDesOne" => $sliderDesOne, "sliderDesTwo" => $sliderDesTwo, "fatherCategory" => $option_list, "url" => preg_replace('/[^a-z0-9]+/', '-', strtolower($urlVowel)), "status" => $status);
                 $result = $GLOBALS["db"]->update("categories", $arrData, "id_category='".$id."'");
 
@@ -73,7 +73,9 @@
                         $id_categories .= Utils::desencriptar($item['id_son']) . ',';
                     }
                     $id_categories = rtrim($id_categories, ',');
-                    $GLOBALS["db"]->update("categories", array("status" => $status), "id_category in(".$id_categories.")");                    
+                    if (!empty($id_categories)) {
+                        $GLOBALS["db"]->update("categories", array("status" => $status), "id_category in(".$id_categories.")");
+                    }                    
                 }
             }else{
                 $result = "exist";

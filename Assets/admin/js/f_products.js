@@ -119,7 +119,7 @@ $(document).ready(function () {
                 return false;
             }
 
-            // loading.css("display","flex");
+            loading.css("display","flex");
             var formData = new FormData(e.target);
             let url_ajax = base_url + "products/setProduct/";
             $.ajax({
