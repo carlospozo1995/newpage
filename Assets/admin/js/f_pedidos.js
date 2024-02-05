@@ -215,25 +215,55 @@ $(document).ready(function () {
 
     if ($("#tablePedidos .btn_order-cancelled").length) {
         $('#tablePedidos').on('click', '.btn_order-cancelled',function name() {
-            let this_btn = $(this);
-            let id_order = this_btn.attr('id');
 
-            if (id_order != "") {
-                let url = base_url + "pedidos/orderCancelled/";
-                $.ajax({
-                    url: url,
-                    dataType: 'JSON',
-                    method: 'POST',
-                    data: {
-                        id_order: id_order,
-                    },
-                    success: function(data){
-                        console.log(data)
+            Swal.fire({
+                title: 'Cancelar Pedido',
+                text: "Realmente quiere cancelar el pedido!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, cancelar!',
+                cancelButtonText: 'No'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    let this_btn = $(this);
+                    let id_order = this_btn.attr('id');
+
+                    if (id_order != "") {
+                        let url = base_url + "pedidos/orderCancelled/";
+                        $.ajax({
+                            url: url,
+                            dataType: 'JSON',
+                            method: 'POST',
+                            data: {
+                                id_order: id_order,
+                            },
+                            success: function(data){
+                                if (data.status) {
+                                    rowTable = this_btn.closest("tr")[0];
+                                    let ischild = $(rowTable).hasClass("child");
+                                    if(ischild){
+                                        rowTable = $(rowTable).prev()[0];
+                                    }
+                                    $("#tablePedidos").DataTable().cell(rowTable, 6).data("Canceled").draw(false);
+                                    $("#tablePedidos").DataTable().cell(rowTable, 7).data('<span class="text-danger d-flex"><i class="fa-solid fa-xmark text-center w-100"></i></span>').draw(false);
+                                    $("#tablePedidos").DataTable().cell(rowTable, 8).data(`
+                                    <div class="text-center">
+                                        <a href="${base_url}orden/${id_order}" class="btn btn-secondary btn-sm" title="Ver Pedido"><i class="fa-solid fa-eye"></i></a>
+                                    </div>`).draw(false);
+
+                                    console.log(rowTable)
+                                }else{
+                                    msgShow(3, 'Error', data.msg);
+                                }
+                            }
+                        });
+                    }else{
+                        msgShow(3, 'Error', "Ha ocurrido un error. Inténtelo de nuevo.");
                     }
-                });
-            }else{
-                msgShow(3, 'Error', "Ha ocurrido un error. Inténtelo de nuevo.");
-            }
+                }
+            });
         })
     }
 });

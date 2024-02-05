@@ -62,7 +62,7 @@
 
 			</div>
 			<div class="col-lg-6 text-center mt-6 mt-lg-0">
-				<a class="btn btn-deep-blue font-weight-bold" href="">PEDIDOS</a>
+				<a class="btn btn-deep-blue font-weight-bold" href="<?= BASE_URL; ?>pedidos">PEDIDOS</a>
 			</div>
 		</div>
 

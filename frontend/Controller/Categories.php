@@ -254,14 +254,14 @@
 						die();
 					}else{
 						$id_category = Utils::desencriptar(Utils::getParam("data", ""));
-
+						// print_r($id_category);
 						try {
 						 	$data_category = Models_Categories::selectCategory($id_category);
 						 	if (empty($data_category)) {
 						 		throw new Exception("Ha ocurrido un error. Intentelo mas tarde.");
 						 		die();
 						 	}else{
-						 		$data_category['option_encrypt'] = Utils::encriptar($data_category['fatherCategory']);
+						 		$data_category['option_encrypt'] = !empty($data_category['fatherCategory']) ? Utils::encriptar($data_category['fatherCategory']) : "";
 						 		
 						 		// if (!empty($data_category['photo']) && !empty($data_category['icon'])) {
 								if (!empty($data_category['icon'])) {

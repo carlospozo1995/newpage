@@ -66,7 +66,7 @@
 						$insertOrders = Models_Store::insertOrders($insertedData, "orders", false);
 						
 						if ($insertOrders > 0) {
-							Models_store::insertOrders(array("order_id" => $insertOrders), 'order_status', true);
+							Models_store::insertOrders(array("order_id" => $insertOrders), 'order_progress', true);
 							$arrDetailProducts = array();
 							// enviar correo al cliente sobre su compra
 							foreach ($orderData['orderedProducts'] as $order) {

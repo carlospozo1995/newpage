@@ -43,7 +43,7 @@ use Solarium\Support\Utility;
                         $insertOrders = Models_Store::insertOrders($insertedData, "orders", true);
                         
                         if ($insertOrders > 0) {
-                            Models_store::insertOrders(array("order_id" => $insertOrders), 'order_status', true);
+                            Models_store::insertOrders(array("order_id" => $insertOrders), 'order_progress', true);
                             $arrDetailProducts = array();
                             // enviar correo al cliente sobre su compra
                             foreach ($orderData['orderedProducts'] as $order) {
@@ -58,8 +58,8 @@ use Solarium\Support\Utility;
 									$asunto = "¡Su pedido fue realizado con éxito!";
 									
 									if (count($sendData['ordered_products']) == 1) {
-										$palabras = explode(' ', $sendData['ordered_products'][0]['name_product']);
-										$nuevoNombre = (count($palabras) > 1) ? $palabras[0] . ' ' . substr($palabras[1], 0, strlen($palabras[1]) / 2) . '...' : $sendData['ordered_products'][0]['name_product'];
+                                        $palabras = explode(' ', $sendData['ordered_products'][0]['name_product']);
+										$nuevoNombre = (count($palabras) > 1) ? $palabras[0] . ' ' . substr($palabras[1], 0, (int)(strlen($palabras[1]) / 2)) . '...' : $sendData['ordered_products'][0]['name_product'];
 										$asunto = "Su pedido de " .$nuevoNombre." ¡fue realizado con éxito!";
 									}
 									$dataEmailTest = array( "name" => $sendData['name_user'] ." ". $sendData['surname_user'],

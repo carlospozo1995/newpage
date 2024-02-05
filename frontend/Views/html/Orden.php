@@ -50,7 +50,14 @@
                                         if (!empty($order['reviewed_date'])) {
                                             $status = empty($order['shipping_date']) && empty($order['delivery_date']) ? "Revisado" : (!empty($order['shipping_date']) && empty($order['delivery_date']) ? "Enviado" : (!empty($order['shipping_date']) && !empty($order['delivery_date']) ? "Entregado" : '<span class="spinner-border spinner-border-sm"></span>'));
                                         } else {
-                                            $status = '<span class="spinner-border spinner-border-sm"></span>';
+                                            
+                                            if ($order['status'] == "Canceled") {
+                                                $status = '<span class="text-danger"><i class="fa-solid fa-xmark"></i></span>';
+                                            }else{
+                                                $status = '<span class="spinner-border spinner-border-sm"></span>'; 
+                                            }
+
+                                            
                                         }
                                         ?>
                                         <span><strong>Proceso-entrega: </strong> <?=$status;?></span>

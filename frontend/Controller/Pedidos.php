@@ -124,7 +124,7 @@
 									$status_order = Models_Pedidos::getStatusOrder($id_order);
 
 									if ($status_order['status'] == "Progress") {
-										$status_order = Models_Pedidos::updateStatusOrder($id_order);
+										$status_order = Models_Pedidos::updateStatusOrder("Approved", $id_order);
 										// Si no se cumple la actualizacion tal vez enviaar un email al administrado.
 									}
 								}
@@ -158,15 +158,26 @@
 							$id_order = Utils::desencriptar($_POST['id_order']);
 
 							if (!empty($id_order)) {
-								$request = Models_Pedidos::getOrder($id_order);
+								$order = Models_Pedidos::getOrder($id_order);
 
-								if (empty($request)) {
+								if (empty($order) || $order['status'] != "Progress") {
 									throw new Exception($errorMessage);
 									die();
 								}
 
-								// actualizacion del stock de cada producto
-								// actualizacion de Progress a Cancelled del status de la tabla orders
+								$amount_cancelled = array();
+
+								foreach ($order['ordered_products'] as $key => $value) {
+									$updateStock = Models_Pedidos::UpdateStockByCancelled($value['product_id'], $value['quantityOrdered']);
+									if (!$updateStock) {
+										die();
+									}
+									$amount_cancelled[] = $updateStock; 
+								}
+
+								if (count($amount_cancelled) == count($order['ordered_products'])) {
+									Models_Pedidos::updateStatusOrder("Canceled", $id_order);
+								}
 							}else{
 								throw new Exception($errorMessage);
 								die();

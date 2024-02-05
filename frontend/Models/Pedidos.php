@@ -49,9 +49,22 @@
             return $GLOBALS["db"]->auto_array($sql, array($data));
         }
 
-        static public function updateStatusOrder($data) {
-            return $GLOBALS["db"]->update("orders", array("status" => "Approved"), "id_order='".$data."'");
-            
+        static public function updateStatusOrder($status, $data) {
+            return $GLOBALS["db"]->update("orders", array("status" => $status), "id_order='".$data."'");
+        }
+
+        static public function updateStockByCancelled($id, $quantity) {
+            $sql = "SELECT stock  FROM products WHERE id_product = ?";
+            $request = $GLOBALS["db"]->auto_array($sql, array($id));
+
+            if (!empty($request)) {
+
+                $newStock = intval($request['stock'] + intval($quantity));
+                
+                $arrUpdate = array("stock" => $newStock);
+                return $GLOBALS["db"]->update("products", $arrUpdate, "id_product='".$id."'");
+
+            }
         }
 
     }
