@@ -54,7 +54,7 @@
         e.preventDefault(e);
         let valInput = $('#search form input').val();
 
-        if (valInput != "" && valInput.length > 3) {
+        if (valInput != "" && valInput.length > 1) {
             window.location.href = base_url + "resultado/"+ valInput;
         }
     });

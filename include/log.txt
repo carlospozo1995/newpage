@@ -1,34 +1,234 @@
-[2024/02/05 04:49:58] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2024/02/05 04:49:58] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2024/02/05 04:49:58] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2024/02/05 04:50:06] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.rolid, DATE_FORMAT(u.datecreate, '%d-%m-%Y') AS date_create, r.id_rol, r.name_rol, u.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '2'
-[2024/02/05 04:52:00] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
-[2024/02/05 04:52:00] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0' AND u.id_user != 1
-[2024/02/05 04:52:00] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '' 
-[2024/02/05 04:52:06] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = '2ec13d9c5bdb35158506ae15f3a0f0af0e4d1fdd'
-[2024/02/05 04:52:10] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlospozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
-[2024/02/05 04:52:10] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
-[2024/02/05 04:52:10] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2024/02/05 04:52:14] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2024/02/05 04:52:14] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2024/02/05 04:52:14] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2024/02/05 04:52:57] SQL Query: SELECT * FROM users WHERE dni = '564961984' OR email = 'mama@mama.com'
-[2024/02/05 04:52:57] SQL execute: INSERT INTO users (dni,name_user,surname_user,phone,email,password,rolid,status) VALUES('564961984','Popopo','Qwqeqww','0946036783','mama@mama.com','ff0edd646698f65fa2c8680d00391e368b6d4315','2','1');
-[2024/02/05 04:53:01] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.rolid, DATE_FORMAT(u.datecreate, '%d-%m-%Y') AS date_create, r.id_rol, r.name_rol, u.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '33'
-[2024/02/05 04:53:02] SQL Query: SELECT * FROM users WHERE (dni = '564961984' AND id_user != '33') OR (email = 'mama@mama.com' AND id_user != '33')
-[2024/02/05 04:53:02] SQL execute: UPDATE users SET dni='564961984',name_user='Popopo',surname_user='Qwqeqww',phone='0946036783',email='mama@mama.com',rolid='2',status='1' WHERE id_user='33'
-[2024/02/05 04:53:06] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.rolid, DATE_FORMAT(u.datecreate, '%d-%m-%Y') AS date_create, r.id_rol, r.name_rol, u.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '2'
-[2024/02/05 04:53:16] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2024/02/05 04:53:16] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2024/02/05 04:53:16] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2024/02/05 04:53:20] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.rolid, DATE_FORMAT(u.datecreate, '%d-%m-%Y') AS date_create, r.id_rol, r.name_rol, u.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '1'
-[2024/02/05 04:53:24] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.rolid, DATE_FORMAT(u.datecreate, '%d-%m-%Y') AS date_create, r.id_rol, r.name_rol, u.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '33'
-[2024/02/05 04:53:28] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.rolid, DATE_FORMAT(u.datecreate, '%d-%m-%Y') AS date_create, r.id_rol, r.name_rol, u.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '2'
-[2024/02/05 04:53:34] SQL Query: SELECT * FROM users WHERE (dni = '1234567891' AND id_user != '2') OR (email = 'carlos.pfloger@yahoo.com' AND id_user != '2')
-[2024/02/05 04:53:34] SQL execute: UPDATE users SET dni='1234567891',name_user='Andres',surname_user='Ramirez',phone='0994603678',email='carlos.pfloger@yahoo.com',rolid='2',status='1' WHERE id_user='2'
-[2024/02/05 04:53:41] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2024/02/05 04:53:41] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2024/02/05 04:53:41] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
-[2024/02/05 04:54:51] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
-[2024/02/05 04:54:51] SQL Query: SELECT * FROM roles WHERE status = '1'
-[2024/02/05 04:54:51] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, u.status, r.name_rol, r.id_rol FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.status != '0'
+[2024/02/07 06:49:48] SQL Query: SELECT p.rol_id, p.module_id, m.name_module AS modulo, p.ver, p.crear, p.actualizar, p.eliminar FROM permissions p INNER JOIN modules m ON p.module_id = m.id_module WHERE p.rol_id = '1' 
+[2024/02/07 06:49:48] SQL Query: SELECT o.id_order, o.num_order, o.dateCreate, o.user_id, o.total, o.payment_type_id, o.shipping_address, o.status, s.reviewed_date, s.shipping_date, s.delivery_date, s.reviewed_comment, s.shipping_comment, s.delivery_comment FROM orders o INNER JOIN order_progress s ON o.id_order = s.order_id
+[2024/02/07 08:36:12] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 08:36:12] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 08:36:13] SQL Query: SELECT sliderDst, sliderDesOne, sliderDesTwo, redirect FROM banners_category WHERE banner_type = '1'
+[2024/02/07 08:36:13] SQL Query: SELECT sliderDst, sliderDes, redirect FROM banners_product WHERE banner_type = '1'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 08:36:13] SQL Query: SELECT product_id, category_id, banner_large, redirect FROM banners_product WHERE banner_type = '2'
+[2024/02/07 08:36:13] SQL Query: SELECT sliderMbl, sliderDesOne, sliderDesTwo, redirect FROM banners_category WHERE banner_type = '1'
+[2024/02/07 08:36:13] SQL Query: SELECT sliderMbl, sliderDes, redirect FROM banners_product WHERE banner_type = '1'
+[2024/02/07 08:36:13] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products  WHERE status = '1' ORDER BY id_product DESC LIMIT 8
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '60'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '59'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '58'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '57'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '56'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '55'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '54'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '53'
+[2024/02/07 08:36:13] SQL Query: SELECT banner_name, banner_large, redirect FROM banners_category WHERE banner_type = '2'
+[2024/02/07 08:36:13] SQL Query: SELECT banner_small, redirect FROM banners_category WHERE banner_type = '3'
+[2024/02/07 08:36:13] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM `products` WHERE category_id = '213' AND id_product != '33' ORDER BY id_product DESC LIMIT 8
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '60'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '59'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '58'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '57'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '56'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '55'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '54'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '53'
+[2024/02/07 08:36:13] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM `products` WHERE category_id = '203' AND id_product != '16' ORDER BY id_product DESC LIMIT 8
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '51'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '50'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '49'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '48'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '47'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '44'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '43'
+[2024/02/07 08:36:13] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2024/02/07 08:36:16] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 08:36:16] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 08:36:16] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 08:36:16] SQL Query: SELECT * FROM categories WHERE (url = 'audio-y-video' AND fatherCategory IS NULL)
+[2024/02/07 08:36:16] SQL Query: SELECT id_category FROM categories WHERE url = 'audio-y-video'
+[2024/02/07 08:36:16] SQL Query: SELECT id_category, fatherCategory, name_category, status FROM categories where status != 0
+[2024/02/07 08:36:16] SQL Query:  SELECT p.id_product, p.name_product, p.desMain, p.brand, p.price, p.stock, p.prevPrice, p.discount, p.cantDues, p.priceDues, p.url, c.name_category FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.category_id IN (196,202,197,198,199,200,201,203,204,205)   AND p.status = 1  ORDER BY p.dataCreate ASC LIMIT 0, 10 
+[2024/02/07 08:36:16] SQL Query: SELECT MIN(price) AS price_min, MAX(price) AS price_max, COUNT(*) AS amount_products FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205) AND status = '1' 
+[2024/02/07 08:36:16] SQL Query: SELECT brand, COUNT(*) as amount FROM products WHERE category_id IN (196,202,197,198,199,200,201,203,204,205) AND status = '1' GROUP BY brand
+[2024/02/07 08:36:16] SQL Query: SELECT * FROM img_product WHERE product_id = '2'
+[2024/02/07 08:36:16] SQL Query: SELECT * FROM img_product WHERE product_id = '3'
+[2024/02/07 08:36:16] SQL Query: SELECT * FROM img_product WHERE product_id = '5'
+[2024/02/07 08:36:16] SQL Query: SELECT * FROM img_product WHERE product_id = '6'
+[2024/02/07 08:36:16] SQL Query: SELECT * FROM img_product WHERE product_id = '7'
+[2024/02/07 08:36:16] SQL Query: SELECT * FROM img_product WHERE product_id = '14'
+[2024/02/07 08:36:16] SQL Query: SELECT * FROM img_product WHERE product_id = '15'
+[2024/02/07 08:36:16] SQL Query: SELECT * FROM img_product WHERE product_id = '16'
+[2024/02/07 08:36:16] SQL Query: SELECT * FROM img_product WHERE product_id = '17'
+[2024/02/07 08:36:16] SQL Query: SELECT * FROM img_product WHERE product_id = '18'
+[2024/02/07 08:36:16] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 08:36:19] SQL Query: SELECT p.id_product, p.category_id, p.code, p.name_product, p.url, c.name_category AS categoria, p.price, p.stock FROM products p INNER JOIN categories c ON p.category_id = c.id_category WHERE p.status = 1 AND p.id_product = '6'
+[2024/02/07 08:36:19] SQL Query: SELECT image FROM img_product WHERE product_id = '6'
+[2024/02/07 08:36:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 08:36:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 08:36:21] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 08:36:22] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2024/02/07 08:36:22] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2024/02/07 08:36:22] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2024/02/07 08:36:22] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2024/02/07 08:36:24] SQL Query: SELECT id_user, status FROM users WHERE email = 'carlosandrespozo95@gmail.com' AND password = 'ff0edd646698f65fa2c8680d00391e368b6d4315'
+[2024/02/07 08:36:24] SQL Query: SELECT u.id_user, u.dni, u.name_user, u.surname_user, u.phone, u.email, r.id_rol, r.name_rol, r.status FROM users u INNER JOIN roles r ON u.rolid = r.id_rol WHERE u.id_user = '27'
+[2024/02/07 08:36:25] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 08:36:25] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 08:36:25] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 08:36:25] SQL Query: SELECT dni, name_user, surname_user, phone, email FROM users WHERE id_user = '27'
+[2024/02/07 08:36:25] SQL Query: SELECT * FROM payment_type
+[2024/02/07 08:36:25] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2024/02/07 08:36:25] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2024/02/07 08:36:25] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2024/02/07 08:36:25] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2024/02/07 08:58:03] SQL Query: SELECT user_id FROM orders WHERE transaction_uniqueCode = '4236b549040764cfebd8306006f0655d'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 08:58:03] SQL Query: SELECT sliderDst, sliderDesOne, sliderDesTwo, redirect FROM banners_category WHERE banner_type = '1'
+[2024/02/07 08:58:03] SQL Query: SELECT sliderDst, sliderDes, redirect FROM banners_product WHERE banner_type = '1'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 08:58:03] SQL Query: SELECT product_id, category_id, banner_large, redirect FROM banners_product WHERE banner_type = '2'
+[2024/02/07 08:58:03] SQL Query: SELECT sliderMbl, sliderDesOne, sliderDesTwo, redirect FROM banners_category WHERE banner_type = '1'
+[2024/02/07 08:58:03] SQL Query: SELECT sliderMbl, sliderDes, redirect FROM banners_product WHERE banner_type = '1'
+[2024/02/07 08:58:03] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products  WHERE status = '1' ORDER BY id_product DESC LIMIT 8
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '60'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '59'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '58'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '57'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '56'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '55'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '54'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '53'
+[2024/02/07 08:58:03] SQL Query: SELECT banner_name, banner_large, redirect FROM banners_category WHERE banner_type = '2'
+[2024/02/07 08:58:03] SQL Query: SELECT banner_small, redirect FROM banners_category WHERE banner_type = '3'
+[2024/02/07 08:58:03] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM `products` WHERE category_id = '213' AND id_product != '33' ORDER BY id_product DESC LIMIT 8
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '60'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '59'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '58'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '57'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '56'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '55'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '54'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '53'
+[2024/02/07 08:58:03] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM `products` WHERE category_id = '203' AND id_product != '16' ORDER BY id_product DESC LIMIT 8
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '51'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '50'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '49'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '48'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '47'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '44'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '43'
+[2024/02/07 08:58:03] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2024/02/07 08:58:04] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2024/02/07 08:58:04] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2024/02/07 09:01:35] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 09:01:35] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 09:01:35] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 09:01:35] SQL Query: SELECT dni, name_user, surname_user, phone, email FROM users WHERE id_user = '27'
+[2024/02/07 09:01:35] SQL Query: SELECT * FROM payment_type
+[2024/02/07 09:01:36] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2024/02/07 09:01:36] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2024/02/07 09:01:36] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2024/02/07 09:01:36] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2024/02/07 09:01:44] SQL Query: SELECT dni, name_user, surname_user, phone, email FROM users WHERE id_user = '27'
+[2024/02/07 09:01:44] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6)
+[2024/02/07 09:01:44] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2024/02/07 09:01:44] SQL execute: UPDATE products SET stock = CASE id_product WHEN 6 THEN CASE WHEN stock > 0 THEN stock - 1 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '6') AND status = 1
+[2024/02/07 09:01:44] SQL execute: INSERT INTO card_transaction (code_unique,products_id,products_amount) VALUES('0398f7c903ff6b9bf4f051d795ccb90f','6','1');
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 09:01:45] SQL Query: SELECT sliderDst, sliderDesOne, sliderDesTwo, redirect FROM banners_category WHERE banner_type = '1'
+[2024/02/07 09:01:45] SQL Query: SELECT sliderDst, sliderDes, redirect FROM banners_product WHERE banner_type = '1'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 09:01:45] SQL Query: SELECT product_id, category_id, banner_large, redirect FROM banners_product WHERE banner_type = '2'
+[2024/02/07 09:01:45] SQL Query: SELECT sliderMbl, sliderDesOne, sliderDesTwo, redirect FROM banners_category WHERE banner_type = '1'
+[2024/02/07 09:01:45] SQL Query: SELECT sliderMbl, sliderDes, redirect FROM banners_product WHERE banner_type = '1'
+[2024/02/07 09:01:45] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products  WHERE status = '1' ORDER BY id_product DESC LIMIT 8
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '60'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '59'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '58'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '57'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '56'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '55'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '54'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '53'
+[2024/02/07 09:01:45] SQL Query: SELECT banner_name, banner_large, redirect FROM banners_category WHERE banner_type = '2'
+[2024/02/07 09:01:45] SQL Query: SELECT banner_small, redirect FROM banners_category WHERE banner_type = '3'
+[2024/02/07 09:01:45] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM `products` WHERE category_id = '213' AND id_product != '33' ORDER BY id_product DESC LIMIT 8
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '60'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '59'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '58'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '57'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '56'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '55'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '54'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '53'
+[2024/02/07 09:01:45] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM `products` WHERE category_id = '203' AND id_product != '16' ORDER BY id_product DESC LIMIT 8
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '51'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '50'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '49'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '48'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '47'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '44'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '43'
+[2024/02/07 09:01:45] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2024/02/07 09:01:46] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2024/02/07 09:01:46] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2024/02/07 09:16:43] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 09:16:43] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 09:16:43] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 09:16:43] SQL Query: SELECT dni, name_user, surname_user, phone, email FROM users WHERE id_user = '27'
+[2024/02/07 09:16:43] SQL Query: SELECT * FROM payment_type
+[2024/02/07 09:16:44] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2024/02/07 09:16:44] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2024/02/07 09:16:44] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2024/02/07 09:16:44] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2024/02/07 09:16:55] SQL Query: SELECT dni, name_user, surname_user, phone, email FROM users WHERE id_user = '27'
+[2024/02/07 09:16:55] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6)
+[2024/02/07 09:16:55] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2024/02/07 09:16:55] SQL execute: UPDATE products SET stock = CASE id_product WHEN 6 THEN CASE WHEN stock > 0 THEN stock - 1 ELSE 0 END ELSE stock END WHERE FIND_IN_SET(id_product, '6') AND status = 1
+[2024/02/07 09:16:56] SQL execute: INSERT INTO card_transaction (code_unique,products_id,products_amount) VALUES('6003650e6c767b0cb4d6451e168f2f5e','6','1');
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 09:16:57] SQL Query: SELECT sliderDst, sliderDesOne, sliderDesTwo, redirect FROM banners_category WHERE banner_type = '1'
+[2024/02/07 09:16:57] SQL Query: SELECT sliderDst, sliderDes, redirect FROM banners_product WHERE banner_type = '1'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 09:16:57] SQL Query: SELECT product_id, category_id, banner_large, redirect FROM banners_product WHERE banner_type = '2'
+[2024/02/07 09:16:57] SQL Query: SELECT sliderMbl, sliderDesOne, sliderDesTwo, redirect FROM banners_category WHERE banner_type = '1'
+[2024/02/07 09:16:57] SQL Query: SELECT sliderMbl, sliderDes, redirect FROM banners_product WHERE banner_type = '1'
+[2024/02/07 09:16:57] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM products  WHERE status = '1' ORDER BY id_product DESC LIMIT 8
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '60'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '59'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '58'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '57'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '56'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '55'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '54'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '53'
+[2024/02/07 09:16:57] SQL Query: SELECT banner_name, banner_large, redirect FROM banners_category WHERE banner_type = '2'
+[2024/02/07 09:16:57] SQL Query: SELECT banner_small, redirect FROM banners_category WHERE banner_type = '3'
+[2024/02/07 09:16:57] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM `products` WHERE category_id = '213' AND id_product != '33' ORDER BY id_product DESC LIMIT 8
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '60'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '59'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '58'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '57'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '56'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '55'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '54'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '53'
+[2024/02/07 09:16:57] SQL Query: SELECT id_product, name_product, brand, price, stock, prevPrice, discount, cantDues, priceDues, url FROM `products` WHERE category_id = '203' AND id_product != '16' ORDER BY id_product DESC LIMIT 8
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '51'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '50'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '49'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '48'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '47'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '44'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '43'
+[2024/02/07 09:16:57] SQL Query: SELECT * FROM img_product WHERE product_id = '39'
+[2024/02/07 09:16:57] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2024/02/07 09:16:57] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2024/02/07 09:18:26] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 09:18:26] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 09:18:26] SQL Query: SELECT * FROM categories WHERE  status = 1
+[2024/02/07 09:18:26] SQL Query: SELECT dni, name_user, surname_user, phone, email FROM users WHERE id_user = '27'
+[2024/02/07 09:18:26] SQL Query: SELECT * FROM payment_type
+[2024/02/07 09:18:27] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2024/02/07 09:18:27] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
+[2024/02/07 09:18:27] SQL Query: SELECT id_product, code, name_product, stock, url, price, status FROM products WHERE id_product IN (6) AND status = 1
+[2024/02/07 09:18:27] SQL Query: SELECT product_id, image FROM img_product WHERE product_id IN (6)
