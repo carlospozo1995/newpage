@@ -93,10 +93,11 @@ $(document).ready(function () {
         html: true,
         content: `
                 <ul class=" z-1000 content-dialog_mycount text-center font-weight-bold h6">
-                    <li class="mb-2 mt-1"><i class="fa fa-user-o pr-2 pl-2"></i><a href="https://www.google.com/">MI CUENTA</a></li>
-                    <li><i class="icon-lock-open pr-2 pl-2" aria-hidden="true"></i><a href="" id="close_session">CERRAR SESIÓN</a></li>
+                    <li class="mb-2 mt-1"><i class="fa fa-user-o pr-2 pl-2"></i><a href="${base_url}Dashboard">MI CUENTA</a></li>
+                    <li id="close_session"><i class="icon-lock-open pr-2 pl-2" aria-hidden="true"></i><a class="cursor-pointer">CERRAR SESIÓN</a></li>
                 </ul>`,
         trigger: 'focus',
+        delay: {"hide": 100},
         placement: 'bottom',
     });
 
@@ -110,7 +111,6 @@ $(document).ready(function () {
                 
             },
             success: function(data){
-                // localStorage.removeItem("client");
                 window.location.reload(false);
             },
             error: function(xhr, status, error) {
@@ -194,7 +194,7 @@ $(document).ready(function () {
      ***********************************************/
     if($('.register-client').length){
 
-		// const inputsRegister = $('.register-client input');
+		const inputsRegister = $('.register-client input');
 		// inputsRegister.each(function () {
 		// 	$(this).on('keyup', function () {
 		// 		if ($(this).parent().hasClass('invalid-content')) {

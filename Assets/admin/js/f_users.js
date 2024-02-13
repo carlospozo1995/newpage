@@ -165,6 +165,100 @@ $(document).ready(function () {
         }
     });
 
+    if ($(".editUser").length) {
+        $(".editUser").click(function () {
+            validFocus();
+            let userEdit = $(".editUser").attr('id');
+            $.ajax({
+                url: base_url + "index/getDataUser/",
+                dataType: 'JSON',
+                method: 'POST',
+                data: {
+                    id: userEdit
+                },
+                beforeSend: function() {
+
+                },
+                success: function(data){
+                    if (data.status) {
+                        $("#dniUser").val(data.request.dni);
+                        $("#nameUser").val(data.request.name_user);
+                        $("#surnameUser").val(data.request.surname_user);
+                        $("#phoneUser").val(data.request.phone);
+                        $('#modalEditUser').modal('show');
+                    }else{
+                        msgShow(2, 'Atención', data.msg);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.log(error);
+                },
+                complete: function() {
+    
+                }
+            }); 
+        })
+
+        $('#formEditUser').submit(function (e) {
+            e.preventDefault();
+            let dniUser = $("#dniUser").val();
+            let nameUser = $("#nameUser").val();
+            let surnameUser = $("#surnameUser").val();
+            let phoneUser = $("#phoneUser").val();
+
+            if (dniUser == "" || nameUser == "" || surnameUser == "" || phoneUser == "") {
+                msgShow(2, 'Atención', "Rellene todos los campos.");
+                return false;
+            }else{
+    
+                let elementsValid = $(".valid");
+                elementsValid.each((index, element) => {
+                    if($(element).hasClass('is-invalid')){
+                        Swal.fire("Atención", "Por favor asegúrese de no tener campos en rojo.", "error");
+                        return false;
+                    };
+                });
+
+                $.ajax({
+                    url: base_url + "index/updateUser/",
+                    dataType: 'JSON',
+                    method: 'POST',
+                    data: {
+                        id: $(".editUser").attr('id'),
+                        dni: dniUser,
+                        name: nameUser,
+                        surname: surnameUser,
+                        phone: phoneUser
+                    },
+                    beforeSend: function() {
+    
+                    },
+                    success: function(data){
+                        if (data.status) {
+                            $('.name_client').html(nameUser);
+                            $('.surname_client').html(surnameUser);
+                            $('.dni_client').html(dniUser);
+                            $('.phone_client').html(phoneUser);
+
+                            $('#modalEditUser').modal('hide')
+                            msgShow(1, 'Usuario', data.msg);
+                        }else{
+                            msgShow(2, 'Atención', data.msg);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(error);
+                    },
+                    complete: function() {
+        
+                    }
+                }); 
+            }
+
+        })
+    }
+    
+
 });
 
 // --- EDIT USER --- //

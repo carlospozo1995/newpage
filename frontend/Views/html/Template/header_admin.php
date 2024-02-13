@@ -72,7 +72,10 @@
 						          	</li>
 
 						          	<li class="user-footer">
-								            <a href="" class="btn btn-default btn-flat">Perfil</a>
+											<?php
+												$userName = explode("@", $_SESSION['data_user']['email']); 
+											?>
+								            <a href="<?= BASE_URL.'users/'.$userName[0]; ?>" class="btn btn-default btn-flat">Perfil</a>
 								            <button class="btn btn-default btn-flat float-right" id="session_close">Cerrar sesión</button>
 						          	</li>
 						        </ul>

@@ -120,6 +120,15 @@
             return $result;
         }
 
+        static public function verifyUser($data) {
+            $sql = "SELECT dni, name_user, surname_user, phone, email, password FROM users WHERE id_user = ? && status = ?";
+            return $GLOBALS["db"]->auto_array($sql, array($data, 1));
+        }
+
+        static public function editUser($data, $dni, $name, $surname, $phone) {
+            return $GLOBALS["db"]->update("users", array("dni" => $dni, "name_user" => $name, "surname_user" => $surname, "phone" => $phone), "id_user='".$data."'");
+        }
+
     }
 
 ?>

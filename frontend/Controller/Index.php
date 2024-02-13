@@ -10,11 +10,13 @@
 			$data = array();
 			$status = true;
 			$msg = "";
+			$request = "";
+			$errorMessage = "Ha ocurrido un error. Inténtelo más tarde.";
 			switch ($action) {
 				case 'logout':
 					Utils::sessionEndStore();
 				break;
-				
+
 				case 'registerClient':
 					if($_POST){
 						$name = $_POST['name_client'];
@@ -222,6 +224,73 @@
 						echo json_encode($data);
 
 					}
+				break;
+
+				case 'getDataUser':
+					try {
+						if (isset($_POST)) {
+							$idUser = Utils::desencriptar($_POST['id']);	
+							$verifyUser = Models_Users::verifyUser($idUser);
+
+							if (!empty($verifyUser)) {
+								$request = $verifyUser;
+							}else{
+								throw new Exception("$errorMessage");
+								die();
+							}
+						}else{
+							throw new Exception($errorMessage);
+							die();
+						}
+					} catch (Exception $e) {
+						$status = false;
+						$msg = $e->getMessage();
+					}
+
+					$data = array("status" => $status, "msg" => $msg, "request" => $request);
+					echo json_encode($data);
+				break;
+
+				case 'updateUser':
+
+					try {
+
+						if (isset($_POST)) {
+							$id = Utils::desencriptar($_POST['id']);
+							$dni = $_POST['dni'];
+							$name = $_POST['name'];
+							$surname = $_POST['surname'];
+							$phone = $_POST['phone'];
+
+							if (empty($dni) || empty($name) || empty($surname) || empty($phone)) {
+								throw new Exception("Rellene todos los campos");
+								die();
+							}else{
+								$test_phone = "/^09\d{8}$/";
+								$test_text = "/^([a-zA-ZÑñÁáÉéÍíÓóÚú\s])*$/";
+							
+								if (!preg_match($test_text, $name) || !preg_match($test_text, $surname) || !preg_match($test_phone, $phone)) {
+									die();
+								}
+
+								$request = Models_Users::editUser($id, $dni, $name, $surname, $phone);
+
+								if ($request > 0) {
+									$msg = "Datos actualizados correctamente";
+								}
+							}
+						}else{
+							throw new Exception($errorMessage);
+							die();
+						}
+						
+					} catch (Exception $e) {
+						$status =  false;
+						$msg = $e->getMessage();
+					}
+
+					$data = array("status" => $status, "msg" => $msg);
+					echo json_encode($data);
 				break;
 
 				default:

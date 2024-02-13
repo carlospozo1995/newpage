@@ -16,6 +16,8 @@ RewriteRule ^index/logout/$ %{ENV:REWRITEBASE}index.php?show=Index&action=logout
 RewriteRule ^index/registerClient/$ %{ENV:REWRITEBASE}index.php?show=Index&action=registerClient [L]
 RewriteRule ^index/testEmail/$ %{ENV:REWRITEBASE}index.php?show=Index&action=testEmail [L]
 RewriteRule ^index/searchData/$ %{ENV:REWRITEBASE}index.php?show=Index&action=searchData [L]
+RewriteRule ^index/getDataUser/$ %{ENV:REWRITEBASE}index.php?show=Index&action=getDataUser [L]
+RewriteRule ^index/updateUser/$ %{ENV:REWRITEBASE}index.php?show=Index&action=updateUser [L]
 
 #LOGIN
 RewriteRule ^(login/|login|Login|LOGIN)$ %{ENV:REWRITEBASE}index.php?show=login [L]
@@ -43,6 +45,7 @@ RewriteRule ^(users/|users|Users)$ %{ENV:REWRITEBASE}index.php?show=users [L]
 RewriteRule ^(users/|users|Users)/setUser/$ %{ENV:REWRITEBASE}index.php?show=users&action=setUser [L]
 RewriteRule ^(users/|users|Users)/getUser/$ %{ENV:REWRITEBASE}index.php?show=users&action=getUser [L]
 RewriteRule ^(users/|users|Users)/delUser/$ %{ENV:REWRITEBASE}index.php?show=users&action=delUser [L]
+RewriteRule ^users/(.+)$ %{ENV:REWRITEBASE}index.php?show=Users&user=$1 [L]
 
 RewriteRule ^(categories/|categories|Categories)$ %{ENV:REWRITEBASE}index.php?show=categories [L]
 RewriteRule ^(categories/|categories|Categories)/listCategories/$ %{ENV:REWRITEBASE}index.php?show=categories&action=listCategories [L]

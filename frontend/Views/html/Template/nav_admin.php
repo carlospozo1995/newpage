@@ -22,7 +22,7 @@
 			        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 			          	
 			          	<li class="nav-item">
-			            	<a href="" class="nav-link">
+			            	<a href="<?= BASE_URL; ?>Dashboard" class="nav-link">
 			              		<i class="nav-icon fas fa-home"></i>
 			              		<p>Home</p>
 			            	</a>
@@ -107,6 +107,13 @@
 								</a>
 							</li>
 						<?php } ?>
+
+						<li class="nav-item">
+			            	<a href="<?= BASE_URL; ?>" class="nav-link">
+			              		<i class="nav-icon fas fa-globe"></i>
+			              		<p>Sitio Web</p>
+			            	</a>
+			          	</li>
 
 			        </ul>
 			    </nav>

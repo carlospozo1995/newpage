@@ -158,13 +158,28 @@
 				default:
 					Utils::permissionsData(MUSUARIOS);
 
-					if (empty($_SESSION['module']['ver'])) {
-						header('Location: '.BASE_URL.'Dashboard');	
-					}
-
 					// $variable["file_css"][] = "c_roles";
 		            $variable["file_js"][] = "f_users";
-					View::renderPage('Users', $variable);
+					// View::renderPage('Users', $variable);
+
+
+					if (isset($_GET['user'])) {
+						$userName = explode("@", $_SESSION['data_user']['email']);
+
+						if ($userName[0] == $_GET['user']) {
+							View::renderPage('User', $variable);
+						}else{
+							header('Location: '.BASE_URL.'Dashboard');	
+						}
+						
+					}else{
+
+						if (empty($_SESSION['module']['ver'])) {
+							header('Location: '.BASE_URL.'Dashboard');	
+						}
+
+						View::renderPage('Users', $variable);
+					}
 				break;
 			}
 		}

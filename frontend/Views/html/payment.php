@@ -60,9 +60,10 @@
                                         </div>
                                         <?php        
                                             }else{
+                                            $userName = explode("@", $data_client['email']); 
                                         ?>
                                         <div class="max-content m-auto mb-3">
-                                            <a href="http://localhost/carlos/page" class="btn btn-outline-black"> <i class="icon-note"></i> Editar</a>
+                                            <a href="<?= BASE_URL.'users/'.$userName[0] ?>" class="btn btn-outline-black"> <i class="icon-note"></i> Editar</a>
                                         </div>
                                         <span class="font-weight-bold">Cédula o RUC</span>
                                         <p><?=$data_client['dni'];?></p>
